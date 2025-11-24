@@ -1,0 +1,41 @@
+CREATE TABLE [dbo].[accountantData] (
+    [userName]   VARCHAR (50) NOT NULL,
+    [password]   VARCHAR (50) NOT NULL,
+    [employeeID] VARCHAR (50) NOT NULL
+);
+
+CREATE TABLE [dbo].[employeeData] (
+    [userName]   VARCHAR (50) NOT NULL,
+    [password]   VARCHAR (50) NOT NULL,
+    [employeeID] VARCHAR (50) NOT NULL,
+    [email]      VARCHAR (50) NOT NULL,
+    [contactNum] BIGINT       NOT NULL
+);
+
+CREATE TABLE [dbo].[employeeFinanceData] (
+    [employeeID]   VARCHAR (50)    NOT NULL,
+    [tinNum]       VARCHAR (50)    NOT NULL,
+    [sssNum]       VARCHAR (50)    NOT NULL,
+    [empName]      VARCHAR (100)   NOT NULL,
+    [pos]          VARCHAR (50)    NOT NULL,
+    [empDept]      VARCHAR (50)    NOT NULL,
+    [payPeriod]    DATE            NOT NULL,
+    [payDate]      DATE            NOT NULL,
+    [workedDays]   DECIMAL (5, 2)  NOT NULL,
+    [rateDay]      DECIMAL (10, 2) NOT NULL,
+    [bascSal]      DECIMAL (10, 2) NOT NULL,
+    [otHrs]        DECIMAL (5, 2)  NOT NULL,
+    [otReg]        DECIMAL (10, 2) NOT NULL,
+    [otRest]       DECIMAL (10, 2) NOT NULL,
+    [otNight]      DECIMAL (10, 2) NOT NULL,
+    [otRHoliday]   DECIMAL (10, 2) NOT NULL,
+    [otSHoliday]   DECIMAL (10, 2) NOT NULL,
+    [deductions]   DECIMAL (10, 2) NOT NULL,
+    [wtax]         DECIMAL (10, 2) NOT NULL,
+    [sssDeduc]     DECIMAL (10, 2) NOT NULL,
+    [pagibigDeduc] DECIMAL (10, 2) NOT NULL,
+    [phDeduc]      DECIMAL (10, 2) NOT NULL,
+    [absenceDeduc] DECIMAL (10, 2) NOT NULL,
+    [cashaDeduc]   DECIMAL (10, 2) NOT NULL
+);
+

@@ -1,0 +1,426 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using Payroll.Models;
+
+namespace Payroll
+{
+    public partial class AdminForm : Form
+    {
+        LoginForm login;
+        string userName;
+        Repository repo;
+        private string selectedID = "";
+        private string selectedRole = "";
+        private string selectedPassword = "";
+        private string newPassword = "";
+
+        public AdminForm(LoginForm login, string userName)
+        {
+            InitializeComponent();
+            repo = new Repository();
+            this.login = login;
+            this.userName = userName;
+            InitializeSomething();
+        }
+
+        private void InitializeSomething()
+        {
+            welcomeLabel.Text = "Welcome, " + repo.getAdminID(userName);
+            roleComboBox.Items.Add("Employee");
+            roleComboBox.Items.Add("Human Resources");
+            roleComboBox.Items.Add("Accountant");
+
+            positionComboBox.Items.Add("Employee");
+            positionComboBox.Items.Add("Accountant");
+            positionComboBox.Items.Add("Human Resources");
+
+            // labas total employees
+            allEmpLB.Text = repo.GetTotalEmployeeCount().ToString();
+
+            // para lumabas agad dashboard
+            hideallPanels();
+            dashPanel.Visible = true;
+        }
+
+        private void UpdateEmployeeCount()
+        {
+            allEmpLB.Text = repo.GetTotalEmployeeCount().ToString();
+        }
+
+        private void AdminForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            login.Visible = true;
+        }
+
+        private void hideallPanels()
+        {
+            dashPanel.Visible = false;
+            userPanel.Visible = false;
+            departmentPanel.Visible = false;
+
+        }
+
+        private void dashboardButt_Click(object sender, EventArgs e)
+        {
+            hideallPanels();
+            dashPanel.Visible = true;
+        }
+
+        private void userButt_Click(object sender, EventArgs e)
+        {
+            hideallPanels();
+            userPanel.Visible = true;
+            roleComboBox.Text = "Employee";
+            fillDataGridView();
+        }
+
+        private void fillDataGridView()
+        {
+            if (roleComboBox.Text.Equals("Employee"))
+            {
+                userDataGridView.DataSource = repo.GetAllEmployee();
+            }
+            else if (roleComboBox.Text.Equals("Accountant"))
+            {
+                userDataGridView.DataSource = repo.GetAllAccountant();
+            }
+            else if (roleComboBox.Text.Equals("Human Resources"))
+            {
+                userDataGridView.DataSource = repo.GetAllHR();
+            }
+        }
+
+        private void addEmpButt_Click(object sender, EventArgs e)
+        {
+            userPanelDataGrid.Visible = false;
+            userPanelAdd.Visible = true;
+            editEmployeePanel.Visible = false;
+        }
+
+        private void roleComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            fillDataGridView();
+        }
+
+        private void generateCredetials_Click(object sender, EventArgs e)
+        {
+            Random rand = new Random();
+
+            string randomUser = "user" + rand.Next(0, 1000000).ToString("D6");
+            string randomPass = "pass" + rand.Next(0, 1000000).ToString("D6");
+
+            userNameTB.Text = randomUser;
+            passTB.Text = randomPass;
+        }
+
+        private void radioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (sender == activeRadioButt && activeRadioButt.Checked)
+            {
+                inactiveRadioButt.Checked = false;
+            }
+            else if (sender == inactiveRadioButt && inactiveRadioButt.Checked)
+            {
+                activeRadioButt.Checked = false;
+            }
+        }
+
+        private void radioButton_CheckedChanged2(object sender, EventArgs e)
+        {
+            if (sender == editEmployeeActiveRB && editEmployeeActiveRB.Checked)
+            {
+                editEmployeeInactiveRB.Checked = false;
+            }
+            else if (sender == editEmployeeInactiveRB && editEmployeeInactiveRB.Checked)
+            {
+                editEmployeeActiveRB.Checked = false;
+            }
+        }
+
+        private void clearButt_Click(object sender, EventArgs e)
+        {
+            clearCre();
+        }
+
+        private void clearCre()
+        {
+            lastNameTB.Text = "";
+            firstNameTB.Text = "";
+            middleNameTB.Text = "";
+            addressTB.Text = "";
+            contactNoTB.Text = "";
+            emailTB.Text = "";
+            userNameTB.Text = "";
+            passTB.Text = "";
+            positionComboBox.Text = "";
+            activeRadioButt.Checked = false;
+            inactiveRadioButt.Checked = false;
+        }
+
+        private void saveButt_Click(object sender, EventArgs e)
+        {
+            if (lastNameTB.Text != "" &&
+                firstNameTB.Text != "" &&
+                middleNameTB.Text != "" &&
+                addressTB.Text != "" &&
+                contactNoTB.Text != "" &&
+                emailTB.Text != "" &&
+                userNameTB.Text != "" &&
+                passTB.Text != "" &&
+                positionComboBox.Text != "" &&
+                (activeRadioButt.Checked || inactiveRadioButt.Checked))
+            {
+                if (positionComboBox.Text.Equals("Employee"))
+                {
+                    Employee emp = new Employee();
+                    emp.LastName = lastNameTB.Text;
+                    emp.FirstName = firstNameTB.Text;
+                    emp.MiddleName = middleNameTB.Text;
+                    emp.Address = addressTB.Text;
+                    emp.ContactNum = long.Parse(contactNoTB.Text);
+                    emp.Email = emailTB.Text;
+                    emp.UserName = userNameTB.Text;
+                    emp.Password = passTB.Text;
+                    emp.Status = activeRadioButt.Checked ? "Active" : "Inactive";
+                    repo.AddEmployee(emp);
+
+                    clearCre();
+                    userPanelDataGrid.Visible = true;
+                    userPanelAdd.Visible = false;
+                    fillDataGridView();
+                    UpdateEmployeeCount();
+                }
+                else if (positionComboBox.Text.Equals("Accountant"))
+                {
+                    Accountant acc = new Accountant();
+                    acc.LastName = lastNameTB.Text;
+                    acc.FirstName = firstNameTB.Text;
+                    acc.MiddleName = middleNameTB.Text;
+                    acc.Address = addressTB.Text;
+                    acc.ContactNum = long.Parse(contactNoTB.Text);
+                    acc.Email = emailTB.Text;
+                    acc.UserName = userNameTB.Text;
+                    acc.Password = passTB.Text;
+                    acc.Status = activeRadioButt.Checked ? "Active" : "Inactive";
+                    repo.AddAccountant(acc);
+
+                    clearCre();
+                    userPanelDataGrid.Visible = true;
+                    userPanelAdd.Visible = false;
+                    fillDataGridView();
+                    UpdateEmployeeCount();
+                }
+                else if (positionComboBox.Text.Equals("Human Resources"))
+                {
+                    HumanResources hr = new HumanResources();
+                    hr.LastName = lastNameTB.Text;
+                    hr.FirstName = firstNameTB.Text;
+                    hr.MiddleName = middleNameTB.Text;
+                    hr.Address = addressTB.Text;
+                    hr.ContactNum = long.Parse(contactNoTB.Text);
+                    hr.Email = emailTB.Text;
+                    hr.UserName = userNameTB.Text;
+                    hr.Password = passTB.Text;
+                    hr.Status = activeRadioButt.Checked ? "Active" : "Inactive";
+                    repo.addHr(hr);
+
+                    clearCre();
+                    userPanelDataGrid.Visible = true;
+                    userPanelAdd.Visible = false;
+                    fillDataGridView();
+                    UpdateEmployeeCount();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please fill in all fields and select a status.");
+            }
+        }
+
+        private void cancelButt_Click(object sender, EventArgs e)
+        {
+            clearCre();
+            userPanelDataGrid.Visible = true;
+            userPanelAdd.Visible = false;
+            fillDataGridView();
+        }
+
+        private void departmentButt_Click(object sender, EventArgs e)
+        {
+            hideallPanels();
+            departmentPanel.Visible = true;
+            departmentDataGridPanel.Visible = true;
+            departmentAddPanel.Visible = false;
+            departmentEditPanel.Visible = false;
+            LoadDepartmentDataGridView();
+        }
+
+        private void LoadDepartmentDataGridView()
+        {
+            try
+            {
+                DataTable departments = repo.GetAllDepartments();
+                departmentDataGridView.DataSource = departments;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading departments: " + ex.ToString());
+            }
+        }
+
+        private void addDepartmentButton_Click(object sender, EventArgs e)
+        {
+            departmentDataGridPanel.Visible = false;
+            departmentAddPanel.Visible = true;
+            PopulateManagerComboBox();
+            ClearDepartmentForm();
+        }
+
+        private void PopulateManagerComboBox()
+        {
+            try
+            {
+                DataTable employees = repo.GetEmployeeNames();
+                cbManager.DataSource = employees;
+                cbManager.DisplayMember = "EmployeeName";
+                cbManager.ValueMember = "employeeID";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading managers: " + ex.ToString());
+            }
+        }
+
+        private void ClearDepartmentForm()
+        {
+            departmentNameTB.Text = "";
+            departmentDescription.Text = "";
+        }
+
+        private void saveDepartmentButton_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(departmentNameTB.Text) ||
+                cbManager.SelectedIndex == -1 ||
+                string.IsNullOrWhiteSpace(departmentDescription.Text))
+            {
+                MessageBox.Show("Please fill in all fields.");
+                return;
+            }
+
+            string departmentName = departmentNameTB.Text;
+            string assignedManager = cbManager.SelectedValue.ToString();
+            string managerName = cbManager.Text;
+            string description = departmentDescription.Text;
+
+            if (repo.AddDepartment(departmentName, assignedManager, managerName, description))
+            {
+                MessageBox.Show("Department added successfully!");
+                ClearDepartmentForm();
+                departmentAddPanel.Visible = false;
+                departmentDataGridPanel.Visible = true;
+                LoadDepartmentDataGridView();
+            }
+            else
+            {
+                MessageBox.Show("Failed to add department.");
+            }
+        }
+
+        private void cancelDepartmentButton_Click(object sender, EventArgs e)
+        {
+            ClearDepartmentForm();
+            departmentAddPanel.Visible = false;
+            departmentDataGridPanel.Visible = true;
+        }
+
+        private void cancelDepartmentEditButton_Click(object sender, EventArgs e)
+        {
+            departmentEditPanel.Visible = false;
+            departmentDataGridPanel.Visible = true;
+            LoadDepartmentDataGridView();
+        }
+
+        private void editDepartmentButton_Click(object sender, EventArgs e)
+        {
+            departmentDataGridPanel.Visible = false;
+            departmentEditPanel.Visible = true;
+        }
+
+        private void searchDataGridTB_TextChanged(object sender, EventArgs e)
+        {
+            string keyword = searchDataGridTB.Text.Trim();
+            string role = roleComboBox.Text;
+
+            if (keyword == "")
+            {
+                fillDataGridView();
+            }
+            else
+            {
+                userDataGridView.DataSource = repo.SearchEmployees(role, keyword);
+            }
+        }
+
+        private void editEmployeeButt_Click(object sender, EventArgs e)
+        {
+            userPanelDataGrid.Visible = false;
+            userPanelAdd.Visible = false;
+            editEmployeePanel.Visible = true;
+        }
+
+        private void userDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+
+            DataGridViewRow row = userDataGridView.Rows[e.RowIndex];
+
+            selectedID = row.Cells["employeeID"].Value.ToString();
+            selectedRole = roleComboBox.Text;
+            selectedPassword = repo.getPassword(selectedID, selectedRole);
+
+            editEmployeeLastNameTB.Text = row.Cells["lastName"].Value.ToString();
+            editEmployeeFirstNameTB.Text = row.Cells["firstName"].Value.ToString();
+            editEmployeeMiddleNameTB.Text = row.Cells["middleName"].Value.ToString();
+            editEmployeeAdressTB.Text = row.Cells["address"].Value.ToString();
+            editEmployeeContactNoTB.Text = row.Cells["contactNum"].Value.ToString();
+            editEmployeeEmailTB.Text = row.Cells["email"].Value.ToString();
+            positionComboBox.Text = selectedRole;
+
+            string status = row.Cells["status"].Value.ToString();
+            editEmployeeActiveRB.Checked = (status == "Active");
+            editEmployeeInactiveRB.Checked = (status == "Inactive");
+        }
+
+        private void editEmployeeResetPasswordButt_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show(
+            "Previous password data will be permanently lost when commited",
+            "Are you sure?",
+            MessageBoxButtons.YesNo
+            );
+
+            if (result == DialogResult.Yes)
+            {
+                Random rand = new Random();
+
+                string random =
+                "pass" +
+                rand.Next(0, 10000).ToString("D3");
+
+                selectedPassword = random;
+                editEmployeePasswordTB.Text = selectedPassword;
+            }
+            else if (result == DialogResult.No)
+            {
+
+            }
+        }
+    }
+}
