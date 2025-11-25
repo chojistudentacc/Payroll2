@@ -395,7 +395,6 @@ namespace Payroll
             editEmployeePanel.Visible = true;
         }
 
-
         private void userDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return;
@@ -551,7 +550,52 @@ namespace Payroll
             {
 
             }
-       
+
         }
+
+        private void dropEmployeeButt_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(selectedID))
+            {
+                MessageBox.Show("Please select an employee.");
+                return;
+            }
+
+            string status = repo.GetStatus(selectedID);
+
+            if (status != "Inactive")
+            {
+                MessageBox.Show("Employee can only be dropped if their status is INACTIVE.");
+                return;
+            }
+
+            DialogResult confirm = MessageBox.Show(
+                "This employee will be removed permanently. Continue?",
+                "Confirm Drop",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning
+            );
+
+            if (confirm == DialogResult.No) return;
+
+            DataRowView drv = (DataRowView)userDataGridView.CurrentRow.DataBoundItem;
+            DataRow employeeRow = drv.Row;
+
+            string role = roleComboBox.Text;
+
+            repo.ExportEmployeeToArchive(employeeRow, role);
+
+            if (repo.DropEmployee(selectedID))
+            {
+                MessageBox.Show("Employee dropped and archived.");
+                fillDataGridView();
+                selectedID = "";
+            }
+            else
+            {
+                MessageBox.Show("Failed to drop employee.");
+            }
+        }
+
     }
 }

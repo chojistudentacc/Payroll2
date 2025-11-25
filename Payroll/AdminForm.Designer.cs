@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             sidePanel = new Panel();
             welcomeLabel = new Label();
             reportButt = new Button();
@@ -47,6 +47,15 @@
             label2 = new Label();
             userPanel = new Panel();
             label1 = new Label();
+            userPanelDataGrid = new Panel();
+            dropEmployeeButt = new Button();
+            editEmployeeButt = new Button();
+            addEmpButt = new Button();
+            userPanel2 = new Panel();
+            searchDataGridTB = new TextBox();
+            roleComboBox = new ComboBox();
+            userDataGridView = new DataGridView();
+            userPanel1 = new Panel();
             editEmployeePanel = new Panel();
             editEmployeeCancelButt = new Button();
             editEmployeeSaveButt = new Button();
@@ -97,14 +106,6 @@
             firstNameLabel = new Label();
             lastNameLabel = new Label();
             userPanel3 = new Panel();
-            userPanelDataGrid = new Panel();
-            editEmployeeButt = new Button();
-            addEmpButt = new Button();
-            userPanel2 = new Panel();
-            searchDataGridTB = new TextBox();
-            roleComboBox = new ComboBox();
-            userDataGridView = new DataGridView();
-            userPanel1 = new Panel();
             departmentPanel = new Panel();
             label4 = new Label();
             departmentEditPanel = new Panel();
@@ -140,12 +141,12 @@
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             userPanel.SuspendLayout();
-            editEmployeePanel.SuspendLayout();
-            panel7.SuspendLayout();
-            userPanelAdd.SuspendLayout();
             userPanelDataGrid.SuspendLayout();
             userPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)userDataGridView).BeginInit();
+            editEmployeePanel.SuspendLayout();
+            panel7.SuspendLayout();
+            userPanelAdd.SuspendLayout();
             departmentPanel.SuspendLayout();
             departmentEditPanel.SuspendLayout();
             departmentAddPanel.SuspendLayout();
@@ -332,9 +333,9 @@
             // 
             userPanel.BackColor = Color.FromArgb(224, 224, 224);
             userPanel.Controls.Add(label1);
+            userPanel.Controls.Add(userPanelDataGrid);
             userPanel.Controls.Add(editEmployeePanel);
             userPanel.Controls.Add(userPanelAdd);
-            userPanel.Controls.Add(userPanelDataGrid);
             userPanel.Location = new Point(273, 0);
             userPanel.Name = "userPanel";
             userPanel.Size = new Size(1116, 784);
@@ -349,6 +350,148 @@
             label1.Size = new Size(58, 15);
             label1.TabIndex = 0;
             label1.Text = "userPanel";
+            // 
+            // userPanelDataGrid
+            // 
+            userPanelDataGrid.BackColor = Color.White;
+            userPanelDataGrid.Controls.Add(dropEmployeeButt);
+            userPanelDataGrid.Controls.Add(editEmployeeButt);
+            userPanelDataGrid.Controls.Add(addEmpButt);
+            userPanelDataGrid.Controls.Add(userPanel2);
+            userPanelDataGrid.Controls.Add(userDataGridView);
+            userPanelDataGrid.Controls.Add(userPanel1);
+            userPanelDataGrid.Location = new Point(12, 38);
+            userPanelDataGrid.Name = "userPanelDataGrid";
+            userPanelDataGrid.Size = new Size(1092, 721);
+            userPanelDataGrid.TabIndex = 1;
+            // 
+            // dropEmployeeButt
+            // 
+            dropEmployeeButt.BackColor = Color.FromArgb(146, 45, 51);
+            dropEmployeeButt.FlatStyle = FlatStyle.Flat;
+            dropEmployeeButt.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            dropEmployeeButt.ForeColor = Color.White;
+            dropEmployeeButt.Location = new Point(258, 617);
+            dropEmployeeButt.Name = "dropEmployeeButt";
+            dropEmployeeButt.Size = new Size(202, 50);
+            dropEmployeeButt.TabIndex = 5;
+            dropEmployeeButt.Text = "Drop";
+            dropEmployeeButt.UseVisualStyleBackColor = false;
+            dropEmployeeButt.Click += dropEmployeeButt_Click;
+            // 
+            // editEmployeeButt
+            // 
+            editEmployeeButt.BackColor = Color.FromArgb(146, 45, 51);
+            editEmployeeButt.FlatStyle = FlatStyle.Flat;
+            editEmployeeButt.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            editEmployeeButt.ForeColor = Color.White;
+            editEmployeeButt.Location = new Point(21, 617);
+            editEmployeeButt.Name = "editEmployeeButt";
+            editEmployeeButt.Size = new Size(202, 50);
+            editEmployeeButt.TabIndex = 4;
+            editEmployeeButt.Text = "Edit";
+            editEmployeeButt.UseVisualStyleBackColor = false;
+            editEmployeeButt.Click += editEmployeeButt_Click;
+            // 
+            // addEmpButt
+            // 
+            addEmpButt.BackColor = Color.FromArgb(146, 45, 51);
+            addEmpButt.FlatStyle = FlatStyle.Flat;
+            addEmpButt.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            addEmpButt.ForeColor = Color.White;
+            addEmpButt.Location = new Point(21, 111);
+            addEmpButt.Name = "addEmpButt";
+            addEmpButt.Size = new Size(202, 50);
+            addEmpButt.TabIndex = 3;
+            addEmpButt.Text = "Add Employee";
+            addEmpButt.UseVisualStyleBackColor = false;
+            addEmpButt.Click += addEmpButt_Click;
+            // 
+            // userPanel2
+            // 
+            userPanel2.BackgroundImage = Properties.Resources.PanelBG;
+            userPanel2.BackgroundImageLayout = ImageLayout.Center;
+            userPanel2.Controls.Add(searchDataGridTB);
+            userPanel2.Controls.Add(roleComboBox);
+            userPanel2.Location = new Point(450, 93);
+            userPanel2.Name = "userPanel2";
+            userPanel2.Size = new Size(619, 77);
+            userPanel2.TabIndex = 2;
+            // 
+            // searchDataGridTB
+            // 
+            searchDataGridTB.Font = new Font("Segoe UI", 15.75F);
+            searchDataGridTB.Location = new Point(17, 22);
+            searchDataGridTB.Name = "searchDataGridTB";
+            searchDataGridTB.PlaceholderText = "Search by employeeID or last name";
+            searchDataGridTB.Size = new Size(343, 35);
+            searchDataGridTB.TabIndex = 1;
+            searchDataGridTB.TextChanged += searchDataGridTB_TextChanged;
+            // 
+            // roleComboBox
+            // 
+            roleComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            roleComboBox.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            roleComboBox.Location = new Point(384, 21);
+            roleComboBox.Name = "roleComboBox";
+            roleComboBox.Size = new Size(220, 38);
+            roleComboBox.TabIndex = 0;
+            roleComboBox.Tag = "";
+            roleComboBox.SelectionChangeCommitted += roleComboBox_SelectedIndexChanged;
+            // 
+            // userDataGridView
+            // 
+            userDataGridView.AllowUserToAddRows = false;
+            userDataGridView.AllowUserToDeleteRows = false;
+            userDataGridView.AllowUserToResizeColumns = false;
+            userDataGridView.AllowUserToResizeRows = false;
+            userDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            userDataGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            userDataGridView.BackgroundColor = Color.FromArgb(146, 45, 51);
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(146, 45, 51);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(179, 79, 84);
+            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(255, 209, 211);
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            userDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            userDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(146, 45, 51);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(179, 79, 84);
+            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(255, 209, 211);
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            userDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            userDataGridView.EnableHeadersVisualStyles = false;
+            userDataGridView.GridColor = Color.White;
+            userDataGridView.Location = new Point(0, 190);
+            userDataGridView.Name = "userDataGridView";
+            userDataGridView.ReadOnly = true;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(146, 45, 51);
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(179, 79, 84);
+            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(255, 209, 211);
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            userDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            userDataGridView.RowHeadersVisible = false;
+            userDataGridView.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            userDataGridView.Size = new Size(1092, 371);
+            userDataGridView.TabIndex = 0;
+            userDataGridView.CellClick += userDataGridView_CellClick;
+            // 
+            // userPanel1
+            // 
+            userPanel1.BackgroundImage = Properties.Resources.PanelBG;
+            userPanel1.BackgroundImageLayout = ImageLayout.Stretch;
+            userPanel1.Location = new Point(0, 0);
+            userPanel1.Name = "userPanel1";
+            userPanel1.Size = new Size(1092, 67);
+            userPanel1.TabIndex = 1;
             // 
             // editEmployeePanel
             // 
@@ -904,133 +1047,6 @@
             userPanel3.Size = new Size(1092, 67);
             userPanel3.TabIndex = 2;
             // 
-            // userPanelDataGrid
-            // 
-            userPanelDataGrid.BackColor = Color.White;
-            userPanelDataGrid.Controls.Add(editEmployeeButt);
-            userPanelDataGrid.Controls.Add(addEmpButt);
-            userPanelDataGrid.Controls.Add(userPanel2);
-            userPanelDataGrid.Controls.Add(userDataGridView);
-            userPanelDataGrid.Controls.Add(userPanel1);
-            userPanelDataGrid.Location = new Point(12, 38);
-            userPanelDataGrid.Name = "userPanelDataGrid";
-            userPanelDataGrid.Size = new Size(1092, 721);
-            userPanelDataGrid.TabIndex = 1;
-            // 
-            // editEmployeeButt
-            // 
-            editEmployeeButt.BackColor = Color.FromArgb(146, 45, 51);
-            editEmployeeButt.FlatStyle = FlatStyle.Flat;
-            editEmployeeButt.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
-            editEmployeeButt.ForeColor = Color.White;
-            editEmployeeButt.Location = new Point(21, 617);
-            editEmployeeButt.Name = "editEmployeeButt";
-            editEmployeeButt.Size = new Size(202, 50);
-            editEmployeeButt.TabIndex = 4;
-            editEmployeeButt.Text = "Edit";
-            editEmployeeButt.UseVisualStyleBackColor = false;
-            editEmployeeButt.Click += editEmployeeButt_Click;
-            // 
-            // addEmpButt
-            // 
-            addEmpButt.BackColor = Color.FromArgb(146, 45, 51);
-            addEmpButt.FlatStyle = FlatStyle.Flat;
-            addEmpButt.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
-            addEmpButt.ForeColor = Color.White;
-            addEmpButt.Location = new Point(21, 111);
-            addEmpButt.Name = "addEmpButt";
-            addEmpButt.Size = new Size(202, 50);
-            addEmpButt.TabIndex = 3;
-            addEmpButt.Text = "Add Employee";
-            addEmpButt.UseVisualStyleBackColor = false;
-            addEmpButt.Click += addEmpButt_Click;
-            // 
-            // userPanel2
-            // 
-            userPanel2.BackgroundImage = Properties.Resources.PanelBG;
-            userPanel2.BackgroundImageLayout = ImageLayout.Center;
-            userPanel2.Controls.Add(searchDataGridTB);
-            userPanel2.Controls.Add(roleComboBox);
-            userPanel2.Location = new Point(450, 93);
-            userPanel2.Name = "userPanel2";
-            userPanel2.Size = new Size(619, 77);
-            userPanel2.TabIndex = 2;
-            // 
-            // searchDataGridTB
-            // 
-            searchDataGridTB.Font = new Font("Segoe UI", 15.75F);
-            searchDataGridTB.Location = new Point(17, 22);
-            searchDataGridTB.Name = "searchDataGridTB";
-            searchDataGridTB.PlaceholderText = "Search by employeeID or last name";
-            searchDataGridTB.Size = new Size(343, 35);
-            searchDataGridTB.TabIndex = 1;
-            searchDataGridTB.TextChanged += searchDataGridTB_TextChanged;
-            // 
-            // roleComboBox
-            // 
-            roleComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
-            roleComboBox.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            roleComboBox.Location = new Point(384, 21);
-            roleComboBox.Name = "roleComboBox";
-            roleComboBox.Size = new Size(220, 38);
-            roleComboBox.TabIndex = 0;
-            roleComboBox.Tag = "";
-            roleComboBox.SelectionChangeCommitted += roleComboBox_SelectedIndexChanged;
-            // 
-            // userDataGridView
-            // 
-            userDataGridView.AllowUserToAddRows = false;
-            userDataGridView.AllowUserToDeleteRows = false;
-            userDataGridView.AllowUserToResizeColumns = false;
-            userDataGridView.AllowUserToResizeRows = false;
-            userDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            userDataGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            userDataGridView.BackgroundColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle5.ForeColor = Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(179, 79, 84);
-            dataGridViewCellStyle5.SelectionForeColor = Color.FromArgb(255, 209, 211);
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            userDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            userDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle6.ForeColor = Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(179, 79, 84);
-            dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(255, 209, 211);
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
-            userDataGridView.DefaultCellStyle = dataGridViewCellStyle6;
-            userDataGridView.EnableHeadersVisualStyles = false;
-            userDataGridView.GridColor = Color.White;
-            userDataGridView.Location = new Point(0, 190);
-            userDataGridView.Name = "userDataGridView";
-            userDataGridView.ReadOnly = true;
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle7.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle7.ForeColor = Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(179, 79, 84);
-            dataGridViewCellStyle7.SelectionForeColor = Color.FromArgb(255, 209, 211);
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
-            userDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            userDataGridView.RowHeadersVisible = false;
-            userDataGridView.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            userDataGridView.Size = new Size(1092, 371);
-            userDataGridView.TabIndex = 0;
-            userDataGridView.CellClick += userDataGridView_CellClick;
-            // 
-            // userPanel1
-            // 
-            userPanel1.BackgroundImage = Properties.Resources.PanelBG;
-            userPanel1.BackgroundImageLayout = ImageLayout.Stretch;
-            userPanel1.Location = new Point(0, 0);
-            userPanel1.Name = "userPanel1";
-            userPanel1.Size = new Size(1092, 67);
-            userPanel1.TabIndex = 1;
-            // 
             // departmentPanel
             // 
             departmentPanel.BackColor = Color.FromArgb(224, 224, 224);
@@ -1312,14 +1328,14 @@
             departmentDataGridView.AllowUserToResizeRows = false;
             departmentDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             departmentDataGridView.BackgroundColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = Color.Transparent;
-            dataGridViewCellStyle8.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle8.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
-            departmentDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.Transparent;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            departmentDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             departmentDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             departmentDataGridView.Location = new Point(17, 101);
             departmentDataGridView.Name = "departmentDataGridView";
@@ -1400,16 +1416,16 @@
             panel2.PerformLayout();
             userPanel.ResumeLayout(false);
             userPanel.PerformLayout();
+            userPanelDataGrid.ResumeLayout(false);
+            userPanel2.ResumeLayout(false);
+            userPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)userDataGridView).EndInit();
             editEmployeePanel.ResumeLayout(false);
             editEmployeePanel.PerformLayout();
             panel7.ResumeLayout(false);
             panel7.PerformLayout();
             userPanelAdd.ResumeLayout(false);
             userPanelAdd.PerformLayout();
-            userPanelDataGrid.ResumeLayout(false);
-            userPanel2.ResumeLayout(false);
-            userPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)userDataGridView).EndInit();
             departmentPanel.ResumeLayout(false);
             departmentPanel.PerformLayout();
             departmentEditPanel.ResumeLayout(false);
@@ -1531,5 +1547,6 @@
         private Label editEmployeeLabel;
         private Button editEmployeeResetPasswordButt;
         private Button editEmployeeCancelButt;
+        private Button dropEmployeeButt;
     }
 }

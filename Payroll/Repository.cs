@@ -9,6 +9,7 @@ namespace Payroll
     public class Repository
     {
 
+        private string csvFilePath = @"C:\Users\Choji Kodachi\Documents\!! Work !!\EmployeeArchive.csv";
         private readonly string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\Choji Kodachi\\Documents\\!! Work !!\\Payroll-master\\Payroll\\Payroll.mdf\";Integrated Security=True";
 
         public DataTable SearchEmployees(string role, string keyword)
@@ -52,6 +53,38 @@ namespace Payroll
             return table;
         }
 
+        public string GetStatus(string employeeID)
+        {
+            string status = "";
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    string query = "SELECT status FROM employeeData WHERE employeeID = @employeeID";
+
+                    using (SqlCommand cmd = new SqlCommand(query, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@employeeID", employeeID);
+
+                        object result = cmd.ExecuteScalar();
+
+                        if (result != null)
+                        {
+                            status = result.ToString();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error getting employee status: " + ex.Message);
+            }
+
+            return status;
+        }
+
         public string getPassword(string id, string role)
         {
             string tableName = "";
@@ -63,7 +96,7 @@ namespace Payroll
             else if (role == "Human Resources")
                 tableName = "hrData";
             else
-                return ""; // Invalid role
+                return "";
 
             try
             {
@@ -522,6 +555,56 @@ namespace Payroll
                 return "hr";
             }
             return null;
+        }
+
+        public bool DropEmployee(string employeeID)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    string query = "DELETE FROM employeeData WHERE employeeID = @employeeID";
+
+                    using (SqlCommand cmd = new SqlCommand(query, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@employeeID", employeeID);
+                        return cmd.ExecuteNonQuery() > 0;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error dropping employee: " + ex.Message);
+                return false;
+            }
+        }
+
+        public void ExportEmployeeToArchive(DataRow employeeData, string role)
+        {
+            string filePath = csvFilePath;
+
+            bool fileExists = File.Exists(filePath);
+
+            using (StreamWriter sw = new StreamWriter(filePath, true))
+            {
+                if (!fileExists)
+                {
+                    sw.WriteLine("EmployeeID,FirstName,LastName,MiddleName,Address,ContactNum,Email,Role,Status");
+                }
+
+                sw.WriteLine(
+                    $"{employeeData["employeeID"]}," +
+                    $"{employeeData["firstName"]}," +
+                    $"{employeeData["lastName"]}," +
+                    $"{employeeData["middleName"]}," +
+                    $"{employeeData["address"]}," +
+                    $"{employeeData["contactNum"]}," +
+                    $"{employeeData["email"]}," +
+                    $"{role}," +
+                    $"{employeeData["status"]}"
+                );
+            }
         }
 
         public bool AddEmployee(Employee emp)
