@@ -49,7 +49,6 @@
             label1 = new Label();
             editEmployeePanel = new Panel();
             editEmployeeCancelButt = new Button();
-            editEmployeeClearButt = new Button();
             editEmployeeSaveButt = new Button();
             editEmployeeResetPasswordButt = new Button();
             editEmployeeInactiveRB = new RadioButton();
@@ -355,7 +354,6 @@
             // 
             editEmployeePanel.BackColor = Color.White;
             editEmployeePanel.Controls.Add(editEmployeeCancelButt);
-            editEmployeePanel.Controls.Add(editEmployeeClearButt);
             editEmployeePanel.Controls.Add(editEmployeeSaveButt);
             editEmployeePanel.Controls.Add(editEmployeeResetPasswordButt);
             editEmployeePanel.Controls.Add(editEmployeeInactiveRB);
@@ -395,19 +393,7 @@
             editEmployeeCancelButt.TabIndex = 38;
             editEmployeeCancelButt.Text = "Cancel";
             editEmployeeCancelButt.UseVisualStyleBackColor = false;
-            // 
-            // editEmployeeClearButt
-            // 
-            editEmployeeClearButt.BackColor = Color.FromArgb(146, 45, 51);
-            editEmployeeClearButt.FlatStyle = FlatStyle.Flat;
-            editEmployeeClearButt.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            editEmployeeClearButt.ForeColor = Color.White;
-            editEmployeeClearButt.Location = new Point(418, 567);
-            editEmployeeClearButt.Name = "editEmployeeClearButt";
-            editEmployeeClearButt.Size = new Size(261, 55);
-            editEmployeeClearButt.TabIndex = 37;
-            editEmployeeClearButt.Text = "Clear";
-            editEmployeeClearButt.UseVisualStyleBackColor = false;
+            editEmployeeCancelButt.Click += editEmployeeCancelButt_Click;
             // 
             // editEmployeeSaveButt
             // 
@@ -421,6 +407,7 @@
             editEmployeeSaveButt.TabIndex = 36;
             editEmployeeSaveButt.Text = "Save";
             editEmployeeSaveButt.UseVisualStyleBackColor = false;
+            editEmployeeSaveButt.Click += editEmployeeSaveButt_Click;
             // 
             // editEmployeeResetPasswordButt
             // 
@@ -1518,7 +1505,6 @@
         private TextBox searchDataGridTB;
         private Panel editEmployeePanel;
         private Button editEmployeeButt;
-        private Button editEmployeeClearButt;
         private Button editEmployeeSaveButt;
         private RadioButton editEmployeeInactiveRB;
         private RadioButton editEmployeeActiveRB;

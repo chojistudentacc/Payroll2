@@ -639,7 +639,6 @@ namespace Payroll
 
                     string sql = @"
                     UPDATE employeeData SET
-                    userName   = @userName,
                     password   = @password,
                     email      = @Email,
                     contactNum = @ContactNum,
@@ -653,7 +652,6 @@ namespace Payroll
 
                     using (SqlCommand cmd = new SqlCommand(sql, connection))
                     {
-                        cmd.Parameters.AddWithValue("@userName", emp.UserName);
                         cmd.Parameters.AddWithValue("@password", emp.Password);
                         cmd.Parameters.AddWithValue("@Email", emp.Email);
                         cmd.Parameters.AddWithValue("@ContactNum", emp.ContactNum);
@@ -685,7 +683,6 @@ namespace Payroll
 
                     string sql = @"
                     UPDATE accountantData SET
-                    userName   = @UserName,
                     password   = @Password,
                     email      = @Email,
                     contactNum = @ContactNum,
@@ -699,7 +696,6 @@ namespace Payroll
 
                     using (SqlCommand cmd = new SqlCommand(sql, connection))
                     {
-                        cmd.Parameters.AddWithValue("@UserName", acc.UserName);
                         cmd.Parameters.AddWithValue("@Password", acc.Password);
                         cmd.Parameters.AddWithValue("@Email", acc.Email);
                         cmd.Parameters.AddWithValue("@ContactNum", acc.ContactNum);
@@ -732,7 +728,6 @@ namespace Payroll
 
                     string sql = @"
                     UPDATE hrData SET
-                    userName   = @UserName,
                     password   = @Password,
                     email      = @Email,
                     contactNum = @ContactNum,
@@ -746,7 +741,6 @@ namespace Payroll
 
                     using (SqlCommand cmd = new SqlCommand(sql, connection))
                     {
-                        cmd.Parameters.AddWithValue("@UserName", hr.UserName);
                         cmd.Parameters.AddWithValue("@Password", hr.Password);
                         cmd.Parameters.AddWithValue("@Email", hr.Email);
                         cmd.Parameters.AddWithValue("@ContactNum", hr.ContactNum);

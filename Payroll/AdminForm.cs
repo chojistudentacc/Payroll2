@@ -368,12 +368,33 @@ namespace Payroll
             }
         }
 
+        private void emptyEditEmployeeTB()
+        {
+            editEmployeeLastNameTB.Text = "";
+            editEmployeeFirstNameTB.Text = "";
+            editEmployeeMiddleNameTB.Text = "";
+            editEmployeeAdressTB.Text = "";
+            editEmployeeContactNoTB.Text = "";
+            editEmployeeEmailTB.Text = "";
+            editEmployeePasswordTB.Text = "";
+            selectedPassword = "";
+            selectedRole = "";
+            selectedID = "";
+        }
+
         private void editEmployeeButt_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(selectedID))
+            {
+                MessageBox.Show("No selected row.");
+                return;
+            }
+
             userPanelDataGrid.Visible = false;
             userPanelAdd.Visible = false;
             editEmployeePanel.Visible = true;
         }
+
 
         private void userDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -384,6 +405,7 @@ namespace Payroll
             selectedID = row.Cells["employeeID"].Value.ToString();
             selectedRole = roleComboBox.Text;
             selectedPassword = repo.getPassword(selectedID, selectedRole);
+            editEmployeePasswordTB.Text = "Hidden";
 
             editEmployeeLastNameTB.Text = row.Cells["lastName"].Value.ToString();
             editEmployeeFirstNameTB.Text = row.Cells["firstName"].Value.ToString();
@@ -421,6 +443,115 @@ namespace Payroll
             {
 
             }
+        }
+
+        private void editEmployeeSaveButt_Click(object sender, EventArgs e)
+        {
+            if (editEmployeeFirstNameTB.Text != "" &&
+                editEmployeeLastNameTB.Text != "" &&
+                editEmployeeMiddleNameTB.Text != "" &&
+                editEmployeeContactNoTB.Text != "" &&
+                editEmployeeAdressTB.Text != "" &&
+                editEmployeeEmailTB.Text != "" &&
+                editEmployeePasswordTB.Text != "" &&
+                (editEmployeeActiveRB.Checked || editEmployeeInactiveRB.Checked))
+            {
+                DialogResult result = MessageBox.Show(
+                "Are you sure to commit now?",
+                "Are you sure?",
+                MessageBoxButtons.YesNo
+                );
+
+                if (result == DialogResult.Yes)
+                {
+                    if (selectedRole.Equals("Employee"))
+                    {
+                        Employee r = new Employee();
+                        r.EmployeeID = selectedID;
+                        r.FirstName = editEmployeeFirstNameTB.Text;
+                        r.LastName = editEmployeeLastNameTB.Text;
+                        r.MiddleName = editEmployeeMiddleNameTB.Text;
+                        r.ContactNum = long.Parse(editEmployeeContactNoTB.Text);
+                        r.Address = editEmployeeAdressTB.Text;
+                        r.Email = editEmployeeEmailTB.Text;
+                        r.Password = selectedPassword;
+                        r.Status = editEmployeeActiveRB.Checked ? "Active" : "Inactive";
+                        repo.UpdateEmployee(r);
+
+                        emptyEditEmployeeTB();
+                        userPanelDataGrid.Visible = true;
+                        editEmployeePanel.Visible = false;
+                        fillDataGridView();
+                    }
+                    else if (selectedRole.Equals("Accountant"))
+                    {
+                        Accountant r = new Accountant();
+                        r.EmployeeID = selectedID;
+                        r.FirstName = editEmployeeFirstNameTB.Text;
+                        r.LastName = editEmployeeLastNameTB.Text;
+                        r.MiddleName = editEmployeeMiddleNameTB.Text;
+                        r.ContactNum = long.Parse(editEmployeeContactNoTB.Text);
+                        r.Address = editEmployeeAdressTB.Text;
+                        r.Email = editEmployeeEmailTB.Text;
+                        r.Password = selectedPassword;
+                        r.Status = editEmployeeActiveRB.Checked ? "Active" : "Inactive";
+                        repo.UpdateAccountant(r);
+
+                        emptyEditEmployeeTB();
+                        userPanelDataGrid.Visible = true;
+                        editEmployeePanel.Visible = false;
+                        fillDataGridView();
+                    }
+                    else if (selectedRole.Equals("Human Resources"))
+                    {
+                        HumanResources r = new HumanResources();
+                        r.EmployeeID = selectedID;
+                        r.FirstName = editEmployeeFirstNameTB.Text;
+                        r.LastName = editEmployeeLastNameTB.Text;
+                        r.MiddleName = editEmployeeMiddleNameTB.Text;
+                        r.ContactNum = long.Parse(editEmployeeContactNoTB.Text);
+                        r.Address = editEmployeeAdressTB.Text;
+                        r.Email = editEmployeeEmailTB.Text;
+                        r.Password = selectedPassword;
+                        r.Status = editEmployeeActiveRB.Checked ? "Active" : "Inactive";
+                        repo.UpdateHR(r);
+
+                        emptyEditEmployeeTB();
+                        userPanelDataGrid.Visible = true;
+                        editEmployeePanel.Visible = false;
+                        fillDataGridView();
+                    }
+                }
+                else if (result == DialogResult.No)
+                {
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please fill in all fields and select a status.");
+            }
+        }
+
+        private void editEmployeeCancelButt_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show(
+            "Cancel edit?",
+            "Are you sure?",
+             MessageBoxButtons.YesNo
+             );
+            if (result == DialogResult.Yes)
+            {
+                emptyEditEmployeeTB();
+                userPanelDataGrid.Visible = true;
+                editEmployeePanel.Visible = false;
+                fillDataGridView();
+            }
+            else if (result == DialogResult.No)
+            {
+
+            }
+       
         }
     }
 }
