@@ -9,8 +9,8 @@ namespace Payroll
     public class Repository
     {
 
-        private string csvFilePath = @"C:\Users\Choji Kodachi\Documents\!! Work !!\EmployeeArchive.csv";
-        private readonly string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\Choji Kodachi\\Documents\\!! Work !!\\Payroll-master\\Payroll\\Payroll.mdf\";Integrated Security=True";
+        private string csvFilePath = @"C:\Users\User\Documents\EmployeeArchive.csv";
+        private readonly string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\User\\source\\repos\\Payroll2\\Payroll\\Payroll.mdf;Integrated Security=True";
 
         public DataTable SearchEmployees(string role, string keyword)
         {
@@ -1009,6 +1009,105 @@ namespace Payroll
             }
 
             return table;
+        }
+        public DataTable GetAssignedManagers()
+        {
+            DataTable table = new DataTable();
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    string sql = @"
+                    SELECT DISTINCT
+                    managerName AS EmployeeName,
+                    assignedManager AS employeeID
+                    FROM departmentData
+                    WHERE assignedManager IS NOT NULL
+                    ORDER BY managerName;
+                    ";
+
+                    using (SqlCommand cmd = new SqlCommand(sql, connection))
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                    {
+                        adapter.Fill(table);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Connection Exception: " + ex.ToString());
+            }
+
+            return table;
+        }
+
+        public bool UpdateDepartment(string originalDepartmentName, string departmentName, string assignedManager, string managerName, string description)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    string sql = @"
+                    UPDATE departmentData SET
+                    departmentName = @departmentName,
+                    assignedManager = @assignedManager,
+                    managerName = @managerName,
+                    description = @description
+                    WHERE departmentName = @originalDepartmentName;
+                    ";
+
+                    using (SqlCommand cmd = new SqlCommand(sql, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@originalDepartmentName", originalDepartmentName);
+                        cmd.Parameters.AddWithValue("@departmentName", departmentName);
+                        cmd.Parameters.AddWithValue("@assignedManager", assignedManager);
+                        cmd.Parameters.AddWithValue("@managerName", managerName);
+                        cmd.Parameters.AddWithValue("@description", description);
+
+                        int rowsAffected = cmd.ExecuteNonQuery();
+                        return rowsAffected > 0;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error updating department: " + ex.ToString());
+                return false;
+            }
+        }
+
+        public bool DeleteDepartment(string departmentName)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    string sql = @"
+                    DELETE FROM departmentData
+                    WHERE departmentName = @departmentName;
+                    ";
+
+                    using (SqlCommand cmd = new SqlCommand(sql, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@departmentName", departmentName);
+
+                        int rowsAffected = cmd.ExecuteNonQuery();
+                        return rowsAffected > 0;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error deleting department: " + ex.ToString());
+                return false;
+            }
         }
     }
 }

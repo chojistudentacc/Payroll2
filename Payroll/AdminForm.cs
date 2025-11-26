@@ -20,6 +20,8 @@ namespace Payroll
         private string selectedRole = "";
         private string selectedPassword = "";
         private string newPassword = "";
+        private string selectedDepartmentName = "";
+        private string originalDepartmentName = "";
 
         public AdminForm(LoginForm login, string userName)
         {
@@ -259,6 +261,7 @@ namespace Payroll
             departmentDataGridPanel.Visible = true;
             departmentAddPanel.Visible = false;
             departmentEditPanel.Visible = false;
+            selectedDepartmentName = "";
             LoadDepartmentDataGridView();
         }
 
@@ -333,6 +336,21 @@ namespace Payroll
             }
         }
 
+        private void PopulateEditManagerComboBox()
+        {
+            try
+            {
+                DataTable managers = repo.GetAssignedManagers();
+                cbEditManager.DataSource = managers;
+                cbEditManager.DisplayMember = "EmployeeName";
+                cbEditManager.ValueMember = "employeeID";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading assigned managers: " + ex.ToString());
+            }
+        }
+
         private void cancelDepartmentButton_Click(object sender, EventArgs e)
         {
             ClearDepartmentForm();
@@ -344,13 +362,51 @@ namespace Payroll
         {
             departmentEditPanel.Visible = false;
             departmentDataGridPanel.Visible = true;
+            selectedDepartmentName = "";
             LoadDepartmentDataGridView();
         }
 
         private void editDepartmentButton_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(selectedDepartmentName))
+            {
+                MessageBox.Show("Please select a department row.");
+                return;
+            }
+
             departmentDataGridPanel.Visible = false;
             departmentEditPanel.Visible = true;
+            PopulateEditManagerComboBox();
+            PopulateEditDepartmentFields();
+        }
+
+        private void PopulateEditDepartmentFields()
+        {
+            try
+            {
+                if (departmentDataGridView.CurrentRow == null)
+                {
+                    MessageBox.Show("Error retrieving department data.");
+                    return;
+                }
+
+                DataGridViewRow row = departmentDataGridView.CurrentRow;
+
+                originalDepartmentName = row.Cells["Department"].Value?.ToString() ?? "";
+                departmentNameEditTB.Text = originalDepartmentName;
+                departmentEditDescription.Text = row.Cells["description"].Value?.ToString() ?? "";
+
+                string managerID = row.Cells["ManagerID"].Value?.ToString() ?? "";
+
+                if (!string.IsNullOrEmpty(managerID) && cbEditManager.Items.Count > 0)
+                {
+                    cbEditManager.SelectedValue = managerID;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error populating department fields: " + ex.Message);
+            }
         }
 
         private void searchDataGridTB_TextChanged(object sender, EventArgs e)
@@ -597,5 +653,72 @@ namespace Payroll
             }
         }
 
+        private void departmentDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+
+            DataGridViewRow row = departmentDataGridView.Rows[e.RowIndex];
+
+            selectedDepartmentName = row.Cells["Department"].Value.ToString();
+        }
+
+        private void editDepartmentSaveButton_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(departmentNameEditTB.Text) ||
+                cbEditManager.SelectedIndex == -1 ||
+                string.IsNullOrWhiteSpace(departmentEditDescription.Text))
+            {
+                MessageBox.Show("Please fill in all fields.");
+                return;
+            }
+
+            string departmentName = departmentNameEditTB.Text.Trim();
+            string assignedManager = cbEditManager.SelectedValue?.ToString() ?? "";
+            string managerName = cbEditManager.Text.Trim();
+            string description = departmentEditDescription.Text.Trim();
+
+            if (repo.UpdateDepartment(originalDepartmentName, departmentName, assignedManager, managerName, description))
+            {
+                MessageBox.Show("Department updated successfully!");
+                departmentEditPanel.Visible = false;
+                departmentDataGridPanel.Visible = true;
+                selectedDepartmentName = "";
+                originalDepartmentName = "";
+                LoadDepartmentDataGridView();
+            }
+            else
+            {
+                MessageBox.Show("Failed to update department.");
+            }
+        }
+
+        private void deleteDepartmentButton_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(selectedDepartmentName))
+            {
+                MessageBox.Show("Please select a department to delete.");
+                return;
+            }
+
+            DialogResult confirm = MessageBox.Show(
+                $"Are you sure you want to delete the department '{selectedDepartmentName}'? This action cannot be undone.",
+                "Confirm Delete",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning
+            );
+
+            if (confirm == DialogResult.No) return;
+
+            if (repo.DeleteDepartment(selectedDepartmentName))
+            {
+                MessageBox.Show("Department deleted successfully!");
+                selectedDepartmentName = "";
+                LoadDepartmentDataGridView();
+            }
+            else
+            {
+                MessageBox.Show("Failed to delete department.");
+            }
+        }
     }
 }
