@@ -44,7 +44,7 @@ namespace Payroll
             positionComboBox.Items.Add("Human Resources");
 
             // labas total employees
-            allEmpLB.Text = repo.GetTotalEmployeeCount().ToString();
+            UpdateEmployeeCount();
 
             // para lumabas agad dashboard
             hideallPanels();
@@ -66,6 +66,8 @@ namespace Payroll
             dashPanel.Visible = false;
             userPanel.Visible = false;
             departmentPanel.Visible = false;
+            reportsPanel.Visible = false;
+            logsPanel.Visible = false;
 
         }
 
@@ -73,6 +75,7 @@ namespace Payroll
         {
             hideallPanels();
             dashPanel.Visible = true;
+            UpdateEmployeeCount();
         }
 
         private void userButt_Click(object sender, EventArgs e)
@@ -193,6 +196,10 @@ namespace Payroll
                     emp.Status = activeRadioButt.Checked ? "Active" : "Inactive";
                     repo.AddEmployee(emp);
 
+                    string activity = "Add Employee";
+                    string logDetails = $"Added Employee: {emp.FirstName} {emp.LastName} \nUsername: {emp.UserName} \nStatus: {emp.Status}";
+                    repo.AddLog(repo.getAdminID(userName), activity, logDetails);
+
                     clearCre();
                     userPanelDataGrid.Visible = true;
                     userPanelAdd.Visible = false;
@@ -213,6 +220,10 @@ namespace Payroll
                     acc.Status = activeRadioButt.Checked ? "Active" : "Inactive";
                     repo.AddAccountant(acc);
 
+                    string activity = "Add Accountant";
+                    string logDetails = $"Added Accountant: {acc.FirstName} {acc.LastName} \nUsername: {acc.UserName} \nStatus: {acc.Status}";
+                    repo.AddLog(repo.getAdminID(userName), activity, logDetails);
+
                     clearCre();
                     userPanelDataGrid.Visible = true;
                     userPanelAdd.Visible = false;
@@ -232,6 +243,10 @@ namespace Payroll
                     hr.Password = passTB.Text;
                     hr.Status = activeRadioButt.Checked ? "Active" : "Inactive";
                     repo.addHr(hr);
+
+                    string activity = "Add HR";
+                    string logDetails = $"Added HR: {hr.FirstName} {hr.LastName} \nUsername: {hr.UserName} \nStatus: {hr.Status}";
+                    repo.AddLog(repo.getAdminID(userName), activity, logDetails);
 
                     clearCre();
                     userPanelDataGrid.Visible = true;
@@ -265,6 +280,19 @@ namespace Payroll
             LoadDepartmentDataGridView();
         }
 
+        private void LoadLogDataGridView()
+        {
+            try
+            {
+                DataTable logs = repo.GetAllLogs();
+                logDataGridView.DataSource = logs;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading logs: " + ex.ToString());
+            }
+        }
+
         private void LoadDepartmentDataGridView()
         {
             try
@@ -290,14 +318,14 @@ namespace Payroll
         {
             try
             {
-                DataTable employees = repo.GetEmployeeNames();
-                cbManager.DataSource = employees;
+                DataTable hrManagers = repo.GetHRNames();
+                cbManager.DataSource = hrManagers;
                 cbManager.DisplayMember = "EmployeeName";
                 cbManager.ValueMember = "employeeID";
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error loading managers: " + ex.ToString());
+                MessageBox.Show("Error loading HR managers: " + ex.ToString());
             }
         }
 
@@ -719,6 +747,19 @@ namespace Payroll
             {
                 MessageBox.Show("Failed to delete department.");
             }
+        }
+
+        private void reportButt_Click(object sender, EventArgs e)
+        {
+            hideallPanels();
+            reportsPanel.Visible = true;
+        }
+
+        private void logButt_Click(object sender, EventArgs e)
+        {
+            hideallPanels();
+            logsPanel.Visible = true;
+            LoadLogDataGridView();
         }
     }
 }

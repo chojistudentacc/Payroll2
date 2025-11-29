@@ -948,6 +948,40 @@ namespace Payroll
             return table;
         }
 
+        public DataTable GetHRNames()
+        {
+            DataTable table = new DataTable();
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    string sql = @"
+                    SELECT 
+                    (firstName + ' ' + lastName) AS EmployeeName,
+                    employeeID
+                    FROM hrData
+                    WHERE status = 'Active'
+                    ORDER BY firstName, lastName;
+                    ";
+
+                    using (SqlCommand cmd = new SqlCommand(sql, connection))
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                    {
+                        adapter.Fill(table);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Connection Exception: " + ex.ToString());
+            }
+
+            return table;
+        }
+
         public bool AddDepartment(string departmentName, string assignedManager, string managerName, string description)
         {
             try
@@ -1108,6 +1142,74 @@ namespace Payroll
                 MessageBox.Show("Error deleting department: " + ex.ToString());
                 return false;
             }
+        }
+
+        public bool AddLog(string adminName, string activity, string details)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    string sql = @"
+                    INSERT INTO logsData (date, Name, activity, details)
+                    VALUES (@date, @name, @activity, @details);
+                    ";
+
+                    using (SqlCommand cmd = new SqlCommand(sql, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@date", DateTime.Now);
+                        cmd.Parameters.AddWithValue("@name", adminName);
+                        cmd.Parameters.AddWithValue("@activity", activity);
+                        cmd.Parameters.AddWithValue("@details", details ?? string.Empty);
+
+                        int rowsAffected = cmd.ExecuteNonQuery();
+                        return rowsAffected > 0;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error adding log: " + ex.ToString());
+                return false;
+            }
+        }
+
+        public DataTable GetAllLogs()
+        {
+            DataTable table = new DataTable();
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    string sql = @"
+                    SELECT
+                    Id,
+                    date,
+                    Name,
+                    activity,
+                    details
+                    FROM logsData
+                    ORDER BY date DESC;
+                    ";
+
+                    using (SqlCommand cmd = new SqlCommand(sql, connection))
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                    {
+                        adapter.Fill(table);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Connection Exception: " + ex.ToString());
+            }
+
+            return table;
         }
     }
 }
