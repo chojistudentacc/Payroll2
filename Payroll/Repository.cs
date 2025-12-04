@@ -9,8 +9,8 @@ namespace Payroll
     public class Repository
     {
 
-        private string csvFilePath = @"C:\Users\User\Documents\EmployeeArchive.csv";
-        private readonly string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\User\\source\\repos\\Payroll2\\Payroll\\Payroll.mdf;Integrated Security=True";
+        private string csvFilePath = @"C:\Users\Choji Kodachi\Documents\!! Work !!\EmployeeArchive.csv";
+        private readonly string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\Choji Kodachi\\Documents\\!! Work !!\\Payroll-master\\Payroll\\Payroll.mdf\";Integrated Security=True";
 
         public DataTable SearchEmployees(string role, string keyword)
         {
@@ -53,7 +53,7 @@ namespace Payroll
             return table;
         }
 
-        public string GetStatus(string employeeID)
+        public string GetStatus(string employeeID, string role)
         {
             string status = "";
 
@@ -62,7 +62,19 @@ namespace Payroll
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    string query = "SELECT status FROM employeeData WHERE employeeID = @employeeID";
+
+                    string tableName = role switch
+                    {
+                        "Employee" => "employeeData",
+                        "Accountant" => "accountantData",
+                        "Human Resources" => "hrData",
+                        _ => null
+                    };
+
+                    if (string.IsNullOrEmpty(tableName))
+                        throw new ArgumentException("Invalid role specified.");
+
+                    string query = $"SELECT status FROM {tableName} WHERE employeeID = @employeeID";
 
                     using (SqlCommand cmd = new SqlCommand(query, connection))
                     {
@@ -70,7 +82,7 @@ namespace Payroll
 
                         object result = cmd.ExecuteScalar();
 
-                        if (result != null)
+                        if (result != null && result != DBNull.Value)
                         {
                             status = result.ToString();
                         }
@@ -84,6 +96,7 @@ namespace Payroll
 
             return status;
         }
+
 
         public string getPassword(string id, string role)
         {
@@ -557,14 +570,26 @@ namespace Payroll
             return null;
         }
 
-        public bool DropEmployee(string employeeID)
+        public bool DropEmployee(string employeeID, string role)
         {
             try
             {
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    string query = "DELETE FROM employeeData WHERE employeeID = @employeeID";
+
+                    string tableName = role switch
+                    {
+                        "Employee" => "employeeData",
+                        "Accountant" => "accountantData",
+                        "Human Resources" => "hrData",
+                        _ => null
+                    };
+
+                    if (string.IsNullOrEmpty(tableName))
+                        throw new ArgumentException("Invalid role specified.");
+
+                    string query = $"DELETE FROM {tableName} WHERE employeeID = @employeeID";
 
                     using (SqlCommand cmd = new SqlCommand(query, connection))
                     {
@@ -579,6 +604,7 @@ namespace Payroll
                 return false;
             }
         }
+
 
         public void ExportEmployeeToArchive(DataRow employeeData, string role)
         {

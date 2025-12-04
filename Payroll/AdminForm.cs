@@ -16,6 +16,7 @@ namespace Payroll
         LoginForm login;
         string userName;
         Repository repo;
+        ToolTip toolTip;
         private string selectedID = "";
         private string selectedRole = "";
         private string selectedPassword = "";
@@ -34,14 +35,32 @@ namespace Payroll
 
         private void InitializeSomething()
         {
+            toolTip = new ToolTip();
+            toolTip.AutoPopDelay = 5000;
+            toolTip.InitialDelay = 500;
+            toolTip.ShowAlways = true;
+
             welcomeLabel.Text = "Welcome, " + repo.getAdminID(userName);
             roleComboBox.Items.Add("Employee");
             roleComboBox.Items.Add("Human Resources");
             roleComboBox.Items.Add("Accountant");
+            roleComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            toolTip.SetToolTip(roleComboBox, "Sort by position");
 
             positionComboBox.Items.Add("Employee");
             positionComboBox.Items.Add("Accountant");
             positionComboBox.Items.Add("Human Resources");
+            positionComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            // reports combo box
+            reportsDropDownCB.Items.Add("Inbox");
+            reportsDropDownCB.Items.Add("Unread");
+            reportsDropDownCB.Items.Add("HR Dept.");
+            reportsDropDownCB.Items.Add("Accounting");
+            reportsDropDownCB.Items.Add("Drafts");
+            reportsDropDownCB.Items.Add("Archive");
+            reportsDropDownCB.DropDownStyle = ComboBoxStyle.DropDownList;
+            toolTip.SetToolTip(reportsDropDownCB, "Select by category");
 
             // labas total employees
             UpdateEmployeeCount();
@@ -645,7 +664,7 @@ namespace Payroll
                 return;
             }
 
-            string status = repo.GetStatus(selectedID);
+            string status = repo.GetStatus(selectedID, selectedRole);
 
             if (status != "Inactive")
             {
@@ -669,7 +688,7 @@ namespace Payroll
 
             repo.ExportEmployeeToArchive(employeeRow, role);
 
-            if (repo.DropEmployee(selectedID))
+            if (repo.DropEmployee(selectedID, selectedRole))
             {
                 MessageBox.Show("Employee dropped and archived.");
                 fillDataGridView();
@@ -753,6 +772,9 @@ namespace Payroll
         {
             hideallPanels();
             reportsPanel.Visible = true;
+            reportsEmailTB.Multiline = true;
+            reportsEmailTB.ReadOnly = true;
+            reportsEmailTB.ScrollBars = ScrollBars.Vertical;
         }
 
         private void logButt_Click(object sender, EventArgs e)

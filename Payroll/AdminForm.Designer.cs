@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle13 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle14 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
             sidePanel = new Panel();
             welcomeLabel = new Label();
             reportButt = new Button();
@@ -140,16 +140,21 @@
             deleteDepartmentButton = new Button();
             editDepartmentButton = new Button();
             logsPanel = new Panel();
+            panel4 = new Panel();
+            dateTimePicker2 = new DateTimePicker();
+            label24 = new Label();
+            dateTimePicker1 = new DateTimePicker();
+            label23 = new Label();
+            logDataGridView = new DataGridView();
+            panel8 = new Panel();
             label16 = new Label();
             reportsPanel = new Panel();
+            reportsPanelInbox = new Panel();
+            reportsDropDownCB = new ComboBox();
+            panel10 = new Panel();
             label14 = new Label();
-            panel4 = new Panel();
-            panel8 = new Panel();
-            logDataGridView = new DataGridView();
-            label23 = new Label();
-            dateTimePicker1 = new DateTimePicker();
-            label24 = new Label();
-            dateTimePicker2 = new DateTimePicker();
+            backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            reportsEmailTB = new TextBox();
             sidePanel.SuspendLayout();
             dashPanel.SuspendLayout();
             panel1.SuspendLayout();
@@ -167,9 +172,10 @@
             departmentDataGridPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)departmentDataGridView).BeginInit();
             logsPanel.SuspendLayout();
-            reportsPanel.SuspendLayout();
             panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)logDataGridView).BeginInit();
+            reportsPanel.SuspendLayout();
+            reportsPanelInbox.SuspendLayout();
             SuspendLayout();
             // 
             // sidePanel
@@ -468,36 +474,36 @@
             userDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             userDataGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             userDataGridView.BackgroundColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle8.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle8.ForeColor = Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = Color.FromArgb(179, 79, 84);
-            dataGridViewCellStyle8.SelectionForeColor = Color.FromArgb(255, 209, 211);
-            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
-            userDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(146, 45, 51);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(179, 79, 84);
+            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(255, 209, 211);
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            userDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             userDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle9.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle9.ForeColor = Color.White;
-            dataGridViewCellStyle9.SelectionBackColor = Color.FromArgb(179, 79, 84);
-            dataGridViewCellStyle9.SelectionForeColor = Color.FromArgb(255, 209, 211);
-            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.True;
-            userDataGridView.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(146, 45, 51);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(179, 79, 84);
+            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(255, 209, 211);
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            userDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             userDataGridView.EnableHeadersVisualStyles = false;
             userDataGridView.GridColor = Color.White;
             userDataGridView.Location = new Point(0, 190);
             userDataGridView.Name = "userDataGridView";
             userDataGridView.ReadOnly = true;
-            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle10.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle10.ForeColor = Color.White;
-            dataGridViewCellStyle10.SelectionBackColor = Color.FromArgb(179, 79, 84);
-            dataGridViewCellStyle10.SelectionForeColor = Color.FromArgb(255, 209, 211);
-            dataGridViewCellStyle10.WrapMode = DataGridViewTriState.True;
-            userDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(146, 45, 51);
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(179, 79, 84);
+            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(255, 209, 211);
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            userDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             userDataGridView.RowHeadersVisible = false;
             userDataGridView.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             userDataGridView.Size = new Size(1092, 371);
@@ -1349,14 +1355,14 @@
             departmentDataGridView.AllowUserToResizeRows = false;
             departmentDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             departmentDataGridView.BackgroundColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = Color.Transparent;
-            dataGridViewCellStyle11.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle11.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = DataGridViewTriState.True;
-            departmentDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.Transparent;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            departmentDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             departmentDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             departmentDataGridView.Location = new Point(17, 101);
             departmentDataGridView.Name = "departmentDataGridView";
@@ -1426,33 +1432,6 @@
             logsPanel.Size = new Size(1116, 784);
             logsPanel.TabIndex = 4;
             // 
-            // label16
-            // 
-            label16.AutoSize = true;
-            label16.Location = new Point(6, 9);
-            label16.Name = "label16";
-            label16.Size = new Size(58, 15);
-            label16.TabIndex = 0;
-            label16.Text = "logsPanel";
-            // 
-            // reportsPanel
-            // 
-            reportsPanel.BackColor = Color.FromArgb(224, 224, 224);
-            reportsPanel.Controls.Add(label14);
-            reportsPanel.Location = new Point(273, 0);
-            reportsPanel.Name = "reportsPanel";
-            reportsPanel.Size = new Size(1116, 784);
-            reportsPanel.TabIndex = 5;
-            // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.Location = new Point(6, 9);
-            label14.Name = "label14";
-            label14.Size = new Size(73, 15);
-            label14.TabIndex = 0;
-            label14.Text = "reportsPanel";
-            // 
             // panel4
             // 
             panel4.BackColor = Color.White;
@@ -1467,76 +1446,13 @@
             panel4.Size = new Size(1092, 721);
             panel4.TabIndex = 1;
             // 
-            // panel8
+            // dateTimePicker2
             // 
-            panel8.BackgroundImage = Properties.Resources.PanelBG;
-            panel8.BackgroundImageLayout = ImageLayout.Stretch;
-            panel8.Location = new Point(0, 0);
-            panel8.Name = "panel8";
-            panel8.Size = new Size(1092, 67);
-            panel8.TabIndex = 2;
-            // 
-            // logDataGridView
-            // 
-            logDataGridView.AllowUserToAddRows = false;
-            logDataGridView.AllowUserToDeleteRows = false;
-            logDataGridView.AllowUserToResizeColumns = false;
-            logDataGridView.AllowUserToResizeRows = false;
-            logDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            logDataGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            logDataGridView.BackgroundColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle12.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.BackColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle12.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle12.ForeColor = Color.White;
-            dataGridViewCellStyle12.SelectionBackColor = Color.FromArgb(179, 79, 84);
-            dataGridViewCellStyle12.SelectionForeColor = Color.FromArgb(255, 209, 211);
-            dataGridViewCellStyle12.WrapMode = DataGridViewTriState.True;
-            logDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
-            logDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle13.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle13.BackColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle13.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle13.ForeColor = Color.White;
-            dataGridViewCellStyle13.SelectionBackColor = Color.FromArgb(179, 79, 84);
-            dataGridViewCellStyle13.SelectionForeColor = Color.FromArgb(255, 209, 211);
-            dataGridViewCellStyle13.WrapMode = DataGridViewTriState.True;
-            logDataGridView.DefaultCellStyle = dataGridViewCellStyle13;
-            logDataGridView.EnableHeadersVisualStyles = false;
-            logDataGridView.GridColor = Color.White;
-            logDataGridView.Location = new Point(6, 159);
-            logDataGridView.Name = "logDataGridView";
-            logDataGridView.ReadOnly = true;
-            dataGridViewCellStyle14.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.BackColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle14.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle14.ForeColor = Color.White;
-            dataGridViewCellStyle14.SelectionBackColor = Color.FromArgb(179, 79, 84);
-            dataGridViewCellStyle14.SelectionForeColor = Color.FromArgb(255, 209, 211);
-            dataGridViewCellStyle14.WrapMode = DataGridViewTriState.True;
-            logDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
-            logDataGridView.RowHeadersVisible = false;
-            logDataGridView.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            logDataGridView.Size = new Size(1080, 476);
-            logDataGridView.TabIndex = 1;
-            // 
-            // label23
-            // 
-            label23.AutoSize = true;
-            label23.Font = new Font("Segoe UI", 15.75F);
-            label23.Location = new Point(38, 103);
-            label23.Name = "label23";
-            label23.Size = new Size(185, 30);
-            label23.TabIndex = 4;
-            label23.Text = "Select date period:";
-            // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.Font = new Font("Segoe UI", 15.75F);
-            dateTimePicker1.Location = new Point(258, 103);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(270, 35);
-            dateTimePicker1.TabIndex = 5;
+            dateTimePicker2.Font = new Font("Segoe UI", 15.75F);
+            dateTimePicker2.Location = new Point(664, 104);
+            dateTimePicker2.Name = "dateTimePicker2";
+            dateTimePicker2.Size = new Size(270, 35);
+            dateTimePicker2.TabIndex = 7;
             // 
             // label24
             // 
@@ -1548,13 +1464,142 @@
             label24.TabIndex = 6;
             label24.Text = "to";
             // 
-            // dateTimePicker2
+            // dateTimePicker1
             // 
-            dateTimePicker2.Font = new Font("Segoe UI", 15.75F);
-            dateTimePicker2.Location = new Point(664, 104);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(270, 35);
-            dateTimePicker2.TabIndex = 7;
+            dateTimePicker1.Font = new Font("Segoe UI", 15.75F);
+            dateTimePicker1.Location = new Point(258, 103);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(270, 35);
+            dateTimePicker1.TabIndex = 5;
+            // 
+            // label23
+            // 
+            label23.AutoSize = true;
+            label23.Font = new Font("Segoe UI", 15.75F);
+            label23.Location = new Point(38, 103);
+            label23.Name = "label23";
+            label23.Size = new Size(185, 30);
+            label23.TabIndex = 4;
+            label23.Text = "Select date period:";
+            // 
+            // logDataGridView
+            // 
+            logDataGridView.AllowUserToAddRows = false;
+            logDataGridView.AllowUserToDeleteRows = false;
+            logDataGridView.AllowUserToResizeColumns = false;
+            logDataGridView.AllowUserToResizeRows = false;
+            logDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            logDataGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            logDataGridView.BackgroundColor = Color.FromArgb(146, 45, 51);
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(146, 45, 51);
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle5.ForeColor = Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(179, 79, 84);
+            dataGridViewCellStyle5.SelectionForeColor = Color.FromArgb(255, 209, 211);
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            logDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            logDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = Color.FromArgb(146, 45, 51);
+            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle6.ForeColor = Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(179, 79, 84);
+            dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(255, 209, 211);
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
+            logDataGridView.DefaultCellStyle = dataGridViewCellStyle6;
+            logDataGridView.EnableHeadersVisualStyles = false;
+            logDataGridView.GridColor = Color.White;
+            logDataGridView.Location = new Point(6, 159);
+            logDataGridView.Name = "logDataGridView";
+            logDataGridView.ReadOnly = true;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = Color.FromArgb(146, 45, 51);
+            dataGridViewCellStyle7.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle7.ForeColor = Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(179, 79, 84);
+            dataGridViewCellStyle7.SelectionForeColor = Color.FromArgb(255, 209, 211);
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
+            logDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            logDataGridView.RowHeadersVisible = false;
+            logDataGridView.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            logDataGridView.Size = new Size(1080, 476);
+            logDataGridView.TabIndex = 1;
+            // 
+            // panel8
+            // 
+            panel8.BackgroundImage = Properties.Resources.PanelBG;
+            panel8.BackgroundImageLayout = ImageLayout.Stretch;
+            panel8.Location = new Point(0, 0);
+            panel8.Name = "panel8";
+            panel8.Size = new Size(1092, 67);
+            panel8.TabIndex = 2;
+            // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.Location = new Point(6, 9);
+            label16.Name = "label16";
+            label16.Size = new Size(58, 15);
+            label16.TabIndex = 0;
+            label16.Text = "logsPanel";
+            // 
+            // reportsPanel
+            // 
+            reportsPanel.BackColor = Color.FromArgb(224, 224, 224);
+            reportsPanel.Controls.Add(reportsPanelInbox);
+            reportsPanel.Controls.Add(label14);
+            reportsPanel.Location = new Point(273, 0);
+            reportsPanel.Name = "reportsPanel";
+            reportsPanel.Size = new Size(1116, 784);
+            reportsPanel.TabIndex = 5;
+            // 
+            // reportsPanelInbox
+            // 
+            reportsPanelInbox.BackColor = Color.White;
+            reportsPanelInbox.Controls.Add(reportsEmailTB);
+            reportsPanelInbox.Controls.Add(reportsDropDownCB);
+            reportsPanelInbox.Controls.Add(panel10);
+            reportsPanelInbox.Location = new Point(12, 32);
+            reportsPanelInbox.Name = "reportsPanelInbox";
+            reportsPanelInbox.Size = new Size(1092, 721);
+            reportsPanelInbox.TabIndex = 2;
+            // 
+            // reportsDropDownCB
+            // 
+            reportsDropDownCB.BackColor = Color.FromArgb(244, 240, 224);
+            reportsDropDownCB.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            reportsDropDownCB.ForeColor = Color.FromArgb(91, 12, 12);
+            reportsDropDownCB.FormattingEnabled = true;
+            reportsDropDownCB.Location = new Point(21, 170);
+            reportsDropDownCB.Name = "reportsDropDownCB";
+            reportsDropDownCB.Size = new Size(280, 33);
+            reportsDropDownCB.TabIndex = 3;
+            // 
+            // panel10
+            // 
+            panel10.BackgroundImage = Properties.Resources.PanelBG;
+            panel10.BackgroundImageLayout = ImageLayout.Stretch;
+            panel10.Location = new Point(0, 0);
+            panel10.Name = "panel10";
+            panel10.Size = new Size(1092, 67);
+            panel10.TabIndex = 2;
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Location = new Point(6, 9);
+            label14.Name = "label14";
+            label14.Size = new Size(73, 15);
+            label14.TabIndex = 0;
+            label14.Text = "reportsPanel";
+            // 
+            // reportsEmailTB
+            // 
+            reportsEmailTB.Location = new Point(444, 145);
+            reportsEmailTB.Name = "reportsEmailTB";
+            reportsEmailTB.Size = new Size(490, 23);
+            reportsEmailTB.TabIndex = 4;
             // 
             // AdminForm
             // 
@@ -1563,11 +1608,11 @@
             BackColor = Color.FromArgb(17, 24, 34);
             ClientSize = new Size(1389, 782);
             Controls.Add(sidePanel);
+            Controls.Add(reportsPanel);
             Controls.Add(logsPanel);
             Controls.Add(userPanel);
             Controls.Add(departmentPanel);
             Controls.Add(dashPanel);
-            Controls.Add(reportsPanel);
             Name = "AdminForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AdminForm";
@@ -1601,11 +1646,13 @@
             ((System.ComponentModel.ISupportInitialize)departmentDataGridView).EndInit();
             logsPanel.ResumeLayout(false);
             logsPanel.PerformLayout();
-            reportsPanel.ResumeLayout(false);
-            reportsPanel.PerformLayout();
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)logDataGridView).EndInit();
+            reportsPanel.ResumeLayout(false);
+            reportsPanel.PerformLayout();
+            reportsPanelInbox.ResumeLayout(false);
+            reportsPanelInbox.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -1697,7 +1744,7 @@
         private RadioButton editEmployeeInactiveRB;
         private RadioButton editEmployeeActiveRB;
         private Label label13;
-        private ComboBox comboBox1;
+        private ComboBox reportsDropDownCB;
         private Label label14;
         private TextBox editEmployeePasswordTB;
         private TextBox editEmployeeAdressTB;
@@ -1730,5 +1777,9 @@
         private DateTimePicker dateTimePicker2;
         private Label label24;
         private DateTimePicker dateTimePicker1;
+        private Panel reportsPanelInbox;
+        private Panel panel10;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private TextBox reportsEmailTB;
     }
 }
