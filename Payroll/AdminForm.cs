@@ -62,12 +62,37 @@ namespace Payroll
             reportsDropDownCB.DropDownStyle = ComboBoxStyle.DropDownList;
             toolTip.SetToolTip(reportsDropDownCB, "Select by category");
 
+            // Date pickers initialization
+            dateTimePicker1.Value = DateTime.Today.AddDays(-30); // Default to last 30 days
+            dateTimePicker2.Value = DateTime.Today;
+            dateTimePicker1.ValueChanged += DateTimePicker_ValueChanged;
+            dateTimePicker2.ValueChanged += DateTimePicker_ValueChanged;
+            toolTip.SetToolTip(dateTimePicker1, "Start date");
+            toolTip.SetToolTip(dateTimePicker2, "End date");
+
             // labas total employees
             UpdateEmployeeCount();
 
             // para lumabas agad dashboard
             hideallPanels();
             dashPanel.Visible = true;
+        }
+
+        private void DateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            FilterLogsByDateRange();
+        }
+
+        private void FilterLogsByDateRange()
+        {
+            if (dateTimePicker1.Value > dateTimePicker2.Value)
+            {
+                MessageBox.Show("Start date cannot be after end date.");
+                return;
+            }
+
+            DataTable filteredLogs = repo.GetLogsByDateRange(dateTimePicker1.Value, dateTimePicker2.Value);
+            logDataGridView.DataSource = filteredLogs;
         }
 
         private void UpdateEmployeeCount()
@@ -371,6 +396,10 @@ namespace Payroll
 
             if (repo.AddDepartment(departmentName, assignedManager, managerName, description))
             {
+                string activity = "Add Department";
+                string logDetails = $"Added Department: {departmentName} \nManager: {managerName} \nDescription: {description}";
+                repo.AddLog(repo.getAdminID(userName), activity, logDetails);
+
                 MessageBox.Show("Department added successfully!");
                 ClearDepartmentForm();
                 departmentAddPanel.Visible = false;
@@ -580,6 +609,10 @@ namespace Payroll
                         r.Status = editEmployeeActiveRB.Checked ? "Active" : "Inactive";
                         repo.UpdateEmployee(r);
 
+                        string activity = "Update Employee";
+                        string logDetails = $"Updated Employee: {r.FirstName} {r.LastName} \nEmployee ID: {r.EmployeeID} \nStatus: {r.Status}";
+                        repo.AddLog(repo.getAdminID(userName), activity, logDetails);
+
                         emptyEditEmployeeTB();
                         userPanelDataGrid.Visible = true;
                         editEmployeePanel.Visible = false;
@@ -599,6 +632,10 @@ namespace Payroll
                         r.Status = editEmployeeActiveRB.Checked ? "Active" : "Inactive";
                         repo.UpdateAccountant(r);
 
+                        string activity = "Update Accountant";
+                        string logDetails = $"Updated Accountant: {r.FirstName} {r.LastName} \nEmployee ID: {r.EmployeeID} \nStatus: {r.Status}";
+                        repo.AddLog(repo.getAdminID(userName), activity, logDetails);
+
                         emptyEditEmployeeTB();
                         userPanelDataGrid.Visible = true;
                         editEmployeePanel.Visible = false;
@@ -617,6 +654,10 @@ namespace Payroll
                         r.Password = selectedPassword;
                         r.Status = editEmployeeActiveRB.Checked ? "Active" : "Inactive";
                         repo.UpdateHR(r);
+
+                        string activity = "Update HR";
+                        string logDetails = $"Updated HR: {r.FirstName} {r.LastName} \nEmployee ID: {r.EmployeeID} \nStatus: {r.Status}";
+                        repo.AddLog(repo.getAdminID(userName), activity, logDetails);
 
                         emptyEditEmployeeTB();
                         userPanelDataGrid.Visible = true;
@@ -685,11 +726,16 @@ namespace Payroll
             DataRow employeeRow = drv.Row;
 
             string role = roleComboBox.Text;
+            string employeeName = $"{employeeRow["firstName"]} {employeeRow["lastName"]}";
 
             repo.ExportEmployeeToArchive(employeeRow, role);
 
             if (repo.DropEmployee(selectedID, selectedRole))
             {
+                string activity = "Delete Employee";
+                string logDetails = $"Deleted {selectedRole}: {employeeName} \nEmployee ID: {selectedID}";
+                repo.AddLog(repo.getAdminID(userName), activity, logDetails);
+
                 MessageBox.Show("Employee dropped and archived.");
                 fillDataGridView();
                 selectedID = "";
@@ -726,6 +772,10 @@ namespace Payroll
 
             if (repo.UpdateDepartment(originalDepartmentName, departmentName, assignedManager, managerName, description))
             {
+                string activity = "Update Department";
+                string logDetails = $"Updated Department: {departmentName} \nManager: {managerName} \nDescription: {description}";
+                repo.AddLog(repo.getAdminID(userName), activity, logDetails);
+
                 MessageBox.Show("Department updated successfully!");
                 departmentEditPanel.Visible = false;
                 departmentDataGridPanel.Visible = true;
@@ -758,6 +808,10 @@ namespace Payroll
 
             if (repo.DeleteDepartment(selectedDepartmentName))
             {
+                string activity = "Delete Department";
+                string logDetails = $"Deleted Department: {selectedDepartmentName}";
+                repo.AddLog(repo.getAdminID(userName), activity, logDetails);
+
                 MessageBox.Show("Department deleted successfully!");
                 selectedDepartmentName = "";
                 LoadDepartmentDataGridView();
@@ -781,7 +835,9 @@ namespace Payroll
         {
             hideallPanels();
             logsPanel.Visible = true;
-            LoadLogDataGridView();
+            dateTimePicker1.Value = DateTime.Today.AddDays(-30);
+            dateTimePicker2.Value = DateTime.Today;
+            FilterLogsByDateRange();
         }
     }
 }

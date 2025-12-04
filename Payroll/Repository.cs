@@ -9,8 +9,9 @@ namespace Payroll
     public class Repository
     {
 
-        private string csvFilePath = @"C:\Users\Choji Kodachi\Documents\!! Work !!\EmployeeArchive.csv";
-        private readonly string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\Choji Kodachi\\Documents\\!! Work !!\\Payroll-master\\Payroll\\Payroll.mdf\";Integrated Security=True";
+        private string csvFilePath = @"C:\Users\User\Documents\EmployeeArchive.csv";
+        private readonly string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\User\\source\\repos\\Payroll2\\Payroll\\Payroll.mdf;Integrated Security=True";
+
 
         public DataTable SearchEmployees(string role, string keyword)
         {
@@ -1227,6 +1228,48 @@ namespace Payroll
                     using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
                     {
                         adapter.Fill(table);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Connection Exception: " + ex.ToString());
+            }
+
+            return table;
+        }
+
+        public DataTable GetLogsByDateRange(DateTime startDate, DateTime endDate)
+        {
+            DataTable table = new DataTable();
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    string sql = @"
+                    SELECT
+                    Id,
+                    date,
+                    Name,
+                    activity,
+                    details
+                    FROM logsData
+                    WHERE date >= @startDate AND date < DATEADD(day, 1, @endDate)
+                    ORDER BY date DESC;
+                    ";
+
+                    using (SqlCommand cmd = new SqlCommand(sql, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@startDate", startDate.Date);
+                        cmd.Parameters.AddWithValue("@endDate", endDate.Date);
+
+                        using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                        {
+                            adapter.Fill(table);
+                        }
                     }
                 }
             }

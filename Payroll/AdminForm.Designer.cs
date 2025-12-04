@@ -150,11 +150,11 @@
             label16 = new Label();
             reportsPanel = new Panel();
             reportsPanelInbox = new Panel();
+            reportsEmailTB = new TextBox();
             reportsDropDownCB = new ComboBox();
             panel10 = new Panel();
             label14 = new Label();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            reportsEmailTB = new TextBox();
             sidePanel.SuspendLayout();
             dashPanel.SuspendLayout();
             panel1.SuspendLayout();
@@ -1565,6 +1565,13 @@
             reportsPanelInbox.Size = new Size(1092, 721);
             reportsPanelInbox.TabIndex = 2;
             // 
+            // reportsEmailTB
+            // 
+            reportsEmailTB.Location = new Point(444, 145);
+            reportsEmailTB.Name = "reportsEmailTB";
+            reportsEmailTB.Size = new Size(490, 23);
+            reportsEmailTB.TabIndex = 4;
+            // 
             // reportsDropDownCB
             // 
             reportsDropDownCB.BackColor = Color.FromArgb(244, 240, 224);
@@ -1594,13 +1601,6 @@
             label14.TabIndex = 0;
             label14.Text = "reportsPanel";
             // 
-            // reportsEmailTB
-            // 
-            reportsEmailTB.Location = new Point(444, 145);
-            reportsEmailTB.Name = "reportsEmailTB";
-            reportsEmailTB.Size = new Size(490, 23);
-            reportsEmailTB.TabIndex = 4;
-            // 
             // AdminForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -1608,11 +1608,11 @@
             BackColor = Color.FromArgb(17, 24, 34);
             ClientSize = new Size(1389, 782);
             Controls.Add(sidePanel);
-            Controls.Add(reportsPanel);
             Controls.Add(logsPanel);
             Controls.Add(userPanel);
             Controls.Add(departmentPanel);
             Controls.Add(dashPanel);
+            Controls.Add(reportsPanel);
             Name = "AdminForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AdminForm";
