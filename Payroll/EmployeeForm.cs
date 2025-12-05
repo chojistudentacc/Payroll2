@@ -18,7 +18,6 @@ namespace Payroll
         public EmployeeForm(LoginForm form)
         {
             InitializeComponent();
-            currentDateLabel.Text = DateTime.Now.ToString("MMMM dd, yyyy");
             this.form = form;
         }
 
@@ -35,26 +34,21 @@ namespace Payroll
 
         private void hideAllPanels()
         {
-            payslipPanel.Visible = false;
-            dashboardPanel.Visible = false;
         }
 
         private void dashboardButton_Click(object sender, EventArgs e)
         {
             hideAllPanels();
-            dashboardPanel.Visible = true;
         }
 
         private void payslipButton_Click(object sender, EventArgs e)
         {
             hideAllPanels();
-            payslipPanel.Visible = true;
         }
 
         private void employeesButton_Click(object sender, EventArgs e)
         {
             hideAllPanels();
-            employeesPanel.Visible = true;
         }
     }
 }
