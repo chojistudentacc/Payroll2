@@ -324,18 +324,6 @@ namespace Payroll
             LoadDepartmentDataGridView();
         }
 
-        private void LoadLogDataGridView()
-        {
-            try
-            {
-                DataTable logs = repo.GetAllLogs();
-                logDataGridView.DataSource = logs;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error loading logs: " + ex.ToString());
-            }
-        }
 
         private void LoadDepartmentDataGridView()
         {
