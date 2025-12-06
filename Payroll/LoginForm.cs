@@ -98,7 +98,7 @@ namespace Payroll
 
         private void exitButt_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void LoginForm_Load(object sender, EventArgs e)
