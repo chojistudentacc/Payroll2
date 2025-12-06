@@ -814,9 +814,46 @@ namespace Payroll
         {
             hideallPanels();
             reportsPanel.Visible = true;
-            reportsEmailTB.Multiline = true;
-            reportsEmailTB.ReadOnly = true;
-            reportsEmailTB.ScrollBars = ScrollBars.Vertical;
+            fillReportInboxPanel();
+        }
+
+        private void fillReportInboxPanel()
+        {
+            int messagesCount = 10;
+            inboxPanel.AutoScroll = true;
+
+            int startY = 16;
+            int spacing = 20;
+            int boxHeight = 127;
+            int boxWidth = 610;
+
+            for (int i = 0; i < messagesCount; i++)
+            {
+                RichTextBox rich = new RichTextBox();
+                rich.Size = new Size(boxWidth, boxHeight);
+                rich.Location = new Point(14, startY + i * (boxHeight + spacing + 35));
+                rich.ReadOnly = true;
+                rich.TabStop = false;
+                rich.Cursor = Cursors.Default;
+                rich.GotFocus += (s, e) => inboxPanel.Focus();
+                rich.Name = $"rich{i + 1}";
+                rich.Text = $"Message {i + 1}";
+
+                inboxPanel.Controls.Add(rich);
+
+                Button viewButton = new Button();
+                viewButton.Size = new Size(80, 30);
+                viewButton.Location = new Point(rich.Left, rich.Bottom + 5);
+                viewButton.Text = "View";
+                viewButton.Name = $"btnView{i + 1}";
+
+                viewButton.Click += (sender, e) =>
+                {
+                    MessageBox.Show($"Viewing details for {rich.Text}", "Message Viewer");
+                };
+
+                inboxPanel.Controls.Add(viewButton);
+            }
         }
 
         private void logButt_Click(object sender, EventArgs e)

@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle15 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle16 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle17 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle18 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle19 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle20 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle21 = new DataGridViewCellStyle();
             sidePanel = new Panel();
             welcomeLabel = new Label();
             reportButt = new Button();
@@ -81,7 +81,6 @@
             label21 = new Label();
             label22 = new Label();
             panel7 = new Panel();
-            editEmployeeLabel = new Label();
             userPanelAdd = new Panel();
             cancelButt = new Button();
             clearButt = new Button();
@@ -150,7 +149,7 @@
             label16 = new Label();
             reportsPanel = new Panel();
             reportsPanelInbox = new Panel();
-            reportsEmailTB = new TextBox();
+            inboxPanel = new Panel();
             reportsDropDownCB = new ComboBox();
             panel10 = new Panel();
             label14 = new Label();
@@ -164,7 +163,6 @@
             userPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)userDataGridView).BeginInit();
             editEmployeePanel.SuspendLayout();
-            panel7.SuspendLayout();
             userPanelAdd.SuspendLayout();
             departmentPanel.SuspendLayout();
             departmentEditPanel.SuspendLayout();
@@ -359,9 +357,9 @@
             // 
             userPanel.BackColor = Color.FromArgb(224, 224, 224);
             userPanel.Controls.Add(label1);
-            userPanel.Controls.Add(userPanelDataGrid);
             userPanel.Controls.Add(editEmployeePanel);
             userPanel.Controls.Add(userPanelAdd);
+            userPanel.Controls.Add(userPanelDataGrid);
             userPanel.Location = new Point(273, 0);
             userPanel.Name = "userPanel";
             userPanel.Size = new Size(1116, 784);
@@ -474,37 +472,37 @@
             userDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             userDataGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             userDataGridView.BackgroundColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(179, 79, 84);
-            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(255, 209, 211);
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            userDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle15.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle15.BackColor = Color.FromArgb(146, 45, 51);
+            dataGridViewCellStyle15.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle15.ForeColor = Color.White;
+            dataGridViewCellStyle15.SelectionBackColor = Color.FromArgb(179, 79, 84);
+            dataGridViewCellStyle15.SelectionForeColor = Color.FromArgb(255, 209, 211);
+            dataGridViewCellStyle15.WrapMode = DataGridViewTriState.True;
+            userDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
             userDataGridView.ColumnHeadersHeight = 29;
             userDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(179, 79, 84);
-            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(255, 209, 211);
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            userDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle16.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle16.BackColor = Color.FromArgb(146, 45, 51);
+            dataGridViewCellStyle16.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle16.ForeColor = Color.White;
+            dataGridViewCellStyle16.SelectionBackColor = Color.FromArgb(179, 79, 84);
+            dataGridViewCellStyle16.SelectionForeColor = Color.FromArgb(255, 209, 211);
+            dataGridViewCellStyle16.WrapMode = DataGridViewTriState.True;
+            userDataGridView.DefaultCellStyle = dataGridViewCellStyle16;
             userDataGridView.EnableHeadersVisualStyles = false;
             userDataGridView.GridColor = Color.White;
             userDataGridView.Location = new Point(0, 190);
             userDataGridView.Name = "userDataGridView";
             userDataGridView.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle3.ForeColor = Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(179, 79, 84);
-            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(255, 209, 211);
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            userDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle17.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle17.BackColor = Color.FromArgb(146, 45, 51);
+            dataGridViewCellStyle17.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle17.ForeColor = Color.White;
+            dataGridViewCellStyle17.SelectionBackColor = Color.FromArgb(179, 79, 84);
+            dataGridViewCellStyle17.SelectionForeColor = Color.FromArgb(255, 209, 211);
+            dataGridViewCellStyle17.WrapMode = DataGridViewTriState.True;
+            userDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle17;
             userDataGridView.RowHeadersVisible = false;
             userDataGridView.RowHeadersWidth = 51;
             userDataGridView.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
@@ -514,7 +512,7 @@
             // 
             // userPanel1
             // 
-            userPanel1.BackgroundImage = Properties.Resources.PanelBG;
+            userPanel1.BackgroundImage = Properties.Resources.TopPanelBg;
             userPanel1.BackgroundImageLayout = ImageLayout.Stretch;
             userPanel1.Location = new Point(0, 0);
             userPanel1.Name = "userPanel1";
@@ -759,23 +757,12 @@
             // 
             // panel7
             // 
-            panel7.BackgroundImage = Properties.Resources.PanelBG;
+            panel7.BackgroundImage = Properties.Resources.TopPanelBg;
             panel7.BackgroundImageLayout = ImageLayout.Stretch;
-            panel7.Controls.Add(editEmployeeLabel);
             panel7.Location = new Point(0, 0);
             panel7.Name = "panel7";
             panel7.Size = new Size(1092, 67);
             panel7.TabIndex = 2;
-            // 
-            // editEmployeeLabel
-            // 
-            editEmployeeLabel.AutoSize = true;
-            editEmployeeLabel.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
-            editEmployeeLabel.Location = new Point(57, 22);
-            editEmployeeLabel.Name = "editEmployeeLabel";
-            editEmployeeLabel.Size = new Size(134, 25);
-            editEmployeeLabel.TabIndex = 30;
-            editEmployeeLabel.Text = "Edit Employee";
             // 
             // userPanelAdd
             // 
@@ -1068,7 +1055,7 @@
             // 
             // userPanel3
             // 
-            userPanel3.BackgroundImage = Properties.Resources.PanelBG;
+            userPanel3.BackgroundImage = Properties.Resources.TopPanelBg;
             userPanel3.BackgroundImageLayout = ImageLayout.Stretch;
             userPanel3.Location = new Point(0, 0);
             userPanel3.Name = "userPanel3";
@@ -1079,9 +1066,9 @@
             // 
             departmentPanel.BackColor = Color.FromArgb(224, 224, 224);
             departmentPanel.Controls.Add(label4);
+            departmentPanel.Controls.Add(departmentDataGridPanel);
             departmentPanel.Controls.Add(departmentEditPanel);
             departmentPanel.Controls.Add(departmentAddPanel);
-            departmentPanel.Controls.Add(departmentDataGridPanel);
             departmentPanel.Location = new Point(273, 0);
             departmentPanel.Name = "departmentPanel";
             departmentPanel.Size = new Size(1116, 784);
@@ -1210,7 +1197,8 @@
             // 
             // panel6
             // 
-            panel6.BackgroundImage = Properties.Resources.PanelBG;
+            panel6.BackgroundImage = Properties.Resources.TopPanelBg;
+            panel6.BackgroundImageLayout = ImageLayout.Stretch;
             panel6.Location = new Point(0, 0);
             panel6.Name = "panel6";
             panel6.Size = new Size(1092, 67);
@@ -1330,7 +1318,8 @@
             // 
             // panel5
             // 
-            panel5.BackgroundImage = Properties.Resources.PanelBG;
+            panel5.BackgroundImage = Properties.Resources.TopPanelBg;
+            panel5.BackgroundImageLayout = ImageLayout.Stretch;
             panel5.Location = new Point(0, 0);
             panel5.Name = "panel5";
             panel5.Size = new Size(1092, 67);
@@ -1357,14 +1346,14 @@
             departmentDataGridView.AllowUserToResizeRows = false;
             departmentDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             departmentDataGridView.BackgroundColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = Color.Transparent;
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            departmentDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle18.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = Color.Transparent;
+            dataGridViewCellStyle18.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle18.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle18.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle18.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle18.WrapMode = DataGridViewTriState.True;
+            departmentDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle18;
             departmentDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             departmentDataGridView.Location = new Point(17, 101);
             departmentDataGridView.Name = "departmentDataGridView";
@@ -1377,7 +1366,8 @@
             // 
             // panel3
             // 
-            panel3.BackgroundImage = Properties.Resources.PanelBG;
+            panel3.BackgroundImage = Properties.Resources.TopPanelBg;
+            panel3.BackgroundImageLayout = ImageLayout.Stretch;
             panel3.Location = new Point(0, 0);
             panel3.Name = "panel3";
             panel3.Size = new Size(1092, 67);
@@ -1428,8 +1418,8 @@
             // logsPanel
             // 
             logsPanel.BackColor = Color.FromArgb(224, 224, 224);
-            logsPanel.Controls.Add(panel4);
             logsPanel.Controls.Add(label16);
+            logsPanel.Controls.Add(panel4);
             logsPanel.Location = new Point(273, 0);
             logsPanel.Name = "logsPanel";
             logsPanel.Size = new Size(1116, 784);
@@ -1494,37 +1484,37 @@
             logDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             logDataGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             logDataGridView.BackgroundColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle5.ForeColor = Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(179, 79, 84);
-            dataGridViewCellStyle5.SelectionForeColor = Color.FromArgb(255, 209, 211);
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            logDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle19.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle19.BackColor = Color.FromArgb(146, 45, 51);
+            dataGridViewCellStyle19.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle19.ForeColor = Color.White;
+            dataGridViewCellStyle19.SelectionBackColor = Color.FromArgb(179, 79, 84);
+            dataGridViewCellStyle19.SelectionForeColor = Color.FromArgb(255, 209, 211);
+            dataGridViewCellStyle19.WrapMode = DataGridViewTriState.True;
+            logDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
             logDataGridView.ColumnHeadersHeight = 29;
             logDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle6.ForeColor = Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(179, 79, 84);
-            dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(255, 209, 211);
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
-            logDataGridView.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle20.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle20.BackColor = Color.FromArgb(146, 45, 51);
+            dataGridViewCellStyle20.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle20.ForeColor = Color.White;
+            dataGridViewCellStyle20.SelectionBackColor = Color.FromArgb(179, 79, 84);
+            dataGridViewCellStyle20.SelectionForeColor = Color.FromArgb(255, 209, 211);
+            dataGridViewCellStyle20.WrapMode = DataGridViewTriState.True;
+            logDataGridView.DefaultCellStyle = dataGridViewCellStyle20;
             logDataGridView.EnableHeadersVisualStyles = false;
             logDataGridView.GridColor = Color.White;
             logDataGridView.Location = new Point(6, 159);
             logDataGridView.Name = "logDataGridView";
             logDataGridView.ReadOnly = true;
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle7.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle7.ForeColor = Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(179, 79, 84);
-            dataGridViewCellStyle7.SelectionForeColor = Color.FromArgb(255, 209, 211);
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
-            logDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle21.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle21.BackColor = Color.FromArgb(146, 45, 51);
+            dataGridViewCellStyle21.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle21.ForeColor = Color.White;
+            dataGridViewCellStyle21.SelectionBackColor = Color.FromArgb(179, 79, 84);
+            dataGridViewCellStyle21.SelectionForeColor = Color.FromArgb(255, 209, 211);
+            dataGridViewCellStyle21.WrapMode = DataGridViewTriState.True;
+            logDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle21;
             logDataGridView.RowHeadersVisible = false;
             logDataGridView.RowHeadersWidth = 51;
             logDataGridView.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
@@ -1533,7 +1523,7 @@
             // 
             // panel8
             // 
-            panel8.BackgroundImage = Properties.Resources.PanelBG;
+            panel8.BackgroundImage = Properties.Resources.TopPanelBg;
             panel8.BackgroundImageLayout = ImageLayout.Stretch;
             panel8.Location = new Point(0, 0);
             panel8.Name = "panel8";
@@ -1552,8 +1542,8 @@
             // reportsPanel
             // 
             reportsPanel.BackColor = Color.FromArgb(224, 224, 224);
-            reportsPanel.Controls.Add(reportsPanelInbox);
             reportsPanel.Controls.Add(label14);
+            reportsPanel.Controls.Add(reportsPanelInbox);
             reportsPanel.Location = new Point(273, 0);
             reportsPanel.Name = "reportsPanel";
             reportsPanel.Size = new Size(1116, 784);
@@ -1562,7 +1552,7 @@
             // reportsPanelInbox
             // 
             reportsPanelInbox.BackColor = Color.White;
-            reportsPanelInbox.Controls.Add(reportsEmailTB);
+            reportsPanelInbox.Controls.Add(inboxPanel);
             reportsPanelInbox.Controls.Add(reportsDropDownCB);
             reportsPanelInbox.Controls.Add(panel10);
             reportsPanelInbox.Location = new Point(12, 32);
@@ -1570,12 +1560,15 @@
             reportsPanelInbox.Size = new Size(1092, 721);
             reportsPanelInbox.TabIndex = 2;
             // 
-            // reportsEmailTB
+            // inboxPanel
             // 
-            reportsEmailTB.Location = new Point(444, 145);
-            reportsEmailTB.Name = "reportsEmailTB";
-            reportsEmailTB.Size = new Size(490, 23);
-            reportsEmailTB.TabIndex = 4;
+            inboxPanel.AutoScroll = true;
+            inboxPanel.BackgroundImage = Properties.Resources.PanelBG;
+            inboxPanel.BackgroundImageLayout = ImageLayout.Stretch;
+            inboxPanel.Location = new Point(347, 170);
+            inboxPanel.Name = "inboxPanel";
+            inboxPanel.Size = new Size(657, 486);
+            inboxPanel.TabIndex = 4;
             // 
             // reportsDropDownCB
             // 
@@ -1590,7 +1583,7 @@
             // 
             // panel10
             // 
-            panel10.BackgroundImage = Properties.Resources.PanelBG;
+            panel10.BackgroundImage = Properties.Resources.TopPanelBg;
             panel10.BackgroundImageLayout = ImageLayout.Stretch;
             panel10.Location = new Point(0, 0);
             panel10.Name = "panel10";
@@ -1613,11 +1606,11 @@
             BackColor = Color.FromArgb(17, 24, 34);
             ClientSize = new Size(1389, 782);
             Controls.Add(sidePanel);
+            Controls.Add(reportsPanel);
+            Controls.Add(logsPanel);
             Controls.Add(userPanel);
             Controls.Add(departmentPanel);
             Controls.Add(dashPanel);
-            Controls.Add(reportsPanel);
-            Controls.Add(logsPanel);
             Name = "AdminForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AdminForm";
@@ -1637,8 +1630,6 @@
             ((System.ComponentModel.ISupportInitialize)userDataGridView).EndInit();
             editEmployeePanel.ResumeLayout(false);
             editEmployeePanel.PerformLayout();
-            panel7.ResumeLayout(false);
-            panel7.PerformLayout();
             userPanelAdd.ResumeLayout(false);
             userPanelAdd.PerformLayout();
             departmentPanel.ResumeLayout(false);
@@ -1657,7 +1648,6 @@
             reportsPanel.ResumeLayout(false);
             reportsPanel.PerformLayout();
             reportsPanelInbox.ResumeLayout(false);
-            reportsPanelInbox.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -1768,7 +1758,6 @@
         private Label label21;
         private Label label22;
         private Panel panel7;
-        private Label editEmployeeLabel;
         private Button editEmployeeResetPasswordButt;
         private Button editEmployeeCancelButt;
         private Button dropEmployeeButt;
@@ -1785,6 +1774,6 @@
         private Panel reportsPanelInbox;
         private Panel panel10;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private TextBox reportsEmailTB;
+        private Panel inboxPanel;
     }
 }

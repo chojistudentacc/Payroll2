@@ -10,7 +10,7 @@ namespace Payroll
     {
 
         private string csvFilePath = @"C:\Users\User\Documents\EmployeeArchive.csv";
-        private readonly string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\User\\source\\repos\\Payroll2\\Payroll\\Payroll.mdf;Integrated Security=True";
+        private readonly string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\Choji Kodachi\\Documents\\!! Work !!\\Payroll-master\\Payroll\\Payroll.mdf\";Integrated Security=True";
 
         public DataTable SearchEmployees(string role, string keyword)
         {
