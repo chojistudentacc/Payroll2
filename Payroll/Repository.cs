@@ -9,8 +9,10 @@ namespace Payroll
     public class Repository
     {
 
+<<<<<<< HEAD
         private string csvFilePath = @"d:\Users\chandrei0212\EmployeeArchive.csv";
         private readonly string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\chandrei0212\\source\\repos\\Payroll3\\Payroll\\Payroll.mdf;Integrated Security=True";
+
 
 
         public DataTable SearchEmployees(string role, string keyword)
