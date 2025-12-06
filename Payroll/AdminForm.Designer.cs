@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle13 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle14 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
             sidePanel = new Panel();
             welcomeLabel = new Label();
             reportButt = new Button();
@@ -190,9 +190,8 @@
             sidePanel.Controls.Add(userButt);
             sidePanel.Controls.Add(dashboardButt);
             sidePanel.Location = new Point(0, 0);
-            sidePanel.Margin = new Padding(3, 4, 3, 4);
             sidePanel.Name = "sidePanel";
-            sidePanel.Size = new Size(312, 1043);
+            sidePanel.Size = new Size(273, 782);
             sidePanel.TabIndex = 0;
             // 
             // welcomeLabel
@@ -201,9 +200,9 @@
             welcomeLabel.BackColor = Color.Transparent;
             welcomeLabel.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             welcomeLabel.ForeColor = Color.White;
-            welcomeLabel.Location = new Point(14, 100);
+            welcomeLabel.Location = new Point(12, 75);
             welcomeLabel.Name = "welcomeLabel";
-            welcomeLabel.Size = new Size(150, 37);
+            welcomeLabel.Size = new Size(115, 30);
             welcomeLabel.TabIndex = 0;
             welcomeLabel.Text = "Welcome, ";
             // 
@@ -216,10 +215,9 @@
             reportButt.FlatStyle = FlatStyle.Flat;
             reportButt.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
             reportButt.ForeColor = Color.White;
-            reportButt.Location = new Point(0, 631);
-            reportButt.Margin = new Padding(3, 4, 3, 4);
+            reportButt.Location = new Point(0, 473);
             reportButt.Name = "reportButt";
-            reportButt.Size = new Size(312, 99);
+            reportButt.Size = new Size(273, 74);
             reportButt.TabIndex = 9;
             reportButt.Text = "Reports";
             reportButt.UseVisualStyleBackColor = false;
@@ -234,10 +232,9 @@
             logButt.FlatStyle = FlatStyle.Flat;
             logButt.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
             logButt.ForeColor = Color.White;
-            logButt.Location = new Point(0, 536);
-            logButt.Margin = new Padding(3, 4, 3, 4);
+            logButt.Location = new Point(0, 402);
             logButt.Name = "logButt";
-            logButt.Size = new Size(312, 99);
+            logButt.Size = new Size(273, 74);
             logButt.TabIndex = 8;
             logButt.Text = "Logs";
             logButt.UseVisualStyleBackColor = false;
@@ -252,10 +249,9 @@
             departmentButt.FlatStyle = FlatStyle.Flat;
             departmentButt.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
             departmentButt.ForeColor = Color.White;
-            departmentButt.Location = new Point(0, 440);
-            departmentButt.Margin = new Padding(3, 4, 3, 4);
+            departmentButt.Location = new Point(0, 330);
             departmentButt.Name = "departmentButt";
-            departmentButt.Size = new Size(312, 99);
+            departmentButt.Size = new Size(273, 74);
             departmentButt.TabIndex = 7;
             departmentButt.Text = "Departments";
             departmentButt.UseVisualStyleBackColor = false;
@@ -270,10 +266,9 @@
             userButt.FlatStyle = FlatStyle.Flat;
             userButt.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
             userButt.ForeColor = Color.White;
-            userButt.Location = new Point(0, 341);
-            userButt.Margin = new Padding(3, 4, 3, 4);
+            userButt.Location = new Point(0, 256);
             userButt.Name = "userButt";
-            userButt.Size = new Size(312, 99);
+            userButt.Size = new Size(273, 74);
             userButt.TabIndex = 6;
             userButt.Text = "User Management";
             userButt.UseVisualStyleBackColor = false;
@@ -288,10 +283,9 @@
             dashboardButt.FlatStyle = FlatStyle.Flat;
             dashboardButt.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
             dashboardButt.ForeColor = Color.White;
-            dashboardButt.Location = new Point(0, 243);
-            dashboardButt.Margin = new Padding(3, 4, 3, 4);
+            dashboardButt.Location = new Point(0, 182);
             dashboardButt.Name = "dashboardButt";
-            dashboardButt.Size = new Size(312, 99);
+            dashboardButt.Size = new Size(273, 74);
             dashboardButt.TabIndex = 5;
             dashboardButt.Text = "Dashboard";
             dashboardButt.UseVisualStyleBackColor = false;
@@ -301,10 +295,9 @@
             // 
             dashPanel.BackColor = Color.FromArgb(224, 224, 224);
             dashPanel.Controls.Add(panel1);
-            dashPanel.Location = new Point(312, 0);
-            dashPanel.Margin = new Padding(3, 4, 3, 4);
+            dashPanel.Location = new Point(273, 0);
             dashPanel.Name = "dashPanel";
-            dashPanel.Size = new Size(1275, 1045);
+            dashPanel.Size = new Size(1116, 784);
             dashPanel.TabIndex = 1;
             dashPanel.Visible = false;
             // 
@@ -313,10 +306,9 @@
             panel1.BackColor = Color.White;
             panel1.Controls.Add(panel2);
             panel1.Controls.Add(label2);
-            panel1.Location = new Point(17, 16);
-            panel1.Margin = new Padding(3, 4, 3, 4);
+            panel1.Location = new Point(15, 12);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1241, 392);
+            panel1.Size = new Size(1086, 294);
             panel1.TabIndex = 0;
             // 
             // panel2
@@ -324,10 +316,9 @@
             panel2.BackgroundImage = Properties.Resources.PanelBG;
             panel2.Controls.Add(allEmpLB);
             panel2.Controls.Add(label3);
-            panel2.Location = new Point(98, 123);
-            panel2.Margin = new Padding(3, 4, 3, 4);
+            panel2.Location = new Point(86, 92);
             panel2.Name = "panel2";
-            panel2.Size = new Size(186, 115);
+            panel2.Size = new Size(163, 86);
             panel2.TabIndex = 1;
             // 
             // allEmpLB
@@ -336,9 +327,9 @@
             allEmpLB.BackColor = Color.Transparent;
             allEmpLB.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
             allEmpLB.ForeColor = Color.White;
-            allEmpLB.Location = new Point(81, 56);
+            allEmpLB.Location = new Point(71, 42);
             allEmpLB.Name = "allEmpLB";
-            allEmpLB.Size = new Size(35, 41);
+            allEmpLB.Size = new Size(28, 32);
             allEmpLB.TabIndex = 1;
             allEmpLB.Text = "0";
             // 
@@ -348,9 +339,9 @@
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(13, 5);
+            label3.Location = new Point(11, 4);
             label3.Name = "label3";
-            label3.Size = new Size(180, 35);
+            label3.Size = new Size(145, 28);
             label3.TabIndex = 0;
             label3.Text = "All Employees";
             // 
@@ -358,9 +349,9 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 25F, FontStyle.Bold);
-            label2.Location = new Point(480, 19);
+            label2.Location = new Point(420, 14);
             label2.Name = "label2";
-            label2.Size = new Size(355, 57);
+            label2.Size = new Size(283, 46);
             label2.TabIndex = 0;
             label2.Text = "E M P L O Y E E S";
             // 
@@ -371,19 +362,18 @@
             userPanel.Controls.Add(userPanelDataGrid);
             userPanel.Controls.Add(editEmployeePanel);
             userPanel.Controls.Add(userPanelAdd);
-            userPanel.Location = new Point(312, 0);
-            userPanel.Margin = new Padding(3, 4, 3, 4);
+            userPanel.Location = new Point(273, 0);
             userPanel.Name = "userPanel";
-            userPanel.Size = new Size(1275, 1045);
+            userPanel.Size = new Size(1116, 784);
             userPanel.TabIndex = 2;
             userPanel.Visible = false;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(14, 12);
+            label1.Location = new Point(12, 9);
             label1.Name = "label1";
-            label1.Size = new Size(71, 20);
+            label1.Size = new Size(58, 15);
             label1.TabIndex = 0;
             label1.Text = "userPanel";
             // 
@@ -396,10 +386,9 @@
             userPanelDataGrid.Controls.Add(userPanel2);
             userPanelDataGrid.Controls.Add(userDataGridView);
             userPanelDataGrid.Controls.Add(userPanel1);
-            userPanelDataGrid.Location = new Point(14, 51);
-            userPanelDataGrid.Margin = new Padding(3, 4, 3, 4);
+            userPanelDataGrid.Location = new Point(12, 38);
             userPanelDataGrid.Name = "userPanelDataGrid";
-            userPanelDataGrid.Size = new Size(1248, 961);
+            userPanelDataGrid.Size = new Size(1092, 721);
             userPanelDataGrid.TabIndex = 1;
             // 
             // dropEmployeeButt
@@ -408,10 +397,9 @@
             dropEmployeeButt.FlatStyle = FlatStyle.Flat;
             dropEmployeeButt.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
             dropEmployeeButt.ForeColor = Color.White;
-            dropEmployeeButt.Location = new Point(295, 823);
-            dropEmployeeButt.Margin = new Padding(3, 4, 3, 4);
+            dropEmployeeButt.Location = new Point(258, 617);
             dropEmployeeButt.Name = "dropEmployeeButt";
-            dropEmployeeButt.Size = new Size(231, 67);
+            dropEmployeeButt.Size = new Size(202, 50);
             dropEmployeeButt.TabIndex = 5;
             dropEmployeeButt.Text = "Drop";
             dropEmployeeButt.UseVisualStyleBackColor = false;
@@ -423,10 +411,9 @@
             editEmployeeButt.FlatStyle = FlatStyle.Flat;
             editEmployeeButt.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
             editEmployeeButt.ForeColor = Color.White;
-            editEmployeeButt.Location = new Point(24, 823);
-            editEmployeeButt.Margin = new Padding(3, 4, 3, 4);
+            editEmployeeButt.Location = new Point(21, 617);
             editEmployeeButt.Name = "editEmployeeButt";
-            editEmployeeButt.Size = new Size(231, 67);
+            editEmployeeButt.Size = new Size(202, 50);
             editEmployeeButt.TabIndex = 4;
             editEmployeeButt.Text = "Edit";
             editEmployeeButt.UseVisualStyleBackColor = false;
@@ -438,10 +425,9 @@
             addEmpButt.FlatStyle = FlatStyle.Flat;
             addEmpButt.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
             addEmpButt.ForeColor = Color.White;
-            addEmpButt.Location = new Point(24, 148);
-            addEmpButt.Margin = new Padding(3, 4, 3, 4);
+            addEmpButt.Location = new Point(21, 111);
             addEmpButt.Name = "addEmpButt";
-            addEmpButt.Size = new Size(231, 67);
+            addEmpButt.Size = new Size(202, 50);
             addEmpButt.TabIndex = 3;
             addEmpButt.Text = "Add Employee";
             addEmpButt.UseVisualStyleBackColor = false;
@@ -453,20 +439,18 @@
             userPanel2.BackgroundImageLayout = ImageLayout.Center;
             userPanel2.Controls.Add(searchDataGridTB);
             userPanel2.Controls.Add(roleComboBox);
-            userPanel2.Location = new Point(514, 124);
-            userPanel2.Margin = new Padding(3, 4, 3, 4);
+            userPanel2.Location = new Point(450, 93);
             userPanel2.Name = "userPanel2";
-            userPanel2.Size = new Size(707, 103);
+            userPanel2.Size = new Size(619, 77);
             userPanel2.TabIndex = 2;
             // 
             // searchDataGridTB
             // 
             searchDataGridTB.Font = new Font("Segoe UI", 15.75F);
-            searchDataGridTB.Location = new Point(19, 29);
-            searchDataGridTB.Margin = new Padding(3, 4, 3, 4);
+            searchDataGridTB.Location = new Point(17, 22);
             searchDataGridTB.Name = "searchDataGridTB";
             searchDataGridTB.PlaceholderText = "Search by employeeID or last name";
-            searchDataGridTB.Size = new Size(391, 42);
+            searchDataGridTB.Size = new Size(343, 35);
             searchDataGridTB.TabIndex = 1;
             searchDataGridTB.TextChanged += searchDataGridTB_TextChanged;
             // 
@@ -474,10 +458,9 @@
             // 
             roleComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             roleComboBox.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            roleComboBox.Location = new Point(439, 28);
-            roleComboBox.Margin = new Padding(3, 4, 3, 4);
+            roleComboBox.Location = new Point(384, 21);
             roleComboBox.Name = "roleComboBox";
-            roleComboBox.Size = new Size(251, 44);
+            roleComboBox.Size = new Size(220, 38);
             roleComboBox.TabIndex = 0;
             roleComboBox.Tag = "";
             roleComboBox.SelectionChangeCommitted += roleComboBox_SelectedIndexChanged;
@@ -491,42 +474,41 @@
             userDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             userDataGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             userDataGridView.BackgroundColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle8.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle8.ForeColor = Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = Color.FromArgb(179, 79, 84);
-            dataGridViewCellStyle8.SelectionForeColor = Color.FromArgb(255, 209, 211);
-            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
-            userDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(146, 45, 51);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(179, 79, 84);
+            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(255, 209, 211);
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            userDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             userDataGridView.ColumnHeadersHeight = 29;
             userDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle9.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle9.ForeColor = Color.White;
-            dataGridViewCellStyle9.SelectionBackColor = Color.FromArgb(179, 79, 84);
-            dataGridViewCellStyle9.SelectionForeColor = Color.FromArgb(255, 209, 211);
-            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.True;
-            userDataGridView.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(146, 45, 51);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(179, 79, 84);
+            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(255, 209, 211);
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            userDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             userDataGridView.EnableHeadersVisualStyles = false;
             userDataGridView.GridColor = Color.White;
-            userDataGridView.Location = new Point(0, 253);
-            userDataGridView.Margin = new Padding(3, 4, 3, 4);
+            userDataGridView.Location = new Point(0, 190);
             userDataGridView.Name = "userDataGridView";
             userDataGridView.ReadOnly = true;
-            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle10.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle10.ForeColor = Color.White;
-            dataGridViewCellStyle10.SelectionBackColor = Color.FromArgb(179, 79, 84);
-            dataGridViewCellStyle10.SelectionForeColor = Color.FromArgb(255, 209, 211);
-            dataGridViewCellStyle10.WrapMode = DataGridViewTriState.True;
-            userDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(146, 45, 51);
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(179, 79, 84);
+            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(255, 209, 211);
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            userDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             userDataGridView.RowHeadersVisible = false;
             userDataGridView.RowHeadersWidth = 51;
             userDataGridView.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            userDataGridView.Size = new Size(1248, 495);
+            userDataGridView.Size = new Size(1092, 371);
             userDataGridView.TabIndex = 0;
             userDataGridView.CellClick += userDataGridView_CellClick;
             // 
@@ -535,9 +517,8 @@
             userPanel1.BackgroundImage = Properties.Resources.PanelBG;
             userPanel1.BackgroundImageLayout = ImageLayout.Stretch;
             userPanel1.Location = new Point(0, 0);
-            userPanel1.Margin = new Padding(3, 4, 3, 4);
             userPanel1.Name = "userPanel1";
-            userPanel1.Size = new Size(1248, 89);
+            userPanel1.Size = new Size(1092, 67);
             userPanel1.TabIndex = 1;
             // 
             // editEmployeePanel
@@ -565,10 +546,9 @@
             editEmployeePanel.Controls.Add(label22);
             editEmployeePanel.Controls.Add(panel7);
             editEmployeePanel.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
-            editEmployeePanel.Location = new Point(14, 51);
-            editEmployeePanel.Margin = new Padding(3, 4, 3, 4);
+            editEmployeePanel.Location = new Point(12, 38);
             editEmployeePanel.Name = "editEmployeePanel";
-            editEmployeePanel.Size = new Size(1248, 961);
+            editEmployeePanel.Size = new Size(1092, 721);
             editEmployeePanel.TabIndex = 30;
             editEmployeePanel.Visible = false;
             // 
@@ -578,10 +558,9 @@
             editEmployeeCancelButt.FlatStyle = FlatStyle.Flat;
             editEmployeeCancelButt.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             editEmployeeCancelButt.ForeColor = Color.White;
-            editEmployeeCancelButt.Location = new Point(849, 756);
-            editEmployeeCancelButt.Margin = new Padding(3, 4, 3, 4);
+            editEmployeeCancelButt.Location = new Point(743, 567);
             editEmployeeCancelButt.Name = "editEmployeeCancelButt";
-            editEmployeeCancelButt.Size = new Size(298, 73);
+            editEmployeeCancelButt.Size = new Size(261, 55);
             editEmployeeCancelButt.TabIndex = 38;
             editEmployeeCancelButt.Text = "Cancel";
             editEmployeeCancelButt.UseVisualStyleBackColor = false;
@@ -593,10 +572,9 @@
             editEmployeeSaveButt.FlatStyle = FlatStyle.Flat;
             editEmployeeSaveButt.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             editEmployeeSaveButt.ForeColor = Color.White;
-            editEmployeeSaveButt.Location = new Point(97, 756);
-            editEmployeeSaveButt.Margin = new Padding(3, 4, 3, 4);
+            editEmployeeSaveButt.Location = new Point(85, 567);
             editEmployeeSaveButt.Name = "editEmployeeSaveButt";
-            editEmployeeSaveButt.Size = new Size(298, 73);
+            editEmployeeSaveButt.Size = new Size(261, 55);
             editEmployeeSaveButt.TabIndex = 36;
             editEmployeeSaveButt.Text = "Save";
             editEmployeeSaveButt.UseVisualStyleBackColor = false;
@@ -608,10 +586,9 @@
             editEmployeeResetPasswordButt.FlatStyle = FlatStyle.Flat;
             editEmployeeResetPasswordButt.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             editEmployeeResetPasswordButt.ForeColor = Color.White;
-            editEmployeeResetPasswordButt.Location = new Point(955, 340);
-            editEmployeeResetPasswordButt.Margin = new Padding(3, 4, 3, 4);
+            editEmployeeResetPasswordButt.Location = new Point(836, 255);
             editEmployeeResetPasswordButt.Name = "editEmployeeResetPasswordButt";
-            editEmployeeResetPasswordButt.Size = new Size(192, 49);
+            editEmployeeResetPasswordButt.Size = new Size(168, 37);
             editEmployeeResetPasswordButt.TabIndex = 35;
             editEmployeeResetPasswordButt.Text = "Reset Password";
             editEmployeeResetPasswordButt.UseVisualStyleBackColor = false;
@@ -620,10 +597,9 @@
             // editEmployeeInactiveRB
             // 
             editEmployeeInactiveRB.AutoSize = true;
-            editEmployeeInactiveRB.Location = new Point(351, 417);
-            editEmployeeInactiveRB.Margin = new Padding(3, 4, 3, 4);
+            editEmployeeInactiveRB.Location = new Point(307, 313);
             editEmployeeInactiveRB.Name = "editEmployeeInactiveRB";
-            editEmployeeInactiveRB.Size = new Size(120, 36);
+            editEmployeeInactiveRB.Size = new Size(98, 29);
             editEmployeeInactiveRB.TabIndex = 34;
             editEmployeeInactiveRB.TabStop = true;
             editEmployeeInactiveRB.Text = "Inactive";
@@ -633,10 +609,9 @@
             // editEmployeeActiveRB
             // 
             editEmployeeActiveRB.AutoSize = true;
-            editEmployeeActiveRB.Location = new Point(248, 417);
-            editEmployeeActiveRB.Margin = new Padding(3, 4, 3, 4);
+            editEmployeeActiveRB.Location = new Point(217, 313);
             editEmployeeActiveRB.Name = "editEmployeeActiveRB";
-            editEmployeeActiveRB.Size = new Size(102, 36);
+            editEmployeeActiveRB.Size = new Size(84, 29);
             editEmployeeActiveRB.TabIndex = 33;
             editEmployeeActiveRB.TabStop = true;
             editEmployeeActiveRB.Text = "Active";
@@ -647,66 +622,60 @@
             // 
             editEmployeePasswordTB.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
             editEmployeePasswordTB.ForeColor = Color.Black;
-            editEmployeePasswordTB.Location = new Point(838, 277);
-            editEmployeePasswordTB.Margin = new Padding(3, 4, 3, 4);
+            editEmployeePasswordTB.Location = new Point(733, 208);
             editEmployeePasswordTB.Name = "editEmployeePasswordTB";
             editEmployeePasswordTB.ReadOnly = true;
-            editEmployeePasswordTB.Size = new Size(309, 39);
+            editEmployeePasswordTB.Size = new Size(271, 33);
             editEmployeePasswordTB.TabIndex = 32;
             editEmployeePasswordTB.Text = "Hidden";
             // 
             // editEmployeeAdressTB
             // 
             editEmployeeAdressTB.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
-            editEmployeeAdressTB.Location = new Point(838, 212);
-            editEmployeeAdressTB.Margin = new Padding(3, 4, 3, 4);
+            editEmployeeAdressTB.Location = new Point(733, 159);
             editEmployeeAdressTB.Name = "editEmployeeAdressTB";
-            editEmployeeAdressTB.Size = new Size(309, 39);
+            editEmployeeAdressTB.Size = new Size(271, 33);
             editEmployeeAdressTB.TabIndex = 31;
             // 
             // editEmployeeEmailTB
             // 
             editEmployeeEmailTB.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
-            editEmployeeEmailTB.Location = new Point(838, 144);
-            editEmployeeEmailTB.Margin = new Padding(3, 4, 3, 4);
+            editEmployeeEmailTB.Location = new Point(733, 108);
             editEmployeeEmailTB.Name = "editEmployeeEmailTB";
-            editEmployeeEmailTB.Size = new Size(309, 39);
+            editEmployeeEmailTB.Size = new Size(271, 33);
             editEmployeeEmailTB.TabIndex = 30;
             // 
             // editEmployeeContactNoTB
             // 
             editEmployeeContactNoTB.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
-            editEmployeeContactNoTB.Location = new Point(248, 352);
-            editEmployeeContactNoTB.Margin = new Padding(3, 4, 3, 4);
+            editEmployeeContactNoTB.Location = new Point(217, 264);
             editEmployeeContactNoTB.Name = "editEmployeeContactNoTB";
-            editEmployeeContactNoTB.Size = new Size(309, 39);
+            editEmployeeContactNoTB.Size = new Size(271, 33);
             editEmployeeContactNoTB.TabIndex = 29;
             // 
             // editEmployeeMiddleNameTB
             // 
             editEmployeeMiddleNameTB.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
-            editEmployeeMiddleNameTB.Location = new Point(248, 284);
-            editEmployeeMiddleNameTB.Margin = new Padding(3, 4, 3, 4);
+            editEmployeeMiddleNameTB.Location = new Point(217, 213);
             editEmployeeMiddleNameTB.Name = "editEmployeeMiddleNameTB";
-            editEmployeeMiddleNameTB.Size = new Size(309, 39);
+            editEmployeeMiddleNameTB.Size = new Size(271, 33);
             editEmployeeMiddleNameTB.TabIndex = 28;
             // 
             // editEmployeeFirstNameTB
             // 
             editEmployeeFirstNameTB.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
-            editEmployeeFirstNameTB.Location = new Point(248, 219);
-            editEmployeeFirstNameTB.Margin = new Padding(3, 4, 3, 4);
+            editEmployeeFirstNameTB.Location = new Point(217, 164);
             editEmployeeFirstNameTB.Name = "editEmployeeFirstNameTB";
-            editEmployeeFirstNameTB.Size = new Size(309, 39);
+            editEmployeeFirstNameTB.Size = new Size(271, 33);
             editEmployeeFirstNameTB.TabIndex = 27;
             // 
             // label13
             // 
             label13.AutoSize = true;
             label13.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
-            label13.Location = new Point(65, 420);
+            label13.Location = new Point(57, 315);
             label13.Name = "label13";
-            label13.Size = new Size(87, 32);
+            label13.Size = new Size(69, 25);
             label13.TabIndex = 24;
             label13.Text = "Status:";
             // 
@@ -714,9 +683,9 @@
             // 
             label15.AutoSize = true;
             label15.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
-            label15.Location = new Point(679, 281);
+            label15.Location = new Point(594, 211);
             label15.Name = "label15";
-            label15.Size = new Size(121, 32);
+            label15.Size = new Size(96, 25);
             label15.TabIndex = 19;
             label15.Text = "Password:";
             // 
@@ -724,9 +693,9 @@
             // 
             label17.AutoSize = true;
             label17.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
-            label17.Location = new Point(679, 216);
+            label17.Location = new Point(594, 162);
             label17.Name = "label17";
-            label17.Size = new Size(106, 32);
+            label17.Size = new Size(85, 25);
             label17.TabIndex = 12;
             label17.Text = "Address:";
             // 
@@ -734,9 +703,9 @@
             // 
             label18.AutoSize = true;
             label18.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
-            label18.Location = new Point(679, 148);
+            label18.Location = new Point(594, 111);
             label18.Name = "label18";
-            label18.Size = new Size(78, 32);
+            label18.Size = new Size(64, 25);
             label18.TabIndex = 11;
             label18.Text = "Email:";
             // 
@@ -744,9 +713,9 @@
             // 
             label19.AutoSize = true;
             label19.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
-            label19.Location = new Point(65, 349);
+            label19.Location = new Point(57, 262);
             label19.Name = "label19";
-            label19.Size = new Size(144, 32);
+            label19.Size = new Size(115, 25);
             label19.TabIndex = 8;
             label19.Text = "Contact No:";
             // 
@@ -754,28 +723,27 @@
             // 
             label20.AutoSize = true;
             label20.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
-            label20.Location = new Point(65, 281);
+            label20.Location = new Point(57, 211);
             label20.Name = "label20";
-            label20.Size = new Size(167, 32);
+            label20.Size = new Size(134, 25);
             label20.TabIndex = 7;
             label20.Text = "Middle Name:";
             // 
             // editEmployeeLastNameTB
             // 
             editEmployeeLastNameTB.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
-            editEmployeeLastNameTB.Location = new Point(248, 144);
-            editEmployeeLastNameTB.Margin = new Padding(3, 4, 3, 4);
+            editEmployeeLastNameTB.Location = new Point(217, 108);
             editEmployeeLastNameTB.Name = "editEmployeeLastNameTB";
-            editEmployeeLastNameTB.Size = new Size(309, 39);
+            editEmployeeLastNameTB.Size = new Size(271, 33);
             editEmployeeLastNameTB.TabIndex = 5;
             // 
             // label21
             // 
             label21.AutoSize = true;
             label21.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
-            label21.Location = new Point(65, 216);
+            label21.Location = new Point(57, 162);
             label21.Name = "label21";
-            label21.Size = new Size(138, 32);
+            label21.Size = new Size(111, 25);
             label21.TabIndex = 4;
             label21.Text = "First Name:";
             // 
@@ -783,9 +751,9 @@
             // 
             label22.AutoSize = true;
             label22.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
-            label22.Location = new Point(65, 148);
+            label22.Location = new Point(57, 111);
             label22.Name = "label22";
-            label22.Size = new Size(136, 32);
+            label22.Size = new Size(108, 25);
             label22.TabIndex = 3;
             label22.Text = "Last Name:";
             // 
@@ -795,18 +763,17 @@
             panel7.BackgroundImageLayout = ImageLayout.Stretch;
             panel7.Controls.Add(editEmployeeLabel);
             panel7.Location = new Point(0, 0);
-            panel7.Margin = new Padding(3, 4, 3, 4);
             panel7.Name = "panel7";
-            panel7.Size = new Size(1248, 89);
+            panel7.Size = new Size(1092, 67);
             panel7.TabIndex = 2;
             // 
             // editEmployeeLabel
             // 
             editEmployeeLabel.AutoSize = true;
             editEmployeeLabel.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
-            editEmployeeLabel.Location = new Point(65, 29);
+            editEmployeeLabel.Location = new Point(57, 22);
             editEmployeeLabel.Name = "editEmployeeLabel";
-            editEmployeeLabel.Size = new Size(167, 32);
+            editEmployeeLabel.Size = new Size(134, 25);
             editEmployeeLabel.TabIndex = 30;
             editEmployeeLabel.Text = "Edit Employee";
             // 
@@ -840,10 +807,9 @@
             userPanelAdd.Controls.Add(lastNameLabel);
             userPanelAdd.Controls.Add(userPanel3);
             userPanelAdd.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
-            userPanelAdd.Location = new Point(14, 51);
-            userPanelAdd.Margin = new Padding(3, 4, 3, 4);
+            userPanelAdd.Location = new Point(12, 38);
             userPanelAdd.Name = "userPanelAdd";
-            userPanelAdd.Size = new Size(1248, 957);
+            userPanelAdd.Size = new Size(1092, 718);
             userPanelAdd.TabIndex = 2;
             userPanelAdd.Visible = false;
             // 
@@ -853,10 +819,9 @@
             cancelButt.FlatStyle = FlatStyle.Flat;
             cancelButt.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             cancelButt.ForeColor = Color.White;
-            cancelButt.Location = new Point(849, 756);
-            cancelButt.Margin = new Padding(3, 4, 3, 4);
+            cancelButt.Location = new Point(743, 567);
             cancelButt.Name = "cancelButt";
-            cancelButt.Size = new Size(298, 73);
+            cancelButt.Size = new Size(261, 55);
             cancelButt.TabIndex = 29;
             cancelButt.Text = "Cancel";
             cancelButt.UseVisualStyleBackColor = false;
@@ -868,10 +833,9 @@
             clearButt.FlatStyle = FlatStyle.Flat;
             clearButt.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             clearButt.ForeColor = Color.White;
-            clearButt.Location = new Point(478, 756);
-            clearButt.Margin = new Padding(3, 4, 3, 4);
+            clearButt.Location = new Point(418, 567);
             clearButt.Name = "clearButt";
-            clearButt.Size = new Size(298, 73);
+            clearButt.Size = new Size(261, 55);
             clearButt.TabIndex = 28;
             clearButt.Text = "Clear";
             clearButt.UseVisualStyleBackColor = false;
@@ -883,10 +847,9 @@
             saveButt.FlatStyle = FlatStyle.Flat;
             saveButt.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             saveButt.ForeColor = Color.White;
-            saveButt.Location = new Point(97, 756);
-            saveButt.Margin = new Padding(3, 4, 3, 4);
+            saveButt.Location = new Point(85, 567);
             saveButt.Name = "saveButt";
-            saveButt.Size = new Size(298, 73);
+            saveButt.Size = new Size(261, 55);
             saveButt.TabIndex = 27;
             saveButt.Text = "Save";
             saveButt.UseVisualStyleBackColor = false;
@@ -895,10 +858,9 @@
             // inactiveRadioButt
             // 
             inactiveRadioButt.AutoSize = true;
-            inactiveRadioButt.Location = new Point(295, 567);
-            inactiveRadioButt.Margin = new Padding(3, 4, 3, 4);
+            inactiveRadioButt.Location = new Point(258, 425);
             inactiveRadioButt.Name = "inactiveRadioButt";
-            inactiveRadioButt.Size = new Size(120, 36);
+            inactiveRadioButt.Size = new Size(98, 29);
             inactiveRadioButt.TabIndex = 26;
             inactiveRadioButt.TabStop = true;
             inactiveRadioButt.Text = "Inactive";
@@ -908,10 +870,9 @@
             // activeRadioButt
             // 
             activeRadioButt.AutoSize = true;
-            activeRadioButt.Location = new Point(192, 567);
-            activeRadioButt.Margin = new Padding(3, 4, 3, 4);
+            activeRadioButt.Location = new Point(168, 425);
             activeRadioButt.Name = "activeRadioButt";
-            activeRadioButt.Size = new Size(102, 36);
+            activeRadioButt.Size = new Size(84, 29);
             activeRadioButt.TabIndex = 25;
             activeRadioButt.TabStop = true;
             activeRadioButt.Text = "Active";
@@ -922,9 +883,9 @@
             // 
             statusLabel.AutoSize = true;
             statusLabel.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
-            statusLabel.Location = new Point(83, 569);
+            statusLabel.Location = new Point(73, 427);
             statusLabel.Name = "statusLabel";
-            statusLabel.Size = new Size(87, 32);
+            statusLabel.Size = new Size(69, 25);
             statusLabel.TabIndex = 24;
             statusLabel.Text = "Status:";
             // 
@@ -932,47 +893,44 @@
             // 
             positionComboBox.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
             positionComboBox.FormattingEnabled = true;
-            positionComboBox.Location = new Point(192, 485);
-            positionComboBox.Margin = new Padding(3, 4, 3, 4);
+            positionComboBox.Location = new Point(168, 364);
             positionComboBox.Name = "positionComboBox";
-            positionComboBox.Size = new Size(365, 40);
+            positionComboBox.Size = new Size(320, 33);
             positionComboBox.TabIndex = 23;
             // 
             // positionLabel
             // 
             positionLabel.AutoSize = true;
             positionLabel.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
-            positionLabel.Location = new Point(65, 489);
+            positionLabel.Location = new Point(57, 367);
             positionLabel.Name = "positionLabel";
-            positionLabel.Size = new Size(106, 32);
+            positionLabel.Size = new Size(85, 25);
             positionLabel.TabIndex = 22;
             positionLabel.Text = "Position:";
             // 
             // passTB
             // 
             passTB.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
-            passTB.Location = new Point(838, 345);
-            passTB.Margin = new Padding(3, 4, 3, 4);
+            passTB.Location = new Point(733, 259);
             passTB.Name = "passTB";
-            passTB.Size = new Size(309, 39);
+            passTB.Size = new Size(271, 33);
             passTB.TabIndex = 21;
             // 
             // userNameTB
             // 
             userNameTB.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
-            userNameTB.Location = new Point(838, 277);
-            userNameTB.Margin = new Padding(3, 4, 3, 4);
+            userNameTB.Location = new Point(733, 208);
             userNameTB.Name = "userNameTB";
-            userNameTB.Size = new Size(309, 39);
+            userNameTB.Size = new Size(271, 33);
             userNameTB.TabIndex = 20;
             // 
             // passLabel
             // 
             passLabel.AutoSize = true;
             passLabel.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
-            passLabel.Location = new Point(679, 349);
+            passLabel.Location = new Point(594, 262);
             passLabel.Name = "passLabel";
-            passLabel.Size = new Size(121, 32);
+            passLabel.Size = new Size(96, 25);
             passLabel.TabIndex = 19;
             passLabel.Text = "Password:";
             // 
@@ -980,9 +938,9 @@
             // 
             userNameLabel.AutoSize = true;
             userNameLabel.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
-            userNameLabel.Location = new Point(679, 281);
+            userNameLabel.Location = new Point(594, 211);
             userNameLabel.Name = "userNameLabel";
-            userNameLabel.Size = new Size(141, 32);
+            userNameLabel.Size = new Size(112, 25);
             userNameLabel.TabIndex = 18;
             userNameLabel.Text = "User Name:";
             // 
@@ -992,10 +950,9 @@
             generateCredetialsButt.FlatStyle = FlatStyle.Flat;
             generateCredetialsButt.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             generateCredetialsButt.ForeColor = Color.White;
-            generateCredetialsButt.Location = new Point(914, 415);
-            generateCredetialsButt.Margin = new Padding(3, 4, 3, 4);
+            generateCredetialsButt.Location = new Point(800, 311);
             generateCredetialsButt.Name = "generateCredetialsButt";
-            generateCredetialsButt.Size = new Size(233, 48);
+            generateCredetialsButt.Size = new Size(204, 36);
             generateCredetialsButt.TabIndex = 17;
             generateCredetialsButt.Text = "Generate Random Credentials";
             generateCredetialsButt.UseVisualStyleBackColor = false;
@@ -1004,28 +961,26 @@
             // addressTB
             // 
             addressTB.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
-            addressTB.Location = new Point(838, 205);
-            addressTB.Margin = new Padding(3, 4, 3, 4);
+            addressTB.Location = new Point(733, 154);
             addressTB.Name = "addressTB";
-            addressTB.Size = new Size(309, 39);
+            addressTB.Size = new Size(271, 33);
             addressTB.TabIndex = 14;
             // 
             // emailTB
             // 
             emailTB.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
-            emailTB.Location = new Point(838, 137);
-            emailTB.Margin = new Padding(3, 4, 3, 4);
+            emailTB.Location = new Point(733, 103);
             emailTB.Name = "emailTB";
-            emailTB.Size = new Size(309, 39);
+            emailTB.Size = new Size(271, 33);
             emailTB.TabIndex = 13;
             // 
             // addressLabel
             // 
             addressLabel.AutoSize = true;
             addressLabel.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
-            addressLabel.Location = new Point(679, 216);
+            addressLabel.Location = new Point(594, 162);
             addressLabel.Name = "addressLabel";
-            addressLabel.Size = new Size(106, 32);
+            addressLabel.Size = new Size(85, 25);
             addressLabel.TabIndex = 12;
             addressLabel.Text = "Address:";
             // 
@@ -1033,37 +988,35 @@
             // 
             emailLabel.AutoSize = true;
             emailLabel.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
-            emailLabel.Location = new Point(679, 148);
+            emailLabel.Location = new Point(594, 111);
             emailLabel.Name = "emailLabel";
-            emailLabel.Size = new Size(78, 32);
+            emailLabel.Size = new Size(64, 25);
             emailLabel.TabIndex = 11;
             emailLabel.Text = "Email:";
             // 
             // contactNoTB
             // 
             contactNoTB.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
-            contactNoTB.Location = new Point(248, 345);
-            contactNoTB.Margin = new Padding(3, 4, 3, 4);
+            contactNoTB.Location = new Point(217, 259);
             contactNoTB.Name = "contactNoTB";
-            contactNoTB.Size = new Size(309, 39);
+            contactNoTB.Size = new Size(271, 33);
             contactNoTB.TabIndex = 10;
             // 
             // middleNameTB
             // 
             middleNameTB.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
-            middleNameTB.Location = new Point(248, 277);
-            middleNameTB.Margin = new Padding(3, 4, 3, 4);
+            middleNameTB.Location = new Point(217, 208);
             middleNameTB.Name = "middleNameTB";
-            middleNameTB.Size = new Size(309, 39);
+            middleNameTB.Size = new Size(271, 33);
             middleNameTB.TabIndex = 9;
             // 
             // contactNoLabel
             // 
             contactNoLabel.AutoSize = true;
             contactNoLabel.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
-            contactNoLabel.Location = new Point(65, 349);
+            contactNoLabel.Location = new Point(57, 262);
             contactNoLabel.Name = "contactNoLabel";
-            contactNoLabel.Size = new Size(144, 32);
+            contactNoLabel.Size = new Size(115, 25);
             contactNoLabel.TabIndex = 8;
             contactNoLabel.Text = "Contact No:";
             // 
@@ -1071,37 +1024,35 @@
             // 
             middleNameLabel.AutoSize = true;
             middleNameLabel.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
-            middleNameLabel.Location = new Point(65, 281);
+            middleNameLabel.Location = new Point(57, 211);
             middleNameLabel.Name = "middleNameLabel";
-            middleNameLabel.Size = new Size(167, 32);
+            middleNameLabel.Size = new Size(134, 25);
             middleNameLabel.TabIndex = 7;
             middleNameLabel.Text = "Middle Name:";
             // 
             // firstNameTB
             // 
             firstNameTB.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
-            firstNameTB.Location = new Point(248, 212);
-            firstNameTB.Margin = new Padding(3, 4, 3, 4);
+            firstNameTB.Location = new Point(217, 159);
             firstNameTB.Name = "firstNameTB";
-            firstNameTB.Size = new Size(309, 39);
+            firstNameTB.Size = new Size(271, 33);
             firstNameTB.TabIndex = 6;
             // 
             // lastNameTB
             // 
             lastNameTB.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
-            lastNameTB.Location = new Point(248, 144);
-            lastNameTB.Margin = new Padding(3, 4, 3, 4);
+            lastNameTB.Location = new Point(217, 108);
             lastNameTB.Name = "lastNameTB";
-            lastNameTB.Size = new Size(309, 39);
+            lastNameTB.Size = new Size(271, 33);
             lastNameTB.TabIndex = 5;
             // 
             // firstNameLabel
             // 
             firstNameLabel.AutoSize = true;
             firstNameLabel.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
-            firstNameLabel.Location = new Point(65, 216);
+            firstNameLabel.Location = new Point(57, 162);
             firstNameLabel.Name = "firstNameLabel";
-            firstNameLabel.Size = new Size(138, 32);
+            firstNameLabel.Size = new Size(111, 25);
             firstNameLabel.TabIndex = 4;
             firstNameLabel.Text = "First Name:";
             // 
@@ -1109,9 +1060,9 @@
             // 
             lastNameLabel.AutoSize = true;
             lastNameLabel.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
-            lastNameLabel.Location = new Point(65, 148);
+            lastNameLabel.Location = new Point(57, 111);
             lastNameLabel.Name = "lastNameLabel";
-            lastNameLabel.Size = new Size(136, 32);
+            lastNameLabel.Size = new Size(108, 25);
             lastNameLabel.TabIndex = 3;
             lastNameLabel.Text = "Last Name:";
             // 
@@ -1120,9 +1071,8 @@
             userPanel3.BackgroundImage = Properties.Resources.PanelBG;
             userPanel3.BackgroundImageLayout = ImageLayout.Stretch;
             userPanel3.Location = new Point(0, 0);
-            userPanel3.Margin = new Padding(3, 4, 3, 4);
             userPanel3.Name = "userPanel3";
-            userPanel3.Size = new Size(1248, 89);
+            userPanel3.Size = new Size(1092, 67);
             userPanel3.TabIndex = 2;
             // 
             // departmentPanel
@@ -1132,18 +1082,17 @@
             departmentPanel.Controls.Add(departmentEditPanel);
             departmentPanel.Controls.Add(departmentAddPanel);
             departmentPanel.Controls.Add(departmentDataGridPanel);
-            departmentPanel.Location = new Point(312, 0);
-            departmentPanel.Margin = new Padding(3, 4, 3, 4);
+            departmentPanel.Location = new Point(273, 0);
             departmentPanel.Name = "departmentPanel";
-            departmentPanel.Size = new Size(1275, 1045);
+            departmentPanel.Size = new Size(1116, 784);
             departmentPanel.TabIndex = 3;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(17, 12);
+            label4.Location = new Point(15, 9);
             label4.Name = "label4";
-            label4.Size = new Size(122, 20);
+            label4.Size = new Size(98, 15);
             label4.TabIndex = 31;
             label4.Text = "departmentPanel";
             // 
@@ -1160,10 +1109,9 @@
             departmentEditPanel.Controls.Add(cancelDepartmentEditButton);
             departmentEditPanel.Controls.Add(label12);
             departmentEditPanel.Controls.Add(panel6);
-            departmentEditPanel.Location = new Point(14, 51);
-            departmentEditPanel.Margin = new Padding(3, 4, 3, 4);
+            departmentEditPanel.Location = new Point(12, 38);
             departmentEditPanel.Name = "departmentEditPanel";
-            departmentEditPanel.Size = new Size(1248, 961);
+            departmentEditPanel.Size = new Size(1092, 721);
             departmentEditPanel.TabIndex = 33;
             departmentEditPanel.Visible = false;
             // 
@@ -1173,10 +1121,9 @@
             editDepartmentSaveButton.FlatStyle = FlatStyle.Flat;
             editDepartmentSaveButton.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             editDepartmentSaveButton.ForeColor = Color.White;
-            editDepartmentSaveButton.Location = new Point(65, 816);
-            editDepartmentSaveButton.Margin = new Padding(3, 4, 3, 4);
+            editDepartmentSaveButton.Location = new Point(57, 612);
             editDepartmentSaveButton.Name = "editDepartmentSaveButton";
-            editDepartmentSaveButton.Size = new Size(298, 73);
+            editDepartmentSaveButton.Size = new Size(261, 55);
             editDepartmentSaveButton.TabIndex = 41;
             editDepartmentSaveButton.Text = "Save Changes";
             editDepartmentSaveButton.UseVisualStyleBackColor = false;
@@ -1184,10 +1131,9 @@
             // 
             // departmentEditDescription
             // 
-            departmentEditDescription.Location = new Point(146, 537);
-            departmentEditDescription.Margin = new Padding(3, 4, 3, 4);
+            departmentEditDescription.Location = new Point(128, 403);
             departmentEditDescription.Name = "departmentEditDescription";
-            departmentEditDescription.Size = new Size(941, 175);
+            departmentEditDescription.Size = new Size(824, 132);
             departmentEditDescription.TabIndex = 40;
             departmentEditDescription.Text = "";
             // 
@@ -1195,38 +1141,36 @@
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI", 14.25F);
-            label9.Location = new Point(146, 485);
+            label9.Location = new Point(128, 364);
             label9.Name = "label9";
-            label9.Size = new Size(140, 32);
+            label9.Size = new Size(112, 25);
             label9.TabIndex = 39;
             label9.Text = "Description:";
             // 
             // departmentNameEditTB
             // 
             departmentNameEditTB.Font = new Font("Segoe UI", 14.25F);
-            departmentNameEditTB.Location = new Point(146, 339);
-            departmentNameEditTB.Margin = new Padding(3, 4, 3, 4);
+            departmentNameEditTB.Location = new Point(128, 254);
             departmentNameEditTB.Name = "departmentNameEditTB";
-            departmentNameEditTB.Size = new Size(327, 39);
+            departmentNameEditTB.Size = new Size(287, 33);
             departmentNameEditTB.TabIndex = 38;
             // 
             // cbEditManager
             // 
             cbEditManager.Font = new Font("Segoe UI", 14.25F);
             cbEditManager.FormattingEnabled = true;
-            cbEditManager.Location = new Point(814, 345);
-            cbEditManager.Margin = new Padding(3, 4, 3, 4);
+            cbEditManager.Location = new Point(712, 259);
             cbEditManager.Name = "cbEditManager";
-            cbEditManager.Size = new Size(274, 40);
+            cbEditManager.Size = new Size(240, 33);
             cbEditManager.TabIndex = 37;
             // 
             // label10
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI", 14.25F);
-            label10.Location = new Point(814, 291);
+            label10.Location = new Point(712, 218);
             label10.Name = "label10";
-            label10.Size = new Size(190, 32);
+            label10.Size = new Size(152, 25);
             label10.TabIndex = 36;
             label10.Text = "Assign Manager:";
             // 
@@ -1234,9 +1178,9 @@
             // 
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI", 14.25F);
-            label11.Location = new Point(146, 288);
+            label11.Location = new Point(128, 216);
             label11.Name = "label11";
-            label11.Size = new Size(218, 32);
+            label11.Size = new Size(171, 25);
             label11.TabIndex = 35;
             label11.Text = "Department Name:";
             // 
@@ -1246,10 +1190,9 @@
             cancelDepartmentEditButton.FlatStyle = FlatStyle.Flat;
             cancelDepartmentEditButton.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             cancelDepartmentEditButton.ForeColor = Color.White;
-            cancelDepartmentEditButton.Location = new Point(906, 816);
-            cancelDepartmentEditButton.Margin = new Padding(3, 4, 3, 4);
+            cancelDepartmentEditButton.Location = new Point(793, 612);
             cancelDepartmentEditButton.Name = "cancelDepartmentEditButton";
-            cancelDepartmentEditButton.Size = new Size(298, 73);
+            cancelDepartmentEditButton.Size = new Size(261, 55);
             cancelDepartmentEditButton.TabIndex = 34;
             cancelDepartmentEditButton.Text = "Cancel";
             cancelDepartmentEditButton.UseVisualStyleBackColor = false;
@@ -1259,9 +1202,9 @@
             // 
             label12.AutoSize = true;
             label12.Font = new Font("Segoe UI", 25F);
-            label12.Location = new Point(520, 124);
+            label12.Location = new Point(455, 93);
             label12.Name = "label12";
-            label12.Size = new Size(329, 57);
+            label12.Size = new Size(267, 46);
             label12.TabIndex = 33;
             label12.Text = "Edit Department";
             // 
@@ -1269,9 +1212,8 @@
             // 
             panel6.BackgroundImage = Properties.Resources.PanelBG;
             panel6.Location = new Point(0, 0);
-            panel6.Margin = new Padding(3, 4, 3, 4);
             panel6.Name = "panel6";
-            panel6.Size = new Size(1248, 89);
+            panel6.Size = new Size(1092, 67);
             panel6.TabIndex = 32;
             // 
             // departmentAddPanel
@@ -1287,10 +1229,9 @@
             departmentAddPanel.Controls.Add(cancelDepartmentButton);
             departmentAddPanel.Controls.Add(label5);
             departmentAddPanel.Controls.Add(panel5);
-            departmentAddPanel.Location = new Point(14, 51);
-            departmentAddPanel.Margin = new Padding(3, 4, 3, 4);
+            departmentAddPanel.Location = new Point(12, 38);
             departmentAddPanel.Name = "departmentAddPanel";
-            departmentAddPanel.Size = new Size(1248, 961);
+            departmentAddPanel.Size = new Size(1092, 721);
             departmentAddPanel.TabIndex = 32;
             departmentAddPanel.Visible = false;
             // 
@@ -1300,10 +1241,9 @@
             saveDepartmentButton.FlatStyle = FlatStyle.Flat;
             saveDepartmentButton.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             saveDepartmentButton.ForeColor = Color.White;
-            saveDepartmentButton.Location = new Point(65, 816);
-            saveDepartmentButton.Margin = new Padding(3, 4, 3, 4);
+            saveDepartmentButton.Location = new Point(57, 612);
             saveDepartmentButton.Name = "saveDepartmentButton";
-            saveDepartmentButton.Size = new Size(298, 73);
+            saveDepartmentButton.Size = new Size(261, 55);
             saveDepartmentButton.TabIndex = 41;
             saveDepartmentButton.Text = "Save";
             saveDepartmentButton.UseVisualStyleBackColor = false;
@@ -1311,10 +1251,9 @@
             // 
             // departmentDescription
             // 
-            departmentDescription.Location = new Point(146, 537);
-            departmentDescription.Margin = new Padding(3, 4, 3, 4);
+            departmentDescription.Location = new Point(128, 403);
             departmentDescription.Name = "departmentDescription";
-            departmentDescription.Size = new Size(941, 175);
+            departmentDescription.Size = new Size(824, 132);
             departmentDescription.TabIndex = 40;
             departmentDescription.Text = "";
             // 
@@ -1322,38 +1261,36 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 14.25F);
-            label8.Location = new Point(146, 485);
+            label8.Location = new Point(128, 364);
             label8.Name = "label8";
-            label8.Size = new Size(140, 32);
+            label8.Size = new Size(112, 25);
             label8.TabIndex = 39;
             label8.Text = "Description:";
             // 
             // departmentNameTB
             // 
             departmentNameTB.Font = new Font("Segoe UI", 14.25F);
-            departmentNameTB.Location = new Point(146, 339);
-            departmentNameTB.Margin = new Padding(3, 4, 3, 4);
+            departmentNameTB.Location = new Point(128, 254);
             departmentNameTB.Name = "departmentNameTB";
-            departmentNameTB.Size = new Size(327, 39);
+            departmentNameTB.Size = new Size(287, 33);
             departmentNameTB.TabIndex = 38;
             // 
             // cbManager
             // 
             cbManager.Font = new Font("Segoe UI", 14.25F);
             cbManager.FormattingEnabled = true;
-            cbManager.Location = new Point(814, 345);
-            cbManager.Margin = new Padding(3, 4, 3, 4);
+            cbManager.Location = new Point(712, 259);
             cbManager.Name = "cbManager";
-            cbManager.Size = new Size(274, 40);
+            cbManager.Size = new Size(240, 33);
             cbManager.TabIndex = 37;
             // 
             // label7
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 14.25F);
-            label7.Location = new Point(814, 291);
+            label7.Location = new Point(712, 218);
             label7.Name = "label7";
-            label7.Size = new Size(190, 32);
+            label7.Size = new Size(152, 25);
             label7.TabIndex = 36;
             label7.Text = "Assign Manager:";
             // 
@@ -1361,9 +1298,9 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 14.25F);
-            label6.Location = new Point(146, 288);
+            label6.Location = new Point(128, 216);
             label6.Name = "label6";
-            label6.Size = new Size(218, 32);
+            label6.Size = new Size(171, 25);
             label6.TabIndex = 35;
             label6.Text = "Department Name:";
             // 
@@ -1373,10 +1310,9 @@
             cancelDepartmentButton.FlatStyle = FlatStyle.Flat;
             cancelDepartmentButton.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             cancelDepartmentButton.ForeColor = Color.White;
-            cancelDepartmentButton.Location = new Point(906, 816);
-            cancelDepartmentButton.Margin = new Padding(3, 4, 3, 4);
+            cancelDepartmentButton.Location = new Point(793, 612);
             cancelDepartmentButton.Name = "cancelDepartmentButton";
-            cancelDepartmentButton.Size = new Size(298, 73);
+            cancelDepartmentButton.Size = new Size(261, 55);
             cancelDepartmentButton.TabIndex = 34;
             cancelDepartmentButton.Text = "Cancel";
             cancelDepartmentButton.UseVisualStyleBackColor = false;
@@ -1386,9 +1322,9 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 25F);
-            label5.Location = new Point(520, 124);
+            label5.Location = new Point(455, 93);
             label5.Name = "label5";
-            label5.Size = new Size(336, 57);
+            label5.Size = new Size(272, 46);
             label5.TabIndex = 33;
             label5.Text = "Add Department";
             // 
@@ -1396,9 +1332,8 @@
             // 
             panel5.BackgroundImage = Properties.Resources.PanelBG;
             panel5.Location = new Point(0, 0);
-            panel5.Margin = new Padding(3, 4, 3, 4);
             panel5.Name = "panel5";
-            panel5.Size = new Size(1248, 89);
+            panel5.Size = new Size(1092, 67);
             panel5.TabIndex = 32;
             // 
             // departmentDataGridPanel
@@ -1409,10 +1344,9 @@
             departmentDataGridPanel.Controls.Add(addDepartmentButton);
             departmentDataGridPanel.Controls.Add(deleteDepartmentButton);
             departmentDataGridPanel.Controls.Add(editDepartmentButton);
-            departmentDataGridPanel.Location = new Point(14, 51);
-            departmentDataGridPanel.Margin = new Padding(3, 4, 3, 4);
+            departmentDataGridPanel.Location = new Point(12, 38);
             departmentDataGridPanel.Name = "departmentDataGridPanel";
-            departmentDataGridPanel.Size = new Size(1248, 961);
+            departmentDataGridPanel.Size = new Size(1092, 721);
             departmentDataGridPanel.TabIndex = 4;
             // 
             // departmentDataGridView
@@ -1423,22 +1357,21 @@
             departmentDataGridView.AllowUserToResizeRows = false;
             departmentDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             departmentDataGridView.BackgroundColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = Color.Transparent;
-            dataGridViewCellStyle11.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle11.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = DataGridViewTriState.True;
-            departmentDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.Transparent;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            departmentDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             departmentDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            departmentDataGridView.Location = new Point(19, 135);
-            departmentDataGridView.Margin = new Padding(3, 4, 3, 4);
+            departmentDataGridView.Location = new Point(17, 101);
             departmentDataGridView.Name = "departmentDataGridView";
             departmentDataGridView.ReadOnly = true;
             departmentDataGridView.RowHeadersWidth = 51;
             departmentDataGridView.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            departmentDataGridView.Size = new Size(1202, 648);
+            departmentDataGridView.Size = new Size(1052, 486);
             departmentDataGridView.TabIndex = 33;
             departmentDataGridView.CellClick += departmentDataGridView_CellClick;
             // 
@@ -1446,9 +1379,8 @@
             // 
             panel3.BackgroundImage = Properties.Resources.PanelBG;
             panel3.Location = new Point(0, 0);
-            panel3.Margin = new Padding(3, 4, 3, 4);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1248, 89);
+            panel3.Size = new Size(1092, 67);
             panel3.TabIndex = 31;
             // 
             // addDepartmentButton
@@ -1457,10 +1389,9 @@
             addDepartmentButton.FlatStyle = FlatStyle.Flat;
             addDepartmentButton.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             addDepartmentButton.ForeColor = Color.White;
-            addDepartmentButton.Location = new Point(19, 837);
-            addDepartmentButton.Margin = new Padding(3, 4, 3, 4);
+            addDepartmentButton.Location = new Point(17, 628);
             addDepartmentButton.Name = "addDepartmentButton";
-            addDepartmentButton.Size = new Size(298, 73);
+            addDepartmentButton.Size = new Size(261, 55);
             addDepartmentButton.TabIndex = 28;
             addDepartmentButton.Text = "Add";
             addDepartmentButton.UseVisualStyleBackColor = false;
@@ -1472,10 +1403,9 @@
             deleteDepartmentButton.FlatStyle = FlatStyle.Flat;
             deleteDepartmentButton.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             deleteDepartmentButton.ForeColor = Color.White;
-            deleteDepartmentButton.Location = new Point(923, 837);
-            deleteDepartmentButton.Margin = new Padding(3, 4, 3, 4);
+            deleteDepartmentButton.Location = new Point(808, 628);
             deleteDepartmentButton.Name = "deleteDepartmentButton";
-            deleteDepartmentButton.Size = new Size(298, 73);
+            deleteDepartmentButton.Size = new Size(261, 55);
             deleteDepartmentButton.TabIndex = 30;
             deleteDepartmentButton.Text = "Delete";
             deleteDepartmentButton.UseVisualStyleBackColor = false;
@@ -1487,10 +1417,9 @@
             editDepartmentButton.FlatStyle = FlatStyle.Flat;
             editDepartmentButton.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             editDepartmentButton.ForeColor = Color.White;
-            editDepartmentButton.Location = new Point(478, 837);
-            editDepartmentButton.Margin = new Padding(3, 4, 3, 4);
+            editDepartmentButton.Location = new Point(418, 628);
             editDepartmentButton.Name = "editDepartmentButton";
-            editDepartmentButton.Size = new Size(298, 73);
+            editDepartmentButton.Size = new Size(261, 55);
             editDepartmentButton.TabIndex = 29;
             editDepartmentButton.Text = "Edit";
             editDepartmentButton.UseVisualStyleBackColor = false;
@@ -1501,10 +1430,9 @@
             logsPanel.BackColor = Color.FromArgb(224, 224, 224);
             logsPanel.Controls.Add(panel4);
             logsPanel.Controls.Add(label16);
-            logsPanel.Location = new Point(312, 0);
-            logsPanel.Margin = new Padding(3, 4, 3, 4);
+            logsPanel.Location = new Point(273, 0);
             logsPanel.Name = "logsPanel";
-            logsPanel.Size = new Size(1275, 1045);
+            logsPanel.Size = new Size(1116, 784);
             logsPanel.TabIndex = 4;
             // 
             // panel4
@@ -1516,47 +1444,44 @@
             panel4.Controls.Add(label23);
             panel4.Controls.Add(logDataGridView);
             panel4.Controls.Add(panel8);
-            panel4.Location = new Point(14, 51);
-            panel4.Margin = new Padding(3, 4, 3, 4);
+            panel4.Location = new Point(12, 38);
             panel4.Name = "panel4";
-            panel4.Size = new Size(1248, 961);
+            panel4.Size = new Size(1092, 721);
             panel4.TabIndex = 1;
             // 
             // dateTimePicker2
             // 
             dateTimePicker2.Font = new Font("Segoe UI", 15.75F);
-            dateTimePicker2.Location = new Point(759, 139);
-            dateTimePicker2.Margin = new Padding(3, 4, 3, 4);
+            dateTimePicker2.Location = new Point(664, 104);
             dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(308, 42);
+            dateTimePicker2.Size = new Size(270, 35);
             dateTimePicker2.TabIndex = 7;
             // 
             // label24
             // 
             label24.AutoSize = true;
             label24.Font = new Font("Segoe UI", 15.75F);
-            label24.Location = new Point(663, 141);
+            label24.Location = new Point(580, 106);
             label24.Name = "label24";
-            label24.Size = new Size(42, 37);
+            label24.Size = new Size(32, 30);
             label24.TabIndex = 6;
             label24.Text = "to";
             // 
             // dateTimePicker1
             // 
             dateTimePicker1.Font = new Font("Segoe UI", 15.75F);
-            dateTimePicker1.Location = new Point(295, 137);
-            dateTimePicker1.Margin = new Padding(3, 4, 3, 4);
+            dateTimePicker1.Location = new Point(258, 103);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(308, 42);
+            dateTimePicker1.Size = new Size(270, 35);
             dateTimePicker1.TabIndex = 5;
             // 
             // label23
             // 
             label23.AutoSize = true;
             label23.Font = new Font("Segoe UI", 15.75F);
-            label23.Location = new Point(43, 137);
+            label23.Location = new Point(38, 103);
             label23.Name = "label23";
-            label23.Size = new Size(238, 37);
+            label23.Size = new Size(185, 30);
             label23.TabIndex = 4;
             label23.Text = "Select date period:";
             // 
@@ -1569,42 +1494,41 @@
             logDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             logDataGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             logDataGridView.BackgroundColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle12.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.BackColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle12.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle12.ForeColor = Color.White;
-            dataGridViewCellStyle12.SelectionBackColor = Color.FromArgb(179, 79, 84);
-            dataGridViewCellStyle12.SelectionForeColor = Color.FromArgb(255, 209, 211);
-            dataGridViewCellStyle12.WrapMode = DataGridViewTriState.True;
-            logDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(146, 45, 51);
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle5.ForeColor = Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(179, 79, 84);
+            dataGridViewCellStyle5.SelectionForeColor = Color.FromArgb(255, 209, 211);
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            logDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             logDataGridView.ColumnHeadersHeight = 29;
             logDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle13.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle13.BackColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle13.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle13.ForeColor = Color.White;
-            dataGridViewCellStyle13.SelectionBackColor = Color.FromArgb(179, 79, 84);
-            dataGridViewCellStyle13.SelectionForeColor = Color.FromArgb(255, 209, 211);
-            dataGridViewCellStyle13.WrapMode = DataGridViewTriState.True;
-            logDataGridView.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = Color.FromArgb(146, 45, 51);
+            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle6.ForeColor = Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(179, 79, 84);
+            dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(255, 209, 211);
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
+            logDataGridView.DefaultCellStyle = dataGridViewCellStyle6;
             logDataGridView.EnableHeadersVisualStyles = false;
             logDataGridView.GridColor = Color.White;
-            logDataGridView.Location = new Point(7, 212);
-            logDataGridView.Margin = new Padding(3, 4, 3, 4);
+            logDataGridView.Location = new Point(6, 159);
             logDataGridView.Name = "logDataGridView";
             logDataGridView.ReadOnly = true;
-            dataGridViewCellStyle14.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.BackColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle14.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle14.ForeColor = Color.White;
-            dataGridViewCellStyle14.SelectionBackColor = Color.FromArgb(179, 79, 84);
-            dataGridViewCellStyle14.SelectionForeColor = Color.FromArgb(255, 209, 211);
-            dataGridViewCellStyle14.WrapMode = DataGridViewTriState.True;
-            logDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = Color.FromArgb(146, 45, 51);
+            dataGridViewCellStyle7.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle7.ForeColor = Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(179, 79, 84);
+            dataGridViewCellStyle7.SelectionForeColor = Color.FromArgb(255, 209, 211);
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
+            logDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             logDataGridView.RowHeadersVisible = false;
             logDataGridView.RowHeadersWidth = 51;
             logDataGridView.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            logDataGridView.Size = new Size(1234, 635);
+            logDataGridView.Size = new Size(1080, 476);
             logDataGridView.TabIndex = 1;
             // 
             // panel8
@@ -1612,17 +1536,16 @@
             panel8.BackgroundImage = Properties.Resources.PanelBG;
             panel8.BackgroundImageLayout = ImageLayout.Stretch;
             panel8.Location = new Point(0, 0);
-            panel8.Margin = new Padding(3, 4, 3, 4);
             panel8.Name = "panel8";
-            panel8.Size = new Size(1248, 89);
+            panel8.Size = new Size(1092, 67);
             panel8.TabIndex = 2;
             // 
             // label16
             // 
             label16.AutoSize = true;
-            label16.Location = new Point(7, 12);
+            label16.Location = new Point(6, 9);
             label16.Name = "label16";
-            label16.Size = new Size(72, 20);
+            label16.Size = new Size(58, 15);
             label16.TabIndex = 0;
             label16.Text = "logsPanel";
             // 
@@ -1631,10 +1554,9 @@
             reportsPanel.BackColor = Color.FromArgb(224, 224, 224);
             reportsPanel.Controls.Add(reportsPanelInbox);
             reportsPanel.Controls.Add(label14);
-            reportsPanel.Location = new Point(312, 0);
-            reportsPanel.Margin = new Padding(3, 4, 3, 4);
+            reportsPanel.Location = new Point(273, 0);
             reportsPanel.Name = "reportsPanel";
-            reportsPanel.Size = new Size(1275, 1045);
+            reportsPanel.Size = new Size(1116, 784);
             reportsPanel.TabIndex = 5;
             // 
             // reportsPanelInbox
@@ -1643,18 +1565,16 @@
             reportsPanelInbox.Controls.Add(reportsEmailTB);
             reportsPanelInbox.Controls.Add(reportsDropDownCB);
             reportsPanelInbox.Controls.Add(panel10);
-            reportsPanelInbox.Location = new Point(14, 43);
-            reportsPanelInbox.Margin = new Padding(3, 4, 3, 4);
+            reportsPanelInbox.Location = new Point(12, 32);
             reportsPanelInbox.Name = "reportsPanelInbox";
-            reportsPanelInbox.Size = new Size(1248, 961);
+            reportsPanelInbox.Size = new Size(1092, 721);
             reportsPanelInbox.TabIndex = 2;
             // 
             // reportsEmailTB
             // 
-            reportsEmailTB.Location = new Point(507, 193);
-            reportsEmailTB.Margin = new Padding(3, 4, 3, 4);
+            reportsEmailTB.Location = new Point(444, 145);
             reportsEmailTB.Name = "reportsEmailTB";
-            reportsEmailTB.Size = new Size(559, 27);
+            reportsEmailTB.Size = new Size(490, 23);
             reportsEmailTB.TabIndex = 4;
             // 
             // reportsDropDownCB
@@ -1663,10 +1583,9 @@
             reportsDropDownCB.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             reportsDropDownCB.ForeColor = Color.FromArgb(91, 12, 12);
             reportsDropDownCB.FormattingEnabled = true;
-            reportsDropDownCB.Location = new Point(24, 227);
-            reportsDropDownCB.Margin = new Padding(3, 4, 3, 4);
+            reportsDropDownCB.Location = new Point(21, 170);
             reportsDropDownCB.Name = "reportsDropDownCB";
-            reportsDropDownCB.Size = new Size(319, 40);
+            reportsDropDownCB.Size = new Size(280, 33);
             reportsDropDownCB.TabIndex = 3;
             // 
             // panel10
@@ -1674,33 +1593,31 @@
             panel10.BackgroundImage = Properties.Resources.PanelBG;
             panel10.BackgroundImageLayout = ImageLayout.Stretch;
             panel10.Location = new Point(0, 0);
-            panel10.Margin = new Padding(3, 4, 3, 4);
             panel10.Name = "panel10";
-            panel10.Size = new Size(1248, 89);
+            panel10.Size = new Size(1092, 67);
             panel10.TabIndex = 2;
             // 
             // label14
             // 
             label14.AutoSize = true;
-            label14.Location = new Point(7, 12);
+            label14.Location = new Point(6, 9);
             label14.Name = "label14";
-            label14.Size = new Size(91, 20);
+            label14.Size = new Size(73, 15);
             label14.TabIndex = 0;
             label14.Text = "reportsPanel";
             // 
             // AdminForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(17, 24, 34);
-            ClientSize = new Size(1587, 1043);
+            ClientSize = new Size(1389, 782);
             Controls.Add(sidePanel);
-            Controls.Add(logsPanel);
             Controls.Add(userPanel);
             Controls.Add(departmentPanel);
             Controls.Add(dashPanel);
             Controls.Add(reportsPanel);
-            Margin = new Padding(3, 4, 3, 4);
+            Controls.Add(logsPanel);
             Name = "AdminForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AdminForm";
