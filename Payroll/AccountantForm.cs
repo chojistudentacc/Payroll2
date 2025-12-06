@@ -29,6 +29,8 @@ namespace Payroll
             initializeItems();
             this.login = login;
 
+            payrollButt.PerformClick();
+
 
         }
 
@@ -129,6 +131,73 @@ namespace Payroll
             deductButt.Enabled = true;
             reportButt.Enabled = true;
             messagesButt.Enabled = true;
+        }
+
+        public void CalculateTotalEarnings()
+        {
+            double basic = 0, regularday = 0, nightdiff = 0, regholiday = 0, specholiday = 0, bonus = 0;
+            int overtimeHours = 0;
+
+            if (!string.IsNullOrEmpty(basicsalTB.Text))
+                basic = double.Parse(basicsalTB.Text);
+
+            if (!string.IsNullOrEmpty(otTB.Text))
+                overtimeHours = int.Parse(otTB.Text);
+
+            if (!string.IsNullOrEmpty(otrdTB.Text))
+                regularday = double.Parse(otrdTB.Text);
+
+            if (!string.IsNullOrEmpty(otndTB.Text))
+                nightdiff = double.Parse(otndTB.Text);
+
+            if (!string.IsNullOrEmpty(otrhTB.Text))
+                regholiday = double.Parse(otrhTB.Text);
+
+            if (!string.IsNullOrEmpty(otshTB.Text))
+                specholiday = double.Parse(otshTB.Text);
+
+            if (!string.IsNullOrEmpty(bonusTB.Text))
+                bonus = double.Parse(bonusTB.Text);
+
+            double totalEarnings = basic + (overtimeHours * (regularday + nightdiff + regholiday + specholiday)) + bonus;
+
+            //totalearningLbl.Text = totalEarnings.ToString("N2");
+        }
+
+
+
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            double sss = 0, pagibig = 0, philhealth = 0, tax = 0, others = 0;
+            if (!string.IsNullOrEmpty(sssTB.Text))
+                sss = double.Parse(sssTB.Text);
+            if (!string.IsNullOrEmpty(pagibigTB.Text))
+                pagibig = double.Parse(pagibigTB.Text);
+            if (!string.IsNullOrEmpty(phTB.Text))
+                philhealth = double.Parse(phTB.Text);
+            if (!string.IsNullOrEmpty(wTaxTB.Text))
+                tax = double.Parse(wTaxTB.Text);
+            if (!string.IsNullOrEmpty(caTB.Text))
+                others = double.Parse(caTB.Text);
+            double totalDeductions = sss + pagibig + philhealth + tax + others;
+            totalDeductionsTB.Text = "₱" + totalDeductions.ToString("N2");
+        }
+
+        private void payslipButt_MouseHover(object sender, EventArgs e)
+        {
+            deductButt.Location = new Point(0,583);
+            reportButt.Location = new Point(0, 682);
+            messagesButt.Location = new Point(0, 780);
+            archievedButton.Location = new Point(0, 879);
+        }
+
+        private void payslipButt_MouseLeave(object sender, EventArgs e)
+        {
+            deductButt.Location = new Point(0, 434);
+            reportButt.Location = new Point(0, 533);
+            messagesButt.Location = new Point(0, 631);
+            archievedButton.Location = new Point(0, 730);
         }
     }
 }
