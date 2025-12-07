@@ -39,29 +39,29 @@
             // 
             // usernameTB
             // 
-            usernameTB.BackColor = Color.FromArgb(116, 88, 80);
-            usernameTB.Font = new Font("Segoe UI Semibold", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            usernameTB.ForeColor = Color.White;
-            usernameTB.Location = new Point(271, 361);
+            usernameTB.BackColor = Color.White;
+            usernameTB.Font = new Font("Times New Roman", 18F);
+            usernameTB.ForeColor = Color.Black;
+            usernameTB.Location = new Point(236, 363);
             usernameTB.Name = "usernameTB";
-            usernameTB.Size = new Size(438, 43);
+            usernameTB.Size = new Size(460, 35);
             usernameTB.TabIndex = 0;
             // 
             // passwordTB
             // 
-            passwordTB.BackColor = Color.FromArgb(116, 88, 80);
-            passwordTB.Font = new Font("Segoe UI Semibold", 19.8000011F, FontStyle.Bold);
-            passwordTB.ForeColor = Color.White;
-            passwordTB.Location = new Point(271, 419);
+            passwordTB.BackColor = Color.White;
+            passwordTB.Font = new Font("Times New Roman", 18F);
+            passwordTB.ForeColor = Color.Black;
+            passwordTB.Location = new Point(236, 449);
             passwordTB.Name = "passwordTB";
             passwordTB.PasswordChar = '*';
-            passwordTB.Size = new Size(438, 43);
+            passwordTB.Size = new Size(460, 35);
             passwordTB.TabIndex = 1;
             // 
             // LoginPanel
             // 
             LoginPanel.BackColor = Color.FromArgb(230, 231, 232);
-            LoginPanel.Location = new Point(334, 518);
+            LoginPanel.Location = new Point(358, 537);
             LoginPanel.Margin = new Padding(3, 2, 3, 2);
             LoginPanel.Name = "LoginPanel";
             LoginPanel.Size = new Size(197, 58);
@@ -71,29 +71,31 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Arial Narrow", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.White;
-            label3.Location = new Point(149, 370);
+            label3.BackColor = Color.Transparent;
+            label3.Font = new Font("Georgia", 18F, FontStyle.Bold);
+            label3.ForeColor = Color.FromArgb(99, 27, 27);
+            label3.Location = new Point(185, 331);
             label3.Name = "label3";
-            label3.Size = new Size(116, 29);
+            label3.Size = new Size(149, 29);
             label3.TabIndex = 5;
             label3.Text = "Username:";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Arial Narrow", 18F, FontStyle.Bold);
-            label4.ForeColor = Color.White;
-            label4.Location = new Point(149, 428);
+            label4.BackColor = Color.Transparent;
+            label4.Font = new Font("Georgia", 18F, FontStyle.Bold);
+            label4.ForeColor = Color.FromArgb(99, 27, 27);
+            label4.Location = new Point(185, 417);
             label4.Name = "label4";
-            label4.Size = new Size(113, 29);
+            label4.Size = new Size(141, 29);
             label4.TabIndex = 4;
             label4.Text = "Password:";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("Arial Narrow", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.White;
             label5.Location = new Point(334, 34);
             label5.Name = "label5";
@@ -102,9 +104,11 @@
             // 
             // exitButt
             // 
-            exitButt.Location = new Point(12, 786);
+            exitButt.Font = new Font("Georgia", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            exitButt.ForeColor = Color.FromArgb(143, 48, 48);
+            exitButt.Location = new Point(12, 774);
             exitButt.Name = "exitButt";
-            exitButt.Size = new Size(65, 23);
+            exitButt.Size = new Size(90, 35);
             exitButt.TabIndex = 8;
             exitButt.Text = "Exit";
             exitButt.UseVisualStyleBackColor = true;
