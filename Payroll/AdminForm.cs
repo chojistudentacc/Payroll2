@@ -20,6 +20,7 @@ namespace Payroll
         private string selectedID = "";
         private string selectedRole = "";
         private string selectedPassword = "";
+        private string newPassword = "";
         private string selectedDepartmentName = "";
         private string originalDepartmentName = "";
 
@@ -813,42 +814,30 @@ namespace Payroll
         {
             hideallPanels();
             reportsPanel.Visible = true;
-            reportsDropDownCB.Text = "Inbox";
             fillReportInboxPanel();
         }
 
         private void fillReportInboxPanel()
         {
-            DataTable inboxData = repo.GetAllEmailData();
+            int messagesCount = 10;
             inboxPanel.AutoScroll = true;
 
             int startY = 16;
             int spacing = 20;
             int boxHeight = 127;
-            int boxWidth = 628;
+            int boxWidth = 610;
 
-            for (int i = 0; i < inboxData.Rows.Count; i++)
+            for (int i = 0; i < messagesCount; i++)
             {
-                DataRow row = inboxData.Rows[i];
-
-                string header = row["header"].ToString();
-                string body = row["body"].ToString();
-                string tail = row["tail"].ToString();
-                string sender = row["senderFullName"].ToString();
-                string date = Convert.ToDateTime(row["date"]).ToString("MM/dd/yyyy");
-
                 RichTextBox rich = new RichTextBox();
                 rich.Size = new Size(boxWidth, boxHeight);
                 rich.Location = new Point(14, startY + i * (boxHeight + spacing + 35));
                 rich.ReadOnly = true;
                 rich.TabStop = false;
                 rich.Cursor = Cursors.Default;
-                rich.Font = new Font("Segoe UI Semibold", 10f, FontStyle.Bold);
                 rich.GotFocus += (s, e) => inboxPanel.Focus();
                 rich.Name = $"rich{i + 1}";
-
-                // 🔹 Display only header + sender name
-                rich.Text = $"{header}\n\nFrom: {sender}";
+                rich.Text = $"Message {i + 1}";
 
                 inboxPanel.Controls.Add(rich);
 
@@ -858,31 +847,13 @@ namespace Payroll
                 viewButton.Text = "View";
                 viewButton.Name = $"btnView{i + 1}";
 
-                // 🔹 "View" still shows full message
-                viewButton.Click += (senderObj, eObj) =>
+                viewButton.Click += (sender, e) =>
                 {
-                    reportsPanelInbox.Visible = false;
-                    reportsPanelViewMessage.Visible = true;
-
-                    string fullMessage =
-                        $"📌 {header}\n" +
-                        $"From: {sender}\n" +
-                        $"Sent: {date}\n\n" +
-                        $"{body}\n\n" +
-                        $"-- {tail}";
-
-                    viewMessageRichTB.Text = fullMessage;
+                    MessageBox.Show($"Viewing details for {rich.Text}", "Message Viewer");
                 };
 
                 inboxPanel.Controls.Add(viewButton);
             }
-        }
-
-        private void viewMessageBackButt_Click(object sender, EventArgs e)
-        {
-            reportsPanelInbox.Visible = true;
-            reportsPanelViewMessage.Visible = false;
-            viewMessageRichTB.Text = "";
         }
 
         private void logButt_Click(object sender, EventArgs e)
@@ -893,7 +864,5 @@ namespace Payroll
             dateTimePicker2.Value = DateTime.Today;
             FilterLogsByDateRange();
         }
-
-        
     }
 }
