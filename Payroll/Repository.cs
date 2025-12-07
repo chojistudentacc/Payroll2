@@ -10,9 +10,60 @@ namespace Payroll
     {
 
         private string csvFilePath = @"C:\Users\ADRIANSOSONG\Documents\EmployeeArchive.csv";
-        private readonly string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\ADRIANSOSONG\\source\\repos\\Payroll2\\Payroll\\Payroll.mdf;Integrated Security=True";
+        private readonly string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\Choji Kodachi\\Documents\\!! Work !!\\Payroll-master\\Payroll\\Payroll.mdf\";Integrated Security=True";
 
+        public int GetEmailDataRowCount()
+        {
+            int rowCount = 0;
 
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    string sql = "SELECT COUNT(*) FROM emailData";
+
+                    using (SqlCommand cmd = new SqlCommand(sql, connection))
+                    {
+                        rowCount = (int)cmd.ExecuteScalar();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Count Error: " + ex.ToString());
+            }
+
+            return rowCount;
+        }
+
+        public DataTable GetAllEmailData()
+        {
+            DataTable table = new DataTable();
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    string sql = "SELECT header, body, tail, senderFullName, date FROM emailData ORDER BY date DESC";
+
+                    using (SqlCommand cmd = new SqlCommand(sql, connection))
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                    {
+                        adapter.Fill(table);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Load Emails Error: " + ex.ToString());
+            }
+
+            return table;
+        }
 
         public DataTable SearchEmployees(string role, string keyword)
         {
