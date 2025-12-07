@@ -494,8 +494,8 @@
             deductionPanel.Controls.Add(taxLabel);
             deductionPanel.Controls.Add(phButt);
             deductionPanel.Controls.Add(sssButton);
-            deductionPanel.Controls.Add(dataGridView1);
             deductionPanel.Controls.Add(label2);
+            deductionPanel.Controls.Add(dataGridView1);
             deductionPanel.ForeColor = Color.White;
             deductionPanel.Location = new Point(283, 12);
             deductionPanel.Name = "deductionPanel";
@@ -1634,13 +1634,13 @@
             ClientSize = new Size(1389, 782);
             Controls.Add(panel10);
             Controls.Add(sidePanel);
+            Controls.Add(deductionPanel);
+            Controls.Add(viewpayslipPanel);
+            Controls.Add(payrollpanel);
             Controls.Add(payslipPanel);
             Controls.Add(groupBox1);
             Controls.Add(messagesPanel);
             Controls.Add(reportPanel);
-            Controls.Add(deductionPanel);
-            Controls.Add(viewpayslipPanel);
-            Controls.Add(payrollpanel);
             Name = "AccountantForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AccountantForm";

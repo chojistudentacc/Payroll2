@@ -1334,6 +1334,54 @@ namespace Payroll
             return table;
         }
 
-        
+        public DataRow GetEmployeeProfileData(string userName)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    string sql = @"
+            SELECT 
+            employeeID,
+            firstName,
+            lastName,
+            middleName,
+            email,
+            contactNum,
+            address,
+            userName,
+            password
+            FROM employeeData 
+            WHERE userName = @userName;
+            ";
+
+                    using (SqlCommand cmd = new SqlCommand(sql, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@userName", userName);
+
+                        using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                        {
+                            DataTable table = new DataTable();
+                            adapter.Fill(table);
+
+                            if (table.Rows.Count > 0)
+                            {
+                                return table.Rows[0];
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error retrieving employee profile: " + ex.Message);
+            }
+
+            return null;
+        }
+
     }
 }
+

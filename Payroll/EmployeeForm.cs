@@ -34,6 +34,7 @@ namespace Payroll
         private void EmployeeForm_Load(object sender, EventArgs e)
         {
             hideAllPanels();
+            LoadEmployeeProfile();
             dashboardPanel.Visible = true;
         }
 
@@ -80,6 +81,72 @@ namespace Payroll
         private void EmployeeForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             login.Visible = true;
+        }
+
+        private void LoadEmployeeProfile()
+        {
+            try
+            {
+                DataRow employeeData = repo.GetEmployeeProfileData(currentUserName);
+
+                if (employeeData != null)
+                {
+                    employeeProfileIDLabel.Text = employeeData["employeeID"].ToString();
+                    employeeProfileNameLabel.Text = $"{employeeData["firstName"]} {employeeData["middleName"]} {employeeData["lastName"]}";
+                    employeeName.Text = $"{employeeData["firstName"]}";
+
+                    employeeProfileUserIDLabel.Text = employeeData["username"].ToString();
+
+                    actualPassword = employeeData["password"].ToString();
+                    employeeProfilePasswordTB.Text = "Hidden";
+                    employeeProfilePasswordTB.ReadOnly = true;
+
+                    employeeEmailLabel.Text = employeeData["email"].ToString();
+                    employeeContactLabel.Text = employeeData["contactNum"].ToString();
+                    employeeAddressLabel.Text = employeeData["address"].ToString();
+
+                    employeeProfilePositionLabel.Text = "Employee";
+                    employeeProfileDepartmentLabel.Text = "None";
+                    employeeTypeLabel.Text = "Employee";
+
+                    employeTinLabel.Text = "None";
+                    employeeSSSLabel.Text = "None";
+                    label22.Text = "None";
+                    label21.Text = "None";
+                }
+                else
+                {
+                    MessageBox.Show("Employee profile not found.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading employee profile: " + ex.Message);
+            }
+        }
+
+        private void showPasswordButton_Click(object sender, EventArgs e)
+        {
+            if (isPasswordVisible)
+            {
+                employeeProfilePasswordTB.Text = "Hidden";
+                showPasswordButton.Text = "Show";
+                isPasswordVisible = false;
+            }
+            else
+            {
+                employeeProfilePasswordTB.Text = actualPassword;
+                showPasswordButton.Text = "Hide";
+                isPasswordVisible = true;
+            }
+        }
+
+
+        private void changePasswordButton_Click_1(object sender, EventArgs e)
+        {
+            employeeProfilePasswordTB.ReadOnly = false;
+            employeeProfilePasswordTB.Clear();
+            employeeProfilePasswordTB.Focus();
         }
     }
 }

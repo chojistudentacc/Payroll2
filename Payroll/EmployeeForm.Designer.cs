@@ -292,7 +292,7 @@
             label21.AutoSize = true;
             label21.Font = new Font("Segoe UI", 14.25F);
             label21.ForeColor = Color.Black;
-            label21.Location = new Point(823, 63);
+            label21.Location = new Point(747, 63);
             label21.Name = "label21";
             label21.Size = new Size(58, 25);
             label21.TabIndex = 17;
@@ -303,7 +303,7 @@
             label22.AutoSize = true;
             label22.Font = new Font("Segoe UI", 14.25F);
             label22.ForeColor = Color.Black;
-            label22.Location = new Point(823, 22);
+            label22.Location = new Point(747, 22);
             label22.Name = "label22";
             label22.Size = new Size(58, 25);
             label22.TabIndex = 16;
@@ -336,7 +336,7 @@
             label26.AutoSize = true;
             label26.Font = new Font("Segoe UI", 14.25F);
             label26.ForeColor = Color.Black;
-            label26.Location = new Point(635, 63);
+            label26.Location = new Point(559, 63);
             label26.Name = "label26";
             label26.Size = new Size(161, 25);
             label26.TabIndex = 9;
@@ -347,7 +347,7 @@
             label27.AutoSize = true;
             label27.Font = new Font("Segoe UI", 14.25F);
             label27.ForeColor = Color.Black;
-            label27.Location = new Point(619, 22);
+            label27.Location = new Point(543, 22);
             label27.Name = "label27";
             label27.Size = new Size(177, 25);
             label27.TabIndex = 8;
@@ -409,7 +409,7 @@
             employeeEmailLabel.AutoSize = true;
             employeeEmailLabel.Font = new Font("Segoe UI", 14.25F);
             employeeEmailLabel.ForeColor = Color.Black;
-            employeeEmailLabel.Location = new Point(823, 63);
+            employeeEmailLabel.Location = new Point(733, 63);
             employeeEmailLabel.Name = "employeeEmailLabel";
             employeeEmailLabel.Size = new Size(58, 25);
             employeeEmailLabel.TabIndex = 17;
@@ -420,7 +420,7 @@
             employeeContactLabel.AutoSize = true;
             employeeContactLabel.Font = new Font("Segoe UI", 14.25F);
             employeeContactLabel.ForeColor = Color.Black;
-            employeeContactLabel.Location = new Point(823, 22);
+            employeeContactLabel.Location = new Point(733, 22);
             employeeContactLabel.Name = "employeeContactLabel";
             employeeContactLabel.Size = new Size(58, 25);
             employeeContactLabel.TabIndex = 16;
@@ -453,7 +453,7 @@
             label14.AutoSize = true;
             label14.Font = new Font("Segoe UI", 14.25F);
             label14.ForeColor = Color.Black;
-            label14.Location = new Point(664, 64);
+            label14.Location = new Point(574, 64);
             label14.Name = "label14";
             label14.Size = new Size(134, 25);
             label14.TabIndex = 9;
@@ -464,7 +464,7 @@
             label15.AutoSize = true;
             label15.Font = new Font("Segoe UI", 14.25F);
             label15.ForeColor = Color.Black;
-            label15.Location = new Point(683, 22);
+            label15.Location = new Point(593, 22);
             label15.Name = "label15";
             label15.Size = new Size(115, 25);
             label15.TabIndex = 8;
@@ -531,7 +531,7 @@
             employeeProfileDepartmentLabel.AutoSize = true;
             employeeProfileDepartmentLabel.Font = new Font("Segoe UI", 14.25F);
             employeeProfileDepartmentLabel.ForeColor = Color.Black;
-            employeeProfileDepartmentLabel.Location = new Point(343, 147);
+            employeeProfileDepartmentLabel.Location = new Point(343, 141);
             employeeProfileDepartmentLabel.Name = "employeeProfileDepartmentLabel";
             employeeProfileDepartmentLabel.Size = new Size(58, 25);
             employeeProfileDepartmentLabel.TabIndex = 16;
@@ -542,7 +542,7 @@
             employeeProfilePositionLabel.AutoSize = true;
             employeeProfilePositionLabel.Font = new Font("Segoe UI", 14.25F);
             employeeProfilePositionLabel.ForeColor = Color.Black;
-            employeeProfilePositionLabel.Location = new Point(343, 107);
+            employeeProfilePositionLabel.Location = new Point(343, 103);
             employeeProfilePositionLabel.Name = "employeeProfilePositionLabel";
             employeeProfilePositionLabel.Size = new Size(58, 25);
             employeeProfilePositionLabel.TabIndex = 15;
@@ -564,7 +564,7 @@
             employeeProfileIDLabel.AutoSize = true;
             employeeProfileIDLabel.Font = new Font("Segoe UI", 14.25F);
             employeeProfileIDLabel.ForeColor = Color.Black;
-            employeeProfileIDLabel.Location = new Point(343, 27);
+            employeeProfileIDLabel.Location = new Point(343, 22);
             employeeProfileIDLabel.Name = "employeeProfileIDLabel";
             employeeProfileIDLabel.Size = new Size(58, 25);
             employeeProfileIDLabel.TabIndex = 13;
@@ -585,6 +585,7 @@
             changePasswordButton.TabIndex = 12;
             changePasswordButton.Text = "Change";
             changePasswordButton.UseVisualStyleBackColor = false;
+            changePasswordButton.Click += changePasswordButton_Click_1;
             // 
             // showPasswordButton
             // 
@@ -601,6 +602,7 @@
             showPasswordButton.TabIndex = 11;
             showPasswordButton.Text = "Show";
             showPasswordButton.UseVisualStyleBackColor = false;
+            showPasswordButton.Click += showPasswordButton_Click;
             // 
             // label9
             // 
@@ -629,7 +631,7 @@
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 14.25F);
             label7.ForeColor = Color.Black;
-            label7.Location = new Point(161, 147);
+            label7.Location = new Point(198, 141);
             label7.Name = "label7";
             label7.Size = new Size(116, 25);
             label7.TabIndex = 7;
@@ -640,7 +642,7 @@
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 14.25F);
             label6.ForeColor = Color.Black;
-            label6.Location = new Point(161, 107);
+            label6.Location = new Point(231, 103);
             label6.Name = "label6";
             label6.Size = new Size(83, 25);
             label6.TabIndex = 6;
@@ -662,7 +664,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 14.25F);
             label4.ForeColor = Color.Black;
-            label4.Location = new Point(161, 22);
+            label4.Location = new Point(193, 22);
             label4.Name = "label4";
             label4.Size = new Size(121, 25);
             label4.TabIndex = 4;
