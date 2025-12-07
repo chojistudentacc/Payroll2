@@ -39,6 +39,9 @@
             DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
             sidePanel = new Panel();
+            button1 = new Button();
+            welcomeLabelAdmin = new Label();
+            adminPictureBox = new PictureBox();
             welcomeLabel = new Label();
             reportButt = new Button();
             logButt = new Button();
@@ -54,6 +57,7 @@
             userPanel = new Panel();
             label1 = new Label();
             editEmployeePanel = new Panel();
+            label25 = new Label();
             editEmployeeCancelButt = new Button();
             editEmployeeSaveButt = new Button();
             editEmployeeResetPasswordButt = new Button();
@@ -164,10 +168,8 @@
             reportsDropDownCB = new ComboBox();
             panel10 = new Panel();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            pictureBox1 = new PictureBox();
-            label26 = new Label();
-            label25 = new Label();
             sidePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)adminPictureBox).BeginInit();
             dashPanel.SuspendLayout();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -189,7 +191,6 @@
             reportsPanelViewMessage.SuspendLayout();
             viewMessagePanel.SuspendLayout();
             reportsPanelInbox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // sidePanel
@@ -197,8 +198,9 @@
             sidePanel.BackColor = Color.FromArgb(51, 55, 64);
             sidePanel.BackgroundImage = Properties.Resources.PanelBG;
             sidePanel.BackgroundImageLayout = ImageLayout.Stretch;
-            sidePanel.Controls.Add(label26);
-            sidePanel.Controls.Add(pictureBox1);
+            sidePanel.Controls.Add(button1);
+            sidePanel.Controls.Add(welcomeLabelAdmin);
+            sidePanel.Controls.Add(adminPictureBox);
             sidePanel.Controls.Add(welcomeLabel);
             sidePanel.Controls.Add(reportButt);
             sidePanel.Controls.Add(logButt);
@@ -209,6 +211,39 @@
             sidePanel.Name = "sidePanel";
             sidePanel.Size = new Size(273, 782);
             sidePanel.TabIndex = 0;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(122, 146);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 13;
+            button1.Text = "button1";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // welcomeLabelAdmin
+            // 
+            welcomeLabelAdmin.AutoSize = true;
+            welcomeLabelAdmin.BackColor = Color.Transparent;
+            welcomeLabelAdmin.Font = new Font("Georgia", 15.75F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            welcomeLabelAdmin.ForeColor = Color.White;
+            welcomeLabelAdmin.Location = new Point(149, 74);
+            welcomeLabelAdmin.Name = "welcomeLabelAdmin";
+            welcomeLabelAdmin.Size = new Size(80, 25);
+            welcomeLabelAdmin.TabIndex = 12;
+            welcomeLabelAdmin.Text = "(name)";
+            welcomeLabelAdmin.Click += label26_Click;
+            // 
+            // adminPictureBox
+            // 
+            adminPictureBox.BackColor = Color.White;
+            adminPictureBox.BackgroundImageLayout = ImageLayout.Stretch;
+            adminPictureBox.Location = new Point(12, 26);
+            adminPictureBox.Name = "adminPictureBox";
+            adminPictureBox.Size = new Size(107, 93);
+            adminPictureBox.TabIndex = 10;
+            adminPictureBox.TabStop = false;
             // 
             // welcomeLabel
             // 
@@ -437,6 +472,17 @@
             editEmployeePanel.Size = new Size(1092, 721);
             editEmployeePanel.TabIndex = 30;
             editEmployeePanel.Visible = false;
+            // 
+            // label25
+            // 
+            label25.AutoSize = true;
+            label25.Font = new Font("Georgia", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label25.ForeColor = Color.FromArgb(125, 0, 0);
+            label25.Location = new Point(374, 91);
+            label25.Name = "label25";
+            label25.Size = new Size(305, 41);
+            label25.TabIndex = 39;
+            label25.Text = "INFORMATION";
             // 
             // editEmployeeCancelButt
             // 
@@ -1740,39 +1786,6 @@
             panel10.Size = new Size(1092, 67);
             panel10.TabIndex = 2;
             // 
-            // pictureBox1
-            // 
-            pictureBox1.BackColor = Color.White;
-            pictureBox1.Location = new Point(12, 26);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(107, 93);
-            pictureBox1.TabIndex = 10;
-            pictureBox1.TabStop = false;
-            // 
-            // label26
-            // 
-            label26.AutoSize = true;
-            label26.BackColor = Color.Transparent;
-            label26.Font = new Font("Georgia", 15.75F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            label26.ForeColor = Color.White;
-            label26.Location = new Point(149, 74);
-            label26.Name = "label26";
-            label26.Size = new Size(80, 25);
-            label26.TabIndex = 12;
-            label26.Text = "(name)";
-            label26.Click += label26_Click;
-            // 
-            // label25
-            // 
-            label25.AutoSize = true;
-            label25.Font = new Font("Georgia", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label25.ForeColor = Color.FromArgb(125, 0, 0);
-            label25.Location = new Point(374, 91);
-            label25.Name = "label25";
-            label25.Size = new Size(305, 41);
-            label25.TabIndex = 39;
-            label25.Text = "INFORMATION";
-            // 
             // AdminForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -1780,17 +1793,18 @@
             BackColor = Color.FromArgb(17, 24, 34);
             ClientSize = new Size(1389, 782);
             Controls.Add(sidePanel);
-            Controls.Add(logsPanel);
             Controls.Add(userPanel);
             Controls.Add(departmentPanel);
             Controls.Add(dashPanel);
             Controls.Add(reportsPanel);
+            Controls.Add(logsPanel);
             Name = "AdminForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AdminForm";
             FormClosed += AdminForm_FormClosed;
             sidePanel.ResumeLayout(false);
             sidePanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)adminPictureBox).EndInit();
             dashPanel.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
@@ -1824,7 +1838,6 @@
             reportsPanelViewMessage.ResumeLayout(false);
             viewMessagePanel.ResumeLayout(false);
             reportsPanelInbox.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -1959,8 +1972,9 @@
         private Button viewMessageBackButt;
         private Button viewMessageReplyButt;
         private Button viewMessageArchiveButt;
-        private Label label26;
-        private PictureBox pictureBox1;
+        private Label welcomeLabelAdmin;
         private Label label25;
+        public PictureBox adminPictureBox;
+        private Button button1;
     }
 }

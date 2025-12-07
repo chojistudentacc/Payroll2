@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing.Imaging;
 using System.Windows.Forms;
 using Payroll.Models;
 
@@ -337,6 +338,81 @@ namespace Payroll
             }
             return "";
         }
+
+        public DataTable getAdminName(string userName)
+        {
+            DataTable table = new DataTable();
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    string sql = "SELECT firstName, lastName, middleName FROM adminData WHERE userName = @userName";
+
+                    using (SqlCommand cmd = new SqlCommand(sql, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@userName", userName);
+                        using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                        {
+                            adapter.Fill(table);
+                        }
+                    }
+                    
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Load Emails Error: " + ex.ToString());
+            }
+
+            return table;
+        }
+
+        public void SavePictureToProject(string id, Image img)
+        {
+            string folder = Path.Combine(Application.StartupPath, "Pictures");
+
+            if (!Directory.Exists(folder))
+                Directory.CreateDirectory(folder);
+
+            string fileName = $"{id}.jpg";
+            string filePath = Path.Combine(folder, fileName);
+
+            if (File.Exists(filePath))
+            {
+                try
+                {
+                    File.Delete(filePath);
+                }
+                catch
+                {
+                    return;
+                }
+            }
+
+            img.Save(filePath, ImageFormat.Jpeg);
+
+        }
+
+
+        public void LoadAdminPicture(string id, PictureBox pic)
+        {
+            string folder = Path.Combine(Application.StartupPath, "Pictures");
+            string fileName = $"{id}.jpg";
+            string filePath = Path.Combine(folder, fileName);
+
+            if (File.Exists(filePath))
+            {
+                pic.Image = Image.FromFile(filePath);
+            }
+            else
+            {
+                pic.Image = null;
+            }
+        }
+
 
         public bool IsAdminDataEmpty()
         {

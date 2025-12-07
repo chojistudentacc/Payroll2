@@ -56,7 +56,10 @@ namespace Payroll
             toolTip.InitialDelay = 500;
             toolTip.ShowAlways = true;
 
-            welcomeLabel.Text = "Welcome, " + repo.getAdminID(userName);
+            welcomeLabelAdmin.Text = repo.getAdminID(userName);
+            repo.LoadAdminPicture(repo.getAdminID(userName), adminPictureBox);
+            adminPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+
             roleComboBox.Items.Add("Employee");
             roleComboBox.Items.Add("Human Resources");
             roleComboBox.Items.Add("Accountant");
@@ -987,6 +990,23 @@ namespace Payroll
         private void label26_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog dlg = new OpenFileDialog())
+            {
+                dlg.Filter = "Image Files | *.jpg; *.png; *.jpeg";
+
+                if (dlg.ShowDialog() == DialogResult.OK)
+                {
+                    Image img = Image.FromFile(dlg.FileName);
+
+                    adminPictureBox.Image = img;
+
+                    repo.SavePictureToProject(repo.getAdminID(userName), img);
+                }
+            }
         }
     }
 }
