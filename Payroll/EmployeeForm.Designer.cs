@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeeForm));
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
@@ -107,6 +108,7 @@
             alabel = new Label();
             payslipPanel = new Panel();
             label23 = new Label();
+            pictureBox2 = new PictureBox();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
             panel5.SuspendLayout();
@@ -127,12 +129,15 @@
             ((System.ComponentModel.ISupportInitialize)logDataGridView).BeginInit();
             leavePanel.SuspendLayout();
             payslipPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(51, 55, 64);
-            panel2.BackgroundImage = Properties.Resources.PanelBG;
+            panel2.BackgroundImage = (Image)resources.GetObject("panel2.BackgroundImage");
+            panel2.BackgroundImageLayout = ImageLayout.Stretch;
+            panel2.Controls.Add(pictureBox2);
             panel2.Controls.Add(profileButton);
             panel2.Controls.Add(payslipButton);
             panel2.Controls.Add(leavesButton);
@@ -149,11 +154,13 @@
             // profileButton
             // 
             profileButton.BackColor = Color.FromArgb(163, 47, 54);
+            profileButton.BackgroundImage = (Image)resources.GetObject("profileButton.BackgroundImage");
+            profileButton.BackgroundImageLayout = ImageLayout.Stretch;
             profileButton.FlatAppearance.BorderSize = 0;
             profileButton.FlatAppearance.MouseDownBackColor = Color.Black;
             profileButton.FlatAppearance.MouseOverBackColor = Color.Black;
             profileButton.FlatStyle = FlatStyle.Flat;
-            profileButton.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            profileButton.Font = new Font("Georgia", 15.75F, FontStyle.Bold);
             profileButton.ForeColor = Color.White;
             profileButton.Location = new Point(0, 478);
             profileButton.Name = "profileButton";
@@ -166,11 +173,13 @@
             // payslipButton
             // 
             payslipButton.BackColor = Color.FromArgb(163, 47, 54);
+            payslipButton.BackgroundImage = (Image)resources.GetObject("payslipButton.BackgroundImage");
+            payslipButton.BackgroundImageLayout = ImageLayout.Stretch;
             payslipButton.FlatAppearance.BorderSize = 0;
             payslipButton.FlatAppearance.MouseDownBackColor = Color.Black;
             payslipButton.FlatAppearance.MouseOverBackColor = Color.Black;
             payslipButton.FlatStyle = FlatStyle.Flat;
-            payslipButton.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            payslipButton.Font = new Font("Georgia", 15.75F, FontStyle.Bold);
             payslipButton.ForeColor = Color.White;
             payslipButton.Location = new Point(0, 404);
             payslipButton.Name = "payslipButton";
@@ -183,11 +192,13 @@
             // leavesButton
             // 
             leavesButton.BackColor = Color.FromArgb(163, 47, 54);
+            leavesButton.BackgroundImage = (Image)resources.GetObject("leavesButton.BackgroundImage");
+            leavesButton.BackgroundImageLayout = ImageLayout.Stretch;
             leavesButton.FlatAppearance.BorderSize = 0;
             leavesButton.FlatAppearance.MouseDownBackColor = Color.Black;
             leavesButton.FlatAppearance.MouseOverBackColor = Color.Black;
             leavesButton.FlatStyle = FlatStyle.Flat;
-            leavesButton.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            leavesButton.Font = new Font("Georgia", 15.75F, FontStyle.Bold);
             leavesButton.ForeColor = Color.White;
             leavesButton.Location = new Point(0, 330);
             leavesButton.Name = "leavesButton";
@@ -200,11 +211,13 @@
             // attendanceButt
             // 
             attendanceButt.BackColor = Color.FromArgb(163, 47, 54);
+            attendanceButt.BackgroundImage = (Image)resources.GetObject("attendanceButt.BackgroundImage");
+            attendanceButt.BackgroundImageLayout = ImageLayout.Stretch;
             attendanceButt.FlatAppearance.BorderSize = 0;
             attendanceButt.FlatAppearance.MouseDownBackColor = Color.Black;
             attendanceButt.FlatAppearance.MouseOverBackColor = Color.Black;
             attendanceButt.FlatStyle = FlatStyle.Flat;
-            attendanceButt.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            attendanceButt.Font = new Font("Georgia", 15.75F, FontStyle.Bold);
             attendanceButt.ForeColor = Color.White;
             attendanceButt.Location = new Point(0, 256);
             attendanceButt.Name = "attendanceButt";
@@ -217,11 +230,13 @@
             // dashboardButt
             // 
             dashboardButt.BackColor = Color.FromArgb(163, 47, 54);
+            dashboardButt.BackgroundImage = (Image)resources.GetObject("dashboardButt.BackgroundImage");
+            dashboardButt.BackgroundImageLayout = ImageLayout.Stretch;
             dashboardButt.FlatAppearance.BorderSize = 0;
             dashboardButt.FlatAppearance.MouseDownBackColor = Color.Black;
             dashboardButt.FlatAppearance.MouseOverBackColor = Color.Black;
             dashboardButt.FlatStyle = FlatStyle.Flat;
-            dashboardButt.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            dashboardButt.Font = new Font("Georgia", 15.75F, FontStyle.Bold);
             dashboardButt.ForeColor = Color.White;
             dashboardButt.Location = new Point(0, 182);
             dashboardButt.Name = "dashboardButt";
@@ -235,11 +250,11 @@
             // 
             employeeName.AutoSize = true;
             employeeName.BackColor = Color.Transparent;
-            employeeName.Font = new Font("Segoe UI", 14.5F);
+            employeeName.Font = new Font("Georgia", 15.75F, FontStyle.Italic);
             employeeName.ForeColor = Color.White;
-            employeeName.Location = new Point(56, 65);
+            employeeName.Location = new Point(123, 60);
             employeeName.Name = "employeeName";
-            employeeName.Size = new Size(150, 28);
+            employeeName.Size = new Size(157, 25);
             employeeName.TabIndex = 1;
             employeeName.Text = "employeeName";
             // 
@@ -247,11 +262,11 @@
             // 
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Segoe UI", 14.5F);
+            label1.Font = new Font("Georgia", 18F, FontStyle.Bold | FontStyle.Italic);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(82, 23);
+            label1.Location = new Point(133, 31);
             label1.Name = "label1";
-            label1.Size = new Size(97, 28);
+            label1.Size = new Size(135, 29);
             label1.TabIndex = 0;
             label1.Text = "Welcome,";
             // 
@@ -263,6 +278,7 @@
             panel1.Controls.Add(panel3);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(panel8);
+            panel1.Controls.Add(pictureBox1);
             panel1.ForeColor = Color.Black;
             panel1.Location = new Point(13, 29);
             panel1.Name = "panel1";
@@ -282,96 +298,96 @@
             panel5.Controls.Add(label28);
             panel5.Controls.Add(label29);
             panel5.ForeColor = Color.FromArgb(163, 47, 54);
-            panel5.Location = new Point(45, 510);
+            panel5.Location = new Point(43, 636);
             panel5.Name = "panel5";
-            panel5.Size = new Size(1002, 111);
+            panel5.Size = new Size(1002, 105);
             panel5.TabIndex = 19;
             // 
             // label21
             // 
             label21.AutoSize = true;
-            label21.Font = new Font("Segoe UI", 14.25F);
+            label21.Font = new Font("Times New Roman", 14.25F);
             label21.ForeColor = Color.Black;
-            label21.Location = new Point(747, 63);
+            label21.Location = new Point(793, 63);
             label21.Name = "label21";
-            label21.Size = new Size(58, 25);
+            label21.Size = new Size(50, 21);
             label21.TabIndex = 17;
             label21.Text = "None";
             // 
             // label22
             // 
             label22.AutoSize = true;
-            label22.Font = new Font("Segoe UI", 14.25F);
+            label22.Font = new Font("Times New Roman", 14.25F);
             label22.ForeColor = Color.Black;
-            label22.Location = new Point(747, 22);
+            label22.Location = new Point(793, 27);
             label22.Name = "label22";
-            label22.Size = new Size(58, 25);
+            label22.Size = new Size(50, 21);
             label22.TabIndex = 16;
             label22.Text = "None";
             // 
             // employeeSSSLabel
             // 
             employeeSSSLabel.AutoSize = true;
-            employeeSSSLabel.Font = new Font("Segoe UI", 14.25F);
+            employeeSSSLabel.Font = new Font("Times New Roman", 14.25F);
             employeeSSSLabel.ForeColor = Color.Black;
-            employeeSSSLabel.Location = new Point(219, 63);
+            employeeSSSLabel.Location = new Point(251, 60);
             employeeSSSLabel.Name = "employeeSSSLabel";
-            employeeSSSLabel.Size = new Size(58, 25);
+            employeeSSSLabel.Size = new Size(50, 21);
             employeeSSSLabel.TabIndex = 14;
             employeeSSSLabel.Text = "None";
             // 
             // employeTinLabel
             // 
             employeTinLabel.AutoSize = true;
-            employeTinLabel.Font = new Font("Segoe UI", 14.25F);
+            employeTinLabel.Font = new Font("Times New Roman", 14.25F);
             employeTinLabel.ForeColor = Color.Black;
-            employeTinLabel.Location = new Point(219, 22);
+            employeTinLabel.Location = new Point(251, 25);
             employeTinLabel.Name = "employeTinLabel";
-            employeTinLabel.Size = new Size(58, 25);
+            employeTinLabel.Size = new Size(50, 21);
             employeTinLabel.TabIndex = 13;
             employeTinLabel.Text = "None";
             // 
             // label26
             // 
             label26.AutoSize = true;
-            label26.Font = new Font("Segoe UI", 14.25F);
+            label26.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
             label26.ForeColor = Color.Black;
-            label26.Location = new Point(559, 63);
+            label26.Location = new Point(547, 60);
             label26.Name = "label26";
-            label26.Size = new Size(161, 25);
+            label26.Size = new Size(183, 23);
             label26.TabIndex = 9;
             label26.Text = "Pag-Ibig Number:";
             // 
             // label27
             // 
             label27.AutoSize = true;
-            label27.Font = new Font("Segoe UI", 14.25F);
+            label27.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
             label27.ForeColor = Color.Black;
-            label27.Location = new Point(543, 22);
+            label27.Location = new Point(547, 25);
             label27.Name = "label27";
-            label27.Size = new Size(177, 25);
+            label27.Size = new Size(210, 23);
             label27.TabIndex = 8;
             label27.Text = "PhilHealth Number:";
             // 
             // label28
             // 
             label28.AutoSize = true;
-            label28.Font = new Font("Segoe UI", 14.25F);
+            label28.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
             label28.ForeColor = Color.Black;
-            label28.Location = new Point(23, 63);
+            label28.Location = new Point(36, 60);
             label28.Name = "label28";
-            label28.Size = new Size(120, 25);
+            label28.Size = new Size(139, 23);
             label28.TabIndex = 5;
             label28.Text = "SSS Number:";
             // 
             // label29
             // 
             label29.AutoSize = true;
-            label29.Font = new Font("Segoe UI", 14.25F);
+            label29.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
             label29.ForeColor = Color.Black;
-            label29.Location = new Point(22, 22);
+            label29.Location = new Point(35, 22);
             label29.Name = "label29";
-            label29.Size = new Size(119, 25);
+            label29.Size = new Size(140, 23);
             label29.TabIndex = 4;
             label29.Text = "TIN Number:";
             // 
@@ -388,96 +404,96 @@
             panel4.Controls.Add(label15);
             panel4.Controls.Add(label19);
             panel4.ForeColor = Color.FromArgb(163, 47, 54);
-            panel4.Location = new Point(45, 368);
+            panel4.Location = new Point(43, 523);
             panel4.Name = "panel4";
-            panel4.Size = new Size(1002, 114);
+            panel4.Size = new Size(1002, 94);
             panel4.TabIndex = 17;
             // 
             // employeeAddressLabel
             // 
             employeeAddressLabel.AutoSize = true;
-            employeeAddressLabel.Font = new Font("Segoe UI", 14.25F);
+            employeeAddressLabel.Font = new Font("Times New Roman", 14.25F);
             employeeAddressLabel.ForeColor = Color.Black;
-            employeeAddressLabel.Location = new Point(219, 63);
+            employeeAddressLabel.Location = new Point(252, 60);
             employeeAddressLabel.Name = "employeeAddressLabel";
-            employeeAddressLabel.Size = new Size(58, 25);
+            employeeAddressLabel.Size = new Size(50, 21);
             employeeAddressLabel.TabIndex = 18;
             employeeAddressLabel.Text = "None";
             // 
             // employeeEmailLabel
             // 
             employeeEmailLabel.AutoSize = true;
-            employeeEmailLabel.Font = new Font("Segoe UI", 14.25F);
+            employeeEmailLabel.Font = new Font("Times New Roman", 14.25F);
             employeeEmailLabel.ForeColor = Color.Black;
-            employeeEmailLabel.Location = new Point(733, 63);
+            employeeEmailLabel.Location = new Point(794, 57);
             employeeEmailLabel.Name = "employeeEmailLabel";
-            employeeEmailLabel.Size = new Size(58, 25);
+            employeeEmailLabel.Size = new Size(50, 21);
             employeeEmailLabel.TabIndex = 17;
             employeeEmailLabel.Text = "None";
             // 
             // employeeContactLabel
             // 
             employeeContactLabel.AutoSize = true;
-            employeeContactLabel.Font = new Font("Segoe UI", 14.25F);
+            employeeContactLabel.Font = new Font("Times New Roman", 14.25F);
             employeeContactLabel.ForeColor = Color.Black;
-            employeeContactLabel.Location = new Point(733, 22);
+            employeeContactLabel.Location = new Point(794, 15);
             employeeContactLabel.Name = "employeeContactLabel";
-            employeeContactLabel.Size = new Size(58, 25);
+            employeeContactLabel.Size = new Size(50, 21);
             employeeContactLabel.TabIndex = 16;
             employeeContactLabel.Text = "None";
             // 
             // label10
             // 
             label10.AutoSize = true;
-            label10.Font = new Font("Segoe UI", 14.25F);
+            label10.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
             label10.ForeColor = Color.Black;
-            label10.Location = new Point(85, 64);
+            label10.Location = new Point(37, 57);
             label10.Name = "label10";
-            label10.Size = new Size(83, 25);
+            label10.Size = new Size(98, 23);
             label10.TabIndex = 15;
             label10.Text = "Address:";
             // 
             // employeeTypeLabel
             // 
             employeeTypeLabel.AutoSize = true;
-            employeeTypeLabel.Font = new Font("Segoe UI", 14.25F);
+            employeeTypeLabel.Font = new Font("Times New Roman", 14.25F);
             employeeTypeLabel.ForeColor = Color.Black;
-            employeeTypeLabel.Location = new Point(219, 22);
+            employeeTypeLabel.Location = new Point(252, 18);
             employeeTypeLabel.Name = "employeeTypeLabel";
-            employeeTypeLabel.Size = new Size(58, 25);
+            employeeTypeLabel.Size = new Size(50, 21);
             employeeTypeLabel.TabIndex = 13;
             employeeTypeLabel.Text = "None";
             // 
             // label14
             // 
             label14.AutoSize = true;
-            label14.Font = new Font("Segoe UI", 14.25F);
+            label14.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
             label14.ForeColor = Color.Black;
-            label14.Location = new Point(574, 64);
+            label14.Location = new Point(547, 57);
             label14.Name = "label14";
-            label14.Size = new Size(134, 25);
+            label14.Size = new Size(161, 23);
             label14.TabIndex = 9;
             label14.Text = "Email Address:";
             // 
             // label15
             // 
             label15.AutoSize = true;
-            label15.Font = new Font("Segoe UI", 14.25F);
+            label15.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
             label15.ForeColor = Color.Black;
-            label15.Location = new Point(593, 22);
+            label15.Location = new Point(547, 15);
             label15.Name = "label15";
-            label15.Size = new Size(115, 25);
+            label15.Size = new Size(132, 23);
             label15.TabIndex = 8;
             label15.Text = "Contact No.:";
             // 
             // label19
             // 
             label19.AutoSize = true;
-            label19.Font = new Font("Segoe UI", 14.25F);
+            label19.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
             label19.ForeColor = Color.Black;
-            label19.Location = new Point(22, 22);
+            label19.Location = new Point(36, 15);
             label19.Name = "label19";
-            label19.Size = new Size(142, 25);
+            label19.Size = new Size(168, 23);
             label19.TabIndex = 4;
             label19.Text = "Employee Type:";
             // 
@@ -499,9 +515,8 @@
             panel3.Controls.Add(label6);
             panel3.Controls.Add(label5);
             panel3.Controls.Add(label4);
-            panel3.Controls.Add(pictureBox1);
             panel3.ForeColor = Color.FromArgb(163, 47, 54);
-            panel3.Location = new Point(45, 149);
+            panel3.Location = new Point(43, 311);
             panel3.Name = "panel3";
             panel3.Size = new Size(1002, 194);
             panel3.TabIndex = 5;
@@ -509,64 +524,64 @@
             // employeeProfileUserIDLabel
             // 
             employeeProfileUserIDLabel.AutoSize = true;
-            employeeProfileUserIDLabel.Font = new Font("Segoe UI", 14.25F);
+            employeeProfileUserIDLabel.Font = new Font("Times New Roman", 14.25F);
             employeeProfileUserIDLabel.ForeColor = Color.Black;
-            employeeProfileUserIDLabel.Location = new Point(725, 22);
+            employeeProfileUserIDLabel.Location = new Point(794, 26);
             employeeProfileUserIDLabel.Name = "employeeProfileUserIDLabel";
-            employeeProfileUserIDLabel.Size = new Size(58, 25);
+            employeeProfileUserIDLabel.Size = new Size(50, 21);
             employeeProfileUserIDLabel.TabIndex = 18;
             employeeProfileUserIDLabel.Text = "None";
             // 
             // employeeProfilePasswordTB
             // 
-            employeeProfilePasswordTB.Font = new Font("Segoe UI", 14.25F);
-            employeeProfilePasswordTB.Location = new Point(725, 63);
+            employeeProfilePasswordTB.Font = new Font("Times New Roman", 14.25F);
+            employeeProfilePasswordTB.Location = new Point(714, 69);
             employeeProfilePasswordTB.Margin = new Padding(2, 1, 2, 1);
             employeeProfilePasswordTB.Name = "employeeProfilePasswordTB";
-            employeeProfilePasswordTB.Size = new Size(230, 33);
+            employeeProfilePasswordTB.Size = new Size(230, 29);
             employeeProfilePasswordTB.TabIndex = 17;
             // 
             // employeeProfileDepartmentLabel
             // 
             employeeProfileDepartmentLabel.AutoSize = true;
-            employeeProfileDepartmentLabel.Font = new Font("Segoe UI", 14.25F);
+            employeeProfileDepartmentLabel.Font = new Font("Times New Roman", 14.25F);
             employeeProfileDepartmentLabel.ForeColor = Color.Black;
-            employeeProfileDepartmentLabel.Location = new Point(343, 141);
+            employeeProfileDepartmentLabel.Location = new Point(251, 158);
             employeeProfileDepartmentLabel.Name = "employeeProfileDepartmentLabel";
-            employeeProfileDepartmentLabel.Size = new Size(58, 25);
+            employeeProfileDepartmentLabel.Size = new Size(50, 21);
             employeeProfileDepartmentLabel.TabIndex = 16;
             employeeProfileDepartmentLabel.Text = "None";
             // 
             // employeeProfilePositionLabel
             // 
             employeeProfilePositionLabel.AutoSize = true;
-            employeeProfilePositionLabel.Font = new Font("Segoe UI", 14.25F);
+            employeeProfilePositionLabel.Font = new Font("Times New Roman", 14.25F);
             employeeProfilePositionLabel.ForeColor = Color.Black;
-            employeeProfilePositionLabel.Location = new Point(343, 103);
+            employeeProfilePositionLabel.Location = new Point(251, 117);
             employeeProfilePositionLabel.Name = "employeeProfilePositionLabel";
-            employeeProfilePositionLabel.Size = new Size(58, 25);
+            employeeProfilePositionLabel.Size = new Size(50, 21);
             employeeProfilePositionLabel.TabIndex = 15;
             employeeProfilePositionLabel.Text = "None";
             // 
             // employeeProfileNameLabel
             // 
             employeeProfileNameLabel.AutoSize = true;
-            employeeProfileNameLabel.Font = new Font("Segoe UI", 14.25F);
+            employeeProfileNameLabel.Font = new Font("Times New Roman", 14.25F);
             employeeProfileNameLabel.ForeColor = Color.Black;
-            employeeProfileNameLabel.Location = new Point(343, 63);
+            employeeProfileNameLabel.Location = new Point(251, 72);
             employeeProfileNameLabel.Name = "employeeProfileNameLabel";
-            employeeProfileNameLabel.Size = new Size(58, 25);
+            employeeProfileNameLabel.Size = new Size(50, 21);
             employeeProfileNameLabel.TabIndex = 14;
             employeeProfileNameLabel.Text = "None";
             // 
             // employeeProfileIDLabel
             // 
             employeeProfileIDLabel.AutoSize = true;
-            employeeProfileIDLabel.Font = new Font("Segoe UI", 14.25F);
+            employeeProfileIDLabel.Font = new Font("Times New Roman", 14.25F);
             employeeProfileIDLabel.ForeColor = Color.Black;
-            employeeProfileIDLabel.Location = new Point(343, 22);
+            employeeProfileIDLabel.Location = new Point(251, 27);
             employeeProfileIDLabel.Name = "employeeProfileIDLabel";
-            employeeProfileIDLabel.Size = new Size(58, 25);
+            employeeProfileIDLabel.Size = new Size(50, 21);
             employeeProfileIDLabel.TabIndex = 13;
             employeeProfileIDLabel.Text = "None";
             // 
@@ -577,9 +592,9 @@
             changePasswordButton.FlatAppearance.MouseDownBackColor = Color.Black;
             changePasswordButton.FlatAppearance.MouseOverBackColor = Color.Black;
             changePasswordButton.FlatStyle = FlatStyle.Flat;
-            changePasswordButton.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            changePasswordButton.Font = new Font("Georgia", 12F, FontStyle.Bold);
             changePasswordButton.ForeColor = Color.White;
-            changePasswordButton.Location = new Point(844, 102);
+            changePasswordButton.Location = new Point(839, 104);
             changePasswordButton.Name = "changePasswordButton";
             changePasswordButton.Size = new Size(92, 30);
             changePasswordButton.TabIndex = 12;
@@ -594,9 +609,9 @@
             showPasswordButton.FlatAppearance.MouseDownBackColor = Color.Black;
             showPasswordButton.FlatAppearance.MouseOverBackColor = Color.Black;
             showPasswordButton.FlatStyle = FlatStyle.Flat;
-            showPasswordButton.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            showPasswordButton.Font = new Font("Georgia", 12F, FontStyle.Bold);
             showPasswordButton.ForeColor = Color.White;
-            showPasswordButton.Location = new Point(725, 102);
+            showPasswordButton.Location = new Point(732, 104);
             showPasswordButton.Name = "showPasswordButton";
             showPasswordButton.Size = new Size(92, 30);
             showPasswordButton.TabIndex = 11;
@@ -607,86 +622,87 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Font = new Font("Segoe UI", 14.25F);
+            label9.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
             label9.ForeColor = Color.Black;
-            label9.Location = new Point(601, 63);
+            label9.Location = new Point(547, 70);
             label9.Name = "label9";
-            label9.Size = new Size(95, 25);
+            label9.Size = new Size(112, 23);
             label9.TabIndex = 9;
             label9.Text = "Password:";
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI", 14.25F);
+            label8.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
             label8.ForeColor = Color.Black;
-            label8.Location = new Point(619, 22);
+            label8.Location = new Point(547, 26);
             label8.Name = "label8";
-            label8.Size = new Size(77, 25);
+            label8.Size = new Size(93, 23);
             label8.TabIndex = 8;
             label8.Text = "User ID:";
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 14.25F);
+            label7.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
             label7.ForeColor = Color.Black;
-            label7.Location = new Point(198, 141);
+            label7.Location = new Point(35, 153);
             label7.Name = "label7";
-            label7.Size = new Size(116, 25);
+            label7.Size = new Size(137, 23);
             label7.TabIndex = 7;
             label7.Text = "Department:";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 14.25F);
+            label6.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
             label6.ForeColor = Color.Black;
-            label6.Location = new Point(231, 103);
+            label6.Location = new Point(35, 114);
             label6.Name = "label6";
-            label6.Size = new Size(83, 25);
+            label6.Size = new Size(99, 23);
             label6.TabIndex = 6;
             label6.Text = "Position:";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 14.25F);
+            label5.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
             label5.ForeColor = Color.Black;
-            label5.Location = new Point(161, 63);
+            label5.Location = new Point(35, 69);
             label5.Name = "label5";
-            label5.Size = new Size(153, 25);
+            label5.Size = new Size(177, 23);
             label5.TabIndex = 5;
             label5.Text = "Employee Name:";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 14.25F);
+            label4.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
             label4.ForeColor = Color.Black;
-            label4.Location = new Point(193, 22);
+            label4.Location = new Point(35, 24);
             label4.Name = "label4";
-            label4.Size = new Size(121, 25);
+            label4.Size = new Size(144, 23);
             label4.TabIndex = 4;
             label4.Text = "Employee ID:";
             // 
             // pictureBox1
             // 
-            pictureBox1.Location = new Point(23, 27);
+            pictureBox1.Location = new Point(432, 118);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(120, 120);
+            pictureBox1.Size = new Size(184, 153);
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 25F);
-            label3.Location = new Point(486, 91);
+            label3.Font = new Font("Georgia", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.FromArgb(125, 0, 0);
+            label3.Location = new Point(438, 73);
             label3.Name = "label3";
-            label3.Size = new Size(116, 46);
+            label3.Size = new Size(171, 38);
             label3.TabIndex = 4;
-            label3.Text = "Profile";
+            label3.Text = "PROFILE";
             // 
             // panel8
             // 
@@ -934,7 +950,7 @@
             logDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             logDataGridView.EnableHeadersVisualStyles = false;
             logDataGridView.GridColor = Color.White;
-            logDataGridView.Location = new Point(11, 218);
+            logDataGridView.Location = new Point(14, 218);
             logDataGridView.Name = "logDataGridView";
             logDataGridView.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -954,13 +970,14 @@
             // label25
             // 
             label25.AutoSize = true;
-            label25.Font = new Font("Segoe UI", 14.25F);
-            label25.Location = new Point(404, 179);
+            label25.Font = new Font("Georgia", 26.25F, FontStyle.Bold);
+            label25.ForeColor = Color.FromArgb(125, 0, 0);
+            label25.Location = new Point(399, 89);
             label25.Margin = new Padding(2, 0, 2, 0);
             label25.Name = "label25";
-            label25.Size = new Size(108, 25);
+            label25.Size = new Size(282, 41);
             label25.TabIndex = 8;
-            label25.Text = "Attendance";
+            label25.Text = "ATTENDANCE";
             // 
             // button2
             // 
@@ -969,9 +986,9 @@
             button2.FlatAppearance.MouseDownBackColor = Color.Black;
             button2.FlatAppearance.MouseOverBackColor = Color.Black;
             button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            button2.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
             button2.ForeColor = Color.White;
-            button2.Location = new Point(223, 88);
+            button2.Location = new Point(221, 162);
             button2.Name = "button2";
             button2.Size = new Size(161, 46);
             button2.TabIndex = 7;
@@ -985,9 +1002,9 @@
             button1.FlatAppearance.MouseDownBackColor = Color.Black;
             button1.FlatAppearance.MouseOverBackColor = Color.Black;
             button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            button1.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
             button1.ForeColor = Color.White;
-            button1.Location = new Point(37, 88);
+            button1.Location = new Point(36, 162);
             button1.Name = "button1";
             button1.Size = new Size(161, 46);
             button1.TabIndex = 6;
@@ -1051,6 +1068,15 @@
             label23.TabIndex = 0;
             label23.Text = "payslipPanel";
             // 
+            // pictureBox2
+            // 
+            pictureBox2.BackColor = Color.White;
+            pictureBox2.Location = new Point(12, 23);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(107, 93);
+            pictureBox2.TabIndex = 11;
+            pictureBox2.TabStop = false;
+            // 
             // EmployeeForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -1058,11 +1084,11 @@
             BackColor = Color.FromArgb(224, 224, 224);
             ClientSize = new Size(1389, 782);
             Controls.Add(panel2);
+            Controls.Add(attendancePanel);
+            Controls.Add(dashboardPanel);
             Controls.Add(profilePanel);
             Controls.Add(payslipPanel);
             Controls.Add(leavePanel);
-            Controls.Add(attendancePanel);
-            Controls.Add(dashboardPanel);
             Name = "EmployeeForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "EmployeeForm";
@@ -1104,6 +1130,7 @@
             leavePanel.PerformLayout();
             payslipPanel.ResumeLayout(false);
             payslipPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
         }
 
@@ -1183,5 +1210,6 @@
         private DataGridView logDataGridView;
         private Label employeeProfileUserIDLabel;
         private TextBox employeeProfilePasswordTB;
+        private PictureBox pictureBox2;
     }
 }
