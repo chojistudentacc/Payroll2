@@ -13,13 +13,22 @@ namespace Payroll
 {
     public partial class EmployeeForm : Form
     {
-
         LoginForm login;
+        Repository repo;
+        string currentUserName;
+        string actualPassword;
+        bool isPasswordVisible = false;
 
         public EmployeeForm(LoginForm form)
         {
             InitializeComponent();
             this.login = form;
+            repo = new Repository();
+        }
+
+        public void SetCurrentUserName(string userName)
+        {
+            currentUserName = userName;
         }
 
         private void EmployeeForm_Load(object sender, EventArgs e)
@@ -27,6 +36,7 @@ namespace Payroll
             hideAllPanels();
             dashboardPanel.Visible = true;
         }
+
 
         private void hideAllPanels()
         {

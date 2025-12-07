@@ -186,18 +186,18 @@ namespace Payroll
 
         private void payslipButt_MouseHover(object sender, EventArgs e)
         {
-            deductButt.Location = new Point(0,583);
-            reportButt.Location = new Point(0, 682);
-            messagesButt.Location = new Point(0, 780);
-            archievedButton.Location = new Point(0, 879);
+            deductButt.Location = new Point(0,-158);
+            reportButt.Location = new Point(0, -316);
+            messagesButt.Location = new Point(0, +474);
+            archievedButton.Location = new Point(0, +632);
         }
 
         private void payslipButt_MouseLeave(object sender, EventArgs e)
         {
-            deductButt.Location = new Point(0, 434);
-            reportButt.Location = new Point(0, 533);
-            messagesButt.Location = new Point(0, 631);
-            archievedButton.Location = new Point(0, 730);
+            deductButt.Location = new Point(0, 694);
+            reportButt.Location = new Point(0, 852);
+            messagesButt.Location = new Point(0, 1010);
+            archievedButton.Location = new Point(0, 1168);
         }
     }
 }

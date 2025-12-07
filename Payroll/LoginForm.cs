@@ -37,6 +37,7 @@ namespace Payroll
                 usernameTB.Text = "";
                 passwordTB.Text = "";
                 EmployeeForm empForm = new EmployeeForm(this);
+                empForm.SetCurrentUserName(userName);
                 empForm.Show();
                 this.Visible = false;
             }

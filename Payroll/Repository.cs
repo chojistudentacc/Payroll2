@@ -9,9 +9,8 @@ namespace Payroll
     public class Repository
     {
 
-<<<<<<< HEAD
-        private string csvFilePath = @"d:\Users\chandrei0212\EmployeeArchive.csv";
-        private readonly string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\chandrei0212\\source\\repos\\Payroll3\\Payroll\\Payroll.mdf;Integrated Security=True";
+        private string csvFilePath = @"C:\Users\ADRIANSOSONG\Documents\EmployeeArchive.csv";
+        private readonly string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\ADRIANSOSONG\\source\\repos\\Payroll2\\Payroll\\Payroll.mdf;Integrated Security=True";
 
 
 
@@ -1282,5 +1281,7 @@ namespace Payroll
 
             return table;
         }
+
+        
     }
 }

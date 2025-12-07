@@ -56,13 +56,13 @@
             employeeEmailLabel = new Label();
             employeeContactLabel = new Label();
             label10 = new Label();
-            employeeDateHiredLabel = new Label();
             employeeTypeLabel = new Label();
             label14 = new Label();
             label15 = new Label();
-            label18 = new Label();
             label19 = new Label();
             panel3 = new Panel();
+            employeeProfileUserIDLabel = new Label();
+            employeeProfilePasswordTB = new TextBox();
             employeeProfileDepartmentLabel = new Label();
             employeeProfilePositionLabel = new Label();
             employeeProfileNameLabel = new Label();
@@ -92,21 +92,21 @@
             label11 = new Label();
             profilePanel = new Panel();
             dashboardPanel = new Panel();
+            panel13 = new Panel();
+            label24 = new Label();
             label17 = new Label();
             attendancePanel = new Panel();
+            panel14 = new Panel();
+            logDataGridView = new DataGridView();
+            label25 = new Label();
+            button2 = new Button();
+            button1 = new Button();
+            panel15 = new Panel();
             label20 = new Label();
             leavePanel = new Panel();
             alabel = new Label();
             payslipPanel = new Panel();
             label23 = new Label();
-            panel13 = new Panel();
-            label24 = new Label();
-            panel14 = new Panel();
-            panel15 = new Panel();
-            button1 = new Button();
-            button2 = new Button();
-            label25 = new Label();
-            logDataGridView = new DataGridView();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
             panel5.SuspendLayout();
@@ -121,12 +121,12 @@
             panel7.SuspendLayout();
             profilePanel.SuspendLayout();
             dashboardPanel.SuspendLayout();
-            attendancePanel.SuspendLayout();
-            leavePanel.SuspendLayout();
-            payslipPanel.SuspendLayout();
             panel13.SuspendLayout();
+            attendancePanel.SuspendLayout();
             panel14.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)logDataGridView).BeginInit();
+            leavePanel.SuspendLayout();
+            payslipPanel.SuspendLayout();
             SuspendLayout();
             // 
             // panel2
@@ -291,7 +291,7 @@
             panel5.Controls.Add(label28);
             panel5.Controls.Add(label29);
             panel5.ForeColor = Color.FromArgb(163, 47, 54);
-            panel5.Location = new Point(84, 1154);
+            panel5.Location = new Point(84, 1088);
             panel5.Margin = new Padding(6);
             panel5.Name = "panel5";
             panel5.Size = new Size(1859, 235);
@@ -401,17 +401,15 @@
             panel4.Controls.Add(employeeEmailLabel);
             panel4.Controls.Add(employeeContactLabel);
             panel4.Controls.Add(label10);
-            panel4.Controls.Add(employeeDateHiredLabel);
             panel4.Controls.Add(employeeTypeLabel);
             panel4.Controls.Add(label14);
             panel4.Controls.Add(label15);
-            panel4.Controls.Add(label18);
             panel4.Controls.Add(label19);
             panel4.ForeColor = Color.FromArgb(163, 47, 54);
-            panel4.Location = new Point(84, 779);
+            panel4.Location = new Point(84, 786);
             panel4.Margin = new Padding(6);
             panel4.Name = "panel4";
-            panel4.Size = new Size(1859, 313);
+            panel4.Size = new Size(1859, 241);
             panel4.TabIndex = 17;
             // 
             // employeeAddressLabel
@@ -419,7 +417,7 @@
             employeeAddressLabel.AutoSize = true;
             employeeAddressLabel.Font = new Font("Segoe UI", 14.25F);
             employeeAddressLabel.ForeColor = Color.Black;
-            employeeAddressLabel.Location = new Point(1410, 218);
+            employeeAddressLabel.Location = new Point(407, 134);
             employeeAddressLabel.Margin = new Padding(6, 0, 6, 0);
             employeeAddressLabel.Name = "employeeAddressLabel";
             employeeAddressLabel.Size = new Size(114, 51);
@@ -431,7 +429,7 @@
             employeeEmailLabel.AutoSize = true;
             employeeEmailLabel.Font = new Font("Segoe UI", 14.25F);
             employeeEmailLabel.ForeColor = Color.Black;
-            employeeEmailLabel.Location = new Point(1410, 134);
+            employeeEmailLabel.Location = new Point(1529, 134);
             employeeEmailLabel.Margin = new Padding(6, 0, 6, 0);
             employeeEmailLabel.Name = "employeeEmailLabel";
             employeeEmailLabel.Size = new Size(114, 51);
@@ -443,7 +441,7 @@
             employeeContactLabel.AutoSize = true;
             employeeContactLabel.Font = new Font("Segoe UI", 14.25F);
             employeeContactLabel.ForeColor = Color.Black;
-            employeeContactLabel.Location = new Point(1410, 47);
+            employeeContactLabel.Location = new Point(1529, 47);
             employeeContactLabel.Margin = new Padding(6, 0, 6, 0);
             employeeContactLabel.Name = "employeeContactLabel";
             employeeContactLabel.Size = new Size(114, 51);
@@ -455,24 +453,12 @@
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI", 14.25F);
             label10.ForeColor = Color.Black;
-            label10.Location = new Point(1138, 218);
+            label10.Location = new Point(158, 137);
             label10.Margin = new Padding(6, 0, 6, 0);
             label10.Name = "label10";
             label10.Size = new Size(164, 51);
             label10.TabIndex = 15;
             label10.Text = "Address:";
-            // 
-            // employeeDateHiredLabel
-            // 
-            employeeDateHiredLabel.AutoSize = true;
-            employeeDateHiredLabel.Font = new Font("Segoe UI", 14.25F);
-            employeeDateHiredLabel.ForeColor = Color.Black;
-            employeeDateHiredLabel.Location = new Point(407, 134);
-            employeeDateHiredLabel.Margin = new Padding(6, 0, 6, 0);
-            employeeDateHiredLabel.Name = "employeeDateHiredLabel";
-            employeeDateHiredLabel.Size = new Size(114, 51);
-            employeeDateHiredLabel.TabIndex = 14;
-            employeeDateHiredLabel.Text = "None";
             // 
             // employeeTypeLabel
             // 
@@ -491,7 +477,7 @@
             label14.AutoSize = true;
             label14.Font = new Font("Segoe UI", 14.25F);
             label14.ForeColor = Color.Black;
-            label14.Location = new Point(1114, 137);
+            label14.Location = new Point(1233, 137);
             label14.Margin = new Padding(6, 0, 6, 0);
             label14.Name = "label14";
             label14.Size = new Size(263, 51);
@@ -503,24 +489,12 @@
             label15.AutoSize = true;
             label15.Font = new Font("Segoe UI", 14.25F);
             label15.ForeColor = Color.Black;
-            label15.Location = new Point(1150, 47);
+            label15.Location = new Point(1269, 47);
             label15.Margin = new Padding(6, 0, 6, 0);
             label15.Name = "label15";
             label15.Size = new Size(229, 51);
             label15.TabIndex = 8;
             label15.Text = "Contact No.:";
-            // 
-            // label18
-            // 
-            label18.AutoSize = true;
-            label18.Font = new Font("Segoe UI", 14.25F);
-            label18.ForeColor = Color.Black;
-            label18.Location = new Point(43, 134);
-            label18.Margin = new Padding(6, 0, 6, 0);
-            label18.Name = "label18";
-            label18.Size = new Size(210, 51);
-            label18.TabIndex = 5;
-            label18.Text = "Date Hired:";
             // 
             // label19
             // 
@@ -538,6 +512,8 @@
             // 
             panel3.BackColor = Color.White;
             panel3.BorderStyle = BorderStyle.FixedSingle;
+            panel3.Controls.Add(employeeProfileUserIDLabel);
+            panel3.Controls.Add(employeeProfilePasswordTB);
             panel3.Controls.Add(employeeProfileDepartmentLabel);
             panel3.Controls.Add(employeeProfilePositionLabel);
             panel3.Controls.Add(employeeProfileNameLabel);
@@ -557,6 +533,26 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(1859, 412);
             panel3.TabIndex = 5;
+            // 
+            // employeeProfileUserIDLabel
+            // 
+            employeeProfileUserIDLabel.AutoSize = true;
+            employeeProfileUserIDLabel.Font = new Font("Segoe UI", 14.25F);
+            employeeProfileUserIDLabel.ForeColor = Color.Black;
+            employeeProfileUserIDLabel.Location = new Point(1346, 47);
+            employeeProfileUserIDLabel.Margin = new Padding(6, 0, 6, 0);
+            employeeProfileUserIDLabel.Name = "employeeProfileUserIDLabel";
+            employeeProfileUserIDLabel.Size = new Size(114, 51);
+            employeeProfileUserIDLabel.TabIndex = 18;
+            employeeProfileUserIDLabel.Text = "None";
+            // 
+            // employeeProfilePasswordTB
+            // 
+            employeeProfilePasswordTB.Font = new Font("Segoe UI", 14.25F);
+            employeeProfilePasswordTB.Location = new Point(1346, 134);
+            employeeProfilePasswordTB.Name = "employeeProfilePasswordTB";
+            employeeProfilePasswordTB.Size = new Size(424, 58);
+            employeeProfilePasswordTB.TabIndex = 17;
             // 
             // employeeProfileDepartmentLabel
             // 
@@ -887,68 +883,6 @@
             dashboardPanel.Size = new Size(2107, 1751);
             dashboardPanel.TabIndex = 6;
             // 
-            // label17
-            // 
-            label17.AutoSize = true;
-            label17.Location = new Point(20, 15);
-            label17.Margin = new Padding(6, 0, 6, 0);
-            label17.Name = "label17";
-            label17.Size = new Size(183, 32);
-            label17.TabIndex = 5;
-            label17.Text = "dashboardPanel";
-            // 
-            // attendancePanel
-            // 
-            attendancePanel.Controls.Add(panel14);
-            attendancePanel.Controls.Add(label20);
-            attendancePanel.Location = new Point(507, 0);
-            attendancePanel.Name = "attendancePanel";
-            attendancePanel.Size = new Size(2107, 1751);
-            attendancePanel.TabIndex = 7;
-            // 
-            // label20
-            // 
-            label20.AutoSize = true;
-            label20.Location = new Point(30, 22);
-            label20.Name = "label20";
-            label20.Size = new Size(190, 32);
-            label20.TabIndex = 0;
-            label20.Text = "attendancePanel";
-            // 
-            // leavePanel
-            // 
-            leavePanel.Controls.Add(alabel);
-            leavePanel.Location = new Point(507, 0);
-            leavePanel.Name = "leavePanel";
-            leavePanel.Size = new Size(2107, 1751);
-            leavePanel.TabIndex = 8;
-            // 
-            // alabel
-            // 
-            alabel.AutoSize = true;
-            alabel.Location = new Point(27, 29);
-            alabel.Name = "alabel";
-            alabel.Size = new Size(127, 32);
-            alabel.TabIndex = 0;
-            alabel.Text = "leavePanel";
-            // 
-            // payslipPanel
-            // 
-            payslipPanel.Controls.Add(label23);
-            payslipPanel.Location = new Point(507, 0);
-            payslipPanel.Name = "payslipPanel";
-            payslipPanel.Size = new Size(2107, 1751);
-            payslipPanel.TabIndex = 9;
-            // 
-            // label23
-            // 
-            label23.AutoSize = true;
-            label23.Location = new Point(28, 27);
-            label23.Name = "label23";
-            label23.Size = new Size(145, 32);
-            label23.TabIndex = 0;
-            label23.Text = "payslipPanel";
-            // 
             // panel13
             // 
             panel13.BackColor = Color.Snow;
@@ -969,6 +903,25 @@
             label24.TabIndex = 6;
             label24.Text = "Latest Payslip";
             // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.Location = new Point(20, 15);
+            label17.Margin = new Padding(6, 0, 6, 0);
+            label17.Name = "label17";
+            label17.Size = new Size(183, 32);
+            label17.TabIndex = 5;
+            label17.Text = "dashboardPanel";
+            // 
+            // attendancePanel
+            // 
+            attendancePanel.Controls.Add(panel14);
+            attendancePanel.Controls.Add(label20);
+            attendancePanel.Location = new Point(507, 0);
+            attendancePanel.Name = "attendancePanel";
+            attendancePanel.Size = new Size(2107, 1751);
+            attendancePanel.TabIndex = 7;
+            // 
             // panel14
             // 
             panel14.BackColor = Color.White;
@@ -981,60 +934,6 @@
             panel14.Name = "panel14";
             panel14.Size = new Size(2025, 1552);
             panel14.TabIndex = 1;
-            // 
-            // panel15
-            // 
-            panel15.BackgroundImage = Properties.Resources.TopPanelBg;
-            panel15.BackgroundImageLayout = ImageLayout.Stretch;
-            panel15.Location = new Point(0, 4);
-            panel15.Margin = new Padding(6);
-            panel15.Name = "panel15";
-            panel15.Size = new Size(2028, 143);
-            panel15.TabIndex = 3;
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.FromArgb(163, 47, 54);
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatAppearance.MouseDownBackColor = Color.Black;
-            button1.FlatAppearance.MouseOverBackColor = Color.Black;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(68, 188);
-            button1.Margin = new Padding(6);
-            button1.Name = "button1";
-            button1.Size = new Size(299, 98);
-            button1.TabIndex = 6;
-            button1.Text = "Clock In";
-            button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            button2.BackColor = Color.FromArgb(163, 47, 54);
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatAppearance.MouseDownBackColor = Color.Black;
-            button2.FlatAppearance.MouseOverBackColor = Color.Black;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
-            button2.ForeColor = Color.White;
-            button2.Location = new Point(415, 188);
-            button2.Margin = new Padding(6);
-            button2.Name = "button2";
-            button2.Size = new Size(299, 98);
-            button2.TabIndex = 7;
-            button2.Text = "Clock Out";
-            button2.UseVisualStyleBackColor = false;
-            // 
-            // label25
-            // 
-            label25.AutoSize = true;
-            label25.Font = new Font("Segoe UI", 14.25F);
-            label25.Location = new Point(750, 382);
-            label25.Name = "label25";
-            label25.Size = new Size(216, 51);
-            label25.TabIndex = 8;
-            label25.Text = "Attendance";
             // 
             // logDataGridView
             // 
@@ -1083,6 +982,103 @@
             logDataGridView.Size = new Size(1974, 1015);
             logDataGridView.TabIndex = 9;
             // 
+            // label25
+            // 
+            label25.AutoSize = true;
+            label25.Font = new Font("Segoe UI", 14.25F);
+            label25.Location = new Point(750, 382);
+            label25.Name = "label25";
+            label25.Size = new Size(216, 51);
+            label25.TabIndex = 8;
+            label25.Text = "Attendance";
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.FromArgb(163, 47, 54);
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatAppearance.MouseDownBackColor = Color.Black;
+            button2.FlatAppearance.MouseOverBackColor = Color.Black;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            button2.ForeColor = Color.White;
+            button2.Location = new Point(415, 188);
+            button2.Margin = new Padding(6);
+            button2.Name = "button2";
+            button2.Size = new Size(299, 98);
+            button2.TabIndex = 7;
+            button2.Text = "Clock Out";
+            button2.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.FromArgb(163, 47, 54);
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatAppearance.MouseDownBackColor = Color.Black;
+            button1.FlatAppearance.MouseOverBackColor = Color.Black;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            button1.ForeColor = Color.White;
+            button1.Location = new Point(68, 188);
+            button1.Margin = new Padding(6);
+            button1.Name = "button1";
+            button1.Size = new Size(299, 98);
+            button1.TabIndex = 6;
+            button1.Text = "Clock In";
+            button1.UseVisualStyleBackColor = false;
+            // 
+            // panel15
+            // 
+            panel15.BackgroundImage = Properties.Resources.TopPanelBg;
+            panel15.BackgroundImageLayout = ImageLayout.Stretch;
+            panel15.Location = new Point(0, 4);
+            panel15.Margin = new Padding(6);
+            panel15.Name = "panel15";
+            panel15.Size = new Size(2028, 143);
+            panel15.TabIndex = 3;
+            // 
+            // label20
+            // 
+            label20.AutoSize = true;
+            label20.Location = new Point(30, 22);
+            label20.Name = "label20";
+            label20.Size = new Size(190, 32);
+            label20.TabIndex = 0;
+            label20.Text = "attendancePanel";
+            // 
+            // leavePanel
+            // 
+            leavePanel.Controls.Add(alabel);
+            leavePanel.Location = new Point(507, 0);
+            leavePanel.Name = "leavePanel";
+            leavePanel.Size = new Size(2107, 1751);
+            leavePanel.TabIndex = 8;
+            // 
+            // alabel
+            // 
+            alabel.AutoSize = true;
+            alabel.Location = new Point(27, 29);
+            alabel.Name = "alabel";
+            alabel.Size = new Size(127, 32);
+            alabel.TabIndex = 0;
+            alabel.Text = "leavePanel";
+            // 
+            // payslipPanel
+            // 
+            payslipPanel.Controls.Add(label23);
+            payslipPanel.Location = new Point(507, 0);
+            payslipPanel.Name = "payslipPanel";
+            payslipPanel.Size = new Size(2107, 1751);
+            payslipPanel.TabIndex = 9;
+            // 
+            // label23
+            // 
+            label23.AutoSize = true;
+            label23.Location = new Point(28, 27);
+            label23.Name = "label23";
+            label23.Size = new Size(145, 32);
+            label23.TabIndex = 0;
+            label23.Text = "payslipPanel";
+            // 
             // EmployeeForm
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
@@ -1090,11 +1086,11 @@
             BackColor = Color.FromArgb(224, 224, 224);
             ClientSize = new Size(2609, 1751);
             Controls.Add(panel2);
-            Controls.Add(attendancePanel);
-            Controls.Add(dashboardPanel);
             Controls.Add(profilePanel);
             Controls.Add(payslipPanel);
             Controls.Add(leavePanel);
+            Controls.Add(attendancePanel);
+            Controls.Add(dashboardPanel);
             Margin = new Padding(6);
             Name = "EmployeeForm";
             StartPosition = FormStartPosition.CenterScreen;
@@ -1126,17 +1122,17 @@
             profilePanel.PerformLayout();
             dashboardPanel.ResumeLayout(false);
             dashboardPanel.PerformLayout();
+            panel13.ResumeLayout(false);
+            panel13.PerformLayout();
             attendancePanel.ResumeLayout(false);
             attendancePanel.PerformLayout();
+            panel14.ResumeLayout(false);
+            panel14.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)logDataGridView).EndInit();
             leavePanel.ResumeLayout(false);
             leavePanel.PerformLayout();
             payslipPanel.ResumeLayout(false);
             payslipPanel.PerformLayout();
-            panel13.ResumeLayout(false);
-            panel13.PerformLayout();
-            panel14.ResumeLayout(false);
-            panel14.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)logDataGridView).EndInit();
             ResumeLayout(false);
         }
 
@@ -1182,11 +1178,9 @@
         private Label employeeEmailLabel;
         private Label employeeContactLabel;
         private Label label10;
-        private Label employeeDateHiredLabel;
         private Label employeeTypeLabel;
         private Label label14;
         private Label label15;
-        private Label label18;
         private Label label19;
         private Panel panel;
         private Panel panel6;
@@ -1216,5 +1210,7 @@
         private Button button2;
         private Button button1;
         private DataGridView logDataGridView;
+        private Label employeeProfileUserIDLabel;
+        private TextBox employeeProfilePasswordTB;
     }
 }
