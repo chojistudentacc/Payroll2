@@ -32,6 +32,21 @@ namespace Payroll
             InitializeSomething();
         }
 
+        private void revertButtonColors()
+        {
+            dashboardButt.BackColor = Color.FromArgb(163, 47, 54);
+            userButt.BackColor = Color.FromArgb(163, 47, 54);
+            departmentButt.BackColor = Color.FromArgb(163, 47, 54);
+            reportButt.BackColor = Color.FromArgb(163, 47, 54);
+            logButt.BackColor = Color.FromArgb(163, 47, 54);
+
+            dashboardButt.BackgroundImage = null;
+            userButt.BackgroundImage = null;
+            departmentButt.BackgroundImage = null;
+            reportButt.BackgroundImage = null;
+            logButt.BackgroundImage = null;
+        }
+
         private void InitializeSomething()
         {
             toolTip = new ToolTip();
@@ -117,6 +132,8 @@ namespace Payroll
         private void dashboardButt_Click(object sender, EventArgs e)
         {
             hideallPanels();
+            revertButtonColors();
+            dashboardButt.BackgroundImage = Properties.Resources.shineImage;
             dashPanel.Visible = true;
             UpdateEmployeeCount();
         }
@@ -124,6 +141,8 @@ namespace Payroll
         private void userButt_Click(object sender, EventArgs e)
         {
             hideallPanels();
+            revertButtonColors();
+            userButt.BackgroundImage = Properties.Resources.shineImage;
             userPanel.Visible = true;
             roleComboBox.Text = "Employee";
             fillDataGridView();
@@ -315,6 +334,9 @@ namespace Payroll
         private void departmentButt_Click(object sender, EventArgs e)
         {
             hideallPanels();
+            revertButtonColors();
+            departmentButt.BackgroundImage = Properties.Resources.shineImage;
+
             departmentPanel.Visible = true;
             departmentDataGridPanel.Visible = true;
             departmentAddPanel.Visible = false;
@@ -812,6 +834,9 @@ namespace Payroll
         private void reportButt_Click(object sender, EventArgs e)
         {
             hideallPanels();
+            revertButtonColors();
+            reportButt.BackgroundImage = Properties.Resources.shineImage;
+
             reportsPanel.Visible = true;
             reportsDropDownCB.Text = "Inbox";
             fillReportInboxPanel();
@@ -847,7 +872,6 @@ namespace Payroll
                 rich.GotFocus += (s, e) => inboxPanel.Focus();
                 rich.Name = $"rich{i + 1}";
 
-                // 🔹 Display only header + sender name
                 rich.Text = $"{header}\n\nFrom: {sender}";
 
                 inboxPanel.Controls.Add(rich);
@@ -858,11 +882,13 @@ namespace Payroll
                 viewButton.Text = "View";
                 viewButton.Name = $"btnView{i + 1}";
 
-                // 🔹 "View" still shows full message
                 viewButton.Click += (senderObj, eObj) =>
                 {
                     reportsPanelInbox.Visible = false;
                     reportsPanelViewMessage.Visible = true;
+                    viewMessageRichTB.TabStop = false;
+                    viewMessageRichTB.Cursor = Cursors.Default;
+                    viewMessageRichTB.GotFocus += (s, e) => viewMessagePanel.Focus();
 
                     string fullMessage =
                         $"📌 {header}\n" +
@@ -882,12 +908,16 @@ namespace Payroll
         {
             reportsPanelInbox.Visible = true;
             reportsPanelViewMessage.Visible = false;
+
             viewMessageRichTB.Text = "";
         }
 
         private void logButt_Click(object sender, EventArgs e)
         {
             hideallPanels();
+            revertButtonColors();
+            logButt.BackgroundImage = Properties.Resources.shineImage;
+
             logsPanel.Visible = true;
             dateTimePicker1.Value = DateTime.Today.AddDays(-30);
             dateTimePicker2.Value = DateTime.Today;

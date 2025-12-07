@@ -150,8 +150,9 @@
             reportsPanel = new Panel();
             label14 = new Label();
             reportsPanelViewMessage = new Panel();
+            viewMessageReplyButt = new Button();
             viewMessageBackButt = new Button();
-            panel11 = new Panel();
+            viewMessagePanel = new Panel();
             viewMessageRichTB = new RichTextBox();
             panel12 = new Panel();
             reportsPanelInbox = new Panel();
@@ -179,7 +180,7 @@
             ((System.ComponentModel.ISupportInitialize)logDataGridView).BeginInit();
             reportsPanel.SuspendLayout();
             reportsPanelViewMessage.SuspendLayout();
-            panel11.SuspendLayout();
+            viewMessagePanel.SuspendLayout();
             reportsPanelInbox.SuspendLayout();
             SuspendLayout();
             // 
@@ -214,9 +215,10 @@
             // reportButt
             // 
             reportButt.BackColor = Color.FromArgb(163, 47, 54);
+            reportButt.BackgroundImageLayout = ImageLayout.Stretch;
             reportButt.FlatAppearance.BorderSize = 0;
-            reportButt.FlatAppearance.MouseDownBackColor = Color.Black;
-            reportButt.FlatAppearance.MouseOverBackColor = Color.Black;
+            reportButt.FlatAppearance.MouseDownBackColor = Color.FromArgb(163, 47, 54);
+            reportButt.FlatAppearance.MouseOverBackColor = Color.FromArgb(163, 47, 54);
             reportButt.FlatStyle = FlatStyle.Flat;
             reportButt.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
             reportButt.ForeColor = Color.White;
@@ -231,9 +233,10 @@
             // logButt
             // 
             logButt.BackColor = Color.FromArgb(163, 47, 54);
+            logButt.BackgroundImageLayout = ImageLayout.Stretch;
             logButt.FlatAppearance.BorderSize = 0;
-            logButt.FlatAppearance.MouseDownBackColor = Color.Black;
-            logButt.FlatAppearance.MouseOverBackColor = Color.Black;
+            logButt.FlatAppearance.MouseDownBackColor = Color.FromArgb(163, 47, 54);
+            logButt.FlatAppearance.MouseOverBackColor = Color.FromArgb(163, 47, 54);
             logButt.FlatStyle = FlatStyle.Flat;
             logButt.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
             logButt.ForeColor = Color.White;
@@ -248,9 +251,10 @@
             // departmentButt
             // 
             departmentButt.BackColor = Color.FromArgb(163, 47, 54);
+            departmentButt.BackgroundImageLayout = ImageLayout.Stretch;
             departmentButt.FlatAppearance.BorderSize = 0;
-            departmentButt.FlatAppearance.MouseDownBackColor = Color.Black;
-            departmentButt.FlatAppearance.MouseOverBackColor = Color.Black;
+            departmentButt.FlatAppearance.MouseDownBackColor = Color.FromArgb(163, 47, 54);
+            departmentButt.FlatAppearance.MouseOverBackColor = Color.FromArgb(163, 47, 54);
             departmentButt.FlatStyle = FlatStyle.Flat;
             departmentButt.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
             departmentButt.ForeColor = Color.White;
@@ -265,9 +269,10 @@
             // userButt
             // 
             userButt.BackColor = Color.FromArgb(163, 47, 54);
+            userButt.BackgroundImageLayout = ImageLayout.Stretch;
             userButt.FlatAppearance.BorderSize = 0;
-            userButt.FlatAppearance.MouseDownBackColor = Color.Black;
-            userButt.FlatAppearance.MouseOverBackColor = Color.Black;
+            userButt.FlatAppearance.MouseDownBackColor = Color.FromArgb(163, 47, 54);
+            userButt.FlatAppearance.MouseOverBackColor = Color.FromArgb(163, 47, 54);
             userButt.FlatStyle = FlatStyle.Flat;
             userButt.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
             userButt.ForeColor = Color.White;
@@ -282,9 +287,10 @@
             // dashboardButt
             // 
             dashboardButt.BackColor = Color.FromArgb(163, 47, 54);
+            dashboardButt.BackgroundImageLayout = ImageLayout.Stretch;
             dashboardButt.FlatAppearance.BorderSize = 0;
-            dashboardButt.FlatAppearance.MouseDownBackColor = Color.Black;
-            dashboardButt.FlatAppearance.MouseOverBackColor = Color.Black;
+            dashboardButt.FlatAppearance.MouseDownBackColor = Color.FromArgb(163, 47, 54);
+            dashboardButt.FlatAppearance.MouseOverBackColor = Color.FromArgb(163, 47, 54);
             dashboardButt.FlatStyle = FlatStyle.Flat;
             dashboardButt.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
             dashboardButt.ForeColor = Color.White;
@@ -1569,8 +1575,9 @@
             // reportsPanelViewMessage
             // 
             reportsPanelViewMessage.BackColor = Color.White;
+            reportsPanelViewMessage.Controls.Add(viewMessageReplyButt);
             reportsPanelViewMessage.Controls.Add(viewMessageBackButt);
-            reportsPanelViewMessage.Controls.Add(panel11);
+            reportsPanelViewMessage.Controls.Add(viewMessagePanel);
             reportsPanelViewMessage.Controls.Add(panel12);
             reportsPanelViewMessage.Location = new Point(12, 32);
             reportsPanelViewMessage.Name = "reportsPanelViewMessage";
@@ -1578,13 +1585,26 @@
             reportsPanelViewMessage.TabIndex = 3;
             reportsPanelViewMessage.Visible = false;
             // 
+            // viewMessageReplyButt
+            // 
+            viewMessageReplyButt.BackColor = Color.FromArgb(146, 45, 51);
+            viewMessageReplyButt.FlatStyle = FlatStyle.Flat;
+            viewMessageReplyButt.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            viewMessageReplyButt.ForeColor = Color.White;
+            viewMessageReplyButt.Location = new Point(793, 634);
+            viewMessageReplyButt.Name = "viewMessageReplyButt";
+            viewMessageReplyButt.Size = new Size(261, 55);
+            viewMessageReplyButt.TabIndex = 38;
+            viewMessageReplyButt.Text = "Reply";
+            viewMessageReplyButt.UseVisualStyleBackColor = false;
+            // 
             // viewMessageBackButt
             // 
             viewMessageBackButt.BackColor = Color.FromArgb(146, 45, 51);
             viewMessageBackButt.FlatStyle = FlatStyle.Flat;
             viewMessageBackButt.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             viewMessageBackButt.ForeColor = Color.White;
-            viewMessageBackButt.Location = new Point(793, 586);
+            viewMessageBackButt.Location = new Point(38, 99);
             viewMessageBackButt.Name = "viewMessageBackButt";
             viewMessageBackButt.Size = new Size(261, 55);
             viewMessageBackButt.TabIndex = 37;
@@ -1592,22 +1612,23 @@
             viewMessageBackButt.UseVisualStyleBackColor = false;
             viewMessageBackButt.Click += viewMessageBackButt_Click;
             // 
-            // panel11
+            // viewMessagePanel
             // 
-            panel11.AutoScroll = true;
-            panel11.BackgroundImage = Properties.Resources.PanelBG;
-            panel11.BackgroundImageLayout = ImageLayout.Stretch;
-            panel11.Controls.Add(viewMessageRichTB);
-            panel11.Location = new Point(38, 114);
-            panel11.Name = "panel11";
-            panel11.Size = new Size(1016, 427);
-            panel11.TabIndex = 4;
+            viewMessagePanel.AutoScroll = true;
+            viewMessagePanel.BackgroundImage = Properties.Resources.PanelBG;
+            viewMessagePanel.BackgroundImageLayout = ImageLayout.Stretch;
+            viewMessagePanel.Controls.Add(viewMessageRichTB);
+            viewMessagePanel.Location = new Point(38, 182);
+            viewMessagePanel.Name = "viewMessagePanel";
+            viewMessagePanel.Size = new Size(1016, 427);
+            viewMessagePanel.TabIndex = 4;
             // 
             // viewMessageRichTB
             // 
             viewMessageRichTB.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             viewMessageRichTB.Location = new Point(16, 17);
             viewMessageRichTB.Name = "viewMessageRichTB";
+            viewMessageRichTB.ReadOnly = true;
             viewMessageRichTB.Size = new Size(984, 394);
             viewMessageRichTB.TabIndex = 0;
             viewMessageRichTB.Text = "";
@@ -1711,7 +1732,7 @@
             reportsPanel.ResumeLayout(false);
             reportsPanel.PerformLayout();
             reportsPanelViewMessage.ResumeLayout(false);
-            panel11.ResumeLayout(false);
+            viewMessagePanel.ResumeLayout(false);
             reportsPanelInbox.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -1841,9 +1862,10 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private Panel inboxPanel;
         private Panel reportsPanelViewMessage;
-        private Panel panel11;
+        private Panel viewMessagePanel;
         private RichTextBox viewMessageRichTB;
         private Panel panel12;
         private Button viewMessageBackButt;
+        private Button viewMessageReplyButt;
     }
 }
