@@ -954,7 +954,8 @@ namespace Payroll
             if (localEmailStatus == "Archived")
             {
                 repo.MarkEmailAsRead(localEmailID);
-            } else
+            }
+            else
             {
                 repo.ArchiveMail(localEmailID);
             }
@@ -983,6 +984,9 @@ namespace Payroll
             fillReportInboxPanel();
         }
 
-        
+        private void label26_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
