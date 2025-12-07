@@ -20,7 +20,6 @@ namespace Payroll
         private string selectedID = "";
         private string selectedRole = "";
         private string selectedPassword = "";
-        private string newPassword = "";
         private string selectedDepartmentName = "";
         private string originalDepartmentName = "";
 
@@ -31,6 +30,21 @@ namespace Payroll
             this.login = login;
             this.userName = userName;
             InitializeSomething();
+        }
+
+        private void revertButtonColors()
+        {
+            dashboardButt.BackColor = Color.FromArgb(163, 47, 54);
+            userButt.BackColor = Color.FromArgb(163, 47, 54);
+            departmentButt.BackColor = Color.FromArgb(163, 47, 54);
+            reportButt.BackColor = Color.FromArgb(163, 47, 54);
+            logButt.BackColor = Color.FromArgb(163, 47, 54);
+
+            dashboardButt.BackgroundImage = null;
+            userButt.BackgroundImage = null;
+            departmentButt.BackgroundImage = null;
+            reportButt.BackgroundImage = null;
+            logButt.BackgroundImage = null;
         }
 
         private void InitializeSomething()
@@ -118,6 +132,8 @@ namespace Payroll
         private void dashboardButt_Click(object sender, EventArgs e)
         {
             hideallPanels();
+            revertButtonColors();
+            dashboardButt.BackgroundImage = Properties.Resources.shineImage;
             dashPanel.Visible = true;
             UpdateEmployeeCount();
         }
@@ -125,6 +141,8 @@ namespace Payroll
         private void userButt_Click(object sender, EventArgs e)
         {
             hideallPanels();
+            revertButtonColors();
+            userButt.BackgroundImage = Properties.Resources.shineImage;
             userPanel.Visible = true;
             roleComboBox.Text = "Employee";
             fillDataGridView();
@@ -316,6 +334,9 @@ namespace Payroll
         private void departmentButt_Click(object sender, EventArgs e)
         {
             hideallPanels();
+            revertButtonColors();
+            departmentButt.BackgroundImage = Properties.Resources.shineImage;
+
             departmentPanel.Visible = true;
             departmentDataGridPanel.Visible = true;
             departmentAddPanel.Visible = false;
@@ -813,31 +834,45 @@ namespace Payroll
         private void reportButt_Click(object sender, EventArgs e)
         {
             hideallPanels();
+            revertButtonColors();
+            reportButt.BackgroundImage = Properties.Resources.shineImage;
+
             reportsPanel.Visible = true;
+            reportsDropDownCB.Text = "Inbox";
             fillReportInboxPanel();
         }
 
         private void fillReportInboxPanel()
         {
-            int messagesCount = 10;
+            DataTable inboxData = repo.GetAllEmailData();
             inboxPanel.AutoScroll = true;
 
             int startY = 16;
             int spacing = 20;
             int boxHeight = 127;
-            int boxWidth = 610;
+            int boxWidth = 628;
 
-            for (int i = 0; i < messagesCount; i++)
+            for (int i = 0; i < inboxData.Rows.Count; i++)
             {
+                DataRow row = inboxData.Rows[i];
+
+                string header = row["header"].ToString();
+                string body = row["body"].ToString();
+                string tail = row["tail"].ToString();
+                string sender = row["senderFullName"].ToString();
+                string date = Convert.ToDateTime(row["date"]).ToString("MM/dd/yyyy");
+
                 RichTextBox rich = new RichTextBox();
                 rich.Size = new Size(boxWidth, boxHeight);
                 rich.Location = new Point(14, startY + i * (boxHeight + spacing + 35));
                 rich.ReadOnly = true;
                 rich.TabStop = false;
                 rich.Cursor = Cursors.Default;
+                rich.Font = new Font("Segoe UI Semibold", 10f, FontStyle.Bold);
                 rich.GotFocus += (s, e) => inboxPanel.Focus();
                 rich.Name = $"rich{i + 1}";
-                rich.Text = $"Message {i + 1}";
+
+                rich.Text = $"{header}\n\nFrom: {sender}";
 
                 inboxPanel.Controls.Add(rich);
 
@@ -847,22 +882,48 @@ namespace Payroll
                 viewButton.Text = "View";
                 viewButton.Name = $"btnView{i + 1}";
 
-                viewButton.Click += (sender, e) =>
+                viewButton.Click += (senderObj, eObj) =>
                 {
-                    MessageBox.Show($"Viewing details for {rich.Text}", "Message Viewer");
+                    reportsPanelInbox.Visible = false;
+                    reportsPanelViewMessage.Visible = true;
+                    viewMessageRichTB.TabStop = false;
+                    viewMessageRichTB.Cursor = Cursors.Default;
+                    viewMessageRichTB.GotFocus += (s, e) => viewMessagePanel.Focus();
+
+                    string fullMessage =
+                        $"📌 {header}\n" +
+                        $"From: {sender}\n" +
+                        $"Sent: {date}\n\n" +
+                        $"{body}\n\n" +
+                        $"-- {tail}";
+
+                    viewMessageRichTB.Text = fullMessage;
                 };
 
                 inboxPanel.Controls.Add(viewButton);
             }
         }
 
+        private void viewMessageBackButt_Click(object sender, EventArgs e)
+        {
+            reportsPanelInbox.Visible = true;
+            reportsPanelViewMessage.Visible = false;
+
+            viewMessageRichTB.Text = "";
+        }
+
         private void logButt_Click(object sender, EventArgs e)
         {
             hideallPanels();
+            revertButtonColors();
+            logButt.BackgroundImage = Properties.Resources.shineImage;
+
             logsPanel.Visible = true;
             dateTimePicker1.Value = DateTime.Today.AddDays(-30);
             dateTimePicker2.Value = DateTime.Today;
             FilterLogsByDateRange();
         }
+
+        
     }
 }
