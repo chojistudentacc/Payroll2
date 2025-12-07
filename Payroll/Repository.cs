@@ -10,7 +10,7 @@ namespace Payroll
     {
 
         private string csvFilePath = @"C:\Users\User\Documents\EmployeeArchive.csv";
-        private readonly string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\User\\Source\\Repos\\Payroll3\\Payroll\\Payroll.mdf;Integrated Security=True";
+        private readonly string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\Choji Kodachi\\Documents\\!! Work !!\\Payroll-master\\Payroll\\Payroll.mdf\";Integrated Security=True";
 
 
         public int GetEmailDataRowCount()
@@ -49,7 +49,7 @@ namespace Payroll
                 {
                     connection.Open();
 
-                    string sql = "SELECT header, body, tail, senderFullName, date FROM emailData ORDER BY date DESC";
+                    string sql = "SELECT position, header, body, tail, senderFullName, date FROM emailData ORDER BY date DESC";
 
                     using (SqlCommand cmd = new SqlCommand(sql, connection))
                     using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))

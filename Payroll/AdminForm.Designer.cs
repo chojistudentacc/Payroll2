@@ -1556,8 +1556,8 @@
             // 
             reportsPanel.BackColor = Color.FromArgb(224, 224, 224);
             reportsPanel.Controls.Add(label14);
-            reportsPanel.Controls.Add(reportsPanelViewMessage);
             reportsPanel.Controls.Add(reportsPanelInbox);
+            reportsPanel.Controls.Add(reportsPanelViewMessage);
             reportsPanel.Location = new Point(273, 0);
             reportsPanel.Name = "reportsPanel";
             reportsPanel.Size = new Size(1116, 784);

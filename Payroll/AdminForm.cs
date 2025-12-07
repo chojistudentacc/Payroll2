@@ -71,7 +71,7 @@ namespace Payroll
             reportsDropDownCB.Items.Add("Unread");
             reportsDropDownCB.Items.Add("HR Dept.");
             reportsDropDownCB.Items.Add("Accounting");
-            reportsDropDownCB.Items.Add("Drafts");
+            reportsDropDownCB.Items.Add("Employee");
             reportsDropDownCB.Items.Add("Archive");
             reportsDropDownCB.DropDownStyle = ComboBoxStyle.DropDownList;
             toolTip.SetToolTip(reportsDropDownCB, "Select by category");
@@ -856,6 +856,7 @@ namespace Payroll
             {
                 DataRow row = inboxData.Rows[i];
 
+                string position = row["position"].ToString();
                 string header = row["header"].ToString();
                 string body = row["body"].ToString();
                 string tail = row["tail"].ToString();
@@ -872,7 +873,7 @@ namespace Payroll
                 rich.GotFocus += (s, e) => inboxPanel.Focus();
                 rich.Name = $"rich{i + 1}";
 
-                rich.Text = $"{header}\n\nFrom: {sender}";
+                rich.Text = $"{header}\n\nFrom: {sender}, {position}";
 
                 inboxPanel.Controls.Add(rich);
 
@@ -892,7 +893,7 @@ namespace Payroll
 
                     string fullMessage =
                         $"📌 {header}\n" +
-                        $"From: {sender}\n" +
+                        $"From: {sender}, {position}\n" +
                         $"Sent: {date}\n\n" +
                         $"{body}\n\n" +
                         $"-- {tail}";
