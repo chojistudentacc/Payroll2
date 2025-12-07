@@ -844,7 +844,10 @@ namespace Payroll
 
         private void fillReportInboxPanel()
         {
-            DataTable inboxData = repo.GetAllEmailData();
+            string selectedCategory = reportsDropDownCB.SelectedItem?.ToString() ?? "Inbox";
+
+            inboxPanel.Controls.Clear();
+            DataTable inboxData = repo.GetEmailByCategory(selectedCategory);
             inboxPanel.AutoScroll = true;
 
             int startY = 16;
@@ -856,6 +859,8 @@ namespace Payroll
             {
                 DataRow row = inboxData.Rows[i];
 
+                string emailID = row["emailID"].ToString();
+                string status = row["status"].ToString();
                 string position = row["position"].ToString();
                 string header = row["header"].ToString();
                 string body = row["body"].ToString();
@@ -867,13 +872,20 @@ namespace Payroll
                 rich.Size = new Size(boxWidth, boxHeight);
                 rich.Location = new Point(14, startY + i * (boxHeight + spacing + 35));
                 rich.ReadOnly = true;
-                rich.TabStop = false;
-                rich.Cursor = Cursors.Default;
                 rich.Font = new Font("Segoe UI Semibold", 10f, FontStyle.Bold);
+                rich.Cursor = Cursors.Default;
                 rich.GotFocus += (s, e) => inboxPanel.Focus();
                 rich.Name = $"rich{i + 1}";
-
                 rich.Text = $"{header}\n\nFrom: {sender}, {position}";
+
+                if (status == "Unread")
+                {
+                    rich.BackColor = Color.LightYellow;
+                }
+                else
+                {
+                    rich.BackColor = Color.White;
+                }
 
                 inboxPanel.Controls.Add(rich);
 
@@ -885,21 +897,24 @@ namespace Payroll
 
                 viewButton.Click += (senderObj, eObj) =>
                 {
+
+                    if (status == "Unread")
+                    {
+                        repo.MarkEmailAsRead(emailID);
+                    }
+
                     reportsPanelInbox.Visible = false;
                     reportsPanelViewMessage.Visible = true;
-                    viewMessageRichTB.TabStop = false;
-                    viewMessageRichTB.Cursor = Cursors.Default;
-                    viewMessageRichTB.GotFocus += (s, e) => viewMessagePanel.Focus();
-
-                    string fullMessage =
+                    viewMessageRichTB.Text =
                         $"📌 {header}\n" +
                         $"From: {sender}, {position}\n" +
                         $"Sent: {date}\n\n" +
                         $"{body}\n\n" +
                         $"-- {tail}";
 
-                    viewMessageRichTB.Text = fullMessage;
+                    fillReportInboxPanel();
                 };
+
 
                 inboxPanel.Controls.Add(viewButton);
             }
@@ -925,6 +940,9 @@ namespace Payroll
             FilterLogsByDateRange();
         }
 
-        
+        private void reportsDropDownCB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            fillReportInboxPanel();
+        }
     }
 }

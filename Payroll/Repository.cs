@@ -66,6 +66,72 @@ namespace Payroll
             return table;
         }
 
+        public DataTable GetEmailByCategory(string category)
+        {
+            DataTable table = new DataTable();
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    string sql = "";
+
+                    if (category == "Inbox")
+                        sql = "SELECT emailID, position, header, body, tail, senderFullName, date, status FROM emailData WHERE status <> 'Archived' ORDER BY date DESC";
+
+                    else if (category == "Unread")
+                        sql = "SELECT emailID, position, header, body, tail, senderFullName, date, status FROM emailData WHERE status = 'Unread' ORDER BY date DESC";
+
+                    else if (category == "Archive")
+                        sql = "SELECT emailID, position, header, body, tail, senderFullName, date, status FROM emailData WHERE status = 'Archived' ORDER BY date DESC";
+
+                    else
+                        sql = "SELECT emailID, position, header, body, tail, senderFullName, date, status FROM emailData WHERE position = @category ORDER BY date DESC";
+
+                    using (SqlCommand cmd = new SqlCommand(sql, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@category", category);
+
+                        using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                        {
+                            adapter.Fill(table);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Load Emails Error: " + ex.ToString());
+            }
+
+            return table;
+        }
+
+        public void MarkEmailAsRead(string emailID)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    string sql = "UPDATE emailData SET status = 'Read' WHERE emailID = @id";
+
+                    using (SqlCommand cmd = new SqlCommand(sql, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@id", emailID);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error marking as read: " + ex.ToString());
+            }
+        }
+
+
         public DataTable SearchEmployees(string role, string keyword)
         {
             DataTable table = new DataTable();

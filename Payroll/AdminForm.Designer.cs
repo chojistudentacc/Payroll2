@@ -149,16 +149,16 @@
             panel8 = new Panel();
             reportsPanel = new Panel();
             label14 = new Label();
+            reportsPanelInbox = new Panel();
+            inboxPanel = new Panel();
+            reportsDropDownCB = new ComboBox();
+            panel10 = new Panel();
             reportsPanelViewMessage = new Panel();
             viewMessageReplyButt = new Button();
             viewMessageBackButt = new Button();
             viewMessagePanel = new Panel();
             viewMessageRichTB = new RichTextBox();
             panel12 = new Panel();
-            reportsPanelInbox = new Panel();
-            inboxPanel = new Panel();
-            reportsDropDownCB = new ComboBox();
-            panel10 = new Panel();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             sidePanel.SuspendLayout();
             dashPanel.SuspendLayout();
@@ -179,9 +179,9 @@
             panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)logDataGridView).BeginInit();
             reportsPanel.SuspendLayout();
+            reportsPanelInbox.SuspendLayout();
             reportsPanelViewMessage.SuspendLayout();
             viewMessagePanel.SuspendLayout();
-            reportsPanelInbox.SuspendLayout();
             SuspendLayout();
             // 
             // sidePanel
@@ -1572,6 +1572,48 @@
             label14.TabIndex = 0;
             label14.Text = "reportsPanel";
             // 
+            // reportsPanelInbox
+            // 
+            reportsPanelInbox.BackColor = Color.White;
+            reportsPanelInbox.Controls.Add(inboxPanel);
+            reportsPanelInbox.Controls.Add(reportsDropDownCB);
+            reportsPanelInbox.Controls.Add(panel10);
+            reportsPanelInbox.Location = new Point(12, 32);
+            reportsPanelInbox.Name = "reportsPanelInbox";
+            reportsPanelInbox.Size = new Size(1092, 721);
+            reportsPanelInbox.TabIndex = 2;
+            // 
+            // inboxPanel
+            // 
+            inboxPanel.AutoScroll = true;
+            inboxPanel.BackgroundImage = Properties.Resources.PanelBG;
+            inboxPanel.BackgroundImageLayout = ImageLayout.Stretch;
+            inboxPanel.Location = new Point(347, 170);
+            inboxPanel.Name = "inboxPanel";
+            inboxPanel.Size = new Size(657, 486);
+            inboxPanel.TabIndex = 4;
+            // 
+            // reportsDropDownCB
+            // 
+            reportsDropDownCB.BackColor = Color.FromArgb(244, 240, 224);
+            reportsDropDownCB.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            reportsDropDownCB.ForeColor = Color.FromArgb(91, 12, 12);
+            reportsDropDownCB.FormattingEnabled = true;
+            reportsDropDownCB.Location = new Point(21, 170);
+            reportsDropDownCB.Name = "reportsDropDownCB";
+            reportsDropDownCB.Size = new Size(280, 33);
+            reportsDropDownCB.TabIndex = 3;
+            reportsDropDownCB.SelectedIndexChanged += reportsDropDownCB_SelectedIndexChanged;
+            // 
+            // panel10
+            // 
+            panel10.BackgroundImage = Properties.Resources.TopPanelBg;
+            panel10.BackgroundImageLayout = ImageLayout.Stretch;
+            panel10.Location = new Point(0, 0);
+            panel10.Name = "panel10";
+            panel10.Size = new Size(1092, 67);
+            panel10.TabIndex = 2;
+            // 
             // reportsPanelViewMessage
             // 
             reportsPanelViewMessage.BackColor = Color.White;
@@ -1642,47 +1684,6 @@
             panel12.Size = new Size(1092, 67);
             panel12.TabIndex = 2;
             // 
-            // reportsPanelInbox
-            // 
-            reportsPanelInbox.BackColor = Color.White;
-            reportsPanelInbox.Controls.Add(inboxPanel);
-            reportsPanelInbox.Controls.Add(reportsDropDownCB);
-            reportsPanelInbox.Controls.Add(panel10);
-            reportsPanelInbox.Location = new Point(12, 32);
-            reportsPanelInbox.Name = "reportsPanelInbox";
-            reportsPanelInbox.Size = new Size(1092, 721);
-            reportsPanelInbox.TabIndex = 2;
-            // 
-            // inboxPanel
-            // 
-            inboxPanel.AutoScroll = true;
-            inboxPanel.BackgroundImage = Properties.Resources.PanelBG;
-            inboxPanel.BackgroundImageLayout = ImageLayout.Stretch;
-            inboxPanel.Location = new Point(347, 170);
-            inboxPanel.Name = "inboxPanel";
-            inboxPanel.Size = new Size(657, 486);
-            inboxPanel.TabIndex = 4;
-            // 
-            // reportsDropDownCB
-            // 
-            reportsDropDownCB.BackColor = Color.FromArgb(244, 240, 224);
-            reportsDropDownCB.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            reportsDropDownCB.ForeColor = Color.FromArgb(91, 12, 12);
-            reportsDropDownCB.FormattingEnabled = true;
-            reportsDropDownCB.Location = new Point(21, 170);
-            reportsDropDownCB.Name = "reportsDropDownCB";
-            reportsDropDownCB.Size = new Size(280, 33);
-            reportsDropDownCB.TabIndex = 3;
-            // 
-            // panel10
-            // 
-            panel10.BackgroundImage = Properties.Resources.TopPanelBg;
-            panel10.BackgroundImageLayout = ImageLayout.Stretch;
-            panel10.Location = new Point(0, 0);
-            panel10.Name = "panel10";
-            panel10.Size = new Size(1092, 67);
-            panel10.TabIndex = 2;
-            // 
             // AdminForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -1731,9 +1732,9 @@
             ((System.ComponentModel.ISupportInitialize)logDataGridView).EndInit();
             reportsPanel.ResumeLayout(false);
             reportsPanel.PerformLayout();
+            reportsPanelInbox.ResumeLayout(false);
             reportsPanelViewMessage.ResumeLayout(false);
             viewMessagePanel.ResumeLayout(false);
-            reportsPanelInbox.ResumeLayout(false);
             ResumeLayout(false);
         }
 
