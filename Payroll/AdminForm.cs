@@ -22,6 +22,8 @@ namespace Payroll
         private string selectedPassword = "";
         private string selectedDepartmentName = "";
         private string originalDepartmentName = "";
+        private string localEmailID = "";
+        private string localEmailStatus = "";
 
         public AdminForm(LoginForm login, string userName)
         {
@@ -882,10 +884,16 @@ namespace Payroll
                 {
                     rich.BackColor = Color.LightYellow;
                 }
+                else if (status == "Archived")
+                {
+                    rich.BackColor = Color.LightGray;
+                }
                 else
                 {
                     rich.BackColor = Color.White;
                 }
+
+                toolTip.SetToolTip(rich, "Status: " + status);
 
                 inboxPanel.Controls.Add(rich);
 
@@ -894,6 +902,7 @@ namespace Payroll
                 viewButton.Location = new Point(rich.Left, rich.Bottom + 5);
                 viewButton.Text = "View";
                 viewButton.Name = $"btnView{i + 1}";
+                toolTip.SetToolTip(viewButton, "View Message");
 
                 viewButton.Click += (senderObj, eObj) =>
                 {
@@ -912,6 +921,18 @@ namespace Payroll
                         $"{body}\n\n" +
                         $"-- {tail}";
 
+                    localEmailID = emailID;
+                    localEmailStatus = status;
+
+                    if (status == "Archived")
+                    {
+                        viewMessageArchiveButt.Text = "Unarchive";
+                    }
+                    else
+                    {
+                        viewMessageArchiveButt.Text = "Archive";
+                    }
+
                     fillReportInboxPanel();
                 };
 
@@ -926,6 +947,23 @@ namespace Payroll
             reportsPanelViewMessage.Visible = false;
 
             viewMessageRichTB.Text = "";
+        }
+
+        private void viewMessageArchiveButt_Click(object sender, EventArgs e)
+        {
+            if (localEmailStatus == "Archived")
+            {
+                repo.MarkEmailAsRead(localEmailID);
+            } else
+            {
+                repo.ArchiveMail(localEmailID);
+            }
+
+            reportsPanelInbox.Visible = true;
+            reportsPanelViewMessage.Visible = false;
+
+            viewMessageRichTB.Text = "";
+            fillReportInboxPanel();
         }
 
         private void logButt_Click(object sender, EventArgs e)
@@ -944,5 +982,7 @@ namespace Payroll
         {
             fillReportInboxPanel();
         }
+
+        
     }
 }

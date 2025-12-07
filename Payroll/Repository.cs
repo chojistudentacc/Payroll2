@@ -131,6 +131,27 @@ namespace Payroll
             }
         }
 
+        public void ArchiveMail(string emailID)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    string sql = "UPDATE emailData SET status = 'Archived' WHERE emailID = @id";
+
+                    using (SqlCommand cmd = new SqlCommand(sql, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@id", emailID);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error marking as read: " + ex.ToString());
+            }
+        }
 
         public DataTable SearchEmployees(string role, string keyword)
         {
