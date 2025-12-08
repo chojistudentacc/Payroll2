@@ -30,11 +30,11 @@
         {
             usernameTB = new TextBox();
             passwordTB = new TextBox();
-            LoginPanel = new Panel();
             label3 = new Label();
             label4 = new Label();
             label5 = new Label();
             exitButt = new Button();
+            loginButt = new Button();
             SuspendLayout();
             // 
             // usernameTB
@@ -57,16 +57,6 @@
             passwordTB.PasswordChar = '*';
             passwordTB.Size = new Size(460, 35);
             passwordTB.TabIndex = 1;
-            // 
-            // LoginPanel
-            // 
-            LoginPanel.BackColor = Color.FromArgb(230, 231, 232);
-            LoginPanel.Location = new Point(358, 537);
-            LoginPanel.Margin = new Padding(3, 2, 3, 2);
-            LoginPanel.Name = "LoginPanel";
-            LoginPanel.Size = new Size(197, 58);
-            LoginPanel.TabIndex = 3;
-            LoginPanel.Click += LoginPanel_Click;
             // 
             // label3
             // 
@@ -114,6 +104,22 @@
             exitButt.UseVisualStyleBackColor = true;
             exitButt.Click += exitButt_Click;
             // 
+            // loginButt
+            // 
+            loginButt.BackColor = Color.Transparent;
+            loginButt.BackgroundImage = Properties.Resources.loginButtonImage;
+            loginButt.BackgroundImageLayout = ImageLayout.Stretch;
+            loginButt.FlatStyle = FlatStyle.Flat;
+            loginButt.Font = new Font("Georgia", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            loginButt.ForeColor = Color.White;
+            loginButt.Location = new Point(346, 526);
+            loginButt.Name = "loginButt";
+            loginButt.Size = new Size(220, 57);
+            loginButt.TabIndex = 9;
+            loginButt.Text = "Login";
+            loginButt.UseVisualStyleBackColor = false;
+            loginButt.Click += LoginPanel_Click;
+            // 
             // LoginForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -122,11 +128,11 @@
             BackgroundImage = Properties.Resources.LoginScreen;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1405, 821);
+            Controls.Add(loginButt);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(exitButt);
             Controls.Add(label5);
-            Controls.Add(LoginPanel);
             Controls.Add(passwordTB);
             Controls.Add(usernameTB);
             FormBorderStyle = FormBorderStyle.None;
@@ -139,12 +145,12 @@
         }
 
         #endregion
-        private Panel LoginPanel;
         private Label label3;
         private Label label4;
         private Label label5;
         private Button exitButt;
         public TextBox usernameTB;
         public TextBox passwordTB;
+        private Button loginButt;
     }
 }
