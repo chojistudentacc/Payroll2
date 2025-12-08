@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -73,6 +75,45 @@ namespace Payroll
             fillLeaveScreen();
         }
 
+        private void createLeaveSubmitButt_Click(object sender, EventArgs e)
+        {
+            if (leaveRichTB.Text != "" && leaveFormCB.Text != "")
+            {
+                bool success = repo.AddLeaveRequest(
+                currentEmployeeID,
+                leaveFormCB.Text,
+                leaveStartDatePicker.Value,
+                leaveEndDatePicker.Value,
+                "To be approved",
+                leaveRichTB.Text,
+                repo.GetNextRequestID());
+
+                TimeSpan timeSpan = leaveEndDatePicker.Value - leaveStartDatePicker.Value;
+                int daysBetween = timeSpan.Days;
+
+                bool updated = repo.UpdateLeaveCredit(currentEmployeeID, leaveFormCB.Text, daysBetween);
+
+                if (success && updated)
+                    MessageBox.Show("Leave request added successfully!");
+                else
+                    MessageBox.Show("Failed to add leave request.");
+
+                leaveFormCB.Text = "";
+                leaveFormCB.Items.Clear();
+                leaveStartDatePicker.Value = DateTime.Now;
+                leaveEndDatePicker.Value = DateTime.Now;
+                leaveRichTB.Text = "";
+
+                leaveSummaryPanel.Visible = true;
+                createLeavePanel.Visible = false;
+                fillLeaveScreen();
+            }
+            else
+            {
+                MessageBox.Show("Please fill out all fields.");
+            }
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
 
@@ -81,6 +122,7 @@ namespace Payroll
             leaveFormCB.Items.Add("Vacation Leave");
             leaveFormCB.Items.Add("Emergecy Leave");
             leaveFormCB.DropDownStyle = ComboBoxStyle.DropDownList;
+            leaveEndDatePicker.Value = leaveStartDatePicker.Value.Date.AddDays(1);
 
             leaveSummaryPanel.Visible = false;
             createLeavePanel.Visible = true;
@@ -98,6 +140,8 @@ namespace Payroll
                 label36.Text = "EMERGENCY LEAVE REMAINING: " + row["emergencyLeave"].ToString();
             }
 
+            repo.LoadLeaveRequests(currentEmployeeID, LeaveDataGridView);
+
         }
 
         private void createLeaveCancelButt_Click(object sender, EventArgs e)
@@ -105,11 +149,29 @@ namespace Payroll
             leaveFormCB.Text = "";
             leaveFormCB.Items.Clear();
             leaveStartDatePicker.Value = DateTime.Now;
-            leaveEndDatePicker.Value = DateTime.Now;
+            leaveEndDatePicker.Value = leaveStartDatePicker.Value.Date.AddDays(1);
             leaveRichTB.Text = "";
 
             leaveSummaryPanel.Visible = true;
             createLeavePanel.Visible = false;
+            fillLeaveScreen();
+        }
+
+        private void leaveDatePickerChanged(object sender, EventArgs e)
+        {
+            if (leaveStartDatePicker.Value.Date < DateTime.Today)
+            {
+                MessageBox.Show("Start date cannot be in the past.");
+                leaveStartDatePicker.Value = DateTime.Today;
+                return;
+            }
+
+            if (leaveEndDatePicker.Value.Date <= leaveStartDatePicker.Value.Date)
+            {
+                MessageBox.Show("End date must be after start date.");
+                leaveEndDatePicker.Value = leaveStartDatePicker.Value.Date.AddDays(1);
+                return;
+            }
         }
 
         private void attendanceButt_Click(object sender, EventArgs e)
