@@ -173,6 +173,7 @@ namespace Payroll
                 return;
             }
         }
+        // end of leave
 
         private void attendanceButt_Click(object sender, EventArgs e)
         {
