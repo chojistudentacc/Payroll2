@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminForm));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle13 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle14 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle15 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle16 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle17 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle18 = new DataGridViewCellStyle();
             sidePanel = new Panel();
             welcomeLabelAdmin = new Label();
             adminPictureBox = new PictureBox();
@@ -55,6 +55,16 @@
             label2 = new Label();
             userPanel = new Panel();
             label1 = new Label();
+            userPanelDataGrid = new Panel();
+            userDataGridPictureBox = new PictureBox();
+            dropEmployeeButt = new Button();
+            editEmployeeButt = new Button();
+            addEmpButt = new Button();
+            userPanel2 = new Panel();
+            searchDataGridTB = new TextBox();
+            roleComboBox = new ComboBox();
+            userDataGridView = new DataGridView();
+            userPanel1 = new Panel();
             editEmployeePanel = new Panel();
             label28 = new Label();
             editEmployeePictureBox = new PictureBox();
@@ -110,16 +120,6 @@
             firstNameLabel = new Label();
             lastNameLabel = new Label();
             userPanel3 = new Panel();
-            userPanelDataGrid = new Panel();
-            userDataGridPictureBox = new PictureBox();
-            dropEmployeeButt = new Button();
-            editEmployeeButt = new Button();
-            addEmpButt = new Button();
-            userPanel2 = new Panel();
-            searchDataGridTB = new TextBox();
-            roleComboBox = new ComboBox();
-            userDataGridView = new DataGridView();
-            userPanel1 = new Panel();
             departmentPanel = new Panel();
             label4 = new Label();
             departmentDataGridPanel = new Panel();
@@ -179,14 +179,14 @@
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             userPanel.SuspendLayout();
-            editEmployeePanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)editEmployeePictureBox).BeginInit();
-            userPanelAdd.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)addEmployeePictureBox).BeginInit();
             userPanelDataGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)userDataGridPictureBox).BeginInit();
             userPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)userDataGridView).BeginInit();
+            editEmployeePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)editEmployeePictureBox).BeginInit();
+            userPanelAdd.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)addEmployeePictureBox).BeginInit();
             departmentPanel.SuspendLayout();
             departmentDataGridPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)departmentDataGridView).BeginInit();
@@ -215,8 +215,9 @@
             sidePanel.Controls.Add(userButt);
             sidePanel.Controls.Add(dashboardButt);
             sidePanel.Location = new Point(0, 0);
+            sidePanel.Margin = new Padding(3, 4, 3, 4);
             sidePanel.Name = "sidePanel";
-            sidePanel.Size = new Size(273, 782);
+            sidePanel.Size = new Size(312, 1043);
             sidePanel.TabIndex = 0;
             // 
             // welcomeLabelAdmin
@@ -225,9 +226,9 @@
             welcomeLabelAdmin.BackColor = Color.Transparent;
             welcomeLabelAdmin.Font = new Font("Georgia", 15.75F, FontStyle.Italic, GraphicsUnit.Point, 0);
             welcomeLabelAdmin.ForeColor = Color.White;
-            welcomeLabelAdmin.Location = new Point(149, 74);
+            welcomeLabelAdmin.Location = new Point(170, 99);
             welcomeLabelAdmin.Name = "welcomeLabelAdmin";
-            welcomeLabelAdmin.Size = new Size(80, 25);
+            welcomeLabelAdmin.Size = new Size(102, 31);
             welcomeLabelAdmin.TabIndex = 12;
             welcomeLabelAdmin.Text = "(name)";
             // 
@@ -236,9 +237,10 @@
             adminPictureBox.BackColor = Color.White;
             adminPictureBox.BackgroundImageLayout = ImageLayout.Stretch;
             adminPictureBox.BorderStyle = BorderStyle.FixedSingle;
-            adminPictureBox.Location = new Point(12, 26);
+            adminPictureBox.Location = new Point(14, 35);
+            adminPictureBox.Margin = new Padding(3, 4, 3, 4);
             adminPictureBox.Name = "adminPictureBox";
-            adminPictureBox.Size = new Size(107, 93);
+            adminPictureBox.Size = new Size(122, 123);
             adminPictureBox.TabIndex = 10;
             adminPictureBox.TabStop = false;
             // 
@@ -248,9 +250,9 @@
             welcomeLabel.BackColor = Color.Transparent;
             welcomeLabel.Font = new Font("Georgia", 18F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             welcomeLabel.ForeColor = Color.White;
-            welcomeLabel.Location = new Point(125, 41);
+            welcomeLabel.Location = new Point(143, 55);
             welcomeLabel.Name = "welcomeLabel";
-            welcomeLabel.Size = new Size(141, 29);
+            welcomeLabel.Size = new Size(177, 35);
             welcomeLabel.TabIndex = 0;
             welcomeLabel.Text = "Welcome, ";
             // 
@@ -265,9 +267,10 @@
             reportButt.FlatStyle = FlatStyle.Flat;
             reportButt.Font = new Font("Georgia", 15.75F, FontStyle.Bold);
             reportButt.ForeColor = Color.White;
-            reportButt.Location = new Point(0, 478);
+            reportButt.Location = new Point(0, 637);
+            reportButt.Margin = new Padding(3, 4, 3, 4);
             reportButt.Name = "reportButt";
-            reportButt.Size = new Size(273, 74);
+            reportButt.Size = new Size(312, 99);
             reportButt.TabIndex = 9;
             reportButt.Text = "Reports";
             reportButt.UseVisualStyleBackColor = false;
@@ -284,9 +287,10 @@
             logButt.FlatStyle = FlatStyle.Flat;
             logButt.Font = new Font("Georgia", 15.75F, FontStyle.Bold);
             logButt.ForeColor = Color.White;
-            logButt.Location = new Point(0, 404);
+            logButt.Location = new Point(0, 539);
+            logButt.Margin = new Padding(3, 4, 3, 4);
             logButt.Name = "logButt";
-            logButt.Size = new Size(273, 74);
+            logButt.Size = new Size(312, 99);
             logButt.TabIndex = 8;
             logButt.Text = "Logs";
             logButt.UseVisualStyleBackColor = false;
@@ -303,9 +307,10 @@
             departmentButt.FlatStyle = FlatStyle.Flat;
             departmentButt.Font = new Font("Georgia", 15.75F, FontStyle.Bold);
             departmentButt.ForeColor = Color.White;
-            departmentButt.Location = new Point(0, 330);
+            departmentButt.Location = new Point(0, 440);
+            departmentButt.Margin = new Padding(3, 4, 3, 4);
             departmentButt.Name = "departmentButt";
-            departmentButt.Size = new Size(273, 74);
+            departmentButt.Size = new Size(312, 99);
             departmentButt.TabIndex = 7;
             departmentButt.Text = "Departments";
             departmentButt.UseVisualStyleBackColor = false;
@@ -322,9 +327,10 @@
             userButt.FlatStyle = FlatStyle.Flat;
             userButt.Font = new Font("Georgia", 15.75F, FontStyle.Bold);
             userButt.ForeColor = Color.White;
-            userButt.Location = new Point(0, 256);
+            userButt.Location = new Point(0, 341);
+            userButt.Margin = new Padding(3, 4, 3, 4);
             userButt.Name = "userButt";
-            userButt.Size = new Size(273, 74);
+            userButt.Size = new Size(312, 99);
             userButt.TabIndex = 6;
             userButt.Text = "User Management";
             userButt.UseVisualStyleBackColor = false;
@@ -341,9 +347,10 @@
             dashboardButt.FlatStyle = FlatStyle.Flat;
             dashboardButt.Font = new Font("Georgia", 15.75F, FontStyle.Bold);
             dashboardButt.ForeColor = Color.White;
-            dashboardButt.Location = new Point(0, 182);
+            dashboardButt.Location = new Point(0, 243);
+            dashboardButt.Margin = new Padding(3, 4, 3, 4);
             dashboardButt.Name = "dashboardButt";
-            dashboardButt.Size = new Size(273, 74);
+            dashboardButt.Size = new Size(312, 99);
             dashboardButt.TabIndex = 5;
             dashboardButt.Text = "Dashboard";
             dashboardButt.UseVisualStyleBackColor = false;
@@ -353,9 +360,10 @@
             // 
             dashPanel.BackColor = Color.FromArgb(224, 224, 224);
             dashPanel.Controls.Add(panel1);
-            dashPanel.Location = new Point(273, 0);
+            dashPanel.Location = new Point(312, 0);
+            dashPanel.Margin = new Padding(3, 4, 3, 4);
             dashPanel.Name = "dashPanel";
-            dashPanel.Size = new Size(1116, 784);
+            dashPanel.Size = new Size(1275, 1045);
             dashPanel.TabIndex = 1;
             dashPanel.Visible = false;
             // 
@@ -364,9 +372,10 @@
             panel1.BackColor = Color.White;
             panel1.Controls.Add(panel2);
             panel1.Controls.Add(label2);
-            panel1.Location = new Point(15, 12);
+            panel1.Location = new Point(17, 16);
+            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1086, 294);
+            panel1.Size = new Size(1241, 392);
             panel1.TabIndex = 0;
             // 
             // panel2
@@ -376,9 +385,10 @@
             panel2.Controls.Add(allEmpLB);
             panel2.Controls.Add(label3);
             panel2.Font = new Font("Georgia", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            panel2.Location = new Point(86, 92);
+            panel2.Location = new Point(98, 123);
+            panel2.Margin = new Padding(3, 4, 3, 4);
             panel2.Name = "panel2";
-            panel2.Size = new Size(163, 86);
+            panel2.Size = new Size(208, 155);
             panel2.TabIndex = 1;
             // 
             // allEmpLB
@@ -387,9 +397,9 @@
             allEmpLB.BackColor = Color.Transparent;
             allEmpLB.Font = new Font("Times New Roman", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             allEmpLB.ForeColor = Color.White;
-            allEmpLB.Location = new Point(67, 37);
+            allEmpLB.Location = new Point(77, 49);
             allEmpLB.Name = "allEmpLB";
-            allEmpLB.Size = new Size(35, 40);
+            allEmpLB.Size = new Size(44, 51);
             allEmpLB.TabIndex = 1;
             allEmpLB.Text = "0";
             // 
@@ -399,9 +409,9 @@
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Georgia", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(8, 4);
+            label3.Location = new Point(9, 5);
             label3.Name = "label3";
-            label3.Size = new Size(151, 23);
+            label3.Size = new Size(186, 29);
             label3.TabIndex = 0;
             label3.Text = "All Employees";
             // 
@@ -410,9 +420,9 @@
             label2.AutoSize = true;
             label2.Font = new Font("Georgia", 24.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.FromArgb(130, 0, 0);
-            label2.Location = new Point(371, 22);
+            label2.Location = new Point(424, 29);
             label2.Name = "label2";
-            label2.Size = new Size(305, 38);
+            label2.Size = new Size(391, 48);
             label2.TabIndex = 0;
             label2.Text = "E M P L O Y E E S";
             // 
@@ -423,20 +433,187 @@
             userPanel.Controls.Add(userPanelDataGrid);
             userPanel.Controls.Add(editEmployeePanel);
             userPanel.Controls.Add(userPanelAdd);
-            userPanel.Location = new Point(273, 0);
+            userPanel.Location = new Point(312, 0);
+            userPanel.Margin = new Padding(3, 4, 3, 4);
             userPanel.Name = "userPanel";
-            userPanel.Size = new Size(1116, 784);
+            userPanel.Size = new Size(1275, 1045);
             userPanel.TabIndex = 2;
             userPanel.Visible = false;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(12, 9);
+            label1.Location = new Point(14, 12);
             label1.Name = "label1";
-            label1.Size = new Size(58, 15);
+            label1.Size = new Size(71, 20);
             label1.TabIndex = 0;
             label1.Text = "userPanel";
+            // 
+            // userPanelDataGrid
+            // 
+            userPanelDataGrid.BackColor = Color.White;
+            userPanelDataGrid.Controls.Add(userDataGridPictureBox);
+            userPanelDataGrid.Controls.Add(dropEmployeeButt);
+            userPanelDataGrid.Controls.Add(editEmployeeButt);
+            userPanelDataGrid.Controls.Add(addEmpButt);
+            userPanelDataGrid.Controls.Add(userPanel2);
+            userPanelDataGrid.Controls.Add(userDataGridView);
+            userPanelDataGrid.Controls.Add(userPanel1);
+            userPanelDataGrid.Location = new Point(14, 51);
+            userPanelDataGrid.Margin = new Padding(3, 4, 3, 4);
+            userPanelDataGrid.Name = "userPanelDataGrid";
+            userPanelDataGrid.Size = new Size(1248, 961);
+            userPanelDataGrid.TabIndex = 1;
+            // 
+            // userDataGridPictureBox
+            // 
+            userDataGridPictureBox.BackColor = Color.White;
+            userDataGridPictureBox.BackgroundImageLayout = ImageLayout.Stretch;
+            userDataGridPictureBox.BorderStyle = BorderStyle.FixedSingle;
+            userDataGridPictureBox.Location = new Point(1079, 113);
+            userDataGridPictureBox.Margin = new Padding(3, 4, 3, 4);
+            userDataGridPictureBox.Name = "userDataGridPictureBox";
+            userDataGridPictureBox.Size = new Size(122, 123);
+            userDataGridPictureBox.TabIndex = 11;
+            userDataGridPictureBox.TabStop = false;
+            // 
+            // dropEmployeeButt
+            // 
+            dropEmployeeButt.BackColor = Color.FromArgb(146, 45, 51);
+            dropEmployeeButt.FlatStyle = FlatStyle.Flat;
+            dropEmployeeButt.Font = new Font("Georgia", 12F, FontStyle.Bold);
+            dropEmployeeButt.ForeColor = Color.White;
+            dropEmployeeButt.Location = new Point(295, 823);
+            dropEmployeeButt.Margin = new Padding(3, 4, 3, 4);
+            dropEmployeeButt.Name = "dropEmployeeButt";
+            dropEmployeeButt.Size = new Size(231, 67);
+            dropEmployeeButt.TabIndex = 5;
+            dropEmployeeButt.Text = "Drop";
+            dropEmployeeButt.UseVisualStyleBackColor = false;
+            dropEmployeeButt.Click += dropEmployeeButt_Click;
+            // 
+            // editEmployeeButt
+            // 
+            editEmployeeButt.BackColor = Color.FromArgb(146, 45, 51);
+            editEmployeeButt.FlatStyle = FlatStyle.Flat;
+            editEmployeeButt.Font = new Font("Georgia", 12F, FontStyle.Bold);
+            editEmployeeButt.ForeColor = Color.White;
+            editEmployeeButt.Location = new Point(24, 823);
+            editEmployeeButt.Margin = new Padding(3, 4, 3, 4);
+            editEmployeeButt.Name = "editEmployeeButt";
+            editEmployeeButt.Size = new Size(231, 67);
+            editEmployeeButt.TabIndex = 4;
+            editEmployeeButt.Text = "Edit";
+            editEmployeeButt.UseVisualStyleBackColor = false;
+            editEmployeeButt.Click += editEmployeeButt_Click;
+            // 
+            // addEmpButt
+            // 
+            addEmpButt.BackColor = Color.FromArgb(146, 45, 51);
+            addEmpButt.FlatStyle = FlatStyle.Flat;
+            addEmpButt.Font = new Font("Georgia", 12F, FontStyle.Bold);
+            addEmpButt.ForeColor = Color.White;
+            addEmpButt.Location = new Point(24, 148);
+            addEmpButt.Margin = new Padding(3, 4, 3, 4);
+            addEmpButt.Name = "addEmpButt";
+            addEmpButt.Size = new Size(231, 67);
+            addEmpButt.TabIndex = 3;
+            addEmpButt.Text = "Add Employee";
+            addEmpButt.UseVisualStyleBackColor = false;
+            addEmpButt.Click += addEmpButt_Click;
+            // 
+            // userPanel2
+            // 
+            userPanel2.BackgroundImage = Properties.Resources.PanelBG;
+            userPanel2.BackgroundImageLayout = ImageLayout.Center;
+            userPanel2.Controls.Add(searchDataGridTB);
+            userPanel2.Controls.Add(roleComboBox);
+            userPanel2.Location = new Point(315, 124);
+            userPanel2.Margin = new Padding(3, 4, 3, 4);
+            userPanel2.Name = "userPanel2";
+            userPanel2.Size = new Size(707, 103);
+            userPanel2.TabIndex = 2;
+            // 
+            // searchDataGridTB
+            // 
+            searchDataGridTB.Font = new Font("Georgia", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            searchDataGridTB.Location = new Point(19, 29);
+            searchDataGridTB.Margin = new Padding(3, 4, 3, 4);
+            searchDataGridTB.Name = "searchDataGridTB";
+            searchDataGridTB.PlaceholderText = "Search by employeeID or last name";
+            searchDataGridTB.Size = new Size(391, 42);
+            searchDataGridTB.TabIndex = 1;
+            searchDataGridTB.TextChanged += searchDataGridTB_TextChanged;
+            // 
+            // roleComboBox
+            // 
+            roleComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            roleComboBox.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            roleComboBox.Location = new Point(439, 28);
+            roleComboBox.Margin = new Padding(3, 4, 3, 4);
+            roleComboBox.Name = "roleComboBox";
+            roleComboBox.Size = new Size(251, 42);
+            roleComboBox.TabIndex = 0;
+            roleComboBox.Tag = "";
+            roleComboBox.SelectionChangeCommitted += roleComboBox_SelectedIndexChanged;
+            // 
+            // userDataGridView
+            // 
+            userDataGridView.AllowUserToAddRows = false;
+            userDataGridView.AllowUserToDeleteRows = false;
+            userDataGridView.AllowUserToResizeColumns = false;
+            userDataGridView.AllowUserToResizeRows = false;
+            userDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            userDataGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            userDataGridView.BackgroundColor = Color.FromArgb(146, 45, 51);
+            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = Color.FromArgb(146, 45, 51);
+            dataGridViewCellStyle10.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle10.ForeColor = Color.White;
+            dataGridViewCellStyle10.SelectionBackColor = Color.FromArgb(179, 79, 84);
+            dataGridViewCellStyle10.SelectionForeColor = Color.FromArgb(255, 209, 211);
+            dataGridViewCellStyle10.WrapMode = DataGridViewTriState.True;
+            userDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            userDataGridView.ColumnHeadersHeight = 29;
+            userDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = Color.FromArgb(146, 45, 51);
+            dataGridViewCellStyle11.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle11.ForeColor = Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = Color.FromArgb(179, 79, 84);
+            dataGridViewCellStyle11.SelectionForeColor = Color.FromArgb(255, 209, 211);
+            dataGridViewCellStyle11.WrapMode = DataGridViewTriState.True;
+            userDataGridView.DefaultCellStyle = dataGridViewCellStyle11;
+            userDataGridView.EnableHeadersVisualStyles = false;
+            userDataGridView.GridColor = Color.White;
+            userDataGridView.Location = new Point(0, 253);
+            userDataGridView.Margin = new Padding(3, 4, 3, 4);
+            userDataGridView.Name = "userDataGridView";
+            userDataGridView.ReadOnly = true;
+            dataGridViewCellStyle12.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = Color.FromArgb(146, 45, 51);
+            dataGridViewCellStyle12.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle12.ForeColor = Color.White;
+            dataGridViewCellStyle12.SelectionBackColor = Color.FromArgb(179, 79, 84);
+            dataGridViewCellStyle12.SelectionForeColor = Color.FromArgb(255, 209, 211);
+            dataGridViewCellStyle12.WrapMode = DataGridViewTriState.True;
+            userDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            userDataGridView.RowHeadersVisible = false;
+            userDataGridView.RowHeadersWidth = 51;
+            userDataGridView.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            userDataGridView.Size = new Size(1248, 495);
+            userDataGridView.TabIndex = 0;
+            userDataGridView.CellClick += userDataGridView_CellClick;
+            // 
+            // userPanel1
+            // 
+            userPanel1.BackgroundImage = Properties.Resources.TopPanelBg;
+            userPanel1.BackgroundImageLayout = ImageLayout.Stretch;
+            userPanel1.Location = new Point(0, 0);
+            userPanel1.Margin = new Padding(3, 4, 3, 4);
+            userPanel1.Name = "userPanel1";
+            userPanel1.Size = new Size(1248, 89);
+            userPanel1.TabIndex = 1;
             // 
             // editEmployeePanel
             // 
@@ -466,9 +643,10 @@
             editEmployeePanel.Controls.Add(label22);
             editEmployeePanel.Controls.Add(panel7);
             editEmployeePanel.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
-            editEmployeePanel.Location = new Point(12, 38);
+            editEmployeePanel.Location = new Point(14, 51);
+            editEmployeePanel.Margin = new Padding(3, 4, 3, 4);
             editEmployeePanel.Name = "editEmployeePanel";
-            editEmployeePanel.Size = new Size(1092, 721);
+            editEmployeePanel.Size = new Size(1248, 961);
             editEmployeePanel.TabIndex = 30;
             editEmployeePanel.Visible = false;
             // 
@@ -476,9 +654,9 @@
             // 
             label28.AutoSize = true;
             label28.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
-            label28.Location = new Point(596, 238);
+            label28.Location = new Point(681, 317);
             label28.Name = "label28";
-            label28.Size = new Size(77, 23);
+            label28.Size = new Size(99, 29);
             label28.TabIndex = 41;
             label28.Text = "Image:";
             // 
@@ -487,9 +665,10 @@
             editEmployeePictureBox.BackColor = Color.White;
             editEmployeePictureBox.BackgroundImageLayout = ImageLayout.Stretch;
             editEmployeePictureBox.BorderStyle = BorderStyle.FixedSingle;
-            editEmployeePictureBox.Location = new Point(794, 143);
+            editEmployeePictureBox.Location = new Point(907, 191);
+            editEmployeePictureBox.Margin = new Padding(3, 4, 3, 4);
             editEmployeePictureBox.Name = "editEmployeePictureBox";
-            editEmployeePictureBox.Size = new Size(150, 124);
+            editEmployeePictureBox.Size = new Size(171, 165);
             editEmployeePictureBox.TabIndex = 40;
             editEmployeePictureBox.TabStop = false;
             // 
@@ -498,9 +677,9 @@
             label25.AutoSize = true;
             label25.Font = new Font("Georgia", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label25.ForeColor = Color.FromArgb(125, 0, 0);
-            label25.Location = new Point(374, 91);
+            label25.Location = new Point(427, 121);
             label25.Name = "label25";
-            label25.Size = new Size(305, 41);
+            label25.Size = new Size(381, 51);
             label25.TabIndex = 39;
             label25.Text = "INFORMATION";
             // 
@@ -510,9 +689,10 @@
             editEmployeeCancelButt.FlatStyle = FlatStyle.Flat;
             editEmployeeCancelButt.Font = new Font("Georgia", 18F, FontStyle.Bold);
             editEmployeeCancelButt.ForeColor = Color.White;
-            editEmployeeCancelButt.Location = new Point(743, 567);
+            editEmployeeCancelButt.Location = new Point(849, 756);
+            editEmployeeCancelButt.Margin = new Padding(3, 4, 3, 4);
             editEmployeeCancelButt.Name = "editEmployeeCancelButt";
-            editEmployeeCancelButt.Size = new Size(261, 55);
+            editEmployeeCancelButt.Size = new Size(298, 73);
             editEmployeeCancelButt.TabIndex = 38;
             editEmployeeCancelButt.Text = "Cancel";
             editEmployeeCancelButt.UseVisualStyleBackColor = false;
@@ -524,9 +704,10 @@
             editEmployeeSaveButt.FlatStyle = FlatStyle.Flat;
             editEmployeeSaveButt.Font = new Font("Georgia", 18F, FontStyle.Bold);
             editEmployeeSaveButt.ForeColor = Color.White;
-            editEmployeeSaveButt.Location = new Point(85, 567);
+            editEmployeeSaveButt.Location = new Point(97, 756);
+            editEmployeeSaveButt.Margin = new Padding(3, 4, 3, 4);
             editEmployeeSaveButt.Name = "editEmployeeSaveButt";
-            editEmployeeSaveButt.Size = new Size(261, 55);
+            editEmployeeSaveButt.Size = new Size(298, 73);
             editEmployeeSaveButt.TabIndex = 36;
             editEmployeeSaveButt.Text = "Save";
             editEmployeeSaveButt.UseVisualStyleBackColor = false;
@@ -538,9 +719,10 @@
             editEmployeeResetPasswordButt.FlatStyle = FlatStyle.Flat;
             editEmployeeResetPasswordButt.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             editEmployeeResetPasswordButt.ForeColor = Color.White;
-            editEmployeeResetPasswordButt.Location = new Point(852, 384);
+            editEmployeeResetPasswordButt.Location = new Point(974, 512);
+            editEmployeeResetPasswordButt.Margin = new Padding(3, 4, 3, 4);
             editEmployeeResetPasswordButt.Name = "editEmployeeResetPasswordButt";
-            editEmployeeResetPasswordButt.Size = new Size(154, 29);
+            editEmployeeResetPasswordButt.Size = new Size(176, 39);
             editEmployeeResetPasswordButt.TabIndex = 35;
             editEmployeeResetPasswordButt.Text = "Reset Password";
             editEmployeeResetPasswordButt.UseVisualStyleBackColor = false;
@@ -550,9 +732,10 @@
             // 
             editEmployeeInactiveRB.AutoSize = true;
             editEmployeeInactiveRB.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
-            editEmployeeInactiveRB.Location = new Point(335, 385);
+            editEmployeeInactiveRB.Location = new Point(383, 513);
+            editEmployeeInactiveRB.Margin = new Padding(3, 4, 3, 4);
             editEmployeeInactiveRB.Name = "editEmployeeInactiveRB";
-            editEmployeeInactiveRB.Size = new Size(107, 27);
+            editEmployeeInactiveRB.Size = new Size(135, 33);
             editEmployeeInactiveRB.TabIndex = 34;
             editEmployeeInactiveRB.TabStop = true;
             editEmployeeInactiveRB.Text = "Inactive";
@@ -563,9 +746,10 @@
             // 
             editEmployeeActiveRB.AutoSize = true;
             editEmployeeActiveRB.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
-            editEmployeeActiveRB.Location = new Point(217, 385);
+            editEmployeeActiveRB.Location = new Point(248, 513);
+            editEmployeeActiveRB.Margin = new Padding(3, 4, 3, 4);
             editEmployeeActiveRB.Name = "editEmployeeActiveRB";
-            editEmployeeActiveRB.Size = new Size(89, 27);
+            editEmployeeActiveRB.Size = new Size(111, 33);
             editEmployeeActiveRB.TabIndex = 33;
             editEmployeeActiveRB.TabStop = true;
             editEmployeeActiveRB.Text = "Active";
@@ -576,60 +760,66 @@
             // 
             editEmployeePasswordTB.Font = new Font("Times New Roman", 15.75F);
             editEmployeePasswordTB.ForeColor = Color.Black;
-            editEmployeePasswordTB.Location = new Point(735, 334);
+            editEmployeePasswordTB.Location = new Point(840, 445);
+            editEmployeePasswordTB.Margin = new Padding(3, 4, 3, 4);
             editEmployeePasswordTB.Name = "editEmployeePasswordTB";
             editEmployeePasswordTB.ReadOnly = true;
-            editEmployeePasswordTB.Size = new Size(271, 32);
+            editEmployeePasswordTB.Size = new Size(309, 38);
             editEmployeePasswordTB.TabIndex = 32;
             editEmployeePasswordTB.Text = "Hidden";
             // 
             // editEmployeeAdressTB
             // 
             editEmployeeAdressTB.Font = new Font("Times New Roman", 15.75F);
-            editEmployeeAdressTB.Location = new Point(735, 288);
+            editEmployeeAdressTB.Location = new Point(840, 384);
+            editEmployeeAdressTB.Margin = new Padding(3, 4, 3, 4);
             editEmployeeAdressTB.Name = "editEmployeeAdressTB";
-            editEmployeeAdressTB.Size = new Size(271, 32);
+            editEmployeeAdressTB.Size = new Size(309, 38);
             editEmployeeAdressTB.TabIndex = 31;
             // 
             // editEmployeeEmailTB
             // 
             editEmployeeEmailTB.Font = new Font("Times New Roman", 15.75F);
-            editEmployeeEmailTB.Location = new Point(217, 436);
+            editEmployeeEmailTB.Location = new Point(248, 581);
+            editEmployeeEmailTB.Margin = new Padding(3, 4, 3, 4);
             editEmployeeEmailTB.Name = "editEmployeeEmailTB";
-            editEmployeeEmailTB.Size = new Size(271, 32);
+            editEmployeeEmailTB.Size = new Size(309, 38);
             editEmployeeEmailTB.TabIndex = 30;
             // 
             // editEmployeeContactNoTB
             // 
             editEmployeeContactNoTB.Font = new Font("Times New Roman", 15.75F);
-            editEmployeeContactNoTB.Location = new Point(217, 332);
+            editEmployeeContactNoTB.Location = new Point(248, 443);
+            editEmployeeContactNoTB.Margin = new Padding(3, 4, 3, 4);
             editEmployeeContactNoTB.Name = "editEmployeeContactNoTB";
-            editEmployeeContactNoTB.Size = new Size(271, 32);
+            editEmployeeContactNoTB.Size = new Size(309, 38);
             editEmployeeContactNoTB.TabIndex = 29;
             // 
             // editEmployeeMiddleNameTB
             // 
             editEmployeeMiddleNameTB.Font = new Font("Times New Roman", 15.75F);
-            editEmployeeMiddleNameTB.Location = new Point(217, 282);
+            editEmployeeMiddleNameTB.Location = new Point(248, 376);
+            editEmployeeMiddleNameTB.Margin = new Padding(3, 4, 3, 4);
             editEmployeeMiddleNameTB.Name = "editEmployeeMiddleNameTB";
-            editEmployeeMiddleNameTB.Size = new Size(271, 32);
+            editEmployeeMiddleNameTB.Size = new Size(309, 38);
             editEmployeeMiddleNameTB.TabIndex = 28;
             // 
             // editEmployeeFirstNameTB
             // 
             editEmployeeFirstNameTB.Font = new Font("Times New Roman", 15.75F);
-            editEmployeeFirstNameTB.Location = new Point(217, 236);
+            editEmployeeFirstNameTB.Location = new Point(248, 315);
+            editEmployeeFirstNameTB.Margin = new Padding(3, 4, 3, 4);
             editEmployeeFirstNameTB.Name = "editEmployeeFirstNameTB";
-            editEmployeeFirstNameTB.Size = new Size(271, 32);
+            editEmployeeFirstNameTB.Size = new Size(309, 38);
             editEmployeeFirstNameTB.TabIndex = 27;
             // 
             // label13
             // 
             label13.AutoSize = true;
             label13.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
-            label13.Location = new Point(57, 387);
+            label13.Location = new Point(65, 516);
             label13.Name = "label13";
-            label13.Size = new Size(79, 23);
+            label13.Size = new Size(101, 29);
             label13.TabIndex = 24;
             label13.Text = "Status:";
             // 
@@ -637,9 +827,9 @@
             // 
             label15.AutoSize = true;
             label15.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
-            label15.Location = new Point(596, 339);
+            label15.Location = new Point(681, 452);
             label15.Name = "label15";
-            label15.Size = new Size(112, 23);
+            label15.Size = new Size(141, 29);
             label15.TabIndex = 19;
             label15.Text = "Password:";
             // 
@@ -647,9 +837,9 @@
             // 
             label17.AutoSize = true;
             label17.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
-            label17.Location = new Point(596, 290);
+            label17.Location = new Point(681, 387);
             label17.Name = "label17";
-            label17.Size = new Size(98, 23);
+            label17.Size = new Size(122, 29);
             label17.TabIndex = 12;
             label17.Text = "Address:";
             // 
@@ -657,9 +847,9 @@
             // 
             label18.AutoSize = true;
             label18.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
-            label18.Location = new Point(57, 438);
+            label18.Location = new Point(65, 584);
             label18.Name = "label18";
-            label18.Size = new Size(75, 23);
+            label18.Size = new Size(93, 29);
             label18.TabIndex = 11;
             label18.Text = "Email:";
             // 
@@ -667,9 +857,9 @@
             // 
             label19.AutoSize = true;
             label19.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
-            label19.Location = new Point(57, 338);
+            label19.Location = new Point(65, 451);
             label19.Name = "label19";
-            label19.Size = new Size(126, 23);
+            label19.Size = new Size(159, 29);
             label19.TabIndex = 8;
             label19.Text = "Contact No:";
             // 
@@ -677,27 +867,28 @@
             // 
             label20.AutoSize = true;
             label20.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
-            label20.Location = new Point(57, 287);
+            label20.Location = new Point(65, 383);
             label20.Name = "label20";
-            label20.Size = new Size(149, 23);
+            label20.Size = new Size(187, 29);
             label20.TabIndex = 7;
             label20.Text = "Middle Name:";
             // 
             // editEmployeeLastNameTB
             // 
             editEmployeeLastNameTB.Font = new Font("Times New Roman", 15.75F);
-            editEmployeeLastNameTB.Location = new Point(217, 183);
+            editEmployeeLastNameTB.Location = new Point(248, 244);
+            editEmployeeLastNameTB.Margin = new Padding(3, 4, 3, 4);
             editEmployeeLastNameTB.Name = "editEmployeeLastNameTB";
-            editEmployeeLastNameTB.Size = new Size(271, 32);
+            editEmployeeLastNameTB.Size = new Size(309, 38);
             editEmployeeLastNameTB.TabIndex = 5;
             // 
             // label21
             // 
             label21.AutoSize = true;
             label21.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
-            label21.Location = new Point(57, 238);
+            label21.Location = new Point(65, 317);
             label21.Name = "label21";
-            label21.Size = new Size(127, 23);
+            label21.Size = new Size(158, 29);
             label21.TabIndex = 4;
             label21.Text = "First Name:";
             // 
@@ -705,9 +896,9 @@
             // 
             label22.AutoSize = true;
             label22.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
-            label22.Location = new Point(57, 185);
+            label22.Location = new Point(65, 247);
             label22.Name = "label22";
-            label22.Size = new Size(121, 23);
+            label22.Size = new Size(152, 29);
             label22.TabIndex = 3;
             label22.Text = "Last Name:";
             // 
@@ -716,8 +907,9 @@
             panel7.BackgroundImage = Properties.Resources.TopPanelBg;
             panel7.BackgroundImageLayout = ImageLayout.Stretch;
             panel7.Location = new Point(0, 0);
+            panel7.Margin = new Padding(3, 4, 3, 4);
             panel7.Name = "panel7";
-            panel7.Size = new Size(1092, 67);
+            panel7.Size = new Size(1248, 89);
             panel7.TabIndex = 2;
             // 
             // userPanelAdd
@@ -753,9 +945,10 @@
             userPanelAdd.Controls.Add(lastNameLabel);
             userPanelAdd.Controls.Add(userPanel3);
             userPanelAdd.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
-            userPanelAdd.Location = new Point(12, 38);
+            userPanelAdd.Location = new Point(14, 51);
+            userPanelAdd.Margin = new Padding(3, 4, 3, 4);
             userPanelAdd.Name = "userPanelAdd";
-            userPanelAdd.Size = new Size(1092, 718);
+            userPanelAdd.Size = new Size(1248, 957);
             userPanelAdd.TabIndex = 2;
             userPanelAdd.Visible = false;
             // 
@@ -764,10 +957,10 @@
             label27.AutoSize = true;
             label27.Font = new Font("Georgia", 26.25F, FontStyle.Bold);
             label27.ForeColor = Color.FromArgb(125, 0, 0);
-            label27.Location = new Point(385, 85);
+            label27.Location = new Point(440, 113);
             label27.Margin = new Padding(2, 0, 2, 0);
             label27.Name = "label27";
-            label27.Size = new Size(305, 41);
+            label27.Size = new Size(381, 51);
             label27.TabIndex = 32;
             label27.Text = "INFORMATION";
             // 
@@ -775,9 +968,9 @@
             // 
             label26.AutoSize = true;
             label26.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
-            label26.Location = new Point(595, 236);
+            label26.Location = new Point(680, 315);
             label26.Name = "label26";
-            label26.Size = new Size(77, 23);
+            label26.Size = new Size(99, 29);
             label26.TabIndex = 31;
             label26.Text = "Image:";
             // 
@@ -786,9 +979,10 @@
             addEmployeePictureBox.BackColor = Color.White;
             addEmployeePictureBox.BackgroundImageLayout = ImageLayout.Stretch;
             addEmployeePictureBox.BorderStyle = BorderStyle.FixedSingle;
-            addEmployeePictureBox.Location = new Point(793, 141);
+            addEmployeePictureBox.Location = new Point(906, 188);
+            addEmployeePictureBox.Margin = new Padding(3, 4, 3, 4);
             addEmployeePictureBox.Name = "addEmployeePictureBox";
-            addEmployeePictureBox.Size = new Size(150, 124);
+            addEmployeePictureBox.Size = new Size(171, 165);
             addEmployeePictureBox.TabIndex = 30;
             addEmployeePictureBox.TabStop = false;
             addEmployeePictureBox.Click += button1_Click;
@@ -799,9 +993,10 @@
             cancelButt.FlatStyle = FlatStyle.Flat;
             cancelButt.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
             cancelButt.ForeColor = Color.White;
-            cancelButt.Location = new Point(743, 641);
+            cancelButt.Location = new Point(849, 855);
+            cancelButt.Margin = new Padding(3, 4, 3, 4);
             cancelButt.Name = "cancelButt";
-            cancelButt.Size = new Size(261, 55);
+            cancelButt.Size = new Size(298, 73);
             cancelButt.TabIndex = 29;
             cancelButt.Text = "Cancel";
             cancelButt.UseVisualStyleBackColor = false;
@@ -813,9 +1008,10 @@
             clearButt.FlatStyle = FlatStyle.Flat;
             clearButt.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
             clearButt.ForeColor = Color.White;
-            clearButt.Location = new Point(418, 641);
+            clearButt.Location = new Point(478, 855);
+            clearButt.Margin = new Padding(3, 4, 3, 4);
             clearButt.Name = "clearButt";
-            clearButt.Size = new Size(261, 55);
+            clearButt.Size = new Size(298, 73);
             clearButt.TabIndex = 28;
             clearButt.Text = "Clear";
             clearButt.UseVisualStyleBackColor = false;
@@ -827,9 +1023,10 @@
             saveButt.FlatStyle = FlatStyle.Flat;
             saveButt.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
             saveButt.ForeColor = Color.White;
-            saveButt.Location = new Point(85, 641);
+            saveButt.Location = new Point(97, 855);
+            saveButt.Margin = new Padding(3, 4, 3, 4);
             saveButt.Name = "saveButt";
-            saveButt.Size = new Size(261, 55);
+            saveButt.Size = new Size(298, 73);
             saveButt.TabIndex = 27;
             saveButt.Text = "Save";
             saveButt.UseVisualStyleBackColor = false;
@@ -839,9 +1036,10 @@
             // 
             inactiveRadioButt.AutoSize = true;
             inactiveRadioButt.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
-            inactiveRadioButt.Location = new Point(290, 487);
+            inactiveRadioButt.Location = new Point(331, 649);
+            inactiveRadioButt.Margin = new Padding(3, 4, 3, 4);
             inactiveRadioButt.Name = "inactiveRadioButt";
-            inactiveRadioButt.Size = new Size(107, 27);
+            inactiveRadioButt.Size = new Size(135, 33);
             inactiveRadioButt.TabIndex = 26;
             inactiveRadioButt.TabStop = true;
             inactiveRadioButt.Text = "Inactive";
@@ -852,9 +1050,10 @@
             // 
             activeRadioButt.AutoSize = true;
             activeRadioButt.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
-            activeRadioButt.Location = new Point(168, 487);
+            activeRadioButt.Location = new Point(192, 649);
+            activeRadioButt.Margin = new Padding(3, 4, 3, 4);
             activeRadioButt.Name = "activeRadioButt";
-            activeRadioButt.Size = new Size(89, 27);
+            activeRadioButt.Size = new Size(111, 33);
             activeRadioButt.TabIndex = 25;
             activeRadioButt.TabStop = true;
             activeRadioButt.Text = "Active";
@@ -865,9 +1064,9 @@
             // 
             statusLabel.AutoSize = true;
             statusLabel.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
-            statusLabel.Location = new Point(63, 487);
+            statusLabel.Location = new Point(72, 649);
             statusLabel.Name = "statusLabel";
-            statusLabel.Size = new Size(79, 23);
+            statusLabel.Size = new Size(101, 29);
             statusLabel.TabIndex = 24;
             statusLabel.Text = "Status:";
             // 
@@ -875,44 +1074,47 @@
             // 
             positionComboBox.Font = new Font("Times New Roman", 15.75F);
             positionComboBox.FormattingEnabled = true;
-            positionComboBox.Location = new Point(168, 438);
+            positionComboBox.Location = new Point(192, 584);
+            positionComboBox.Margin = new Padding(3, 4, 3, 4);
             positionComboBox.Name = "positionComboBox";
-            positionComboBox.Size = new Size(320, 31);
+            positionComboBox.Size = new Size(365, 37);
             positionComboBox.TabIndex = 23;
             // 
             // positionLabel
             // 
             positionLabel.AutoSize = true;
             positionLabel.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
-            positionLabel.Location = new Point(61, 442);
+            positionLabel.Location = new Point(70, 589);
             positionLabel.Name = "positionLabel";
-            positionLabel.Size = new Size(99, 23);
+            positionLabel.Size = new Size(124, 29);
             positionLabel.TabIndex = 22;
             positionLabel.Text = "Position:";
             // 
             // passTB
             // 
             passTB.Font = new Font("Times New Roman", 15.75F);
-            passTB.Location = new Point(733, 438);
+            passTB.Location = new Point(838, 584);
+            passTB.Margin = new Padding(3, 4, 3, 4);
             passTB.Name = "passTB";
-            passTB.Size = new Size(271, 32);
+            passTB.Size = new Size(309, 38);
             passTB.TabIndex = 21;
             // 
             // userNameTB
             // 
             userNameTB.Font = new Font("Times New Roman", 15.75F);
-            userNameTB.Location = new Point(733, 387);
+            userNameTB.Location = new Point(838, 516);
+            userNameTB.Margin = new Padding(3, 4, 3, 4);
             userNameTB.Name = "userNameTB";
-            userNameTB.Size = new Size(271, 32);
+            userNameTB.Size = new Size(309, 38);
             userNameTB.TabIndex = 20;
             // 
             // passLabel
             // 
             passLabel.AutoSize = true;
             passLabel.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
-            passLabel.Location = new Point(596, 442);
+            passLabel.Location = new Point(681, 589);
             passLabel.Name = "passLabel";
-            passLabel.Size = new Size(112, 23);
+            passLabel.Size = new Size(141, 29);
             passLabel.TabIndex = 19;
             passLabel.Text = "Password:";
             // 
@@ -920,9 +1122,9 @@
             // 
             userNameLabel.AutoSize = true;
             userNameLabel.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
-            userNameLabel.Location = new Point(594, 390);
+            userNameLabel.Location = new Point(679, 520);
             userNameLabel.Name = "userNameLabel";
-            userNameLabel.Size = new Size(126, 23);
+            userNameLabel.Size = new Size(158, 29);
             userNameLabel.TabIndex = 18;
             userNameLabel.Text = "User Name:";
             // 
@@ -932,9 +1134,10 @@
             generateCredetialsButt.FlatStyle = FlatStyle.Flat;
             generateCredetialsButt.Font = new Font("Times New Roman", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             generateCredetialsButt.ForeColor = Color.White;
-            generateCredetialsButt.Location = new Point(800, 490);
+            generateCredetialsButt.Location = new Point(914, 653);
+            generateCredetialsButt.Margin = new Padding(3, 4, 3, 4);
             generateCredetialsButt.Name = "generateCredetialsButt";
-            generateCredetialsButt.Size = new Size(204, 36);
+            generateCredetialsButt.Size = new Size(233, 48);
             generateCredetialsButt.TabIndex = 17;
             generateCredetialsButt.Text = "Generate Random Credentials";
             generateCredetialsButt.UseVisualStyleBackColor = false;
@@ -943,26 +1146,28 @@
             // addressTB
             // 
             addressTB.Font = new Font("Times New Roman", 15.75F);
-            addressTB.Location = new Point(733, 333);
+            addressTB.Location = new Point(838, 444);
+            addressTB.Margin = new Padding(3, 4, 3, 4);
             addressTB.Name = "addressTB";
-            addressTB.Size = new Size(271, 32);
+            addressTB.Size = new Size(309, 38);
             addressTB.TabIndex = 14;
             // 
             // emailTB
             // 
             emailTB.Font = new Font("Times New Roman", 15.75F);
-            emailTB.Location = new Point(733, 282);
+            emailTB.Location = new Point(838, 376);
+            emailTB.Margin = new Padding(3, 4, 3, 4);
             emailTB.Name = "emailTB";
-            emailTB.Size = new Size(271, 32);
+            emailTB.Size = new Size(309, 38);
             emailTB.TabIndex = 13;
             // 
             // addressLabel
             // 
             addressLabel.AutoSize = true;
             addressLabel.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
-            addressLabel.Location = new Point(594, 341);
+            addressLabel.Location = new Point(679, 455);
             addressLabel.Name = "addressLabel";
-            addressLabel.Size = new Size(98, 23);
+            addressLabel.Size = new Size(122, 29);
             addressLabel.TabIndex = 12;
             addressLabel.Text = "Address:";
             // 
@@ -970,35 +1175,37 @@
             // 
             emailLabel.AutoSize = true;
             emailLabel.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
-            emailLabel.Location = new Point(594, 290);
+            emailLabel.Location = new Point(679, 387);
             emailLabel.Name = "emailLabel";
-            emailLabel.Size = new Size(75, 23);
+            emailLabel.Size = new Size(93, 29);
             emailLabel.TabIndex = 11;
             emailLabel.Text = "Email:";
             // 
             // contactNoTB
             // 
             contactNoTB.Font = new Font("Times New Roman", 15.75F);
-            contactNoTB.Location = new Point(217, 336);
+            contactNoTB.Location = new Point(248, 448);
+            contactNoTB.Margin = new Padding(3, 4, 3, 4);
             contactNoTB.Name = "contactNoTB";
-            contactNoTB.Size = new Size(271, 32);
+            contactNoTB.Size = new Size(309, 38);
             contactNoTB.TabIndex = 10;
             // 
             // middleNameTB
             // 
             middleNameTB.Font = new Font("Times New Roman", 15.75F);
-            middleNameTB.Location = new Point(217, 285);
+            middleNameTB.Location = new Point(248, 380);
+            middleNameTB.Margin = new Padding(3, 4, 3, 4);
             middleNameTB.Name = "middleNameTB";
-            middleNameTB.Size = new Size(271, 32);
+            middleNameTB.Size = new Size(309, 38);
             middleNameTB.TabIndex = 9;
             // 
             // contactNoLabel
             // 
             contactNoLabel.AutoSize = true;
             contactNoLabel.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
-            contactNoLabel.Location = new Point(57, 339);
+            contactNoLabel.Location = new Point(65, 452);
             contactNoLabel.Name = "contactNoLabel";
-            contactNoLabel.Size = new Size(126, 23);
+            contactNoLabel.Size = new Size(159, 29);
             contactNoLabel.TabIndex = 8;
             contactNoLabel.Text = "Contact No:";
             // 
@@ -1006,35 +1213,37 @@
             // 
             middleNameLabel.AutoSize = true;
             middleNameLabel.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
-            middleNameLabel.Location = new Point(57, 288);
+            middleNameLabel.Location = new Point(65, 384);
             middleNameLabel.Name = "middleNameLabel";
-            middleNameLabel.Size = new Size(149, 23);
+            middleNameLabel.Size = new Size(187, 29);
             middleNameLabel.TabIndex = 7;
             middleNameLabel.Text = "Middle Name:";
             // 
             // firstNameTB
             // 
             firstNameTB.Font = new Font("Times New Roman", 15.75F);
-            firstNameTB.Location = new Point(217, 236);
+            firstNameTB.Location = new Point(248, 315);
+            firstNameTB.Margin = new Padding(3, 4, 3, 4);
             firstNameTB.Name = "firstNameTB";
-            firstNameTB.Size = new Size(271, 32);
+            firstNameTB.Size = new Size(309, 38);
             firstNameTB.TabIndex = 6;
             // 
             // lastNameTB
             // 
             lastNameTB.Font = new Font("Times New Roman", 15.75F);
-            lastNameTB.Location = new Point(217, 185);
+            lastNameTB.Location = new Point(248, 247);
+            lastNameTB.Margin = new Padding(3, 4, 3, 4);
             lastNameTB.Name = "lastNameTB";
-            lastNameTB.Size = new Size(271, 32);
+            lastNameTB.Size = new Size(309, 38);
             lastNameTB.TabIndex = 5;
             // 
             // firstNameLabel
             // 
             firstNameLabel.AutoSize = true;
             firstNameLabel.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
-            firstNameLabel.Location = new Point(57, 239);
+            firstNameLabel.Location = new Point(65, 319);
             firstNameLabel.Name = "firstNameLabel";
-            firstNameLabel.Size = new Size(127, 23);
+            firstNameLabel.Size = new Size(158, 29);
             firstNameLabel.TabIndex = 4;
             firstNameLabel.Text = "First Name:";
             // 
@@ -1042,9 +1251,9 @@
             // 
             lastNameLabel.AutoSize = true;
             lastNameLabel.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
-            lastNameLabel.Location = new Point(57, 188);
+            lastNameLabel.Location = new Point(65, 251);
             lastNameLabel.Name = "lastNameLabel";
-            lastNameLabel.Size = new Size(121, 23);
+            lastNameLabel.Size = new Size(152, 29);
             lastNameLabel.TabIndex = 3;
             lastNameLabel.Text = "Last Name:";
             // 
@@ -1053,165 +1262,10 @@
             userPanel3.BackgroundImage = Properties.Resources.TopPanelBg;
             userPanel3.BackgroundImageLayout = ImageLayout.Stretch;
             userPanel3.Location = new Point(0, 0);
+            userPanel3.Margin = new Padding(3, 4, 3, 4);
             userPanel3.Name = "userPanel3";
-            userPanel3.Size = new Size(1092, 67);
+            userPanel3.Size = new Size(1248, 89);
             userPanel3.TabIndex = 2;
-            // 
-            // userPanelDataGrid
-            // 
-            userPanelDataGrid.BackColor = Color.White;
-            userPanelDataGrid.Controls.Add(userDataGridPictureBox);
-            userPanelDataGrid.Controls.Add(dropEmployeeButt);
-            userPanelDataGrid.Controls.Add(editEmployeeButt);
-            userPanelDataGrid.Controls.Add(addEmpButt);
-            userPanelDataGrid.Controls.Add(userPanel2);
-            userPanelDataGrid.Controls.Add(userDataGridView);
-            userPanelDataGrid.Controls.Add(userPanel1);
-            userPanelDataGrid.Location = new Point(12, 38);
-            userPanelDataGrid.Name = "userPanelDataGrid";
-            userPanelDataGrid.Size = new Size(1092, 721);
-            userPanelDataGrid.TabIndex = 1;
-            // 
-            // userDataGridPictureBox
-            // 
-            userDataGridPictureBox.BackColor = Color.White;
-            userDataGridPictureBox.BackgroundImageLayout = ImageLayout.Stretch;
-            userDataGridPictureBox.BorderStyle = BorderStyle.FixedSingle;
-            userDataGridPictureBox.Location = new Point(944, 85);
-            userDataGridPictureBox.Name = "userDataGridPictureBox";
-            userDataGridPictureBox.Size = new Size(107, 93);
-            userDataGridPictureBox.TabIndex = 11;
-            userDataGridPictureBox.TabStop = false;
-            // 
-            // dropEmployeeButt
-            // 
-            dropEmployeeButt.BackColor = Color.FromArgb(146, 45, 51);
-            dropEmployeeButt.FlatStyle = FlatStyle.Flat;
-            dropEmployeeButt.Font = new Font("Georgia", 12F, FontStyle.Bold);
-            dropEmployeeButt.ForeColor = Color.White;
-            dropEmployeeButt.Location = new Point(258, 617);
-            dropEmployeeButt.Name = "dropEmployeeButt";
-            dropEmployeeButt.Size = new Size(202, 50);
-            dropEmployeeButt.TabIndex = 5;
-            dropEmployeeButt.Text = "Drop";
-            dropEmployeeButt.UseVisualStyleBackColor = false;
-            dropEmployeeButt.Click += dropEmployeeButt_Click;
-            // 
-            // editEmployeeButt
-            // 
-            editEmployeeButt.BackColor = Color.FromArgb(146, 45, 51);
-            editEmployeeButt.FlatStyle = FlatStyle.Flat;
-            editEmployeeButt.Font = new Font("Georgia", 12F, FontStyle.Bold);
-            editEmployeeButt.ForeColor = Color.White;
-            editEmployeeButt.Location = new Point(21, 617);
-            editEmployeeButt.Name = "editEmployeeButt";
-            editEmployeeButt.Size = new Size(202, 50);
-            editEmployeeButt.TabIndex = 4;
-            editEmployeeButt.Text = "Edit";
-            editEmployeeButt.UseVisualStyleBackColor = false;
-            editEmployeeButt.Click += editEmployeeButt_Click;
-            // 
-            // addEmpButt
-            // 
-            addEmpButt.BackColor = Color.FromArgb(146, 45, 51);
-            addEmpButt.FlatStyle = FlatStyle.Flat;
-            addEmpButt.Font = new Font("Georgia", 12F, FontStyle.Bold);
-            addEmpButt.ForeColor = Color.White;
-            addEmpButt.Location = new Point(21, 111);
-            addEmpButt.Name = "addEmpButt";
-            addEmpButt.Size = new Size(202, 50);
-            addEmpButt.TabIndex = 3;
-            addEmpButt.Text = "Add Employee";
-            addEmpButt.UseVisualStyleBackColor = false;
-            addEmpButt.Click += addEmpButt_Click;
-            // 
-            // userPanel2
-            // 
-            userPanel2.BackgroundImage = Properties.Resources.PanelBG;
-            userPanel2.BackgroundImageLayout = ImageLayout.Center;
-            userPanel2.Controls.Add(searchDataGridTB);
-            userPanel2.Controls.Add(roleComboBox);
-            userPanel2.Location = new Point(276, 93);
-            userPanel2.Name = "userPanel2";
-            userPanel2.Size = new Size(619, 77);
-            userPanel2.TabIndex = 2;
-            // 
-            // searchDataGridTB
-            // 
-            searchDataGridTB.Font = new Font("Georgia", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            searchDataGridTB.Location = new Point(17, 22);
-            searchDataGridTB.Name = "searchDataGridTB";
-            searchDataGridTB.PlaceholderText = "Search by employeeID or last name";
-            searchDataGridTB.Size = new Size(343, 35);
-            searchDataGridTB.TabIndex = 1;
-            searchDataGridTB.TextChanged += searchDataGridTB_TextChanged;
-            // 
-            // roleComboBox
-            // 
-            roleComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
-            roleComboBox.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            roleComboBox.Location = new Point(384, 21);
-            roleComboBox.Name = "roleComboBox";
-            roleComboBox.Size = new Size(220, 35);
-            roleComboBox.TabIndex = 0;
-            roleComboBox.Tag = "";
-            roleComboBox.SelectionChangeCommitted += roleComboBox_SelectedIndexChanged;
-            // 
-            // userDataGridView
-            // 
-            userDataGridView.AllowUserToAddRows = false;
-            userDataGridView.AllowUserToDeleteRows = false;
-            userDataGridView.AllowUserToResizeColumns = false;
-            userDataGridView.AllowUserToResizeRows = false;
-            userDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            userDataGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            userDataGridView.BackgroundColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(179, 79, 84);
-            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(255, 209, 211);
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            userDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            userDataGridView.ColumnHeadersHeight = 29;
-            userDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(179, 79, 84);
-            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(255, 209, 211);
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            userDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
-            userDataGridView.EnableHeadersVisualStyles = false;
-            userDataGridView.GridColor = Color.White;
-            userDataGridView.Location = new Point(0, 190);
-            userDataGridView.Name = "userDataGridView";
-            userDataGridView.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle3.ForeColor = Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(179, 79, 84);
-            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(255, 209, 211);
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            userDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            userDataGridView.RowHeadersVisible = false;
-            userDataGridView.RowHeadersWidth = 51;
-            userDataGridView.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            userDataGridView.Size = new Size(1092, 371);
-            userDataGridView.TabIndex = 0;
-            userDataGridView.CellClick += userDataGridView_CellClick;
-            // 
-            // userPanel1
-            // 
-            userPanel1.BackgroundImage = Properties.Resources.TopPanelBg;
-            userPanel1.BackgroundImageLayout = ImageLayout.Stretch;
-            userPanel1.Location = new Point(0, 0);
-            userPanel1.Name = "userPanel1";
-            userPanel1.Size = new Size(1092, 67);
-            userPanel1.TabIndex = 1;
             // 
             // departmentPanel
             // 
@@ -1220,17 +1274,18 @@
             departmentPanel.Controls.Add(departmentDataGridPanel);
             departmentPanel.Controls.Add(departmentEditPanel);
             departmentPanel.Controls.Add(departmentAddPanel);
-            departmentPanel.Location = new Point(273, 0);
+            departmentPanel.Location = new Point(312, 0);
+            departmentPanel.Margin = new Padding(3, 4, 3, 4);
             departmentPanel.Name = "departmentPanel";
-            departmentPanel.Size = new Size(1116, 784);
+            departmentPanel.Size = new Size(1275, 1045);
             departmentPanel.TabIndex = 3;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(15, 9);
+            label4.Location = new Point(17, 12);
             label4.Name = "label4";
-            label4.Size = new Size(98, 15);
+            label4.Size = new Size(122, 20);
             label4.TabIndex = 31;
             label4.Text = "departmentPanel";
             // 
@@ -1242,9 +1297,10 @@
             departmentDataGridPanel.Controls.Add(addDepartmentButton);
             departmentDataGridPanel.Controls.Add(deleteDepartmentButton);
             departmentDataGridPanel.Controls.Add(editDepartmentButton);
-            departmentDataGridPanel.Location = new Point(12, 38);
+            departmentDataGridPanel.Location = new Point(14, 51);
+            departmentDataGridPanel.Margin = new Padding(3, 4, 3, 4);
             departmentDataGridPanel.Name = "departmentDataGridPanel";
-            departmentDataGridPanel.Size = new Size(1092, 721);
+            departmentDataGridPanel.Size = new Size(1248, 961);
             departmentDataGridPanel.TabIndex = 4;
             // 
             // departmentDataGridView
@@ -1255,38 +1311,39 @@
             departmentDataGridView.AllowUserToResizeRows = false;
             departmentDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             departmentDataGridView.BackgroundColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = Color.Snow;
-            dataGridViewCellStyle4.Font = new Font("Constantia", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle4.ForeColor = Color.FromArgb(64, 0, 0);
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(128, 64, 64);
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            departmentDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle13.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.BackColor = Color.Snow;
+            dataGridViewCellStyle13.Font = new Font("Constantia", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle13.ForeColor = Color.FromArgb(64, 0, 0);
+            dataGridViewCellStyle13.SelectionBackColor = Color.FromArgb(128, 64, 64);
+            dataGridViewCellStyle13.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = DataGridViewTriState.True;
+            departmentDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
             departmentDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = Color.FromArgb(252, 233, 233);
-            dataGridViewCellStyle5.Font = new Font("Mongolian Baiti", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle5.ForeColor = Color.FromArgb(64, 0, 0);
-            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(158, 71, 71);
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
-            departmentDataGridView.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle14.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.BackColor = Color.FromArgb(252, 233, 233);
+            dataGridViewCellStyle14.Font = new Font("Mongolian Baiti", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle14.ForeColor = Color.FromArgb(64, 0, 0);
+            dataGridViewCellStyle14.SelectionBackColor = Color.FromArgb(158, 71, 71);
+            dataGridViewCellStyle14.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = DataGridViewTriState.False;
+            departmentDataGridView.DefaultCellStyle = dataGridViewCellStyle14;
             departmentDataGridView.GridColor = Color.White;
-            departmentDataGridView.Location = new Point(17, 101);
+            departmentDataGridView.Location = new Point(19, 135);
+            departmentDataGridView.Margin = new Padding(3, 4, 3, 4);
             departmentDataGridView.Name = "departmentDataGridView";
             departmentDataGridView.ReadOnly = true;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = Color.MistyRose;
-            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle6.ForeColor = Color.FromArgb(64, 0, 0);
-            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(128, 64, 64);
-            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
-            departmentDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle15.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle15.BackColor = Color.MistyRose;
+            dataGridViewCellStyle15.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle15.ForeColor = Color.FromArgb(64, 0, 0);
+            dataGridViewCellStyle15.SelectionBackColor = Color.FromArgb(128, 64, 64);
+            dataGridViewCellStyle15.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = DataGridViewTriState.True;
+            departmentDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
             departmentDataGridView.RowHeadersWidth = 51;
             departmentDataGridView.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            departmentDataGridView.Size = new Size(1052, 486);
+            departmentDataGridView.Size = new Size(1202, 648);
             departmentDataGridView.TabIndex = 33;
             departmentDataGridView.CellClick += departmentDataGridView_CellClick;
             // 
@@ -1295,8 +1352,9 @@
             panel3.BackgroundImage = Properties.Resources.TopPanelBg;
             panel3.BackgroundImageLayout = ImageLayout.Stretch;
             panel3.Location = new Point(0, 0);
+            panel3.Margin = new Padding(3, 4, 3, 4);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1092, 67);
+            panel3.Size = new Size(1248, 89);
             panel3.TabIndex = 31;
             // 
             // addDepartmentButton
@@ -1305,9 +1363,10 @@
             addDepartmentButton.FlatStyle = FlatStyle.Flat;
             addDepartmentButton.Font = new Font("Georgia", 18F, FontStyle.Bold);
             addDepartmentButton.ForeColor = Color.White;
-            addDepartmentButton.Location = new Point(17, 628);
+            addDepartmentButton.Location = new Point(19, 837);
+            addDepartmentButton.Margin = new Padding(3, 4, 3, 4);
             addDepartmentButton.Name = "addDepartmentButton";
-            addDepartmentButton.Size = new Size(261, 55);
+            addDepartmentButton.Size = new Size(298, 73);
             addDepartmentButton.TabIndex = 28;
             addDepartmentButton.Text = "Add";
             addDepartmentButton.UseVisualStyleBackColor = false;
@@ -1319,9 +1378,10 @@
             deleteDepartmentButton.FlatStyle = FlatStyle.Flat;
             deleteDepartmentButton.Font = new Font("Georgia", 18F, FontStyle.Bold);
             deleteDepartmentButton.ForeColor = Color.White;
-            deleteDepartmentButton.Location = new Point(808, 628);
+            deleteDepartmentButton.Location = new Point(923, 837);
+            deleteDepartmentButton.Margin = new Padding(3, 4, 3, 4);
             deleteDepartmentButton.Name = "deleteDepartmentButton";
-            deleteDepartmentButton.Size = new Size(261, 55);
+            deleteDepartmentButton.Size = new Size(298, 73);
             deleteDepartmentButton.TabIndex = 30;
             deleteDepartmentButton.Text = "Delete";
             deleteDepartmentButton.UseVisualStyleBackColor = false;
@@ -1333,9 +1393,10 @@
             editDepartmentButton.FlatStyle = FlatStyle.Flat;
             editDepartmentButton.Font = new Font("Georgia", 18F, FontStyle.Bold);
             editDepartmentButton.ForeColor = Color.White;
-            editDepartmentButton.Location = new Point(418, 628);
+            editDepartmentButton.Location = new Point(478, 837);
+            editDepartmentButton.Margin = new Padding(3, 4, 3, 4);
             editDepartmentButton.Name = "editDepartmentButton";
-            editDepartmentButton.Size = new Size(261, 55);
+            editDepartmentButton.Size = new Size(298, 73);
             editDepartmentButton.TabIndex = 29;
             editDepartmentButton.Text = "Edit";
             editDepartmentButton.UseVisualStyleBackColor = false;
@@ -1354,9 +1415,10 @@
             departmentEditPanel.Controls.Add(cancelDepartmentEditButton);
             departmentEditPanel.Controls.Add(label12);
             departmentEditPanel.Controls.Add(panel6);
-            departmentEditPanel.Location = new Point(12, 38);
+            departmentEditPanel.Location = new Point(14, 51);
+            departmentEditPanel.Margin = new Padding(3, 4, 3, 4);
             departmentEditPanel.Name = "departmentEditPanel";
-            departmentEditPanel.Size = new Size(1092, 721);
+            departmentEditPanel.Size = new Size(1248, 961);
             departmentEditPanel.TabIndex = 33;
             departmentEditPanel.Visible = false;
             // 
@@ -1366,9 +1428,10 @@
             editDepartmentSaveButton.FlatStyle = FlatStyle.Flat;
             editDepartmentSaveButton.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             editDepartmentSaveButton.ForeColor = Color.White;
-            editDepartmentSaveButton.Location = new Point(57, 612);
+            editDepartmentSaveButton.Location = new Point(65, 816);
+            editDepartmentSaveButton.Margin = new Padding(3, 4, 3, 4);
             editDepartmentSaveButton.Name = "editDepartmentSaveButton";
-            editDepartmentSaveButton.Size = new Size(261, 55);
+            editDepartmentSaveButton.Size = new Size(298, 73);
             editDepartmentSaveButton.TabIndex = 41;
             editDepartmentSaveButton.Text = "Save Changes";
             editDepartmentSaveButton.UseVisualStyleBackColor = false;
@@ -1376,9 +1439,10 @@
             // 
             // departmentEditDescription
             // 
-            departmentEditDescription.Location = new Point(128, 403);
+            departmentEditDescription.Location = new Point(146, 537);
+            departmentEditDescription.Margin = new Padding(3, 4, 3, 4);
             departmentEditDescription.Name = "departmentEditDescription";
-            departmentEditDescription.Size = new Size(824, 132);
+            departmentEditDescription.Size = new Size(941, 175);
             departmentEditDescription.TabIndex = 40;
             departmentEditDescription.Text = "";
             // 
@@ -1386,36 +1450,38 @@
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI", 14.25F);
-            label9.Location = new Point(128, 364);
+            label9.Location = new Point(146, 485);
             label9.Name = "label9";
-            label9.Size = new Size(112, 25);
+            label9.Size = new Size(140, 32);
             label9.TabIndex = 39;
             label9.Text = "Description:";
             // 
             // departmentNameEditTB
             // 
             departmentNameEditTB.Font = new Font("Segoe UI", 14.25F);
-            departmentNameEditTB.Location = new Point(128, 254);
+            departmentNameEditTB.Location = new Point(146, 339);
+            departmentNameEditTB.Margin = new Padding(3, 4, 3, 4);
             departmentNameEditTB.Name = "departmentNameEditTB";
-            departmentNameEditTB.Size = new Size(287, 33);
+            departmentNameEditTB.Size = new Size(327, 39);
             departmentNameEditTB.TabIndex = 38;
             // 
             // cbEditManager
             // 
             cbEditManager.Font = new Font("Segoe UI", 14.25F);
             cbEditManager.FormattingEnabled = true;
-            cbEditManager.Location = new Point(712, 259);
+            cbEditManager.Location = new Point(814, 345);
+            cbEditManager.Margin = new Padding(3, 4, 3, 4);
             cbEditManager.Name = "cbEditManager";
-            cbEditManager.Size = new Size(240, 33);
+            cbEditManager.Size = new Size(274, 40);
             cbEditManager.TabIndex = 37;
             // 
             // label10
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI", 14.25F);
-            label10.Location = new Point(712, 218);
+            label10.Location = new Point(814, 291);
             label10.Name = "label10";
-            label10.Size = new Size(152, 25);
+            label10.Size = new Size(190, 32);
             label10.TabIndex = 36;
             label10.Text = "Assign Manager:";
             // 
@@ -1423,9 +1489,9 @@
             // 
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI", 14.25F);
-            label11.Location = new Point(128, 216);
+            label11.Location = new Point(146, 288);
             label11.Name = "label11";
-            label11.Size = new Size(171, 25);
+            label11.Size = new Size(218, 32);
             label11.TabIndex = 35;
             label11.Text = "Department Name:";
             // 
@@ -1435,9 +1501,10 @@
             cancelDepartmentEditButton.FlatStyle = FlatStyle.Flat;
             cancelDepartmentEditButton.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             cancelDepartmentEditButton.ForeColor = Color.White;
-            cancelDepartmentEditButton.Location = new Point(793, 612);
+            cancelDepartmentEditButton.Location = new Point(906, 816);
+            cancelDepartmentEditButton.Margin = new Padding(3, 4, 3, 4);
             cancelDepartmentEditButton.Name = "cancelDepartmentEditButton";
-            cancelDepartmentEditButton.Size = new Size(261, 55);
+            cancelDepartmentEditButton.Size = new Size(298, 73);
             cancelDepartmentEditButton.TabIndex = 34;
             cancelDepartmentEditButton.Text = "Cancel";
             cancelDepartmentEditButton.UseVisualStyleBackColor = false;
@@ -1447,9 +1514,9 @@
             // 
             label12.AutoSize = true;
             label12.Font = new Font("Segoe UI", 25F);
-            label12.Location = new Point(455, 93);
+            label12.Location = new Point(520, 124);
             label12.Name = "label12";
-            label12.Size = new Size(267, 46);
+            label12.Size = new Size(329, 57);
             label12.TabIndex = 33;
             label12.Text = "Edit Department";
             // 
@@ -1458,8 +1525,9 @@
             panel6.BackgroundImage = Properties.Resources.TopPanelBg;
             panel6.BackgroundImageLayout = ImageLayout.Stretch;
             panel6.Location = new Point(0, 0);
+            panel6.Margin = new Padding(3, 4, 3, 4);
             panel6.Name = "panel6";
-            panel6.Size = new Size(1092, 67);
+            panel6.Size = new Size(1248, 89);
             panel6.TabIndex = 32;
             // 
             // departmentAddPanel
@@ -1475,9 +1543,10 @@
             departmentAddPanel.Controls.Add(cancelDepartmentButton);
             departmentAddPanel.Controls.Add(label5);
             departmentAddPanel.Controls.Add(panel5);
-            departmentAddPanel.Location = new Point(12, 38);
+            departmentAddPanel.Location = new Point(14, 51);
+            departmentAddPanel.Margin = new Padding(3, 4, 3, 4);
             departmentAddPanel.Name = "departmentAddPanel";
-            departmentAddPanel.Size = new Size(1092, 721);
+            departmentAddPanel.Size = new Size(1248, 961);
             departmentAddPanel.TabIndex = 32;
             departmentAddPanel.Visible = false;
             // 
@@ -1487,9 +1556,10 @@
             saveDepartmentButton.FlatStyle = FlatStyle.Flat;
             saveDepartmentButton.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             saveDepartmentButton.ForeColor = Color.White;
-            saveDepartmentButton.Location = new Point(57, 612);
+            saveDepartmentButton.Location = new Point(65, 816);
+            saveDepartmentButton.Margin = new Padding(3, 4, 3, 4);
             saveDepartmentButton.Name = "saveDepartmentButton";
-            saveDepartmentButton.Size = new Size(261, 55);
+            saveDepartmentButton.Size = new Size(298, 73);
             saveDepartmentButton.TabIndex = 41;
             saveDepartmentButton.Text = "Save";
             saveDepartmentButton.UseVisualStyleBackColor = false;
@@ -1497,9 +1567,10 @@
             // 
             // departmentDescription
             // 
-            departmentDescription.Location = new Point(128, 403);
+            departmentDescription.Location = new Point(146, 537);
+            departmentDescription.Margin = new Padding(3, 4, 3, 4);
             departmentDescription.Name = "departmentDescription";
-            departmentDescription.Size = new Size(824, 132);
+            departmentDescription.Size = new Size(941, 175);
             departmentDescription.TabIndex = 40;
             departmentDescription.Text = "";
             // 
@@ -1507,36 +1578,38 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 14.25F);
-            label8.Location = new Point(128, 364);
+            label8.Location = new Point(146, 485);
             label8.Name = "label8";
-            label8.Size = new Size(112, 25);
+            label8.Size = new Size(140, 32);
             label8.TabIndex = 39;
             label8.Text = "Description:";
             // 
             // departmentNameTB
             // 
             departmentNameTB.Font = new Font("Segoe UI", 14.25F);
-            departmentNameTB.Location = new Point(128, 254);
+            departmentNameTB.Location = new Point(146, 339);
+            departmentNameTB.Margin = new Padding(3, 4, 3, 4);
             departmentNameTB.Name = "departmentNameTB";
-            departmentNameTB.Size = new Size(287, 33);
+            departmentNameTB.Size = new Size(327, 39);
             departmentNameTB.TabIndex = 38;
             // 
             // cbManager
             // 
             cbManager.Font = new Font("Segoe UI", 14.25F);
             cbManager.FormattingEnabled = true;
-            cbManager.Location = new Point(712, 259);
+            cbManager.Location = new Point(814, 345);
+            cbManager.Margin = new Padding(3, 4, 3, 4);
             cbManager.Name = "cbManager";
-            cbManager.Size = new Size(240, 33);
+            cbManager.Size = new Size(274, 40);
             cbManager.TabIndex = 37;
             // 
             // label7
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 14.25F);
-            label7.Location = new Point(712, 218);
+            label7.Location = new Point(814, 291);
             label7.Name = "label7";
-            label7.Size = new Size(152, 25);
+            label7.Size = new Size(190, 32);
             label7.TabIndex = 36;
             label7.Text = "Assign Manager:";
             // 
@@ -1544,9 +1617,9 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 14.25F);
-            label6.Location = new Point(128, 216);
+            label6.Location = new Point(146, 288);
             label6.Name = "label6";
-            label6.Size = new Size(171, 25);
+            label6.Size = new Size(218, 32);
             label6.TabIndex = 35;
             label6.Text = "Department Name:";
             // 
@@ -1556,9 +1629,10 @@
             cancelDepartmentButton.FlatStyle = FlatStyle.Flat;
             cancelDepartmentButton.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             cancelDepartmentButton.ForeColor = Color.White;
-            cancelDepartmentButton.Location = new Point(793, 612);
+            cancelDepartmentButton.Location = new Point(906, 816);
+            cancelDepartmentButton.Margin = new Padding(3, 4, 3, 4);
             cancelDepartmentButton.Name = "cancelDepartmentButton";
-            cancelDepartmentButton.Size = new Size(261, 55);
+            cancelDepartmentButton.Size = new Size(298, 73);
             cancelDepartmentButton.TabIndex = 34;
             cancelDepartmentButton.Text = "Cancel";
             cancelDepartmentButton.UseVisualStyleBackColor = false;
@@ -1568,9 +1642,9 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 25F);
-            label5.Location = new Point(455, 93);
+            label5.Location = new Point(520, 124);
             label5.Name = "label5";
-            label5.Size = new Size(272, 46);
+            label5.Size = new Size(336, 57);
             label5.TabIndex = 33;
             label5.Text = "Add Department";
             // 
@@ -1579,8 +1653,9 @@
             panel5.BackgroundImage = Properties.Resources.TopPanelBg;
             panel5.BackgroundImageLayout = ImageLayout.Stretch;
             panel5.Location = new Point(0, 0);
+            panel5.Margin = new Padding(3, 4, 3, 4);
             panel5.Name = "panel5";
-            panel5.Size = new Size(1092, 67);
+            panel5.Size = new Size(1248, 89);
             panel5.TabIndex = 32;
             // 
             // logsPanel
@@ -1588,17 +1663,18 @@
             logsPanel.BackColor = Color.FromArgb(224, 224, 224);
             logsPanel.Controls.Add(label16);
             logsPanel.Controls.Add(panel4);
-            logsPanel.Location = new Point(273, 0);
+            logsPanel.Location = new Point(312, 0);
+            logsPanel.Margin = new Padding(3, 4, 3, 4);
             logsPanel.Name = "logsPanel";
-            logsPanel.Size = new Size(1116, 784);
+            logsPanel.Size = new Size(1275, 1045);
             logsPanel.TabIndex = 4;
             // 
             // label16
             // 
             label16.AutoSize = true;
-            label16.Location = new Point(6, 9);
+            label16.Location = new Point(7, 12);
             label16.Name = "label16";
-            label16.Size = new Size(58, 15);
+            label16.Size = new Size(72, 20);
             label16.TabIndex = 0;
             label16.Text = "logsPanel";
             // 
@@ -1611,27 +1687,29 @@
             panel4.Controls.Add(label23);
             panel4.Controls.Add(logDataGridView);
             panel4.Controls.Add(panel8);
-            panel4.Location = new Point(12, 38);
+            panel4.Location = new Point(14, 51);
+            panel4.Margin = new Padding(3, 4, 3, 4);
             panel4.Name = "panel4";
-            panel4.Size = new Size(1092, 721);
+            panel4.Size = new Size(1248, 961);
             panel4.TabIndex = 1;
             // 
             // dateTimePicker2
             // 
             dateTimePicker2.CalendarFont = new Font("Times New Roman", 15.75F);
             dateTimePicker2.Font = new Font("Times New Roman", 15.75F, FontStyle.Italic);
-            dateTimePicker2.Location = new Point(695, 101);
+            dateTimePicker2.Location = new Point(794, 135);
+            dateTimePicker2.Margin = new Padding(3, 4, 3, 4);
             dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(309, 32);
+            dateTimePicker2.Size = new Size(353, 38);
             dateTimePicker2.TabIndex = 7;
             // 
             // label24
             // 
             label24.AutoSize = true;
             label24.Font = new Font("Georgia", 18F, FontStyle.Bold);
-            label24.Location = new Point(629, 103);
+            label24.Location = new Point(719, 137);
             label24.Name = "label24";
-            label24.Size = new Size(44, 29);
+            label24.Size = new Size(55, 35);
             label24.TabIndex = 6;
             label24.Text = "To";
             // 
@@ -1639,18 +1717,19 @@
             // 
             dateTimePicker1.CalendarFont = new Font("Times New Roman", 15.75F);
             dateTimePicker1.Font = new Font("Times New Roman", 15.75F, FontStyle.Italic);
-            dateTimePicker1.Location = new Point(304, 101);
+            dateTimePicker1.Location = new Point(347, 135);
+            dateTimePicker1.Margin = new Padding(3, 4, 3, 4);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(299, 32);
+            dateTimePicker1.Size = new Size(341, 38);
             dateTimePicker1.TabIndex = 5;
             // 
             // label23
             // 
             label23.AutoSize = true;
             label23.Font = new Font("Georgia", 18F, FontStyle.Bold);
-            label23.Location = new Point(38, 103);
+            label23.Location = new Point(43, 137);
             label23.Name = "label23";
-            label23.Size = new Size(249, 29);
+            label23.Size = new Size(309, 35);
             label23.TabIndex = 4;
             label23.Text = "Select Date Period:";
             // 
@@ -1663,41 +1742,42 @@
             logDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             logDataGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             logDataGridView.BackgroundColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = Color.White;
-            dataGridViewCellStyle7.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle7.ForeColor = Color.Maroon;
-            dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(183, 89, 89);
-            dataGridViewCellStyle7.SelectionForeColor = Color.White;
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
-            logDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle16.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle16.BackColor = Color.White;
+            dataGridViewCellStyle16.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle16.ForeColor = Color.Maroon;
+            dataGridViewCellStyle16.SelectionBackColor = Color.FromArgb(183, 89, 89);
+            dataGridViewCellStyle16.SelectionForeColor = Color.White;
+            dataGridViewCellStyle16.WrapMode = DataGridViewTriState.True;
+            logDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
             logDataGridView.ColumnHeadersHeight = 29;
             logDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle8.Font = new Font("Times New Roman", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle8.ForeColor = Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = Color.FromArgb(179, 79, 84);
-            dataGridViewCellStyle8.SelectionForeColor = Color.White;
-            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
-            logDataGridView.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle17.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle17.BackColor = Color.FromArgb(146, 45, 51);
+            dataGridViewCellStyle17.Font = new Font("Times New Roman", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle17.ForeColor = Color.White;
+            dataGridViewCellStyle17.SelectionBackColor = Color.FromArgb(179, 79, 84);
+            dataGridViewCellStyle17.SelectionForeColor = Color.White;
+            dataGridViewCellStyle17.WrapMode = DataGridViewTriState.True;
+            logDataGridView.DefaultCellStyle = dataGridViewCellStyle17;
             logDataGridView.EnableHeadersVisualStyles = false;
             logDataGridView.GridColor = Color.White;
-            logDataGridView.Location = new Point(6, 159);
+            logDataGridView.Location = new Point(7, 212);
+            logDataGridView.Margin = new Padding(3, 4, 3, 4);
             logDataGridView.Name = "logDataGridView";
             logDataGridView.ReadOnly = true;
-            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle9.Font = new Font("Times New Roman", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle9.ForeColor = Color.White;
-            dataGridViewCellStyle9.SelectionBackColor = Color.FromArgb(179, 79, 84);
-            dataGridViewCellStyle9.SelectionForeColor = Color.White;
-            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.True;
-            logDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle18.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle18.BackColor = Color.FromArgb(146, 45, 51);
+            dataGridViewCellStyle18.Font = new Font("Times New Roman", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle18.ForeColor = Color.White;
+            dataGridViewCellStyle18.SelectionBackColor = Color.FromArgb(179, 79, 84);
+            dataGridViewCellStyle18.SelectionForeColor = Color.White;
+            dataGridViewCellStyle18.WrapMode = DataGridViewTriState.True;
+            logDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle18;
             logDataGridView.RowHeadersVisible = false;
             logDataGridView.RowHeadersWidth = 51;
             logDataGridView.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            logDataGridView.Size = new Size(1080, 476);
+            logDataGridView.Size = new Size(1234, 635);
             logDataGridView.TabIndex = 1;
             // 
             // panel8
@@ -1705,8 +1785,9 @@
             panel8.BackgroundImage = Properties.Resources.TopPanelBg;
             panel8.BackgroundImageLayout = ImageLayout.Stretch;
             panel8.Location = new Point(0, 0);
+            panel8.Margin = new Padding(3, 4, 3, 4);
             panel8.Name = "panel8";
-            panel8.Size = new Size(1092, 67);
+            panel8.Size = new Size(1248, 89);
             panel8.TabIndex = 2;
             // 
             // reportsPanel
@@ -1715,17 +1796,18 @@
             reportsPanel.Controls.Add(label14);
             reportsPanel.Controls.Add(reportsPanelViewMessage);
             reportsPanel.Controls.Add(reportsPanelInbox);
-            reportsPanel.Location = new Point(273, 0);
+            reportsPanel.Location = new Point(312, 0);
+            reportsPanel.Margin = new Padding(3, 4, 3, 4);
             reportsPanel.Name = "reportsPanel";
-            reportsPanel.Size = new Size(1116, 784);
+            reportsPanel.Size = new Size(1275, 1045);
             reportsPanel.TabIndex = 5;
             // 
             // label14
             // 
             label14.AutoSize = true;
-            label14.Location = new Point(6, 9);
+            label14.Location = new Point(7, 12);
             label14.Name = "label14";
-            label14.Size = new Size(73, 15);
+            label14.Size = new Size(91, 20);
             label14.TabIndex = 0;
             label14.Text = "reportsPanel";
             // 
@@ -1737,9 +1819,10 @@
             reportsPanelViewMessage.Controls.Add(viewMessageBackButt);
             reportsPanelViewMessage.Controls.Add(viewMessagePanel);
             reportsPanelViewMessage.Controls.Add(panel12);
-            reportsPanelViewMessage.Location = new Point(12, 32);
+            reportsPanelViewMessage.Location = new Point(14, 43);
+            reportsPanelViewMessage.Margin = new Padding(3, 4, 3, 4);
             reportsPanelViewMessage.Name = "reportsPanelViewMessage";
-            reportsPanelViewMessage.Size = new Size(1092, 721);
+            reportsPanelViewMessage.Size = new Size(1248, 961);
             reportsPanelViewMessage.TabIndex = 3;
             reportsPanelViewMessage.Visible = false;
             // 
@@ -1749,9 +1832,10 @@
             viewMessageArchiveButt.FlatStyle = FlatStyle.Flat;
             viewMessageArchiveButt.Font = new Font("Georgia", 18F, FontStyle.Bold);
             viewMessageArchiveButt.ForeColor = Color.White;
-            viewMessageArchiveButt.Location = new Point(38, 634);
+            viewMessageArchiveButt.Location = new Point(43, 845);
+            viewMessageArchiveButt.Margin = new Padding(3, 4, 3, 4);
             viewMessageArchiveButt.Name = "viewMessageArchiveButt";
-            viewMessageArchiveButt.Size = new Size(261, 55);
+            viewMessageArchiveButt.Size = new Size(298, 73);
             viewMessageArchiveButt.TabIndex = 39;
             viewMessageArchiveButt.Text = "Archive";
             viewMessageArchiveButt.UseVisualStyleBackColor = false;
@@ -1763,9 +1847,10 @@
             viewMessageReplyButt.FlatStyle = FlatStyle.Flat;
             viewMessageReplyButt.Font = new Font("Georgia", 18F, FontStyle.Bold);
             viewMessageReplyButt.ForeColor = Color.White;
-            viewMessageReplyButt.Location = new Point(793, 634);
+            viewMessageReplyButt.Location = new Point(906, 845);
+            viewMessageReplyButt.Margin = new Padding(3, 4, 3, 4);
             viewMessageReplyButt.Name = "viewMessageReplyButt";
-            viewMessageReplyButt.Size = new Size(261, 55);
+            viewMessageReplyButt.Size = new Size(298, 73);
             viewMessageReplyButt.TabIndex = 38;
             viewMessageReplyButt.Text = "Reply";
             viewMessageReplyButt.UseVisualStyleBackColor = false;
@@ -1776,9 +1861,10 @@
             viewMessageBackButt.FlatStyle = FlatStyle.Flat;
             viewMessageBackButt.Font = new Font("Georgia", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             viewMessageBackButt.ForeColor = Color.White;
-            viewMessageBackButt.Location = new Point(38, 106);
+            viewMessageBackButt.Location = new Point(43, 141);
+            viewMessageBackButt.Margin = new Padding(3, 4, 3, 4);
             viewMessageBackButt.Name = "viewMessageBackButt";
-            viewMessageBackButt.Size = new Size(134, 43);
+            viewMessageBackButt.Size = new Size(153, 57);
             viewMessageBackButt.TabIndex = 37;
             viewMessageBackButt.Text = "Back";
             viewMessageBackButt.UseVisualStyleBackColor = false;
@@ -1790,19 +1876,21 @@
             viewMessagePanel.BackgroundImage = Properties.Resources.PanelBG;
             viewMessagePanel.BackgroundImageLayout = ImageLayout.Stretch;
             viewMessagePanel.Controls.Add(viewMessageRichTB);
-            viewMessagePanel.Location = new Point(38, 182);
+            viewMessagePanel.Location = new Point(43, 243);
+            viewMessagePanel.Margin = new Padding(3, 4, 3, 4);
             viewMessagePanel.Name = "viewMessagePanel";
-            viewMessagePanel.Size = new Size(1016, 427);
+            viewMessagePanel.Size = new Size(1161, 569);
             viewMessagePanel.TabIndex = 4;
             // 
             // viewMessageRichTB
             // 
             viewMessageRichTB.BackColor = Color.White;
             viewMessageRichTB.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            viewMessageRichTB.Location = new Point(15, 18);
+            viewMessageRichTB.Location = new Point(17, 24);
+            viewMessageRichTB.Margin = new Padding(3, 4, 3, 4);
             viewMessageRichTB.Name = "viewMessageRichTB";
             viewMessageRichTB.ReadOnly = true;
-            viewMessageRichTB.Size = new Size(984, 394);
+            viewMessageRichTB.Size = new Size(1124, 524);
             viewMessageRichTB.TabIndex = 0;
             viewMessageRichTB.Text = "";
             // 
@@ -1811,8 +1899,9 @@
             panel12.BackgroundImage = Properties.Resources.TopPanelBg;
             panel12.BackgroundImageLayout = ImageLayout.Stretch;
             panel12.Location = new Point(0, 0);
+            panel12.Margin = new Padding(3, 4, 3, 4);
             panel12.Name = "panel12";
-            panel12.Size = new Size(1092, 67);
+            panel12.Size = new Size(1248, 89);
             panel12.TabIndex = 2;
             // 
             // reportsPanelInbox
@@ -1821,9 +1910,10 @@
             reportsPanelInbox.Controls.Add(inboxPanel);
             reportsPanelInbox.Controls.Add(reportsDropDownCB);
             reportsPanelInbox.Controls.Add(panel10);
-            reportsPanelInbox.Location = new Point(12, 32);
+            reportsPanelInbox.Location = new Point(14, 43);
+            reportsPanelInbox.Margin = new Padding(3, 4, 3, 4);
             reportsPanelInbox.Name = "reportsPanelInbox";
-            reportsPanelInbox.Size = new Size(1092, 721);
+            reportsPanelInbox.Size = new Size(1248, 961);
             reportsPanelInbox.TabIndex = 2;
             // 
             // inboxPanel
@@ -1831,9 +1921,10 @@
             inboxPanel.AutoScroll = true;
             inboxPanel.BackgroundImage = Properties.Resources.PanelBG;
             inboxPanel.BackgroundImageLayout = ImageLayout.Stretch;
-            inboxPanel.Location = new Point(347, 170);
+            inboxPanel.Location = new Point(397, 227);
+            inboxPanel.Margin = new Padding(3, 4, 3, 4);
             inboxPanel.Name = "inboxPanel";
-            inboxPanel.Size = new Size(657, 486);
+            inboxPanel.Size = new Size(751, 648);
             inboxPanel.TabIndex = 4;
             // 
             // reportsDropDownCB
@@ -1842,9 +1933,10 @@
             reportsDropDownCB.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             reportsDropDownCB.ForeColor = Color.FromArgb(91, 12, 12);
             reportsDropDownCB.FormattingEnabled = true;
-            reportsDropDownCB.Location = new Point(21, 170);
+            reportsDropDownCB.Location = new Point(24, 227);
+            reportsDropDownCB.Margin = new Padding(3, 4, 3, 4);
             reportsDropDownCB.Name = "reportsDropDownCB";
-            reportsDropDownCB.Size = new Size(280, 33);
+            reportsDropDownCB.Size = new Size(319, 40);
             reportsDropDownCB.TabIndex = 3;
             reportsDropDownCB.SelectedIndexChanged += reportsDropDownCB_SelectedIndexChanged;
             // 
@@ -1853,22 +1945,24 @@
             panel10.BackgroundImage = Properties.Resources.TopPanelBg;
             panel10.BackgroundImageLayout = ImageLayout.Stretch;
             panel10.Location = new Point(0, 0);
+            panel10.Margin = new Padding(3, 4, 3, 4);
             panel10.Name = "panel10";
-            panel10.Size = new Size(1092, 67);
+            panel10.Size = new Size(1248, 89);
             panel10.TabIndex = 2;
             // 
             // AdminForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(17, 24, 34);
-            ClientSize = new Size(1389, 782);
+            ClientSize = new Size(1587, 1043);
             Controls.Add(sidePanel);
-            Controls.Add(departmentPanel);
             Controls.Add(dashPanel);
             Controls.Add(reportsPanel);
             Controls.Add(logsPanel);
             Controls.Add(userPanel);
+            Controls.Add(departmentPanel);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "AdminForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AdminForm";
@@ -1883,17 +1977,17 @@
             panel2.PerformLayout();
             userPanel.ResumeLayout(false);
             userPanel.PerformLayout();
+            userPanelDataGrid.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)userDataGridPictureBox).EndInit();
+            userPanel2.ResumeLayout(false);
+            userPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)userDataGridView).EndInit();
             editEmployeePanel.ResumeLayout(false);
             editEmployeePanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)editEmployeePictureBox).EndInit();
             userPanelAdd.ResumeLayout(false);
             userPanelAdd.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)addEmployeePictureBox).EndInit();
-            userPanelDataGrid.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)userDataGridPictureBox).EndInit();
-            userPanel2.ResumeLayout(false);
-            userPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)userDataGridView).EndInit();
             departmentPanel.ResumeLayout(false);
             departmentPanel.PerformLayout();
             departmentDataGridPanel.ResumeLayout(false);
