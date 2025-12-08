@@ -110,6 +110,18 @@
             panel15 = new Panel();
             leavePanel = new Panel();
             alabel = new Label();
+            leaveSummaryPanel = new Panel();
+            panel18 = new Panel();
+            LeaveDataGridView = new DataGridView();
+            label41 = new Label();
+            panel17 = new Panel();
+            panel16 = new Panel();
+            button1 = new Button();
+            label36 = new Label();
+            label35 = new Label();
+            label34 = new Label();
+            label33 = new Label();
+            label32 = new Label();
             createLeavePanel = new Panel();
             createLeaveCancelButt = new Button();
             createLeaveSubmitButt = new Button();
@@ -125,18 +137,6 @@
             label37 = new Label();
             label42 = new Label();
             panel21 = new Panel();
-            leaveSummaryPanel = new Panel();
-            panel18 = new Panel();
-            LeaveDataGridView = new DataGridView();
-            label41 = new Label();
-            panel17 = new Panel();
-            panel16 = new Panel();
-            button1 = new Button();
-            label36 = new Label();
-            label35 = new Label();
-            label34 = new Label();
-            label33 = new Label();
-            label32 = new Label();
             payslipPanel = new Panel();
             label23 = new Label();
             panel2.SuspendLayout();
@@ -160,13 +160,13 @@
             panel14.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)logDataGridView).BeginInit();
             leavePanel.SuspendLayout();
-            createLeavePanel.SuspendLayout();
-            panel20.SuspendLayout();
-            panel19.SuspendLayout();
             leaveSummaryPanel.SuspendLayout();
             panel18.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)LeaveDataGridView).BeginInit();
             panel16.SuspendLayout();
+            createLeavePanel.SuspendLayout();
+            panel20.SuspendLayout();
+            panel19.SuspendLayout();
             payslipPanel.SuspendLayout();
             SuspendLayout();
             // 
@@ -1150,8 +1150,8 @@
             // leavePanel
             // 
             leavePanel.Controls.Add(alabel);
-            leavePanel.Controls.Add(createLeavePanel);
             leavePanel.Controls.Add(leaveSummaryPanel);
+            leavePanel.Controls.Add(createLeavePanel);
             leavePanel.Location = new Point(273, 0);
             leavePanel.Margin = new Padding(2, 1, 2, 1);
             leavePanel.Name = "leavePanel";
@@ -1167,169 +1167,6 @@
             alabel.Size = new Size(63, 15);
             alabel.TabIndex = 0;
             alabel.Text = "leavePanel";
-            // 
-            // createLeavePanel
-            // 
-            createLeavePanel.Controls.Add(createLeaveCancelButt);
-            createLeavePanel.Controls.Add(createLeaveSubmitButt);
-            createLeavePanel.Controls.Add(panel20);
-            createLeavePanel.Controls.Add(panel19);
-            createLeavePanel.Controls.Add(panel21);
-            createLeavePanel.Location = new Point(12, 29);
-            createLeavePanel.Name = "createLeavePanel";
-            createLeavePanel.Size = new Size(1093, 789);
-            createLeavePanel.TabIndex = 8;
-            createLeavePanel.Visible = false;
-            // 
-            // createLeaveCancelButt
-            // 
-            createLeaveCancelButt.BackColor = Color.FromArgb(118, 54, 51);
-            createLeaveCancelButt.FlatAppearance.BorderSize = 0;
-            createLeaveCancelButt.FlatStyle = FlatStyle.Flat;
-            createLeaveCancelButt.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            createLeaveCancelButt.ForeColor = Color.White;
-            createLeaveCancelButt.Location = new Point(40, 676);
-            createLeaveCancelButt.Name = "createLeaveCancelButt";
-            createLeaveCancelButt.Size = new Size(167, 45);
-            createLeaveCancelButt.TabIndex = 9;
-            createLeaveCancelButt.Text = "CANCEL";
-            createLeaveCancelButt.UseVisualStyleBackColor = false;
-            createLeaveCancelButt.Click += createLeaveCancelButt_Click;
-            // 
-            // createLeaveSubmitButt
-            // 
-            createLeaveSubmitButt.BackColor = Color.FromArgb(118, 54, 51);
-            createLeaveSubmitButt.FlatAppearance.BorderSize = 0;
-            createLeaveSubmitButt.FlatStyle = FlatStyle.Flat;
-            createLeaveSubmitButt.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            createLeaveSubmitButt.ForeColor = Color.White;
-            createLeaveSubmitButt.Location = new Point(884, 673);
-            createLeaveSubmitButt.Name = "createLeaveSubmitButt";
-            createLeaveSubmitButt.Size = new Size(167, 45);
-            createLeaveSubmitButt.TabIndex = 8;
-            createLeaveSubmitButt.Text = "SUBMIT";
-            createLeaveSubmitButt.UseVisualStyleBackColor = false;
-            // 
-            // panel20
-            // 
-            panel20.BackColor = Color.Snow;
-            panel20.Controls.Add(leaveRichTB);
-            panel20.Controls.Add(label44);
-            panel20.Location = new Point(0, 411);
-            panel20.Margin = new Padding(2, 1, 2, 1);
-            panel20.Name = "panel20";
-            panel20.Size = new Size(1092, 221);
-            panel20.TabIndex = 7;
-            // 
-            // leaveRichTB
-            // 
-            leaveRichTB.Font = new Font("Times New Roman", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            leaveRichTB.Location = new Point(12, 58);
-            leaveRichTB.Name = "leaveRichTB";
-            leaveRichTB.Size = new Size(1066, 135);
-            leaveRichTB.TabIndex = 3;
-            leaveRichTB.Text = "";
-            // 
-            // label44
-            // 
-            label44.AutoSize = true;
-            label44.Font = new Font("Times New Roman", 18F);
-            label44.Location = new Point(8, 18);
-            label44.Name = "label44";
-            label44.Size = new Size(112, 27);
-            label44.TabIndex = 2;
-            label44.Text = "REASON:";
-            // 
-            // panel19
-            // 
-            panel19.BackColor = Color.Snow;
-            panel19.Controls.Add(leaveEndDatePicker);
-            panel19.Controls.Add(leaveStartDatePicker);
-            panel19.Controls.Add(leaveFormCB);
-            panel19.Controls.Add(label39);
-            panel19.Controls.Add(label38);
-            panel19.Controls.Add(label37);
-            panel19.Controls.Add(label42);
-            panel19.Location = new Point(0, 98);
-            panel19.Margin = new Padding(2, 1, 2, 1);
-            panel19.Name = "panel19";
-            panel19.Size = new Size(1092, 285);
-            panel19.TabIndex = 6;
-            // 
-            // leaveEndDatePicker
-            // 
-            leaveEndDatePicker.Font = new Font("Times New Roman", 11.25F);
-            leaveEndDatePicker.Location = new Point(729, 199);
-            leaveEndDatePicker.Name = "leaveEndDatePicker";
-            leaveEndDatePicker.Size = new Size(320, 25);
-            leaveEndDatePicker.TabIndex = 7;
-            // 
-            // leaveStartDatePicker
-            // 
-            leaveStartDatePicker.Font = new Font("Times New Roman", 11.25F);
-            leaveStartDatePicker.Location = new Point(203, 200);
-            leaveStartDatePicker.Name = "leaveStartDatePicker";
-            leaveStartDatePicker.Size = new Size(320, 25);
-            leaveStartDatePicker.TabIndex = 6;
-            // 
-            // leaveFormCB
-            // 
-            leaveFormCB.Font = new Font("Times New Roman", 11.25F);
-            leaveFormCB.FormattingEnabled = true;
-            leaveFormCB.Location = new Point(207, 110);
-            leaveFormCB.Name = "leaveFormCB";
-            leaveFormCB.Size = new Size(218, 25);
-            leaveFormCB.TabIndex = 5;
-            // 
-            // label39
-            // 
-            label39.AutoSize = true;
-            label39.Font = new Font("Times New Roman", 18F);
-            label39.Location = new Point(567, 196);
-            label39.Name = "label39";
-            label39.Size = new Size(109, 27);
-            label39.TabIndex = 4;
-            label39.Text = "End Date:";
-            // 
-            // label38
-            // 
-            label38.AutoSize = true;
-            label38.Font = new Font("Times New Roman", 18F);
-            label38.Location = new Point(41, 196);
-            label38.Name = "label38";
-            label38.Size = new Size(115, 27);
-            label38.TabIndex = 3;
-            label38.Text = "Start Date:";
-            // 
-            // label37
-            // 
-            label37.AutoSize = true;
-            label37.Font = new Font("Times New Roman", 18F);
-            label37.Location = new Point(44, 108);
-            label37.Name = "label37";
-            label37.Size = new Size(157, 27);
-            label37.TabIndex = 2;
-            label37.Text = "Type of Leave:";
-            // 
-            // label42
-            // 
-            label42.AutoSize = true;
-            label42.Font = new Font("Times New Roman", 25.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label42.ForeColor = Color.FromArgb(91, 12, 12);
-            label42.Location = new Point(401, 17);
-            label42.Name = "label42";
-            label42.Size = new Size(248, 40);
-            label42.TabIndex = 0;
-            label42.Text = "LEAVE FORM";
-            // 
-            // panel21
-            // 
-            panel21.BackgroundImage = Properties.Resources.TopPanelBg;
-            panel21.BackgroundImageLayout = ImageLayout.Stretch;
-            panel21.Location = new Point(0, 0);
-            panel21.Name = "panel21";
-            panel21.Size = new Size(1092, 67);
-            panel21.TabIndex = 3;
             // 
             // leaveSummaryPanel
             // 
@@ -1469,6 +1306,172 @@
             label32.TabIndex = 0;
             label32.Text = "Leave Summary";
             // 
+            // createLeavePanel
+            // 
+            createLeavePanel.Controls.Add(createLeaveCancelButt);
+            createLeavePanel.Controls.Add(createLeaveSubmitButt);
+            createLeavePanel.Controls.Add(panel20);
+            createLeavePanel.Controls.Add(panel19);
+            createLeavePanel.Controls.Add(panel21);
+            createLeavePanel.Location = new Point(12, 29);
+            createLeavePanel.Name = "createLeavePanel";
+            createLeavePanel.Size = new Size(1093, 789);
+            createLeavePanel.TabIndex = 8;
+            createLeavePanel.Visible = false;
+            // 
+            // createLeaveCancelButt
+            // 
+            createLeaveCancelButt.BackColor = Color.FromArgb(118, 54, 51);
+            createLeaveCancelButt.FlatAppearance.BorderSize = 0;
+            createLeaveCancelButt.FlatStyle = FlatStyle.Flat;
+            createLeaveCancelButt.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            createLeaveCancelButt.ForeColor = Color.White;
+            createLeaveCancelButt.Location = new Point(40, 676);
+            createLeaveCancelButt.Name = "createLeaveCancelButt";
+            createLeaveCancelButt.Size = new Size(167, 45);
+            createLeaveCancelButt.TabIndex = 9;
+            createLeaveCancelButt.Text = "CANCEL";
+            createLeaveCancelButt.UseVisualStyleBackColor = false;
+            createLeaveCancelButt.Click += createLeaveCancelButt_Click;
+            // 
+            // createLeaveSubmitButt
+            // 
+            createLeaveSubmitButt.BackColor = Color.FromArgb(118, 54, 51);
+            createLeaveSubmitButt.FlatAppearance.BorderSize = 0;
+            createLeaveSubmitButt.FlatStyle = FlatStyle.Flat;
+            createLeaveSubmitButt.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            createLeaveSubmitButt.ForeColor = Color.White;
+            createLeaveSubmitButt.Location = new Point(884, 673);
+            createLeaveSubmitButt.Name = "createLeaveSubmitButt";
+            createLeaveSubmitButt.Size = new Size(167, 45);
+            createLeaveSubmitButt.TabIndex = 8;
+            createLeaveSubmitButt.Text = "SUBMIT";
+            createLeaveSubmitButt.UseVisualStyleBackColor = false;
+            createLeaveSubmitButt.Click += createLeaveSubmitButt_Click;
+            // 
+            // panel20
+            // 
+            panel20.BackColor = Color.Snow;
+            panel20.Controls.Add(leaveRichTB);
+            panel20.Controls.Add(label44);
+            panel20.Location = new Point(0, 411);
+            panel20.Margin = new Padding(2, 1, 2, 1);
+            panel20.Name = "panel20";
+            panel20.Size = new Size(1092, 221);
+            panel20.TabIndex = 7;
+            // 
+            // leaveRichTB
+            // 
+            leaveRichTB.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            leaveRichTB.Location = new Point(12, 58);
+            leaveRichTB.Name = "leaveRichTB";
+            leaveRichTB.Size = new Size(1066, 135);
+            leaveRichTB.TabIndex = 3;
+            leaveRichTB.Text = "";
+            // 
+            // label44
+            // 
+            label44.AutoSize = true;
+            label44.Font = new Font("Times New Roman", 18F);
+            label44.Location = new Point(8, 18);
+            label44.Name = "label44";
+            label44.Size = new Size(112, 27);
+            label44.TabIndex = 2;
+            label44.Text = "REASON:";
+            // 
+            // panel19
+            // 
+            panel19.BackColor = Color.Snow;
+            panel19.Controls.Add(leaveEndDatePicker);
+            panel19.Controls.Add(leaveStartDatePicker);
+            panel19.Controls.Add(leaveFormCB);
+            panel19.Controls.Add(label39);
+            panel19.Controls.Add(label38);
+            panel19.Controls.Add(label37);
+            panel19.Controls.Add(label42);
+            panel19.Location = new Point(0, 98);
+            panel19.Margin = new Padding(2, 1, 2, 1);
+            panel19.Name = "panel19";
+            panel19.Size = new Size(1092, 285);
+            panel19.TabIndex = 6;
+            // 
+            // leaveEndDatePicker
+            // 
+            leaveEndDatePicker.Font = new Font("Times New Roman", 11.25F);
+            leaveEndDatePicker.Location = new Point(729, 199);
+            leaveEndDatePicker.Name = "leaveEndDatePicker";
+            leaveEndDatePicker.Size = new Size(320, 25);
+            leaveEndDatePicker.TabIndex = 7;
+            leaveEndDatePicker.ValueChanged += leaveDatePickerChanged;
+            // 
+            // leaveStartDatePicker
+            // 
+            leaveStartDatePicker.Font = new Font("Times New Roman", 11.25F);
+            leaveStartDatePicker.Location = new Point(203, 200);
+            leaveStartDatePicker.Name = "leaveStartDatePicker";
+            leaveStartDatePicker.Size = new Size(320, 25);
+            leaveStartDatePicker.TabIndex = 6;
+            leaveStartDatePicker.ValueChanged += leaveDatePickerChanged;
+            // 
+            // leaveFormCB
+            // 
+            leaveFormCB.Font = new Font("Times New Roman", 11.25F);
+            leaveFormCB.FormattingEnabled = true;
+            leaveFormCB.Location = new Point(207, 110);
+            leaveFormCB.Name = "leaveFormCB";
+            leaveFormCB.Size = new Size(218, 25);
+            leaveFormCB.TabIndex = 5;
+            // 
+            // label39
+            // 
+            label39.AutoSize = true;
+            label39.Font = new Font("Times New Roman", 18F);
+            label39.Location = new Point(567, 196);
+            label39.Name = "label39";
+            label39.Size = new Size(109, 27);
+            label39.TabIndex = 4;
+            label39.Text = "End Date:";
+            // 
+            // label38
+            // 
+            label38.AutoSize = true;
+            label38.Font = new Font("Times New Roman", 18F);
+            label38.Location = new Point(41, 196);
+            label38.Name = "label38";
+            label38.Size = new Size(115, 27);
+            label38.TabIndex = 3;
+            label38.Text = "Start Date:";
+            // 
+            // label37
+            // 
+            label37.AutoSize = true;
+            label37.Font = new Font("Times New Roman", 18F);
+            label37.Location = new Point(44, 108);
+            label37.Name = "label37";
+            label37.Size = new Size(157, 27);
+            label37.TabIndex = 2;
+            label37.Text = "Type of Leave:";
+            // 
+            // label42
+            // 
+            label42.AutoSize = true;
+            label42.Font = new Font("Times New Roman", 25.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label42.ForeColor = Color.FromArgb(91, 12, 12);
+            label42.Location = new Point(401, 17);
+            label42.Name = "label42";
+            label42.Size = new Size(248, 40);
+            label42.TabIndex = 0;
+            label42.Text = "LEAVE FORM";
+            // 
+            // panel21
+            // 
+            panel21.BackgroundImage = Properties.Resources.TopPanelBg;
+            panel21.BackgroundImageLayout = ImageLayout.Stretch;
+            panel21.Location = new Point(0, 0);
+            panel21.Name = "panel21";
+            panel21.Size = new Size(1092, 67);
+            panel21.TabIndex = 3;
+            // 
             // payslipPanel
             // 
             payslipPanel.Controls.Add(label23);
@@ -1541,17 +1544,17 @@
             ((System.ComponentModel.ISupportInitialize)logDataGridView).EndInit();
             leavePanel.ResumeLayout(false);
             leavePanel.PerformLayout();
-            createLeavePanel.ResumeLayout(false);
-            panel20.ResumeLayout(false);
-            panel20.PerformLayout();
-            panel19.ResumeLayout(false);
-            panel19.PerformLayout();
             leaveSummaryPanel.ResumeLayout(false);
             panel18.ResumeLayout(false);
             panel18.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)LeaveDataGridView).EndInit();
             panel16.ResumeLayout(false);
             panel16.PerformLayout();
+            createLeavePanel.ResumeLayout(false);
+            panel20.ResumeLayout(false);
+            panel20.PerformLayout();
+            panel19.ResumeLayout(false);
+            panel19.PerformLayout();
             payslipPanel.ResumeLayout(false);
             payslipPanel.PerformLayout();
             ResumeLayout(false);

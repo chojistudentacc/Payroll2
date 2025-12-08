@@ -1625,6 +1625,31 @@ namespace Payroll
 
             return null;
         }
+
+        public bool UpdatePasswordOnly(string employeeID, string newPassword)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    string sql = "UPDATE employeeData SET password = @pass WHERE employeeID = @id";
+
+                    using (SqlCommand cmd = new SqlCommand(sql, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@pass", newPassword);
+                        cmd.Parameters.AddWithValue("@id", employeeID);
+                        return cmd.ExecuteNonQuery() > 0;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error updating password: " + ex.Message);
+                return false;
+            }
+        }
         public DataTable GetEmployeeAttendance(string employeeID)
         {
             DataTable table = new DataTable();
@@ -1829,6 +1854,170 @@ namespace Payroll
             return null;
         }
 
+        public void LoadLeaveRequests(string employeeID, DataGridView data)
+        {
+            string query = "SELECT employeeID, type, leaveStartDate, leaveEndDate, status, reason, requestID " +
+                           "FROM leaveRequestData WHERE employeeID = @empID";
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@empID", employeeID);
+
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+
+                    conn.Open();
+                    da.Fill(dt);
+
+                    data.DataSource = dt;
+                }
+            }
+        }
+
+        public bool AddLeaveRequest(
+            string employeeID,
+            string type,
+            DateTime leaveStartDate,
+            DateTime leaveEndDate,
+            string status,
+            string reason,
+            string requestID)
+        {
+            string query = @"INSERT INTO leaveRequestData
+                (employeeID, type, leaveStartDate, leaveEndDate, status, reason, requestID)
+                VALUES
+                (@employeeID, @type, @leaveStartDate, @leaveEndDate, @status, @reason, @requestID)";
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@employeeID", employeeID);
+                    cmd.Parameters.AddWithValue("@type", type);
+                    cmd.Parameters.AddWithValue("@leaveStartDate", leaveStartDate);
+                    cmd.Parameters.AddWithValue("@leaveEndDate", leaveEndDate);
+                    cmd.Parameters.AddWithValue("@status", status);
+                    cmd.Parameters.AddWithValue("@reason", reason);
+                    cmd.Parameters.AddWithValue("@requestID", requestID);
+
+                    conn.Open();
+                    int result = cmd.ExecuteNonQuery();
+
+                    return result > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error inserting leave request: " + ex.Message);
+                return false;
+            }
+        }
+
+        public bool UpdateLeaveCredit(string employeeID, string leaveType, int daysUsed = 1)
+        {
+            string columnName;
+
+            switch (leaveType.ToLower())
+            {
+                case "standard leave":
+                    columnName = "leaveCredit";
+                    break;
+                case "sick":
+                case "sick leave":
+                    columnName = "sickLeave";
+                    break;
+                case "vacation":
+                case "vacation leave":
+                    columnName = "vacationLeave";
+                    break;
+                case "emergency":
+                case "emergency leave":
+                    columnName = "emergencyLeave";
+                    break;
+                default:
+                    MessageBox.Show("Unknown leave type.");
+                    return false;
+            }
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    // 1) Check current remaining credits
+                    string checkQuery = $"SELECT {columnName} FROM leaveCreditData WHERE employeeID = @employeeID";
+                    using (SqlCommand checkCmd = new SqlCommand(checkQuery, conn))
+                    {
+                        checkCmd.Parameters.AddWithValue("@employeeID", employeeID);
+
+                        object result = checkCmd.ExecuteScalar();
+
+                        if (result == null)
+                        {
+                            MessageBox.Show("Employee leave credit not found!");
+                            return false;
+                        }
+
+                        int currentCredit = Convert.ToInt32(result);
+
+                        // IF credit is 0 or insufficient — deny transaction
+                        if (currentCredit <= 0 || currentCredit - daysUsed < 0)
+                        {
+                            MessageBox.Show("Insufficient leave credits!");
+                            return false;
+                        }
+                    }
+
+                    // 2) Deduct leave credits
+                    string updateQuery = $"UPDATE leaveCreditData SET {columnName} = {columnName} - @daysUsed WHERE employeeID = @employeeID";
+                    using (SqlCommand updateCmd = new SqlCommand(updateQuery, conn))
+                    {
+                        updateCmd.Parameters.AddWithValue("@employeeID", employeeID);
+                        updateCmd.Parameters.AddWithValue("@daysUsed", daysUsed);
+
+                        int rowsAffected = updateCmd.ExecuteNonQuery();
+                        return rowsAffected > 0;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error updating leave credits: " + ex.Message);
+                return false;
+            }
+        }
+
+
+        public string GetNextRequestID()
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    string sql = @"SELECT ISNULL(MAX(CAST(SUBSTRING(requestID, 5, LEN(requestID)) AS INT)), 0) 
+                           FROM leaveRequestData 
+                           WHERE requestID LIKE 'REQ-%';";
+
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        int maxNumber = (int)command.ExecuteScalar();
+                        int nextNumber = maxNumber + 1;
+                        return "REQ-" + nextNumber;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Connection Exception: " + ex.ToString());
+                return null;
+            }
+        }
 
     }
 }
