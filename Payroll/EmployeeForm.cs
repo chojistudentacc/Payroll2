@@ -149,6 +149,11 @@ namespace Payroll
 
         private void changePasswordButton_Click_1(object sender, EventArgs e)
         {
+            string userInput = Microsoft.VisualBasic.Interaction.InputBox("Enter your name:", "User Input", "Default Name");
+            if (!string.IsNullOrEmpty(userInput))
+            {
+                MessageBox.Show("You entered: " + userInput);
+            }
             employeeProfilePasswordTB.ReadOnly = false;
             employeeProfilePasswordTB.Clear();
             employeeProfilePasswordTB.Focus();
