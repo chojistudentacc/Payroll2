@@ -55,6 +55,33 @@
             label2 = new Label();
             userPanel = new Panel();
             label1 = new Label();
+            userPanelAdd = new Panel();
+            cancelButt = new Button();
+            clearButt = new Button();
+            saveButt = new Button();
+            inactiveRadioButt = new RadioButton();
+            activeRadioButt = new RadioButton();
+            statusLabel = new Label();
+            positionComboBox = new ComboBox();
+            positionLabel = new Label();
+            passTB = new TextBox();
+            userNameTB = new TextBox();
+            passLabel = new Label();
+            userNameLabel = new Label();
+            generateCredetialsButt = new Button();
+            addressTB = new TextBox();
+            emailTB = new TextBox();
+            addressLabel = new Label();
+            emailLabel = new Label();
+            contactNoTB = new TextBox();
+            middleNameTB = new TextBox();
+            contactNoLabel = new Label();
+            middleNameLabel = new Label();
+            firstNameTB = new TextBox();
+            lastNameTB = new TextBox();
+            firstNameLabel = new Label();
+            lastNameLabel = new Label();
+            userPanel3 = new Panel();
             userPanelDataGrid = new Panel();
             dropEmployeeButt = new Button();
             editEmployeeButt = new Button();
@@ -87,33 +114,6 @@
             label21 = new Label();
             label22 = new Label();
             panel7 = new Panel();
-            userPanelAdd = new Panel();
-            cancelButt = new Button();
-            clearButt = new Button();
-            saveButt = new Button();
-            inactiveRadioButt = new RadioButton();
-            activeRadioButt = new RadioButton();
-            statusLabel = new Label();
-            positionComboBox = new ComboBox();
-            positionLabel = new Label();
-            passTB = new TextBox();
-            userNameTB = new TextBox();
-            passLabel = new Label();
-            userNameLabel = new Label();
-            generateCredetialsButt = new Button();
-            addressTB = new TextBox();
-            emailTB = new TextBox();
-            addressLabel = new Label();
-            emailLabel = new Label();
-            contactNoTB = new TextBox();
-            middleNameTB = new TextBox();
-            contactNoLabel = new Label();
-            middleNameLabel = new Label();
-            firstNameTB = new TextBox();
-            lastNameTB = new TextBox();
-            firstNameLabel = new Label();
-            lastNameLabel = new Label();
-            userPanel3 = new Panel();
             departmentPanel = new Panel();
             label4 = new Label();
             departmentDataGridPanel = new Panel();
@@ -155,10 +155,6 @@
             panel8 = new Panel();
             reportsPanel = new Panel();
             label14 = new Label();
-            reportsPanelInbox = new Panel();
-            inboxPanel = new Panel();
-            reportsDropDownCB = new ComboBox();
-            panel10 = new Panel();
             reportsPanelViewMessage = new Panel();
             viewMessageArchiveButt = new Button();
             viewMessageReplyButt = new Button();
@@ -166,18 +162,23 @@
             viewMessagePanel = new Panel();
             viewMessageRichTB = new RichTextBox();
             panel12 = new Panel();
+            reportsPanelInbox = new Panel();
+            inboxPanel = new Panel();
+            reportsDropDownCB = new ComboBox();
+            panel10 = new Panel();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            pictureBox1 = new PictureBox();
             sidePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)adminPictureBox).BeginInit();
             dashPanel.SuspendLayout();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             userPanel.SuspendLayout();
+            userPanelAdd.SuspendLayout();
             userPanelDataGrid.SuspendLayout();
             userPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)userDataGridView).BeginInit();
             editEmployeePanel.SuspendLayout();
-            userPanelAdd.SuspendLayout();
             departmentPanel.SuspendLayout();
             departmentDataGridPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)departmentDataGridView).BeginInit();
@@ -187,9 +188,10 @@
             panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)logDataGridView).BeginInit();
             reportsPanel.SuspendLayout();
-            reportsPanelInbox.SuspendLayout();
             reportsPanelViewMessage.SuspendLayout();
             viewMessagePanel.SuspendLayout();
+            reportsPanelInbox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // sidePanel
@@ -427,6 +429,307 @@
             label1.Size = new Size(58, 15);
             label1.TabIndex = 0;
             label1.Text = "userPanel";
+            // 
+            // userPanelAdd
+            // 
+            userPanelAdd.BackColor = Color.White;
+            userPanelAdd.Controls.Add(pictureBox1);
+            userPanelAdd.Controls.Add(cancelButt);
+            userPanelAdd.Controls.Add(clearButt);
+            userPanelAdd.Controls.Add(saveButt);
+            userPanelAdd.Controls.Add(inactiveRadioButt);
+            userPanelAdd.Controls.Add(activeRadioButt);
+            userPanelAdd.Controls.Add(statusLabel);
+            userPanelAdd.Controls.Add(positionComboBox);
+            userPanelAdd.Controls.Add(positionLabel);
+            userPanelAdd.Controls.Add(passTB);
+            userPanelAdd.Controls.Add(userNameTB);
+            userPanelAdd.Controls.Add(passLabel);
+            userPanelAdd.Controls.Add(userNameLabel);
+            userPanelAdd.Controls.Add(generateCredetialsButt);
+            userPanelAdd.Controls.Add(addressTB);
+            userPanelAdd.Controls.Add(emailTB);
+            userPanelAdd.Controls.Add(addressLabel);
+            userPanelAdd.Controls.Add(emailLabel);
+            userPanelAdd.Controls.Add(contactNoTB);
+            userPanelAdd.Controls.Add(middleNameTB);
+            userPanelAdd.Controls.Add(contactNoLabel);
+            userPanelAdd.Controls.Add(middleNameLabel);
+            userPanelAdd.Controls.Add(firstNameTB);
+            userPanelAdd.Controls.Add(lastNameTB);
+            userPanelAdd.Controls.Add(firstNameLabel);
+            userPanelAdd.Controls.Add(lastNameLabel);
+            userPanelAdd.Controls.Add(userPanel3);
+            userPanelAdd.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
+            userPanelAdd.Location = new Point(12, 38);
+            userPanelAdd.Name = "userPanelAdd";
+            userPanelAdd.Size = new Size(1092, 718);
+            userPanelAdd.TabIndex = 2;
+            userPanelAdd.Visible = false;
+            // 
+            // cancelButt
+            // 
+            cancelButt.BackColor = Color.FromArgb(146, 45, 51);
+            cancelButt.FlatStyle = FlatStyle.Flat;
+            cancelButt.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
+            cancelButt.ForeColor = Color.White;
+            cancelButt.Location = new Point(743, 567);
+            cancelButt.Name = "cancelButt";
+            cancelButt.Size = new Size(261, 55);
+            cancelButt.TabIndex = 29;
+            cancelButt.Text = "Cancel";
+            cancelButt.UseVisualStyleBackColor = false;
+            cancelButt.Click += cancelButt_Click;
+            // 
+            // clearButt
+            // 
+            clearButt.BackColor = Color.FromArgb(146, 45, 51);
+            clearButt.FlatStyle = FlatStyle.Flat;
+            clearButt.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
+            clearButt.ForeColor = Color.White;
+            clearButt.Location = new Point(418, 567);
+            clearButt.Name = "clearButt";
+            clearButt.Size = new Size(261, 55);
+            clearButt.TabIndex = 28;
+            clearButt.Text = "Clear";
+            clearButt.UseVisualStyleBackColor = false;
+            clearButt.Click += clearButt_Click;
+            // 
+            // saveButt
+            // 
+            saveButt.BackColor = Color.FromArgb(146, 45, 51);
+            saveButt.FlatStyle = FlatStyle.Flat;
+            saveButt.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
+            saveButt.ForeColor = Color.White;
+            saveButt.Location = new Point(85, 567);
+            saveButt.Name = "saveButt";
+            saveButt.Size = new Size(261, 55);
+            saveButt.TabIndex = 27;
+            saveButt.Text = "Save";
+            saveButt.UseVisualStyleBackColor = false;
+            saveButt.Click += saveButt_Click;
+            // 
+            // inactiveRadioButt
+            // 
+            inactiveRadioButt.AutoSize = true;
+            inactiveRadioButt.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
+            inactiveRadioButt.Location = new Point(258, 425);
+            inactiveRadioButt.Name = "inactiveRadioButt";
+            inactiveRadioButt.Size = new Size(107, 27);
+            inactiveRadioButt.TabIndex = 26;
+            inactiveRadioButt.TabStop = true;
+            inactiveRadioButt.Text = "Inactive";
+            inactiveRadioButt.UseVisualStyleBackColor = true;
+            inactiveRadioButt.CheckedChanged += radioButton_CheckedChanged;
+            // 
+            // activeRadioButt
+            // 
+            activeRadioButt.AutoSize = true;
+            activeRadioButt.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
+            activeRadioButt.Location = new Point(168, 425);
+            activeRadioButt.Name = "activeRadioButt";
+            activeRadioButt.Size = new Size(89, 27);
+            activeRadioButt.TabIndex = 25;
+            activeRadioButt.TabStop = true;
+            activeRadioButt.Text = "Active";
+            activeRadioButt.UseVisualStyleBackColor = true;
+            activeRadioButt.CheckedChanged += radioButton_CheckedChanged;
+            // 
+            // statusLabel
+            // 
+            statusLabel.AutoSize = true;
+            statusLabel.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
+            statusLabel.Location = new Point(73, 427);
+            statusLabel.Name = "statusLabel";
+            statusLabel.Size = new Size(79, 23);
+            statusLabel.TabIndex = 24;
+            statusLabel.Text = "Status:";
+            // 
+            // positionComboBox
+            // 
+            positionComboBox.Font = new Font("Times New Roman", 15.75F);
+            positionComboBox.FormattingEnabled = true;
+            positionComboBox.Location = new Point(168, 364);
+            positionComboBox.Name = "positionComboBox";
+            positionComboBox.Size = new Size(320, 31);
+            positionComboBox.TabIndex = 23;
+            // 
+            // positionLabel
+            // 
+            positionLabel.AutoSize = true;
+            positionLabel.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
+            positionLabel.Location = new Point(57, 367);
+            positionLabel.Name = "positionLabel";
+            positionLabel.Size = new Size(99, 23);
+            positionLabel.TabIndex = 22;
+            positionLabel.Text = "Position:";
+            // 
+            // passTB
+            // 
+            passTB.Font = new Font("Times New Roman", 15.75F);
+            passTB.Location = new Point(733, 361);
+            passTB.Name = "passTB";
+            passTB.Size = new Size(271, 32);
+            passTB.TabIndex = 21;
+            // 
+            // userNameTB
+            // 
+            userNameTB.Font = new Font("Times New Roman", 15.75F);
+            userNameTB.Location = new Point(733, 310);
+            userNameTB.Name = "userNameTB";
+            userNameTB.Size = new Size(271, 32);
+            userNameTB.TabIndex = 20;
+            // 
+            // passLabel
+            // 
+            passLabel.AutoSize = true;
+            passLabel.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
+            passLabel.Location = new Point(594, 364);
+            passLabel.Name = "passLabel";
+            passLabel.Size = new Size(112, 23);
+            passLabel.TabIndex = 19;
+            passLabel.Text = "Password:";
+            // 
+            // userNameLabel
+            // 
+            userNameLabel.AutoSize = true;
+            userNameLabel.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
+            userNameLabel.Location = new Point(594, 313);
+            userNameLabel.Name = "userNameLabel";
+            userNameLabel.Size = new Size(126, 23);
+            userNameLabel.TabIndex = 18;
+            userNameLabel.Text = "User Name:";
+            // 
+            // generateCredetialsButt
+            // 
+            generateCredetialsButt.BackColor = Color.FromArgb(146, 45, 51);
+            generateCredetialsButt.FlatStyle = FlatStyle.Flat;
+            generateCredetialsButt.Font = new Font("Times New Roman", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            generateCredetialsButt.ForeColor = Color.White;
+            generateCredetialsButt.Location = new Point(800, 413);
+            generateCredetialsButt.Name = "generateCredetialsButt";
+            generateCredetialsButt.Size = new Size(204, 36);
+            generateCredetialsButt.TabIndex = 17;
+            generateCredetialsButt.Text = "Generate Random Credentials";
+            generateCredetialsButt.UseVisualStyleBackColor = false;
+            generateCredetialsButt.Click += generateCredetials_Click;
+            // 
+            // addressTB
+            // 
+            addressTB.Font = new Font("Times New Roman", 15.75F);
+            addressTB.Location = new Point(733, 256);
+            addressTB.Name = "addressTB";
+            addressTB.Size = new Size(271, 32);
+            addressTB.TabIndex = 14;
+            // 
+            // emailTB
+            // 
+            emailTB.Font = new Font("Times New Roman", 15.75F);
+            emailTB.Location = new Point(733, 205);
+            emailTB.Name = "emailTB";
+            emailTB.Size = new Size(271, 32);
+            emailTB.TabIndex = 13;
+            // 
+            // addressLabel
+            // 
+            addressLabel.AutoSize = true;
+            addressLabel.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
+            addressLabel.Location = new Point(594, 264);
+            addressLabel.Name = "addressLabel";
+            addressLabel.Size = new Size(98, 23);
+            addressLabel.TabIndex = 12;
+            addressLabel.Text = "Address:";
+            // 
+            // emailLabel
+            // 
+            emailLabel.AutoSize = true;
+            emailLabel.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
+            emailLabel.Location = new Point(594, 213);
+            emailLabel.Name = "emailLabel";
+            emailLabel.Size = new Size(75, 23);
+            emailLabel.TabIndex = 11;
+            emailLabel.Text = "Email:";
+            // 
+            // contactNoTB
+            // 
+            contactNoTB.Font = new Font("Times New Roman", 15.75F);
+            contactNoTB.Location = new Point(217, 259);
+            contactNoTB.Name = "contactNoTB";
+            contactNoTB.Size = new Size(271, 32);
+            contactNoTB.TabIndex = 10;
+            // 
+            // middleNameTB
+            // 
+            middleNameTB.Font = new Font("Times New Roman", 15.75F);
+            middleNameTB.Location = new Point(217, 208);
+            middleNameTB.Name = "middleNameTB";
+            middleNameTB.Size = new Size(271, 32);
+            middleNameTB.TabIndex = 9;
+            // 
+            // contactNoLabel
+            // 
+            contactNoLabel.AutoSize = true;
+            contactNoLabel.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
+            contactNoLabel.Location = new Point(57, 262);
+            contactNoLabel.Name = "contactNoLabel";
+            contactNoLabel.Size = new Size(126, 23);
+            contactNoLabel.TabIndex = 8;
+            contactNoLabel.Text = "Contact No:";
+            // 
+            // middleNameLabel
+            // 
+            middleNameLabel.AutoSize = true;
+            middleNameLabel.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
+            middleNameLabel.Location = new Point(57, 211);
+            middleNameLabel.Name = "middleNameLabel";
+            middleNameLabel.Size = new Size(149, 23);
+            middleNameLabel.TabIndex = 7;
+            middleNameLabel.Text = "Middle Name:";
+            // 
+            // firstNameTB
+            // 
+            firstNameTB.Font = new Font("Times New Roman", 15.75F);
+            firstNameTB.Location = new Point(217, 159);
+            firstNameTB.Name = "firstNameTB";
+            firstNameTB.Size = new Size(271, 32);
+            firstNameTB.TabIndex = 6;
+            // 
+            // lastNameTB
+            // 
+            lastNameTB.Font = new Font("Times New Roman", 15.75F);
+            lastNameTB.Location = new Point(217, 108);
+            lastNameTB.Name = "lastNameTB";
+            lastNameTB.Size = new Size(271, 32);
+            lastNameTB.TabIndex = 5;
+            // 
+            // firstNameLabel
+            // 
+            firstNameLabel.AutoSize = true;
+            firstNameLabel.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
+            firstNameLabel.Location = new Point(57, 162);
+            firstNameLabel.Name = "firstNameLabel";
+            firstNameLabel.Size = new Size(127, 23);
+            firstNameLabel.TabIndex = 4;
+            firstNameLabel.Text = "First Name:";
+            // 
+            // lastNameLabel
+            // 
+            lastNameLabel.AutoSize = true;
+            lastNameLabel.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
+            lastNameLabel.Location = new Point(57, 111);
+            lastNameLabel.Name = "lastNameLabel";
+            lastNameLabel.Size = new Size(121, 23);
+            lastNameLabel.TabIndex = 3;
+            lastNameLabel.Text = "Last Name:";
+            // 
+            // userPanel3
+            // 
+            userPanel3.BackgroundImage = Properties.Resources.TopPanelBg;
+            userPanel3.BackgroundImageLayout = ImageLayout.Stretch;
+            userPanel3.Location = new Point(0, 0);
+            userPanel3.Name = "userPanel3";
+            userPanel3.Size = new Size(1092, 67);
+            userPanel3.TabIndex = 2;
             // 
             // userPanelDataGrid
             // 
@@ -830,306 +1133,6 @@
             panel7.Name = "panel7";
             panel7.Size = new Size(1092, 67);
             panel7.TabIndex = 2;
-            // 
-            // userPanelAdd
-            // 
-            userPanelAdd.BackColor = Color.White;
-            userPanelAdd.Controls.Add(cancelButt);
-            userPanelAdd.Controls.Add(clearButt);
-            userPanelAdd.Controls.Add(saveButt);
-            userPanelAdd.Controls.Add(inactiveRadioButt);
-            userPanelAdd.Controls.Add(activeRadioButt);
-            userPanelAdd.Controls.Add(statusLabel);
-            userPanelAdd.Controls.Add(positionComboBox);
-            userPanelAdd.Controls.Add(positionLabel);
-            userPanelAdd.Controls.Add(passTB);
-            userPanelAdd.Controls.Add(userNameTB);
-            userPanelAdd.Controls.Add(passLabel);
-            userPanelAdd.Controls.Add(userNameLabel);
-            userPanelAdd.Controls.Add(generateCredetialsButt);
-            userPanelAdd.Controls.Add(addressTB);
-            userPanelAdd.Controls.Add(emailTB);
-            userPanelAdd.Controls.Add(addressLabel);
-            userPanelAdd.Controls.Add(emailLabel);
-            userPanelAdd.Controls.Add(contactNoTB);
-            userPanelAdd.Controls.Add(middleNameTB);
-            userPanelAdd.Controls.Add(contactNoLabel);
-            userPanelAdd.Controls.Add(middleNameLabel);
-            userPanelAdd.Controls.Add(firstNameTB);
-            userPanelAdd.Controls.Add(lastNameTB);
-            userPanelAdd.Controls.Add(firstNameLabel);
-            userPanelAdd.Controls.Add(lastNameLabel);
-            userPanelAdd.Controls.Add(userPanel3);
-            userPanelAdd.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
-            userPanelAdd.Location = new Point(12, 38);
-            userPanelAdd.Name = "userPanelAdd";
-            userPanelAdd.Size = new Size(1092, 718);
-            userPanelAdd.TabIndex = 2;
-            userPanelAdd.Visible = false;
-            // 
-            // cancelButt
-            // 
-            cancelButt.BackColor = Color.FromArgb(146, 45, 51);
-            cancelButt.FlatStyle = FlatStyle.Flat;
-            cancelButt.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
-            cancelButt.ForeColor = Color.White;
-            cancelButt.Location = new Point(743, 567);
-            cancelButt.Name = "cancelButt";
-            cancelButt.Size = new Size(261, 55);
-            cancelButt.TabIndex = 29;
-            cancelButt.Text = "Cancel";
-            cancelButt.UseVisualStyleBackColor = false;
-            cancelButt.Click += cancelButt_Click;
-            // 
-            // clearButt
-            // 
-            clearButt.BackColor = Color.FromArgb(146, 45, 51);
-            clearButt.FlatStyle = FlatStyle.Flat;
-            clearButt.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
-            clearButt.ForeColor = Color.White;
-            clearButt.Location = new Point(418, 567);
-            clearButt.Name = "clearButt";
-            clearButt.Size = new Size(261, 55);
-            clearButt.TabIndex = 28;
-            clearButt.Text = "Clear";
-            clearButt.UseVisualStyleBackColor = false;
-            clearButt.Click += clearButt_Click;
-            // 
-            // saveButt
-            // 
-            saveButt.BackColor = Color.FromArgb(146, 45, 51);
-            saveButt.FlatStyle = FlatStyle.Flat;
-            saveButt.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
-            saveButt.ForeColor = Color.White;
-            saveButt.Location = new Point(85, 567);
-            saveButt.Name = "saveButt";
-            saveButt.Size = new Size(261, 55);
-            saveButt.TabIndex = 27;
-            saveButt.Text = "Save";
-            saveButt.UseVisualStyleBackColor = false;
-            saveButt.Click += saveButt_Click;
-            // 
-            // inactiveRadioButt
-            // 
-            inactiveRadioButt.AutoSize = true;
-            inactiveRadioButt.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
-            inactiveRadioButt.Location = new Point(258, 425);
-            inactiveRadioButt.Name = "inactiveRadioButt";
-            inactiveRadioButt.Size = new Size(107, 27);
-            inactiveRadioButt.TabIndex = 26;
-            inactiveRadioButt.TabStop = true;
-            inactiveRadioButt.Text = "Inactive";
-            inactiveRadioButt.UseVisualStyleBackColor = true;
-            inactiveRadioButt.CheckedChanged += radioButton_CheckedChanged;
-            // 
-            // activeRadioButt
-            // 
-            activeRadioButt.AutoSize = true;
-            activeRadioButt.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
-            activeRadioButt.Location = new Point(168, 425);
-            activeRadioButt.Name = "activeRadioButt";
-            activeRadioButt.Size = new Size(89, 27);
-            activeRadioButt.TabIndex = 25;
-            activeRadioButt.TabStop = true;
-            activeRadioButt.Text = "Active";
-            activeRadioButt.UseVisualStyleBackColor = true;
-            activeRadioButt.CheckedChanged += radioButton_CheckedChanged;
-            // 
-            // statusLabel
-            // 
-            statusLabel.AutoSize = true;
-            statusLabel.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
-            statusLabel.Location = new Point(73, 427);
-            statusLabel.Name = "statusLabel";
-            statusLabel.Size = new Size(79, 23);
-            statusLabel.TabIndex = 24;
-            statusLabel.Text = "Status:";
-            // 
-            // positionComboBox
-            // 
-            positionComboBox.Font = new Font("Times New Roman", 15.75F);
-            positionComboBox.FormattingEnabled = true;
-            positionComboBox.Location = new Point(168, 364);
-            positionComboBox.Name = "positionComboBox";
-            positionComboBox.Size = new Size(320, 31);
-            positionComboBox.TabIndex = 23;
-            // 
-            // positionLabel
-            // 
-            positionLabel.AutoSize = true;
-            positionLabel.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
-            positionLabel.Location = new Point(57, 367);
-            positionLabel.Name = "positionLabel";
-            positionLabel.Size = new Size(99, 23);
-            positionLabel.TabIndex = 22;
-            positionLabel.Text = "Position:";
-            // 
-            // passTB
-            // 
-            passTB.Font = new Font("Times New Roman", 15.75F);
-            passTB.Location = new Point(733, 259);
-            passTB.Name = "passTB";
-            passTB.Size = new Size(271, 32);
-            passTB.TabIndex = 21;
-            // 
-            // userNameTB
-            // 
-            userNameTB.Font = new Font("Times New Roman", 15.75F);
-            userNameTB.Location = new Point(733, 208);
-            userNameTB.Name = "userNameTB";
-            userNameTB.Size = new Size(271, 32);
-            userNameTB.TabIndex = 20;
-            // 
-            // passLabel
-            // 
-            passLabel.AutoSize = true;
-            passLabel.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
-            passLabel.Location = new Point(594, 262);
-            passLabel.Name = "passLabel";
-            passLabel.Size = new Size(112, 23);
-            passLabel.TabIndex = 19;
-            passLabel.Text = "Password:";
-            // 
-            // userNameLabel
-            // 
-            userNameLabel.AutoSize = true;
-            userNameLabel.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
-            userNameLabel.Location = new Point(594, 211);
-            userNameLabel.Name = "userNameLabel";
-            userNameLabel.Size = new Size(126, 23);
-            userNameLabel.TabIndex = 18;
-            userNameLabel.Text = "User Name:";
-            // 
-            // generateCredetialsButt
-            // 
-            generateCredetialsButt.BackColor = Color.FromArgb(146, 45, 51);
-            generateCredetialsButt.FlatStyle = FlatStyle.Flat;
-            generateCredetialsButt.Font = new Font("Times New Roman", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            generateCredetialsButt.ForeColor = Color.White;
-            generateCredetialsButt.Location = new Point(800, 311);
-            generateCredetialsButt.Name = "generateCredetialsButt";
-            generateCredetialsButt.Size = new Size(204, 36);
-            generateCredetialsButt.TabIndex = 17;
-            generateCredetialsButt.Text = "Generate Random Credentials";
-            generateCredetialsButt.UseVisualStyleBackColor = false;
-            generateCredetialsButt.Click += generateCredetials_Click;
-            // 
-            // addressTB
-            // 
-            addressTB.Font = new Font("Times New Roman", 15.75F);
-            addressTB.Location = new Point(733, 154);
-            addressTB.Name = "addressTB";
-            addressTB.Size = new Size(271, 32);
-            addressTB.TabIndex = 14;
-            // 
-            // emailTB
-            // 
-            emailTB.Font = new Font("Times New Roman", 15.75F);
-            emailTB.Location = new Point(733, 103);
-            emailTB.Name = "emailTB";
-            emailTB.Size = new Size(271, 32);
-            emailTB.TabIndex = 13;
-            // 
-            // addressLabel
-            // 
-            addressLabel.AutoSize = true;
-            addressLabel.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
-            addressLabel.Location = new Point(594, 162);
-            addressLabel.Name = "addressLabel";
-            addressLabel.Size = new Size(98, 23);
-            addressLabel.TabIndex = 12;
-            addressLabel.Text = "Address:";
-            // 
-            // emailLabel
-            // 
-            emailLabel.AutoSize = true;
-            emailLabel.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
-            emailLabel.Location = new Point(594, 111);
-            emailLabel.Name = "emailLabel";
-            emailLabel.Size = new Size(75, 23);
-            emailLabel.TabIndex = 11;
-            emailLabel.Text = "Email:";
-            // 
-            // contactNoTB
-            // 
-            contactNoTB.Font = new Font("Times New Roman", 15.75F);
-            contactNoTB.Location = new Point(217, 259);
-            contactNoTB.Name = "contactNoTB";
-            contactNoTB.Size = new Size(271, 32);
-            contactNoTB.TabIndex = 10;
-            // 
-            // middleNameTB
-            // 
-            middleNameTB.Font = new Font("Times New Roman", 15.75F);
-            middleNameTB.Location = new Point(217, 208);
-            middleNameTB.Name = "middleNameTB";
-            middleNameTB.Size = new Size(271, 32);
-            middleNameTB.TabIndex = 9;
-            // 
-            // contactNoLabel
-            // 
-            contactNoLabel.AutoSize = true;
-            contactNoLabel.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
-            contactNoLabel.Location = new Point(57, 262);
-            contactNoLabel.Name = "contactNoLabel";
-            contactNoLabel.Size = new Size(126, 23);
-            contactNoLabel.TabIndex = 8;
-            contactNoLabel.Text = "Contact No:";
-            // 
-            // middleNameLabel
-            // 
-            middleNameLabel.AutoSize = true;
-            middleNameLabel.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
-            middleNameLabel.Location = new Point(57, 211);
-            middleNameLabel.Name = "middleNameLabel";
-            middleNameLabel.Size = new Size(149, 23);
-            middleNameLabel.TabIndex = 7;
-            middleNameLabel.Text = "Middle Name:";
-            // 
-            // firstNameTB
-            // 
-            firstNameTB.Font = new Font("Times New Roman", 15.75F);
-            firstNameTB.Location = new Point(217, 159);
-            firstNameTB.Name = "firstNameTB";
-            firstNameTB.Size = new Size(271, 32);
-            firstNameTB.TabIndex = 6;
-            // 
-            // lastNameTB
-            // 
-            lastNameTB.Font = new Font("Times New Roman", 15.75F);
-            lastNameTB.Location = new Point(217, 108);
-            lastNameTB.Name = "lastNameTB";
-            lastNameTB.Size = new Size(271, 32);
-            lastNameTB.TabIndex = 5;
-            // 
-            // firstNameLabel
-            // 
-            firstNameLabel.AutoSize = true;
-            firstNameLabel.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
-            firstNameLabel.Location = new Point(57, 162);
-            firstNameLabel.Name = "firstNameLabel";
-            firstNameLabel.Size = new Size(127, 23);
-            firstNameLabel.TabIndex = 4;
-            firstNameLabel.Text = "First Name:";
-            // 
-            // lastNameLabel
-            // 
-            lastNameLabel.AutoSize = true;
-            lastNameLabel.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
-            lastNameLabel.Location = new Point(57, 111);
-            lastNameLabel.Name = "lastNameLabel";
-            lastNameLabel.Size = new Size(121, 23);
-            lastNameLabel.TabIndex = 3;
-            lastNameLabel.Text = "Last Name:";
-            // 
-            // userPanel3
-            // 
-            userPanel3.BackgroundImage = Properties.Resources.TopPanelBg;
-            userPanel3.BackgroundImageLayout = ImageLayout.Stretch;
-            userPanel3.Location = new Point(0, 0);
-            userPanel3.Name = "userPanel3";
-            userPanel3.Size = new Size(1092, 67);
-            userPanel3.TabIndex = 2;
             // 
             // departmentPanel
             // 
@@ -1647,48 +1650,6 @@
             label14.TabIndex = 0;
             label14.Text = "reportsPanel";
             // 
-            // reportsPanelInbox
-            // 
-            reportsPanelInbox.BackColor = Color.White;
-            reportsPanelInbox.Controls.Add(inboxPanel);
-            reportsPanelInbox.Controls.Add(reportsDropDownCB);
-            reportsPanelInbox.Controls.Add(panel10);
-            reportsPanelInbox.Location = new Point(12, 32);
-            reportsPanelInbox.Name = "reportsPanelInbox";
-            reportsPanelInbox.Size = new Size(1092, 721);
-            reportsPanelInbox.TabIndex = 2;
-            // 
-            // inboxPanel
-            // 
-            inboxPanel.AutoScroll = true;
-            inboxPanel.BackgroundImage = Properties.Resources.PanelBG;
-            inboxPanel.BackgroundImageLayout = ImageLayout.Stretch;
-            inboxPanel.Location = new Point(347, 170);
-            inboxPanel.Name = "inboxPanel";
-            inboxPanel.Size = new Size(657, 486);
-            inboxPanel.TabIndex = 4;
-            // 
-            // reportsDropDownCB
-            // 
-            reportsDropDownCB.BackColor = Color.FromArgb(244, 240, 224);
-            reportsDropDownCB.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            reportsDropDownCB.ForeColor = Color.FromArgb(91, 12, 12);
-            reportsDropDownCB.FormattingEnabled = true;
-            reportsDropDownCB.Location = new Point(21, 170);
-            reportsDropDownCB.Name = "reportsDropDownCB";
-            reportsDropDownCB.Size = new Size(280, 33);
-            reportsDropDownCB.TabIndex = 3;
-            reportsDropDownCB.SelectedIndexChanged += reportsDropDownCB_SelectedIndexChanged;
-            // 
-            // panel10
-            // 
-            panel10.BackgroundImage = Properties.Resources.TopPanelBg;
-            panel10.BackgroundImageLayout = ImageLayout.Stretch;
-            panel10.Location = new Point(0, 0);
-            panel10.Name = "panel10";
-            panel10.Size = new Size(1092, 67);
-            panel10.TabIndex = 2;
-            // 
             // reportsPanelViewMessage
             // 
             reportsPanelViewMessage.BackColor = Color.White;
@@ -1775,6 +1736,58 @@
             panel12.Size = new Size(1092, 67);
             panel12.TabIndex = 2;
             // 
+            // reportsPanelInbox
+            // 
+            reportsPanelInbox.BackColor = Color.White;
+            reportsPanelInbox.Controls.Add(inboxPanel);
+            reportsPanelInbox.Controls.Add(reportsDropDownCB);
+            reportsPanelInbox.Controls.Add(panel10);
+            reportsPanelInbox.Location = new Point(12, 32);
+            reportsPanelInbox.Name = "reportsPanelInbox";
+            reportsPanelInbox.Size = new Size(1092, 721);
+            reportsPanelInbox.TabIndex = 2;
+            // 
+            // inboxPanel
+            // 
+            inboxPanel.AutoScroll = true;
+            inboxPanel.BackgroundImage = Properties.Resources.PanelBG;
+            inboxPanel.BackgroundImageLayout = ImageLayout.Stretch;
+            inboxPanel.Location = new Point(347, 170);
+            inboxPanel.Name = "inboxPanel";
+            inboxPanel.Size = new Size(657, 486);
+            inboxPanel.TabIndex = 4;
+            // 
+            // reportsDropDownCB
+            // 
+            reportsDropDownCB.BackColor = Color.FromArgb(244, 240, 224);
+            reportsDropDownCB.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            reportsDropDownCB.ForeColor = Color.FromArgb(91, 12, 12);
+            reportsDropDownCB.FormattingEnabled = true;
+            reportsDropDownCB.Location = new Point(21, 170);
+            reportsDropDownCB.Name = "reportsDropDownCB";
+            reportsDropDownCB.Size = new Size(280, 33);
+            reportsDropDownCB.TabIndex = 3;
+            reportsDropDownCB.SelectedIndexChanged += reportsDropDownCB_SelectedIndexChanged;
+            // 
+            // panel10
+            // 
+            panel10.BackgroundImage = Properties.Resources.TopPanelBg;
+            panel10.BackgroundImageLayout = ImageLayout.Stretch;
+            panel10.Location = new Point(0, 0);
+            panel10.Name = "panel10";
+            panel10.Size = new Size(1092, 67);
+            panel10.TabIndex = 2;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.White;
+            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox1.Location = new Point(897, 95);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(107, 93);
+            pictureBox1.TabIndex = 30;
+            pictureBox1.TabStop = false;
+            // 
             // AdminForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -1801,14 +1814,14 @@
             panel2.PerformLayout();
             userPanel.ResumeLayout(false);
             userPanel.PerformLayout();
+            userPanelAdd.ResumeLayout(false);
+            userPanelAdd.PerformLayout();
             userPanelDataGrid.ResumeLayout(false);
             userPanel2.ResumeLayout(false);
             userPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)userDataGridView).EndInit();
             editEmployeePanel.ResumeLayout(false);
             editEmployeePanel.PerformLayout();
-            userPanelAdd.ResumeLayout(false);
-            userPanelAdd.PerformLayout();
             departmentPanel.ResumeLayout(false);
             departmentPanel.PerformLayout();
             departmentDataGridPanel.ResumeLayout(false);
@@ -1824,9 +1837,10 @@
             ((System.ComponentModel.ISupportInitialize)logDataGridView).EndInit();
             reportsPanel.ResumeLayout(false);
             reportsPanel.PerformLayout();
-            reportsPanelInbox.ResumeLayout(false);
             reportsPanelViewMessage.ResumeLayout(false);
             viewMessagePanel.ResumeLayout(false);
+            reportsPanelInbox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -1964,5 +1978,6 @@
         private Label welcomeLabelAdmin;
         private Label label25;
         public PictureBox adminPictureBox;
+        public PictureBox pictureBox1;
     }
 }
