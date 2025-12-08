@@ -43,41 +43,8 @@
             payrollButt = new Button();
             createpayslipButton = new Button();
             draftButton = new Button();
-            panel = new Panel();
-            panel5 = new Panel();
-            viewButt = new Button();
-            dataGridView2 = new DataGridView();
-            button4 = new Button();
-            panel1 = new Panel();
-            textBox3 = new TextBox();
-            dateTimePicker1 = new DateTimePicker();
-            label10 = new Label();
-            label9 = new Label();
-            label1 = new Label();
-            SSSPanel = new Panel();
-            dataGridView1 = new DataGridView();
-            panel4 = new Panel();
-            button2 = new Button();
-            taxButt = new Button();
-            pagibigButt = new Button();
-            taxLabel = new Label();
-            phButt = new Button();
-            sssButton = new Button();
-            label2 = new Label();
-            reportPanel = new Panel();
-            report = new Label();
-            viewpayslipPanel = new Panel();
-            panel2 = new Panel();
-            closeButt = new Button();
-            button5 = new Button();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
-            label8 = new Label();
-            label7 = new Label();
-            label6 = new Label();
-            label5 = new Label();
-            label4 = new Label();
-            label3 = new Label();
+            payslipPanel = new Panel();
+            label46 = new Label();
             panela = new Panel();
             panel3 = new Panel();
             button6 = new Button();
@@ -155,23 +122,50 @@
             label13 = new Label();
             label12 = new Label();
             label11 = new Label();
+            viewpayslipPanel = new Panel();
+            panel2 = new Panel();
+            closeButt = new Button();
+            button5 = new Button();
+            textBox2 = new TextBox();
+            textBox1 = new TextBox();
+            label8 = new Label();
+            label7 = new Label();
+            label6 = new Label();
+            label5 = new Label();
+            label4 = new Label();
+            label3 = new Label();
+            panel = new Panel();
+            panel5 = new Panel();
+            viewButt = new Button();
+            dataGridView2 = new DataGridView();
+            button4 = new Button();
+            panel1 = new Panel();
+            textBox3 = new TextBox();
+            dateTimePicker1 = new DateTimePicker();
+            label10 = new Label();
+            label9 = new Label();
+            label1 = new Label();
+            SSSPanel = new Panel();
+            dataGridView1 = new DataGridView();
+            panel4 = new Panel();
+            button2 = new Button();
+            taxButt = new Button();
+            pagibigButt = new Button();
+            taxLabel = new Label();
+            phButt = new Button();
+            sssButton = new Button();
+            label2 = new Label();
+            reportPanel = new Panel();
+            report = new Label();
             deductionsPanel = new Panel();
             label44 = new Label();
             payrollPanel = new Panel();
             label45 = new Label();
-            payslipPanel = new Panel();
-            label46 = new Label();
             archivedPanel = new Panel();
             label47 = new Label();
             messagesPanel.SuspendLayout();
             sidePanel.SuspendLayout();
-            panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
-            panel1.SuspendLayout();
-            SSSPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            reportPanel.SuspendLayout();
-            viewpayslipPanel.SuspendLayout();
+            payslipPanel.SuspendLayout();
             panela.SuspendLayout();
             panel6.SuspendLayout();
             panel19.SuspendLayout();
@@ -186,9 +180,15 @@
             panel11.SuspendLayout();
             panel9.SuspendLayout();
             panel8.SuspendLayout();
+            viewpayslipPanel.SuspendLayout();
+            panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
+            panel1.SuspendLayout();
+            SSSPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            reportPanel.SuspendLayout();
             deductionsPanel.SuspendLayout();
             payrollPanel.SuspendLayout();
-            payslipPanel.SuspendLayout();
             archivedPanel.SuspendLayout();
             SuspendLayout();
             // 
@@ -288,6 +288,7 @@
             archivedButton.TabIndex = 7;
             archivedButton.Text = "Archived";
             archivedButton.UseVisualStyleBackColor = false;
+            archivedButton.Click += archivedButton_Click;
             // 
             // reportButt
             // 
@@ -362,450 +363,27 @@
             draftButton.Text = "Draft";
             draftButton.UseVisualStyleBackColor = false;
             // 
-            // panel
-            // 
-            panel.BackColor = Color.White;
-            panel.Controls.Add(panel5);
-            panel.Controls.Add(viewButt);
-            panel.Controls.Add(dataGridView2);
-            panel.Controls.Add(button4);
-            panel.Controls.Add(panel1);
-            panel.Controls.Add(label1);
-            panel.Location = new Point(17, 24);
-            panel.Name = "panel";
-            panel.Size = new Size(1094, 758);
-            panel.TabIndex = 2;
-            // 
-            // panel5
-            // 
-            panel5.BackgroundImage = Properties.Resources.TopPanelBg;
-            panel5.BackgroundImageLayout = ImageLayout.Stretch;
-            panel5.Location = new Point(1, 0);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(1092, 67);
-            panel5.TabIndex = 24;
-            // 
-            // viewButt
-            // 
-            viewButt.BackColor = Color.FromArgb(148, 59, 68);
-            viewButt.FlatAppearance.BorderSize = 0;
-            viewButt.FlatStyle = FlatStyle.Flat;
-            viewButt.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            viewButt.ForeColor = Color.Snow;
-            viewButt.Location = new Point(903, 650);
-            viewButt.Margin = new Padding(3, 2, 3, 2);
-            viewButt.Name = "viewButt";
-            viewButt.Size = new Size(158, 51);
-            viewButt.TabIndex = 5;
-            viewButt.Text = "View";
-            viewButt.UseVisualStyleBackColor = false;
-            viewButt.Click += viewButt_Click;
-            // 
-            // dataGridView2
-            // 
-            dataGridView2.BackgroundColor = Color.FromArgb(100, 28, 28);
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(14, 227);
-            dataGridView2.Margin = new Padding(3, 2, 3, 2);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.RowHeadersWidth = 51;
-            dataGridView2.Size = new Size(1066, 380);
-            dataGridView2.TabIndex = 4;
-            // 
-            // button4
-            // 
-            button4.BackColor = Color.FromArgb(148, 59, 68);
-            button4.BackgroundImage = Properties.Resources.PanelBG;
-            button4.FlatAppearance.BorderSize = 0;
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Times New Roman", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button4.ForeColor = Color.Snow;
-            button4.Location = new Point(738, 113);
-            button4.Margin = new Padding(3, 2, 3, 2);
-            button4.Name = "button4";
-            button4.Size = new Size(239, 52);
-            button4.TabIndex = 3;
-            button4.Text = "Generate";
-            button4.UseVisualStyleBackColor = false;
-            // 
-            // panel1
-            // 
-            panel1.BackColor = Color.FromArgb(100, 28, 28);
-            panel1.BackgroundImage = Properties.Resources.PanelBG;
-            panel1.Controls.Add(textBox3);
-            panel1.Controls.Add(dateTimePicker1);
-            panel1.Controls.Add(label10);
-            panel1.Controls.Add(label9);
-            panel1.Location = new Point(18, 83);
-            panel1.Margin = new Padding(3, 2, 3, 2);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(704, 109);
-            panel1.TabIndex = 2;
-            // 
-            // textBox3
-            // 
-            textBox3.BackColor = Color.FromArgb(178, 139, 139);
-            textBox3.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox3.Location = new Point(321, 46);
-            textBox3.Margin = new Padding(3, 2, 3, 2);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(325, 39);
-            textBox3.TabIndex = 4;
-            // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dateTimePicker1.Location = new Point(20, 46);
-            dateTimePicker1.Margin = new Padding(3, 2, 3, 2);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(219, 39);
-            dateTimePicker1.TabIndex = 3;
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Times New Roman", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label10.ForeColor = Color.Snow;
-            label10.Location = new Point(319, 9);
-            label10.Name = "label10";
-            label10.Size = new Size(100, 25);
-            label10.TabIndex = 1;
-            label10.Text = "Employee";
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Times New Roman", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label9.ForeColor = Color.Snow;
-            label9.Location = new Point(20, 7);
-            label9.Name = "label9";
-            label9.Size = new Size(108, 25);
-            label9.TabIndex = 0;
-            label9.Text = "Pay Period";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(14, 14);
-            label1.Name = "label1";
-            label1.Size = new Size(71, 25);
-            label1.TabIndex = 1;
-            label1.Text = "payroll";
-            // 
-            // SSSPanel
-            // 
-            SSSPanel.BackColor = Color.White;
-            SSSPanel.Controls.Add(dataGridView1);
-            SSSPanel.Controls.Add(panel4);
-            SSSPanel.Controls.Add(button2);
-            SSSPanel.Controls.Add(taxButt);
-            SSSPanel.Controls.Add(pagibigButt);
-            SSSPanel.Controls.Add(taxLabel);
-            SSSPanel.Controls.Add(phButt);
-            SSSPanel.Controls.Add(sssButton);
-            SSSPanel.Controls.Add(label2);
-            SSSPanel.ForeColor = Color.White;
-            SSSPanel.Location = new Point(13, 24);
-            SSSPanel.Name = "SSSPanel";
-            SSSPanel.Size = new Size(1094, 758);
-            SSSPanel.TabIndex = 3;
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.AllowUserToResizeColumns = false;
-            dataGridView1.AllowUserToResizeRows = false;
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView1.BackgroundColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle1.Font = new Font("Times New Roman", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(168, 74, 74);
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(119, 19, 19);
-            dataGridViewCellStyle2.Font = new Font("Times New Roman", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(158, 71, 71);
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
-            dataGridView1.GridColor = Color.White;
-            dataGridView1.Location = new Point(23, 202);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(139, 37, 37);
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle3.ForeColor = Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = Color.IndianRed;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridView1.Size = new Size(1052, 528);
-            dataGridView1.TabIndex = 34;
-            // 
-            // panel4
-            // 
-            panel4.BackgroundImage = Properties.Resources.TopPanelBg;
-            panel4.BackgroundImageLayout = ImageLayout.Stretch;
-            panel4.Location = new Point(1, 1);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(1092, 67);
-            panel4.TabIndex = 24;
-            // 
-            // button2
-            // 
-            button2.BackColor = Color.FromArgb(148, 59, 68);
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Times New Roman", 18F, FontStyle.Bold);
-            button2.Location = new Point(917, 89);
-            button2.Margin = new Padding(3, 2, 3, 2);
-            button2.Name = "button2";
-            button2.Size = new Size(151, 60);
-            button2.TabIndex = 9;
-            button2.Text = "Edit";
-            button2.UseVisualStyleBackColor = false;
-            // 
-            // taxButt
-            // 
-            taxButt.BackColor = Color.FromArgb(148, 59, 68);
-            taxButt.FlatAppearance.BorderSize = 0;
-            taxButt.FlatStyle = FlatStyle.Flat;
-            taxButt.ForeColor = Color.White;
-            taxButt.Location = new Point(474, 99);
-            taxButt.Margin = new Padding(3, 2, 3, 2);
-            taxButt.Name = "taxButt";
-            taxButt.Size = new Size(131, 46);
-            taxButt.TabIndex = 7;
-            taxButt.Text = "Tax";
-            taxButt.UseVisualStyleBackColor = false;
-            taxButt.Click += taxButt_Click;
-            // 
-            // pagibigButt
-            // 
-            pagibigButt.BackColor = Color.FromArgb(148, 59, 68);
-            pagibigButt.FlatAppearance.BorderSize = 0;
-            pagibigButt.FlatStyle = FlatStyle.Flat;
-            pagibigButt.ForeColor = Color.White;
-            pagibigButt.Location = new Point(338, 99);
-            pagibigButt.Margin = new Padding(3, 2, 3, 2);
-            pagibigButt.Name = "pagibigButt";
-            pagibigButt.Size = new Size(131, 46);
-            pagibigButt.TabIndex = 6;
-            pagibigButt.Text = "Pag-Ibig";
-            pagibigButt.UseVisualStyleBackColor = false;
-            pagibigButt.Click += pagibigButt_Click;
-            // 
-            // taxLabel
-            // 
-            taxLabel.AutoSize = true;
-            taxLabel.Font = new Font("Times New Roman", 28.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            taxLabel.ForeColor = Color.FromArgb(105, 18, 18);
-            taxLabel.Location = new Point(430, 154);
-            taxLabel.Name = "taxLabel";
-            taxLabel.Size = new Size(304, 43);
-            taxLabel.TabIndex = 5;
-            taxLabel.Text = "SSS Contribution";
-            // 
-            // phButt
-            // 
-            phButt.BackColor = Color.FromArgb(148, 59, 68);
-            phButt.FlatAppearance.BorderSize = 0;
-            phButt.FlatStyle = FlatStyle.Flat;
-            phButt.ForeColor = Color.White;
-            phButt.Location = new Point(201, 99);
-            phButt.Margin = new Padding(3, 2, 3, 2);
-            phButt.Name = "phButt";
-            phButt.Size = new Size(131, 46);
-            phButt.TabIndex = 4;
-            phButt.Text = "PhilHealth";
-            phButt.UseVisualStyleBackColor = false;
-            phButt.Click += phButt_Click;
-            // 
-            // sssButton
-            // 
-            sssButton.BackColor = Color.FromArgb(148, 59, 68);
-            sssButton.FlatAppearance.BorderSize = 0;
-            sssButton.FlatStyle = FlatStyle.Flat;
-            sssButton.ForeColor = Color.White;
-            sssButton.Location = new Point(65, 99);
-            sssButton.Margin = new Padding(3, 2, 3, 2);
-            sssButton.Name = "sssButton";
-            sssButton.Size = new Size(131, 46);
-            sssButton.TabIndex = 3;
-            sssButton.Text = "SSS";
-            sssButton.UseVisualStyleBackColor = false;
-            sssButton.Click += sssButton_Click;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(14, 14);
-            label2.Name = "label2";
-            label2.Size = new Size(71, 25);
-            label2.TabIndex = 1;
-            label2.Text = "deduct";
-            // 
-            // reportPanel
-            // 
-            reportPanel.BackColor = Color.FromArgb(255, 224, 192);
-            reportPanel.Controls.Add(report);
-            reportPanel.Location = new Point(273, 0);
-            reportPanel.Name = "reportPanel";
-            reportPanel.Size = new Size(1135, 821);
-            reportPanel.TabIndex = 4;
-            // 
-            // report
-            // 
-            report.AutoSize = true;
-            report.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            report.Location = new Point(14, 14);
-            report.Name = "report";
-            report.Size = new Size(66, 25);
-            report.TabIndex = 1;
-            report.Text = "report";
-            // 
-            // viewpayslipPanel
-            // 
-            viewpayslipPanel.AutoScroll = true;
-            viewpayslipPanel.BackColor = Color.Snow;
-            viewpayslipPanel.Controls.Add(panel2);
-            viewpayslipPanel.Controls.Add(closeButt);
-            viewpayslipPanel.Controls.Add(button5);
-            viewpayslipPanel.Controls.Add(textBox2);
-            viewpayslipPanel.Controls.Add(textBox1);
-            viewpayslipPanel.Controls.Add(label8);
-            viewpayslipPanel.Controls.Add(label7);
-            viewpayslipPanel.Controls.Add(label6);
-            viewpayslipPanel.Controls.Add(label5);
-            viewpayslipPanel.Controls.Add(label4);
-            viewpayslipPanel.Controls.Add(label3);
-            viewpayslipPanel.Location = new Point(14, 27);
-            viewpayslipPanel.Name = "viewpayslipPanel";
-            viewpayslipPanel.Size = new Size(1094, 758);
-            viewpayslipPanel.TabIndex = 3;
-            // 
-            // panel2
-            // 
-            panel2.BackgroundImage = Properties.Resources.TopPanelBg;
-            panel2.BackgroundImageLayout = ImageLayout.Stretch;
-            panel2.Location = new Point(2, 0);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(1092, 67);
-            panel2.TabIndex = 23;
-            // 
-            // closeButt
-            // 
-            closeButt.Location = new Point(895, 680);
-            closeButt.Margin = new Padding(3, 2, 3, 2);
-            closeButt.Name = "closeButt";
-            closeButt.Size = new Size(82, 22);
-            closeButt.TabIndex = 10;
-            closeButt.Text = "Close";
-            closeButt.UseVisualStyleBackColor = true;
-            closeButt.Click += closeButt_Click;
-            // 
-            // button5
-            // 
-            button5.Location = new Point(224, 688);
-            button5.Margin = new Padding(3, 2, 3, 2);
-            button5.Name = "button5";
-            button5.Size = new Size(82, 22);
-            button5.TabIndex = 9;
-            button5.Text = "Download";
-            button5.UseVisualStyleBackColor = true;
-            // 
-            // textBox2
-            // 
-            textBox2.BackColor = Color.FromArgb(221, 221, 221);
-            textBox2.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox2.Location = new Point(173, 224);
-            textBox2.Margin = new Padding(3, 2, 3, 2);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(287, 36);
-            textBox2.TabIndex = 8;
-            // 
-            // textBox1
-            // 
-            textBox1.BackColor = Color.FromArgb(221, 221, 221);
-            textBox1.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(173, 169);
-            textBox1.Margin = new Padding(3, 2, 3, 2);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(287, 36);
-            textBox1.TabIndex = 7;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Times New Roman", 13.8F);
-            label8.Location = new Point(523, 233);
-            label8.Name = "label8";
-            label8.Size = new Size(59, 21);
-            label8.TabIndex = 6;
-            label8.Text = "Period";
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Times New Roman", 13.8F);
-            label7.Location = new Point(523, 176);
-            label7.Name = "label7";
-            label7.Size = new Size(96, 21);
-            label7.TabIndex = 5;
-            label7.Text = "Department";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Times New Roman", 13.8F);
-            label6.Location = new Point(29, 236);
-            label6.Name = "label6";
-            label6.Size = new Size(71, 21);
-            label6.TabIndex = 4;
-            label6.Text = "Position";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Times New Roman", 13.8F);
-            label5.Location = new Point(24, 176);
-            label5.Name = "label5";
-            label5.Size = new Size(132, 21);
-            label5.TabIndex = 3;
-            label5.Text = "Employee Name";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Times New Roman", 28.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.ForeColor = Color.FromArgb(105, 18, 18);
-            label4.Location = new Point(440, 94);
-            label4.Name = "label4";
-            label4.Size = new Size(291, 43);
-            label4.TabIndex = 2;
-            label4.Text = "VIEW PAYSLIP";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(14, 14);
-            label3.Name = "label3";
-            label3.Size = new Size(53, 25);
-            label3.TabIndex = 1;
-            label3.Text = "View";
+            // payslipPanel
+            // 
+            payslipPanel.Controls.Add(label46);
+            payslipPanel.Controls.Add(panela);
+            payslipPanel.Controls.Add(viewpayslipPanel);
+            payslipPanel.Location = new Point(273, 0);
+            payslipPanel.Name = "payslipPanel";
+            payslipPanel.Size = new Size(1135, 821);
+            payslipPanel.TabIndex = 28;
+            // 
+            // label46
+            // 
+            label46.AutoSize = true;
+            label46.BackColor = Color.Transparent;
+            label46.Font = new Font("Segoe UI", 9F);
+            label46.ForeColor = Color.Black;
+            label46.Location = new Point(12, 9);
+            label46.Name = "label46";
+            label46.Size = new Size(73, 15);
+            label46.TabIndex = 13;
+            label46.Text = "payslipPanel";
             // 
             // panela
             // 
@@ -1615,6 +1193,451 @@
             label11.TabIndex = 2;
             label11.Text = "PAYSLIP";
             // 
+            // viewpayslipPanel
+            // 
+            viewpayslipPanel.AutoScroll = true;
+            viewpayslipPanel.BackColor = Color.Snow;
+            viewpayslipPanel.Controls.Add(panel2);
+            viewpayslipPanel.Controls.Add(closeButt);
+            viewpayslipPanel.Controls.Add(button5);
+            viewpayslipPanel.Controls.Add(textBox2);
+            viewpayslipPanel.Controls.Add(textBox1);
+            viewpayslipPanel.Controls.Add(label8);
+            viewpayslipPanel.Controls.Add(label7);
+            viewpayslipPanel.Controls.Add(label6);
+            viewpayslipPanel.Controls.Add(label5);
+            viewpayslipPanel.Controls.Add(label4);
+            viewpayslipPanel.Controls.Add(label3);
+            viewpayslipPanel.Location = new Point(14, 27);
+            viewpayslipPanel.Name = "viewpayslipPanel";
+            viewpayslipPanel.Size = new Size(1094, 758);
+            viewpayslipPanel.TabIndex = 3;
+            // 
+            // panel2
+            // 
+            panel2.BackgroundImage = Properties.Resources.TopPanelBg;
+            panel2.BackgroundImageLayout = ImageLayout.Stretch;
+            panel2.Location = new Point(2, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(1092, 67);
+            panel2.TabIndex = 23;
+            // 
+            // closeButt
+            // 
+            closeButt.Location = new Point(895, 680);
+            closeButt.Margin = new Padding(3, 2, 3, 2);
+            closeButt.Name = "closeButt";
+            closeButt.Size = new Size(82, 22);
+            closeButt.TabIndex = 10;
+            closeButt.Text = "Close";
+            closeButt.UseVisualStyleBackColor = true;
+            closeButt.Click += closeButt_Click;
+            // 
+            // button5
+            // 
+            button5.Location = new Point(224, 688);
+            button5.Margin = new Padding(3, 2, 3, 2);
+            button5.Name = "button5";
+            button5.Size = new Size(82, 22);
+            button5.TabIndex = 9;
+            button5.Text = "Download";
+            button5.UseVisualStyleBackColor = true;
+            // 
+            // textBox2
+            // 
+            textBox2.BackColor = Color.FromArgb(221, 221, 221);
+            textBox2.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBox2.Location = new Point(173, 224);
+            textBox2.Margin = new Padding(3, 2, 3, 2);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(287, 36);
+            textBox2.TabIndex = 8;
+            // 
+            // textBox1
+            // 
+            textBox1.BackColor = Color.FromArgb(221, 221, 221);
+            textBox1.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBox1.Location = new Point(173, 169);
+            textBox1.Margin = new Padding(3, 2, 3, 2);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(287, 36);
+            textBox1.TabIndex = 7;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Times New Roman", 13.8F);
+            label8.Location = new Point(523, 233);
+            label8.Name = "label8";
+            label8.Size = new Size(59, 21);
+            label8.TabIndex = 6;
+            label8.Text = "Period";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Times New Roman", 13.8F);
+            label7.Location = new Point(523, 176);
+            label7.Name = "label7";
+            label7.Size = new Size(96, 21);
+            label7.TabIndex = 5;
+            label7.Text = "Department";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Times New Roman", 13.8F);
+            label6.Location = new Point(29, 236);
+            label6.Name = "label6";
+            label6.Size = new Size(71, 21);
+            label6.TabIndex = 4;
+            label6.Text = "Position";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Times New Roman", 13.8F);
+            label5.Location = new Point(24, 176);
+            label5.Name = "label5";
+            label5.Size = new Size(132, 21);
+            label5.TabIndex = 3;
+            label5.Text = "Employee Name";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Times New Roman", 28.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.FromArgb(105, 18, 18);
+            label4.Location = new Point(440, 94);
+            label4.Name = "label4";
+            label4.Size = new Size(291, 43);
+            label4.TabIndex = 2;
+            label4.Text = "VIEW PAYSLIP";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Location = new Point(14, 14);
+            label3.Name = "label3";
+            label3.Size = new Size(53, 25);
+            label3.TabIndex = 1;
+            label3.Text = "View";
+            // 
+            // panel
+            // 
+            panel.BackColor = Color.White;
+            panel.Controls.Add(panel5);
+            panel.Controls.Add(viewButt);
+            panel.Controls.Add(dataGridView2);
+            panel.Controls.Add(button4);
+            panel.Controls.Add(panel1);
+            panel.Controls.Add(label1);
+            panel.Location = new Point(17, 24);
+            panel.Name = "panel";
+            panel.Size = new Size(1094, 758);
+            panel.TabIndex = 2;
+            // 
+            // panel5
+            // 
+            panel5.BackgroundImage = Properties.Resources.TopPanelBg;
+            panel5.BackgroundImageLayout = ImageLayout.Stretch;
+            panel5.Location = new Point(1, 0);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(1092, 67);
+            panel5.TabIndex = 24;
+            // 
+            // viewButt
+            // 
+            viewButt.BackColor = Color.FromArgb(148, 59, 68);
+            viewButt.FlatAppearance.BorderSize = 0;
+            viewButt.FlatStyle = FlatStyle.Flat;
+            viewButt.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            viewButt.ForeColor = Color.Snow;
+            viewButt.Location = new Point(903, 650);
+            viewButt.Margin = new Padding(3, 2, 3, 2);
+            viewButt.Name = "viewButt";
+            viewButt.Size = new Size(158, 51);
+            viewButt.TabIndex = 5;
+            viewButt.Text = "View";
+            viewButt.UseVisualStyleBackColor = false;
+            viewButt.Click += viewButt_Click;
+            // 
+            // dataGridView2
+            // 
+            dataGridView2.BackgroundColor = Color.FromArgb(100, 28, 28);
+            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView2.Location = new Point(14, 227);
+            dataGridView2.Margin = new Padding(3, 2, 3, 2);
+            dataGridView2.Name = "dataGridView2";
+            dataGridView2.RowHeadersWidth = 51;
+            dataGridView2.Size = new Size(1066, 380);
+            dataGridView2.TabIndex = 4;
+            // 
+            // button4
+            // 
+            button4.BackColor = Color.FromArgb(148, 59, 68);
+            button4.BackgroundImage = Properties.Resources.PanelBG;
+            button4.FlatAppearance.BorderSize = 0;
+            button4.FlatStyle = FlatStyle.Flat;
+            button4.Font = new Font("Times New Roman", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button4.ForeColor = Color.Snow;
+            button4.Location = new Point(738, 113);
+            button4.Margin = new Padding(3, 2, 3, 2);
+            button4.Name = "button4";
+            button4.Size = new Size(239, 52);
+            button4.TabIndex = 3;
+            button4.Text = "Generate";
+            button4.UseVisualStyleBackColor = false;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(100, 28, 28);
+            panel1.BackgroundImage = Properties.Resources.PanelBG;
+            panel1.Controls.Add(textBox3);
+            panel1.Controls.Add(dateTimePicker1);
+            panel1.Controls.Add(label10);
+            panel1.Controls.Add(label9);
+            panel1.Location = new Point(18, 83);
+            panel1.Margin = new Padding(3, 2, 3, 2);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(704, 109);
+            panel1.TabIndex = 2;
+            // 
+            // textBox3
+            // 
+            textBox3.BackColor = Color.FromArgb(178, 139, 139);
+            textBox3.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBox3.Location = new Point(321, 46);
+            textBox3.Margin = new Padding(3, 2, 3, 2);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(325, 39);
+            textBox3.TabIndex = 4;
+            // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dateTimePicker1.Location = new Point(20, 46);
+            dateTimePicker1.Margin = new Padding(3, 2, 3, 2);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(219, 39);
+            dateTimePicker1.TabIndex = 3;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new Font("Times New Roman", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label10.ForeColor = Color.Snow;
+            label10.Location = new Point(319, 9);
+            label10.Name = "label10";
+            label10.Size = new Size(100, 25);
+            label10.TabIndex = 1;
+            label10.Text = "Employee";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Times New Roman", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label9.ForeColor = Color.Snow;
+            label9.Location = new Point(20, 7);
+            label9.Name = "label9";
+            label9.Size = new Size(108, 25);
+            label9.TabIndex = 0;
+            label9.Text = "Pay Period";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(14, 14);
+            label1.Name = "label1";
+            label1.Size = new Size(71, 25);
+            label1.TabIndex = 1;
+            label1.Text = "payroll";
+            // 
+            // SSSPanel
+            // 
+            SSSPanel.BackColor = Color.White;
+            SSSPanel.Controls.Add(dataGridView1);
+            SSSPanel.Controls.Add(panel4);
+            SSSPanel.Controls.Add(button2);
+            SSSPanel.Controls.Add(taxButt);
+            SSSPanel.Controls.Add(pagibigButt);
+            SSSPanel.Controls.Add(taxLabel);
+            SSSPanel.Controls.Add(phButt);
+            SSSPanel.Controls.Add(sssButton);
+            SSSPanel.Controls.Add(label2);
+            SSSPanel.ForeColor = Color.White;
+            SSSPanel.Location = new Point(13, 24);
+            SSSPanel.Name = "SSSPanel";
+            SSSPanel.Size = new Size(1094, 758);
+            SSSPanel.TabIndex = 3;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.AllowUserToResizeColumns = false;
+            dataGridView1.AllowUserToResizeRows = false;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.BackgroundColor = Color.FromArgb(146, 45, 51);
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(146, 45, 51);
+            dataGridViewCellStyle1.Font = new Font("Times New Roman", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(168, 74, 74);
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(119, 19, 19);
+            dataGridViewCellStyle2.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(158, 71, 71);
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridView1.GridColor = Color.White;
+            dataGridView1.Location = new Point(23, 202);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(139, 37, 37);
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = Color.IndianRed;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridView1.Size = new Size(1052, 528);
+            dataGridView1.TabIndex = 34;
+            // 
+            // panel4
+            // 
+            panel4.BackgroundImage = Properties.Resources.TopPanelBg;
+            panel4.BackgroundImageLayout = ImageLayout.Stretch;
+            panel4.Location = new Point(1, 1);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(1092, 67);
+            panel4.TabIndex = 24;
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.FromArgb(148, 59, 68);
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Times New Roman", 18F, FontStyle.Bold);
+            button2.Location = new Point(929, 101);
+            button2.Margin = new Padding(3, 2, 3, 2);
+            button2.Name = "button2";
+            button2.Size = new Size(146, 46);
+            button2.TabIndex = 9;
+            button2.Text = "Edit";
+            button2.UseVisualStyleBackColor = false;
+            // 
+            // taxButt
+            // 
+            taxButt.BackColor = Color.FromArgb(148, 59, 68);
+            taxButt.FlatAppearance.BorderSize = 0;
+            taxButt.FlatStyle = FlatStyle.Flat;
+            taxButt.ForeColor = Color.White;
+            taxButt.Location = new Point(474, 99);
+            taxButt.Margin = new Padding(3, 2, 3, 2);
+            taxButt.Name = "taxButt";
+            taxButt.Size = new Size(131, 46);
+            taxButt.TabIndex = 7;
+            taxButt.Text = "Tax";
+            taxButt.UseVisualStyleBackColor = false;
+            taxButt.Click += taxButt_Click;
+            // 
+            // pagibigButt
+            // 
+            pagibigButt.BackColor = Color.FromArgb(148, 59, 68);
+            pagibigButt.FlatAppearance.BorderSize = 0;
+            pagibigButt.FlatStyle = FlatStyle.Flat;
+            pagibigButt.ForeColor = Color.White;
+            pagibigButt.Location = new Point(338, 99);
+            pagibigButt.Margin = new Padding(3, 2, 3, 2);
+            pagibigButt.Name = "pagibigButt";
+            pagibigButt.Size = new Size(131, 46);
+            pagibigButt.TabIndex = 6;
+            pagibigButt.Text = "Pag-Ibig";
+            pagibigButt.UseVisualStyleBackColor = false;
+            pagibigButt.Click += pagibigButt_Click;
+            // 
+            // taxLabel
+            // 
+            taxLabel.AutoSize = true;
+            taxLabel.Font = new Font("Times New Roman", 28.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            taxLabel.ForeColor = Color.FromArgb(105, 18, 18);
+            taxLabel.Location = new Point(430, 154);
+            taxLabel.Name = "taxLabel";
+            taxLabel.Size = new Size(304, 43);
+            taxLabel.TabIndex = 5;
+            taxLabel.Text = "SSS Contribution";
+            // 
+            // phButt
+            // 
+            phButt.BackColor = Color.FromArgb(148, 59, 68);
+            phButt.FlatAppearance.BorderSize = 0;
+            phButt.FlatStyle = FlatStyle.Flat;
+            phButt.ForeColor = Color.White;
+            phButt.Location = new Point(201, 99);
+            phButt.Margin = new Padding(3, 2, 3, 2);
+            phButt.Name = "phButt";
+            phButt.Size = new Size(131, 46);
+            phButt.TabIndex = 4;
+            phButt.Text = "PhilHealth";
+            phButt.UseVisualStyleBackColor = false;
+            phButt.Click += phButt_Click;
+            // 
+            // sssButton
+            // 
+            sssButton.BackColor = Color.FromArgb(148, 59, 68);
+            sssButton.FlatAppearance.BorderSize = 0;
+            sssButton.FlatStyle = FlatStyle.Flat;
+            sssButton.ForeColor = Color.White;
+            sssButton.Location = new Point(65, 99);
+            sssButton.Margin = new Padding(3, 2, 3, 2);
+            sssButton.Name = "sssButton";
+            sssButton.Size = new Size(131, 46);
+            sssButton.TabIndex = 3;
+            sssButton.Text = "SSS";
+            sssButton.UseVisualStyleBackColor = false;
+            sssButton.Click += sssButton_Click;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(14, 14);
+            label2.Name = "label2";
+            label2.Size = new Size(71, 25);
+            label2.TabIndex = 1;
+            label2.Text = "deduct";
+            // 
+            // reportPanel
+            // 
+            reportPanel.BackColor = Color.FromArgb(255, 224, 192);
+            reportPanel.Controls.Add(report);
+            reportPanel.Location = new Point(273, 0);
+            reportPanel.Name = "reportPanel";
+            reportPanel.Size = new Size(1135, 821);
+            reportPanel.TabIndex = 4;
+            // 
+            // report
+            // 
+            report.AutoSize = true;
+            report.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            report.Location = new Point(14, 14);
+            report.Name = "report";
+            report.Size = new Size(66, 25);
+            report.TabIndex = 1;
+            report.Text = "report";
+            // 
             // deductionsPanel
             // 
             deductionsPanel.Controls.Add(label44);
@@ -1657,28 +1680,6 @@
             label45.TabIndex = 12;
             label45.Text = "payrollPanel";
             // 
-            // payslipPanel
-            // 
-            payslipPanel.Controls.Add(label46);
-            payslipPanel.Controls.Add(viewpayslipPanel);
-            payslipPanel.Controls.Add(panela);
-            payslipPanel.Location = new Point(273, 0);
-            payslipPanel.Name = "payslipPanel";
-            payslipPanel.Size = new Size(1135, 821);
-            payslipPanel.TabIndex = 28;
-            // 
-            // label46
-            // 
-            label46.AutoSize = true;
-            label46.BackColor = Color.Transparent;
-            label46.Font = new Font("Segoe UI", 9F);
-            label46.ForeColor = Color.Black;
-            label46.Location = new Point(12, 9);
-            label46.Name = "label46";
-            label46.Size = new Size(73, 15);
-            label46.TabIndex = 13;
-            label46.Text = "payslipPanel";
-            // 
             // archivedPanel
             // 
             archivedPanel.Controls.Add(label47);
@@ -1707,10 +1708,10 @@
             ClientSize = new Size(1389, 782);
             Controls.Add(sidePanel);
             Controls.Add(deductionsPanel);
-            Controls.Add(archivedPanel);
+            Controls.Add(payslipPanel);
             Controls.Add(reportPanel);
             Controls.Add(messagesPanel);
-            Controls.Add(payslipPanel);
+            Controls.Add(archivedPanel);
             Controls.Add(payrollPanel);
             Name = "AccountantForm";
             StartPosition = FormStartPosition.CenterScreen;
@@ -1720,18 +1721,8 @@
             messagesPanel.PerformLayout();
             sidePanel.ResumeLayout(false);
             sidePanel.PerformLayout();
-            panel.ResumeLayout(false);
-            panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            SSSPanel.ResumeLayout(false);
-            SSSPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            reportPanel.ResumeLayout(false);
-            reportPanel.PerformLayout();
-            viewpayslipPanel.ResumeLayout(false);
-            viewpayslipPanel.PerformLayout();
+            payslipPanel.ResumeLayout(false);
+            payslipPanel.PerformLayout();
             panela.ResumeLayout(false);
             panela.PerformLayout();
             panel6.ResumeLayout(false);
@@ -1759,12 +1750,22 @@
             panel9.PerformLayout();
             panel8.ResumeLayout(false);
             panel8.PerformLayout();
+            viewpayslipPanel.ResumeLayout(false);
+            viewpayslipPanel.PerformLayout();
+            panel.ResumeLayout(false);
+            panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            SSSPanel.ResumeLayout(false);
+            SSSPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            reportPanel.ResumeLayout(false);
+            reportPanel.PerformLayout();
             deductionsPanel.ResumeLayout(false);
             deductionsPanel.PerformLayout();
             payrollPanel.ResumeLayout(false);
             payrollPanel.PerformLayout();
-            payslipPanel.ResumeLayout(false);
-            payslipPanel.PerformLayout();
             archivedPanel.ResumeLayout(false);
             archivedPanel.PerformLayout();
             ResumeLayout(false);

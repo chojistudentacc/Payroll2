@@ -37,7 +37,7 @@ namespace Payroll
         private void payslipButt_Click(object sender, EventArgs e)
         {
             hideAllPanels();
-            panela.Visible = true;
+            payslipPanel.Visible = true;
         }
 
         private void messagesButt_Click(object sender, EventArgs e)
@@ -55,12 +55,12 @@ namespace Payroll
 
         private void hideAllPanels()
         {
-            panela.Visible = false;
-            viewpayslipPanel.Visible = false;
-            SSSPanel.Visible = false;
+            payrollPanel.Visible = false;
+            payslipPanel.Visible = false;
+            deductionsPanel.Visible = false;
             reportPanel.Visible = false;
             messagesPanel.Visible = false;
-            panel.Visible = false;
+            archivedPanel.Visible = false;
         }
 
         private void showLogin()
@@ -76,13 +76,13 @@ namespace Payroll
         private void payrollButt_Click(object sender, EventArgs e)
         {
             hideAllPanels();
-            panel.Visible = true;
+            payrollPanel.Visible = true;
         }
 
         private void deductButt_Click(object sender, EventArgs e)
         {
             hideAllPanels();
-            SSSPanel.Visible = true;
+            deductionsPanel.Visible = true;
             GenerateSSSTable();
         }
 
@@ -92,9 +92,16 @@ namespace Payroll
             reportPanel.Visible = true;
         }
 
+        private void archivedButton_Click(object sender, EventArgs e)
+        {
+            hideAllPanels();
+            archivedPanel.Visible = true;
+        }
+
         private void phButt_Click(object sender, EventArgs e)
         {
-
+            taxLabel.Text = "PhilHealth Contribution";
+            GeneratePhilHealthTable();
         }
 
         private void sssButton_Click(object sender, EventArgs e)
@@ -105,13 +112,15 @@ namespace Payroll
 
         private void pagibigButt_Click(object sender, EventArgs e)
         {
-
+            taxLabel.Text = "Pag-IBIG Contribution";
+            GeneratePagIBIGTable();
 
         }
 
         private void taxButt_Click(object sender, EventArgs e)
         {
-
+            taxLabel.Text = "Withholding Tax Table";
+            GenerateWithholdingTaxTable();
 
         }
 
@@ -209,25 +218,26 @@ namespace Payroll
             double startMin = 5250;
             double startMax = 5749.99;
 
-            double deductionStart = 275;   
+            double deductionStart = 275;
             double deductionStep = 25;
 
             int rows = 50;
 
 
-            if (dataGridView1.Columns.Count == 0)
-            {
-                dataGridView1.Columns.Add("Range", "Salary Range");
+            dataGridView1.Columns.Clear();
+
+
+            dataGridView1.Columns.Add("Range", "Salary Range");
                 dataGridView1.Columns.Add("Employer", "Employer Share");
                 dataGridView1.Columns.Add("Employee", "Employee Share");
-            }
+         
 
             dataGridView1.Rows.Clear();
 
 
             string belowRange = "Below 5250";
-            string employee = "250";      
-            string employer = "500";      
+            string employee = "250";
+            string employer = "500";
 
             dataGridView1.Rows.Add(belowRange, employee, employer);
 
@@ -246,6 +256,88 @@ namespace Payroll
 
                 dataGridView1.Rows.Add(rangeText, employerText, employeeText);
             }
+        }
+
+        private void GeneratePhilHealthTable()
+        {
+            if (dataGridView1.Columns.Count == 0)
+            {
+                dataGridView1.Columns.Add("Range", "Salary Range");
+                dataGridView1.Columns.Add("Employer", "Employer Share (2.5%)");
+                dataGridView1.Columns.Add("Employee", "Employee Share (2.5%)");
+            }
+
+            dataGridView1.Rows.Clear();
+
+            // Salary ranges
+            dataGridView1.Rows.Add("0 - 9,999", "2.5%", "2.5%");
+            dataGridView1.Rows.Add("10,000 - 99,999", "2.5%", "2.5%");
+            dataGridView1.Rows.Add("100,000 and above", "2.5%", "2.5%");
+
+        }
+
+        private void GeneratePagIBIGTable()
+        {
+            if (dataGridView1.Columns.Count == 0)
+            {
+                dataGridView1.Columns.Add("Range", "Salary Range");
+                dataGridView1.Columns.Add("Employer", "Employer Share");
+                dataGridView1.Columns.Add("Employee", "Employee Share");
+            }
+            dataGridView1.Rows.Clear();
+            // Salary ranges
+            dataGridView1.Rows.Add("500 - 1,500", "2%", "1%");
+            dataGridView1.Rows.Add("1-501 Above", "2%", "2%");
+        }
+
+        private void GenerateWithholdingTaxTable()
+        {
+            double startMin = 0;
+            double startMax = 20833;
+
+            double[] nextRanges = { 33333, 66666, 166666, 666666 };
+            double[] rates = { 0, 20, 25, 30, 32, 35 };
+
+            string[] formulas =
+                {
+                "NONE",
+                "20% excess over 20,833",
+                "2,500 + 25% excess",
+                "10,833 + 30% excess",
+                "40,833 + 32% excess",
+                "200,833 + 35% excess"
+            };
+            
+            dataGridView1.Columns.Clear();
+            
+            dataGridView1.Columns.Add("Range", "Salary Range");
+            dataGridView1.Columns.Add("Rate", "Deduction Rate");
+            dataGridView1.Columns.Add("Compute", "Tax Computation");
+
+            dataGridView1.Rows.Clear();
+
+
+            // FIRST ROW (0 - 20,833)
+            dataGridView1.Rows.Add("0 - 20,833", "0%", "NONE");
+
+            double min = 20833;
+            double max;
+
+            // MIDDLE ROWS (20,833 – 666,666)
+            for (int i = 0; i < nextRanges.Length; i++)
+            {
+                max = nextRanges[i];
+
+                string rangeText = $"{min:N0} - {max:N0}";
+                string rateText = rates[i + 1] + "%";
+                string formulaText = formulas[i + 1];
+
+                dataGridView1.Rows.Add(rangeText, rateText, formulaText);
+
+                min = max;
+            }
+
+            dataGridView1.Rows.Add("Above 666,666", "35%", "200,833 + 35% excess");
         }
 
 
