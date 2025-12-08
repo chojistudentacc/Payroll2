@@ -35,6 +35,7 @@
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             timer1 = new System.Windows.Forms.Timer(components);
             panel2 = new Panel();
+            pictureBox2 = new PictureBox();
             profileButton = new Button();
             payslipButton = new Button();
             leavesButton = new Button();
@@ -76,9 +77,9 @@
             label6 = new Label();
             label5 = new Label();
             label4 = new Label();
-            pictureBox1 = new PictureBox();
             label3 = new Label();
             panel8 = new Panel();
+            pictureBox1 = new PictureBox();
             label2 = new Label();
             panel = new Panel();
             panel10 = new Panel();
@@ -108,8 +109,8 @@
             alabel = new Label();
             payslipPanel = new Panel();
             label23 = new Label();
-            pictureBox2 = new PictureBox();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel1.SuspendLayout();
             panel5.SuspendLayout();
             panel4.SuspendLayout();
@@ -129,7 +130,6 @@
             ((System.ComponentModel.ISupportInitialize)logDataGridView).BeginInit();
             leavePanel.SuspendLayout();
             payslipPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // panel2
@@ -150,6 +150,15 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(273, 782);
             panel2.TabIndex = 1;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.BackColor = Color.White;
+            pictureBox2.Location = new Point(12, 23);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(107, 93);
+            pictureBox2.TabIndex = 11;
+            pictureBox2.TabStop = false;
             // 
             // profileButton
             // 
@@ -685,14 +694,6 @@
             label4.TabIndex = 4;
             label4.Text = "Employee ID:";
             // 
-            // pictureBox1
-            // 
-            pictureBox1.Location = new Point(432, 118);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(184, 153);
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
-            // 
             // label3
             // 
             label3.AutoSize = true;
@@ -712,6 +713,14 @@
             panel8.Name = "panel8";
             panel8.Size = new Size(1092, 67);
             panel8.TabIndex = 3;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Location = new Point(432, 118);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(184, 153);
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
             // 
             // label2
             // 
@@ -1068,15 +1077,6 @@
             label23.TabIndex = 0;
             label23.Text = "payslipPanel";
             // 
-            // pictureBox2
-            // 
-            pictureBox2.BackColor = Color.White;
-            pictureBox2.Location = new Point(12, 23);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(107, 93);
-            pictureBox2.TabIndex = 11;
-            pictureBox2.TabStop = false;
-            // 
             // EmployeeForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -1096,6 +1096,7 @@
             Load += EmployeeForm_Load;
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel5.ResumeLayout(false);
@@ -1130,7 +1131,6 @@
             leavePanel.PerformLayout();
             payslipPanel.ResumeLayout(false);
             payslipPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
         }
 

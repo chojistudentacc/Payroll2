@@ -37,7 +37,7 @@ namespace Payroll
         private void payslipButt_Click(object sender, EventArgs e)
         {
             hideAllPanels();
-            payslipPanel.Visible = true;
+            panela.Visible = true;
         }
 
         private void messagesButt_Click(object sender, EventArgs e)
@@ -55,12 +55,12 @@ namespace Payroll
 
         private void hideAllPanels()
         {
-            payslipPanel.Visible = false;
+            panela.Visible = false;
             viewpayslipPanel.Visible = false;
-            deductionPanel.Visible = false;
+            SSSPanel.Visible = false;
             reportPanel.Visible = false;
             messagesPanel.Visible = false;
-            payrollpanel.Visible = false;
+            panel.Visible = false;
         }
 
         private void showLogin()
@@ -76,13 +76,14 @@ namespace Payroll
         private void payrollButt_Click(object sender, EventArgs e)
         {
             hideAllPanels();
-            payrollpanel.Visible = true;
+            panel.Visible = true;
         }
 
         private void deductButt_Click(object sender, EventArgs e)
         {
             hideAllPanels();
-            deductionPanel.Visible = true;
+            SSSPanel.Visible = true;
+            GenerateSSSTable();
         }
 
         private void reportButt_Click(object sender, EventArgs e)
@@ -93,22 +94,25 @@ namespace Payroll
 
         private void phButt_Click(object sender, EventArgs e)
         {
-            taxLabel.Text = "PhilHealth Contribution";
+
         }
 
         private void sssButton_Click(object sender, EventArgs e)
         {
             taxLabel.Text = "SSS Contribution";
+            GenerateSSSTable();
         }
 
         private void pagibigButt_Click(object sender, EventArgs e)
         {
-            taxLabel.Text = "Pag-IBIG Contribution";
+
+
         }
 
         private void taxButt_Click(object sender, EventArgs e)
         {
-            taxLabel.Text = "Witholding Tax";
+
+
         }
 
         private void viewButt_Click(object sender, EventArgs e)
@@ -125,7 +129,7 @@ namespace Payroll
         private void closeButt_Click(object sender, EventArgs e)
         {
             hideAllPanels();
-            payrollpanel.Visible = true;
+            panel.Visible = true;
             payrollButt.Enabled = true;
             payslipButt.Enabled = true;
             deductButt.Enabled = true;
@@ -166,7 +170,6 @@ namespace Payroll
 
 
 
-
         private void button6_Click(object sender, EventArgs e)
         {
             double sss = 0, pagibig = 0, philhealth = 0, tax = 0, others = 0;
@@ -189,7 +192,7 @@ namespace Payroll
             deductButt.Location = new Point(0, 437);
             reportButt.Location = new Point(0, 511);
             messagesButt.Location = new Point(0, 584);
-            archievedButton.Location = new Point(0, 658);
+            archivedButton.Location = new Point(0, 658);
         }
 
         private void payslipButt_MouseLeave(object sender, EventArgs e)
@@ -197,7 +200,55 @@ namespace Payroll
             deductButt.Location = new Point(0, 321);
             reportButt.Location = new Point(0, 395);
             messagesButt.Location = new Point(0, 468);
-            archievedButton.Location = new Point(0, 542);
+            archivedButton.Location = new Point(0, 542);
         }
+
+
+        private void GenerateSSSTable()
+        {
+            double startMin = 5250;
+            double startMax = 5749.99;
+
+            double deductionStart = 275;   
+            double deductionStep = 25;
+
+            int rows = 50;
+
+
+            if (dataGridView1.Columns.Count == 0)
+            {
+                dataGridView1.Columns.Add("Range", "Salary Range");
+                dataGridView1.Columns.Add("Employer", "Employer Share");
+                dataGridView1.Columns.Add("Employee", "Employee Share");
+            }
+
+            dataGridView1.Rows.Clear();
+
+
+            string belowRange = "Below 5250";
+            string employee = "250";      
+            string employer = "500";      
+
+            dataGridView1.Rows.Add(belowRange, employee, employer);
+
+
+            for (int i = 0; i < rows; i++)
+            {
+                double minRange = startMin + (i * 500);
+                double maxRange = startMax + (i * 500);
+                double employeeShare = deductionStart + (i * deductionStep);
+
+                double employerShare = employeeShare * 2;
+
+                string rangeText = $"{minRange:F2} - {maxRange:F2}";
+                string employeeText = employeeShare.ToString("F2");
+                string employerText = employerShare.ToString("F2");
+
+                dataGridView1.Rows.Add(rangeText, employerText, employeeText);
+            }
+        }
+
+
+
     }
 }
