@@ -24,6 +24,7 @@ namespace Payroll
         private string originalDepartmentName = "";
         private string localEmailID = "";
         private string localEmailStatus = "";
+        private Image currentImage;
 
         public AdminForm(LoginForm login, string userName)
         {
@@ -52,7 +53,11 @@ namespace Payroll
 
             welcomeLabelAdmin.Text = repo.getAdminID(userName);
             repo.LoadPicture(repo.getAdminID(userName), adminPictureBox);
+
             adminPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            userDataGridPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            addEmployeePictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            editEmployeePictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
 
             roleComboBox.Items.Add("Employee");
             roleComboBox.Items.Add("Human Resources");
@@ -241,7 +246,8 @@ namespace Payroll
                 userNameTB.Text != "" &&
                 passTB.Text != "" &&
                 positionComboBox.Text != "" &&
-                (activeRadioButt.Checked || inactiveRadioButt.Checked))
+                (activeRadioButt.Checked || inactiveRadioButt.Checked) &&
+                addEmployeePictureBox.Image != null)
             {
                 if (positionComboBox.Text.Equals("Employee"))
                 {
@@ -256,6 +262,7 @@ namespace Payroll
                     emp.Password = passTB.Text;
                     emp.Status = activeRadioButt.Checked ? "Active" : "Inactive";
                     repo.AddEmployee(emp);
+                    repo.SavePictureToProject(repo.getEmployeeID(emp.UserName), currentImage);
 
                     string activity = "Add Employee";
                     string logDetails = $"Added Employee: {emp.FirstName} {emp.LastName} \nUsername: {emp.UserName} \nStatus: {emp.Status}";
@@ -280,6 +287,7 @@ namespace Payroll
                     acc.Password = passTB.Text;
                     acc.Status = activeRadioButt.Checked ? "Active" : "Inactive";
                     repo.AddAccountant(acc);
+                    repo.SavePictureToProject(repo.getAccountantID(acc.UserName), currentImage);
 
                     string activity = "Add Accountant";
                     string logDetails = $"Added Accountant: {acc.FirstName} {acc.LastName} \nUsername: {acc.UserName} \nStatus: {acc.Status}";
@@ -304,6 +312,7 @@ namespace Payroll
                     hr.Password = passTB.Text;
                     hr.Status = activeRadioButt.Checked ? "Active" : "Inactive";
                     repo.addHr(hr);
+                    repo.SavePictureToProject(repo.getHRID(hr.UserName), currentImage);
 
                     string activity = "Add HR";
                     string logDetails = $"Added HR: {hr.FirstName} {hr.LastName} \nUsername: {hr.UserName} \nStatus: {hr.Status}";
@@ -557,6 +566,8 @@ namespace Payroll
             string status = row.Cells["status"].Value.ToString();
             editEmployeeActiveRB.Checked = (status == "Active");
             editEmployeeInactiveRB.Checked = (status == "Inactive");
+            
+            repo.LoadPicture(selectedID, userDataGridPictureBox);
         }
 
         private void editEmployeeResetPasswordButt_Click(object sender, EventArgs e)
@@ -616,6 +627,7 @@ namespace Payroll
                         r.Password = selectedPassword;
                         r.Status = editEmployeeActiveRB.Checked ? "Active" : "Inactive";
                         repo.UpdateEmployee(r);
+                        repo.SavePictureToProject(r.EmployeeID, editEmployeePictureBox.Image);
 
                         string activity = "Update Employee";
                         string logDetails = $"Updated Employee: {r.FirstName} {r.LastName} \nEmployee ID: {r.EmployeeID} \nStatus: {r.Status}";
@@ -639,6 +651,7 @@ namespace Payroll
                         r.Password = selectedPassword;
                         r.Status = editEmployeeActiveRB.Checked ? "Active" : "Inactive";
                         repo.UpdateAccountant(r);
+                        repo.SavePictureToProject(r.EmployeeID, editEmployeePictureBox.Image);
 
                         string activity = "Update Accountant";
                         string logDetails = $"Updated Accountant: {r.FirstName} {r.LastName} \nEmployee ID: {r.EmployeeID} \nStatus: {r.Status}";
@@ -662,6 +675,7 @@ namespace Payroll
                         r.Password = selectedPassword;
                         r.Status = editEmployeeActiveRB.Checked ? "Active" : "Inactive";
                         repo.UpdateHR(r);
+                        repo.SavePictureToProject(r.EmployeeID, editEmployeePictureBox.Image);
 
                         string activity = "Update HR";
                         string logDetails = $"Updated HR: {r.FirstName} {r.LastName} \nEmployee ID: {r.EmployeeID} \nStatus: {r.Status}";
@@ -992,11 +1006,29 @@ namespace Payroll
                 {
                     Image img = Image.FromFile(dlg.FileName);
 
-                    adminPictureBox.Image = img;
+                    addEmployeePictureBox.Image = img;
+                    currentImage = img;
 
-                    repo.SavePictureToProject(repo.getAdminID(userName), img);
                 }
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog dlg = new OpenFileDialog())
+            {
+                dlg.Filter = "Image Files | *.jpg; *.png; *.jpeg";
+
+                if (dlg.ShowDialog() == DialogResult.OK)
+                {
+                    Image img = Image.FromFile(dlg.FileName);
+
+                    editEmployeePictureBox.Image = img;
+                    currentImage = img;
+
+                }
+            }
+        }
+
     }
 }
