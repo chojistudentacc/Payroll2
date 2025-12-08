@@ -1624,6 +1624,31 @@ namespace Payroll
 
             return null;
         }
+
+        public bool UpdatePasswordOnly(string employeeID, string newPassword)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    string sql = "UPDATE employeeData SET password = @pass WHERE employeeID = @id";
+
+                    using (SqlCommand cmd = new SqlCommand(sql, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@pass", newPassword);
+                        cmd.Parameters.AddWithValue("@id", employeeID);
+                        return cmd.ExecuteNonQuery() > 0;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error updating password: " + ex.Message);
+                return false;
+            }
+        }
         public DataTable GetEmployeeAttendance(string employeeID)
         {
             DataTable table = new DataTable();
