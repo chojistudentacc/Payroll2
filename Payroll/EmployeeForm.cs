@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Payroll
-{   
+{
     public partial class EmployeeForm : Form
     {
         LoginForm login;
@@ -40,6 +40,7 @@ namespace Payroll
             LoadEmployeeProfile();
             LoadAttendanceData();
             dashboardPanel.Visible = true;
+            fillLeaveScreen();
         }
 
 
@@ -64,10 +65,51 @@ namespace Payroll
             payslipPanel.Visible = true;
         }
 
+        // leaves
         private void leavesButton_Click(object sender, EventArgs e)
         {
             hideAllPanels();
             leavePanel.Visible = true;
+            fillLeaveScreen();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            leaveFormCB.Items.Add("Standard Leave");
+            leaveFormCB.Items.Add("Sick Leave");
+            leaveFormCB.Items.Add("Vacation Leave");
+            leaveFormCB.Items.Add("Emergecy Leave");
+            leaveFormCB.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            leaveSummaryPanel.Visible = false;
+            createLeavePanel.Visible = true;
+        }
+
+        private void fillLeaveScreen()
+        {
+            DataRow row = repo.GetLeaveCredits(currentEmployeeID);
+
+            if (row != null)
+            {
+                label33.Text = "LEAVE CREDITS: " + row["leaveCredit"].ToString();
+                label34.Text = "SICK LEAVE REMAINING: " + row["sickLeave"].ToString();
+                label35.Text = "VACATION LEAVE REMAINING: " + row["vacationLeave"].ToString();
+                label36.Text = "EMERGENCY LEAVE REMAINING: " + row["emergencyLeave"].ToString();
+            }
+
+        }
+
+        private void createLeaveCancelButt_Click(object sender, EventArgs e)
+        {
+            leaveFormCB.Text = "";
+            leaveFormCB.Items.Clear();
+            leaveStartDatePicker.Value = DateTime.Now;
+            leaveEndDatePicker.Value = DateTime.Now;
+            leaveRichTB.Text = "";
+
+            leaveSummaryPanel.Visible = true;
+            createLeavePanel.Visible = false;
         }
 
         private void attendanceButt_Click(object sender, EventArgs e)
@@ -100,7 +142,9 @@ namespace Payroll
 
                     employeeProfileIDLabel.Text = employeeData["employeeID"].ToString();
                     employeeProfileNameLabel.Text = $"{employeeData["firstName"]} {employeeData["middleName"]} {employeeData["lastName"]}";
-                    employeeName.Text = $"{employeeData["firstName"]}";
+                    employeeName.Text = $"{employeeData["employeeID"]}";
+                    employeeName.AutoSize = false;
+                    employeeName.TextAlign = ContentAlignment.MiddleCenter;
 
                     employeeProfileUserIDLabel.Text = employeeData["username"].ToString();
 
@@ -197,5 +241,7 @@ namespace Payroll
                 }
             }
         }
+
+        
     }
 }

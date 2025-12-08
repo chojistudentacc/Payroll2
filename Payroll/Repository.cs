@@ -11,7 +11,7 @@ namespace Payroll
     {
 
         private string csvFilePath = @"C:\Users\User\Documents\EmployeeArchive.csv";
-        private readonly string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\chandrei0212\\source\\repos\\Payroll4\\Payroll\\Payroll.mdf;Integrated Security=True";
+        private readonly string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\Choji Kodachi\\Documents\\!! bruh !!\\Payroll2\\Payroll\\Payroll.mdf\";Integrated Security=True";
 
         public int GetEmailDataRowCount()
         {
@@ -1792,6 +1792,43 @@ namespace Payroll
                 return false;
             }
         }
+
+        public DataRow GetLeaveCredits(string id)
+        {
+            DataTable table = new DataTable();
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    string sql =
+                        "SELECT leaveCredit, sickLeave, vacationLeave, emergencyLeave, status " +
+                        "FROM leaveCreditData WHERE employeeID = @id";
+
+                    using (SqlCommand cmd = new SqlCommand(sql, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@id", id);
+                        using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                        {
+                            adapter.Fill(table);
+                        }
+                    }
+                }
+
+                if (table.Rows.Count > 0)
+                    return table.Rows[0];
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading leave credits: " + ex.Message);
+            }
+
+            return null;
+        }
+
+
     }
 }
 
