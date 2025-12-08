@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminForm));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle37 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle38 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle39 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle40 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle41 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle42 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle43 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle44 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle45 = new DataGridViewCellStyle();
             sidePanel = new Panel();
             welcomeLabelAdmin = new Label();
             adminPictureBox = new PictureBox();
@@ -168,6 +168,8 @@
             reportsDropDownCB = new ComboBox();
             panel10 = new Panel();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            label26 = new Label();
+            label27 = new Label();
             sidePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)adminPictureBox).BeginInit();
             dashPanel.SuspendLayout();
@@ -391,7 +393,7 @@
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Georgia", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(9, 4);
+            label3.Location = new Point(8, 4);
             label3.Name = "label3";
             label3.Size = new Size(151, 23);
             label3.TabIndex = 0;
@@ -402,7 +404,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Georgia", 24.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.FromArgb(130, 0, 0);
-            label2.Location = new Point(371, 26);
+            label2.Location = new Point(371, 22);
             label2.Name = "label2";
             label2.Size = new Size(305, 38);
             label2.TabIndex = 0;
@@ -433,6 +435,8 @@
             // userPanelAdd
             // 
             userPanelAdd.BackColor = Color.White;
+            userPanelAdd.Controls.Add(label27);
+            userPanelAdd.Controls.Add(label26);
             userPanelAdd.Controls.Add(pictureBox1);
             userPanelAdd.Controls.Add(cancelButt);
             userPanelAdd.Controls.Add(clearButt);
@@ -471,9 +475,9 @@
             // 
             pictureBox1.BackColor = Color.White;
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox1.Location = new Point(897, 95);
+            pictureBox1.Location = new Point(793, 141);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(107, 93);
+            pictureBox1.Size = new Size(150, 124);
             pictureBox1.TabIndex = 30;
             pictureBox1.TabStop = false;
             // 
@@ -483,7 +487,7 @@
             cancelButt.FlatStyle = FlatStyle.Flat;
             cancelButt.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
             cancelButt.ForeColor = Color.White;
-            cancelButt.Location = new Point(743, 567);
+            cancelButt.Location = new Point(743, 641);
             cancelButt.Name = "cancelButt";
             cancelButt.Size = new Size(261, 55);
             cancelButt.TabIndex = 29;
@@ -497,7 +501,7 @@
             clearButt.FlatStyle = FlatStyle.Flat;
             clearButt.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
             clearButt.ForeColor = Color.White;
-            clearButt.Location = new Point(418, 567);
+            clearButt.Location = new Point(418, 641);
             clearButt.Name = "clearButt";
             clearButt.Size = new Size(261, 55);
             clearButt.TabIndex = 28;
@@ -511,7 +515,7 @@
             saveButt.FlatStyle = FlatStyle.Flat;
             saveButt.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
             saveButt.ForeColor = Color.White;
-            saveButt.Location = new Point(85, 567);
+            saveButt.Location = new Point(85, 641);
             saveButt.Name = "saveButt";
             saveButt.Size = new Size(261, 55);
             saveButt.TabIndex = 27;
@@ -523,7 +527,7 @@
             // 
             inactiveRadioButt.AutoSize = true;
             inactiveRadioButt.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
-            inactiveRadioButt.Location = new Point(258, 425);
+            inactiveRadioButt.Location = new Point(290, 487);
             inactiveRadioButt.Name = "inactiveRadioButt";
             inactiveRadioButt.Size = new Size(107, 27);
             inactiveRadioButt.TabIndex = 26;
@@ -536,7 +540,7 @@
             // 
             activeRadioButt.AutoSize = true;
             activeRadioButt.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
-            activeRadioButt.Location = new Point(168, 425);
+            activeRadioButt.Location = new Point(168, 487);
             activeRadioButt.Name = "activeRadioButt";
             activeRadioButt.Size = new Size(89, 27);
             activeRadioButt.TabIndex = 25;
@@ -549,7 +553,7 @@
             // 
             statusLabel.AutoSize = true;
             statusLabel.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
-            statusLabel.Location = new Point(73, 427);
+            statusLabel.Location = new Point(63, 487);
             statusLabel.Name = "statusLabel";
             statusLabel.Size = new Size(79, 23);
             statusLabel.TabIndex = 24;
@@ -559,7 +563,7 @@
             // 
             positionComboBox.Font = new Font("Times New Roman", 15.75F);
             positionComboBox.FormattingEnabled = true;
-            positionComboBox.Location = new Point(168, 364);
+            positionComboBox.Location = new Point(168, 438);
             positionComboBox.Name = "positionComboBox";
             positionComboBox.Size = new Size(320, 31);
             positionComboBox.TabIndex = 23;
@@ -568,7 +572,7 @@
             // 
             positionLabel.AutoSize = true;
             positionLabel.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
-            positionLabel.Location = new Point(57, 367);
+            positionLabel.Location = new Point(61, 442);
             positionLabel.Name = "positionLabel";
             positionLabel.Size = new Size(99, 23);
             positionLabel.TabIndex = 22;
@@ -577,7 +581,7 @@
             // passTB
             // 
             passTB.Font = new Font("Times New Roman", 15.75F);
-            passTB.Location = new Point(733, 361);
+            passTB.Location = new Point(733, 438);
             passTB.Name = "passTB";
             passTB.Size = new Size(271, 32);
             passTB.TabIndex = 21;
@@ -585,7 +589,7 @@
             // userNameTB
             // 
             userNameTB.Font = new Font("Times New Roman", 15.75F);
-            userNameTB.Location = new Point(733, 310);
+            userNameTB.Location = new Point(733, 387);
             userNameTB.Name = "userNameTB";
             userNameTB.Size = new Size(271, 32);
             userNameTB.TabIndex = 20;
@@ -594,7 +598,7 @@
             // 
             passLabel.AutoSize = true;
             passLabel.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
-            passLabel.Location = new Point(594, 364);
+            passLabel.Location = new Point(596, 442);
             passLabel.Name = "passLabel";
             passLabel.Size = new Size(112, 23);
             passLabel.TabIndex = 19;
@@ -604,7 +608,7 @@
             // 
             userNameLabel.AutoSize = true;
             userNameLabel.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
-            userNameLabel.Location = new Point(594, 313);
+            userNameLabel.Location = new Point(594, 390);
             userNameLabel.Name = "userNameLabel";
             userNameLabel.Size = new Size(126, 23);
             userNameLabel.TabIndex = 18;
@@ -616,7 +620,7 @@
             generateCredetialsButt.FlatStyle = FlatStyle.Flat;
             generateCredetialsButt.Font = new Font("Times New Roman", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             generateCredetialsButt.ForeColor = Color.White;
-            generateCredetialsButt.Location = new Point(800, 413);
+            generateCredetialsButt.Location = new Point(800, 490);
             generateCredetialsButt.Name = "generateCredetialsButt";
             generateCredetialsButt.Size = new Size(204, 36);
             generateCredetialsButt.TabIndex = 17;
@@ -627,7 +631,7 @@
             // addressTB
             // 
             addressTB.Font = new Font("Times New Roman", 15.75F);
-            addressTB.Location = new Point(733, 256);
+            addressTB.Location = new Point(733, 333);
             addressTB.Name = "addressTB";
             addressTB.Size = new Size(271, 32);
             addressTB.TabIndex = 14;
@@ -635,7 +639,7 @@
             // emailTB
             // 
             emailTB.Font = new Font("Times New Roman", 15.75F);
-            emailTB.Location = new Point(733, 205);
+            emailTB.Location = new Point(733, 282);
             emailTB.Name = "emailTB";
             emailTB.Size = new Size(271, 32);
             emailTB.TabIndex = 13;
@@ -644,7 +648,7 @@
             // 
             addressLabel.AutoSize = true;
             addressLabel.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
-            addressLabel.Location = new Point(594, 264);
+            addressLabel.Location = new Point(594, 341);
             addressLabel.Name = "addressLabel";
             addressLabel.Size = new Size(98, 23);
             addressLabel.TabIndex = 12;
@@ -654,7 +658,7 @@
             // 
             emailLabel.AutoSize = true;
             emailLabel.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
-            emailLabel.Location = new Point(594, 213);
+            emailLabel.Location = new Point(594, 290);
             emailLabel.Name = "emailLabel";
             emailLabel.Size = new Size(75, 23);
             emailLabel.TabIndex = 11;
@@ -663,7 +667,7 @@
             // contactNoTB
             // 
             contactNoTB.Font = new Font("Times New Roman", 15.75F);
-            contactNoTB.Location = new Point(217, 259);
+            contactNoTB.Location = new Point(217, 336);
             contactNoTB.Name = "contactNoTB";
             contactNoTB.Size = new Size(271, 32);
             contactNoTB.TabIndex = 10;
@@ -671,7 +675,7 @@
             // middleNameTB
             // 
             middleNameTB.Font = new Font("Times New Roman", 15.75F);
-            middleNameTB.Location = new Point(217, 208);
+            middleNameTB.Location = new Point(217, 285);
             middleNameTB.Name = "middleNameTB";
             middleNameTB.Size = new Size(271, 32);
             middleNameTB.TabIndex = 9;
@@ -680,7 +684,7 @@
             // 
             contactNoLabel.AutoSize = true;
             contactNoLabel.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
-            contactNoLabel.Location = new Point(57, 262);
+            contactNoLabel.Location = new Point(57, 339);
             contactNoLabel.Name = "contactNoLabel";
             contactNoLabel.Size = new Size(126, 23);
             contactNoLabel.TabIndex = 8;
@@ -690,7 +694,7 @@
             // 
             middleNameLabel.AutoSize = true;
             middleNameLabel.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
-            middleNameLabel.Location = new Point(57, 211);
+            middleNameLabel.Location = new Point(57, 288);
             middleNameLabel.Name = "middleNameLabel";
             middleNameLabel.Size = new Size(149, 23);
             middleNameLabel.TabIndex = 7;
@@ -699,7 +703,7 @@
             // firstNameTB
             // 
             firstNameTB.Font = new Font("Times New Roman", 15.75F);
-            firstNameTB.Location = new Point(217, 159);
+            firstNameTB.Location = new Point(217, 236);
             firstNameTB.Name = "firstNameTB";
             firstNameTB.Size = new Size(271, 32);
             firstNameTB.TabIndex = 6;
@@ -707,7 +711,7 @@
             // lastNameTB
             // 
             lastNameTB.Font = new Font("Times New Roman", 15.75F);
-            lastNameTB.Location = new Point(217, 108);
+            lastNameTB.Location = new Point(217, 185);
             lastNameTB.Name = "lastNameTB";
             lastNameTB.Size = new Size(271, 32);
             lastNameTB.TabIndex = 5;
@@ -716,7 +720,7 @@
             // 
             firstNameLabel.AutoSize = true;
             firstNameLabel.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
-            firstNameLabel.Location = new Point(57, 162);
+            firstNameLabel.Location = new Point(57, 239);
             firstNameLabel.Name = "firstNameLabel";
             firstNameLabel.Size = new Size(127, 23);
             firstNameLabel.TabIndex = 4;
@@ -726,7 +730,7 @@
             // 
             lastNameLabel.AutoSize = true;
             lastNameLabel.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
-            lastNameLabel.Location = new Point(57, 111);
+            lastNameLabel.Location = new Point(57, 188);
             lastNameLabel.Name = "lastNameLabel";
             lastNameLabel.Size = new Size(121, 23);
             lastNameLabel.TabIndex = 3;
@@ -838,37 +842,37 @@
             userDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             userDataGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             userDataGridView.BackgroundColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(179, 79, 84);
-            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(255, 209, 211);
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            userDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle37.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle37.BackColor = Color.FromArgb(146, 45, 51);
+            dataGridViewCellStyle37.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle37.ForeColor = Color.White;
+            dataGridViewCellStyle37.SelectionBackColor = Color.FromArgb(179, 79, 84);
+            dataGridViewCellStyle37.SelectionForeColor = Color.FromArgb(255, 209, 211);
+            dataGridViewCellStyle37.WrapMode = DataGridViewTriState.True;
+            userDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle37;
             userDataGridView.ColumnHeadersHeight = 29;
             userDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(179, 79, 84);
-            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(255, 209, 211);
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            userDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle38.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle38.BackColor = Color.FromArgb(146, 45, 51);
+            dataGridViewCellStyle38.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle38.ForeColor = Color.White;
+            dataGridViewCellStyle38.SelectionBackColor = Color.FromArgb(179, 79, 84);
+            dataGridViewCellStyle38.SelectionForeColor = Color.FromArgb(255, 209, 211);
+            dataGridViewCellStyle38.WrapMode = DataGridViewTriState.True;
+            userDataGridView.DefaultCellStyle = dataGridViewCellStyle38;
             userDataGridView.EnableHeadersVisualStyles = false;
             userDataGridView.GridColor = Color.White;
             userDataGridView.Location = new Point(0, 190);
             userDataGridView.Name = "userDataGridView";
             userDataGridView.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle3.ForeColor = Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(179, 79, 84);
-            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(255, 209, 211);
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            userDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle39.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle39.BackColor = Color.FromArgb(146, 45, 51);
+            dataGridViewCellStyle39.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle39.ForeColor = Color.White;
+            dataGridViewCellStyle39.SelectionBackColor = Color.FromArgb(179, 79, 84);
+            dataGridViewCellStyle39.SelectionForeColor = Color.FromArgb(255, 209, 211);
+            dataGridViewCellStyle39.WrapMode = DataGridViewTriState.True;
+            userDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle39;
             userDataGridView.RowHeadersVisible = false;
             userDataGridView.RowHeadersWidth = 51;
             userDataGridView.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
@@ -1186,35 +1190,35 @@
             departmentDataGridView.AllowUserToResizeRows = false;
             departmentDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             departmentDataGridView.BackgroundColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle4.Font = new Font("Times New Roman", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle4.ForeColor = Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(168, 74, 74);
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            departmentDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle40.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle40.BackColor = Color.FromArgb(146, 45, 51);
+            dataGridViewCellStyle40.Font = new Font("Times New Roman", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle40.ForeColor = Color.White;
+            dataGridViewCellStyle40.SelectionBackColor = Color.FromArgb(168, 74, 74);
+            dataGridViewCellStyle40.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle40.WrapMode = DataGridViewTriState.True;
+            departmentDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle40;
             departmentDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = Color.FromArgb(119, 19, 19);
-            dataGridViewCellStyle5.Font = new Font("Times New Roman", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle5.ForeColor = Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(158, 71, 71);
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
-            departmentDataGridView.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle41.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle41.BackColor = Color.FromArgb(119, 19, 19);
+            dataGridViewCellStyle41.Font = new Font("Times New Roman", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle41.ForeColor = Color.White;
+            dataGridViewCellStyle41.SelectionBackColor = Color.FromArgb(158, 71, 71);
+            dataGridViewCellStyle41.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle41.WrapMode = DataGridViewTriState.False;
+            departmentDataGridView.DefaultCellStyle = dataGridViewCellStyle41;
             departmentDataGridView.GridColor = Color.White;
             departmentDataGridView.Location = new Point(17, 101);
             departmentDataGridView.Name = "departmentDataGridView";
             departmentDataGridView.ReadOnly = true;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = Color.FromArgb(139, 37, 37);
-            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle6.ForeColor = Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = Color.IndianRed;
-            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
-            departmentDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle42.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle42.BackColor = Color.FromArgb(139, 37, 37);
+            dataGridViewCellStyle42.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle42.ForeColor = Color.White;
+            dataGridViewCellStyle42.SelectionBackColor = Color.IndianRed;
+            dataGridViewCellStyle42.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle42.WrapMode = DataGridViewTriState.True;
+            departmentDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle42;
             departmentDataGridView.RowHeadersWidth = 51;
             departmentDataGridView.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             departmentDataGridView.Size = new Size(1052, 486);
@@ -1594,37 +1598,37 @@
             logDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             logDataGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             logDataGridView.BackgroundColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = Color.White;
-            dataGridViewCellStyle7.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle7.ForeColor = Color.Maroon;
-            dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(183, 89, 89);
-            dataGridViewCellStyle7.SelectionForeColor = Color.White;
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
-            logDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle43.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle43.BackColor = Color.White;
+            dataGridViewCellStyle43.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle43.ForeColor = Color.Maroon;
+            dataGridViewCellStyle43.SelectionBackColor = Color.FromArgb(183, 89, 89);
+            dataGridViewCellStyle43.SelectionForeColor = Color.White;
+            dataGridViewCellStyle43.WrapMode = DataGridViewTriState.True;
+            logDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle43;
             logDataGridView.ColumnHeadersHeight = 29;
             logDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle8.Font = new Font("Times New Roman", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle8.ForeColor = Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = Color.FromArgb(179, 79, 84);
-            dataGridViewCellStyle8.SelectionForeColor = Color.White;
-            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
-            logDataGridView.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle44.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle44.BackColor = Color.FromArgb(146, 45, 51);
+            dataGridViewCellStyle44.Font = new Font("Times New Roman", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle44.ForeColor = Color.White;
+            dataGridViewCellStyle44.SelectionBackColor = Color.FromArgb(179, 79, 84);
+            dataGridViewCellStyle44.SelectionForeColor = Color.White;
+            dataGridViewCellStyle44.WrapMode = DataGridViewTriState.True;
+            logDataGridView.DefaultCellStyle = dataGridViewCellStyle44;
             logDataGridView.EnableHeadersVisualStyles = false;
             logDataGridView.GridColor = Color.White;
             logDataGridView.Location = new Point(6, 159);
             logDataGridView.Name = "logDataGridView";
             logDataGridView.ReadOnly = true;
-            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle9.Font = new Font("Times New Roman", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle9.ForeColor = Color.White;
-            dataGridViewCellStyle9.SelectionBackColor = Color.FromArgb(179, 79, 84);
-            dataGridViewCellStyle9.SelectionForeColor = Color.White;
-            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.True;
-            logDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle45.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle45.BackColor = Color.FromArgb(146, 45, 51);
+            dataGridViewCellStyle45.Font = new Font("Times New Roman", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle45.ForeColor = Color.White;
+            dataGridViewCellStyle45.SelectionBackColor = Color.FromArgb(179, 79, 84);
+            dataGridViewCellStyle45.SelectionForeColor = Color.White;
+            dataGridViewCellStyle45.WrapMode = DataGridViewTriState.True;
+            logDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle45;
             logDataGridView.RowHeadersVisible = false;
             logDataGridView.RowHeadersWidth = 51;
             logDataGridView.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
@@ -1788,6 +1792,28 @@
             panel10.Size = new Size(1092, 67);
             panel10.TabIndex = 2;
             // 
+            // label26
+            // 
+            label26.AutoSize = true;
+            label26.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
+            label26.Location = new Point(595, 236);
+            label26.Name = "label26";
+            label26.Size = new Size(77, 23);
+            label26.TabIndex = 31;
+            label26.Text = "Image:";
+            // 
+            // label27
+            // 
+            label27.AutoSize = true;
+            label27.Font = new Font("Georgia", 26.25F, FontStyle.Bold);
+            label27.ForeColor = Color.FromArgb(125, 0, 0);
+            label27.Location = new Point(385, 85);
+            label27.Margin = new Padding(2, 0, 2, 0);
+            label27.Name = "label27";
+            label27.Size = new Size(305, 41);
+            label27.TabIndex = 32;
+            label27.Text = "INFORMATION";
+            // 
             // AdminForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -1795,11 +1821,11 @@
             BackColor = Color.FromArgb(17, 24, 34);
             ClientSize = new Size(1389, 782);
             Controls.Add(sidePanel);
+            Controls.Add(reportsPanel);
+            Controls.Add(logsPanel);
             Controls.Add(userPanel);
             Controls.Add(departmentPanel);
             Controls.Add(dashPanel);
-            Controls.Add(reportsPanel);
-            Controls.Add(logsPanel);
             Name = "AdminForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AdminForm";
@@ -1979,5 +2005,7 @@
         private Label label25;
         public PictureBox adminPictureBox;
         public PictureBox pictureBox1;
+        private Label label26;
+        private Label label27;
     }
 }

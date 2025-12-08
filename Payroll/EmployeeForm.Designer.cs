@@ -30,9 +30,9 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeeForm));
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle13 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle14 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle15 = new DataGridViewCellStyle();
             timer1 = new System.Windows.Forms.Timer(components);
             panel2 = new Panel();
             pictureBox2 = new PictureBox();
@@ -109,6 +109,11 @@
             alabel = new Label();
             payslipPanel = new Panel();
             label23 = new Label();
+            allEmpLB = new Label();
+            label18 = new Label();
+            label30 = new Label();
+            label31 = new Label();
+            pictureBox3 = new PictureBox();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel1.SuspendLayout();
@@ -130,6 +135,7 @@
             ((System.ComponentModel.ISupportInitialize)logDataGridView).BeginInit();
             leavePanel.SuspendLayout();
             payslipPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             SuspendLayout();
             // 
             // panel2
@@ -288,6 +294,7 @@
             panel1.Controls.Add(label3);
             panel1.Controls.Add(panel8);
             panel1.Controls.Add(pictureBox1);
+            panel1.Controls.Add(pictureBox3);
             panel1.ForeColor = Color.Black;
             panel1.Location = new Point(13, 29);
             panel1.Name = "panel1";
@@ -716,7 +723,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Location = new Point(432, 118);
+            pictureBox1.Location = new Point(430, 136);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(184, 153);
             pictureBox1.TabIndex = 0;
@@ -767,6 +774,7 @@
             // panel12
             // 
             panel12.BackgroundImage = Properties.Resources.PanelBG;
+            panel12.Controls.Add(label31);
             panel12.Controls.Add(label16);
             panel12.Location = new Point(814, 41);
             panel12.Margin = new Padding(2, 1, 2, 1);
@@ -778,18 +786,19 @@
             // 
             label16.AutoSize = true;
             label16.BackColor = Color.Transparent;
-            label16.Font = new Font("Segoe UI", 14.25F);
+            label16.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
             label16.ForeColor = Color.White;
-            label16.Location = new Point(16, 11);
+            label16.Location = new Point(10, 11);
             label16.Margin = new Padding(2, 0, 2, 0);
             label16.Name = "label16";
-            label16.Size = new Size(129, 25);
+            label16.Size = new Size(147, 23);
             label16.TabIndex = 0;
             label16.Text = "Next Pay Date";
             // 
             // panel11
             // 
             panel11.BackgroundImage = Properties.Resources.PanelBG;
+            panel11.Controls.Add(label30);
             panel11.Controls.Add(label13);
             panel11.Location = new Point(563, 41);
             panel11.Margin = new Padding(2, 1, 2, 1);
@@ -801,18 +810,19 @@
             // 
             label13.AutoSize = true;
             label13.BackColor = Color.Transparent;
-            label13.Font = new Font("Segoe UI", 14.25F);
+            label13.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
             label13.ForeColor = Color.White;
-            label13.Location = new Point(46, 11);
+            label13.Location = new Point(44, 11);
             label13.Margin = new Padding(2, 0, 2, 0);
             label13.Name = "label13";
-            label13.Size = new Size(68, 25);
+            label13.Size = new Size(77, 23);
             label13.TabIndex = 0;
             label13.Text = "Leaves";
             // 
             // panel9
             // 
             panel9.BackgroundImage = Properties.Resources.PanelBG;
+            panel9.Controls.Add(label18);
             panel9.Controls.Add(label12);
             panel9.Location = new Point(297, 41);
             panel9.Margin = new Padding(2, 1, 2, 1);
@@ -824,18 +834,19 @@
             // 
             label12.AutoSize = true;
             label12.BackColor = Color.Transparent;
-            label12.Font = new Font("Segoe UI", 14.25F);
+            label12.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
             label12.ForeColor = Color.White;
-            label12.Location = new Point(23, 11);
+            label12.Location = new Point(22, 11);
             label12.Margin = new Padding(2, 0, 2, 0);
             label12.Name = "label12";
-            label12.Size = new Size(108, 25);
+            label12.Size = new Size(122, 23);
             label12.TabIndex = 0;
             label12.Text = "Attendance";
             // 
             // panel7
             // 
             panel7.BackgroundImage = Properties.Resources.PanelBG;
+            panel7.Controls.Add(allEmpLB);
             panel7.Controls.Add(label11);
             panel7.Location = new Point(39, 41);
             panel7.Margin = new Padding(2, 1, 2, 1);
@@ -847,12 +858,12 @@
             // 
             label11.AutoSize = true;
             label11.BackColor = Color.Transparent;
-            label11.Font = new Font("Segoe UI", 14.25F);
+            label11.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
             label11.ForeColor = Color.White;
-            label11.Location = new Point(45, 11);
+            label11.Location = new Point(40, 11);
             label11.Margin = new Padding(2, 0, 2, 0);
             label11.Name = "label11";
-            label11.Size = new Size(76, 25);
+            label11.Size = new Size(85, 23);
             label11.TabIndex = 0;
             label11.Text = "Net Pay";
             // 
@@ -890,10 +901,11 @@
             // label24
             // 
             label24.AutoSize = true;
-            label24.Font = new Font("Segoe UI", 14.25F);
-            label24.Location = new Point(498, 16);
+            label24.Font = new Font("Georgia", 24.75F, FontStyle.Bold);
+            label24.ForeColor = Color.FromArgb(130, 0, 0);
+            label24.Location = new Point(419, 18);
             label24.Name = "label24";
-            label24.Size = new Size(124, 25);
+            label24.Size = new Size(254, 38);
             label24.TabIndex = 6;
             label24.Text = "Latest Payslip";
             // 
@@ -939,37 +951,37 @@
             logDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             logDataGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             logDataGridView.BackgroundColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle4.ForeColor = Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(179, 79, 84);
-            dataGridViewCellStyle4.SelectionForeColor = Color.FromArgb(255, 209, 211);
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            logDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle13.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.BackColor = Color.FromArgb(146, 45, 51);
+            dataGridViewCellStyle13.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle13.ForeColor = Color.White;
+            dataGridViewCellStyle13.SelectionBackColor = Color.FromArgb(179, 79, 84);
+            dataGridViewCellStyle13.SelectionForeColor = Color.FromArgb(255, 209, 211);
+            dataGridViewCellStyle13.WrapMode = DataGridViewTriState.True;
+            logDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
             logDataGridView.ColumnHeadersHeight = 29;
             logDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle5.ForeColor = Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(179, 79, 84);
-            dataGridViewCellStyle5.SelectionForeColor = Color.FromArgb(255, 209, 211);
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            logDataGridView.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle14.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.BackColor = Color.FromArgb(146, 45, 51);
+            dataGridViewCellStyle14.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle14.ForeColor = Color.White;
+            dataGridViewCellStyle14.SelectionBackColor = Color.FromArgb(179, 79, 84);
+            dataGridViewCellStyle14.SelectionForeColor = Color.FromArgb(255, 209, 211);
+            dataGridViewCellStyle14.WrapMode = DataGridViewTriState.True;
+            logDataGridView.DefaultCellStyle = dataGridViewCellStyle14;
             logDataGridView.EnableHeadersVisualStyles = false;
             logDataGridView.GridColor = Color.White;
             logDataGridView.Location = new Point(14, 218);
             logDataGridView.Name = "logDataGridView";
             logDataGridView.ReadOnly = true;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle6.ForeColor = Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(179, 79, 84);
-            dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(255, 209, 211);
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
-            logDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle15.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle15.BackColor = Color.FromArgb(146, 45, 51);
+            dataGridViewCellStyle15.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle15.ForeColor = Color.White;
+            dataGridViewCellStyle15.SelectionBackColor = Color.FromArgb(179, 79, 84);
+            dataGridViewCellStyle15.SelectionForeColor = Color.FromArgb(255, 209, 211);
+            dataGridViewCellStyle15.WrapMode = DataGridViewTriState.True;
+            logDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
             logDataGridView.RowHeadersVisible = false;
             logDataGridView.RowHeadersWidth = 51;
             logDataGridView.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
@@ -1077,6 +1089,63 @@
             label23.TabIndex = 0;
             label23.Text = "payslipPanel";
             // 
+            // allEmpLB
+            // 
+            allEmpLB.AutoSize = true;
+            allEmpLB.BackColor = Color.Transparent;
+            allEmpLB.Font = new Font("Times New Roman", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            allEmpLB.ForeColor = Color.White;
+            allEmpLB.Location = new Point(65, 38);
+            allEmpLB.Name = "allEmpLB";
+            allEmpLB.Size = new Size(35, 40);
+            allEmpLB.TabIndex = 2;
+            allEmpLB.Text = "0";
+            // 
+            // label18
+            // 
+            label18.AutoSize = true;
+            label18.BackColor = Color.Transparent;
+            label18.Font = new Font("Times New Roman", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label18.ForeColor = Color.White;
+            label18.Location = new Point(65, 38);
+            label18.Name = "label18";
+            label18.Size = new Size(35, 40);
+            label18.TabIndex = 3;
+            label18.Text = "0";
+            // 
+            // label30
+            // 
+            label30.AutoSize = true;
+            label30.BackColor = Color.Transparent;
+            label30.Font = new Font("Times New Roman", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label30.ForeColor = Color.White;
+            label30.Location = new Point(66, 38);
+            label30.Name = "label30";
+            label30.Size = new Size(35, 40);
+            label30.TabIndex = 4;
+            label30.Text = "0";
+            // 
+            // label31
+            // 
+            label31.AutoSize = true;
+            label31.BackColor = Color.Transparent;
+            label31.Font = new Font("Times New Roman", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label31.ForeColor = Color.White;
+            label31.Location = new Point(67, 38);
+            label31.Name = "label31";
+            label31.Size = new Size(35, 40);
+            label31.TabIndex = 4;
+            label31.Text = "0";
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.BackColor = Color.FromArgb(151, 68, 68);
+            pictureBox3.Location = new Point(43, 114);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(1002, 197);
+            pictureBox3.TabIndex = 20;
+            pictureBox3.TabStop = false;
+            // 
             // EmployeeForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -1084,11 +1153,11 @@
             BackColor = Color.FromArgb(224, 224, 224);
             ClientSize = new Size(1389, 782);
             Controls.Add(panel2);
-            Controls.Add(attendancePanel);
             Controls.Add(dashboardPanel);
             Controls.Add(profilePanel);
             Controls.Add(payslipPanel);
             Controls.Add(leavePanel);
+            Controls.Add(attendancePanel);
             Name = "EmployeeForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "EmployeeForm";
@@ -1131,6 +1200,7 @@
             leavePanel.PerformLayout();
             payslipPanel.ResumeLayout(false);
             payslipPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ResumeLayout(false);
         }
 
@@ -1211,5 +1281,10 @@
         private Label employeeProfileUserIDLabel;
         private TextBox employeeProfilePasswordTB;
         private PictureBox pictureBox2;
+        private Label label31;
+        private Label label30;
+        private Label label18;
+        private Label allEmpLB;
+        private PictureBox pictureBox3;
     }
 }
