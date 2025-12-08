@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminForm));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle13 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle14 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle15 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle16 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle17 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle18 = new DataGridViewCellStyle();
             sidePanel = new Panel();
             welcomeLabelAdmin = new Label();
             adminPictureBox = new PictureBox();
@@ -55,31 +55,6 @@
             label2 = new Label();
             userPanel = new Panel();
             label1 = new Label();
-            editEmployeePanel = new Panel();
-            label28 = new Label();
-            editEmployeePictureBox = new PictureBox();
-            label25 = new Label();
-            editEmployeeCancelButt = new Button();
-            editEmployeeSaveButt = new Button();
-            editEmployeeResetPasswordButt = new Button();
-            editEmployeeInactiveRB = new RadioButton();
-            editEmployeeActiveRB = new RadioButton();
-            editEmployeePasswordTB = new TextBox();
-            editEmployeeAdressTB = new TextBox();
-            editEmployeeEmailTB = new TextBox();
-            editEmployeeContactNoTB = new TextBox();
-            editEmployeeMiddleNameTB = new TextBox();
-            editEmployeeFirstNameTB = new TextBox();
-            label13 = new Label();
-            label15 = new Label();
-            label17 = new Label();
-            label18 = new Label();
-            label19 = new Label();
-            label20 = new Label();
-            editEmployeeLastNameTB = new TextBox();
-            label21 = new Label();
-            label22 = new Label();
-            panel7 = new Panel();
             userPanelAdd = new Panel();
             label27 = new Label();
             label26 = new Label();
@@ -111,7 +86,6 @@
             lastNameLabel = new Label();
             userPanel3 = new Panel();
             userPanelDataGrid = new Panel();
-            userDataGridPictureBox = new PictureBox();
             dropEmployeeButt = new Button();
             editEmployeeButt = new Button();
             addEmpButt = new Button();
@@ -120,6 +94,29 @@
             roleComboBox = new ComboBox();
             userDataGridView = new DataGridView();
             userPanel1 = new Panel();
+            editEmployeePanel = new Panel();
+            label25 = new Label();
+            editEmployeeCancelButt = new Button();
+            editEmployeeSaveButt = new Button();
+            editEmployeeResetPasswordButt = new Button();
+            editEmployeeInactiveRB = new RadioButton();
+            editEmployeeActiveRB = new RadioButton();
+            editEmployeePasswordTB = new TextBox();
+            editEmployeeAdressTB = new TextBox();
+            editEmployeeEmailTB = new TextBox();
+            editEmployeeContactNoTB = new TextBox();
+            editEmployeeMiddleNameTB = new TextBox();
+            editEmployeeFirstNameTB = new TextBox();
+            label13 = new Label();
+            label15 = new Label();
+            label17 = new Label();
+            label18 = new Label();
+            label19 = new Label();
+            label20 = new Label();
+            editEmployeeLastNameTB = new TextBox();
+            label21 = new Label();
+            label22 = new Label();
+            panel7 = new Panel();
             departmentPanel = new Panel();
             label4 = new Label();
             departmentDataGridPanel = new Panel();
@@ -173,20 +170,21 @@
             reportsDropDownCB = new ComboBox();
             panel10 = new Panel();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            userDataGridPictureBox = new PictureBox();
+            label28 = new Label();
+            editEmployeePictureBox = new PictureBox();
             sidePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)adminPictureBox).BeginInit();
             dashPanel.SuspendLayout();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             userPanel.SuspendLayout();
-            editEmployeePanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)editEmployeePictureBox).BeginInit();
             userPanelAdd.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)addEmployeePictureBox).BeginInit();
             userPanelDataGrid.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)userDataGridPictureBox).BeginInit();
             userPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)userDataGridView).BeginInit();
+            editEmployeePanel.SuspendLayout();
             departmentPanel.SuspendLayout();
             departmentDataGridPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)departmentDataGridView).BeginInit();
@@ -199,6 +197,8 @@
             reportsPanelViewMessage.SuspendLayout();
             viewMessagePanel.SuspendLayout();
             reportsPanelInbox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)userDataGridPictureBox).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)editEmployeePictureBox).BeginInit();
             SuspendLayout();
             // 
             // sidePanel
@@ -437,289 +437,6 @@
             label1.Size = new Size(58, 15);
             label1.TabIndex = 0;
             label1.Text = "userPanel";
-            // 
-            // editEmployeePanel
-            // 
-            editEmployeePanel.BackColor = Color.White;
-            editEmployeePanel.Controls.Add(label28);
-            editEmployeePanel.Controls.Add(editEmployeePictureBox);
-            editEmployeePanel.Controls.Add(label25);
-            editEmployeePanel.Controls.Add(editEmployeeCancelButt);
-            editEmployeePanel.Controls.Add(editEmployeeSaveButt);
-            editEmployeePanel.Controls.Add(editEmployeeResetPasswordButt);
-            editEmployeePanel.Controls.Add(editEmployeeInactiveRB);
-            editEmployeePanel.Controls.Add(editEmployeeActiveRB);
-            editEmployeePanel.Controls.Add(editEmployeePasswordTB);
-            editEmployeePanel.Controls.Add(editEmployeeAdressTB);
-            editEmployeePanel.Controls.Add(editEmployeeEmailTB);
-            editEmployeePanel.Controls.Add(editEmployeeContactNoTB);
-            editEmployeePanel.Controls.Add(editEmployeeMiddleNameTB);
-            editEmployeePanel.Controls.Add(editEmployeeFirstNameTB);
-            editEmployeePanel.Controls.Add(label13);
-            editEmployeePanel.Controls.Add(label15);
-            editEmployeePanel.Controls.Add(label17);
-            editEmployeePanel.Controls.Add(label18);
-            editEmployeePanel.Controls.Add(label19);
-            editEmployeePanel.Controls.Add(label20);
-            editEmployeePanel.Controls.Add(editEmployeeLastNameTB);
-            editEmployeePanel.Controls.Add(label21);
-            editEmployeePanel.Controls.Add(label22);
-            editEmployeePanel.Controls.Add(panel7);
-            editEmployeePanel.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
-            editEmployeePanel.Location = new Point(12, 38);
-            editEmployeePanel.Name = "editEmployeePanel";
-            editEmployeePanel.Size = new Size(1092, 721);
-            editEmployeePanel.TabIndex = 30;
-            editEmployeePanel.Visible = false;
-            // 
-            // label28
-            // 
-            label28.AutoSize = true;
-            label28.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
-            label28.Location = new Point(592, 239);
-            label28.Name = "label28";
-            label28.Size = new Size(77, 23);
-            label28.TabIndex = 41;
-            label28.Text = "Image:";
-            // 
-            // editEmployeePictureBox
-            // 
-            editEmployeePictureBox.BackColor = Color.White;
-            editEmployeePictureBox.BackgroundImageLayout = ImageLayout.Stretch;
-            editEmployeePictureBox.BorderStyle = BorderStyle.FixedSingle;
-            editEmployeePictureBox.Location = new Point(793, 135);
-            editEmployeePictureBox.Name = "editEmployeePictureBox";
-            editEmployeePictureBox.Size = new Size(150, 124);
-            editEmployeePictureBox.TabIndex = 40;
-            editEmployeePictureBox.TabStop = false;
-            editEmployeePictureBox.Click += button2_Click;
-            // 
-            // label25
-            // 
-            label25.AutoSize = true;
-            label25.Font = new Font("Georgia", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label25.ForeColor = Color.FromArgb(125, 0, 0);
-            label25.Location = new Point(374, 91);
-            label25.Name = "label25";
-            label25.Size = new Size(305, 41);
-            label25.TabIndex = 39;
-            label25.Text = "INFORMATION";
-            // 
-            // editEmployeeCancelButt
-            // 
-            editEmployeeCancelButt.BackColor = Color.FromArgb(146, 45, 51);
-            editEmployeeCancelButt.FlatStyle = FlatStyle.Flat;
-            editEmployeeCancelButt.Font = new Font("Georgia", 18F, FontStyle.Bold);
-            editEmployeeCancelButt.ForeColor = Color.White;
-            editEmployeeCancelButt.Location = new Point(743, 567);
-            editEmployeeCancelButt.Name = "editEmployeeCancelButt";
-            editEmployeeCancelButt.Size = new Size(261, 55);
-            editEmployeeCancelButt.TabIndex = 38;
-            editEmployeeCancelButt.Text = "Cancel";
-            editEmployeeCancelButt.UseVisualStyleBackColor = false;
-            editEmployeeCancelButt.Click += editEmployeeCancelButt_Click;
-            // 
-            // editEmployeeSaveButt
-            // 
-            editEmployeeSaveButt.BackColor = Color.FromArgb(146, 45, 51);
-            editEmployeeSaveButt.FlatStyle = FlatStyle.Flat;
-            editEmployeeSaveButt.Font = new Font("Georgia", 18F, FontStyle.Bold);
-            editEmployeeSaveButt.ForeColor = Color.White;
-            editEmployeeSaveButt.Location = new Point(85, 567);
-            editEmployeeSaveButt.Name = "editEmployeeSaveButt";
-            editEmployeeSaveButt.Size = new Size(261, 55);
-            editEmployeeSaveButt.TabIndex = 36;
-            editEmployeeSaveButt.Text = "Save";
-            editEmployeeSaveButt.UseVisualStyleBackColor = false;
-            editEmployeeSaveButt.Click += editEmployeeSaveButt_Click;
-            // 
-            // editEmployeeResetPasswordButt
-            // 
-            editEmployeeResetPasswordButt.BackColor = Color.FromArgb(163, 47, 54);
-            editEmployeeResetPasswordButt.FlatStyle = FlatStyle.Flat;
-            editEmployeeResetPasswordButt.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            editEmployeeResetPasswordButt.ForeColor = Color.White;
-            editEmployeeResetPasswordButt.Location = new Point(848, 381);
-            editEmployeeResetPasswordButt.Name = "editEmployeeResetPasswordButt";
-            editEmployeeResetPasswordButt.Size = new Size(154, 29);
-            editEmployeeResetPasswordButt.TabIndex = 35;
-            editEmployeeResetPasswordButt.Text = "Reset Password";
-            editEmployeeResetPasswordButt.UseVisualStyleBackColor = false;
-            editEmployeeResetPasswordButt.Click += editEmployeeResetPasswordButt_Click;
-            // 
-            // editEmployeeInactiveRB
-            // 
-            editEmployeeInactiveRB.AutoSize = true;
-            editEmployeeInactiveRB.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
-            editEmployeeInactiveRB.Location = new Point(335, 385);
-            editEmployeeInactiveRB.Name = "editEmployeeInactiveRB";
-            editEmployeeInactiveRB.Size = new Size(107, 27);
-            editEmployeeInactiveRB.TabIndex = 34;
-            editEmployeeInactiveRB.TabStop = true;
-            editEmployeeInactiveRB.Text = "Inactive";
-            editEmployeeInactiveRB.UseVisualStyleBackColor = true;
-            editEmployeeInactiveRB.CheckedChanged += radioButton_CheckedChanged2;
-            // 
-            // editEmployeeActiveRB
-            // 
-            editEmployeeActiveRB.AutoSize = true;
-            editEmployeeActiveRB.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
-            editEmployeeActiveRB.Location = new Point(217, 385);
-            editEmployeeActiveRB.Name = "editEmployeeActiveRB";
-            editEmployeeActiveRB.Size = new Size(89, 27);
-            editEmployeeActiveRB.TabIndex = 33;
-            editEmployeeActiveRB.TabStop = true;
-            editEmployeeActiveRB.Text = "Active";
-            editEmployeeActiveRB.UseVisualStyleBackColor = true;
-            editEmployeeActiveRB.CheckedChanged += radioButton_CheckedChanged2;
-            // 
-            // editEmployeePasswordTB
-            // 
-            editEmployeePasswordTB.Font = new Font("Times New Roman", 15.75F);
-            editEmployeePasswordTB.ForeColor = Color.Black;
-            editEmployeePasswordTB.Location = new Point(731, 331);
-            editEmployeePasswordTB.Name = "editEmployeePasswordTB";
-            editEmployeePasswordTB.ReadOnly = true;
-            editEmployeePasswordTB.Size = new Size(271, 32);
-            editEmployeePasswordTB.TabIndex = 32;
-            editEmployeePasswordTB.Text = "Hidden";
-            // 
-            // editEmployeeAdressTB
-            // 
-            editEmployeeAdressTB.Font = new Font("Times New Roman", 15.75F);
-            editEmployeeAdressTB.Location = new Point(731, 285);
-            editEmployeeAdressTB.Name = "editEmployeeAdressTB";
-            editEmployeeAdressTB.Size = new Size(271, 32);
-            editEmployeeAdressTB.TabIndex = 31;
-            // 
-            // editEmployeeEmailTB
-            // 
-            editEmployeeEmailTB.Font = new Font("Times New Roman", 15.75F);
-            editEmployeeEmailTB.Location = new Point(217, 436);
-            editEmployeeEmailTB.Name = "editEmployeeEmailTB";
-            editEmployeeEmailTB.Size = new Size(271, 32);
-            editEmployeeEmailTB.TabIndex = 30;
-            // 
-            // editEmployeeContactNoTB
-            // 
-            editEmployeeContactNoTB.Font = new Font("Times New Roman", 15.75F);
-            editEmployeeContactNoTB.Location = new Point(217, 332);
-            editEmployeeContactNoTB.Name = "editEmployeeContactNoTB";
-            editEmployeeContactNoTB.Size = new Size(271, 32);
-            editEmployeeContactNoTB.TabIndex = 29;
-            // 
-            // editEmployeeMiddleNameTB
-            // 
-            editEmployeeMiddleNameTB.Font = new Font("Times New Roman", 15.75F);
-            editEmployeeMiddleNameTB.Location = new Point(217, 282);
-            editEmployeeMiddleNameTB.Name = "editEmployeeMiddleNameTB";
-            editEmployeeMiddleNameTB.Size = new Size(271, 32);
-            editEmployeeMiddleNameTB.TabIndex = 28;
-            // 
-            // editEmployeeFirstNameTB
-            // 
-            editEmployeeFirstNameTB.Font = new Font("Times New Roman", 15.75F);
-            editEmployeeFirstNameTB.Location = new Point(217, 236);
-            editEmployeeFirstNameTB.Name = "editEmployeeFirstNameTB";
-            editEmployeeFirstNameTB.Size = new Size(271, 32);
-            editEmployeeFirstNameTB.TabIndex = 27;
-            // 
-            // label13
-            // 
-            label13.AutoSize = true;
-            label13.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
-            label13.Location = new Point(57, 387);
-            label13.Name = "label13";
-            label13.Size = new Size(79, 23);
-            label13.TabIndex = 24;
-            label13.Text = "Status:";
-            // 
-            // label15
-            // 
-            label15.AutoSize = true;
-            label15.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
-            label15.Location = new Point(592, 336);
-            label15.Name = "label15";
-            label15.Size = new Size(112, 23);
-            label15.TabIndex = 19;
-            label15.Text = "Password:";
-            // 
-            // label17
-            // 
-            label17.AutoSize = true;
-            label17.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
-            label17.Location = new Point(592, 287);
-            label17.Name = "label17";
-            label17.Size = new Size(98, 23);
-            label17.TabIndex = 12;
-            label17.Text = "Address:";
-            // 
-            // label18
-            // 
-            label18.AutoSize = true;
-            label18.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
-            label18.Location = new Point(57, 438);
-            label18.Name = "label18";
-            label18.Size = new Size(75, 23);
-            label18.TabIndex = 11;
-            label18.Text = "Email:";
-            // 
-            // label19
-            // 
-            label19.AutoSize = true;
-            label19.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
-            label19.Location = new Point(57, 338);
-            label19.Name = "label19";
-            label19.Size = new Size(126, 23);
-            label19.TabIndex = 8;
-            label19.Text = "Contact No:";
-            // 
-            // label20
-            // 
-            label20.AutoSize = true;
-            label20.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
-            label20.Location = new Point(57, 287);
-            label20.Name = "label20";
-            label20.Size = new Size(149, 23);
-            label20.TabIndex = 7;
-            label20.Text = "Middle Name:";
-            // 
-            // editEmployeeLastNameTB
-            // 
-            editEmployeeLastNameTB.Font = new Font("Times New Roman", 15.75F);
-            editEmployeeLastNameTB.Location = new Point(217, 183);
-            editEmployeeLastNameTB.Name = "editEmployeeLastNameTB";
-            editEmployeeLastNameTB.Size = new Size(271, 32);
-            editEmployeeLastNameTB.TabIndex = 5;
-            // 
-            // label21
-            // 
-            label21.AutoSize = true;
-            label21.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
-            label21.Location = new Point(57, 238);
-            label21.Name = "label21";
-            label21.Size = new Size(127, 23);
-            label21.TabIndex = 4;
-            label21.Text = "First Name:";
-            // 
-            // label22
-            // 
-            label22.AutoSize = true;
-            label22.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
-            label22.Location = new Point(57, 185);
-            label22.Name = "label22";
-            label22.Size = new Size(121, 23);
-            label22.TabIndex = 3;
-            label22.Text = "Last Name:";
-            // 
-            // panel7
-            // 
-            panel7.BackgroundImage = Properties.Resources.TopPanelBg;
-            panel7.BackgroundImageLayout = ImageLayout.Stretch;
-            panel7.Location = new Point(0, 0);
-            panel7.Name = "panel7";
-            panel7.Size = new Size(1092, 67);
-            panel7.TabIndex = 2;
             // 
             // userPanelAdd
             // 
@@ -1073,17 +790,6 @@
             userPanelDataGrid.Size = new Size(1092, 721);
             userPanelDataGrid.TabIndex = 1;
             // 
-            // userDataGridPictureBox
-            // 
-            userDataGridPictureBox.BackColor = Color.White;
-            userDataGridPictureBox.BackgroundImageLayout = ImageLayout.Stretch;
-            userDataGridPictureBox.BorderStyle = BorderStyle.FixedSingle;
-            userDataGridPictureBox.Location = new Point(948, 73);
-            userDataGridPictureBox.Name = "userDataGridPictureBox";
-            userDataGridPictureBox.Size = new Size(121, 111);
-            userDataGridPictureBox.TabIndex = 31;
-            userDataGridPictureBox.TabStop = false;
-            // 
             // dropEmployeeButt
             // 
             dropEmployeeButt.BackColor = Color.FromArgb(146, 45, 51);
@@ -1132,7 +838,7 @@
             userPanel2.BackgroundImageLayout = ImageLayout.Center;
             userPanel2.Controls.Add(searchDataGridTB);
             userPanel2.Controls.Add(roleComboBox);
-            userPanel2.Location = new Point(293, 93);
+            userPanel2.Location = new Point(276, 93);
             userPanel2.Name = "userPanel2";
             userPanel2.Size = new Size(619, 77);
             userPanel2.TabIndex = 2;
@@ -1167,37 +873,37 @@
             userDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             userDataGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             userDataGridView.BackgroundColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(179, 79, 84);
-            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(255, 209, 211);
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            userDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = Color.FromArgb(146, 45, 51);
+            dataGridViewCellStyle10.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle10.ForeColor = Color.White;
+            dataGridViewCellStyle10.SelectionBackColor = Color.FromArgb(179, 79, 84);
+            dataGridViewCellStyle10.SelectionForeColor = Color.FromArgb(255, 209, 211);
+            dataGridViewCellStyle10.WrapMode = DataGridViewTriState.True;
+            userDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             userDataGridView.ColumnHeadersHeight = 29;
             userDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(179, 79, 84);
-            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(255, 209, 211);
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            userDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = Color.FromArgb(146, 45, 51);
+            dataGridViewCellStyle11.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle11.ForeColor = Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = Color.FromArgb(179, 79, 84);
+            dataGridViewCellStyle11.SelectionForeColor = Color.FromArgb(255, 209, 211);
+            dataGridViewCellStyle11.WrapMode = DataGridViewTriState.True;
+            userDataGridView.DefaultCellStyle = dataGridViewCellStyle11;
             userDataGridView.EnableHeadersVisualStyles = false;
             userDataGridView.GridColor = Color.White;
             userDataGridView.Location = new Point(0, 190);
             userDataGridView.Name = "userDataGridView";
             userDataGridView.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle3.ForeColor = Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(179, 79, 84);
-            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(255, 209, 211);
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            userDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle12.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = Color.FromArgb(146, 45, 51);
+            dataGridViewCellStyle12.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle12.ForeColor = Color.White;
+            dataGridViewCellStyle12.SelectionBackColor = Color.FromArgb(179, 79, 84);
+            dataGridViewCellStyle12.SelectionForeColor = Color.FromArgb(255, 209, 211);
+            dataGridViewCellStyle12.WrapMode = DataGridViewTriState.True;
+            userDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
             userDataGridView.RowHeadersVisible = false;
             userDataGridView.RowHeadersWidth = 51;
             userDataGridView.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
@@ -1213,6 +919,267 @@
             userPanel1.Name = "userPanel1";
             userPanel1.Size = new Size(1092, 67);
             userPanel1.TabIndex = 1;
+            // 
+            // editEmployeePanel
+            // 
+            editEmployeePanel.BackColor = Color.White;
+            editEmployeePanel.Controls.Add(label28);
+            editEmployeePanel.Controls.Add(editEmployeePictureBox);
+            editEmployeePanel.Controls.Add(label25);
+            editEmployeePanel.Controls.Add(editEmployeeCancelButt);
+            editEmployeePanel.Controls.Add(editEmployeeSaveButt);
+            editEmployeePanel.Controls.Add(editEmployeeResetPasswordButt);
+            editEmployeePanel.Controls.Add(editEmployeeInactiveRB);
+            editEmployeePanel.Controls.Add(editEmployeeActiveRB);
+            editEmployeePanel.Controls.Add(editEmployeePasswordTB);
+            editEmployeePanel.Controls.Add(editEmployeeAdressTB);
+            editEmployeePanel.Controls.Add(editEmployeeEmailTB);
+            editEmployeePanel.Controls.Add(editEmployeeContactNoTB);
+            editEmployeePanel.Controls.Add(editEmployeeMiddleNameTB);
+            editEmployeePanel.Controls.Add(editEmployeeFirstNameTB);
+            editEmployeePanel.Controls.Add(label13);
+            editEmployeePanel.Controls.Add(label15);
+            editEmployeePanel.Controls.Add(label17);
+            editEmployeePanel.Controls.Add(label18);
+            editEmployeePanel.Controls.Add(label19);
+            editEmployeePanel.Controls.Add(label20);
+            editEmployeePanel.Controls.Add(editEmployeeLastNameTB);
+            editEmployeePanel.Controls.Add(label21);
+            editEmployeePanel.Controls.Add(label22);
+            editEmployeePanel.Controls.Add(panel7);
+            editEmployeePanel.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
+            editEmployeePanel.Location = new Point(12, 38);
+            editEmployeePanel.Name = "editEmployeePanel";
+            editEmployeePanel.Size = new Size(1092, 721);
+            editEmployeePanel.TabIndex = 30;
+            editEmployeePanel.Visible = false;
+            // 
+            // label25
+            // 
+            label25.AutoSize = true;
+            label25.Font = new Font("Georgia", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label25.ForeColor = Color.FromArgb(125, 0, 0);
+            label25.Location = new Point(374, 91);
+            label25.Name = "label25";
+            label25.Size = new Size(305, 41);
+            label25.TabIndex = 39;
+            label25.Text = "INFORMATION";
+            // 
+            // editEmployeeCancelButt
+            // 
+            editEmployeeCancelButt.BackColor = Color.FromArgb(146, 45, 51);
+            editEmployeeCancelButt.FlatStyle = FlatStyle.Flat;
+            editEmployeeCancelButt.Font = new Font("Georgia", 18F, FontStyle.Bold);
+            editEmployeeCancelButt.ForeColor = Color.White;
+            editEmployeeCancelButt.Location = new Point(743, 567);
+            editEmployeeCancelButt.Name = "editEmployeeCancelButt";
+            editEmployeeCancelButt.Size = new Size(261, 55);
+            editEmployeeCancelButt.TabIndex = 38;
+            editEmployeeCancelButt.Text = "Cancel";
+            editEmployeeCancelButt.UseVisualStyleBackColor = false;
+            editEmployeeCancelButt.Click += editEmployeeCancelButt_Click;
+            // 
+            // editEmployeeSaveButt
+            // 
+            editEmployeeSaveButt.BackColor = Color.FromArgb(146, 45, 51);
+            editEmployeeSaveButt.FlatStyle = FlatStyle.Flat;
+            editEmployeeSaveButt.Font = new Font("Georgia", 18F, FontStyle.Bold);
+            editEmployeeSaveButt.ForeColor = Color.White;
+            editEmployeeSaveButt.Location = new Point(85, 567);
+            editEmployeeSaveButt.Name = "editEmployeeSaveButt";
+            editEmployeeSaveButt.Size = new Size(261, 55);
+            editEmployeeSaveButt.TabIndex = 36;
+            editEmployeeSaveButt.Text = "Save";
+            editEmployeeSaveButt.UseVisualStyleBackColor = false;
+            editEmployeeSaveButt.Click += editEmployeeSaveButt_Click;
+            // 
+            // editEmployeeResetPasswordButt
+            // 
+            editEmployeeResetPasswordButt.BackColor = Color.FromArgb(163, 47, 54);
+            editEmployeeResetPasswordButt.FlatStyle = FlatStyle.Flat;
+            editEmployeeResetPasswordButt.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            editEmployeeResetPasswordButt.ForeColor = Color.White;
+            editEmployeeResetPasswordButt.Location = new Point(852, 384);
+            editEmployeeResetPasswordButt.Name = "editEmployeeResetPasswordButt";
+            editEmployeeResetPasswordButt.Size = new Size(154, 29);
+            editEmployeeResetPasswordButt.TabIndex = 35;
+            editEmployeeResetPasswordButt.Text = "Reset Password";
+            editEmployeeResetPasswordButt.UseVisualStyleBackColor = false;
+            editEmployeeResetPasswordButt.Click += editEmployeeResetPasswordButt_Click;
+            // 
+            // editEmployeeInactiveRB
+            // 
+            editEmployeeInactiveRB.AutoSize = true;
+            editEmployeeInactiveRB.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
+            editEmployeeInactiveRB.Location = new Point(335, 385);
+            editEmployeeInactiveRB.Name = "editEmployeeInactiveRB";
+            editEmployeeInactiveRB.Size = new Size(107, 27);
+            editEmployeeInactiveRB.TabIndex = 34;
+            editEmployeeInactiveRB.TabStop = true;
+            editEmployeeInactiveRB.Text = "Inactive";
+            editEmployeeInactiveRB.UseVisualStyleBackColor = true;
+            editEmployeeInactiveRB.CheckedChanged += radioButton_CheckedChanged2;
+            // 
+            // editEmployeeActiveRB
+            // 
+            editEmployeeActiveRB.AutoSize = true;
+            editEmployeeActiveRB.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
+            editEmployeeActiveRB.Location = new Point(217, 385);
+            editEmployeeActiveRB.Name = "editEmployeeActiveRB";
+            editEmployeeActiveRB.Size = new Size(89, 27);
+            editEmployeeActiveRB.TabIndex = 33;
+            editEmployeeActiveRB.TabStop = true;
+            editEmployeeActiveRB.Text = "Active";
+            editEmployeeActiveRB.UseVisualStyleBackColor = true;
+            editEmployeeActiveRB.CheckedChanged += radioButton_CheckedChanged2;
+            // 
+            // editEmployeePasswordTB
+            // 
+            editEmployeePasswordTB.Font = new Font("Times New Roman", 15.75F);
+            editEmployeePasswordTB.ForeColor = Color.Black;
+            editEmployeePasswordTB.Location = new Point(735, 334);
+            editEmployeePasswordTB.Name = "editEmployeePasswordTB";
+            editEmployeePasswordTB.ReadOnly = true;
+            editEmployeePasswordTB.Size = new Size(271, 32);
+            editEmployeePasswordTB.TabIndex = 32;
+            editEmployeePasswordTB.Text = "Hidden";
+            // 
+            // editEmployeeAdressTB
+            // 
+            editEmployeeAdressTB.Font = new Font("Times New Roman", 15.75F);
+            editEmployeeAdressTB.Location = new Point(735, 288);
+            editEmployeeAdressTB.Name = "editEmployeeAdressTB";
+            editEmployeeAdressTB.Size = new Size(271, 32);
+            editEmployeeAdressTB.TabIndex = 31;
+            // 
+            // editEmployeeEmailTB
+            // 
+            editEmployeeEmailTB.Font = new Font("Times New Roman", 15.75F);
+            editEmployeeEmailTB.Location = new Point(217, 436);
+            editEmployeeEmailTB.Name = "editEmployeeEmailTB";
+            editEmployeeEmailTB.Size = new Size(271, 32);
+            editEmployeeEmailTB.TabIndex = 30;
+            // 
+            // editEmployeeContactNoTB
+            // 
+            editEmployeeContactNoTB.Font = new Font("Times New Roman", 15.75F);
+            editEmployeeContactNoTB.Location = new Point(217, 332);
+            editEmployeeContactNoTB.Name = "editEmployeeContactNoTB";
+            editEmployeeContactNoTB.Size = new Size(271, 32);
+            editEmployeeContactNoTB.TabIndex = 29;
+            // 
+            // editEmployeeMiddleNameTB
+            // 
+            editEmployeeMiddleNameTB.Font = new Font("Times New Roman", 15.75F);
+            editEmployeeMiddleNameTB.Location = new Point(217, 282);
+            editEmployeeMiddleNameTB.Name = "editEmployeeMiddleNameTB";
+            editEmployeeMiddleNameTB.Size = new Size(271, 32);
+            editEmployeeMiddleNameTB.TabIndex = 28;
+            // 
+            // editEmployeeFirstNameTB
+            // 
+            editEmployeeFirstNameTB.Font = new Font("Times New Roman", 15.75F);
+            editEmployeeFirstNameTB.Location = new Point(217, 236);
+            editEmployeeFirstNameTB.Name = "editEmployeeFirstNameTB";
+            editEmployeeFirstNameTB.Size = new Size(271, 32);
+            editEmployeeFirstNameTB.TabIndex = 27;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
+            label13.Location = new Point(57, 387);
+            label13.Name = "label13";
+            label13.Size = new Size(79, 23);
+            label13.TabIndex = 24;
+            label13.Text = "Status:";
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
+            label15.Location = new Point(596, 339);
+            label15.Name = "label15";
+            label15.Size = new Size(112, 23);
+            label15.TabIndex = 19;
+            label15.Text = "Password:";
+            // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
+            label17.Location = new Point(596, 290);
+            label17.Name = "label17";
+            label17.Size = new Size(98, 23);
+            label17.TabIndex = 12;
+            label17.Text = "Address:";
+            // 
+            // label18
+            // 
+            label18.AutoSize = true;
+            label18.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
+            label18.Location = new Point(57, 438);
+            label18.Name = "label18";
+            label18.Size = new Size(75, 23);
+            label18.TabIndex = 11;
+            label18.Text = "Email:";
+            // 
+            // label19
+            // 
+            label19.AutoSize = true;
+            label19.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
+            label19.Location = new Point(57, 338);
+            label19.Name = "label19";
+            label19.Size = new Size(126, 23);
+            label19.TabIndex = 8;
+            label19.Text = "Contact No:";
+            // 
+            // label20
+            // 
+            label20.AutoSize = true;
+            label20.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
+            label20.Location = new Point(57, 287);
+            label20.Name = "label20";
+            label20.Size = new Size(149, 23);
+            label20.TabIndex = 7;
+            label20.Text = "Middle Name:";
+            // 
+            // editEmployeeLastNameTB
+            // 
+            editEmployeeLastNameTB.Font = new Font("Times New Roman", 15.75F);
+            editEmployeeLastNameTB.Location = new Point(217, 183);
+            editEmployeeLastNameTB.Name = "editEmployeeLastNameTB";
+            editEmployeeLastNameTB.Size = new Size(271, 32);
+            editEmployeeLastNameTB.TabIndex = 5;
+            // 
+            // label21
+            // 
+            label21.AutoSize = true;
+            label21.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
+            label21.Location = new Point(57, 238);
+            label21.Name = "label21";
+            label21.Size = new Size(127, 23);
+            label21.TabIndex = 4;
+            label21.Text = "First Name:";
+            // 
+            // label22
+            // 
+            label22.AutoSize = true;
+            label22.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
+            label22.Location = new Point(57, 185);
+            label22.Name = "label22";
+            label22.Size = new Size(121, 23);
+            label22.TabIndex = 3;
+            label22.Text = "Last Name:";
+            // 
+            // panel7
+            // 
+            panel7.BackgroundImage = Properties.Resources.TopPanelBg;
+            panel7.BackgroundImageLayout = ImageLayout.Stretch;
+            panel7.Location = new Point(0, 0);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(1092, 67);
+            panel7.TabIndex = 2;
             // 
             // departmentPanel
             // 
@@ -1256,35 +1223,35 @@
             departmentDataGridView.AllowUserToResizeRows = false;
             departmentDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             departmentDataGridView.BackgroundColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle4.Font = new Font("Times New Roman", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle4.ForeColor = Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(168, 74, 74);
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            departmentDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle13.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.BackColor = Color.FromArgb(146, 45, 51);
+            dataGridViewCellStyle13.Font = new Font("Times New Roman", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle13.ForeColor = Color.White;
+            dataGridViewCellStyle13.SelectionBackColor = Color.FromArgb(168, 74, 74);
+            dataGridViewCellStyle13.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = DataGridViewTriState.True;
+            departmentDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
             departmentDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = Color.FromArgb(119, 19, 19);
-            dataGridViewCellStyle5.Font = new Font("Times New Roman", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle5.ForeColor = Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(158, 71, 71);
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
-            departmentDataGridView.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle14.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.BackColor = Color.FromArgb(119, 19, 19);
+            dataGridViewCellStyle14.Font = new Font("Times New Roman", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle14.ForeColor = Color.White;
+            dataGridViewCellStyle14.SelectionBackColor = Color.FromArgb(158, 71, 71);
+            dataGridViewCellStyle14.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = DataGridViewTriState.False;
+            departmentDataGridView.DefaultCellStyle = dataGridViewCellStyle14;
             departmentDataGridView.GridColor = Color.White;
             departmentDataGridView.Location = new Point(17, 101);
             departmentDataGridView.Name = "departmentDataGridView";
             departmentDataGridView.ReadOnly = true;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = Color.FromArgb(139, 37, 37);
-            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle6.ForeColor = Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = Color.IndianRed;
-            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
-            departmentDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle15.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle15.BackColor = Color.FromArgb(139, 37, 37);
+            dataGridViewCellStyle15.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle15.ForeColor = Color.White;
+            dataGridViewCellStyle15.SelectionBackColor = Color.IndianRed;
+            dataGridViewCellStyle15.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = DataGridViewTriState.True;
+            departmentDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
             departmentDataGridView.RowHeadersWidth = 51;
             departmentDataGridView.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             departmentDataGridView.Size = new Size(1052, 486);
@@ -1664,37 +1631,37 @@
             logDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             logDataGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             logDataGridView.BackgroundColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = Color.White;
-            dataGridViewCellStyle7.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle7.ForeColor = Color.Maroon;
-            dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(183, 89, 89);
-            dataGridViewCellStyle7.SelectionForeColor = Color.White;
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
-            logDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle16.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle16.BackColor = Color.White;
+            dataGridViewCellStyle16.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle16.ForeColor = Color.Maroon;
+            dataGridViewCellStyle16.SelectionBackColor = Color.FromArgb(183, 89, 89);
+            dataGridViewCellStyle16.SelectionForeColor = Color.White;
+            dataGridViewCellStyle16.WrapMode = DataGridViewTriState.True;
+            logDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
             logDataGridView.ColumnHeadersHeight = 29;
             logDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle8.Font = new Font("Times New Roman", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle8.ForeColor = Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = Color.FromArgb(179, 79, 84);
-            dataGridViewCellStyle8.SelectionForeColor = Color.White;
-            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
-            logDataGridView.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle17.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle17.BackColor = Color.FromArgb(146, 45, 51);
+            dataGridViewCellStyle17.Font = new Font("Times New Roman", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle17.ForeColor = Color.White;
+            dataGridViewCellStyle17.SelectionBackColor = Color.FromArgb(179, 79, 84);
+            dataGridViewCellStyle17.SelectionForeColor = Color.White;
+            dataGridViewCellStyle17.WrapMode = DataGridViewTriState.True;
+            logDataGridView.DefaultCellStyle = dataGridViewCellStyle17;
             logDataGridView.EnableHeadersVisualStyles = false;
             logDataGridView.GridColor = Color.White;
             logDataGridView.Location = new Point(6, 159);
             logDataGridView.Name = "logDataGridView";
             logDataGridView.ReadOnly = true;
-            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle9.Font = new Font("Times New Roman", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle9.ForeColor = Color.White;
-            dataGridViewCellStyle9.SelectionBackColor = Color.FromArgb(179, 79, 84);
-            dataGridViewCellStyle9.SelectionForeColor = Color.White;
-            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.True;
-            logDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle18.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle18.BackColor = Color.FromArgb(146, 45, 51);
+            dataGridViewCellStyle18.Font = new Font("Times New Roman", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle18.ForeColor = Color.White;
+            dataGridViewCellStyle18.SelectionBackColor = Color.FromArgb(179, 79, 84);
+            dataGridViewCellStyle18.SelectionForeColor = Color.White;
+            dataGridViewCellStyle18.WrapMode = DataGridViewTriState.True;
+            logDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle18;
             logDataGridView.RowHeadersVisible = false;
             logDataGridView.RowHeadersWidth = 51;
             logDataGridView.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
@@ -1858,6 +1825,38 @@
             panel10.Size = new Size(1092, 67);
             panel10.TabIndex = 2;
             // 
+            // userDataGridPictureBox
+            // 
+            userDataGridPictureBox.BackColor = Color.White;
+            userDataGridPictureBox.BackgroundImageLayout = ImageLayout.Stretch;
+            userDataGridPictureBox.BorderStyle = BorderStyle.FixedSingle;
+            userDataGridPictureBox.Location = new Point(944, 85);
+            userDataGridPictureBox.Name = "userDataGridPictureBox";
+            userDataGridPictureBox.Size = new Size(107, 93);
+            userDataGridPictureBox.TabIndex = 11;
+            userDataGridPictureBox.TabStop = false;
+            // 
+            // label28
+            // 
+            label28.AutoSize = true;
+            label28.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
+            label28.Location = new Point(596, 238);
+            label28.Name = "label28";
+            label28.Size = new Size(77, 23);
+            label28.TabIndex = 41;
+            label28.Text = "Image:";
+            // 
+            // editEmployeePictureBox
+            // 
+            editEmployeePictureBox.BackColor = Color.White;
+            editEmployeePictureBox.BackgroundImageLayout = ImageLayout.Stretch;
+            editEmployeePictureBox.BorderStyle = BorderStyle.FixedSingle;
+            editEmployeePictureBox.Location = new Point(794, 143);
+            editEmployeePictureBox.Name = "editEmployeePictureBox";
+            editEmployeePictureBox.Size = new Size(150, 124);
+            editEmployeePictureBox.TabIndex = 40;
+            editEmployeePictureBox.TabStop = false;
+            // 
             // AdminForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -1884,17 +1883,15 @@
             panel2.PerformLayout();
             userPanel.ResumeLayout(false);
             userPanel.PerformLayout();
-            editEmployeePanel.ResumeLayout(false);
-            editEmployeePanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)editEmployeePictureBox).EndInit();
             userPanelAdd.ResumeLayout(false);
             userPanelAdd.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)addEmployeePictureBox).EndInit();
             userPanelDataGrid.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)userDataGridPictureBox).EndInit();
             userPanel2.ResumeLayout(false);
             userPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)userDataGridView).EndInit();
+            editEmployeePanel.ResumeLayout(false);
+            editEmployeePanel.PerformLayout();
             departmentPanel.ResumeLayout(false);
             departmentPanel.PerformLayout();
             departmentDataGridPanel.ResumeLayout(false);
@@ -1913,6 +1910,8 @@
             reportsPanelViewMessage.ResumeLayout(false);
             viewMessagePanel.ResumeLayout(false);
             reportsPanelInbox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)userDataGridPictureBox).EndInit();
+            ((System.ComponentModel.ISupportInitialize)editEmployeePictureBox).EndInit();
             ResumeLayout(false);
         }
 

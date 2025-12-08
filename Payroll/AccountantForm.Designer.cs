@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AccountantForm));
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
@@ -163,6 +164,8 @@
             label45 = new Label();
             archivedPanel = new Panel();
             label47 = new Label();
+            adminPictureBox = new PictureBox();
+            welcomeLabelAdmin = new Label();
             messagesPanel.SuspendLayout();
             sidePanel.SuspendLayout();
             payslipPanel.SuspendLayout();
@@ -190,17 +193,18 @@
             deductionsPanel.SuspendLayout();
             payrollPanel.SuspendLayout();
             archivedPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)adminPictureBox).BeginInit();
             SuspendLayout();
             // 
             // idLabel
             // 
             idLabel.AutoSize = true;
             idLabel.BackColor = Color.Transparent;
-            idLabel.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold);
+            idLabel.Font = new Font("Georgia", 18F, FontStyle.Bold | FontStyle.Italic);
             idLabel.ForeColor = Color.White;
-            idLabel.Location = new Point(10, 57);
+            idLabel.Location = new Point(125, 35);
             idLabel.Name = "idLabel";
-            idLabel.Size = new Size(109, 30);
+            idLabel.Size = new Size(135, 29);
             idLabel.TabIndex = 0;
             idLabel.Text = "Welcome,";
             // 
@@ -226,9 +230,11 @@
             // messagesButt
             // 
             messagesButt.BackColor = Color.FromArgb(163, 47, 54);
+            messagesButt.BackgroundImage = (Image)resources.GetObject("messagesButt.BackgroundImage");
+            messagesButt.BackgroundImageLayout = ImageLayout.Stretch;
             messagesButt.FlatAppearance.BorderSize = 0;
             messagesButt.FlatStyle = FlatStyle.Flat;
-            messagesButt.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            messagesButt.Font = new Font("Georgia", 15.75F, FontStyle.Bold);
             messagesButt.ForeColor = Color.White;
             messagesButt.Location = new Point(0, 395);
             messagesButt.Name = "messagesButt";
@@ -241,9 +247,11 @@
             // payslipButt
             // 
             payslipButt.BackColor = Color.FromArgb(163, 47, 54);
+            payslipButt.BackgroundImage = (Image)resources.GetObject("payslipButt.BackgroundImage");
+            payslipButt.BackgroundImageLayout = ImageLayout.Stretch;
             payslipButt.FlatAppearance.BorderSize = 0;
             payslipButt.FlatStyle = FlatStyle.Flat;
-            payslipButt.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            payslipButt.Font = new Font("Georgia", 15.75F, FontStyle.Bold);
             payslipButt.ForeColor = Color.White;
             payslipButt.Location = new Point(0, 250);
             payslipButt.Name = "payslipButt";
@@ -260,6 +268,8 @@
             sidePanel.BackColor = Color.FromArgb(51, 55, 64);
             sidePanel.BackgroundImage = Properties.Resources.PanelBG;
             sidePanel.BackgroundImageLayout = ImageLayout.Stretch;
+            sidePanel.Controls.Add(welcomeLabelAdmin);
+            sidePanel.Controls.Add(adminPictureBox);
             sidePanel.Controls.Add(archivedButton);
             sidePanel.Controls.Add(reportButt);
             sidePanel.Controls.Add(deductButt);
@@ -278,9 +288,11 @@
             // archivedButton
             // 
             archivedButton.BackColor = Color.FromArgb(163, 47, 54);
+            archivedButton.BackgroundImage = (Image)resources.GetObject("archivedButton.BackgroundImage");
+            archivedButton.BackgroundImageLayout = ImageLayout.Stretch;
             archivedButton.FlatAppearance.BorderSize = 0;
             archivedButton.FlatStyle = FlatStyle.Flat;
-            archivedButton.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            archivedButton.Font = new Font("Georgia", 15.75F, FontStyle.Bold);
             archivedButton.ForeColor = Color.White;
             archivedButton.Location = new Point(0, 542);
             archivedButton.Name = "archivedButton";
@@ -293,9 +305,11 @@
             // reportButt
             // 
             reportButt.BackColor = Color.FromArgb(163, 47, 54);
+            reportButt.BackgroundImage = (Image)resources.GetObject("reportButt.BackgroundImage");
+            reportButt.BackgroundImageLayout = ImageLayout.Stretch;
             reportButt.FlatAppearance.BorderSize = 0;
             reportButt.FlatStyle = FlatStyle.Flat;
-            reportButt.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            reportButt.Font = new Font("Georgia", 15.75F, FontStyle.Bold);
             reportButt.ForeColor = Color.White;
             reportButt.Location = new Point(0, 468);
             reportButt.Name = "reportButt";
@@ -308,9 +322,11 @@
             // deductButt
             // 
             deductButt.BackColor = Color.FromArgb(163, 47, 54);
+            deductButt.BackgroundImage = (Image)resources.GetObject("deductButt.BackgroundImage");
+            deductButt.BackgroundImageLayout = ImageLayout.Stretch;
             deductButt.FlatAppearance.BorderSize = 0;
             deductButt.FlatStyle = FlatStyle.Flat;
-            deductButt.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            deductButt.Font = new Font("Georgia", 15.75F, FontStyle.Bold);
             deductButt.ForeColor = Color.White;
             deductButt.Location = new Point(0, 321);
             deductButt.Name = "deductButt";
@@ -323,9 +339,11 @@
             // payrollButt
             // 
             payrollButt.BackColor = Color.FromArgb(163, 47, 54);
+            payrollButt.BackgroundImage = (Image)resources.GetObject("payrollButt.BackgroundImage");
+            payrollButt.BackgroundImageLayout = ImageLayout.Stretch;
             payrollButt.FlatAppearance.BorderSize = 0;
             payrollButt.FlatStyle = FlatStyle.Flat;
-            payrollButt.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            payrollButt.Font = new Font("Georgia", 15.75F, FontStyle.Bold);
             payrollButt.ForeColor = Color.White;
             payrollButt.Location = new Point(0, 176);
             payrollButt.Name = "payrollButt";
@@ -601,7 +619,7 @@
             DeductButton.FlatStyle = FlatStyle.Flat;
             DeductButton.Font = new Font("Times New Roman", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             DeductButton.ForeColor = Color.White;
-            DeductButton.Location = new Point(64, 157);
+            DeductButton.Location = new Point(64, 160);
             DeductButton.Margin = new Padding(3, 2, 3, 2);
             DeductButton.Name = "DeductButton";
             DeductButton.Size = new Size(82, 22);
@@ -810,7 +828,7 @@
             // 
             label39.AutoSize = true;
             label39.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label39.Location = new Point(7, 9);
+            label39.Location = new Point(4, 10);
             label39.Name = "label39";
             label39.Size = new Size(124, 21);
             label39.TabIndex = 1;
@@ -985,8 +1003,8 @@
             // textBox8
             // 
             textBox8.BackColor = Color.FromArgb(221, 221, 221);
-            textBox8.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox8.Location = new Point(735, 310);
+            textBox8.Font = new Font("Times New Roman", 15.75F);
+            textBox8.Location = new Point(732, 321);
             textBox8.Margin = new Padding(3, 2, 3, 2);
             textBox8.Name = "textBox8";
             textBox8.Size = new Size(294, 32);
@@ -995,18 +1013,18 @@
             // label17
             // 
             label17.AutoSize = true;
-            label17.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label17.Location = new Point(580, 263);
+            label17.Font = new Font("Georgia", 12F, FontStyle.Bold);
+            label17.Location = new Point(580, 280);
             label17.Name = "label17";
-            label17.Size = new Size(73, 21);
+            label17.Size = new Size(73, 18);
             label17.TabIndex = 20;
             label17.Text = "Pay Day";
             // 
             // dateTimePicker3
             // 
             dateTimePicker3.CalendarMonthBackground = Color.FromArgb(221, 221, 221);
-            dateTimePicker3.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dateTimePicker3.Location = new Point(730, 254);
+            dateTimePicker3.Font = new Font("Times New Roman", 15.75F, FontStyle.Italic);
+            dateTimePicker3.Location = new Point(733, 274);
             dateTimePicker3.Margin = new Padding(3, 2, 3, 2);
             dateTimePicker3.Name = "dateTimePicker3";
             dateTimePicker3.Size = new Size(293, 32);
@@ -1015,8 +1033,8 @@
             // textBox9
             // 
             textBox9.BackColor = Color.FromArgb(221, 221, 221);
-            textBox9.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox9.Location = new Point(730, 204);
+            textBox9.Font = new Font("Times New Roman", 15.75F);
+            textBox9.Location = new Point(732, 226);
             textBox9.Margin = new Padding(3, 2, 3, 2);
             textBox9.Name = "textBox9";
             textBox9.Size = new Size(294, 32);
@@ -1025,8 +1043,8 @@
             // textBox10
             // 
             textBox10.BackColor = Color.FromArgb(221, 221, 221);
-            textBox10.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox10.Location = new Point(730, 162);
+            textBox10.Font = new Font("Times New Roman", 15.75F);
+            textBox10.Location = new Point(731, 180);
             textBox10.Margin = new Padding(3, 2, 3, 2);
             textBox10.Name = "textBox10";
             textBox10.Size = new Size(294, 32);
@@ -1035,8 +1053,8 @@
             // textBox11
             // 
             textBox11.BackColor = Color.FromArgb(221, 221, 221);
-            textBox11.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox11.Location = new Point(732, 123);
+            textBox11.Font = new Font("Times New Roman", 15.75F);
+            textBox11.Location = new Point(731, 133);
             textBox11.Margin = new Padding(3, 2, 3, 2);
             textBox11.Name = "textBox11";
             textBox11.Size = new Size(294, 32);
@@ -1045,48 +1063,48 @@
             // label18
             // 
             label18.AutoSize = true;
-            label18.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label18.Location = new Point(580, 310);
+            label18.Font = new Font("Georgia", 12F, FontStyle.Bold);
+            label18.Location = new Point(580, 328);
             label18.Name = "label18";
-            label18.Size = new Size(109, 21);
+            label18.Size = new Size(113, 18);
             label18.TabIndex = 16;
             label18.Text = "Rate Per Day";
             // 
             // label19
             // 
             label19.AutoSize = true;
-            label19.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label19.Location = new Point(577, 210);
+            label19.Font = new Font("Georgia", 12F, FontStyle.Bold);
+            label19.Location = new Point(580, 233);
             label19.Name = "label19";
-            label19.Size = new Size(96, 21);
+            label19.Size = new Size(108, 18);
             label19.TabIndex = 15;
             label19.Text = "Department";
             // 
             // label20
             // 
             label20.AutoSize = true;
-            label20.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label20.Location = new Point(580, 168);
+            label20.Font = new Font("Georgia", 12F, FontStyle.Bold);
+            label20.Location = new Point(580, 184);
             label20.Name = "label20";
-            label20.Size = new Size(71, 21);
+            label20.Size = new Size(77, 18);
             label20.TabIndex = 14;
             label20.Text = "Position";
             // 
             // label21
             // 
             label21.AutoSize = true;
-            label21.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label21.Location = new Point(580, 128);
+            label21.Font = new Font("Georgia", 12F, FontStyle.Bold);
+            label21.Location = new Point(580, 139);
             label21.Name = "label21";
-            label21.Size = new Size(132, 21);
+            label21.Size = new Size(141, 18);
             label21.TabIndex = 13;
             label21.Text = "Employee Name";
             // 
             // textBox7
             // 
             textBox7.BackColor = Color.FromArgb(221, 221, 221);
-            textBox7.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox7.Location = new Point(182, 314);
+            textBox7.Font = new Font("Times New Roman", 15.75F);
+            textBox7.Location = new Point(182, 321);
             textBox7.Margin = new Padding(3, 2, 3, 2);
             textBox7.Name = "textBox7";
             textBox7.Size = new Size(294, 32);
@@ -1095,18 +1113,18 @@
             // label16
             // 
             label16.AutoSize = true;
-            label16.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label16.Location = new Point(56, 267);
+            label16.Font = new Font("Georgia", 12F, FontStyle.Bold);
+            label16.Location = new Point(58, 280);
             label16.Name = "label16";
-            label16.Size = new Size(92, 21);
+            label16.Size = new Size(97, 18);
             label16.TabIndex = 10;
             label16.Text = "Pay Period";
             // 
             // dateTimePicker2
             // 
             dateTimePicker2.CalendarMonthBackground = Color.FromArgb(221, 221, 221);
-            dateTimePicker2.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dateTimePicker2.Location = new Point(178, 258);
+            dateTimePicker2.Font = new Font("Times New Roman", 15.75F, FontStyle.Italic);
+            dateTimePicker2.Location = new Point(183, 274);
             dateTimePicker2.Margin = new Padding(3, 2, 3, 2);
             dateTimePicker2.Name = "dateTimePicker2";
             dateTimePicker2.Size = new Size(293, 32);
@@ -1115,8 +1133,8 @@
             // textBox6
             // 
             textBox6.BackColor = Color.FromArgb(221, 221, 221);
-            textBox6.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox6.Location = new Point(178, 208);
+            textBox6.Font = new Font("Times New Roman", 15.75F);
+            textBox6.Location = new Point(182, 226);
             textBox6.Margin = new Padding(3, 2, 3, 2);
             textBox6.Name = "textBox6";
             textBox6.Size = new Size(294, 32);
@@ -1125,8 +1143,8 @@
             // textBox5
             // 
             textBox5.BackColor = Color.FromArgb(221, 221, 221);
-            textBox5.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox5.Location = new Point(178, 166);
+            textBox5.Font = new Font("Times New Roman", 15.75F);
+            textBox5.Location = new Point(183, 181);
             textBox5.Margin = new Padding(3, 2, 3, 2);
             textBox5.Name = "textBox5";
             textBox5.Size = new Size(294, 32);
@@ -1135,8 +1153,8 @@
             // textBox4
             // 
             textBox4.BackColor = Color.FromArgb(221, 221, 221);
-            textBox4.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox4.Location = new Point(180, 126);
+            textBox4.Font = new Font("Times New Roman", 15.75F);
+            textBox4.Location = new Point(183, 133);
             textBox4.Margin = new Padding(3, 2, 3, 2);
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(294, 32);
@@ -1145,51 +1163,51 @@
             // label15
             // 
             label15.AutoSize = true;
-            label15.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label15.Location = new Point(56, 314);
+            label15.Font = new Font("Georgia", 12F, FontStyle.Bold);
+            label15.Location = new Point(57, 328);
             label15.Name = "label15";
-            label15.Size = new Size(112, 21);
+            label15.Size = new Size(117, 18);
             label15.TabIndex = 6;
             label15.Text = "Worked Days";
             // 
             // label14
             // 
             label14.AutoSize = true;
-            label14.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label14.Location = new Point(55, 214);
+            label14.Font = new Font("Georgia", 12F, FontStyle.Bold);
+            label14.Location = new Point(56, 233);
             label14.Name = "label14";
-            label14.Size = new Size(108, 21);
+            label14.Size = new Size(109, 18);
             label14.TabIndex = 5;
             label14.Text = "SSS Number";
             // 
             // label13
             // 
             label13.AutoSize = true;
-            label13.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label13.Location = new Point(56, 172);
+            label13.Font = new Font("Georgia", 12F, FontStyle.Bold);
+            label13.Location = new Point(57, 184);
             label13.Name = "label13";
-            label13.Size = new Size(106, 21);
+            label13.Size = new Size(112, 18);
             label13.TabIndex = 4;
             label13.Text = "TIN Number";
             // 
             // label12
             // 
             label12.AutoSize = true;
-            label12.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label12.Location = new Point(56, 132);
+            label12.Font = new Font("Georgia", 12F, FontStyle.Bold);
+            label12.Location = new Point(59, 140);
             label12.Name = "label12";
-            label12.Size = new Size(108, 21);
+            label12.Size = new Size(113, 18);
             label12.TabIndex = 3;
             label12.Text = "Employee ID";
             // 
             // label11
             // 
             label11.AutoSize = true;
-            label11.Font = new Font("Times New Roman", 25.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label11.Font = new Font("Georgia", 26.25F, FontStyle.Bold);
             label11.ForeColor = Color.FromArgb(105, 18, 18);
-            label11.Location = new Point(482, 67);
+            label11.Location = new Point(435, 74);
             label11.Name = "label11";
-            label11.Size = new Size(162, 40);
+            label11.Size = new Size(184, 41);
             label11.TabIndex = 2;
             label11.Text = "PAYSLIP";
             // 
@@ -1350,6 +1368,8 @@
             // viewButt
             // 
             viewButt.BackColor = Color.FromArgb(148, 59, 68);
+            viewButt.BackgroundImage = (Image)resources.GetObject("viewButt.BackgroundImage");
+            viewButt.BackgroundImageLayout = ImageLayout.Stretch;
             viewButt.FlatAppearance.BorderSize = 0;
             viewButt.FlatStyle = FlatStyle.Flat;
             viewButt.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -1378,6 +1398,7 @@
             // 
             button4.BackColor = Color.FromArgb(148, 59, 68);
             button4.BackgroundImage = Properties.Resources.PanelBG;
+            button4.BackgroundImageLayout = ImageLayout.Stretch;
             button4.FlatAppearance.BorderSize = 0;
             button4.FlatStyle = FlatStyle.Flat;
             button4.Font = new Font("Times New Roman", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -1416,32 +1437,34 @@
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dateTimePicker1.Location = new Point(20, 46);
+            dateTimePicker1.Font = new Font("Times New Roman", 15.75F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            dateTimePicker1.Location = new Point(20, 49);
             dateTimePicker1.Margin = new Padding(3, 2, 3, 2);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(219, 39);
+            dateTimePicker1.Size = new Size(219, 32);
             dateTimePicker1.TabIndex = 3;
             // 
             // label10
             // 
             label10.AutoSize = true;
-            label10.Font = new Font("Times New Roman", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label10.BackColor = Color.Transparent;
+            label10.Font = new Font("Georgia", 17.25F, FontStyle.Bold);
             label10.ForeColor = Color.Snow;
             label10.Location = new Point(319, 9);
             label10.Name = "label10";
-            label10.Size = new Size(100, 25);
+            label10.Size = new Size(129, 27);
             label10.TabIndex = 1;
             label10.Text = "Employee";
             // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Font = new Font("Times New Roman", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label9.BackColor = Color.Transparent;
+            label9.Font = new Font("Georgia", 17.25F, FontStyle.Bold);
             label9.ForeColor = Color.Snow;
             label9.Location = new Point(20, 7);
             label9.Name = "label9";
-            label9.Size = new Size(108, 25);
+            label9.Size = new Size(140, 27);
             label9.TabIndex = 0;
             label9.Text = "Pay Period";
             // 
@@ -1458,12 +1481,12 @@
             // SSSPanel
             // 
             SSSPanel.BackColor = Color.White;
+            SSSPanel.Controls.Add(taxLabel);
             SSSPanel.Controls.Add(dataGridView1);
             SSSPanel.Controls.Add(panel4);
             SSSPanel.Controls.Add(button2);
             SSSPanel.Controls.Add(taxButt);
             SSSPanel.Controls.Add(pagibigButt);
-            SSSPanel.Controls.Add(taxLabel);
             SSSPanel.Controls.Add(phButt);
             SSSPanel.Controls.Add(sssButton);
             SSSPanel.Controls.Add(label2);
@@ -1530,10 +1553,10 @@
             button2.FlatAppearance.BorderSize = 0;
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Times New Roman", 18F, FontStyle.Bold);
-            button2.Location = new Point(929, 101);
+            button2.Location = new Point(982, 77);
             button2.Margin = new Padding(3, 2, 3, 2);
             button2.Name = "button2";
-            button2.Size = new Size(146, 46);
+            button2.Size = new Size(93, 34);
             button2.TabIndex = 9;
             button2.Text = "Edit";
             button2.UseVisualStyleBackColor = false;
@@ -1543,11 +1566,12 @@
             taxButt.BackColor = Color.FromArgb(148, 59, 68);
             taxButt.FlatAppearance.BorderSize = 0;
             taxButt.FlatStyle = FlatStyle.Flat;
+            taxButt.Font = new Font("Georgia", 15.75F, FontStyle.Bold);
             taxButt.ForeColor = Color.White;
-            taxButt.Location = new Point(474, 99);
+            taxButt.Location = new Point(759, 146);
             taxButt.Margin = new Padding(3, 2, 3, 2);
             taxButt.Name = "taxButt";
-            taxButt.Size = new Size(131, 46);
+            taxButt.Size = new Size(202, 50);
             taxButt.TabIndex = 7;
             taxButt.Text = "Tax";
             taxButt.UseVisualStyleBackColor = false;
@@ -1558,11 +1582,12 @@
             pagibigButt.BackColor = Color.FromArgb(148, 59, 68);
             pagibigButt.FlatAppearance.BorderSize = 0;
             pagibigButt.FlatStyle = FlatStyle.Flat;
+            pagibigButt.Font = new Font("Georgia", 15.75F, FontStyle.Bold);
             pagibigButt.ForeColor = Color.White;
-            pagibigButt.Location = new Point(338, 99);
+            pagibigButt.Location = new Point(551, 146);
             pagibigButt.Margin = new Padding(3, 2, 3, 2);
             pagibigButt.Name = "pagibigButt";
-            pagibigButt.Size = new Size(131, 46);
+            pagibigButt.Size = new Size(202, 50);
             pagibigButt.TabIndex = 6;
             pagibigButt.Text = "Pag-Ibig";
             pagibigButt.UseVisualStyleBackColor = false;
@@ -1571,11 +1596,11 @@
             // taxLabel
             // 
             taxLabel.AutoSize = true;
-            taxLabel.Font = new Font("Times New Roman", 28.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            taxLabel.Font = new Font("Georgia", 26.25F, FontStyle.Bold);
             taxLabel.ForeColor = Color.FromArgb(105, 18, 18);
-            taxLabel.Location = new Point(430, 154);
+            taxLabel.Location = new Point(386, 86);
             taxLabel.Name = "taxLabel";
-            taxLabel.Size = new Size(304, 43);
+            taxLabel.Size = new Size(330, 41);
             taxLabel.TabIndex = 5;
             taxLabel.Text = "SSS Contribution";
             // 
@@ -1584,11 +1609,12 @@
             phButt.BackColor = Color.FromArgb(148, 59, 68);
             phButt.FlatAppearance.BorderSize = 0;
             phButt.FlatStyle = FlatStyle.Flat;
+            phButt.Font = new Font("Georgia", 15.75F, FontStyle.Bold);
             phButt.ForeColor = Color.White;
-            phButt.Location = new Point(201, 99);
+            phButt.Location = new Point(343, 146);
             phButt.Margin = new Padding(3, 2, 3, 2);
             phButt.Name = "phButt";
-            phButt.Size = new Size(131, 46);
+            phButt.Size = new Size(202, 50);
             phButt.TabIndex = 4;
             phButt.Text = "PhilHealth";
             phButt.UseVisualStyleBackColor = false;
@@ -1599,11 +1625,12 @@
             sssButton.BackColor = Color.FromArgb(148, 59, 68);
             sssButton.FlatAppearance.BorderSize = 0;
             sssButton.FlatStyle = FlatStyle.Flat;
+            sssButton.Font = new Font("Georgia", 15.75F, FontStyle.Bold);
             sssButton.ForeColor = Color.White;
-            sssButton.Location = new Point(65, 99);
+            sssButton.Location = new Point(135, 146);
             sssButton.Margin = new Padding(3, 2, 3, 2);
             sssButton.Name = "sssButton";
-            sssButton.Size = new Size(131, 46);
+            sssButton.Size = new Size(202, 50);
             sssButton.TabIndex = 3;
             sssButton.Text = "SSS";
             sssButton.UseVisualStyleBackColor = false;
@@ -1700,6 +1727,28 @@
             label47.TabIndex = 12;
             label47.Text = "archivePanel";
             // 
+            // adminPictureBox
+            // 
+            adminPictureBox.BackColor = Color.White;
+            adminPictureBox.BackgroundImageLayout = ImageLayout.Stretch;
+            adminPictureBox.Location = new Point(12, 26);
+            adminPictureBox.Name = "adminPictureBox";
+            adminPictureBox.Size = new Size(107, 93);
+            adminPictureBox.TabIndex = 11;
+            adminPictureBox.TabStop = false;
+            // 
+            // welcomeLabelAdmin
+            // 
+            welcomeLabelAdmin.AutoSize = true;
+            welcomeLabelAdmin.BackColor = Color.Transparent;
+            welcomeLabelAdmin.Font = new Font("Georgia", 15.75F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            welcomeLabelAdmin.ForeColor = Color.White;
+            welcomeLabelAdmin.Location = new Point(150, 69);
+            welcomeLabelAdmin.Name = "welcomeLabelAdmin";
+            welcomeLabelAdmin.Size = new Size(80, 25);
+            welcomeLabelAdmin.TabIndex = 13;
+            welcomeLabelAdmin.Text = "(name)";
+            // 
             // AccountantForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -1707,12 +1756,12 @@
             BackColor = Color.FromArgb(224, 224, 224);
             ClientSize = new Size(1389, 782);
             Controls.Add(sidePanel);
+            Controls.Add(payrollPanel);
             Controls.Add(deductionsPanel);
             Controls.Add(payslipPanel);
             Controls.Add(reportPanel);
             Controls.Add(messagesPanel);
             Controls.Add(archivedPanel);
-            Controls.Add(payrollPanel);
             Name = "AccountantForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AccountantForm";
@@ -1768,6 +1817,7 @@
             payrollPanel.PerformLayout();
             archivedPanel.ResumeLayout(false);
             archivedPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)adminPictureBox).EndInit();
             ResumeLayout(false);
         }
 
@@ -1905,5 +1955,7 @@
         private Label label47;
         private Panel panel3;
         private DataGridView dataGridView1;
+        public PictureBox adminPictureBox;
+        private Label welcomeLabelAdmin;
     }
 }

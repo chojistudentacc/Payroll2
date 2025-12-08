@@ -13,7 +13,6 @@ namespace Payroll
         private string csvFilePath = @"C:\Users\User\Documents\EmployeeArchive.csv";
         private readonly string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\chandrei0212\\source\\repos\\Payroll4\\Payroll\\Payroll.mdf;Integrated Security=True";
 
-
         public int GetEmailDataRowCount()
         {
             int rowCount = 0;
@@ -426,9 +425,26 @@ namespace Payroll
             return table;
         }
 
+        private string GetProjectRootFolder()
+        {
+            string baseDir = AppDomain.CurrentDomain.BaseDirectory;
+            DirectoryInfo dir = new DirectoryInfo(baseDir);
+
+            for (int i = 0; i < 3; i++)
+            {
+                if (dir.Parent == null) break;
+                dir = dir.Parent;
+            }
+
+            return dir.FullName;
+        }
+
+
         public void SavePictureToProject(string id, Image img)
         {
-            string folder = Path.Combine(Application.StartupPath, "Pictures");
+
+            string projectFolder = GetProjectRootFolder();
+            string folder = Path.Combine(projectFolder, "Pictures");
 
             if (!Directory.Exists(folder))
                 Directory.CreateDirectory(folder);
@@ -444,31 +460,39 @@ namespace Payroll
                 }
                 catch
                 {
+                    MessageBox.Show("Unable to replace the image. Close any app using it.", "Error",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
             }
 
-            img.Save(filePath, ImageFormat.Jpeg);
-
+            using (Bitmap bmp = new Bitmap(img))
+            {
+                bmp.Save(filePath, ImageFormat.Jpeg);
+            }
         }
 
 
         public void LoadPicture(string id, PictureBox pic)
         {
-            string folder = Path.Combine(Application.StartupPath, "Pictures");
+            string projectFolder = GetProjectRootFolder();
+            string folder = Path.Combine(projectFolder, "Pictures");
             string fileName = $"{id}.jpg";
             string filePath = Path.Combine(folder, fileName);
 
             if (File.Exists(filePath))
             {
-                pic.Image = Image.FromFile(filePath);
+                using (var temp = Image.FromFile(filePath))
+                {
+                    pic.Image = new Bitmap(temp);
+                }
             }
             else
             {
                 pic.Image = null;
             }
-        }
 
+        }
 
         public bool IsAdminDataEmpty()
         {
