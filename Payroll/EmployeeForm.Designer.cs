@@ -109,20 +109,20 @@
             ClockInButton = new Button();
             panel15 = new Panel();
             leavePanel = new Panel();
+            panel18 = new Panel();
+            LeaveDataGridView = new DataGridView();
+            label41 = new Label();
             panel17 = new Panel();
             panel16 = new Panel();
+            button1 = new Button();
+            label36 = new Label();
+            label35 = new Label();
+            label34 = new Label();
+            label33 = new Label();
             label32 = new Label();
             alabel = new Label();
             payslipPanel = new Panel();
             label23 = new Label();
-            label33 = new Label();
-            label34 = new Label();
-            label35 = new Label();
-            label36 = new Label();
-            button1 = new Button();
-            panel18 = new Panel();
-            label41 = new Label();
-            LeaveDataGridView = new DataGridView();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel1.SuspendLayout();
@@ -144,10 +144,10 @@
             panel14.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)logDataGridView).BeginInit();
             leavePanel.SuspendLayout();
-            panel16.SuspendLayout();
-            payslipPanel.SuspendLayout();
             panel18.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)LeaveDataGridView).BeginInit();
+            panel16.SuspendLayout();
+            payslipPanel.SuspendLayout();
             SuspendLayout();
             // 
             // panel2
@@ -1159,6 +1159,42 @@
             leavePanel.Size = new Size(1297, 1095);
             leavePanel.TabIndex = 8;
             // 
+            // panel18
+            // 
+            panel18.BackColor = Color.Snow;
+            panel18.Controls.Add(LeaveDataGridView);
+            panel18.Controls.Add(label41);
+            panel18.Location = new Point(17, 560);
+            panel18.Margin = new Padding(2, 1, 2, 1);
+            panel18.Name = "panel18";
+            panel18.Size = new Size(1248, 461);
+            panel18.TabIndex = 6;
+            // 
+            // LeaveDataGridView
+            // 
+            LeaveDataGridView.AllowUserToAddRows = false;
+            LeaveDataGridView.AllowUserToDeleteRows = false;
+            LeaveDataGridView.BackgroundColor = Color.FromArgb(100, 28, 28);
+            LeaveDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            LeaveDataGridView.GridColor = Color.FromArgb(100, 28, 28);
+            LeaveDataGridView.Location = new Point(17, 99);
+            LeaveDataGridView.Name = "LeaveDataGridView";
+            LeaveDataGridView.ReadOnly = true;
+            LeaveDataGridView.RowHeadersWidth = 51;
+            LeaveDataGridView.Size = new Size(1215, 341);
+            LeaveDataGridView.TabIndex = 1;
+            // 
+            // label41
+            // 
+            label41.AutoSize = true;
+            label41.Font = new Font("Times New Roman", 25.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label41.ForeColor = Color.FromArgb(91, 12, 12);
+            label41.Location = new Point(458, 23);
+            label41.Name = "label41";
+            label41.Size = new Size(314, 51);
+            label41.TabIndex = 0;
+            label41.Text = "Leave Requests";
+            // 
             // panel17
             // 
             panel17.BackgroundImage = Properties.Resources.TopPanelBg;
@@ -1183,6 +1219,60 @@
             panel16.Name = "panel16";
             panel16.Size = new Size(1248, 380);
             panel16.TabIndex = 5;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.FromArgb(91, 12, 12);
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.ForeColor = Color.Snow;
+            button1.Location = new Point(1026, 271);
+            button1.Name = "button1";
+            button1.Size = new Size(177, 64);
+            button1.TabIndex = 5;
+            button1.Text = "File New Leave";
+            button1.UseVisualStyleBackColor = false;
+            // 
+            // label36
+            // 
+            label36.AutoSize = true;
+            label36.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label36.Location = new Point(57, 255);
+            label36.Name = "label36";
+            label36.Size = new Size(354, 26);
+            label36.TabIndex = 4;
+            label36.Text = "EMERGENCY LEAVE REMAINING";
+            // 
+            // label35
+            // 
+            label35.AutoSize = true;
+            label35.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label35.Location = new Point(57, 200);
+            label35.Name = "label35";
+            label35.Size = new Size(331, 26);
+            label35.TabIndex = 3;
+            label35.Text = "VACATION LEAVE REMAINING";
+            // 
+            // label34
+            // 
+            label34.AutoSize = true;
+            label34.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label34.Location = new Point(57, 142);
+            label34.Name = "label34";
+            label34.Size = new Size(277, 26);
+            label34.TabIndex = 2;
+            label34.Text = "SICK LEAVE REMAINING:";
+            // 
+            // label33
+            // 
+            label33.AutoSize = true;
+            label33.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label33.Location = new Point(57, 98);
+            label33.Name = "label33";
+            label33.Size = new Size(186, 26);
+            label33.TabIndex = 1;
+            label33.Text = "LEAVE CREDITS:";
             // 
             // label32
             // 
@@ -1224,96 +1314,6 @@
             label23.TabIndex = 0;
             label23.Text = "payslipPanel";
             // 
-            // label33
-            // 
-            label33.AutoSize = true;
-            label33.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label33.Location = new Point(57, 98);
-            label33.Name = "label33";
-            label33.Size = new Size(186, 26);
-            label33.TabIndex = 1;
-            label33.Text = "LEAVE CREDITS:";
-            // 
-            // label34
-            // 
-            label34.AutoSize = true;
-            label34.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label34.Location = new Point(57, 142);
-            label34.Name = "label34";
-            label34.Size = new Size(277, 26);
-            label34.TabIndex = 2;
-            label34.Text = "SICK LEAVE REMAINING:";
-            // 
-            // label35
-            // 
-            label35.AutoSize = true;
-            label35.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label35.Location = new Point(57, 200);
-            label35.Name = "label35";
-            label35.Size = new Size(331, 26);
-            label35.TabIndex = 3;
-            label35.Text = "VACATION LEAVE REMAINING";
-            // 
-            // label36
-            // 
-            label36.AutoSize = true;
-            label36.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label36.Location = new Point(57, 255);
-            label36.Name = "label36";
-            label36.Size = new Size(354, 26);
-            label36.TabIndex = 4;
-            label36.Text = "EMERGENCY LEAVE REMAINING";
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.FromArgb(91, 12, 12);
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Times New Roman", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.Snow;
-            button1.Location = new Point(1026, 271);
-            button1.Name = "button1";
-            button1.Size = new Size(177, 64);
-            button1.TabIndex = 5;
-            button1.Text = "File New Leave";
-            button1.UseVisualStyleBackColor = false;
-            // 
-            // panel18
-            // 
-            panel18.BackColor = Color.Snow;
-            panel18.Controls.Add(LeaveDataGridView);
-            panel18.Controls.Add(label41);
-            panel18.Location = new Point(17, 560);
-            panel18.Margin = new Padding(2, 1, 2, 1);
-            panel18.Name = "panel18";
-            panel18.Size = new Size(1248, 461);
-            panel18.TabIndex = 6;
-            // 
-            // label41
-            // 
-            label41.AutoSize = true;
-            label41.Font = new Font("Times New Roman", 25.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label41.ForeColor = Color.FromArgb(91, 12, 12);
-            label41.Location = new Point(458, 23);
-            label41.Name = "label41";
-            label41.Size = new Size(314, 51);
-            label41.TabIndex = 0;
-            label41.Text = "Leave Requests";
-            // 
-            // LeaveDataGridView
-            // 
-            LeaveDataGridView.AllowUserToAddRows = false;
-            LeaveDataGridView.AllowUserToDeleteRows = false;
-            LeaveDataGridView.BackgroundColor = Color.FromArgb(100, 28, 28);
-            LeaveDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            LeaveDataGridView.GridColor = Color.FromArgb(100, 28, 28);
-            LeaveDataGridView.Location = new Point(17, 99);
-            LeaveDataGridView.Name = "LeaveDataGridView";
-            LeaveDataGridView.ReadOnly = true;
-            LeaveDataGridView.RowHeadersWidth = 51;
-            LeaveDataGridView.Size = new Size(1215, 341);
-            LeaveDataGridView.TabIndex = 1;
-            // 
             // EmployeeForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -1321,11 +1321,11 @@
             BackColor = Color.FromArgb(224, 224, 224);
             ClientSize = new Size(1587, 1043);
             Controls.Add(panel2);
+            Controls.Add(profilePanel);
+            Controls.Add(payslipPanel);
             Controls.Add(leavePanel);
             Controls.Add(attendancePanel);
             Controls.Add(dashboardPanel);
-            Controls.Add(profilePanel);
-            Controls.Add(payslipPanel);
             Margin = new Padding(3, 4, 3, 4);
             Name = "EmployeeForm";
             StartPosition = FormStartPosition.CenterScreen;
@@ -1368,13 +1368,13 @@
             ((System.ComponentModel.ISupportInitialize)logDataGridView).EndInit();
             leavePanel.ResumeLayout(false);
             leavePanel.PerformLayout();
+            panel18.ResumeLayout(false);
+            panel18.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)LeaveDataGridView).EndInit();
             panel16.ResumeLayout(false);
             panel16.PerformLayout();
             payslipPanel.ResumeLayout(false);
             payslipPanel.PerformLayout();
-            panel18.ResumeLayout(false);
-            panel18.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)LeaveDataGridView).EndInit();
             ResumeLayout(false);
         }
 
