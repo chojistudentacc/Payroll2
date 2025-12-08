@@ -261,14 +261,27 @@ namespace Payroll
 
         private void changePasswordButton_Click_1(object sender, EventArgs e)
         {
-            string userInput = Microsoft.VisualBasic.Interaction.InputBox("Enter your name:", "User Input", "Default Name");
-            if (!string.IsNullOrEmpty(userInput))
+            using (ChangePassword passForm = new ChangePassword())
+                  
             {
-                MessageBox.Show("You entered: " + userInput);
+                passForm.StartPosition = FormStartPosition.CenterParent;
+                if (passForm.ShowDialog() == DialogResult.OK)
+                {
+
+                    string newPass = passForm.NewPassword;
+                    
+
+                    if (repo.UpdatePasswordOnly(currentEmployeeID, newPass))
+                    {
+                        MessageBox.Show("Password changed successfully!");
+
+                        actualPassword = newPass;
+                        employeeProfilePasswordTB.Text = "Hidden";
+                        showPasswordButton.Text = "Show";
+                        isPasswordVisible = false;
+                    }
+                }
             }
-            employeeProfilePasswordTB.ReadOnly = false;
-            employeeProfilePasswordTB.Clear();
-            employeeProfilePasswordTB.Focus();
         }
 
         public void LoadAttendanceData()
