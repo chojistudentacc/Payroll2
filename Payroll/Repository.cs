@@ -11,7 +11,7 @@ namespace Payroll
     {
 
         private string csvFilePath = @"C:\Users\User\Documents\EmployeeArchive.csv";
-        private readonly string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\Choji Kodachi\\Documents\\!! bruh !!\\Payroll2\\Payroll\\Payroll.mdf\";Integrated Security=True";
+        private readonly string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\User\\source\\repos\\Payroll3\\Payroll\\Payroll.mdf;Integrated Security=True";
 
 
         public int GetEmailDataRowCount()
@@ -1625,7 +1625,174 @@ namespace Payroll
 
             return null;
         }
+        public DataTable GetEmployeeAttendance(string employeeID)
+        {
+            DataTable table = new DataTable();
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
 
+                    string sql = @"
+                SELECT 
+                    attendanceDate AS [Date],
+                    FORMAT(clockIn, 'hh:mm tt') AS [Clock In],
+                    FORMAT(clockOut, 'hh:mm tt') AS [Clock Out],
+                    hoursWorked AS [Hours Worked],
+                    status AS [Status]
+                FROM attendanceData
+                WHERE employeeID = @eid
+                ORDER BY attendanceDate DESC";
+
+                    using (SqlCommand cmd = new SqlCommand(sql, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@eid", employeeID);
+                        using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                        {
+                            adapter.Fill(table);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading attendance: " + ex.Message);
+            }
+            return table;
+        }
+
+
+
+        public bool ClockInEmployee(string employeeID)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+
+                    string checkSql = "SELECT COUNT(*) FROM attendanceData WHERE employeeID = @eid AND attendanceDate = CAST(GETDATE() AS DATE)";
+                    using (SqlCommand checkCmd = new SqlCommand(checkSql, connection))
+                    {
+                        checkCmd.Parameters.AddWithValue("@eid", employeeID);
+                        int count = (int)checkCmd.ExecuteScalar();
+                        if (count > 0)
+                        {
+                            MessageBox.Show("You have already clocked in for today.");
+                            return false;
+                        }
+                    }
+
+
+                    DateTime now = DateTime.Now;
+                    int hour = now.Hour;
+                    int minute = now.Minute;
+                    string status = "Present";
+
+                    if (hour < 7) status = "Present";
+                    else if (hour == 7 || hour == 8 || hour == 9)
+                    {
+                        if (minute > 0) status = "Late";
+                        else status = "Present";
+                    }
+                    else if (hour > 9) status = "Late";
+
+
+                    string insertSql = @"
+                INSERT INTO attendanceData (employeeID, attendanceDate, clockIn, status)
+                VALUES (@eid, CAST(GETDATE() AS DATE), GETDATE(), @status)";
+
+                    using (SqlCommand cmd = new SqlCommand(insertSql, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@eid", employeeID);
+                        cmd.Parameters.AddWithValue("@status", status);
+                        return cmd.ExecuteNonQuery() > 0;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Clock In Error: " + ex.Message);
+                return false;
+            }
+        }
+
+        public bool ClockOutEmployee(string employeeID)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    string selectSql = @"SELECT clockIn, status 
+                                 FROM attendanceData 
+                                 WHERE employeeID = @eid 
+                                 AND attendanceDate = CAST(GETDATE() AS DATE) 
+                                 AND clockOut IS NULL";
+
+                    DateTime clockInTime;
+                    string currentStatus;
+
+                    using (SqlCommand selectCmd = new SqlCommand(selectSql, connection))
+                    {
+                        selectCmd.Parameters.AddWithValue("@eid", employeeID);
+                        using (SqlDataReader reader = selectCmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                clockInTime = reader.GetDateTime(0);
+                                currentStatus = reader.GetString(1);
+                            }
+                            else
+                            {
+                                MessageBox.Show("Active session not found.");
+                                return false;
+                            }
+                        }
+                    }
+
+
+                    DateTime timeOut = DateTime.Now;
+                    double totalHours = (timeOut - clockInTime).TotalHours;
+
+                    string finalStatus = currentStatus;
+
+                    if (totalHours < 4.0) finalStatus = "Half Day";
+                    else if (totalHours < 8.0)
+                    {
+                        if (currentStatus == "Late") finalStatus = "Late & Undertime";
+                        else finalStatus = "Undertime";
+                    }
+                    else if (totalHours >= 9.0) finalStatus = "Overtime";
+
+
+                    string updateSql = @"
+                UPDATE attendanceData
+                SET clockOut = @timeOut,
+                    hoursWorked = @hours,
+                    status = @newStatus
+                WHERE employeeID = @eid 
+                AND attendanceDate = CAST(GETDATE() AS DATE)";
+
+                    using (SqlCommand cmd = new SqlCommand(updateSql, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@eid", employeeID);
+                        cmd.Parameters.AddWithValue("@timeOut", timeOut);
+                        cmd.Parameters.AddWithValue("@hours", totalHours);
+                        cmd.Parameters.AddWithValue("@newStatus", finalStatus);
+                        return cmd.ExecuteNonQuery() > 0;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Clock Out Error: " + ex.Message);
+                return false;
+            }
+        }
     }
 }
 

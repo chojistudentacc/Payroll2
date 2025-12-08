@@ -10,13 +10,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Payroll
-{
+{   
     public partial class EmployeeForm : Form
     {
         LoginForm login;
         Repository repo;
         string currentUserName;
         string actualPassword;
+        string currentEmployeeID;
         bool isPasswordVisible = false;
 
         public EmployeeForm(LoginForm form)
@@ -35,6 +36,7 @@ namespace Payroll
         {
             hideAllPanels();
             LoadEmployeeProfile();
+            LoadAttendanceData();
             dashboardPanel.Visible = true;
         }
 
@@ -69,6 +71,7 @@ namespace Payroll
         private void attendanceButt_Click(object sender, EventArgs e)
         {
             hideAllPanels();
+            LoadAttendanceData();
             attendancePanel.Visible = true;
         }
 
@@ -91,6 +94,8 @@ namespace Payroll
 
                 if (employeeData != null)
                 {
+                    currentEmployeeID = employeeData["employeeID"].ToString();
+
                     employeeProfileIDLabel.Text = employeeData["employeeID"].ToString();
                     employeeProfileNameLabel.Text = $"{employeeData["firstName"]} {employeeData["middleName"]} {employeeData["lastName"]}";
                     employeeName.Text = $"{employeeData["firstName"]}";
@@ -147,6 +152,40 @@ namespace Payroll
             employeeProfilePasswordTB.ReadOnly = false;
             employeeProfilePasswordTB.Clear();
             employeeProfilePasswordTB.Focus();
+        }
+
+        public void LoadAttendanceData()
+        {
+            if (string.IsNullOrEmpty(currentEmployeeID)) return;
+
+            DataTable dt = repo.GetEmployeeAttendance(currentEmployeeID);
+            logDataGridView.DataSource = dt;
+        }
+
+        private void ClockInButton_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(currentEmployeeID)) return;
+
+            if (repo.ClockInEmployee(currentEmployeeID))
+            {
+                MessageBox.Show("Clock In Successful!");
+                LoadAttendanceData();
+            }
+        }
+
+        private void ClockouButton_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(currentEmployeeID)) return;
+
+            DialogResult dr = MessageBox.Show("Are you sure you want to clock out?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dr == DialogResult.Yes)
+            {
+                if (repo.ClockOutEmployee(currentEmployeeID))
+                {
+                    MessageBox.Show("Clock Out Successful!");
+                    LoadAttendanceData();
+                }
+            }
         }
     }
 }
