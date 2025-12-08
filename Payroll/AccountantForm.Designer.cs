@@ -29,15 +29,17 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AccountantForm));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
             idLabel = new Label();
             messagesPanel = new Panel();
             messagesTitleLabel = new Label();
             messagesButt = new Button();
             payslipButt = new Button();
             sidePanel = new Panel();
+            welcomeLabelAdmin = new Label();
+            adminPictureBox = new PictureBox();
             archivedButton = new Button();
             reportButt = new Button();
             deductButt = new Button();
@@ -147,12 +149,12 @@
             label9 = new Label();
             label1 = new Label();
             SSSPanel = new Panel();
+            taxLabel = new Label();
             dataGridView1 = new DataGridView();
             panel4 = new Panel();
             button2 = new Button();
             taxButt = new Button();
             pagibigButt = new Button();
-            taxLabel = new Label();
             phButt = new Button();
             sssButton = new Button();
             label2 = new Label();
@@ -164,10 +166,9 @@
             label45 = new Label();
             archivedPanel = new Panel();
             label47 = new Label();
-            adminPictureBox = new PictureBox();
-            welcomeLabelAdmin = new Label();
             messagesPanel.SuspendLayout();
             sidePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)adminPictureBox).BeginInit();
             payslipPanel.SuspendLayout();
             panela.SuspendLayout();
             panel6.SuspendLayout();
@@ -193,7 +194,6 @@
             deductionsPanel.SuspendLayout();
             payrollPanel.SuspendLayout();
             archivedPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)adminPictureBox).BeginInit();
             SuspendLayout();
             // 
             // idLabel
@@ -284,6 +284,28 @@
             sidePanel.Name = "sidePanel";
             sidePanel.Size = new Size(273, 782);
             sidePanel.TabIndex = 4;
+            // 
+            // welcomeLabelAdmin
+            // 
+            welcomeLabelAdmin.AutoSize = true;
+            welcomeLabelAdmin.BackColor = Color.Transparent;
+            welcomeLabelAdmin.Font = new Font("Georgia", 15.75F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            welcomeLabelAdmin.ForeColor = Color.White;
+            welcomeLabelAdmin.Location = new Point(150, 69);
+            welcomeLabelAdmin.Name = "welcomeLabelAdmin";
+            welcomeLabelAdmin.Size = new Size(80, 25);
+            welcomeLabelAdmin.TabIndex = 13;
+            welcomeLabelAdmin.Text = "(name)";
+            // 
+            // adminPictureBox
+            // 
+            adminPictureBox.BackColor = Color.White;
+            adminPictureBox.BackgroundImageLayout = ImageLayout.Stretch;
+            adminPictureBox.Location = new Point(12, 26);
+            adminPictureBox.Name = "adminPictureBox";
+            adminPictureBox.Size = new Size(107, 93);
+            adminPictureBox.TabIndex = 11;
+            adminPictureBox.TabStop = false;
             // 
             // archivedButton
             // 
@@ -1496,6 +1518,17 @@
             SSSPanel.Size = new Size(1094, 758);
             SSSPanel.TabIndex = 3;
             // 
+            // taxLabel
+            // 
+            taxLabel.AutoSize = true;
+            taxLabel.Font = new Font("Georgia", 26.25F, FontStyle.Bold);
+            taxLabel.ForeColor = Color.FromArgb(105, 18, 18);
+            taxLabel.Location = new Point(386, 86);
+            taxLabel.Name = "taxLabel";
+            taxLabel.Size = new Size(330, 41);
+            taxLabel.TabIndex = 5;
+            taxLabel.Text = "SSS Contribution";
+            // 
             // dataGridView1
             // 
             dataGridView1.AllowUserToAddRows = false;
@@ -1504,35 +1537,35 @@
             dataGridView1.AllowUserToResizeRows = false;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.BackgroundColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle1.Font = new Font("Times New Roman", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(168, 74, 74);
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = Color.FromArgb(146, 45, 51);
+            dataGridViewCellStyle7.Font = new Font("Times New Roman", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle7.ForeColor = Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(168, 74, 74);
+            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(119, 19, 19);
-            dataGridViewCellStyle2.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(158, 71, 71);
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = Color.FromArgb(119, 19, 19);
+            dataGridViewCellStyle8.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle8.ForeColor = Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = Color.FromArgb(158, 71, 71);
+            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle8;
             dataGridView1.GridColor = Color.White;
             dataGridView1.Location = new Point(23, 202);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(139, 37, 37);
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle3.ForeColor = Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = Color.IndianRed;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = Color.FromArgb(139, 37, 37);
+            dataGridViewCellStyle9.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle9.ForeColor = Color.White;
+            dataGridViewCellStyle9.SelectionBackColor = Color.IndianRed;
+            dataGridViewCellStyle9.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.True;
+            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridView1.Size = new Size(1052, 528);
@@ -1592,17 +1625,6 @@
             pagibigButt.Text = "Pag-Ibig";
             pagibigButt.UseVisualStyleBackColor = false;
             pagibigButt.Click += pagibigButt_Click;
-            // 
-            // taxLabel
-            // 
-            taxLabel.AutoSize = true;
-            taxLabel.Font = new Font("Georgia", 26.25F, FontStyle.Bold);
-            taxLabel.ForeColor = Color.FromArgb(105, 18, 18);
-            taxLabel.Location = new Point(386, 86);
-            taxLabel.Name = "taxLabel";
-            taxLabel.Size = new Size(330, 41);
-            taxLabel.TabIndex = 5;
-            taxLabel.Text = "SSS Contribution";
             // 
             // phButt
             // 
@@ -1727,28 +1749,6 @@
             label47.TabIndex = 12;
             label47.Text = "archivePanel";
             // 
-            // adminPictureBox
-            // 
-            adminPictureBox.BackColor = Color.White;
-            adminPictureBox.BackgroundImageLayout = ImageLayout.Stretch;
-            adminPictureBox.Location = new Point(12, 26);
-            adminPictureBox.Name = "adminPictureBox";
-            adminPictureBox.Size = new Size(107, 93);
-            adminPictureBox.TabIndex = 11;
-            adminPictureBox.TabStop = false;
-            // 
-            // welcomeLabelAdmin
-            // 
-            welcomeLabelAdmin.AutoSize = true;
-            welcomeLabelAdmin.BackColor = Color.Transparent;
-            welcomeLabelAdmin.Font = new Font("Georgia", 15.75F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            welcomeLabelAdmin.ForeColor = Color.White;
-            welcomeLabelAdmin.Location = new Point(150, 69);
-            welcomeLabelAdmin.Name = "welcomeLabelAdmin";
-            welcomeLabelAdmin.Size = new Size(80, 25);
-            welcomeLabelAdmin.TabIndex = 13;
-            welcomeLabelAdmin.Text = "(name)";
-            // 
             // AccountantForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -1770,6 +1770,7 @@
             messagesPanel.PerformLayout();
             sidePanel.ResumeLayout(false);
             sidePanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)adminPictureBox).EndInit();
             payslipPanel.ResumeLayout(false);
             payslipPanel.PerformLayout();
             panela.ResumeLayout(false);
@@ -1817,7 +1818,6 @@
             payrollPanel.PerformLayout();
             archivedPanel.ResumeLayout(false);
             archivedPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)adminPictureBox).EndInit();
             ResumeLayout(false);
         }
 

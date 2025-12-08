@@ -64,6 +64,9 @@ namespace Payroll
                 MessageBox.Show("Human Resources");
                 usernameTB.Text = "";
                 passwordTB.Text = "";
+                HumanResourcesForm hrForm = new HumanResourcesForm(this, userName);
+                hrForm.Show();
+                this.Visible = false;
             }
             else
             {
