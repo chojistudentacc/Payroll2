@@ -30,9 +30,9 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeeForm));
-            DataGridViewCellStyle dataGridViewCellStyle13 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle14 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle15 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             timer1 = new System.Windows.Forms.Timer(components);
             panel2 = new Panel();
             pictureBox2 = new PictureBox();
@@ -542,7 +542,7 @@
             employeeProfileUserIDLabel.AutoSize = true;
             employeeProfileUserIDLabel.Font = new Font("Times New Roman", 14.25F);
             employeeProfileUserIDLabel.ForeColor = Color.Black;
-            employeeProfileUserIDLabel.Location = new Point(794, 26);
+            employeeProfileUserIDLabel.Location = new Point(794, 29);
             employeeProfileUserIDLabel.Name = "employeeProfileUserIDLabel";
             employeeProfileUserIDLabel.Size = new Size(50, 21);
             employeeProfileUserIDLabel.TabIndex = 18;
@@ -774,6 +774,7 @@
             // panel12
             // 
             panel12.BackgroundImage = Properties.Resources.PanelBG;
+            panel12.BackgroundImageLayout = ImageLayout.Stretch;
             panel12.Controls.Add(label31);
             panel12.Controls.Add(label16);
             panel12.Location = new Point(814, 41);
@@ -798,6 +799,7 @@
             // panel11
             // 
             panel11.BackgroundImage = Properties.Resources.PanelBG;
+            panel11.BackgroundImageLayout = ImageLayout.Stretch;
             panel11.Controls.Add(label30);
             panel11.Controls.Add(label13);
             panel11.Location = new Point(563, 41);
@@ -822,6 +824,7 @@
             // panel9
             // 
             panel9.BackgroundImage = Properties.Resources.PanelBG;
+            panel9.BackgroundImageLayout = ImageLayout.Stretch;
             panel9.Controls.Add(label18);
             panel9.Controls.Add(label12);
             panel9.Location = new Point(297, 41);
@@ -846,6 +849,7 @@
             // panel7
             // 
             panel7.BackgroundImage = Properties.Resources.PanelBG;
+            panel7.BackgroundImageLayout = ImageLayout.Stretch;
             panel7.Controls.Add(allEmpLB);
             panel7.Controls.Add(label11);
             panel7.Location = new Point(39, 41);
@@ -951,37 +955,37 @@
             logDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             logDataGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             logDataGridView.BackgroundColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle13.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle13.BackColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle13.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle13.ForeColor = Color.White;
-            dataGridViewCellStyle13.SelectionBackColor = Color.FromArgb(179, 79, 84);
-            dataGridViewCellStyle13.SelectionForeColor = Color.FromArgb(255, 209, 211);
-            dataGridViewCellStyle13.WrapMode = DataGridViewTriState.True;
-            logDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(146, 45, 51);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(179, 79, 84);
+            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(255, 209, 211);
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            logDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             logDataGridView.ColumnHeadersHeight = 29;
             logDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle14.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.BackColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle14.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle14.ForeColor = Color.White;
-            dataGridViewCellStyle14.SelectionBackColor = Color.FromArgb(179, 79, 84);
-            dataGridViewCellStyle14.SelectionForeColor = Color.FromArgb(255, 209, 211);
-            dataGridViewCellStyle14.WrapMode = DataGridViewTriState.True;
-            logDataGridView.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(146, 45, 51);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(179, 79, 84);
+            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(255, 209, 211);
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            logDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             logDataGridView.EnableHeadersVisualStyles = false;
             logDataGridView.GridColor = Color.White;
             logDataGridView.Location = new Point(14, 218);
             logDataGridView.Name = "logDataGridView";
             logDataGridView.ReadOnly = true;
-            dataGridViewCellStyle15.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle15.BackColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle15.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle15.ForeColor = Color.White;
-            dataGridViewCellStyle15.SelectionBackColor = Color.FromArgb(179, 79, 84);
-            dataGridViewCellStyle15.SelectionForeColor = Color.FromArgb(255, 209, 211);
-            dataGridViewCellStyle15.WrapMode = DataGridViewTriState.True;
-            logDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(146, 45, 51);
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(179, 79, 84);
+            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(255, 209, 211);
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            logDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             logDataGridView.RowHeadersVisible = false;
             logDataGridView.RowHeadersWidth = 51;
             logDataGridView.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
