@@ -1150,8 +1150,8 @@
             // leavePanel
             // 
             leavePanel.Controls.Add(alabel);
-            leavePanel.Controls.Add(createLeavePanel);
             leavePanel.Controls.Add(leaveSummaryPanel);
+            leavePanel.Controls.Add(createLeavePanel);
             leavePanel.Location = new Point(273, 0);
             leavePanel.Margin = new Padding(2, 1, 2, 1);
             leavePanel.Name = "leavePanel";
@@ -1209,6 +1209,7 @@
             createLeaveSubmitButt.TabIndex = 8;
             createLeaveSubmitButt.Text = "SUBMIT";
             createLeaveSubmitButt.UseVisualStyleBackColor = false;
+            createLeaveSubmitButt.Click += createLeaveSubmitButt_Click;
             // 
             // panel20
             // 
@@ -1223,7 +1224,7 @@
             // 
             // leaveRichTB
             // 
-            leaveRichTB.Font = new Font("Times New Roman", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            leaveRichTB.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             leaveRichTB.Location = new Point(12, 58);
             leaveRichTB.Name = "leaveRichTB";
             leaveRichTB.Size = new Size(1066, 135);
@@ -1263,6 +1264,7 @@
             leaveEndDatePicker.Name = "leaveEndDatePicker";
             leaveEndDatePicker.Size = new Size(320, 25);
             leaveEndDatePicker.TabIndex = 7;
+            leaveEndDatePicker.ValueChanged += leaveDatePickerChanged;
             // 
             // leaveStartDatePicker
             // 
@@ -1271,6 +1273,7 @@
             leaveStartDatePicker.Name = "leaveStartDatePicker";
             leaveStartDatePicker.Size = new Size(320, 25);
             leaveStartDatePicker.TabIndex = 6;
+            leaveStartDatePicker.ValueChanged += leaveDatePickerChanged;
             // 
             // leaveFormCB
             // 
