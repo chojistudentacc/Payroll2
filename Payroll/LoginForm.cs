@@ -14,7 +14,7 @@ namespace Payroll
         public LoginForm()
         {
             InitializeComponent();
-            RoundPanelCorners(LoginPanel, 20);
+            RoundButtonCorners(loginButt, 50);
         }
 
         private void LoginPanel_Click(object sender, EventArgs e)
@@ -71,30 +71,15 @@ namespace Payroll
             }
         }
 
-        private void RoundPanelCorners(Panel panel, int radius)
+        private void RoundButtonCorners(Button button, int radius)
         {
-            GraphicsPath path = new GraphicsPath();
-
-            int w = panel.Width;
-            int h = panel.Height;
-
-            path.StartFigure();
-
-            path.AddArc(0, 0, radius * 2, radius * 2, 180, 90);
-            path.AddLine(radius, 0, w - radius, 0);
-
-            path.AddArc(w - radius * 2, 0, radius * 2, radius * 2, 270, 90);
-            path.AddLine(w, radius, w, h - radius);
-
-            path.AddArc(w - radius * 2, h - radius * 2, radius * 2, radius * 2, 0, 90);
-            path.AddLine(w - radius, h, radius, h);
-
-            path.AddArc(0, h - radius * 2, radius * 2, radius * 2, 90, 90);
-            path.AddLine(0, h - radius, 0, radius);
-
-            path.CloseFigure();
-
-            panel.Region = new Region(path);
+            var path = new GraphicsPath();
+            path.AddArc(0, 0, radius, radius, 180, 90);
+            path.AddArc(button.Width - radius, 0, radius, radius, 270, 90);
+            path.AddArc(button.Width - radius, button.Height - radius, radius, radius, 0, 90);
+            path.AddArc(0, button.Height - radius, radius, radius, 90, 90);
+            path.CloseAllFigures();
+            button.Region = new Region(path);
         }
 
         private void exitButt_Click(object sender, EventArgs e)
