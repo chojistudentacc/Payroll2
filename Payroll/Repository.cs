@@ -11,7 +11,7 @@ namespace Payroll
     {
 
         private string csvFilePath = @"C:\Users\User\Documents\EmployeeArchive.csv";
-        private readonly string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\User\\source\\repos\\Payroll3\\Payroll\\Payroll.mdf;Integrated Security=True";
+        private readonly string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\Choji Kodachi\\Documents\\!! bruh !!\\Payroll2\\Payroll\\Payroll.mdf\";Integrated Security=True";
 
         public int GetEmailDataRowCount()
         {
@@ -396,7 +396,7 @@ namespace Payroll
         }
 
 
-        public void LoadAdminPicture(string id, PictureBox pic)
+        public void LoadPicture(string id, PictureBox pic)
         {
             string folder = Path.Combine(Application.StartupPath, "Pictures");
             string fileName = $"{id}.jpg";

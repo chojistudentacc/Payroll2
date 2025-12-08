@@ -63,6 +63,16 @@ namespace Payroll.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap buttonBG {
+            get {
+                object obj = ResourceManager.GetObject("buttonBG", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap LoginScreen {
             get {
                 object obj = ResourceManager.GetObject("LoginScreen", resourceCulture);

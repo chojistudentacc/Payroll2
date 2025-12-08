@@ -36,17 +36,11 @@ namespace Payroll
 
         private void revertButtonColors()
         {
-            dashboardButt.BackColor = Color.FromArgb(163, 47, 54);
-            userButt.BackColor = Color.FromArgb(163, 47, 54);
-            departmentButt.BackColor = Color.FromArgb(163, 47, 54);
-            reportButt.BackColor = Color.FromArgb(163, 47, 54);
-            logButt.BackColor = Color.FromArgb(163, 47, 54);
-
-            dashboardButt.BackgroundImage = null;
-            userButt.BackgroundImage = null;
-            departmentButt.BackgroundImage = null;
-            reportButt.BackgroundImage = null;
-            logButt.BackgroundImage = null;
+            dashboardButt.BackgroundImage = Properties.Resources.buttonBG;
+            userButt.BackgroundImage = Properties.Resources.buttonBG;
+            departmentButt.BackgroundImage = Properties.Resources.buttonBG;
+            reportButt.BackgroundImage = Properties.Resources.buttonBG;
+            logButt.BackgroundImage = Properties.Resources.buttonBG;
         }
 
         private void InitializeSomething()
@@ -57,7 +51,7 @@ namespace Payroll
             toolTip.ShowAlways = true;
 
             welcomeLabelAdmin.Text = repo.getAdminID(userName);
-            repo.LoadAdminPicture(repo.getAdminID(userName), adminPictureBox);
+            repo.LoadPicture(repo.getAdminID(userName), adminPictureBox);
             adminPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
 
             roleComboBox.Items.Add("Employee");
@@ -877,7 +871,7 @@ namespace Payroll
                 rich.Size = new Size(boxWidth, boxHeight);
                 rich.Location = new Point(14, startY + i * (boxHeight + spacing + 35));
                 rich.ReadOnly = true;
-                rich.Font = new Font("Segoe UI Semibold", 10f, FontStyle.Bold);
+                rich.Font = new Font("Times New Roman", 13f, FontStyle.Regular);
                 rich.Cursor = Cursors.Default;
                 rich.GotFocus += (s, e) => inboxPanel.Focus();
                 rich.Name = $"rich{i + 1}";
@@ -987,11 +981,7 @@ namespace Payroll
             fillReportInboxPanel();
         }
 
-        private void label26_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        // method for changing picture, not used yet
         private void button1_Click(object sender, EventArgs e)
         {
             using (OpenFileDialog dlg = new OpenFileDialog())

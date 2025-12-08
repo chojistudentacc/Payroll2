@@ -29,17 +29,16 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminForm));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle13 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle14 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle15 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle16 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle17 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle18 = new DataGridViewCellStyle();
             sidePanel = new Panel();
-            button1 = new Button();
             welcomeLabelAdmin = new Label();
             adminPictureBox = new PictureBox();
             welcomeLabel = new Label();
@@ -56,6 +55,15 @@
             label2 = new Label();
             userPanel = new Panel();
             label1 = new Label();
+            userPanelDataGrid = new Panel();
+            dropEmployeeButt = new Button();
+            editEmployeeButt = new Button();
+            addEmpButt = new Button();
+            userPanel2 = new Panel();
+            searchDataGridTB = new TextBox();
+            roleComboBox = new ComboBox();
+            userDataGridView = new DataGridView();
+            userPanel1 = new Panel();
             editEmployeePanel = new Panel();
             label25 = new Label();
             editEmployeeCancelButt = new Button();
@@ -106,15 +114,6 @@
             firstNameLabel = new Label();
             lastNameLabel = new Label();
             userPanel3 = new Panel();
-            userPanelDataGrid = new Panel();
-            dropEmployeeButt = new Button();
-            editEmployeeButt = new Button();
-            addEmpButt = new Button();
-            userPanel2 = new Panel();
-            searchDataGridTB = new TextBox();
-            roleComboBox = new ComboBox();
-            userDataGridView = new DataGridView();
-            userPanel1 = new Panel();
             departmentPanel = new Panel();
             label4 = new Label();
             departmentDataGridPanel = new Panel();
@@ -156,6 +155,10 @@
             panel8 = new Panel();
             reportsPanel = new Panel();
             label14 = new Label();
+            reportsPanelInbox = new Panel();
+            inboxPanel = new Panel();
+            reportsDropDownCB = new ComboBox();
+            panel10 = new Panel();
             reportsPanelViewMessage = new Panel();
             viewMessageArchiveButt = new Button();
             viewMessageReplyButt = new Button();
@@ -163,10 +166,6 @@
             viewMessagePanel = new Panel();
             viewMessageRichTB = new RichTextBox();
             panel12 = new Panel();
-            reportsPanelInbox = new Panel();
-            inboxPanel = new Panel();
-            reportsDropDownCB = new ComboBox();
-            panel10 = new Panel();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             sidePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)adminPictureBox).BeginInit();
@@ -174,11 +173,11 @@
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             userPanel.SuspendLayout();
-            editEmployeePanel.SuspendLayout();
-            userPanelAdd.SuspendLayout();
             userPanelDataGrid.SuspendLayout();
             userPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)userDataGridView).BeginInit();
+            editEmployeePanel.SuspendLayout();
+            userPanelAdd.SuspendLayout();
             departmentPanel.SuspendLayout();
             departmentDataGridPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)departmentDataGridView).BeginInit();
@@ -188,9 +187,9 @@
             panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)logDataGridView).BeginInit();
             reportsPanel.SuspendLayout();
+            reportsPanelInbox.SuspendLayout();
             reportsPanelViewMessage.SuspendLayout();
             viewMessagePanel.SuspendLayout();
-            reportsPanelInbox.SuspendLayout();
             SuspendLayout();
             // 
             // sidePanel
@@ -198,7 +197,6 @@
             sidePanel.BackColor = Color.FromArgb(51, 55, 64);
             sidePanel.BackgroundImage = (Image)resources.GetObject("sidePanel.BackgroundImage");
             sidePanel.BackgroundImageLayout = ImageLayout.Stretch;
-            sidePanel.Controls.Add(button1);
             sidePanel.Controls.Add(welcomeLabelAdmin);
             sidePanel.Controls.Add(adminPictureBox);
             sidePanel.Controls.Add(welcomeLabel);
@@ -212,16 +210,6 @@
             sidePanel.Size = new Size(273, 782);
             sidePanel.TabIndex = 0;
             // 
-            // button1
-            // 
-            button1.Location = new Point(122, 146);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 13;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
-            // 
             // welcomeLabelAdmin
             // 
             welcomeLabelAdmin.AutoSize = true;
@@ -233,7 +221,6 @@
             welcomeLabelAdmin.Size = new Size(80, 25);
             welcomeLabelAdmin.TabIndex = 12;
             welcomeLabelAdmin.Text = "(name)";
-            welcomeLabelAdmin.Click += label26_Click;
             // 
             // adminPictureBox
             // 
@@ -317,7 +304,7 @@
             // userButt
             // 
             userButt.BackColor = Color.FromArgb(163, 47, 54);
-            userButt.BackgroundImage = (Image)resources.GetObject("userButt.BackgroundImage");
+            userButt.BackgroundImage = Properties.Resources.buttonBG;
             userButt.BackgroundImageLayout = ImageLayout.Stretch;
             userButt.FlatAppearance.BorderSize = 0;
             userButt.FlatAppearance.MouseDownBackColor = Color.FromArgb(163, 47, 54);
@@ -423,9 +410,9 @@
             // 
             userPanel.BackColor = Color.FromArgb(224, 224, 224);
             userPanel.Controls.Add(label1);
-            userPanel.Controls.Add(editEmployeePanel);
             userPanel.Controls.Add(userPanelAdd);
             userPanel.Controls.Add(userPanelDataGrid);
+            userPanel.Controls.Add(editEmployeePanel);
             userPanel.Location = new Point(273, 0);
             userPanel.Name = "userPanel";
             userPanel.Size = new Size(1116, 784);
@@ -440,6 +427,150 @@
             label1.Size = new Size(58, 15);
             label1.TabIndex = 0;
             label1.Text = "userPanel";
+            // 
+            // userPanelDataGrid
+            // 
+            userPanelDataGrid.BackColor = Color.White;
+            userPanelDataGrid.Controls.Add(dropEmployeeButt);
+            userPanelDataGrid.Controls.Add(editEmployeeButt);
+            userPanelDataGrid.Controls.Add(addEmpButt);
+            userPanelDataGrid.Controls.Add(userPanel2);
+            userPanelDataGrid.Controls.Add(userDataGridView);
+            userPanelDataGrid.Controls.Add(userPanel1);
+            userPanelDataGrid.Location = new Point(12, 38);
+            userPanelDataGrid.Name = "userPanelDataGrid";
+            userPanelDataGrid.Size = new Size(1092, 721);
+            userPanelDataGrid.TabIndex = 1;
+            // 
+            // dropEmployeeButt
+            // 
+            dropEmployeeButt.BackColor = Color.FromArgb(146, 45, 51);
+            dropEmployeeButt.FlatStyle = FlatStyle.Flat;
+            dropEmployeeButt.Font = new Font("Georgia", 12F, FontStyle.Bold);
+            dropEmployeeButt.ForeColor = Color.White;
+            dropEmployeeButt.Location = new Point(258, 617);
+            dropEmployeeButt.Name = "dropEmployeeButt";
+            dropEmployeeButt.Size = new Size(202, 50);
+            dropEmployeeButt.TabIndex = 5;
+            dropEmployeeButt.Text = "Drop";
+            dropEmployeeButt.UseVisualStyleBackColor = false;
+            dropEmployeeButt.Click += dropEmployeeButt_Click;
+            // 
+            // editEmployeeButt
+            // 
+            editEmployeeButt.BackColor = Color.FromArgb(146, 45, 51);
+            editEmployeeButt.FlatStyle = FlatStyle.Flat;
+            editEmployeeButt.Font = new Font("Georgia", 12F, FontStyle.Bold);
+            editEmployeeButt.ForeColor = Color.White;
+            editEmployeeButt.Location = new Point(21, 617);
+            editEmployeeButt.Name = "editEmployeeButt";
+            editEmployeeButt.Size = new Size(202, 50);
+            editEmployeeButt.TabIndex = 4;
+            editEmployeeButt.Text = "Edit";
+            editEmployeeButt.UseVisualStyleBackColor = false;
+            editEmployeeButt.Click += editEmployeeButt_Click;
+            // 
+            // addEmpButt
+            // 
+            addEmpButt.BackColor = Color.FromArgb(146, 45, 51);
+            addEmpButt.FlatStyle = FlatStyle.Flat;
+            addEmpButt.Font = new Font("Georgia", 12F, FontStyle.Bold);
+            addEmpButt.ForeColor = Color.White;
+            addEmpButt.Location = new Point(21, 111);
+            addEmpButt.Name = "addEmpButt";
+            addEmpButt.Size = new Size(202, 50);
+            addEmpButt.TabIndex = 3;
+            addEmpButt.Text = "Add Employee";
+            addEmpButt.UseVisualStyleBackColor = false;
+            addEmpButt.Click += addEmpButt_Click;
+            // 
+            // userPanel2
+            // 
+            userPanel2.BackgroundImage = Properties.Resources.PanelBG;
+            userPanel2.BackgroundImageLayout = ImageLayout.Center;
+            userPanel2.Controls.Add(searchDataGridTB);
+            userPanel2.Controls.Add(roleComboBox);
+            userPanel2.Location = new Point(450, 93);
+            userPanel2.Name = "userPanel2";
+            userPanel2.Size = new Size(619, 77);
+            userPanel2.TabIndex = 2;
+            // 
+            // searchDataGridTB
+            // 
+            searchDataGridTB.Font = new Font("Georgia", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            searchDataGridTB.Location = new Point(17, 22);
+            searchDataGridTB.Name = "searchDataGridTB";
+            searchDataGridTB.PlaceholderText = "Search by employeeID or last name";
+            searchDataGridTB.Size = new Size(343, 35);
+            searchDataGridTB.TabIndex = 1;
+            searchDataGridTB.TextChanged += searchDataGridTB_TextChanged;
+            // 
+            // roleComboBox
+            // 
+            roleComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            roleComboBox.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            roleComboBox.Location = new Point(384, 21);
+            roleComboBox.Name = "roleComboBox";
+            roleComboBox.Size = new Size(220, 35);
+            roleComboBox.TabIndex = 0;
+            roleComboBox.Tag = "";
+            roleComboBox.SelectionChangeCommitted += roleComboBox_SelectedIndexChanged;
+            // 
+            // userDataGridView
+            // 
+            userDataGridView.AllowUserToAddRows = false;
+            userDataGridView.AllowUserToDeleteRows = false;
+            userDataGridView.AllowUserToResizeColumns = false;
+            userDataGridView.AllowUserToResizeRows = false;
+            userDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            userDataGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            userDataGridView.BackgroundColor = Color.FromArgb(146, 45, 51);
+            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = Color.FromArgb(146, 45, 51);
+            dataGridViewCellStyle10.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle10.ForeColor = Color.White;
+            dataGridViewCellStyle10.SelectionBackColor = Color.FromArgb(179, 79, 84);
+            dataGridViewCellStyle10.SelectionForeColor = Color.FromArgb(255, 209, 211);
+            dataGridViewCellStyle10.WrapMode = DataGridViewTriState.True;
+            userDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            userDataGridView.ColumnHeadersHeight = 29;
+            userDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = Color.FromArgb(146, 45, 51);
+            dataGridViewCellStyle11.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle11.ForeColor = Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = Color.FromArgb(179, 79, 84);
+            dataGridViewCellStyle11.SelectionForeColor = Color.FromArgb(255, 209, 211);
+            dataGridViewCellStyle11.WrapMode = DataGridViewTriState.True;
+            userDataGridView.DefaultCellStyle = dataGridViewCellStyle11;
+            userDataGridView.EnableHeadersVisualStyles = false;
+            userDataGridView.GridColor = Color.White;
+            userDataGridView.Location = new Point(0, 190);
+            userDataGridView.Name = "userDataGridView";
+            userDataGridView.ReadOnly = true;
+            dataGridViewCellStyle12.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = Color.FromArgb(146, 45, 51);
+            dataGridViewCellStyle12.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle12.ForeColor = Color.White;
+            dataGridViewCellStyle12.SelectionBackColor = Color.FromArgb(179, 79, 84);
+            dataGridViewCellStyle12.SelectionForeColor = Color.FromArgb(255, 209, 211);
+            dataGridViewCellStyle12.WrapMode = DataGridViewTriState.True;
+            userDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            userDataGridView.RowHeadersVisible = false;
+            userDataGridView.RowHeadersWidth = 51;
+            userDataGridView.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            userDataGridView.Size = new Size(1092, 371);
+            userDataGridView.TabIndex = 0;
+            userDataGridView.CellClick += userDataGridView_CellClick;
+            // 
+            // userPanel1
+            // 
+            userPanel1.BackgroundImage = Properties.Resources.TopPanelBg;
+            userPanel1.BackgroundImageLayout = ImageLayout.Stretch;
+            userPanel1.Location = new Point(0, 0);
+            userPanel1.Name = "userPanel1";
+            userPanel1.Size = new Size(1092, 67);
+            userPanel1.TabIndex = 1;
             // 
             // editEmployeePanel
             // 
@@ -740,7 +871,7 @@
             // 
             cancelButt.BackColor = Color.FromArgb(146, 45, 51);
             cancelButt.FlatStyle = FlatStyle.Flat;
-            cancelButt.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            cancelButt.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
             cancelButt.ForeColor = Color.White;
             cancelButt.Location = new Point(743, 567);
             cancelButt.Name = "cancelButt";
@@ -754,7 +885,7 @@
             // 
             clearButt.BackColor = Color.FromArgb(146, 45, 51);
             clearButt.FlatStyle = FlatStyle.Flat;
-            clearButt.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            clearButt.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
             clearButt.ForeColor = Color.White;
             clearButt.Location = new Point(418, 567);
             clearButt.Name = "clearButt";
@@ -768,7 +899,7 @@
             // 
             saveButt.BackColor = Color.FromArgb(146, 45, 51);
             saveButt.FlatStyle = FlatStyle.Flat;
-            saveButt.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            saveButt.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
             saveButt.ForeColor = Color.White;
             saveButt.Location = new Point(85, 567);
             saveButt.Name = "saveButt";
@@ -781,9 +912,10 @@
             // inactiveRadioButt
             // 
             inactiveRadioButt.AutoSize = true;
+            inactiveRadioButt.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
             inactiveRadioButt.Location = new Point(258, 425);
             inactiveRadioButt.Name = "inactiveRadioButt";
-            inactiveRadioButt.Size = new Size(98, 29);
+            inactiveRadioButt.Size = new Size(107, 27);
             inactiveRadioButt.TabIndex = 26;
             inactiveRadioButt.TabStop = true;
             inactiveRadioButt.Text = "Inactive";
@@ -793,9 +925,10 @@
             // activeRadioButt
             // 
             activeRadioButt.AutoSize = true;
+            activeRadioButt.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
             activeRadioButt.Location = new Point(168, 425);
             activeRadioButt.Name = "activeRadioButt";
-            activeRadioButt.Size = new Size(84, 29);
+            activeRadioButt.Size = new Size(89, 27);
             activeRadioButt.TabIndex = 25;
             activeRadioButt.TabStop = true;
             activeRadioButt.Text = "Active";
@@ -805,65 +938,65 @@
             // statusLabel
             // 
             statusLabel.AutoSize = true;
-            statusLabel.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
+            statusLabel.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
             statusLabel.Location = new Point(73, 427);
             statusLabel.Name = "statusLabel";
-            statusLabel.Size = new Size(69, 25);
+            statusLabel.Size = new Size(79, 23);
             statusLabel.TabIndex = 24;
             statusLabel.Text = "Status:";
             // 
             // positionComboBox
             // 
-            positionComboBox.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
+            positionComboBox.Font = new Font("Times New Roman", 15.75F);
             positionComboBox.FormattingEnabled = true;
             positionComboBox.Location = new Point(168, 364);
             positionComboBox.Name = "positionComboBox";
-            positionComboBox.Size = new Size(320, 33);
+            positionComboBox.Size = new Size(320, 31);
             positionComboBox.TabIndex = 23;
             // 
             // positionLabel
             // 
             positionLabel.AutoSize = true;
-            positionLabel.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
+            positionLabel.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
             positionLabel.Location = new Point(57, 367);
             positionLabel.Name = "positionLabel";
-            positionLabel.Size = new Size(85, 25);
+            positionLabel.Size = new Size(99, 23);
             positionLabel.TabIndex = 22;
             positionLabel.Text = "Position:";
             // 
             // passTB
             // 
-            passTB.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
+            passTB.Font = new Font("Times New Roman", 15.75F);
             passTB.Location = new Point(733, 259);
             passTB.Name = "passTB";
-            passTB.Size = new Size(271, 33);
+            passTB.Size = new Size(271, 32);
             passTB.TabIndex = 21;
             // 
             // userNameTB
             // 
-            userNameTB.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
+            userNameTB.Font = new Font("Times New Roman", 15.75F);
             userNameTB.Location = new Point(733, 208);
             userNameTB.Name = "userNameTB";
-            userNameTB.Size = new Size(271, 33);
+            userNameTB.Size = new Size(271, 32);
             userNameTB.TabIndex = 20;
             // 
             // passLabel
             // 
             passLabel.AutoSize = true;
-            passLabel.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
+            passLabel.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
             passLabel.Location = new Point(594, 262);
             passLabel.Name = "passLabel";
-            passLabel.Size = new Size(96, 25);
+            passLabel.Size = new Size(112, 23);
             passLabel.TabIndex = 19;
             passLabel.Text = "Password:";
             // 
             // userNameLabel
             // 
             userNameLabel.AutoSize = true;
-            userNameLabel.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
+            userNameLabel.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
             userNameLabel.Location = new Point(594, 211);
             userNameLabel.Name = "userNameLabel";
-            userNameLabel.Size = new Size(112, 25);
+            userNameLabel.Size = new Size(126, 23);
             userNameLabel.TabIndex = 18;
             userNameLabel.Text = "User Name:";
             // 
@@ -871,7 +1004,7 @@
             // 
             generateCredetialsButt.BackColor = Color.FromArgb(146, 45, 51);
             generateCredetialsButt.FlatStyle = FlatStyle.Flat;
-            generateCredetialsButt.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            generateCredetialsButt.Font = new Font("Times New Roman", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             generateCredetialsButt.ForeColor = Color.White;
             generateCredetialsButt.Location = new Point(800, 311);
             generateCredetialsButt.Name = "generateCredetialsButt";
@@ -883,109 +1016,109 @@
             // 
             // addressTB
             // 
-            addressTB.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
+            addressTB.Font = new Font("Times New Roman", 15.75F);
             addressTB.Location = new Point(733, 154);
             addressTB.Name = "addressTB";
-            addressTB.Size = new Size(271, 33);
+            addressTB.Size = new Size(271, 32);
             addressTB.TabIndex = 14;
             // 
             // emailTB
             // 
-            emailTB.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
+            emailTB.Font = new Font("Times New Roman", 15.75F);
             emailTB.Location = new Point(733, 103);
             emailTB.Name = "emailTB";
-            emailTB.Size = new Size(271, 33);
+            emailTB.Size = new Size(271, 32);
             emailTB.TabIndex = 13;
             // 
             // addressLabel
             // 
             addressLabel.AutoSize = true;
-            addressLabel.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
+            addressLabel.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
             addressLabel.Location = new Point(594, 162);
             addressLabel.Name = "addressLabel";
-            addressLabel.Size = new Size(85, 25);
+            addressLabel.Size = new Size(98, 23);
             addressLabel.TabIndex = 12;
             addressLabel.Text = "Address:";
             // 
             // emailLabel
             // 
             emailLabel.AutoSize = true;
-            emailLabel.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
+            emailLabel.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
             emailLabel.Location = new Point(594, 111);
             emailLabel.Name = "emailLabel";
-            emailLabel.Size = new Size(64, 25);
+            emailLabel.Size = new Size(75, 23);
             emailLabel.TabIndex = 11;
             emailLabel.Text = "Email:";
             // 
             // contactNoTB
             // 
-            contactNoTB.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
+            contactNoTB.Font = new Font("Times New Roman", 15.75F);
             contactNoTB.Location = new Point(217, 259);
             contactNoTB.Name = "contactNoTB";
-            contactNoTB.Size = new Size(271, 33);
+            contactNoTB.Size = new Size(271, 32);
             contactNoTB.TabIndex = 10;
             // 
             // middleNameTB
             // 
-            middleNameTB.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
+            middleNameTB.Font = new Font("Times New Roman", 15.75F);
             middleNameTB.Location = new Point(217, 208);
             middleNameTB.Name = "middleNameTB";
-            middleNameTB.Size = new Size(271, 33);
+            middleNameTB.Size = new Size(271, 32);
             middleNameTB.TabIndex = 9;
             // 
             // contactNoLabel
             // 
             contactNoLabel.AutoSize = true;
-            contactNoLabel.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
+            contactNoLabel.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
             contactNoLabel.Location = new Point(57, 262);
             contactNoLabel.Name = "contactNoLabel";
-            contactNoLabel.Size = new Size(115, 25);
+            contactNoLabel.Size = new Size(126, 23);
             contactNoLabel.TabIndex = 8;
             contactNoLabel.Text = "Contact No:";
             // 
             // middleNameLabel
             // 
             middleNameLabel.AutoSize = true;
-            middleNameLabel.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
+            middleNameLabel.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
             middleNameLabel.Location = new Point(57, 211);
             middleNameLabel.Name = "middleNameLabel";
-            middleNameLabel.Size = new Size(134, 25);
+            middleNameLabel.Size = new Size(149, 23);
             middleNameLabel.TabIndex = 7;
             middleNameLabel.Text = "Middle Name:";
             // 
             // firstNameTB
             // 
-            firstNameTB.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
+            firstNameTB.Font = new Font("Times New Roman", 15.75F);
             firstNameTB.Location = new Point(217, 159);
             firstNameTB.Name = "firstNameTB";
-            firstNameTB.Size = new Size(271, 33);
+            firstNameTB.Size = new Size(271, 32);
             firstNameTB.TabIndex = 6;
             // 
             // lastNameTB
             // 
-            lastNameTB.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
+            lastNameTB.Font = new Font("Times New Roman", 15.75F);
             lastNameTB.Location = new Point(217, 108);
             lastNameTB.Name = "lastNameTB";
-            lastNameTB.Size = new Size(271, 33);
+            lastNameTB.Size = new Size(271, 32);
             lastNameTB.TabIndex = 5;
             // 
             // firstNameLabel
             // 
             firstNameLabel.AutoSize = true;
-            firstNameLabel.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
+            firstNameLabel.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
             firstNameLabel.Location = new Point(57, 162);
             firstNameLabel.Name = "firstNameLabel";
-            firstNameLabel.Size = new Size(111, 25);
+            firstNameLabel.Size = new Size(127, 23);
             firstNameLabel.TabIndex = 4;
             firstNameLabel.Text = "First Name:";
             // 
             // lastNameLabel
             // 
             lastNameLabel.AutoSize = true;
-            lastNameLabel.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold);
+            lastNameLabel.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
             lastNameLabel.Location = new Point(57, 111);
             lastNameLabel.Name = "lastNameLabel";
-            lastNameLabel.Size = new Size(108, 25);
+            lastNameLabel.Size = new Size(121, 23);
             lastNameLabel.TabIndex = 3;
             lastNameLabel.Text = "Last Name:";
             // 
@@ -997,150 +1130,6 @@
             userPanel3.Name = "userPanel3";
             userPanel3.Size = new Size(1092, 67);
             userPanel3.TabIndex = 2;
-            // 
-            // userPanelDataGrid
-            // 
-            userPanelDataGrid.BackColor = Color.White;
-            userPanelDataGrid.Controls.Add(dropEmployeeButt);
-            userPanelDataGrid.Controls.Add(editEmployeeButt);
-            userPanelDataGrid.Controls.Add(addEmpButt);
-            userPanelDataGrid.Controls.Add(userPanel2);
-            userPanelDataGrid.Controls.Add(userDataGridView);
-            userPanelDataGrid.Controls.Add(userPanel1);
-            userPanelDataGrid.Location = new Point(12, 38);
-            userPanelDataGrid.Name = "userPanelDataGrid";
-            userPanelDataGrid.Size = new Size(1092, 721);
-            userPanelDataGrid.TabIndex = 1;
-            // 
-            // dropEmployeeButt
-            // 
-            dropEmployeeButt.BackColor = Color.FromArgb(146, 45, 51);
-            dropEmployeeButt.FlatStyle = FlatStyle.Flat;
-            dropEmployeeButt.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
-            dropEmployeeButt.ForeColor = Color.White;
-            dropEmployeeButt.Location = new Point(258, 617);
-            dropEmployeeButt.Name = "dropEmployeeButt";
-            dropEmployeeButt.Size = new Size(202, 50);
-            dropEmployeeButt.TabIndex = 5;
-            dropEmployeeButt.Text = "Drop";
-            dropEmployeeButt.UseVisualStyleBackColor = false;
-            dropEmployeeButt.Click += dropEmployeeButt_Click;
-            // 
-            // editEmployeeButt
-            // 
-            editEmployeeButt.BackColor = Color.FromArgb(146, 45, 51);
-            editEmployeeButt.FlatStyle = FlatStyle.Flat;
-            editEmployeeButt.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
-            editEmployeeButt.ForeColor = Color.White;
-            editEmployeeButt.Location = new Point(21, 617);
-            editEmployeeButt.Name = "editEmployeeButt";
-            editEmployeeButt.Size = new Size(202, 50);
-            editEmployeeButt.TabIndex = 4;
-            editEmployeeButt.Text = "Edit";
-            editEmployeeButt.UseVisualStyleBackColor = false;
-            editEmployeeButt.Click += editEmployeeButt_Click;
-            // 
-            // addEmpButt
-            // 
-            addEmpButt.BackColor = Color.FromArgb(146, 45, 51);
-            addEmpButt.FlatStyle = FlatStyle.Flat;
-            addEmpButt.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
-            addEmpButt.ForeColor = Color.White;
-            addEmpButt.Location = new Point(21, 111);
-            addEmpButt.Name = "addEmpButt";
-            addEmpButt.Size = new Size(202, 50);
-            addEmpButt.TabIndex = 3;
-            addEmpButt.Text = "Add Employee";
-            addEmpButt.UseVisualStyleBackColor = false;
-            addEmpButt.Click += addEmpButt_Click;
-            // 
-            // userPanel2
-            // 
-            userPanel2.BackgroundImage = Properties.Resources.PanelBG;
-            userPanel2.BackgroundImageLayout = ImageLayout.Center;
-            userPanel2.Controls.Add(searchDataGridTB);
-            userPanel2.Controls.Add(roleComboBox);
-            userPanel2.Location = new Point(450, 93);
-            userPanel2.Name = "userPanel2";
-            userPanel2.Size = new Size(619, 77);
-            userPanel2.TabIndex = 2;
-            // 
-            // searchDataGridTB
-            // 
-            searchDataGridTB.Font = new Font("Segoe UI", 15.75F);
-            searchDataGridTB.Location = new Point(17, 22);
-            searchDataGridTB.Name = "searchDataGridTB";
-            searchDataGridTB.PlaceholderText = "Search by employeeID or last name";
-            searchDataGridTB.Size = new Size(343, 35);
-            searchDataGridTB.TabIndex = 1;
-            searchDataGridTB.TextChanged += searchDataGridTB_TextChanged;
-            // 
-            // roleComboBox
-            // 
-            roleComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
-            roleComboBox.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            roleComboBox.Location = new Point(384, 21);
-            roleComboBox.Name = "roleComboBox";
-            roleComboBox.Size = new Size(220, 38);
-            roleComboBox.TabIndex = 0;
-            roleComboBox.Tag = "";
-            roleComboBox.SelectionChangeCommitted += roleComboBox_SelectedIndexChanged;
-            // 
-            // userDataGridView
-            // 
-            userDataGridView.AllowUserToAddRows = false;
-            userDataGridView.AllowUserToDeleteRows = false;
-            userDataGridView.AllowUserToResizeColumns = false;
-            userDataGridView.AllowUserToResizeRows = false;
-            userDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            userDataGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            userDataGridView.BackgroundColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(179, 79, 84);
-            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(255, 209, 211);
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            userDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            userDataGridView.ColumnHeadersHeight = 29;
-            userDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(179, 79, 84);
-            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(255, 209, 211);
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            userDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
-            userDataGridView.EnableHeadersVisualStyles = false;
-            userDataGridView.GridColor = Color.White;
-            userDataGridView.Location = new Point(0, 190);
-            userDataGridView.Name = "userDataGridView";
-            userDataGridView.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle3.ForeColor = Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(179, 79, 84);
-            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(255, 209, 211);
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            userDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            userDataGridView.RowHeadersVisible = false;
-            userDataGridView.RowHeadersWidth = 51;
-            userDataGridView.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            userDataGridView.Size = new Size(1092, 371);
-            userDataGridView.TabIndex = 0;
-            userDataGridView.CellClick += userDataGridView_CellClick;
-            // 
-            // userPanel1
-            // 
-            userPanel1.BackgroundImage = Properties.Resources.TopPanelBg;
-            userPanel1.BackgroundImageLayout = ImageLayout.Stretch;
-            userPanel1.Location = new Point(0, 0);
-            userPanel1.Name = "userPanel1";
-            userPanel1.Size = new Size(1092, 67);
-            userPanel1.TabIndex = 1;
             // 
             // departmentPanel
             // 
@@ -1184,35 +1173,35 @@
             departmentDataGridView.AllowUserToResizeRows = false;
             departmentDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             departmentDataGridView.BackgroundColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle4.Font = new Font("Times New Roman", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle4.ForeColor = Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(168, 74, 74);
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            departmentDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle13.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.BackColor = Color.FromArgb(146, 45, 51);
+            dataGridViewCellStyle13.Font = new Font("Times New Roman", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle13.ForeColor = Color.White;
+            dataGridViewCellStyle13.SelectionBackColor = Color.FromArgb(168, 74, 74);
+            dataGridViewCellStyle13.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = DataGridViewTriState.True;
+            departmentDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
             departmentDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = Color.FromArgb(119, 19, 19);
-            dataGridViewCellStyle5.Font = new Font("Times New Roman", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle5.ForeColor = Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(158, 71, 71);
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
-            departmentDataGridView.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle14.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.BackColor = Color.FromArgb(119, 19, 19);
+            dataGridViewCellStyle14.Font = new Font("Times New Roman", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle14.ForeColor = Color.White;
+            dataGridViewCellStyle14.SelectionBackColor = Color.FromArgb(158, 71, 71);
+            dataGridViewCellStyle14.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = DataGridViewTriState.False;
+            departmentDataGridView.DefaultCellStyle = dataGridViewCellStyle14;
             departmentDataGridView.GridColor = Color.White;
             departmentDataGridView.Location = new Point(17, 101);
             departmentDataGridView.Name = "departmentDataGridView";
             departmentDataGridView.ReadOnly = true;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = Color.FromArgb(139, 37, 37);
-            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle6.ForeColor = Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = Color.IndianRed;
-            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
-            departmentDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle15.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle15.BackColor = Color.FromArgb(139, 37, 37);
+            dataGridViewCellStyle15.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle15.ForeColor = Color.White;
+            dataGridViewCellStyle15.SelectionBackColor = Color.IndianRed;
+            dataGridViewCellStyle15.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = DataGridViewTriState.True;
+            departmentDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
             departmentDataGridView.RowHeadersWidth = 51;
             departmentDataGridView.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             departmentDataGridView.Size = new Size(1052, 486);
@@ -1592,37 +1581,37 @@
             logDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             logDataGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             logDataGridView.BackgroundColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = Color.White;
-            dataGridViewCellStyle7.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle7.ForeColor = Color.Maroon;
-            dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(183, 89, 89);
-            dataGridViewCellStyle7.SelectionForeColor = Color.White;
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
-            logDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle16.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle16.BackColor = Color.White;
+            dataGridViewCellStyle16.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle16.ForeColor = Color.Maroon;
+            dataGridViewCellStyle16.SelectionBackColor = Color.FromArgb(183, 89, 89);
+            dataGridViewCellStyle16.SelectionForeColor = Color.White;
+            dataGridViewCellStyle16.WrapMode = DataGridViewTriState.True;
+            logDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
             logDataGridView.ColumnHeadersHeight = 29;
             logDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle8.Font = new Font("Times New Roman", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle8.ForeColor = Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = Color.FromArgb(179, 79, 84);
-            dataGridViewCellStyle8.SelectionForeColor = Color.White;
-            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
-            logDataGridView.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle17.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle17.BackColor = Color.FromArgb(146, 45, 51);
+            dataGridViewCellStyle17.Font = new Font("Times New Roman", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle17.ForeColor = Color.White;
+            dataGridViewCellStyle17.SelectionBackColor = Color.FromArgb(179, 79, 84);
+            dataGridViewCellStyle17.SelectionForeColor = Color.White;
+            dataGridViewCellStyle17.WrapMode = DataGridViewTriState.True;
+            logDataGridView.DefaultCellStyle = dataGridViewCellStyle17;
             logDataGridView.EnableHeadersVisualStyles = false;
             logDataGridView.GridColor = Color.White;
             logDataGridView.Location = new Point(6, 159);
             logDataGridView.Name = "logDataGridView";
             logDataGridView.ReadOnly = true;
-            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle9.Font = new Font("Times New Roman", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle9.ForeColor = Color.White;
-            dataGridViewCellStyle9.SelectionBackColor = Color.FromArgb(179, 79, 84);
-            dataGridViewCellStyle9.SelectionForeColor = Color.White;
-            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.True;
-            logDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle18.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle18.BackColor = Color.FromArgb(146, 45, 51);
+            dataGridViewCellStyle18.Font = new Font("Times New Roman", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle18.ForeColor = Color.White;
+            dataGridViewCellStyle18.SelectionBackColor = Color.FromArgb(179, 79, 84);
+            dataGridViewCellStyle18.SelectionForeColor = Color.White;
+            dataGridViewCellStyle18.WrapMode = DataGridViewTriState.True;
+            logDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle18;
             logDataGridView.RowHeadersVisible = false;
             logDataGridView.RowHeadersWidth = 51;
             logDataGridView.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
@@ -1657,6 +1646,48 @@
             label14.Size = new Size(73, 15);
             label14.TabIndex = 0;
             label14.Text = "reportsPanel";
+            // 
+            // reportsPanelInbox
+            // 
+            reportsPanelInbox.BackColor = Color.White;
+            reportsPanelInbox.Controls.Add(inboxPanel);
+            reportsPanelInbox.Controls.Add(reportsDropDownCB);
+            reportsPanelInbox.Controls.Add(panel10);
+            reportsPanelInbox.Location = new Point(12, 32);
+            reportsPanelInbox.Name = "reportsPanelInbox";
+            reportsPanelInbox.Size = new Size(1092, 721);
+            reportsPanelInbox.TabIndex = 2;
+            // 
+            // inboxPanel
+            // 
+            inboxPanel.AutoScroll = true;
+            inboxPanel.BackgroundImage = Properties.Resources.PanelBG;
+            inboxPanel.BackgroundImageLayout = ImageLayout.Stretch;
+            inboxPanel.Location = new Point(347, 170);
+            inboxPanel.Name = "inboxPanel";
+            inboxPanel.Size = new Size(657, 486);
+            inboxPanel.TabIndex = 4;
+            // 
+            // reportsDropDownCB
+            // 
+            reportsDropDownCB.BackColor = Color.FromArgb(244, 240, 224);
+            reportsDropDownCB.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            reportsDropDownCB.ForeColor = Color.FromArgb(91, 12, 12);
+            reportsDropDownCB.FormattingEnabled = true;
+            reportsDropDownCB.Location = new Point(21, 170);
+            reportsDropDownCB.Name = "reportsDropDownCB";
+            reportsDropDownCB.Size = new Size(280, 33);
+            reportsDropDownCB.TabIndex = 3;
+            reportsDropDownCB.SelectedIndexChanged += reportsDropDownCB_SelectedIndexChanged;
+            // 
+            // panel10
+            // 
+            panel10.BackgroundImage = Properties.Resources.TopPanelBg;
+            panel10.BackgroundImageLayout = ImageLayout.Stretch;
+            panel10.Location = new Point(0, 0);
+            panel10.Name = "panel10";
+            panel10.Size = new Size(1092, 67);
+            panel10.TabIndex = 2;
             // 
             // reportsPanelViewMessage
             // 
@@ -1744,48 +1775,6 @@
             panel12.Size = new Size(1092, 67);
             panel12.TabIndex = 2;
             // 
-            // reportsPanelInbox
-            // 
-            reportsPanelInbox.BackColor = Color.White;
-            reportsPanelInbox.Controls.Add(inboxPanel);
-            reportsPanelInbox.Controls.Add(reportsDropDownCB);
-            reportsPanelInbox.Controls.Add(panel10);
-            reportsPanelInbox.Location = new Point(12, 32);
-            reportsPanelInbox.Name = "reportsPanelInbox";
-            reportsPanelInbox.Size = new Size(1092, 721);
-            reportsPanelInbox.TabIndex = 2;
-            // 
-            // inboxPanel
-            // 
-            inboxPanel.AutoScroll = true;
-            inboxPanel.BackgroundImage = Properties.Resources.PanelBG;
-            inboxPanel.BackgroundImageLayout = ImageLayout.Stretch;
-            inboxPanel.Location = new Point(347, 170);
-            inboxPanel.Name = "inboxPanel";
-            inboxPanel.Size = new Size(657, 486);
-            inboxPanel.TabIndex = 4;
-            // 
-            // reportsDropDownCB
-            // 
-            reportsDropDownCB.BackColor = Color.FromArgb(244, 240, 224);
-            reportsDropDownCB.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            reportsDropDownCB.ForeColor = Color.FromArgb(91, 12, 12);
-            reportsDropDownCB.FormattingEnabled = true;
-            reportsDropDownCB.Location = new Point(21, 170);
-            reportsDropDownCB.Name = "reportsDropDownCB";
-            reportsDropDownCB.Size = new Size(280, 33);
-            reportsDropDownCB.TabIndex = 3;
-            reportsDropDownCB.SelectedIndexChanged += reportsDropDownCB_SelectedIndexChanged;
-            // 
-            // panel10
-            // 
-            panel10.BackgroundImage = Properties.Resources.TopPanelBg;
-            panel10.BackgroundImageLayout = ImageLayout.Stretch;
-            panel10.Location = new Point(0, 0);
-            panel10.Name = "panel10";
-            panel10.Size = new Size(1092, 67);
-            panel10.TabIndex = 2;
-            // 
             // AdminForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -1793,11 +1782,11 @@
             BackColor = Color.FromArgb(17, 24, 34);
             ClientSize = new Size(1389, 782);
             Controls.Add(sidePanel);
+            Controls.Add(userPanel);
             Controls.Add(departmentPanel);
             Controls.Add(dashPanel);
             Controls.Add(reportsPanel);
             Controls.Add(logsPanel);
-            Controls.Add(userPanel);
             Name = "AdminForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AdminForm";
@@ -1812,14 +1801,14 @@
             panel2.PerformLayout();
             userPanel.ResumeLayout(false);
             userPanel.PerformLayout();
-            editEmployeePanel.ResumeLayout(false);
-            editEmployeePanel.PerformLayout();
-            userPanelAdd.ResumeLayout(false);
-            userPanelAdd.PerformLayout();
             userPanelDataGrid.ResumeLayout(false);
             userPanel2.ResumeLayout(false);
             userPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)userDataGridView).EndInit();
+            editEmployeePanel.ResumeLayout(false);
+            editEmployeePanel.PerformLayout();
+            userPanelAdd.ResumeLayout(false);
+            userPanelAdd.PerformLayout();
             departmentPanel.ResumeLayout(false);
             departmentPanel.PerformLayout();
             departmentDataGridPanel.ResumeLayout(false);
@@ -1835,9 +1824,9 @@
             ((System.ComponentModel.ISupportInitialize)logDataGridView).EndInit();
             reportsPanel.ResumeLayout(false);
             reportsPanel.PerformLayout();
+            reportsPanelInbox.ResumeLayout(false);
             reportsPanelViewMessage.ResumeLayout(false);
             viewMessagePanel.ResumeLayout(false);
-            reportsPanelInbox.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -1975,6 +1964,5 @@
         private Label welcomeLabelAdmin;
         private Label label25;
         public PictureBox adminPictureBox;
-        private Button button1;
     }
 }
