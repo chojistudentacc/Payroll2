@@ -7,7 +7,7 @@ namespace Payroll
 {
     public partial class LoginForm : Form
     {
-        private string userName;
+        public string userName;
         private string password;
         Repository repo;
 

@@ -25,6 +25,8 @@ namespace Payroll
             InitializeComponent();
             this.login = form;
             repo = new Repository();
+            repo.LoadPicture(repo.getEmployeeID(login.userName), pictureBox2);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
         }
 
         public void SetCurrentUserName(string userName)
@@ -118,6 +120,9 @@ namespace Payroll
                     employeeSSSLabel.Text = "None";
                     label22.Text = "None";
                     label21.Text = "None";
+
+                    repo.LoadPicture(currentEmployeeID, pictureBox1);
+                    pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
                 }
                 else
                 {
