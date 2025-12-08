@@ -80,17 +80,22 @@
             label3 = new Label();
             panel8 = new Panel();
             pictureBox1 = new PictureBox();
+            pictureBox3 = new PictureBox();
             label2 = new Label();
             panel = new Panel();
             panel10 = new Panel();
             panel6 = new Panel();
             panel12 = new Panel();
+            label31 = new Label();
             label16 = new Label();
             panel11 = new Panel();
+            label30 = new Label();
             label13 = new Label();
             panel9 = new Panel();
+            label18 = new Label();
             label12 = new Label();
             panel7 = new Panel();
+            allEmpLB = new Label();
             label11 = new Label();
             profilePanel = new Panel();
             dashboardPanel = new Panel();
@@ -101,19 +106,14 @@
             panel14 = new Panel();
             logDataGridView = new DataGridView();
             label25 = new Label();
-            button2 = new Button();
-            button1 = new Button();
+            ClockouButton = new Button();
+            ClockInButton = new Button();
             panel15 = new Panel();
             label20 = new Label();
             leavePanel = new Panel();
             alabel = new Label();
             payslipPanel = new Panel();
             label23 = new Label();
-            allEmpLB = new Label();
-            label18 = new Label();
-            label30 = new Label();
-            label31 = new Label();
-            pictureBox3 = new PictureBox();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel1.SuspendLayout();
@@ -121,6 +121,7 @@
             panel4.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             panel.SuspendLayout();
             panel6.SuspendLayout();
             panel12.SuspendLayout();
@@ -135,7 +136,6 @@
             ((System.ComponentModel.ISupportInitialize)logDataGridView).BeginInit();
             leavePanel.SuspendLayout();
             payslipPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             SuspendLayout();
             // 
             // panel2
@@ -153,16 +153,18 @@
             panel2.Controls.Add(label1);
             panel2.Dock = DockStyle.Left;
             panel2.Location = new Point(0, 0);
+            panel2.Margin = new Padding(3, 4, 3, 4);
             panel2.Name = "panel2";
-            panel2.Size = new Size(273, 782);
+            panel2.Size = new Size(312, 1043);
             panel2.TabIndex = 1;
             // 
             // pictureBox2
             // 
             pictureBox2.BackColor = Color.White;
-            pictureBox2.Location = new Point(12, 23);
+            pictureBox2.Location = new Point(14, 31);
+            pictureBox2.Margin = new Padding(3, 4, 3, 4);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(107, 93);
+            pictureBox2.Size = new Size(122, 124);
             pictureBox2.TabIndex = 11;
             pictureBox2.TabStop = false;
             // 
@@ -177,9 +179,10 @@
             profileButton.FlatStyle = FlatStyle.Flat;
             profileButton.Font = new Font("Georgia", 15.75F, FontStyle.Bold);
             profileButton.ForeColor = Color.White;
-            profileButton.Location = new Point(0, 478);
+            profileButton.Location = new Point(0, 637);
+            profileButton.Margin = new Padding(3, 4, 3, 4);
             profileButton.Name = "profileButton";
-            profileButton.Size = new Size(273, 74);
+            profileButton.Size = new Size(312, 99);
             profileButton.TabIndex = 10;
             profileButton.Text = "My Profile";
             profileButton.UseVisualStyleBackColor = false;
@@ -196,9 +199,10 @@
             payslipButton.FlatStyle = FlatStyle.Flat;
             payslipButton.Font = new Font("Georgia", 15.75F, FontStyle.Bold);
             payslipButton.ForeColor = Color.White;
-            payslipButton.Location = new Point(0, 404);
+            payslipButton.Location = new Point(0, 539);
+            payslipButton.Margin = new Padding(3, 4, 3, 4);
             payslipButton.Name = "payslipButton";
-            payslipButton.Size = new Size(273, 74);
+            payslipButton.Size = new Size(312, 99);
             payslipButton.TabIndex = 9;
             payslipButton.Text = "Payslips";
             payslipButton.UseVisualStyleBackColor = false;
@@ -215,9 +219,10 @@
             leavesButton.FlatStyle = FlatStyle.Flat;
             leavesButton.Font = new Font("Georgia", 15.75F, FontStyle.Bold);
             leavesButton.ForeColor = Color.White;
-            leavesButton.Location = new Point(0, 330);
+            leavesButton.Location = new Point(0, 440);
+            leavesButton.Margin = new Padding(3, 4, 3, 4);
             leavesButton.Name = "leavesButton";
-            leavesButton.Size = new Size(273, 74);
+            leavesButton.Size = new Size(312, 99);
             leavesButton.TabIndex = 8;
             leavesButton.Text = "Leaves";
             leavesButton.UseVisualStyleBackColor = false;
@@ -234,9 +239,10 @@
             attendanceButt.FlatStyle = FlatStyle.Flat;
             attendanceButt.Font = new Font("Georgia", 15.75F, FontStyle.Bold);
             attendanceButt.ForeColor = Color.White;
-            attendanceButt.Location = new Point(0, 256);
+            attendanceButt.Location = new Point(0, 341);
+            attendanceButt.Margin = new Padding(3, 4, 3, 4);
             attendanceButt.Name = "attendanceButt";
-            attendanceButt.Size = new Size(273, 74);
+            attendanceButt.Size = new Size(312, 99);
             attendanceButt.TabIndex = 7;
             attendanceButt.Text = "Attendance";
             attendanceButt.UseVisualStyleBackColor = false;
@@ -253,9 +259,10 @@
             dashboardButt.FlatStyle = FlatStyle.Flat;
             dashboardButt.Font = new Font("Georgia", 15.75F, FontStyle.Bold);
             dashboardButt.ForeColor = Color.White;
-            dashboardButt.Location = new Point(0, 182);
+            dashboardButt.Location = new Point(0, 243);
+            dashboardButt.Margin = new Padding(3, 4, 3, 4);
             dashboardButt.Name = "dashboardButt";
-            dashboardButt.Size = new Size(273, 74);
+            dashboardButt.Size = new Size(312, 99);
             dashboardButt.TabIndex = 6;
             dashboardButt.Text = "Dashboard";
             dashboardButt.UseVisualStyleBackColor = false;
@@ -267,9 +274,9 @@
             employeeName.BackColor = Color.Transparent;
             employeeName.Font = new Font("Georgia", 15.75F, FontStyle.Italic);
             employeeName.ForeColor = Color.White;
-            employeeName.Location = new Point(123, 60);
+            employeeName.Location = new Point(141, 80);
             employeeName.Name = "employeeName";
-            employeeName.Size = new Size(157, 25);
+            employeeName.Size = new Size(204, 31);
             employeeName.TabIndex = 1;
             employeeName.Text = "employeeName";
             // 
@@ -279,9 +286,9 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Georgia", 18F, FontStyle.Bold | FontStyle.Italic);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(133, 31);
+            label1.Location = new Point(152, 41);
             label1.Name = "label1";
-            label1.Size = new Size(135, 29);
+            label1.Size = new Size(169, 35);
             label1.TabIndex = 0;
             label1.Text = "Welcome,";
             // 
@@ -296,9 +303,10 @@
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(pictureBox3);
             panel1.ForeColor = Color.Black;
-            panel1.Location = new Point(13, 29);
+            panel1.Location = new Point(15, 39);
+            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1092, 773);
+            panel1.Size = new Size(1248, 1031);
             panel1.TabIndex = 2;
             // 
             // panel5
@@ -314,9 +322,10 @@
             panel5.Controls.Add(label28);
             panel5.Controls.Add(label29);
             panel5.ForeColor = Color.FromArgb(163, 47, 54);
-            panel5.Location = new Point(43, 636);
+            panel5.Location = new Point(49, 848);
+            panel5.Margin = new Padding(3, 4, 3, 4);
             panel5.Name = "panel5";
-            panel5.Size = new Size(1002, 105);
+            panel5.Size = new Size(1145, 139);
             panel5.TabIndex = 19;
             // 
             // label21
@@ -324,9 +333,9 @@
             label21.AutoSize = true;
             label21.Font = new Font("Times New Roman", 14.25F);
             label21.ForeColor = Color.Black;
-            label21.Location = new Point(793, 63);
+            label21.Location = new Point(906, 84);
             label21.Name = "label21";
-            label21.Size = new Size(50, 21);
+            label21.Size = new Size(64, 27);
             label21.TabIndex = 17;
             label21.Text = "None";
             // 
@@ -335,9 +344,9 @@
             label22.AutoSize = true;
             label22.Font = new Font("Times New Roman", 14.25F);
             label22.ForeColor = Color.Black;
-            label22.Location = new Point(793, 27);
+            label22.Location = new Point(906, 36);
             label22.Name = "label22";
-            label22.Size = new Size(50, 21);
+            label22.Size = new Size(64, 27);
             label22.TabIndex = 16;
             label22.Text = "None";
             // 
@@ -346,9 +355,9 @@
             employeeSSSLabel.AutoSize = true;
             employeeSSSLabel.Font = new Font("Times New Roman", 14.25F);
             employeeSSSLabel.ForeColor = Color.Black;
-            employeeSSSLabel.Location = new Point(251, 60);
+            employeeSSSLabel.Location = new Point(287, 80);
             employeeSSSLabel.Name = "employeeSSSLabel";
-            employeeSSSLabel.Size = new Size(50, 21);
+            employeeSSSLabel.Size = new Size(64, 27);
             employeeSSSLabel.TabIndex = 14;
             employeeSSSLabel.Text = "None";
             // 
@@ -357,9 +366,9 @@
             employeTinLabel.AutoSize = true;
             employeTinLabel.Font = new Font("Times New Roman", 14.25F);
             employeTinLabel.ForeColor = Color.Black;
-            employeTinLabel.Location = new Point(251, 25);
+            employeTinLabel.Location = new Point(287, 33);
             employeTinLabel.Name = "employeTinLabel";
-            employeTinLabel.Size = new Size(50, 21);
+            employeTinLabel.Size = new Size(64, 27);
             employeTinLabel.TabIndex = 13;
             employeTinLabel.Text = "None";
             // 
@@ -368,9 +377,9 @@
             label26.AutoSize = true;
             label26.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
             label26.ForeColor = Color.Black;
-            label26.Location = new Point(547, 60);
+            label26.Location = new Point(625, 80);
             label26.Name = "label26";
-            label26.Size = new Size(183, 23);
+            label26.Size = new Size(234, 29);
             label26.TabIndex = 9;
             label26.Text = "Pag-Ibig Number:";
             // 
@@ -379,9 +388,9 @@
             label27.AutoSize = true;
             label27.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
             label27.ForeColor = Color.Black;
-            label27.Location = new Point(547, 25);
+            label27.Location = new Point(625, 33);
             label27.Name = "label27";
-            label27.Size = new Size(210, 23);
+            label27.Size = new Size(264, 29);
             label27.TabIndex = 8;
             label27.Text = "PhilHealth Number:";
             // 
@@ -390,9 +399,9 @@
             label28.AutoSize = true;
             label28.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
             label28.ForeColor = Color.Black;
-            label28.Location = new Point(36, 60);
+            label28.Location = new Point(41, 80);
             label28.Name = "label28";
-            label28.Size = new Size(139, 23);
+            label28.Size = new Size(179, 29);
             label28.TabIndex = 5;
             label28.Text = "SSS Number:";
             // 
@@ -401,9 +410,9 @@
             label29.AutoSize = true;
             label29.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
             label29.ForeColor = Color.Black;
-            label29.Location = new Point(35, 22);
+            label29.Location = new Point(40, 29);
             label29.Name = "label29";
-            label29.Size = new Size(140, 23);
+            label29.Size = new Size(178, 29);
             label29.TabIndex = 4;
             label29.Text = "TIN Number:";
             // 
@@ -420,9 +429,10 @@
             panel4.Controls.Add(label15);
             panel4.Controls.Add(label19);
             panel4.ForeColor = Color.FromArgb(163, 47, 54);
-            panel4.Location = new Point(43, 523);
+            panel4.Location = new Point(49, 697);
+            panel4.Margin = new Padding(3, 4, 3, 4);
             panel4.Name = "panel4";
-            panel4.Size = new Size(1002, 94);
+            panel4.Size = new Size(1145, 125);
             panel4.TabIndex = 17;
             // 
             // employeeAddressLabel
@@ -430,9 +440,9 @@
             employeeAddressLabel.AutoSize = true;
             employeeAddressLabel.Font = new Font("Times New Roman", 14.25F);
             employeeAddressLabel.ForeColor = Color.Black;
-            employeeAddressLabel.Location = new Point(252, 60);
+            employeeAddressLabel.Location = new Point(288, 80);
             employeeAddressLabel.Name = "employeeAddressLabel";
-            employeeAddressLabel.Size = new Size(50, 21);
+            employeeAddressLabel.Size = new Size(64, 27);
             employeeAddressLabel.TabIndex = 18;
             employeeAddressLabel.Text = "None";
             // 
@@ -441,9 +451,9 @@
             employeeEmailLabel.AutoSize = true;
             employeeEmailLabel.Font = new Font("Times New Roman", 14.25F);
             employeeEmailLabel.ForeColor = Color.Black;
-            employeeEmailLabel.Location = new Point(794, 57);
+            employeeEmailLabel.Location = new Point(907, 76);
             employeeEmailLabel.Name = "employeeEmailLabel";
-            employeeEmailLabel.Size = new Size(50, 21);
+            employeeEmailLabel.Size = new Size(64, 27);
             employeeEmailLabel.TabIndex = 17;
             employeeEmailLabel.Text = "None";
             // 
@@ -452,9 +462,9 @@
             employeeContactLabel.AutoSize = true;
             employeeContactLabel.Font = new Font("Times New Roman", 14.25F);
             employeeContactLabel.ForeColor = Color.Black;
-            employeeContactLabel.Location = new Point(794, 15);
+            employeeContactLabel.Location = new Point(907, 20);
             employeeContactLabel.Name = "employeeContactLabel";
-            employeeContactLabel.Size = new Size(50, 21);
+            employeeContactLabel.Size = new Size(64, 27);
             employeeContactLabel.TabIndex = 16;
             employeeContactLabel.Text = "None";
             // 
@@ -463,9 +473,9 @@
             label10.AutoSize = true;
             label10.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
             label10.ForeColor = Color.Black;
-            label10.Location = new Point(37, 57);
+            label10.Location = new Point(42, 76);
             label10.Name = "label10";
-            label10.Size = new Size(98, 23);
+            label10.Size = new Size(122, 29);
             label10.TabIndex = 15;
             label10.Text = "Address:";
             // 
@@ -474,9 +484,9 @@
             employeeTypeLabel.AutoSize = true;
             employeeTypeLabel.Font = new Font("Times New Roman", 14.25F);
             employeeTypeLabel.ForeColor = Color.Black;
-            employeeTypeLabel.Location = new Point(252, 18);
+            employeeTypeLabel.Location = new Point(288, 24);
             employeeTypeLabel.Name = "employeeTypeLabel";
-            employeeTypeLabel.Size = new Size(50, 21);
+            employeeTypeLabel.Size = new Size(64, 27);
             employeeTypeLabel.TabIndex = 13;
             employeeTypeLabel.Text = "None";
             // 
@@ -485,9 +495,9 @@
             label14.AutoSize = true;
             label14.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
             label14.ForeColor = Color.Black;
-            label14.Location = new Point(547, 57);
+            label14.Location = new Point(625, 76);
             label14.Name = "label14";
-            label14.Size = new Size(161, 23);
+            label14.Size = new Size(199, 29);
             label14.TabIndex = 9;
             label14.Text = "Email Address:";
             // 
@@ -496,9 +506,9 @@
             label15.AutoSize = true;
             label15.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
             label15.ForeColor = Color.Black;
-            label15.Location = new Point(547, 15);
+            label15.Location = new Point(625, 20);
             label15.Name = "label15";
-            label15.Size = new Size(132, 23);
+            label15.Size = new Size(167, 29);
             label15.TabIndex = 8;
             label15.Text = "Contact No.:";
             // 
@@ -507,9 +517,9 @@
             label19.AutoSize = true;
             label19.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
             label19.ForeColor = Color.Black;
-            label19.Location = new Point(36, 15);
+            label19.Location = new Point(41, 20);
             label19.Name = "label19";
-            label19.Size = new Size(168, 23);
+            label19.Size = new Size(208, 29);
             label19.TabIndex = 4;
             label19.Text = "Employee Type:";
             // 
@@ -532,9 +542,10 @@
             panel3.Controls.Add(label5);
             panel3.Controls.Add(label4);
             panel3.ForeColor = Color.FromArgb(163, 47, 54);
-            panel3.Location = new Point(43, 311);
+            panel3.Location = new Point(49, 415);
+            panel3.Margin = new Padding(3, 4, 3, 4);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1002, 194);
+            panel3.Size = new Size(1145, 258);
             panel3.TabIndex = 5;
             // 
             // employeeProfileUserIDLabel
@@ -542,19 +553,19 @@
             employeeProfileUserIDLabel.AutoSize = true;
             employeeProfileUserIDLabel.Font = new Font("Times New Roman", 14.25F);
             employeeProfileUserIDLabel.ForeColor = Color.Black;
-            employeeProfileUserIDLabel.Location = new Point(794, 29);
+            employeeProfileUserIDLabel.Location = new Point(907, 39);
             employeeProfileUserIDLabel.Name = "employeeProfileUserIDLabel";
-            employeeProfileUserIDLabel.Size = new Size(50, 21);
+            employeeProfileUserIDLabel.Size = new Size(64, 27);
             employeeProfileUserIDLabel.TabIndex = 18;
             employeeProfileUserIDLabel.Text = "None";
             // 
             // employeeProfilePasswordTB
             // 
             employeeProfilePasswordTB.Font = new Font("Times New Roman", 14.25F);
-            employeeProfilePasswordTB.Location = new Point(714, 69);
+            employeeProfilePasswordTB.Location = new Point(816, 92);
             employeeProfilePasswordTB.Margin = new Padding(2, 1, 2, 1);
             employeeProfilePasswordTB.Name = "employeeProfilePasswordTB";
-            employeeProfilePasswordTB.Size = new Size(230, 29);
+            employeeProfilePasswordTB.Size = new Size(262, 35);
             employeeProfilePasswordTB.TabIndex = 17;
             // 
             // employeeProfileDepartmentLabel
@@ -562,9 +573,9 @@
             employeeProfileDepartmentLabel.AutoSize = true;
             employeeProfileDepartmentLabel.Font = new Font("Times New Roman", 14.25F);
             employeeProfileDepartmentLabel.ForeColor = Color.Black;
-            employeeProfileDepartmentLabel.Location = new Point(251, 158);
+            employeeProfileDepartmentLabel.Location = new Point(287, 211);
             employeeProfileDepartmentLabel.Name = "employeeProfileDepartmentLabel";
-            employeeProfileDepartmentLabel.Size = new Size(50, 21);
+            employeeProfileDepartmentLabel.Size = new Size(64, 27);
             employeeProfileDepartmentLabel.TabIndex = 16;
             employeeProfileDepartmentLabel.Text = "None";
             // 
@@ -573,9 +584,9 @@
             employeeProfilePositionLabel.AutoSize = true;
             employeeProfilePositionLabel.Font = new Font("Times New Roman", 14.25F);
             employeeProfilePositionLabel.ForeColor = Color.Black;
-            employeeProfilePositionLabel.Location = new Point(251, 117);
+            employeeProfilePositionLabel.Location = new Point(287, 156);
             employeeProfilePositionLabel.Name = "employeeProfilePositionLabel";
-            employeeProfilePositionLabel.Size = new Size(50, 21);
+            employeeProfilePositionLabel.Size = new Size(64, 27);
             employeeProfilePositionLabel.TabIndex = 15;
             employeeProfilePositionLabel.Text = "None";
             // 
@@ -584,9 +595,9 @@
             employeeProfileNameLabel.AutoSize = true;
             employeeProfileNameLabel.Font = new Font("Times New Roman", 14.25F);
             employeeProfileNameLabel.ForeColor = Color.Black;
-            employeeProfileNameLabel.Location = new Point(251, 72);
+            employeeProfileNameLabel.Location = new Point(287, 96);
             employeeProfileNameLabel.Name = "employeeProfileNameLabel";
-            employeeProfileNameLabel.Size = new Size(50, 21);
+            employeeProfileNameLabel.Size = new Size(64, 27);
             employeeProfileNameLabel.TabIndex = 14;
             employeeProfileNameLabel.Text = "None";
             // 
@@ -595,9 +606,9 @@
             employeeProfileIDLabel.AutoSize = true;
             employeeProfileIDLabel.Font = new Font("Times New Roman", 14.25F);
             employeeProfileIDLabel.ForeColor = Color.Black;
-            employeeProfileIDLabel.Location = new Point(251, 27);
+            employeeProfileIDLabel.Location = new Point(287, 36);
             employeeProfileIDLabel.Name = "employeeProfileIDLabel";
-            employeeProfileIDLabel.Size = new Size(50, 21);
+            employeeProfileIDLabel.Size = new Size(64, 27);
             employeeProfileIDLabel.TabIndex = 13;
             employeeProfileIDLabel.Text = "None";
             // 
@@ -610,9 +621,10 @@
             changePasswordButton.FlatStyle = FlatStyle.Flat;
             changePasswordButton.Font = new Font("Georgia", 12F, FontStyle.Bold);
             changePasswordButton.ForeColor = Color.White;
-            changePasswordButton.Location = new Point(839, 104);
+            changePasswordButton.Location = new Point(959, 139);
+            changePasswordButton.Margin = new Padding(3, 4, 3, 4);
             changePasswordButton.Name = "changePasswordButton";
-            changePasswordButton.Size = new Size(92, 30);
+            changePasswordButton.Size = new Size(105, 40);
             changePasswordButton.TabIndex = 12;
             changePasswordButton.Text = "Change";
             changePasswordButton.UseVisualStyleBackColor = false;
@@ -627,9 +639,10 @@
             showPasswordButton.FlatStyle = FlatStyle.Flat;
             showPasswordButton.Font = new Font("Georgia", 12F, FontStyle.Bold);
             showPasswordButton.ForeColor = Color.White;
-            showPasswordButton.Location = new Point(732, 104);
+            showPasswordButton.Location = new Point(837, 139);
+            showPasswordButton.Margin = new Padding(3, 4, 3, 4);
             showPasswordButton.Name = "showPasswordButton";
-            showPasswordButton.Size = new Size(92, 30);
+            showPasswordButton.Size = new Size(105, 40);
             showPasswordButton.TabIndex = 11;
             showPasswordButton.Text = "Show";
             showPasswordButton.UseVisualStyleBackColor = false;
@@ -640,9 +653,9 @@
             label9.AutoSize = true;
             label9.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
             label9.ForeColor = Color.Black;
-            label9.Location = new Point(547, 70);
+            label9.Location = new Point(625, 93);
             label9.Name = "label9";
-            label9.Size = new Size(112, 23);
+            label9.Size = new Size(141, 29);
             label9.TabIndex = 9;
             label9.Text = "Password:";
             // 
@@ -651,9 +664,9 @@
             label8.AutoSize = true;
             label8.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
             label8.ForeColor = Color.Black;
-            label8.Location = new Point(547, 26);
+            label8.Location = new Point(625, 35);
             label8.Name = "label8";
-            label8.Size = new Size(93, 23);
+            label8.Size = new Size(117, 29);
             label8.TabIndex = 8;
             label8.Text = "User ID:";
             // 
@@ -662,9 +675,9 @@
             label7.AutoSize = true;
             label7.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
             label7.ForeColor = Color.Black;
-            label7.Location = new Point(35, 153);
+            label7.Location = new Point(40, 204);
             label7.Name = "label7";
-            label7.Size = new Size(137, 23);
+            label7.Size = new Size(173, 29);
             label7.TabIndex = 7;
             label7.Text = "Department:";
             // 
@@ -673,9 +686,9 @@
             label6.AutoSize = true;
             label6.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
             label6.ForeColor = Color.Black;
-            label6.Location = new Point(35, 114);
+            label6.Location = new Point(40, 152);
             label6.Name = "label6";
-            label6.Size = new Size(99, 23);
+            label6.Size = new Size(124, 29);
             label6.TabIndex = 6;
             label6.Text = "Position:";
             // 
@@ -684,9 +697,9 @@
             label5.AutoSize = true;
             label5.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
             label5.ForeColor = Color.Black;
-            label5.Location = new Point(35, 69);
+            label5.Location = new Point(40, 92);
             label5.Name = "label5";
-            label5.Size = new Size(177, 23);
+            label5.Size = new Size(221, 29);
             label5.TabIndex = 5;
             label5.Text = "Employee Name:";
             // 
@@ -695,9 +708,9 @@
             label4.AutoSize = true;
             label4.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
             label4.ForeColor = Color.Black;
-            label4.Location = new Point(35, 24);
+            label4.Location = new Point(40, 32);
             label4.Name = "label4";
-            label4.Size = new Size(144, 23);
+            label4.Size = new Size(180, 29);
             label4.TabIndex = 4;
             label4.Text = "Employee ID:";
             // 
@@ -706,9 +719,9 @@
             label3.AutoSize = true;
             label3.Font = new Font("Georgia", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.FromArgb(125, 0, 0);
-            label3.Location = new Point(438, 73);
+            label3.Location = new Point(501, 97);
             label3.Name = "label3";
-            label3.Size = new Size(171, 38);
+            label3.Size = new Size(214, 46);
             label3.TabIndex = 4;
             label3.Text = "PROFILE";
             // 
@@ -717,24 +730,36 @@
             panel8.BackgroundImage = Properties.Resources.PanelBG;
             panel8.BackgroundImageLayout = ImageLayout.Stretch;
             panel8.Location = new Point(-1, 1);
+            panel8.Margin = new Padding(3, 4, 3, 4);
             panel8.Name = "panel8";
-            panel8.Size = new Size(1092, 67);
+            panel8.Size = new Size(1248, 89);
             panel8.TabIndex = 3;
             // 
             // pictureBox1
             // 
-            pictureBox1.Location = new Point(430, 136);
+            pictureBox1.Location = new Point(491, 181);
+            pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(184, 153);
+            pictureBox1.Size = new Size(210, 204);
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.BackColor = Color.FromArgb(151, 68, 68);
+            pictureBox3.Location = new Point(49, 152);
+            pictureBox3.Margin = new Padding(3, 4, 3, 4);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(1145, 263);
+            pictureBox3.TabIndex = 20;
+            pictureBox3.TabStop = false;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(6, 7);
+            label2.Location = new Point(7, 9);
             label2.Name = "label2";
-            label2.Size = new Size(70, 15);
+            label2.Size = new Size(88, 20);
             label2.TabIndex = 3;
             label2.Text = "profilePanel";
             // 
@@ -743,10 +768,10 @@
             panel.BackColor = Color.Snow;
             panel.Controls.Add(panel10);
             panel.Controls.Add(panel6);
-            panel.Location = new Point(23, 29);
+            panel.Location = new Point(26, 39);
             panel.Margin = new Padding(2, 1, 2, 1);
             panel.Name = "panel";
-            panel.Size = new Size(1092, 364);
+            panel.Size = new Size(1248, 485);
             panel.TabIndex = 4;
             // 
             // panel10
@@ -754,8 +779,9 @@
             panel10.BackgroundImage = Properties.Resources.TopPanelBg;
             panel10.BackgroundImageLayout = ImageLayout.Stretch;
             panel10.Location = new Point(0, 1);
+            panel10.Margin = new Padding(3, 4, 3, 4);
             panel10.Name = "panel10";
-            panel10.Size = new Size(1092, 67);
+            panel10.Size = new Size(1248, 89);
             panel10.TabIndex = 3;
             // 
             // panel6
@@ -765,10 +791,10 @@
             panel6.Controls.Add(panel11);
             panel6.Controls.Add(panel9);
             panel6.Controls.Add(panel7);
-            panel6.Location = new Point(30, 122);
+            panel6.Location = new Point(34, 163);
             panel6.Margin = new Padding(2, 1, 2, 1);
             panel6.Name = "panel6";
-            panel6.Size = new Size(1016, 185);
+            panel6.Size = new Size(1161, 247);
             panel6.TabIndex = 0;
             // 
             // panel12
@@ -777,11 +803,23 @@
             panel12.BackgroundImageLayout = ImageLayout.Stretch;
             panel12.Controls.Add(label31);
             panel12.Controls.Add(label16);
-            panel12.Location = new Point(814, 41);
+            panel12.Location = new Point(930, 55);
             panel12.Margin = new Padding(2, 1, 2, 1);
             panel12.Name = "panel12";
-            panel12.Size = new Size(163, 86);
+            panel12.Size = new Size(186, 115);
             panel12.TabIndex = 3;
+            // 
+            // label31
+            // 
+            label31.AutoSize = true;
+            label31.BackColor = Color.Transparent;
+            label31.Font = new Font("Times New Roman", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label31.ForeColor = Color.White;
+            label31.Location = new Point(77, 51);
+            label31.Name = "label31";
+            label31.Size = new Size(44, 51);
+            label31.TabIndex = 4;
+            label31.Text = "0";
             // 
             // label16
             // 
@@ -789,10 +827,10 @@
             label16.BackColor = Color.Transparent;
             label16.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
             label16.ForeColor = Color.White;
-            label16.Location = new Point(10, 11);
+            label16.Location = new Point(11, 15);
             label16.Margin = new Padding(2, 0, 2, 0);
             label16.Name = "label16";
-            label16.Size = new Size(147, 23);
+            label16.Size = new Size(185, 29);
             label16.TabIndex = 0;
             label16.Text = "Next Pay Date";
             // 
@@ -802,11 +840,23 @@
             panel11.BackgroundImageLayout = ImageLayout.Stretch;
             panel11.Controls.Add(label30);
             panel11.Controls.Add(label13);
-            panel11.Location = new Point(563, 41);
+            panel11.Location = new Point(643, 55);
             panel11.Margin = new Padding(2, 1, 2, 1);
             panel11.Name = "panel11";
-            panel11.Size = new Size(163, 86);
+            panel11.Size = new Size(186, 115);
             panel11.TabIndex = 2;
+            // 
+            // label30
+            // 
+            label30.AutoSize = true;
+            label30.BackColor = Color.Transparent;
+            label30.Font = new Font("Times New Roman", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label30.ForeColor = Color.White;
+            label30.Location = new Point(75, 51);
+            label30.Name = "label30";
+            label30.Size = new Size(44, 51);
+            label30.TabIndex = 4;
+            label30.Text = "0";
             // 
             // label13
             // 
@@ -814,10 +864,10 @@
             label13.BackColor = Color.Transparent;
             label13.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
             label13.ForeColor = Color.White;
-            label13.Location = new Point(44, 11);
+            label13.Location = new Point(50, 15);
             label13.Margin = new Padding(2, 0, 2, 0);
             label13.Name = "label13";
-            label13.Size = new Size(77, 23);
+            label13.Size = new Size(97, 29);
             label13.TabIndex = 0;
             label13.Text = "Leaves";
             // 
@@ -827,11 +877,23 @@
             panel9.BackgroundImageLayout = ImageLayout.Stretch;
             panel9.Controls.Add(label18);
             panel9.Controls.Add(label12);
-            panel9.Location = new Point(297, 41);
+            panel9.Location = new Point(339, 55);
             panel9.Margin = new Padding(2, 1, 2, 1);
             panel9.Name = "panel9";
-            panel9.Size = new Size(163, 86);
+            panel9.Size = new Size(186, 115);
             panel9.TabIndex = 1;
+            // 
+            // label18
+            // 
+            label18.AutoSize = true;
+            label18.BackColor = Color.Transparent;
+            label18.Font = new Font("Times New Roman", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label18.ForeColor = Color.White;
+            label18.Location = new Point(74, 51);
+            label18.Name = "label18";
+            label18.Size = new Size(44, 51);
+            label18.TabIndex = 3;
+            label18.Text = "0";
             // 
             // label12
             // 
@@ -839,10 +901,10 @@
             label12.BackColor = Color.Transparent;
             label12.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
             label12.ForeColor = Color.White;
-            label12.Location = new Point(22, 11);
+            label12.Location = new Point(25, 15);
             label12.Margin = new Padding(2, 0, 2, 0);
             label12.Name = "label12";
-            label12.Size = new Size(122, 23);
+            label12.Size = new Size(156, 29);
             label12.TabIndex = 0;
             label12.Text = "Attendance";
             // 
@@ -852,11 +914,23 @@
             panel7.BackgroundImageLayout = ImageLayout.Stretch;
             panel7.Controls.Add(allEmpLB);
             panel7.Controls.Add(label11);
-            panel7.Location = new Point(39, 41);
+            panel7.Location = new Point(45, 55);
             panel7.Margin = new Padding(2, 1, 2, 1);
             panel7.Name = "panel7";
-            panel7.Size = new Size(163, 86);
+            panel7.Size = new Size(186, 115);
             panel7.TabIndex = 0;
+            // 
+            // allEmpLB
+            // 
+            allEmpLB.AutoSize = true;
+            allEmpLB.BackColor = Color.Transparent;
+            allEmpLB.Font = new Font("Times New Roman", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            allEmpLB.ForeColor = Color.White;
+            allEmpLB.Location = new Point(74, 51);
+            allEmpLB.Name = "allEmpLB";
+            allEmpLB.Size = new Size(44, 51);
+            allEmpLB.TabIndex = 2;
+            allEmpLB.Text = "0";
             // 
             // label11
             // 
@@ -864,10 +938,10 @@
             label11.BackColor = Color.Transparent;
             label11.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
             label11.ForeColor = Color.White;
-            label11.Location = new Point(40, 11);
+            label11.Location = new Point(46, 15);
             label11.Margin = new Padding(2, 0, 2, 0);
             label11.Name = "label11";
-            label11.Size = new Size(85, 23);
+            label11.Size = new Size(107, 29);
             label11.TabIndex = 0;
             label11.Text = "Net Pay";
             // 
@@ -875,10 +949,10 @@
             // 
             profilePanel.Controls.Add(label2);
             profilePanel.Controls.Add(panel1);
-            profilePanel.Location = new Point(273, 0);
+            profilePanel.Location = new Point(312, 0);
             profilePanel.Margin = new Padding(2, 1, 2, 1);
             profilePanel.Name = "profilePanel";
-            profilePanel.Size = new Size(1135, 821);
+            profilePanel.Size = new Size(1297, 1095);
             profilePanel.TabIndex = 5;
             // 
             // dashboardPanel
@@ -886,20 +960,20 @@
             dashboardPanel.Controls.Add(panel13);
             dashboardPanel.Controls.Add(label17);
             dashboardPanel.Controls.Add(panel);
-            dashboardPanel.Location = new Point(273, 0);
+            dashboardPanel.Location = new Point(312, 0);
             dashboardPanel.Margin = new Padding(2, 1, 2, 1);
             dashboardPanel.Name = "dashboardPanel";
-            dashboardPanel.Size = new Size(1135, 821);
+            dashboardPanel.Size = new Size(1297, 1095);
             dashboardPanel.TabIndex = 6;
             // 
             // panel13
             // 
             panel13.BackColor = Color.Snow;
             panel13.Controls.Add(label24);
-            panel13.Location = new Point(24, 419);
+            panel13.Location = new Point(27, 559);
             panel13.Margin = new Padding(2, 1, 2, 1);
             panel13.Name = "panel13";
-            panel13.Size = new Size(1092, 331);
+            panel13.Size = new Size(1248, 441);
             panel13.TabIndex = 5;
             // 
             // label24
@@ -907,18 +981,18 @@
             label24.AutoSize = true;
             label24.Font = new Font("Georgia", 24.75F, FontStyle.Bold);
             label24.ForeColor = Color.FromArgb(130, 0, 0);
-            label24.Location = new Point(419, 18);
+            label24.Location = new Point(479, 24);
             label24.Name = "label24";
-            label24.Size = new Size(254, 38);
+            label24.Size = new Size(322, 48);
             label24.TabIndex = 6;
             label24.Text = "Latest Payslip";
             // 
             // label17
             // 
             label17.AutoSize = true;
-            label17.Location = new Point(11, 7);
+            label17.Location = new Point(13, 9);
             label17.Name = "label17";
-            label17.Size = new Size(92, 15);
+            label17.Size = new Size(115, 20);
             label17.TabIndex = 5;
             label17.Text = "dashboardPanel";
             // 
@@ -926,10 +1000,10 @@
             // 
             attendancePanel.Controls.Add(panel14);
             attendancePanel.Controls.Add(label20);
-            attendancePanel.Location = new Point(273, 0);
+            attendancePanel.Location = new Point(312, 0);
             attendancePanel.Margin = new Padding(2, 1, 2, 1);
             attendancePanel.Name = "attendancePanel";
-            attendancePanel.Size = new Size(1135, 821);
+            attendancePanel.Size = new Size(1297, 1095);
             attendancePanel.TabIndex = 7;
             // 
             // panel14
@@ -937,13 +1011,13 @@
             panel14.BackColor = Color.White;
             panel14.Controls.Add(logDataGridView);
             panel14.Controls.Add(label25);
-            panel14.Controls.Add(button2);
-            panel14.Controls.Add(button1);
+            panel14.Controls.Add(ClockouButton);
+            panel14.Controls.Add(ClockInButton);
             panel14.Controls.Add(panel15);
-            panel14.Location = new Point(16, 38);
+            panel14.Location = new Point(18, 51);
             panel14.Margin = new Padding(2, 1, 2, 1);
             panel14.Name = "panel14";
-            panel14.Size = new Size(1090, 728);
+            panel14.Size = new Size(1246, 971);
             panel14.TabIndex = 1;
             // 
             // logDataGridView
@@ -975,7 +1049,8 @@
             logDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             logDataGridView.EnableHeadersVisualStyles = false;
             logDataGridView.GridColor = Color.White;
-            logDataGridView.Location = new Point(14, 218);
+            logDataGridView.Location = new Point(16, 291);
+            logDataGridView.Margin = new Padding(3, 4, 3, 4);
             logDataGridView.Name = "logDataGridView";
             logDataGridView.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -989,7 +1064,7 @@
             logDataGridView.RowHeadersVisible = false;
             logDataGridView.RowHeadersWidth = 51;
             logDataGridView.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            logDataGridView.Size = new Size(1063, 476);
+            logDataGridView.Size = new Size(1215, 635);
             logDataGridView.TabIndex = 9;
             // 
             // label25
@@ -997,171 +1072,120 @@
             label25.AutoSize = true;
             label25.Font = new Font("Georgia", 26.25F, FontStyle.Bold);
             label25.ForeColor = Color.FromArgb(125, 0, 0);
-            label25.Location = new Point(399, 89);
+            label25.Location = new Point(456, 119);
             label25.Margin = new Padding(2, 0, 2, 0);
             label25.Name = "label25";
-            label25.Size = new Size(282, 41);
+            label25.Size = new Size(354, 51);
             label25.TabIndex = 8;
             label25.Text = "ATTENDANCE";
             // 
-            // button2
+            // ClockouButton
             // 
-            button2.BackColor = Color.FromArgb(163, 47, 54);
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatAppearance.MouseDownBackColor = Color.Black;
-            button2.FlatAppearance.MouseOverBackColor = Color.Black;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
-            button2.ForeColor = Color.White;
-            button2.Location = new Point(221, 162);
-            button2.Name = "button2";
-            button2.Size = new Size(161, 46);
-            button2.TabIndex = 7;
-            button2.Text = "Clock Out";
-            button2.UseVisualStyleBackColor = false;
+            ClockouButton.BackColor = Color.FromArgb(163, 47, 54);
+            ClockouButton.FlatAppearance.BorderSize = 0;
+            ClockouButton.FlatAppearance.MouseDownBackColor = Color.Black;
+            ClockouButton.FlatAppearance.MouseOverBackColor = Color.Black;
+            ClockouButton.FlatStyle = FlatStyle.Flat;
+            ClockouButton.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
+            ClockouButton.ForeColor = Color.White;
+            ClockouButton.Location = new Point(253, 216);
+            ClockouButton.Margin = new Padding(3, 4, 3, 4);
+            ClockouButton.Name = "ClockouButton";
+            ClockouButton.Size = new Size(184, 61);
+            ClockouButton.TabIndex = 7;
+            ClockouButton.Text = "Clock Out";
+            ClockouButton.UseVisualStyleBackColor = false;
+            ClockouButton.Click += ClockouButton_Click;
             // 
-            // button1
+            // ClockInButton
             // 
-            button1.BackColor = Color.FromArgb(163, 47, 54);
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatAppearance.MouseDownBackColor = Color.Black;
-            button1.FlatAppearance.MouseOverBackColor = Color.Black;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(36, 162);
-            button1.Name = "button1";
-            button1.Size = new Size(161, 46);
-            button1.TabIndex = 6;
-            button1.Text = "Clock In";
-            button1.UseVisualStyleBackColor = false;
+            ClockInButton.BackColor = Color.FromArgb(163, 47, 54);
+            ClockInButton.FlatAppearance.BorderSize = 0;
+            ClockInButton.FlatAppearance.MouseDownBackColor = Color.Black;
+            ClockInButton.FlatAppearance.MouseOverBackColor = Color.Black;
+            ClockInButton.FlatStyle = FlatStyle.Flat;
+            ClockInButton.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
+            ClockInButton.ForeColor = Color.White;
+            ClockInButton.Location = new Point(41, 216);
+            ClockInButton.Margin = new Padding(3, 4, 3, 4);
+            ClockInButton.Name = "ClockInButton";
+            ClockInButton.Size = new Size(184, 61);
+            ClockInButton.TabIndex = 6;
+            ClockInButton.Text = "Clock In";
+            ClockInButton.UseVisualStyleBackColor = false;
+            ClockInButton.Click += ClockInButton_Click;
             // 
             // panel15
             // 
             panel15.BackgroundImage = Properties.Resources.TopPanelBg;
             panel15.BackgroundImageLayout = ImageLayout.Stretch;
-            panel15.Location = new Point(0, 2);
+            panel15.Location = new Point(0, 3);
+            panel15.Margin = new Padding(3, 4, 3, 4);
             panel15.Name = "panel15";
-            panel15.Size = new Size(1092, 67);
+            panel15.Size = new Size(1248, 89);
             panel15.TabIndex = 3;
             // 
             // label20
             // 
             label20.AutoSize = true;
-            label20.Location = new Point(16, 10);
+            label20.Location = new Point(18, 13);
             label20.Margin = new Padding(2, 0, 2, 0);
             label20.Name = "label20";
-            label20.Size = new Size(95, 15);
+            label20.Size = new Size(118, 20);
             label20.TabIndex = 0;
             label20.Text = "attendancePanel";
             // 
             // leavePanel
             // 
             leavePanel.Controls.Add(alabel);
-            leavePanel.Location = new Point(273, 0);
+            leavePanel.Location = new Point(312, 0);
             leavePanel.Margin = new Padding(2, 1, 2, 1);
             leavePanel.Name = "leavePanel";
-            leavePanel.Size = new Size(1135, 821);
+            leavePanel.Size = new Size(1297, 1095);
             leavePanel.TabIndex = 8;
             // 
             // alabel
             // 
             alabel.AutoSize = true;
-            alabel.Location = new Point(15, 14);
+            alabel.Location = new Point(17, 19);
             alabel.Margin = new Padding(2, 0, 2, 0);
             alabel.Name = "alabel";
-            alabel.Size = new Size(63, 15);
+            alabel.Size = new Size(79, 20);
             alabel.TabIndex = 0;
             alabel.Text = "leavePanel";
             // 
             // payslipPanel
             // 
             payslipPanel.Controls.Add(label23);
-            payslipPanel.Location = new Point(273, 0);
+            payslipPanel.Location = new Point(312, 0);
             payslipPanel.Margin = new Padding(2, 1, 2, 1);
             payslipPanel.Name = "payslipPanel";
-            payslipPanel.Size = new Size(1135, 821);
+            payslipPanel.Size = new Size(1297, 1095);
             payslipPanel.TabIndex = 9;
             // 
             // label23
             // 
             label23.AutoSize = true;
-            label23.Location = new Point(15, 13);
+            label23.Location = new Point(17, 17);
             label23.Margin = new Padding(2, 0, 2, 0);
             label23.Name = "label23";
-            label23.Size = new Size(73, 15);
+            label23.Size = new Size(91, 20);
             label23.TabIndex = 0;
             label23.Text = "payslipPanel";
             // 
-            // allEmpLB
-            // 
-            allEmpLB.AutoSize = true;
-            allEmpLB.BackColor = Color.Transparent;
-            allEmpLB.Font = new Font("Times New Roman", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            allEmpLB.ForeColor = Color.White;
-            allEmpLB.Location = new Point(65, 38);
-            allEmpLB.Name = "allEmpLB";
-            allEmpLB.Size = new Size(35, 40);
-            allEmpLB.TabIndex = 2;
-            allEmpLB.Text = "0";
-            // 
-            // label18
-            // 
-            label18.AutoSize = true;
-            label18.BackColor = Color.Transparent;
-            label18.Font = new Font("Times New Roman", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label18.ForeColor = Color.White;
-            label18.Location = new Point(65, 38);
-            label18.Name = "label18";
-            label18.Size = new Size(35, 40);
-            label18.TabIndex = 3;
-            label18.Text = "0";
-            // 
-            // label30
-            // 
-            label30.AutoSize = true;
-            label30.BackColor = Color.Transparent;
-            label30.Font = new Font("Times New Roman", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label30.ForeColor = Color.White;
-            label30.Location = new Point(66, 38);
-            label30.Name = "label30";
-            label30.Size = new Size(35, 40);
-            label30.TabIndex = 4;
-            label30.Text = "0";
-            // 
-            // label31
-            // 
-            label31.AutoSize = true;
-            label31.BackColor = Color.Transparent;
-            label31.Font = new Font("Times New Roman", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label31.ForeColor = Color.White;
-            label31.Location = new Point(67, 38);
-            label31.Name = "label31";
-            label31.Size = new Size(35, 40);
-            label31.TabIndex = 4;
-            label31.Text = "0";
-            // 
-            // pictureBox3
-            // 
-            pictureBox3.BackColor = Color.FromArgb(151, 68, 68);
-            pictureBox3.Location = new Point(43, 114);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(1002, 197);
-            pictureBox3.TabIndex = 20;
-            pictureBox3.TabStop = false;
-            // 
             // EmployeeForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(224, 224, 224);
-            ClientSize = new Size(1389, 782);
+            ClientSize = new Size(1587, 1043);
             Controls.Add(panel2);
+            Controls.Add(attendancePanel);
             Controls.Add(dashboardPanel);
             Controls.Add(profilePanel);
             Controls.Add(payslipPanel);
             Controls.Add(leavePanel);
-            Controls.Add(attendancePanel);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "EmployeeForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "EmployeeForm";
@@ -1179,6 +1203,7 @@
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             panel.ResumeLayout(false);
             panel6.ResumeLayout(false);
             panel12.ResumeLayout(false);
@@ -1204,7 +1229,6 @@
             leavePanel.PerformLayout();
             payslipPanel.ResumeLayout(false);
             payslipPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ResumeLayout(false);
         }
 
@@ -1279,8 +1303,8 @@
         private Panel panel14;
         private Panel panel15;
         private Label label25;
-        private Button button2;
-        private Button button1;
+        private Button ClockouButton;
+        private Button ClockInButton;
         private DataGridView logDataGridView;
         private Label employeeProfileUserIDLabel;
         private TextBox employeeProfilePasswordTB;
