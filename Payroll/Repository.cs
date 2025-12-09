@@ -11,8 +11,7 @@ namespace Payroll
     {
 
         private string csvFilePath = @"C:\Users\User\Documents\EmployeeArchive.csv";
-        private readonly string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\chandrei0212\\source\\repos\\Payroll4.0\\Payroll\\Payroll.mdf;Integrated Security=True";
-
+        private readonly string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\User\\source\\repos\\Payroll3\\Payroll\\Payroll.mdf;Integrated Security=True";
         public int GetEmailDataRowCount()
         {
             int rowCount = 0;
@@ -2070,6 +2069,47 @@ namespace Payroll
                 return null;
             }
         }
+
+        public class DepartmentInfo
+{
+    public int DepartmentID { get; set; }
+    public string DepartmentName { get; set; }
+    public int MemberCount { get; set; }
+}
+
+public List<DepartmentInfo> GetDepartmentsWithMemberCount()
+{
+    List<DepartmentInfo> departments = new List<DepartmentInfo>();
+    
+    string query = @"
+        SELECT 
+            d.departmentID,
+            d.departmentName,
+            COUNT(e.employeeID) AS MemberCount
+        FROM departmentData d
+        LEFT JOIN employeeData e ON d.departmentID = e.departmentID
+        GROUP BY d.departmentID, d.departmentName
+        ORDER BY d.departmentName";
+    
+    using (SqlConnection conn = new SqlConnection(connectionString))
+    {
+        SqlCommand cmd = new SqlCommand(query, conn);
+        conn.Open();
+        
+        SqlDataReader reader = cmd.ExecuteReader();
+        while (reader.Read())
+        {
+            departments.Add(new DepartmentInfo
+            {
+                DepartmentID = Convert.ToInt32(reader["departmentID"]),
+                DepartmentName = reader["departmentName"].ToString(),
+                MemberCount = Convert.ToInt32(reader["MemberCount"])
+            });
+        }
+    }
+    
+    return departments;
+}
 
     }
 }
