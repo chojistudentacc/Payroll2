@@ -174,7 +174,6 @@
             label14 = new Label();
             reportsPanelViewMessage = new Panel();
             viewMessageArchiveButt = new Button();
-            viewMessageReplyButt = new Button();
             viewMessageBackButt = new Button();
             viewMessagePanel = new Panel();
             viewMessageRichTB = new RichTextBox();
@@ -566,9 +565,9 @@
             // 
             userPanel.BackColor = Color.FromArgb(224, 224, 224);
             userPanel.Controls.Add(label1);
-            userPanel.Controls.Add(userPanelDataGrid);
             userPanel.Controls.Add(editEmployeePanel);
             userPanel.Controls.Add(userPanelAdd);
+            userPanel.Controls.Add(userPanelDataGrid);
             userPanel.Location = new Point(273, 0);
             userPanel.Name = "userPanel";
             userPanel.Size = new Size(1116, 784);
@@ -1879,7 +1878,6 @@
             // 
             reportsPanelViewMessage.BackColor = Color.White;
             reportsPanelViewMessage.Controls.Add(viewMessageArchiveButt);
-            reportsPanelViewMessage.Controls.Add(viewMessageReplyButt);
             reportsPanelViewMessage.Controls.Add(viewMessageBackButt);
             reportsPanelViewMessage.Controls.Add(viewMessagePanel);
             reportsPanelViewMessage.Controls.Add(panel12);
@@ -1902,19 +1900,6 @@
             viewMessageArchiveButt.Text = "Archive";
             viewMessageArchiveButt.UseVisualStyleBackColor = false;
             viewMessageArchiveButt.Click += viewMessageArchiveButt_Click;
-            // 
-            // viewMessageReplyButt
-            // 
-            viewMessageReplyButt.BackColor = Color.FromArgb(146, 45, 51);
-            viewMessageReplyButt.FlatStyle = FlatStyle.Flat;
-            viewMessageReplyButt.Font = new Font("Georgia", 18F, FontStyle.Bold);
-            viewMessageReplyButt.ForeColor = Color.White;
-            viewMessageReplyButt.Location = new Point(793, 634);
-            viewMessageReplyButt.Name = "viewMessageReplyButt";
-            viewMessageReplyButt.Size = new Size(261, 55);
-            viewMessageReplyButt.TabIndex = 38;
-            viewMessageReplyButt.Text = "Reply";
-            viewMessageReplyButt.UseVisualStyleBackColor = false;
             // 
             // viewMessageBackButt
             // 
@@ -2010,11 +1995,11 @@
             BackColor = Color.FromArgb(17, 24, 34);
             ClientSize = new Size(1389, 782);
             Controls.Add(sidePanel);
+            Controls.Add(reportsPanel);
+            Controls.Add(logsPanel);
             Controls.Add(userPanel);
             Controls.Add(departmentPanel);
             Controls.Add(dashPanel);
-            Controls.Add(reportsPanel);
-            Controls.Add(logsPanel);
             Name = "AdminForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AdminForm";
@@ -2197,7 +2182,6 @@
         private RichTextBox viewMessageRichTB;
         private Panel panel12;
         private Button viewMessageBackButt;
-        private Button viewMessageReplyButt;
         private Button viewMessageArchiveButt;
         private Label welcomeLabelAdmin;
         private Label label25;
