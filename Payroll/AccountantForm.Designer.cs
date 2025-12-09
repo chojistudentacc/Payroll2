@@ -33,9 +33,6 @@
             DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             idLabel = new Label();
-            messagesPanel = new Panel();
-            messagesTitleLabel = new Label();
-            messagesButt = new Button();
             payslipButt = new Button();
             sidePanel = new Panel();
             welcomeLabelAdmin = new Label();
@@ -44,8 +41,6 @@
             reportButt = new Button();
             deductButt = new Button();
             payrollButt = new Button();
-            createpayslipButton = new Button();
-            draftButton = new Button();
             payslipPanel = new Panel();
             label46 = new Label();
             panela = new Panel();
@@ -58,6 +53,7 @@
             richTextBox1 = new RichTextBox();
             label43 = new Label();
             panel18 = new Panel();
+            createPayslipComputeButt = new Button();
             textBox27 = new TextBox();
             label42 = new Label();
             panel17 = new Panel();
@@ -154,7 +150,6 @@
             taxLabel = new Label();
             dataGridView1 = new DataGridView();
             panel4 = new Panel();
-            button2 = new Button();
             taxButt = new Button();
             pagibigButt = new Button();
             phButt = new Button();
@@ -168,8 +163,6 @@
             label45 = new Label();
             archivedPanel = new Panel();
             label47 = new Label();
-            createPayslipComputeButt = new Button();
-            messagesPanel.SuspendLayout();
             sidePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)adminPictureBox).BeginInit();
             payslipPanel.SuspendLayout();
@@ -211,42 +204,6 @@
             idLabel.TabIndex = 0;
             idLabel.Text = "Welcome,";
             // 
-            // messagesPanel
-            // 
-            messagesPanel.BackColor = Color.RosyBrown;
-            messagesPanel.Controls.Add(messagesTitleLabel);
-            messagesPanel.Location = new Point(273, 0);
-            messagesPanel.Name = "messagesPanel";
-            messagesPanel.Size = new Size(1135, 821);
-            messagesPanel.TabIndex = 2;
-            // 
-            // messagesTitleLabel
-            // 
-            messagesTitleLabel.AutoSize = true;
-            messagesTitleLabel.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            messagesTitleLabel.Location = new Point(14, 14);
-            messagesTitleLabel.Name = "messagesTitleLabel";
-            messagesTitleLabel.Size = new Size(94, 25);
-            messagesTitleLabel.TabIndex = 1;
-            messagesTitleLabel.Text = "messages";
-            // 
-            // messagesButt
-            // 
-            messagesButt.BackColor = Color.FromArgb(163, 47, 54);
-            messagesButt.BackgroundImage = (Image)resources.GetObject("messagesButt.BackgroundImage");
-            messagesButt.BackgroundImageLayout = ImageLayout.Stretch;
-            messagesButt.FlatAppearance.BorderSize = 0;
-            messagesButt.FlatStyle = FlatStyle.Flat;
-            messagesButt.Font = new Font("Georgia", 15.75F, FontStyle.Bold);
-            messagesButt.ForeColor = Color.White;
-            messagesButt.Location = new Point(0, 395);
-            messagesButt.Name = "messagesButt";
-            messagesButt.Size = new Size(273, 74);
-            messagesButt.TabIndex = 3;
-            messagesButt.Text = "Messages";
-            messagesButt.UseVisualStyleBackColor = false;
-            messagesButt.Click += messagesButt_Click;
-            // 
             // payslipButt
             // 
             payslipButt.BackColor = Color.FromArgb(163, 47, 54);
@@ -278,10 +235,7 @@
             sidePanel.Controls.Add(deductButt);
             sidePanel.Controls.Add(payrollButt);
             sidePanel.Controls.Add(idLabel);
-            sidePanel.Controls.Add(messagesButt);
             sidePanel.Controls.Add(payslipButt);
-            sidePanel.Controls.Add(createpayslipButton);
-            sidePanel.Controls.Add(draftButton);
             sidePanel.Dock = DockStyle.Left;
             sidePanel.Location = new Point(0, 0);
             sidePanel.Name = "sidePanel";
@@ -319,7 +273,7 @@
             archivedButton.FlatStyle = FlatStyle.Flat;
             archivedButton.Font = new Font("Georgia", 15.75F, FontStyle.Bold);
             archivedButton.ForeColor = Color.White;
-            archivedButton.Location = new Point(0, 542);
+            archivedButton.Location = new Point(0, 472);
             archivedButton.Name = "archivedButton";
             archivedButton.Size = new Size(273, 74);
             archivedButton.TabIndex = 7;
@@ -336,7 +290,7 @@
             reportButt.FlatStyle = FlatStyle.Flat;
             reportButt.Font = new Font("Georgia", 15.75F, FontStyle.Bold);
             reportButt.ForeColor = Color.White;
-            reportButt.Location = new Point(0, 468);
+            reportButt.Location = new Point(0, 398);
             reportButt.Name = "reportButt";
             reportButt.Size = new Size(273, 74);
             reportButt.TabIndex = 6;
@@ -353,7 +307,7 @@
             deductButt.FlatStyle = FlatStyle.Flat;
             deductButt.Font = new Font("Georgia", 15.75F, FontStyle.Bold);
             deductButt.ForeColor = Color.White;
-            deductButt.Location = new Point(0, 321);
+            deductButt.Location = new Point(0, 324);
             deductButt.Name = "deductButt";
             deductButt.Size = new Size(273, 74);
             deductButt.TabIndex = 5;
@@ -377,34 +331,6 @@
             payrollButt.Text = "Payroll";
             payrollButt.UseVisualStyleBackColor = false;
             payrollButt.Click += payrollButt_Click;
-            // 
-            // createpayslipButton
-            // 
-            createpayslipButton.BackColor = Color.FromArgb(163, 47, 54);
-            createpayslipButton.FlatAppearance.BorderSize = 0;
-            createpayslipButton.FlatStyle = FlatStyle.Flat;
-            createpayslipButton.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
-            createpayslipButton.ForeColor = Color.White;
-            createpayslipButton.Location = new Point(0, 323);
-            createpayslipButton.Name = "createpayslipButton";
-            createpayslipButton.Size = new Size(273, 57);
-            createpayslipButton.TabIndex = 9;
-            createpayslipButton.Text = "Create";
-            createpayslipButton.UseVisualStyleBackColor = false;
-            // 
-            // draftButton
-            // 
-            draftButton.BackColor = Color.FromArgb(163, 47, 54);
-            draftButton.FlatAppearance.BorderSize = 0;
-            draftButton.FlatStyle = FlatStyle.Flat;
-            draftButton.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
-            draftButton.ForeColor = Color.White;
-            draftButton.Location = new Point(0, 380);
-            draftButton.Name = "draftButton";
-            draftButton.Size = new Size(273, 57);
-            draftButton.TabIndex = 10;
-            draftButton.Text = "Draft";
-            draftButton.UseVisualStyleBackColor = false;
             // 
             // payslipPanel
             // 
@@ -584,6 +510,22 @@
             panel18.Name = "panel18";
             panel18.Size = new Size(1038, 40);
             panel18.TabIndex = 17;
+            // 
+            // createPayslipComputeButt
+            // 
+            createPayslipComputeButt.BackColor = Color.FromArgb(148, 59, 68);
+            createPayslipComputeButt.FlatAppearance.BorderSize = 0;
+            createPayslipComputeButt.FlatStyle = FlatStyle.Flat;
+            createPayslipComputeButt.Font = new Font("Times New Roman", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            createPayslipComputeButt.ForeColor = Color.White;
+            createPayslipComputeButt.Location = new Point(273, 10);
+            createPayslipComputeButt.Margin = new Padding(3, 2, 3, 2);
+            createPayslipComputeButt.Name = "createPayslipComputeButt";
+            createPayslipComputeButt.Size = new Size(105, 22);
+            createPayslipComputeButt.TabIndex = 17;
+            createPayslipComputeButt.Text = "Compute";
+            createPayslipComputeButt.UseVisualStyleBackColor = false;
+            createPayslipComputeButt.Click += createPayslipComputeButt_Click;
             // 
             // textBox27
             // 
@@ -1554,7 +1496,6 @@
             SSSPanel.Controls.Add(taxLabel);
             SSSPanel.Controls.Add(dataGridView1);
             SSSPanel.Controls.Add(panel4);
-            SSSPanel.Controls.Add(button2);
             SSSPanel.Controls.Add(taxButt);
             SSSPanel.Controls.Add(pagibigButt);
             SSSPanel.Controls.Add(phButt);
@@ -1627,20 +1568,6 @@
             panel4.Name = "panel4";
             panel4.Size = new Size(1092, 67);
             panel4.TabIndex = 24;
-            // 
-            // button2
-            // 
-            button2.BackColor = Color.FromArgb(148, 59, 68);
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Times New Roman", 18F, FontStyle.Bold);
-            button2.Location = new Point(982, 77);
-            button2.Margin = new Padding(3, 2, 3, 2);
-            button2.Name = "button2";
-            button2.Size = new Size(93, 34);
-            button2.TabIndex = 9;
-            button2.Text = "Edit";
-            button2.UseVisualStyleBackColor = false;
             // 
             // taxButt
             // 
@@ -1797,22 +1724,6 @@
             label47.TabIndex = 12;
             label47.Text = "archivePanel";
             // 
-            // createPayslipComputeButt
-            // 
-            createPayslipComputeButt.BackColor = Color.FromArgb(148, 59, 68);
-            createPayslipComputeButt.FlatAppearance.BorderSize = 0;
-            createPayslipComputeButt.FlatStyle = FlatStyle.Flat;
-            createPayslipComputeButt.Font = new Font("Times New Roman", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            createPayslipComputeButt.ForeColor = Color.White;
-            createPayslipComputeButt.Location = new Point(273, 10);
-            createPayslipComputeButt.Margin = new Padding(3, 2, 3, 2);
-            createPayslipComputeButt.Name = "createPayslipComputeButt";
-            createPayslipComputeButt.Size = new Size(105, 22);
-            createPayslipComputeButt.TabIndex = 17;
-            createPayslipComputeButt.Text = "Compute";
-            createPayslipComputeButt.UseVisualStyleBackColor = false;
-            createPayslipComputeButt.Click += createPayslipComputeButt_Click;
-            // 
             // AccountantForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -1820,18 +1731,15 @@
             BackColor = Color.FromArgb(224, 224, 224);
             ClientSize = new Size(1389, 782);
             Controls.Add(sidePanel);
+            Controls.Add(deductionsPanel);
             Controls.Add(payslipPanel);
             Controls.Add(reportPanel);
-            Controls.Add(messagesPanel);
             Controls.Add(archivedPanel);
             Controls.Add(payrollPanel);
-            Controls.Add(deductionsPanel);
             Name = "AccountantForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AccountantForm";
             FormClosed += AccountantForm_FormClosed;
-            messagesPanel.ResumeLayout(false);
-            messagesPanel.PerformLayout();
             sidePanel.ResumeLayout(false);
             sidePanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)adminPictureBox).EndInit();
@@ -1888,9 +1796,6 @@
         #endregion
 
         private Label idLabel;
-        private Panel messagesPanel;
-        private Label messagesTitleLabel;
-        private Button messagesButt;
         private Button payslipButt;
         private Panel sidePanel;
         private Button payrollButt;
@@ -1907,7 +1812,6 @@
         private Button sssButton;
         private Button taxButt;
         private Button pagibigButt;
-        private Button button2;
         private Panel viewpayslipPanel;
         private Label label4;
         private Label label3;
@@ -2006,8 +1910,6 @@
         private Panel panel19;
         private RichTextBox richTextBox1;
         private Label label43;
-        private Button draftButton;
-        private Button createpayslipButton;
         private Panel deductionsPanel;
         private Label label44;
         private Panel payrollPanel;

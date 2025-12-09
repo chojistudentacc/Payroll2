@@ -443,6 +443,11 @@ namespace Payroll
 
         public void SavePictureToProject(string id, Image img)
         {
+            if (img == null)
+            {
+                MessageBox.Show("No image to save.");
+                return;
+            }
 
             string projectFolder = GetProjectRootFolder();
             string folder = Path.Combine(projectFolder, "Pictures");
@@ -453,23 +458,21 @@ namespace Payroll
             string fileName = $"{id}.jpg";
             string filePath = Path.Combine(folder, fileName);
 
-            if (File.Exists(filePath))
+            try
             {
-                try
+                using (Bitmap bmp = new Bitmap(img.Width, img.Height))
                 {
-                    File.Delete(filePath);
-                }
-                catch
-                {
-                    MessageBox.Show("Unable to replace the image. Close any app using it.", "Error",
-                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
+                    using (Graphics g = Graphics.FromImage(bmp))
+                    {
+                        g.DrawImage(img, 0, 0, img.Width, img.Height);
+                    }
+
+                    bmp.Save(filePath, ImageFormat.Jpeg);
                 }
             }
-
-            using (Bitmap bmp = new Bitmap(img))
+            catch (Exception ex)
             {
-                bmp.Save(filePath, ImageFormat.Jpeg);
+                MessageBox.Show("Save error: " + ex.Message);
             }
         }
 
