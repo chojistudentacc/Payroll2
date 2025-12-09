@@ -10,12 +10,18 @@ using System.Windows.Forms;
 
 namespace Payroll
 {
+
+
     public partial class HumanResourcesForm : Form
     {
         private string userName;
         private string ID;
         LoginForm login;
         Repository repo;
+        string currentUserName;
+        string actualPassword;
+        string currentEmployeeID;
+        bool isPasswordVisible = false;
 
         public HumanResourcesForm(LoginForm login, string name)
         {
@@ -24,7 +30,10 @@ namespace Payroll
             repo = new Repository();
             initializeItems();
             this.login = login;
+            this.currentUserName = name;
             dashboardPanel.Visible = true;
+
+            initializeItems();
         }
 
         private void initializeItems()
@@ -33,12 +42,100 @@ namespace Payroll
             welcomeLabelAdmin.Text = "HR ID: " + ID;
             hideAllPanels();
             hideEmployeeSubMenu();
+            LoadEmployeeProfile();
+
+            SetupFilterControls();
+        }
+
+        private void SetupFilterControls()
+        {
+            // Setup Combo Box
+            cmbFilterStatus.Items.Clear();
+            cmbFilterStatus.Items.Add("All");
+            cmbFilterStatus.Items.Add("Present");
+            cmbFilterStatus.Items.Add("Late");
+            cmbFilterStatus.Items.Add("Overtime");
+            cmbFilterStatus.Items.Add("Undertime");
+            cmbFilterStatus.Items.Add("Absent");
+            cmbFilterStatus.SelectedIndex = 0; // Default to All
+
+            // FIX 3: Set the TextBox to Today's date immediately
+            textBox29.Text = DateTime.Now.ToString("MM/dd/yyyy");
+        }
+
+        private void FormatDataGridView()
+        {
+            // 1. Check if there is data to format
+            if (userDataGridView.DataSource == null) return;
+
+            // 2. STYLE: Match the red/brown theme from the screenshot
+            userDataGridView.EnableHeadersVisualStyles = false;
+            userDataGridView.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(120, 40, 40); // Dark Red/Brown
+            userDataGridView.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            userDataGridView.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            userDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            // 3. RENAME COLUMNS: Change database names to nice headers
+            // (Check your database column names and update the text in quotes if needed)
+
+            if (userDataGridView.Columns.Contains("employeeID"))
+                userDataGridView.Columns["employeeID"].HeaderText = "Emp ID";
+
+            // Assuming your query returns a combined name or just generic names
+            if (userDataGridView.Columns.Contains("firstName"))
+                userDataGridView.Columns["firstName"].HeaderText = "Name";
+            else if (userDataGridView.Columns.Contains("fullName"))
+                userDataGridView.Columns["fullName"].HeaderText = "Name";
+
+            if (userDataGridView.Columns.Contains("timeIn"))
+                userDataGridView.Columns["timeIn"].HeaderText = "Clock In";
+
+            if (userDataGridView.Columns.Contains("timeOut"))
+                userDataGridView.Columns["timeOut"].HeaderText = "Clock Out";
+
+            if (userDataGridView.Columns.Contains("date"))
+                userDataGridView.Columns["date"].HeaderText = "Date";
+
+            if (userDataGridView.Columns.Contains("status"))
+                userDataGridView.Columns["status"].HeaderText = "Status";
+        }
+
+        private void FilterData()
+        {
+            string dateInput = textBox29.Text.Trim();
+            string statusInput = cmbFilterStatus.SelectedItem != null ? cmbFilterStatus.Text : "All";
+            DateTime validDate;
+
+            if (DateTime.TryParse(dateInput, out validDate))
+            {
+                DataTable dt = repo.GetAttendanceByFilter(validDate, statusInput);
+
+                if (dt != null)
+                {
+                    userDataGridView.DataSource = dt;
+                    FormatDataGridView();
+                }
+                else
+                {
+                    userDataGridView.DataSource = null;
+                }
+            }
+            else
+            {
+                userDataGridView.DataSource = null;
+            }
         }
 
         private void HumanResourcesForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            LoginForm loginForm = new LoginForm();
-            loginForm.Show();
+            if (login != null && !login.IsDisposed)
+            {
+                login.Show();
+            }
+            else
+            {
+                new LoginForm().Show();
+            }
         }
 
         private void hideAllPanels()
@@ -158,6 +255,140 @@ namespace Payroll
             hideEmployeeSubMenu();
             showEmployeesPanel.Visible = true;
 
+        }
+
+        private void LoadEmployeeProfile()
+        {
+            try
+            {
+                DataRow employeeData = repo.GetEmployeeProfileData(currentUserName);
+
+                if (employeeData != null)
+                {
+                    currentEmployeeID = employeeData["employeeID"].ToString();
+
+                    employeeProfileIDLabel.Text = employeeData["employeeID"].ToString();
+                    employeeProfileNameLabel.Text = $"{employeeData["firstName"]} {employeeData["middleName"]} {employeeData["lastName"]}";
+                    welcomeLabelAdmin.Text = $"{employeeData["employeeID"]}";
+                    welcomeLabelAdmin.AutoSize = false;
+                    welcomeLabelAdmin.TextAlign = ContentAlignment.MiddleCenter;
+
+                    employeeProfileUserIDLabel.Text = employeeData["username"].ToString();
+
+                    actualPassword = employeeData["password"].ToString();
+                    employeeProfilePasswordTB.Text = "Hidden";
+                    employeeProfilePasswordTB.ReadOnly = true;
+
+                    employeeEmailLabel.Text = employeeData["email"].ToString();
+                    employeeContactLabel.Text = employeeData["contactNum"].ToString();
+                    employeeAddressLabel.Text = employeeData["address"].ToString();
+
+                    employeeProfilePositionLabel.Text = "Employee";
+                    employeeProfileDepartmentLabel.Text = "None";
+                    employeeTypeLabel.Text = "Employee";
+
+                    employeTinLabel.Text = "None";
+                    employeeSSSLabel.Text = "None";
+                    label22.Text = "None";
+                    label21.Text = "None";
+
+                    repo.LoadPicture(currentEmployeeID, pictureBox1);
+                    pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+                }
+                else
+                {
+                    MessageBox.Show("Employee profile not found.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading employee profile: " + ex.Message);
+            }
+        }
+
+        private void showPasswordButton_Click(object sender, EventArgs e)
+        {
+            if (isPasswordVisible)
+            {
+                employeeProfilePasswordTB.Text = "Hidden";
+                showPasswordButton.Text = "Show";
+                isPasswordVisible = false;
+            }
+            else
+            {
+                employeeProfilePasswordTB.Text = actualPassword;
+                showPasswordButton.Text = "Hide";
+                isPasswordVisible = true;
+            }
+        }
+
+        private void changePasswordButton_Click(object sender, EventArgs e)
+        {
+            using (ChangePassword passForm = new ChangePassword())
+
+            {
+                passForm.StartPosition = FormStartPosition.CenterParent;
+                if (passForm.ShowDialog() == DialogResult.OK)
+                {
+
+                    string newPass = passForm.NewPassword;
+
+
+                    if (repo.UpdatePasswordOnly(currentEmployeeID, newPass))
+                    {
+                        MessageBox.Show("Password changed successfully!");
+
+                        actualPassword = newPass;
+                        employeeProfilePasswordTB.Text = "Hidden";
+                        showPasswordButton.Text = "Show";
+                        isPasswordVisible = false;
+                    }
+                }
+            }
+        }
+
+        private void userPanelDataGrid_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void userDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void textBox29_TextChanged(object sender, EventArgs e)
+        {
+            FilterData();
+        }
+
+        private void HumanResourcesForm_Load(object sender, EventArgs e)
+        {
+            cmbFilterStatus.Items.Clear();
+            cmbFilterStatus.Items.Add("All");
+            cmbFilterStatus.Items.Add("Present");
+            cmbFilterStatus.Items.Add("Late");
+            cmbFilterStatus.Items.Add("Overtime");
+            cmbFilterStatus.Items.Add("Undertime");
+            cmbFilterStatus.Items.Add("Absent");
+            cmbFilterStatus.SelectedIndex = 0;
+
+
+            userDataGridView.Text = DateTime.Now.ToString("MM/dd/yyyy");
+
+
+            FilterData();
+
+        }
+
+        private void cmbFilterStatus_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            FilterData();
+        }
+
+        private void comboBox10_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            FilterData();
         }
     }
 }

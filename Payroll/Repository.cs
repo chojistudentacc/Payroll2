@@ -1576,6 +1576,59 @@ namespace Payroll
 
             return table;
         }
+        public DataTable GetAttendanceByFilter(DateTime date, string status)
+        {
+            DataTable table = new DataTable();
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    // SQL: Select Attendance + Employee Name
+                    string sql = @"
+                SELECT 
+                    a.employeeID AS [Emp ID],
+                    (e.firstName + ' ' + e.lastName) AS [Name],
+                    FORMAT(a.clockIn, 'hh:mm tt') AS [Clock In],
+                    FORMAT(a.clockOut, 'hh:mm tt') AS [Clock Out],
+                    a.status AS [Status]
+                FROM attendanceData a
+                INNER JOIN employeeData e ON a.employeeID = e.employeeID
+                WHERE CAST(a.attendanceDate AS DATE) = CAST(@date AS DATE)";
+
+                    // Apply Status Filter if it's not "All"
+                    if (status != "All" && !string.IsNullOrEmpty(status))
+                    {
+                        sql += " AND a.status = @status";
+                    }
+
+                    sql += " ORDER BY a.clockIn ASC";
+
+                    using (SqlCommand cmd = new SqlCommand(sql, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@date", date); // We pass the valid DateTime here
+
+                        if (status != "All" && !string.IsNullOrEmpty(status))
+                        {
+                            cmd.Parameters.AddWithValue("@status", status);
+                        }
+
+                        using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                        {
+                            adapter.Fill(table);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Filter Error: " + ex.Message);
+            }
+
+            return table;
+        }
 
         public DataRow GetEmployeeProfileData(string userName)
         {
