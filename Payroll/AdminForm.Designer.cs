@@ -48,8 +48,8 @@
             userButt = new Button();
             dashboardButt = new Button();
             dashPanel = new Panel();
-            panel14 = new Panel();
             label40 = new Label();
+            panel14 = new Panel();
             panel1 = new Panel();
             panel13 = new Panel();
             HRLabel = new Label();
@@ -375,14 +375,6 @@
             dashPanel.TabIndex = 1;
             dashPanel.Visible = false;
             // 
-            // panel14
-            // 
-            panel14.BackColor = Color.White;
-            panel14.Location = new Point(15, 394);
-            panel14.Name = "panel14";
-            panel14.Size = new Size(1086, 294);
-            panel14.TabIndex = 4;
-            // 
             // label40
             // 
             label40.AutoSize = true;
@@ -393,6 +385,14 @@
             label40.Size = new Size(376, 38);
             label40.TabIndex = 0;
             label40.Text = "D E P A R T M E N T S";
+            // 
+            // panel14
+            // 
+            panel14.BackColor = Color.White;
+            panel14.Location = new Point(15, 394);
+            panel14.Name = "panel14";
+            panel14.Size = new Size(1086, 294);
+            panel14.TabIndex = 4;
             // 
             // panel1
             // 
@@ -2010,11 +2010,11 @@
             BackColor = Color.FromArgb(17, 24, 34);
             ClientSize = new Size(1389, 782);
             Controls.Add(sidePanel);
+            Controls.Add(userPanel);
+            Controls.Add(departmentPanel);
             Controls.Add(dashPanel);
             Controls.Add(reportsPanel);
             Controls.Add(logsPanel);
-            Controls.Add(userPanel);
-            Controls.Add(departmentPanel);
             Name = "AdminForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AdminForm";

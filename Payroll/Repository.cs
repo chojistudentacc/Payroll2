@@ -11,7 +11,7 @@ namespace Payroll
     {
 
         private string csvFilePath = @"C:\Users\User\Documents\EmployeeArchive.csv";
-        private readonly string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\chandrei0212\\Source\\Repos\\Payroll4.0\\Payroll\\Payroll.mdf;Integrated Security=True";
+        private readonly string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\Choji Kodachi\\Documents\\!! bruh !!\\Payroll2\\Payroll\\Payroll.mdf\";Integrated Security=True";
 
 
         public int GetEmailDataRowCount()
@@ -1577,6 +1577,83 @@ namespace Payroll
 
             return table;
         }
+
+        public DataTable SearchAttendanceByEmployeeOrDate(string searchTerm, DateTime? date = null)
+        {
+            DataTable table = new DataTable();
+
+            try
+            {
+                string sql = @"
+                SELECT 
+                    a.employeeID AS [Emp ID],
+                    COALESCE(
+                        (e.firstName + ' ' + e.lastName),
+                        (h.firstName + ' ' + h.lastName),
+                        (acc.firstName + ' ' + acc.lastName)
+                    ) AS [Name],
+                    FORMAT(a.attendanceDate, 'MM/dd/yyyy') AS [Date],
+                    FORMAT(a.clockIn, 'hh:mm tt') AS [Clock In],
+                    FORMAT(a.clockOut, 'hh:mm tt') AS [Clock Out],
+                    CAST(a.hoursWorked AS VARCHAR(10)) AS [Hours Worked],
+                    a.status AS [Status]
+                FROM attendanceData a
+                LEFT JOIN employeeData e ON a.employeeID = e.employeeID
+                LEFT JOIN hrData h ON a.employeeID = h.employeeID
+                LEFT JOIN accountantData acc ON a.employeeID = acc.employeeID
+                WHERE 1=1";
+
+                if (date.HasValue)
+                {
+                    sql += " AND CAST(a.attendanceDate AS DATE) = CAST(@date AS DATE)";
+                }
+
+                if (!string.IsNullOrEmpty(searchTerm))
+                {
+                    sql += @" AND (
+                        a.employeeID LIKE @searchTerm OR 
+                        e.firstName LIKE @searchTerm OR 
+                        e.lastName LIKE @searchTerm OR
+                        h.firstName LIKE @searchTerm OR 
+                        h.lastName LIKE @searchTerm OR
+                        acc.firstName LIKE @searchTerm OR 
+                        acc.lastName LIKE @searchTerm
+                    )";
+                }
+
+                sql += " ORDER BY a.attendanceDate DESC, a.clockIn ASC";
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    using (SqlCommand cmd = new SqlCommand(sql, connection))
+                    {
+                        if (date.HasValue)
+                        {
+                            cmd.Parameters.AddWithValue("@date", date.Value);
+                        }
+
+                        if (!string.IsNullOrEmpty(searchTerm))
+                        {
+                            cmd.Parameters.AddWithValue("@searchTerm", "%" + searchTerm + "%");
+                        }
+
+                        using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                        {
+                            adapter.Fill(table);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error searching attendance: " + ex.Message);
+            }
+
+            return table;
+        }
+
         public DataTable GetAttendanceByFilter(DateTime date, string status)
         {
             DataTable table = new DataTable();

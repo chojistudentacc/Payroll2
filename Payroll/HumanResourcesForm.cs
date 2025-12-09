@@ -20,6 +20,9 @@ namespace Payroll
         string currentUserName;
         string actualPassword;
         string currentEmployeeID;
+        private string selectedID = "";
+        private string selectedRole = "";
+        private string selectedPassword = "";
         private Image currentImage;
         bool isPasswordVisible = false;
 
@@ -44,6 +47,66 @@ namespace Payroll
             hideEmployeeSubMenu();
             LoadEmployeeProfile();
             SetupAttendanceControls();
+            InitializeAddEmployeeControls();
+            fillDataGridView();
+            userDataGridPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+        }
+
+        private void fillDataGridView()
+        {
+            roleComboBox.Text = "Employee";
+            if (roleComboBox.Text.Equals("Employee"))
+            {
+                dataGridView1.DataSource = repo.GetAllEmployee();
+            }
+            else if (roleComboBox.Text.Equals("Accountant"))
+            {
+                dataGridView1.DataSource = repo.GetAllAccountant();
+            }
+        }
+
+        private void userDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+
+            DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+
+            selectedID = row.Cells["employeeID"].Value.ToString();
+            selectedRole = roleComboBox.Text;
+            selectedPassword = repo.getPassword(selectedID, selectedRole);
+            //editEmployeePasswordTB.Text = "Hidden";
+
+            //editEmployeeLastNameTB.Text = row.Cells["lastName"].Value.ToString();
+            //editEmployeeFirstNameTB.Text = row.Cells["firstName"].Value.ToString();
+            //editEmployeeMiddleNameTB.Text = row.Cells["middleName"].Value.ToString();
+            //editEmployeeAdressTB.Text = row.Cells["address"].Value.ToString();
+            //editEmployeeContactNoTB.Text = row.Cells["contactNum"].Value.ToString();
+            //editEmployeeEmailTB.Text = row.Cells["email"].Value.ToString();
+            //positionComboBox.Text = selectedRole;
+
+            string status = row.Cells["status"].Value.ToString();
+            //editEmployeeActiveRB.Checked = (status == "Active");
+            //editEmployeeInactiveRB.Checked = (status == "Inactive");
+
+            repo.LoadPicture(selectedID, userDataGridPictureBox);
+        }
+
+        private void InitializeAddEmployeeControls()
+        {
+            // Initialize position ComboBox (Employee and Accountant only)
+            if (positionCB != null)
+            {
+                roleComboBox.Items.Clear();
+                roleComboBox.Items.Add("Employee");
+                roleComboBox.Items.Add("Accountant");
+                roleComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            }
+
+            // Set PictureBox size mode
+            if (pictureBox2 != null)
+            {
+                pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
         }
 
         private void SetupAttendanceControls()
@@ -219,6 +282,7 @@ namespace Payroll
                 userDataGridView.Columns["Status"].Width = 120;
             }
         }
+
         private void HumanResourcesForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             if (login != null && !login.IsDisposed)
@@ -297,6 +361,7 @@ namespace Payroll
         {
             hideEmployeeSubMenu();
             addEmployeesPanel.Visible = true;
+            clearCre(); // Clear form when opening
         }
 
         private void employeeViewButton_Click(object sender, EventArgs e)
@@ -327,6 +392,8 @@ namespace Payroll
         {
             hideEmployeeSubMenu();
         }
+
+        // ======================== COMPLETE clearCre() ========================
         private void clearCre()
         {
             lastNameTB.Text = "";
@@ -335,12 +402,15 @@ namespace Payroll
             addressTB.Text = "";
             contactNoTB.Text = "";
             emailTB.Text = "";
-
+            positionCB.Text = "";
+            pictureBox2.Image = null;
+            currentImage = null;
         }
 
-
+        // ======================== FIXED saveButton_Click() - EMPLOYEE & ACCOUNTANT ONLY ========================
         private void saveButton_Click(object sender, EventArgs e)
         {
+            // Validate all required fields
             if (lastNameTB.Text != "" &&
                 firstNameTB.Text != "" &&
                 middleNameTB.Text != "" &&
@@ -350,6 +420,11 @@ namespace Payroll
                 positionCB.Text != "" &&
                 pictureBox2.Image != null)
             {
+                // Auto-generate username and password
+                Random rand = new Random();
+                string autoUsername = "user" + rand.Next(0, 1000000).ToString("D6");
+                string autoPassword = "pass" + rand.Next(0, 1000000).ToString("D6");
+
                 if (positionCB.Text.Equals("Employee"))
                 {
                     Employee emp = new Employee();
@@ -359,15 +434,18 @@ namespace Payroll
                     emp.Address = addressTB.Text;
                     emp.ContactNum = long.Parse(contactNoTB.Text);
                     emp.Email = emailTB.Text;
+                    emp.UserName = autoUsername;
+                    emp.Password = autoPassword;
+                    emp.Status = "Active";
+
                     repo.AddEmployee(emp);
                     repo.SavePictureToProject(repo.getEmployeeID(emp.UserName), currentImage);
 
-                    string activity = "Add Employee";
-                    string logDetails = $"Added Employee: {emp.FirstName} {emp.LastName} \nUsername: {emp.UserName} \nStatus: {emp.Status}";
-                    repo.AddLog(repo.getAdminID(userName), activity, logDetails);
+                    MessageBox.Show($"Employee added successfully!\n\nUsername: {autoUsername}\nPassword: {autoPassword}\nStatus: Active",
+                        "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     clearCre();
-
+                    hideEmployeeSubMenu();
                 }
                 else if (positionCB.Text.Equals("Accountant"))
                 {
@@ -378,26 +456,29 @@ namespace Payroll
                     acc.Address = addressTB.Text;
                     acc.ContactNum = long.Parse(contactNoTB.Text);
                     acc.Email = emailTB.Text;
+                    acc.UserName = autoUsername;
+                    acc.Password = autoPassword;
+                    acc.Status = "Active";
+
                     repo.AddAccountant(acc);
                     repo.SavePictureToProject(repo.getAccountantID(acc.UserName), currentImage);
 
-                    string activity = "Add Accountant";
-                    string logDetails = $"Added Accountant: {acc.FirstName} {acc.LastName} \nUsername: {acc.UserName} \nStatus: {acc.Status}";
-                    repo.AddLog(repo.getAdminID(userName), activity, logDetails);
+                    MessageBox.Show($"Accountant added successfully!\n\nUsername: {autoUsername}\nPassword: {autoPassword}\nStatus: Active",
+                        "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     clearCre();
+                    hideEmployeeSubMenu();
                 }
             }
             else
             {
-                MessageBox.Show("Please fill in all fields");
+                MessageBox.Show("Please fill in all fields and upload a picture.", "Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
-
-
         private void cancelButton_Click(object sender, EventArgs e)
         {
+            clearCre();
             hideEmployeeSubMenu();
         }
 
@@ -535,10 +616,8 @@ namespace Payroll
                 if (dlg.ShowDialog() == DialogResult.OK)
                 {
                     Image img = Image.FromFile(dlg.FileName);
-
                     pictureBox2.Image = img;
                     currentImage = img;
-
                 }
             }
         }
