@@ -94,6 +94,8 @@ namespace Payroll
             // para lumabas agad dashboard
             hideallPanels();
             dashPanel.Visible = true;
+
+            LoadDepartmentPanels();
         }
 
         private void DateTimePicker_ValueChanged(object sender, EventArgs e)
@@ -116,6 +118,9 @@ namespace Payroll
         private void UpdateEmployeeCount()
         {
             allEmpLB.Text = repo.GetTotalEmployeeCount().ToString();
+            employeesLabel.Text = repo.GetEmployeeCount().ToString();
+            accountingLabel.Text = repo.GetAccountantCount().ToString();
+            HRLabel.Text = repo.GetHRCount().ToString();
         }
 
         private void AdminForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -351,6 +356,7 @@ namespace Payroll
             departmentEditPanel.Visible = false;
             selectedDepartmentName = "";
             LoadDepartmentDataGridView();
+            LoadDepartmentPanels();
         }
 
 
@@ -422,6 +428,7 @@ namespace Payroll
                 departmentAddPanel.Visible = false;
                 departmentDataGridPanel.Visible = true;
                 LoadDepartmentDataGridView();
+                LoadDepartmentPanels();
             }
             else
             {
@@ -804,6 +811,7 @@ namespace Payroll
                 selectedDepartmentName = "";
                 originalDepartmentName = "";
                 LoadDepartmentDataGridView();
+                LoadDepartmentPanels();
             }
             else
             {
@@ -837,6 +845,7 @@ namespace Payroll
                 MessageBox.Show("Department deleted successfully!");
                 selectedDepartmentName = "";
                 LoadDepartmentDataGridView();
+                LoadDepartmentPanels();
             }
             else
             {
@@ -1030,5 +1039,52 @@ namespace Payroll
             }
         }
 
+        private void LoadDepartmentPanels()
+        {
+            panel14.Controls.Clear();
+            panel14.AutoScroll = true;
+            
+            // Get department data with member counts
+            var departments = repo.GetDepartmentsWithMemberCount();
+            
+            int yPosition = 10;
+            int panelHeight = 80;
+            int panelWidth = panel14.Width - 40;
+            
+            foreach (var dept in departments)
+            {
+                Panel deptPanel = new Panel
+                {
+                    Size = new Size(panelWidth, panelHeight),
+                    Location = new Point(10, yPosition),
+                    BackColor = Color.FromArgb(146, 45, 51),
+                    BorderStyle = BorderStyle.FixedSingle
+                };
+                
+                Label titleLabel = new Label
+                {
+                    Text = dept.DepartmentName,
+                    Font = new Font("Georgia", 14, FontStyle.Bold),
+                    ForeColor = Color.White,
+                    Location = new Point(15, 15),
+                    AutoSize = true
+                };
+                
+                Label countLabel = new Label
+                {
+                    Text = $"Members: {dept.MemberCount}",
+                    Font = new Font("Georgia", 12, FontStyle.Regular),
+                    ForeColor = Color.White,
+                    Location = new Point(15, 45),
+                    AutoSize = true
+                };
+                
+                deptPanel.Controls.Add(titleLabel);
+                deptPanel.Controls.Add(countLabel);
+                panel14.Controls.Add(deptPanel);
+                
+                yPosition += panelHeight + 10;
+            }
+        }
     }
 }
