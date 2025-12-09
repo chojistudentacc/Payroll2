@@ -414,7 +414,7 @@ namespace Payroll
                             adapter.Fill(table);
                         }
                     }
-                    
+
                 }
             }
             catch (Exception ex)
@@ -1990,7 +1990,6 @@ namespace Payroll
             }
         }
 
-
         public string GetNextRequestID()
         {
             try
@@ -2016,6 +2015,228 @@ namespace Payroll
                 MessageBox.Show("Connection Exception: " + ex.ToString());
                 return null;
             }
+        }
+
+        // PAYLSIP
+        public DataTable GetEmployeeFinanceData(string employeeID)
+        {
+            DataTable dt = new DataTable();
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                string query = @"
+                SELECT employeeID, tinNum, sssNum, empName, pos, empDept,
+                       payPeriod, payDate, workedDays, rateDay, bascSal,
+                       otHrs, otReg, otNight, otRHoliday, otSHoliday,
+                       bonus, wtax, sssDeduc, pagibigDeduc, phDeduc,
+                       absenceDeduc, cashaDeduc
+                FROM employeeFinanceData
+                WHERE employeeID = @empID";
+
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@empID", employeeID);
+
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                    {
+                        adapter.Fill(dt);
+                    }
+                }
+            }
+
+            return dt;
+        }
+
+        public bool InsertEmployeeFinanceData(
+            string employeeID, string tinNum, string sssNum, string empName,
+            string position, string dept, DateTime payPeriod, DateTime payDate,
+            decimal workedDays, decimal rateDay, decimal basicSalary,
+            decimal otHrs, decimal otReg, decimal otNight,
+            decimal otRHoliday, decimal otSHoliday, decimal bonus,
+            decimal wtax, decimal sssDeduc, decimal pagibigDeduc,
+            decimal phDeduc, decimal absenceDeduc, decimal cashAdvance,
+            decimal totalEarnings, decimal totalDeductions, decimal netPay, string remarks
+)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    string query = @"
+                INSERT INTO employeeFinanceData
+                (
+                    employeeID, tinNum, sssNum, empName, pos, empDept,
+                    payPeriod, payDate, workedDays, rateDay, bascSal,
+                    otHrs, otReg, otNight, otRHoliday, otSHoliday,
+                    bonus, wtax, sssDeduc, pagibigDeduc, phDeduc,
+                    absenceDeduc, cashaDeduc, totalEarnings, totalDeductions, netPay, remarks
+                )
+                VALUES
+                (
+                    @employeeID, @tinNum, @sssNum, @empName, @pos, @dept,
+                    @payPeriod, @payDate, @workedDays, @rateDay, @basicSalary,
+                    @otHrs, @otReg, @otNight, @otRHoliday, @otSHoliday,
+                    @bonus, @wtax, @sssDeduc, @pagibigDeduc, @phDeduc,
+                    @absenceDeduc, @cashAdvance, @totalEarnings, @totalDeductions, @netPay, @remarks
+                )";
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@employeeID", employeeID);
+                        cmd.Parameters.AddWithValue("@tinNum", tinNum);
+                        cmd.Parameters.AddWithValue("@sssNum", sssNum);
+                        cmd.Parameters.AddWithValue("@empName", empName);
+                        cmd.Parameters.AddWithValue("@pos", position);
+                        cmd.Parameters.AddWithValue("@dept", dept);
+                        cmd.Parameters.AddWithValue("@payPeriod", payPeriod);
+                        cmd.Parameters.AddWithValue("@payDate", payDate);
+                        cmd.Parameters.AddWithValue("@workedDays", workedDays);
+                        cmd.Parameters.AddWithValue("@rateDay", rateDay);
+                        cmd.Parameters.AddWithValue("@basicSalary", basicSalary);
+                        cmd.Parameters.AddWithValue("@otHrs", otHrs);
+                        cmd.Parameters.AddWithValue("@otReg", otReg);
+                        cmd.Parameters.AddWithValue("@otNight", otNight);
+                        cmd.Parameters.AddWithValue("@otRHoliday", otRHoliday);
+                        cmd.Parameters.AddWithValue("@otSHoliday", otSHoliday);
+                        cmd.Parameters.AddWithValue("@bonus", bonus);
+                        cmd.Parameters.AddWithValue("@wtax", wtax);
+                        cmd.Parameters.AddWithValue("@sssDeduc", sssDeduc);
+                        cmd.Parameters.AddWithValue("@pagibigDeduc", pagibigDeduc);
+                        cmd.Parameters.AddWithValue("@phDeduc", phDeduc);
+                        cmd.Parameters.AddWithValue("@absenceDeduc", absenceDeduc);
+                        cmd.Parameters.AddWithValue("@cashAdvance", cashAdvance);
+                        cmd.Parameters.AddWithValue("@totalEarnings", totalEarnings);
+                        cmd.Parameters.AddWithValue("@totalDeductions", totalDeductions);
+                        cmd.Parameters.AddWithValue("@netPay", netPay);
+                        cmd.Parameters.AddWithValue("@remarks", remarks);
+
+                        conn.Open();
+                        int rows = cmd.ExecuteNonQuery();
+
+                        return rows > 0;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Insert Finance Error: " + ex.Message);
+                return false;
+            }
+        }
+
+        public bool EmployeeExists(string employeeID)
+        {
+            bool exists = false;
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string query = @"
+            SELECT COUNT(*) FROM hrData WHERE employeeID = @id
+            UNION ALL
+            SELECT COUNT(*) FROM accountantData WHERE employeeID = @id
+            UNION ALL
+            SELECT COUNT(*) FROM employeeData WHERE employeeID = @id";
+
+                using (SqlCommand cmd = new SqlCommand(query, connection))
+                {
+                    cmd.Parameters.AddWithValue("@id", employeeID);
+
+                    int totalMatches = 0;
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            totalMatches += reader.GetInt32(0);
+                        }
+                    }
+
+                    exists = totalMatches > 0;
+                }
+            }
+
+            return exists;
+        }
+
+        public (string FullName, string Position)? GetEmployeeInfo(string employeeID)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string query = @"
+            SELECT 
+                (firstName + ' ' + middleName + ' ' + lastName) AS FullName,
+                'Human Resources' AS Position
+            FROM hrData 
+            WHERE employeeID = @id
+
+            UNION
+
+            SELECT 
+                (firstName + ' ' + middleName + ' ' + lastName) AS FullName,
+                'Accountant' AS Position
+            FROM accountantData 
+            WHERE employeeID = @id
+
+            UNION
+
+            SELECT 
+                (firstName + ' ' + middleName + ' ' + lastName) AS FullName,
+                'Employee' AS Position
+            FROM employeeData 
+            WHERE employeeID = @id
+        ";
+
+                using (SqlCommand cmd = new SqlCommand(query, connection))
+                {
+                    cmd.Parameters.AddWithValue("@id", employeeID);
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            string name = reader.GetString(0);
+                            string position = reader.GetString(1);
+
+                            return (name, position);
+                        }
+                    }
+                }
+            }
+
+            return null;
+        }
+
+        public (decimal totalEarnings, decimal totalDeductions, decimal netPay)
+        ComputePayroll(
+        decimal basicSalary,
+        decimal otReg,
+        decimal otNight,
+        decimal otRHoliday,
+        decimal otSHoliday,
+        decimal bonus,
+        decimal wtax,
+        decimal sss,
+        decimal pagibig,
+        decimal philHealth,
+        decimal absence,
+        decimal cashAdvance)
+        {
+            decimal totalEarnings =
+                basicSalary +
+                otReg + otNight + otRHoliday + otSHoliday +
+                bonus;
+
+            decimal totalDeductions =
+                wtax + sss + pagibig + philHealth +
+                absence + cashAdvance;
+
+            decimal netPay = totalEarnings - totalDeductions;
+
+            return (totalEarnings, totalDeductions, netPay);
         }
 
     }

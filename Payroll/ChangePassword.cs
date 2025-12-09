@@ -39,6 +39,8 @@ namespace Payroll
             }
 
             this.NewPassword = NewPassTextBox.Text;
+
+            this.NewPassword = NewPassTextBox.Text;
             this.DialogResult = DialogResult.OK;
             this.Close();
         }

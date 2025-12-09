@@ -1498,11 +1498,11 @@
             BackColor = Color.FromArgb(224, 224, 224);
             ClientSize = new Size(1389, 782);
             Controls.Add(panel2);
+            Controls.Add(payslipPanel);
+            Controls.Add(leavePanel);
             Controls.Add(attendancePanel);
             Controls.Add(dashboardPanel);
             Controls.Add(profilePanel);
-            Controls.Add(payslipPanel);
-            Controls.Add(leavePanel);
             Name = "EmployeeForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "EmployeeForm";

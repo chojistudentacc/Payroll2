@@ -270,7 +270,6 @@ namespace Payroll
 
                     string newPass = passForm.NewPassword;
                     
-
                     if (repo.UpdatePasswordOnly(currentEmployeeID, newPass))
                     {
                         MessageBox.Show("Password changed successfully!");

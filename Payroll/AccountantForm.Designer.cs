@@ -29,15 +29,17 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AccountantForm));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             idLabel = new Label();
             messagesPanel = new Panel();
             messagesTitleLabel = new Label();
             messagesButt = new Button();
             payslipButt = new Button();
             sidePanel = new Panel();
+            welcomeLabelAdmin = new Label();
+            adminPictureBox = new PictureBox();
             archivedButton = new Button();
             reportButt = new Button();
             deductButt = new Button();
@@ -47,8 +49,10 @@
             payslipPanel = new Panel();
             label46 = new Label();
             panela = new Panel();
+            cancelPayslipButt = new Button();
+            createPayslipButt = new Button();
+            getEmployeeName = new Button();
             panel3 = new Panel();
-            button6 = new Button();
             panel6 = new Panel();
             panel19 = new Panel();
             richTextBox1 = new RichTextBox();
@@ -147,12 +151,12 @@
             label9 = new Label();
             label1 = new Label();
             SSSPanel = new Panel();
+            taxLabel = new Label();
             dataGridView1 = new DataGridView();
             panel4 = new Panel();
             button2 = new Button();
             taxButt = new Button();
             pagibigButt = new Button();
-            taxLabel = new Label();
             phButt = new Button();
             sssButton = new Button();
             label2 = new Label();
@@ -164,10 +168,10 @@
             label45 = new Label();
             archivedPanel = new Panel();
             label47 = new Label();
-            adminPictureBox = new PictureBox();
-            welcomeLabelAdmin = new Label();
+            createPayslipComputeButt = new Button();
             messagesPanel.SuspendLayout();
             sidePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)adminPictureBox).BeginInit();
             payslipPanel.SuspendLayout();
             panela.SuspendLayout();
             panel6.SuspendLayout();
@@ -193,7 +197,6 @@
             deductionsPanel.SuspendLayout();
             payrollPanel.SuspendLayout();
             archivedPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)adminPictureBox).BeginInit();
             SuspendLayout();
             // 
             // idLabel
@@ -284,6 +287,28 @@
             sidePanel.Name = "sidePanel";
             sidePanel.Size = new Size(273, 782);
             sidePanel.TabIndex = 4;
+            // 
+            // welcomeLabelAdmin
+            // 
+            welcomeLabelAdmin.AutoSize = true;
+            welcomeLabelAdmin.BackColor = Color.Transparent;
+            welcomeLabelAdmin.Font = new Font("Georgia", 15.75F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            welcomeLabelAdmin.ForeColor = Color.White;
+            welcomeLabelAdmin.Location = new Point(150, 69);
+            welcomeLabelAdmin.Name = "welcomeLabelAdmin";
+            welcomeLabelAdmin.Size = new Size(80, 25);
+            welcomeLabelAdmin.TabIndex = 13;
+            welcomeLabelAdmin.Text = "(name)";
+            // 
+            // adminPictureBox
+            // 
+            adminPictureBox.BackColor = Color.White;
+            adminPictureBox.BackgroundImageLayout = ImageLayout.Stretch;
+            adminPictureBox.Location = new Point(12, 26);
+            adminPictureBox.Name = "adminPictureBox";
+            adminPictureBox.Size = new Size(107, 93);
+            adminPictureBox.TabIndex = 11;
+            adminPictureBox.TabStop = false;
             // 
             // archivedButton
             // 
@@ -408,8 +433,10 @@
             panela.AutoScroll = true;
             panela.AutoScrollMinSize = new Size(0, 1200);
             panela.BackColor = Color.Snow;
+            panela.Controls.Add(cancelPayslipButt);
+            panela.Controls.Add(createPayslipButt);
+            panela.Controls.Add(getEmployeeName);
             panela.Controls.Add(panel3);
-            panela.Controls.Add(button6);
             panela.Controls.Add(panel6);
             panela.Controls.Add(textBox8);
             panela.Controls.Add(label17);
@@ -434,8 +461,56 @@
             panela.Controls.Add(label11);
             panela.Location = new Point(14, 27);
             panela.Name = "panela";
-            panela.Size = new Size(1094, 793);
+            panela.Size = new Size(1094, 758);
             panela.TabIndex = 23;
+            // 
+            // cancelPayslipButt
+            // 
+            cancelPayslipButt.BackColor = Color.FromArgb(148, 59, 68);
+            cancelPayslipButt.FlatAppearance.BorderSize = 0;
+            cancelPayslipButt.FlatStyle = FlatStyle.Flat;
+            cancelPayslipButt.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cancelPayslipButt.ForeColor = Color.White;
+            cancelPayslipButt.Location = new Point(22, 771);
+            cancelPayslipButt.Margin = new Padding(3, 2, 3, 2);
+            cancelPayslipButt.Name = "cancelPayslipButt";
+            cancelPayslipButt.Size = new Size(173, 47);
+            cancelPayslipButt.TabIndex = 27;
+            cancelPayslipButt.Text = "CLEAR";
+            cancelPayslipButt.UseVisualStyleBackColor = false;
+            cancelPayslipButt.Click += cancelPayslipButt_Click;
+            // 
+            // createPayslipButt
+            // 
+            createPayslipButt.BackColor = Color.FromArgb(148, 59, 68);
+            createPayslipButt.FlatAppearance.BorderSize = 0;
+            createPayslipButt.FlatStyle = FlatStyle.Flat;
+            createPayslipButt.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            createPayslipButt.ForeColor = Color.White;
+            createPayslipButt.Location = new Point(891, 771);
+            createPayslipButt.Margin = new Padding(3, 2, 3, 2);
+            createPayslipButt.Name = "createPayslipButt";
+            createPayslipButt.Size = new Size(173, 47);
+            createPayslipButt.TabIndex = 26;
+            createPayslipButt.Text = "CREATE PAYSLIP";
+            createPayslipButt.UseVisualStyleBackColor = false;
+            createPayslipButt.Click += createPayslipButt_Click;
+            // 
+            // getEmployeeName
+            // 
+            getEmployeeName.BackColor = Color.FromArgb(148, 59, 68);
+            getEmployeeName.FlatAppearance.BorderSize = 0;
+            getEmployeeName.FlatStyle = FlatStyle.Flat;
+            getEmployeeName.Font = new Font("Times New Roman", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            getEmployeeName.ForeColor = Color.White;
+            getEmployeeName.Location = new Point(852, 107);
+            getEmployeeName.Margin = new Padding(3, 2, 3, 2);
+            getEmployeeName.Name = "getEmployeeName";
+            getEmployeeName.Size = new Size(173, 22);
+            getEmployeeName.TabIndex = 25;
+            getEmployeeName.Text = "GET NAME AND POSITION";
+            getEmployeeName.UseVisualStyleBackColor = false;
+            getEmployeeName.Click += getEmployeeName_Click;
             // 
             // panel3
             // 
@@ -445,16 +520,6 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(1092, 67);
             panel3.TabIndex = 24;
-            // 
-            // button6
-            // 
-            button6.Location = new Point(24, 769);
-            button6.Margin = new Padding(3, 2, 3, 2);
-            button6.Name = "button6";
-            button6.Size = new Size(82, 22);
-            button6.TabIndex = 23;
-            button6.Text = "button6";
-            button6.UseVisualStyleBackColor = true;
             // 
             // panel6
             // 
@@ -511,6 +576,7 @@
             // panel18
             // 
             panel18.BackColor = Color.FromArgb(239, 229, 229);
+            panel18.Controls.Add(createPayslipComputeButt);
             panel18.Controls.Add(textBox27);
             panel18.Controls.Add(label42);
             panel18.Location = new Point(3, 273);
@@ -522,9 +588,10 @@
             // textBox27
             // 
             textBox27.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox27.Location = new Point(788, 9);
+            textBox27.Location = new Point(784, 9);
             textBox27.Margin = new Padding(3, 2, 3, 2);
             textBox27.Name = "textBox27";
+            textBox27.ReadOnly = true;
             textBox27.Size = new Size(243, 27);
             textBox27.TabIndex = 16;
             // 
@@ -554,6 +621,7 @@
             totalDeductionsTB.Location = new Point(268, 4);
             totalDeductionsTB.Margin = new Padding(3, 2, 3, 2);
             totalDeductionsTB.Name = "totalDeductionsTB";
+            totalDeductionsTB.ReadOnly = true;
             totalDeductionsTB.Size = new Size(243, 23);
             totalDeductionsTB.TabIndex = 16;
             // 
@@ -583,6 +651,7 @@
             textBox25.Location = new Point(273, 4);
             textBox25.Margin = new Padding(3, 2, 3, 2);
             textBox25.Name = "textBox25";
+            textBox25.ReadOnly = true;
             textBox25.Size = new Size(243, 23);
             textBox25.TabIndex = 16;
             // 
@@ -1230,6 +1299,7 @@
             viewpayslipPanel.Name = "viewpayslipPanel";
             viewpayslipPanel.Size = new Size(1094, 758);
             viewpayslipPanel.TabIndex = 3;
+            viewpayslipPanel.Visible = false;
             // 
             // panel2
             // 
@@ -1496,6 +1566,17 @@
             SSSPanel.Size = new Size(1094, 758);
             SSSPanel.TabIndex = 3;
             // 
+            // taxLabel
+            // 
+            taxLabel.AutoSize = true;
+            taxLabel.Font = new Font("Georgia", 26.25F, FontStyle.Bold);
+            taxLabel.ForeColor = Color.FromArgb(105, 18, 18);
+            taxLabel.Location = new Point(386, 86);
+            taxLabel.Name = "taxLabel";
+            taxLabel.Size = new Size(330, 41);
+            taxLabel.TabIndex = 5;
+            taxLabel.Text = "SSS Contribution";
+            // 
             // dataGridView1
             // 
             dataGridView1.AllowUserToAddRows = false;
@@ -1504,35 +1585,35 @@
             dataGridView1.AllowUserToResizeRows = false;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.BackgroundColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle1.Font = new Font("Times New Roman", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(168, 74, 74);
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = Color.FromArgb(146, 45, 51);
+            dataGridViewCellStyle4.Font = new Font("Times New Roman", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle4.ForeColor = Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(168, 74, 74);
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(119, 19, 19);
-            dataGridViewCellStyle2.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(158, 71, 71);
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(119, 19, 19);
+            dataGridViewCellStyle5.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle5.ForeColor = Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(158, 71, 71);
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle5;
             dataGridView1.GridColor = Color.White;
             dataGridView1.Location = new Point(23, 202);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(139, 37, 37);
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle3.ForeColor = Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = Color.IndianRed;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = Color.FromArgb(139, 37, 37);
+            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle6.ForeColor = Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = Color.IndianRed;
+            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
+            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridView1.Size = new Size(1052, 528);
@@ -1592,17 +1673,6 @@
             pagibigButt.Text = "Pag-Ibig";
             pagibigButt.UseVisualStyleBackColor = false;
             pagibigButt.Click += pagibigButt_Click;
-            // 
-            // taxLabel
-            // 
-            taxLabel.AutoSize = true;
-            taxLabel.Font = new Font("Georgia", 26.25F, FontStyle.Bold);
-            taxLabel.ForeColor = Color.FromArgb(105, 18, 18);
-            taxLabel.Location = new Point(386, 86);
-            taxLabel.Name = "taxLabel";
-            taxLabel.Size = new Size(330, 41);
-            taxLabel.TabIndex = 5;
-            taxLabel.Text = "SSS Contribution";
             // 
             // phButt
             // 
@@ -1727,27 +1797,21 @@
             label47.TabIndex = 12;
             label47.Text = "archivePanel";
             // 
-            // adminPictureBox
+            // createPayslipComputeButt
             // 
-            adminPictureBox.BackColor = Color.White;
-            adminPictureBox.BackgroundImageLayout = ImageLayout.Stretch;
-            adminPictureBox.Location = new Point(12, 26);
-            adminPictureBox.Name = "adminPictureBox";
-            adminPictureBox.Size = new Size(107, 93);
-            adminPictureBox.TabIndex = 11;
-            adminPictureBox.TabStop = false;
-            // 
-            // welcomeLabelAdmin
-            // 
-            welcomeLabelAdmin.AutoSize = true;
-            welcomeLabelAdmin.BackColor = Color.Transparent;
-            welcomeLabelAdmin.Font = new Font("Georgia", 15.75F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            welcomeLabelAdmin.ForeColor = Color.White;
-            welcomeLabelAdmin.Location = new Point(150, 69);
-            welcomeLabelAdmin.Name = "welcomeLabelAdmin";
-            welcomeLabelAdmin.Size = new Size(80, 25);
-            welcomeLabelAdmin.TabIndex = 13;
-            welcomeLabelAdmin.Text = "(name)";
+            createPayslipComputeButt.BackColor = Color.FromArgb(148, 59, 68);
+            createPayslipComputeButt.FlatAppearance.BorderSize = 0;
+            createPayslipComputeButt.FlatStyle = FlatStyle.Flat;
+            createPayslipComputeButt.Font = new Font("Times New Roman", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            createPayslipComputeButt.ForeColor = Color.White;
+            createPayslipComputeButt.Location = new Point(273, 10);
+            createPayslipComputeButt.Margin = new Padding(3, 2, 3, 2);
+            createPayslipComputeButt.Name = "createPayslipComputeButt";
+            createPayslipComputeButt.Size = new Size(105, 22);
+            createPayslipComputeButt.TabIndex = 17;
+            createPayslipComputeButt.Text = "Compute";
+            createPayslipComputeButt.UseVisualStyleBackColor = false;
+            createPayslipComputeButt.Click += createPayslipComputeButt_Click;
             // 
             // AccountantForm
             // 
@@ -1756,12 +1820,12 @@
             BackColor = Color.FromArgb(224, 224, 224);
             ClientSize = new Size(1389, 782);
             Controls.Add(sidePanel);
-            Controls.Add(payrollPanel);
-            Controls.Add(deductionsPanel);
             Controls.Add(payslipPanel);
             Controls.Add(reportPanel);
             Controls.Add(messagesPanel);
             Controls.Add(archivedPanel);
+            Controls.Add(payrollPanel);
+            Controls.Add(deductionsPanel);
             Name = "AccountantForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AccountantForm";
@@ -1770,6 +1834,7 @@
             messagesPanel.PerformLayout();
             sidePanel.ResumeLayout(false);
             sidePanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)adminPictureBox).EndInit();
             payslipPanel.ResumeLayout(false);
             payslipPanel.PerformLayout();
             panela.ResumeLayout(false);
@@ -1817,7 +1882,6 @@
             payrollPanel.PerformLayout();
             archivedPanel.ResumeLayout(false);
             archivedPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)adminPictureBox).EndInit();
             ResumeLayout(false);
         }
 
@@ -1942,7 +2006,6 @@
         private Panel panel19;
         private RichTextBox richTextBox1;
         private Label label43;
-        private Button button6;
         private Button draftButton;
         private Button createpayslipButton;
         private Panel deductionsPanel;
@@ -1957,5 +2020,9 @@
         private DataGridView dataGridView1;
         public PictureBox adminPictureBox;
         private Label welcomeLabelAdmin;
+        private Button getEmployeeName;
+        private Button cancelPayslipButt;
+        private Button createPayslipButt;
+        private Button createPayslipComputeButt;
     }
 }
