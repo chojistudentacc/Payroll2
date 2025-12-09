@@ -83,14 +83,11 @@
             panel = new Panel();
             panel10 = new Panel();
             panel6 = new Panel();
-            panel12 = new Panel();
-            label31 = new Label();
-            label16 = new Label();
             panel11 = new Panel();
-            label30 = new Label();
+            LeavesLb = new Label();
             label13 = new Label();
             panel9 = new Panel();
-            label18 = new Label();
+            AttendanceLb = new Label();
             label12 = new Label();
             panel7 = new Panel();
             allEmpLB = new Label();
@@ -98,6 +95,8 @@
             profilePanel = new Panel();
             dashboardPanel = new Panel();
             panel13 = new Panel();
+            DownloadButton = new Button();
+            ViewButton = new Button();
             label24 = new Label();
             label17 = new Label();
             attendancePanel = new Panel();
@@ -138,7 +137,6 @@
             label42 = new Label();
             panel21 = new Panel();
             payslipPanel = new Panel();
-            label23 = new Label();
             panela = new Panel();
             panel22 = new Panel();
             button6 = new Button();
@@ -189,6 +187,9 @@
             label73 = new Label();
             label74 = new Label();
             label75 = new Label();
+            label23 = new Label();
+            panel12 = new Panel();
+            LatestPayslipLabel = new Label();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel1.SuspendLayout();
@@ -199,7 +200,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             panel.SuspendLayout();
             panel6.SuspendLayout();
-            panel12.SuspendLayout();
             panel11.SuspendLayout();
             panel9.SuspendLayout();
             panel7.SuspendLayout();
@@ -231,6 +231,7 @@
             panel33.SuspendLayout();
             panel34.SuspendLayout();
             panel35.SuspendLayout();
+            panel12.SuspendLayout();
             SuspendLayout();
             // 
             // panel2
@@ -883,7 +884,6 @@
             // panel6
             // 
             panel6.BackColor = Color.White;
-            panel6.Controls.Add(panel12);
             panel6.Controls.Add(panel11);
             panel6.Controls.Add(panel9);
             panel6.Controls.Add(panel7);
@@ -893,66 +893,29 @@
             panel6.Size = new Size(1161, 247);
             panel6.TabIndex = 0;
             // 
-            // panel12
-            // 
-            panel12.BackgroundImage = Properties.Resources.PanelBG;
-            panel12.BackgroundImageLayout = ImageLayout.Stretch;
-            panel12.Controls.Add(label31);
-            panel12.Controls.Add(label16);
-            panel12.Location = new Point(930, 55);
-            panel12.Margin = new Padding(2, 1, 2, 1);
-            panel12.Name = "panel12";
-            panel12.Size = new Size(186, 115);
-            panel12.TabIndex = 3;
-            // 
-            // label31
-            // 
-            label31.AutoSize = true;
-            label31.BackColor = Color.Transparent;
-            label31.Font = new Font("Times New Roman", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label31.ForeColor = Color.White;
-            label31.Location = new Point(77, 51);
-            label31.Name = "label31";
-            label31.Size = new Size(44, 51);
-            label31.TabIndex = 4;
-            label31.Text = "0";
-            // 
-            // label16
-            // 
-            label16.AutoSize = true;
-            label16.BackColor = Color.Transparent;
-            label16.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
-            label16.ForeColor = Color.White;
-            label16.Location = new Point(11, 15);
-            label16.Margin = new Padding(2, 0, 2, 0);
-            label16.Name = "label16";
-            label16.Size = new Size(185, 29);
-            label16.TabIndex = 0;
-            label16.Text = "Next Pay Date";
-            // 
             // panel11
             // 
             panel11.BackgroundImage = Properties.Resources.PanelBG;
             panel11.BackgroundImageLayout = ImageLayout.Stretch;
-            panel11.Controls.Add(label30);
+            panel11.Controls.Add(LeavesLb);
             panel11.Controls.Add(label13);
-            panel11.Location = new Point(643, 55);
+            panel11.Location = new Point(891, 31);
             panel11.Margin = new Padding(2, 1, 2, 1);
             panel11.Name = "panel11";
-            panel11.Size = new Size(186, 115);
+            panel11.Size = new Size(229, 182);
             panel11.TabIndex = 2;
             // 
-            // label30
+            // LeavesLb
             // 
-            label30.AutoSize = true;
-            label30.BackColor = Color.Transparent;
-            label30.Font = new Font("Times New Roman", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label30.ForeColor = Color.White;
-            label30.Location = new Point(75, 51);
-            label30.Name = "label30";
-            label30.Size = new Size(44, 51);
-            label30.TabIndex = 4;
-            label30.Text = "0";
+            LeavesLb.AutoSize = true;
+            LeavesLb.BackColor = Color.Transparent;
+            LeavesLb.Font = new Font("Times New Roman", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            LeavesLb.ForeColor = Color.White;
+            LeavesLb.Location = new Point(89, 67);
+            LeavesLb.Name = "LeavesLb";
+            LeavesLb.Size = new Size(44, 51);
+            LeavesLb.TabIndex = 4;
+            LeavesLb.Text = "0";
             // 
             // label13
             // 
@@ -960,7 +923,7 @@
             label13.BackColor = Color.Transparent;
             label13.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
             label13.ForeColor = Color.White;
-            label13.Location = new Point(50, 15);
+            label13.Location = new Point(60, 10);
             label13.Margin = new Padding(2, 0, 2, 0);
             label13.Name = "label13";
             label13.Size = new Size(97, 29);
@@ -971,25 +934,25 @@
             // 
             panel9.BackgroundImage = Properties.Resources.PanelBG;
             panel9.BackgroundImageLayout = ImageLayout.Stretch;
-            panel9.Controls.Add(label18);
+            panel9.Controls.Add(AttendanceLb);
             panel9.Controls.Add(label12);
-            panel9.Location = new Point(339, 55);
+            panel9.Location = new Point(483, 31);
             panel9.Margin = new Padding(2, 1, 2, 1);
             panel9.Name = "panel9";
-            panel9.Size = new Size(186, 115);
+            panel9.Size = new Size(229, 182);
             panel9.TabIndex = 1;
             // 
-            // label18
+            // AttendanceLb
             // 
-            label18.AutoSize = true;
-            label18.BackColor = Color.Transparent;
-            label18.Font = new Font("Times New Roman", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label18.ForeColor = Color.White;
-            label18.Location = new Point(74, 51);
-            label18.Name = "label18";
-            label18.Size = new Size(44, 51);
-            label18.TabIndex = 3;
-            label18.Text = "0";
+            AttendanceLb.AutoSize = true;
+            AttendanceLb.BackColor = Color.Transparent;
+            AttendanceLb.Font = new Font("Times New Roman", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            AttendanceLb.ForeColor = Color.White;
+            AttendanceLb.Location = new Point(91, 70);
+            AttendanceLb.Name = "AttendanceLb";
+            AttendanceLb.Size = new Size(44, 51);
+            AttendanceLb.TabIndex = 3;
+            AttendanceLb.Text = "0";
             // 
             // label12
             // 
@@ -997,7 +960,7 @@
             label12.BackColor = Color.Transparent;
             label12.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
             label12.ForeColor = Color.White;
-            label12.Location = new Point(25, 15);
+            label12.Location = new Point(39, 10);
             label12.Margin = new Padding(2, 0, 2, 0);
             label12.Name = "label12";
             label12.Size = new Size(156, 29);
@@ -1010,10 +973,10 @@
             panel7.BackgroundImageLayout = ImageLayout.Stretch;
             panel7.Controls.Add(allEmpLB);
             panel7.Controls.Add(label11);
-            panel7.Location = new Point(45, 55);
+            panel7.Location = new Point(37, 31);
             panel7.Margin = new Padding(2, 1, 2, 1);
             panel7.Name = "panel7";
-            panel7.Size = new Size(186, 115);
+            panel7.Size = new Size(229, 182);
             panel7.TabIndex = 0;
             // 
             // allEmpLB
@@ -1022,7 +985,7 @@
             allEmpLB.BackColor = Color.Transparent;
             allEmpLB.Font = new Font("Times New Roman", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             allEmpLB.ForeColor = Color.White;
-            allEmpLB.Location = new Point(74, 51);
+            allEmpLB.Location = new Point(91, 79);
             allEmpLB.Name = "allEmpLB";
             allEmpLB.Size = new Size(44, 51);
             allEmpLB.TabIndex = 2;
@@ -1034,7 +997,7 @@
             label11.BackColor = Color.Transparent;
             label11.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
             label11.ForeColor = Color.White;
-            label11.Location = new Point(46, 15);
+            label11.Location = new Point(65, 10);
             label11.Margin = new Padding(2, 0, 2, 0);
             label11.Name = "label11";
             label11.Size = new Size(107, 29);
@@ -1065,12 +1028,45 @@
             // panel13
             // 
             panel13.BackColor = Color.Snow;
+            panel13.Controls.Add(panel12);
+            panel13.Controls.Add(DownloadButton);
+            panel13.Controls.Add(ViewButton);
             panel13.Controls.Add(label24);
             panel13.Location = new Point(27, 559);
             panel13.Margin = new Padding(2, 1, 2, 1);
             panel13.Name = "panel13";
             panel13.Size = new Size(1248, 441);
             panel13.TabIndex = 5;
+            // 
+            // DownloadButton
+            // 
+            DownloadButton.BackColor = Color.FromArgb(148, 59, 68);
+            DownloadButton.FlatAppearance.BorderSize = 0;
+            DownloadButton.FlatStyle = FlatStyle.Flat;
+            DownloadButton.Font = new Font("Times New Roman", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            DownloadButton.ForeColor = Color.Snow;
+            DownloadButton.Location = new Point(913, 334);
+            DownloadButton.Name = "DownloadButton";
+            DownloadButton.Size = new Size(213, 48);
+            DownloadButton.TabIndex = 8;
+            DownloadButton.Text = "DOWNLOAD";
+            DownloadButton.UseVisualStyleBackColor = false;
+            DownloadButton.Click += DownloadButton_Click;
+            // 
+            // ViewButton
+            // 
+            ViewButton.BackColor = Color.FromArgb(148, 59, 68);
+            ViewButton.FlatAppearance.BorderSize = 0;
+            ViewButton.FlatStyle = FlatStyle.Flat;
+            ViewButton.Font = new Font("Times New Roman", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ViewButton.ForeColor = Color.Snow;
+            ViewButton.Location = new Point(111, 341);
+            ViewButton.Name = "ViewButton";
+            ViewButton.Size = new Size(131, 48);
+            ViewButton.TabIndex = 7;
+            ViewButton.Text = "VIEW";
+            ViewButton.UseVisualStyleBackColor = false;
+            ViewButton.Click += ViewButton_Click;
             // 
             // label24
             // 
@@ -1573,16 +1569,6 @@
             payslipPanel.Name = "payslipPanel";
             payslipPanel.Size = new Size(1297, 1095);
             payslipPanel.TabIndex = 9;
-            // 
-            // label23
-            // 
-            label23.AutoSize = true;
-            label23.Location = new Point(17, 17);
-            label23.Margin = new Padding(2, 0, 2, 0);
-            label23.Name = "label23";
-            label23.Size = new Size(91, 20);
-            label23.TabIndex = 0;
-            label23.Text = "payslipPanel";
             // 
             // panela
             // 
@@ -2107,6 +2093,36 @@
             label75.TabIndex = 2;
             label75.Text = "PAYSLIP";
             // 
+            // label23
+            // 
+            label23.AutoSize = true;
+            label23.Location = new Point(17, 17);
+            label23.Margin = new Padding(2, 0, 2, 0);
+            label23.Name = "label23";
+            label23.Size = new Size(91, 20);
+            label23.TabIndex = 0;
+            label23.Text = "payslipPanel";
+            // 
+            // panel12
+            // 
+            panel12.BackColor = Color.FromArgb(142, 88, 88);
+            panel12.Controls.Add(LatestPayslipLabel);
+            panel12.Location = new Point(37, 75);
+            panel12.Name = "panel12";
+            panel12.Size = new Size(1182, 242);
+            panel12.TabIndex = 9;
+            // 
+            // LatestPayslipLabel
+            // 
+            LatestPayslipLabel.AutoSize = true;
+            LatestPayslipLabel.Font = new Font("Times New Roman", 25.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            LatestPayslipLabel.ForeColor = Color.Snow;
+            LatestPayslipLabel.Location = new Point(552, 99);
+            LatestPayslipLabel.Name = "LatestPayslipLabel";
+            LatestPayslipLabel.Size = new Size(44, 51);
+            LatestPayslipLabel.TabIndex = 0;
+            LatestPayslipLabel.Text = "?";
+            // 
             // EmployeeForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -2114,11 +2130,11 @@
             BackColor = Color.FromArgb(224, 224, 224);
             ClientSize = new Size(1587, 1043);
             Controls.Add(panel2);
+            Controls.Add(dashboardPanel);
             Controls.Add(profilePanel);
             Controls.Add(payslipPanel);
             Controls.Add(leavePanel);
             Controls.Add(attendancePanel);
-            Controls.Add(dashboardPanel);
             Margin = new Padding(3, 4, 3, 4);
             Name = "EmployeeForm";
             StartPosition = FormStartPosition.CenterScreen;
@@ -2140,8 +2156,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             panel.ResumeLayout(false);
             panel6.ResumeLayout(false);
-            panel12.ResumeLayout(false);
-            panel12.PerformLayout();
             panel11.ResumeLayout(false);
             panel11.PerformLayout();
             panel9.ResumeLayout(false);
@@ -2199,6 +2213,8 @@
             panel34.PerformLayout();
             panel35.ResumeLayout(false);
             panel35.PerformLayout();
+            panel12.ResumeLayout(false);
+            panel12.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -2252,8 +2268,6 @@
         private Panel panel10;
         private Panel panel7;
         private Label label11;
-        private Panel panel12;
-        private Label label16;
         private Panel panel11;
         private Label label13;
         private Panel panel9;
@@ -2278,9 +2292,8 @@
         private Label employeeProfileUserIDLabel;
         private TextBox employeeProfilePasswordTB;
         private PictureBox pictureBox2;
-        private Label label31;
-        private Label label30;
-        private Label label18;
+        private Label LeavesLb;
+        private Label AttendanceLb;
         private Label allEmpLB;
         private PictureBox pictureBox3;
         private Panel panel16;
@@ -2360,5 +2373,9 @@
         private Label label73;
         private Label label74;
         private Label label75;
+        private Button ViewButton;
+        private Button DownloadButton;
+        private Panel panel12;
+        private Label LatestPayslipLabel;
     }
 }

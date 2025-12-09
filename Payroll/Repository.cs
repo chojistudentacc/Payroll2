@@ -11,7 +11,7 @@ namespace Payroll
     {
 
         private string csvFilePath = @"C:\Users\User\Documents\EmployeeArchive.csv";
-        private readonly string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\User\\source\\repos\\Payroll3\\Payroll\\Payroll.mdf;Integrated Security=True";
+        private readonly string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\chandrei0212\\Source\\Repos\\Payroll4.0\\Payroll\\Payroll.mdf;Integrated Security=True";
 
 
         public int GetEmailDataRowCount()
@@ -2243,7 +2243,113 @@ namespace Payroll
                 return false;
             }
         }
+        public DataRow GetLatestPayslip(string empID)
+        {
+            using (System.Data.SqlClient.SqlConnection connect = new System.Data.SqlClient.SqlConnection(connectionString))
+            {
+                connect.Open();
 
+                
+                string query = "SELECT TOP 1 * FROM employeeFinanceData WHERE employeeID = @id ORDER BY payDate DESC";
+
+                using (System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand(query, connect))
+                {
+                    cmd.Parameters.AddWithValue("@id", empID);
+
+                    System.Data.SqlClient.SqlDataAdapter adapter = new System.Data.SqlClient.SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+
+                    if (dt.Rows.Count > 0)
+                    {
+                        return dt.Rows[0];
+                    }
+                    return null;
+                }
+            }
+        }
+
+        public decimal GetLatestNetPay(string empID)
+        {
+            decimal pay = 0;
+            using (System.Data.SqlClient.SqlConnection connect = new System.Data.SqlClient.SqlConnection(connectionString))
+            {
+                connect.Open();
+
+                string query = @"
+            SELECT TOP 1 (totalEarnings - totalDeduction) 
+            FROM employeeFinanceData 
+            WHERE employeeID = @id 
+            ORDER BY payDate DESC";
+
+                using (System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand(query, connect))
+                {
+                    cmd.Parameters.AddWithValue("@id", empID);
+                    object result = cmd.ExecuteScalar();
+
+                    if (result != null && result != DBNull.Value)
+                    {
+                        decimal.TryParse(result.ToString(), out pay);
+                    }
+                }
+            }
+            return pay;
+        }
+
+        public int GetMonthlyAttendanceCount(string empID)
+        {
+            int count = 0;
+            using (System.Data.SqlClient.SqlConnection connect = new System.Data.SqlClient.SqlConnection(connectionString))
+            {
+                connect.Open();
+
+
+                string query = @"
+            SELECT COUNT(*) 
+            FROM attendanceData 
+            WHERE employeeID = @id 
+            AND MONTH(attendanceDate) = MONTH(GETDATE()) 
+            AND YEAR(attendanceDate) = YEAR(GETDATE())";
+
+                using (System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand(query, connect))
+                {
+                    cmd.Parameters.AddWithValue("@id", empID);
+                    object result = cmd.ExecuteScalar();
+
+                    if (result != null && result != DBNull.Value)
+                    {
+                        int.TryParse(result.ToString(), out count);
+                    }
+                }
+            }
+            return count;
+        }
+
+        public int GetTotalLeaves(string empID)
+        {
+            int totalCredits = 0;
+            using (System.Data.SqlClient.SqlConnection connect = new System.Data.SqlClient.SqlConnection(connectionString))
+            {
+                connect.Open();
+
+                string query = @"
+            SELECT (sickLeave + vacationLeave + emergencyLeave) 
+            FROM leaveCreditData 
+            WHERE employeeID = @id";
+
+                using (System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand(query, connect))
+                {
+                    cmd.Parameters.AddWithValue("@id", empID);
+                    object result = cmd.ExecuteScalar();
+
+                    if (result != null && result != DBNull.Value)
+                    {
+                        int.TryParse(result.ToString(), out totalCredits);
+                    }
+                }
+            }
+            return totalCredits;
+        }
         public bool EmployeeExists(string employeeID)
         {
             bool exists = false;
@@ -2400,6 +2506,7 @@ namespace Payroll
 
             return departments;
         }
+
 
     }
 }

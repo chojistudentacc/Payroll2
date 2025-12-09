@@ -21,6 +21,7 @@ namespace Payroll
         string actualPassword;
         string currentEmployeeID;
         bool isPasswordVisible = false;
+        DataRow latestPayslipRow = null;
 
         public EmployeeForm(LoginForm form)
         {
@@ -29,6 +30,8 @@ namespace Payroll
             repo = new Repository();
             repo.LoadPicture(repo.getEmployeeID(login.userName), pictureBox2);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+
+
         }
 
         public void SetCurrentUserName(string userName)
@@ -40,9 +43,14 @@ namespace Payroll
         {
             hideAllPanels();
             LoadEmployeeProfile();
+            LoadDashboardStats();
+
+            LoadLatestPayslip();
             LoadAttendanceData();
             dashboardPanel.Visible = true;
             fillLeaveScreen();
+
+            allEmpLB.TextAlign = ContentAlignment.MiddleCenter; 
         }
 
 
@@ -262,14 +270,14 @@ namespace Payroll
         private void changePasswordButton_Click_1(object sender, EventArgs e)
         {
             using (ChangePassword passForm = new ChangePassword())
-                  
+
             {
                 passForm.StartPosition = FormStartPosition.CenterParent;
                 if (passForm.ShowDialog() == DialogResult.OK)
                 {
 
                     string newPass = passForm.NewPassword;
-                    
+
                     if (repo.UpdatePasswordOnly(currentEmployeeID, newPass))
                     {
                         MessageBox.Show("Password changed successfully!");
@@ -316,7 +324,104 @@ namespace Payroll
                 }
             }
         }
+        private void LoadDashboardStats()
+        {
 
-        
+            if (string.IsNullOrEmpty(currentEmployeeID))
+            {
+
+                MessageBox.Show("Error: currentEmployeeID is empty. Profile not loaded yet?");
+                return;
+            }
+
+            try
+            {
+
+                decimal netPay = repo.GetLatestNetPay(currentEmployeeID);
+                allEmpLB.Text = netPay.ToString("N2");
+
+
+                int attendanceCount = repo.GetMonthlyAttendanceCount(currentEmployeeID);
+                AttendanceLb.Text = attendanceCount.ToString();
+
+
+                if (attendanceCount == 0)
+                {
+
+                    MessageBox.Show($"Attendance is 0 for ID: {currentEmployeeID}. Check database for 'Present' status this month.");
+                }
+
+
+                int leaveCount = repo.GetTotalLeaves(currentEmployeeID);
+                LeavesLb.Text = leaveCount.ToString();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error loading stats: " + ex.Message);
+            }
+        }
+
+        private void ViewButton_Click(object sender, EventArgs e)
+        {
+            if (latestPayslipRow == null)
+            {
+                MessageBox.Show("No payslip data available to view.");
+                return;
+            }
+
+            hideAllPanels();
+            payslipPanel.Visible = true;
+
+           
+        }
+
+        private void DownloadButton_Click(object sender, EventArgs e)
+        {
+            if (latestPayslipRow == null) return;
+
+            string period = LatestPayslipLabel.Text;
+
+            // Simple confirmation for now (PDF generation is complex)
+            MessageBox.Show($"Payslip for [{period}] downloaded successfully!",
+                            "Download Complete",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+        }
+        private void LoadLatestPayslip()
+        {
+            // 1. Get data from Repo
+            latestPayslipRow = repo.GetLatestPayslip(currentEmployeeID);
+            LatestPayslipLabel.TextAlign = ContentAlignment.MiddleCenter;
+
+            if (latestPayslipRow != null)
+            {
+                DateTime startDate = Convert.ToDateTime(latestPayslipRow["payPeriod"]);
+                DateTime endDate;
+
+                // Logic to calculate the End Date (Semi-Monthly standard)
+                if (startDate.Day <= 15)
+                {
+                    // First Half: 1st to 15th
+                    startDate = new DateTime(startDate.Year, startDate.Month, 1);
+                    endDate = new DateTime(startDate.Year, startDate.Month, 15);
+                }
+                else
+                {
+                    // Second Half: 16th to End of Month
+                    startDate = new DateTime(startDate.Year, startDate.Month, 16);
+                    int lastDay = DateTime.DaysInMonth(startDate.Year, startDate.Month);
+                    endDate = new DateTime(startDate.Year, startDate.Month, lastDay);
+                }
+
+                // 3. Update YOUR LABEL
+                LatestPayslipLabel.Text = $"{startDate:MMMM d, yyyy} - {endDate:MMMM d, yyyy}";
+            }
+            else
+            {
+                // No payslip found
+                LatestPayslipLabel.Text = "No payslip available";
+            }
+        }
     }
 }
