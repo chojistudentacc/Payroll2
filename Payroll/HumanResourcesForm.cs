@@ -50,6 +50,8 @@ namespace Payroll
             InitializeAddEmployeeControls();
             fillDataGridView();
             userDataGridPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            adminPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            repo.LoadPicture(ID, adminPictureBox);
         }
 
         private void fillDataGridView()
@@ -360,8 +362,13 @@ namespace Payroll
         private void addEmpButt_Click(object sender, EventArgs e)
         {
             hideEmployeeSubMenu();
+            showEmployeesPanel.Visible = false;
             addEmployeesPanel.Visible = true;
             clearCre(); // Clear form when opening
+            positionCB.Items.Clear();
+            positionCB.Items.Add("Employee");
+            positionCB.Items.Add("Accountant");
+            positionCB.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         private void employeeViewButton_Click(object sender, EventArgs e)
@@ -446,6 +453,8 @@ namespace Payroll
 
                     clearCre();
                     hideEmployeeSubMenu();
+                    fillDataGridView();
+                    showEmployeesPanel.Visible = true;
                 }
                 else if (positionCB.Text.Equals("Accountant"))
                 {
@@ -468,6 +477,8 @@ namespace Payroll
 
                     clearCre();
                     hideEmployeeSubMenu();
+                    fillDataGridView();
+                    showEmployeesPanel.Visible = true;
                 }
             }
             else
@@ -480,6 +491,7 @@ namespace Payroll
         {
             clearCre();
             hideEmployeeSubMenu();
+            showEmployeesPanel.Visible = true;
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -620,6 +632,11 @@ namespace Payroll
                     currentImage = img;
                 }
             }
+        }
+
+        private void clearButton_Click(object sender, EventArgs e)
+        {
+            clearCre();
         }
     }
 }
