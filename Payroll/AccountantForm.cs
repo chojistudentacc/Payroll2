@@ -275,7 +275,6 @@ namespace Payroll
         private void messagesButt_Click(object sender, EventArgs e)
         {
             hideAllPanels();
-            messagesPanel.Visible = true;
         }
 
         private void initializeItems()
@@ -291,7 +290,6 @@ namespace Payroll
             payslipPanel.Visible = false;
             deductionsPanel.Visible = false;
             reportPanel.Visible = false;
-            messagesPanel.Visible = false;
             archivedPanel.Visible = false;
         }
 
@@ -364,7 +362,6 @@ namespace Payroll
             payslipButt.Enabled = false;
             deductButt.Enabled = false;
             reportButt.Enabled = false;
-            messagesButt.Enabled = false;
         }
 
         private void closeButt_Click(object sender, EventArgs e)
@@ -375,7 +372,6 @@ namespace Payroll
             payslipButt.Enabled = true;
             deductButt.Enabled = true;
             reportButt.Enabled = true;
-            messagesButt.Enabled = true;
         }
 
         //public void CalculateTotalEarnings()
@@ -432,7 +428,6 @@ namespace Payroll
         {
             deductButt.Location = new Point(0, 437);
             reportButt.Location = new Point(0, 511);
-            messagesButt.Location = new Point(0, 584);
             archivedButton.Location = new Point(0, 658);
         }
 
@@ -440,8 +435,7 @@ namespace Payroll
         {
             deductButt.Location = new Point(0, 321);
             reportButt.Location = new Point(0, 395);
-            messagesButt.Location = new Point(0, 468);
-            archivedButton.Location = new Point(0, 542);
+            archivedButton.Location = new Point(0, 468);
         }
 
 
