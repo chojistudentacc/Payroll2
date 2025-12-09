@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Payroll.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,6 +20,7 @@ namespace Payroll
         string currentUserName;
         string actualPassword;
         string currentEmployeeID;
+        private Image currentImage;
         bool isPasswordVisible = false;
 
         public HumanResourcesForm(LoginForm login, string name)
@@ -28,7 +30,7 @@ namespace Payroll
             this.currentUserName = name;
             this.login = login;
             repo = new Repository();
-            
+
             initializeItems();
             dashboardPanel.Visible = true;
         }
@@ -37,7 +39,7 @@ namespace Payroll
         {
             ID = repo.getHRID(userName);
             welcomeLabelAdmin.Text = "HR ID: " + ID;
-            
+
             hideAllPanels();
             hideEmployeeSubMenu();
             LoadEmployeeProfile();
@@ -59,7 +61,7 @@ namespace Payroll
             // Set placeholder text for search
             attendanceSearchTB.Text = "Search by Employee ID, Name, or Date (MM/dd/yyyy)";
             attendanceSearchTB.ForeColor = Color.Gray;
-            
+
             // Add focus events for placeholder
             attendanceSearchTB.GotFocus += AttendanceSearchTB_GotFocus;
             attendanceSearchTB.LostFocus += AttendanceSearchTB_LostFocus;
@@ -144,7 +146,7 @@ namespace Payroll
             // Load today's attendance by default
             string statusFilter = cmbFilterStatus.SelectedItem?.ToString() ?? "All";
             DataTable dt = repo.GetAttendanceByFilter(DateTime.Now, statusFilter);
-            
+
             if (dt != null && dt.Rows.Count > 0)
             {
                 userDataGridView.DataSource = dt;
@@ -325,11 +327,74 @@ namespace Payroll
         {
             hideEmployeeSubMenu();
         }
+        private void clearCre()
+        {
+            lastNameTB.Text = "";
+            firstNameTB.Text = "";
+            middleNameTB.Text = "";
+            addressTB.Text = "";
+            contactNoTB.Text = "";
+            emailTB.Text = "";
+
+        }
+
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            hideEmployeeSubMenu();
+            if (lastNameTB.Text != "" &&
+                firstNameTB.Text != "" &&
+                middleNameTB.Text != "" &&
+                addressTB.Text != "" &&
+                contactNoTB.Text != "" &&
+                emailTB.Text != "" &&
+                positionCB.Text != "" &&
+                pictureBox2.Image != null)
+            {
+                if (positionCB.Text.Equals("Employee"))
+                {
+                    Employee emp = new Employee();
+                    emp.LastName = lastNameTB.Text;
+                    emp.FirstName = firstNameTB.Text;
+                    emp.MiddleName = middleNameTB.Text;
+                    emp.Address = addressTB.Text;
+                    emp.ContactNum = long.Parse(contactNoTB.Text);
+                    emp.Email = emailTB.Text;
+                    repo.AddEmployee(emp);
+                    repo.SavePictureToProject(repo.getEmployeeID(emp.UserName), currentImage);
+
+                    string activity = "Add Employee";
+                    string logDetails = $"Added Employee: {emp.FirstName} {emp.LastName} \nUsername: {emp.UserName} \nStatus: {emp.Status}";
+                    repo.AddLog(repo.getAdminID(userName), activity, logDetails);
+
+                    clearCre();
+
+                }
+                else if (positionCB.Text.Equals("Accountant"))
+                {
+                    Accountant acc = new Accountant();
+                    acc.LastName = lastNameTB.Text;
+                    acc.FirstName = firstNameTB.Text;
+                    acc.MiddleName = middleNameTB.Text;
+                    acc.Address = addressTB.Text;
+                    acc.ContactNum = long.Parse(contactNoTB.Text);
+                    acc.Email = emailTB.Text;
+                    repo.AddAccountant(acc);
+                    repo.SavePictureToProject(repo.getAccountantID(acc.UserName), currentImage);
+
+                    string activity = "Add Accountant";
+                    string logDetails = $"Added Accountant: {acc.FirstName} {acc.LastName} \nUsername: {acc.UserName} \nStatus: {acc.Status}";
+                    repo.AddLog(repo.getAdminID(userName), activity, logDetails);
+
+                    clearCre();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please fill in all fields");
+            }
         }
+
+
 
         private void cancelButton_Click(object sender, EventArgs e)
         {
@@ -362,7 +427,7 @@ namespace Payroll
 
                     actualPassword = hrData["password"].ToString();
                     employeeProfilePasswordTB.Text = "Hidden";
-                    employeeProfilePasswordTB.ReadOnly = true;      
+                    employeeProfilePasswordTB.ReadOnly = true;
 
                     employeeEmailLabel.Text = hrData["email"].ToString();
                     employeeContactLabel.Text = hrData["contactNum"].ToString();
@@ -459,6 +524,23 @@ namespace Payroll
         {
             // Load initial attendance data
             LoadAllAttendance();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog dlg = new OpenFileDialog())
+            {
+                dlg.Filter = "Image Files | *.jpg; *.png; *.jpeg";
+
+                if (dlg.ShowDialog() == DialogResult.OK)
+                {
+                    Image img = Image.FromFile(dlg.FileName);
+
+                    pictureBox2.Image = img;
+                    currentImage = img;
+
+                }
+            }
         }
     }
 }

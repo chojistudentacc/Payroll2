@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HumanResourcesForm));
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             sidePanel = new Panel();
             profileButt = new Button();
             welcomeLabelAdmin = new Label();
@@ -76,64 +76,31 @@
             label3 = new Label();
             employeePanel = new Panel();
             label2 = new Label();
-            viewEmployeesPanel = new Panel();
-            button1 = new Button();
-            panel13 = new Panel();
-            button2 = new Button();
-            label20 = new Label();
-            comboBox3 = new ComboBox();
-            comboBox4 = new ComboBox();
-            textBox8 = new TextBox();
-            label23 = new Label();
-            label24 = new Label();
-            label40 = new Label();
-            textBox10 = new TextBox();
-            panel14 = new Panel();
-            textBox11 = new TextBox();
-            textBox12 = new TextBox();
-            textBox13 = new TextBox();
-            textBox15 = new TextBox();
-            textBox16 = new TextBox();
-            label41 = new Label();
-            textBox17 = new TextBox();
-            label43 = new Label();
-            label44 = new Label();
-            label45 = new Label();
-            label46 = new Label();
-            textBox18 = new TextBox();
-            pictureBox4 = new PictureBox();
-            label47 = new Label();
-            label48 = new Label();
-            label49 = new Label();
-            label50 = new Label();
-            button3 = new Button();
-            promoteButton = new Button();
-            panel15 = new Panel();
             addEmployeesPanel = new Panel();
             cancelButton = new Button();
             panel10 = new Panel();
             uploadButton = new Button();
             label18 = new Label();
-            comboBox2 = new ComboBox();
-            comboBox1 = new ComboBox();
-            textBox9 = new TextBox();
+            positionCB = new ComboBox();
+            employeeTypeCB = new ComboBox();
+            departmentTB = new TextBox();
             label32 = new Label();
             label31 = new Label();
             label39 = new Label();
-            textBox14 = new TextBox();
+            rateTB = new TextBox();
             panel7 = new Panel();
-            textBox7 = new TextBox();
-            textBox5 = new TextBox();
-            textBox6 = new TextBox();
-            textBox4 = new TextBox();
-            textBox3 = new TextBox();
+            contactNoTB = new TextBox();
+            middleNameTB = new TextBox();
+            firstNameTB = new TextBox();
+            lastNameTB = new TextBox();
+            empIDTB = new TextBox();
             label17 = new Label();
-            textBox2 = new TextBox();
+            addressTB = new TextBox();
             label38 = new Label();
             label37 = new Label();
             label36 = new Label();
             label16 = new Label();
-            textBox1 = new TextBox();
+            emailTB = new TextBox();
             pictureBox2 = new PictureBox();
             label25 = new Label();
             label30 = new Label();
@@ -205,6 +172,39 @@
             label63 = new Label();
             button7 = new Button();
             panel18 = new Panel();
+            viewEmployeesPanel = new Panel();
+            button1 = new Button();
+            panel13 = new Panel();
+            button2 = new Button();
+            label20 = new Label();
+            comboBox3 = new ComboBox();
+            comboBox4 = new ComboBox();
+            textBox8 = new TextBox();
+            label23 = new Label();
+            label24 = new Label();
+            label40 = new Label();
+            textBox10 = new TextBox();
+            panel14 = new Panel();
+            textBox11 = new TextBox();
+            textBox12 = new TextBox();
+            textBox13 = new TextBox();
+            textBox15 = new TextBox();
+            textBox16 = new TextBox();
+            label41 = new Label();
+            textBox17 = new TextBox();
+            label43 = new Label();
+            label44 = new Label();
+            label45 = new Label();
+            label46 = new Label();
+            textBox18 = new TextBox();
+            pictureBox4 = new PictureBox();
+            label47 = new Label();
+            label48 = new Label();
+            label49 = new Label();
+            label50 = new Label();
+            button3 = new Button();
+            promoteButton = new Button();
+            panel15 = new Panel();
             requestPanel = new Panel();
             label4 = new Label();
             panel2 = new Panel();
@@ -280,10 +280,6 @@
             panel28.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)userDataGridView).BeginInit();
             employeePanel.SuspendLayout();
-            viewEmployeesPanel.SuspendLayout();
-            panel13.SuspendLayout();
-            panel14.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             addEmployeesPanel.SuspendLayout();
             panel10.SuspendLayout();
             panel7.SuspendLayout();
@@ -300,6 +296,10 @@
             panel16.SuspendLayout();
             panel17.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
+            viewEmployeesPanel.SuspendLayout();
+            panel13.SuspendLayout();
+            panel14.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             requestPanel.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
@@ -645,7 +645,7 @@
             panel25.BackgroundImageLayout = ImageLayout.Stretch;
             panel25.Controls.Add(label77);
             panel25.Controls.Add(label78);
-            panel25.Location = new Point(297, 41);
+            panel25.Location = new Point(303, 41);
             panel25.Margin = new Padding(2, 1, 2, 1);
             panel25.Name = "panel25";
             panel25.Size = new Size(163, 86);
@@ -795,37 +795,37 @@
             userDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             userDataGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             userDataGridView.BackgroundColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle7.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle7.ForeColor = Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(179, 79, 84);
-            dataGridViewCellStyle7.SelectionForeColor = Color.FromArgb(255, 209, 211);
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
-            userDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(146, 45, 51);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(179, 79, 84);
+            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(255, 209, 211);
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            userDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             userDataGridView.ColumnHeadersHeight = 29;
             userDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle8.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle8.ForeColor = Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = Color.FromArgb(179, 79, 84);
-            dataGridViewCellStyle8.SelectionForeColor = Color.FromArgb(255, 209, 211);
-            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
-            userDataGridView.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(146, 45, 51);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(179, 79, 84);
+            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(255, 209, 211);
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            userDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             userDataGridView.EnableHeadersVisualStyles = false;
             userDataGridView.GridColor = Color.White;
             userDataGridView.Location = new Point(0, 190);
             userDataGridView.Name = "userDataGridView";
             userDataGridView.ReadOnly = true;
-            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle9.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle9.ForeColor = Color.White;
-            dataGridViewCellStyle9.SelectionBackColor = Color.FromArgb(179, 79, 84);
-            dataGridViewCellStyle9.SelectionForeColor = Color.FromArgb(255, 209, 211);
-            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.True;
-            userDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(146, 45, 51);
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(179, 79, 84);
+            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(255, 209, 211);
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            userDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             userDataGridView.RowHeadersVisible = false;
             userDataGridView.RowHeadersWidth = 51;
             userDataGridView.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
@@ -853,11 +853,11 @@
             // employeePanel
             // 
             employeePanel.Controls.Add(label2);
-            employeePanel.Controls.Add(viewEmployeesPanel);
             employeePanel.Controls.Add(addEmployeesPanel);
             employeePanel.Controls.Add(showEmployeesPanel);
             employeePanel.Controls.Add(promotionEmployeePanel);
             employeePanel.Controls.Add(editEmployeesPanel);
+            employeePanel.Controls.Add(viewEmployeesPanel);
             employeePanel.Location = new Point(274, 0);
             employeePanel.Name = "employeePanel";
             employeePanel.Size = new Size(1117, 782);
@@ -871,401 +871,6 @@
             label2.Size = new Size(88, 15);
             label2.TabIndex = 1;
             label2.Text = "employeePanel";
-            // 
-            // viewEmployeesPanel
-            // 
-            viewEmployeesPanel.BackColor = Color.FromArgb(224, 224, 224);
-            viewEmployeesPanel.Controls.Add(button1);
-            viewEmployeesPanel.Controls.Add(panel13);
-            viewEmployeesPanel.Controls.Add(panel14);
-            viewEmployeesPanel.Controls.Add(button3);
-            viewEmployeesPanel.Controls.Add(promoteButton);
-            viewEmployeesPanel.Controls.Add(panel15);
-            viewEmployeesPanel.Location = new Point(13, 23);
-            viewEmployeesPanel.Name = "viewEmployeesPanel";
-            viewEmployeesPanel.Size = new Size(1092, 759);
-            viewEmployeesPanel.TabIndex = 46;
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.FromArgb(148, 59, 68);
-            button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
-            button1.BackgroundImageLayout = ImageLayout.Stretch;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.Snow;
-            button1.Location = new Point(424, 686);
-            button1.Margin = new Padding(3, 2, 3, 2);
-            button1.Name = "button1";
-            button1.Size = new Size(158, 51);
-            button1.TabIndex = 45;
-            button1.Text = "Cancel";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
-            // 
-            // panel13
-            // 
-            panel13.AutoScroll = true;
-            panel13.AutoScrollMinSize = new Size(0, 350);
-            panel13.BackColor = Color.White;
-            panel13.BorderStyle = BorderStyle.FixedSingle;
-            panel13.Controls.Add(button2);
-            panel13.Controls.Add(label20);
-            panel13.Controls.Add(comboBox3);
-            panel13.Controls.Add(comboBox4);
-            panel13.Controls.Add(textBox8);
-            panel13.Controls.Add(label23);
-            panel13.Controls.Add(label24);
-            panel13.Controls.Add(label40);
-            panel13.Controls.Add(textBox10);
-            panel13.ForeColor = Color.FromArgb(163, 47, 54);
-            panel13.Location = new Point(41, 487);
-            panel13.Name = "panel13";
-            panel13.Size = new Size(1011, 156);
-            panel13.TabIndex = 44;
-            // 
-            // button2
-            // 
-            button2.BackColor = Color.FromArgb(148, 59, 68);
-            button2.BackgroundImage = (Image)resources.GetObject("button2.BackgroundImage");
-            button2.BackgroundImageLayout = ImageLayout.Stretch;
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button2.ForeColor = Color.Snow;
-            button2.Location = new Point(403, 157);
-            button2.Margin = new Padding(3, 2, 3, 2);
-            button2.Name = "button2";
-            button2.Size = new Size(237, 51);
-            button2.TabIndex = 46;
-            button2.Text = "Upload file/picture";
-            button2.UseVisualStyleBackColor = false;
-            // 
-            // label20
-            // 
-            label20.AutoSize = true;
-            label20.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
-            label20.ForeColor = Color.Black;
-            label20.Location = new Point(540, 27);
-            label20.Name = "label20";
-            label20.Size = new Size(168, 23);
-            label20.TabIndex = 46;
-            label20.Text = "Employee Type:";
-            // 
-            // comboBox3
-            // 
-            comboBox3.Font = new Font("Segoe UI", 14.25F);
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(224, 17);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(230, 33);
-            comboBox3.TabIndex = 45;
-            // 
-            // comboBox4
-            // 
-            comboBox4.Font = new Font("Segoe UI", 14.25F);
-            comboBox4.FormattingEnabled = true;
-            comboBox4.Location = new Point(756, 23);
-            comboBox4.Name = "comboBox4";
-            comboBox4.Size = new Size(230, 33);
-            comboBox4.TabIndex = 44;
-            // 
-            // textBox8
-            // 
-            textBox8.Font = new Font("Times New Roman", 14.25F);
-            textBox8.Location = new Point(224, 79);
-            textBox8.Margin = new Padding(2, 1, 2, 1);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(230, 29);
-            textBox8.TabIndex = 42;
-            // 
-            // label23
-            // 
-            label23.AutoSize = true;
-            label23.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
-            label23.ForeColor = Color.Black;
-            label23.Location = new Point(40, 27);
-            label23.Name = "label23";
-            label23.Size = new Size(99, 23);
-            label23.TabIndex = 6;
-            label23.Text = "Position:";
-            // 
-            // label24
-            // 
-            label24.AutoSize = true;
-            label24.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
-            label24.ForeColor = Color.Black;
-            label24.Location = new Point(37, 82);
-            label24.Name = "label24";
-            label24.Size = new Size(137, 23);
-            label24.TabIndex = 7;
-            label24.Text = "Department:";
-            // 
-            // label40
-            // 
-            label40.AutoSize = true;
-            label40.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
-            label40.ForeColor = Color.Black;
-            label40.Location = new Point(567, 85);
-            label40.Name = "label40";
-            label40.Size = new Size(141, 23);
-            label40.TabIndex = 35;
-            label40.Text = "Rate per day:";
-            // 
-            // textBox10
-            // 
-            textBox10.Font = new Font("Times New Roman", 14.25F);
-            textBox10.Location = new Point(756, 85);
-            textBox10.Margin = new Padding(2, 1, 2, 1);
-            textBox10.Name = "textBox10";
-            textBox10.Size = new Size(230, 29);
-            textBox10.TabIndex = 17;
-            // 
-            // panel14
-            // 
-            panel14.BackColor = Color.White;
-            panel14.BorderStyle = BorderStyle.FixedSingle;
-            panel14.Controls.Add(textBox11);
-            panel14.Controls.Add(textBox12);
-            panel14.Controls.Add(textBox13);
-            panel14.Controls.Add(textBox15);
-            panel14.Controls.Add(textBox16);
-            panel14.Controls.Add(label41);
-            panel14.Controls.Add(textBox17);
-            panel14.Controls.Add(label43);
-            panel14.Controls.Add(label44);
-            panel14.Controls.Add(label45);
-            panel14.Controls.Add(label46);
-            panel14.Controls.Add(textBox18);
-            panel14.Controls.Add(pictureBox4);
-            panel14.Controls.Add(label47);
-            panel14.Controls.Add(label48);
-            panel14.Controls.Add(label49);
-            panel14.Controls.Add(label50);
-            panel14.ForeColor = Color.FromArgb(163, 47, 54);
-            panel14.Location = new Point(41, 83);
-            panel14.Name = "panel14";
-            panel14.Size = new Size(1011, 370);
-            panel14.TabIndex = 34;
-            // 
-            // textBox11
-            // 
-            textBox11.Font = new Font("Times New Roman", 14.25F);
-            textBox11.Location = new Point(218, 290);
-            textBox11.Margin = new Padding(2, 1, 2, 1);
-            textBox11.Name = "textBox11";
-            textBox11.Size = new Size(230, 29);
-            textBox11.TabIndex = 43;
-            // 
-            // textBox12
-            // 
-            textBox12.Font = new Font("Times New Roman", 14.25F);
-            textBox12.Location = new Point(217, 236);
-            textBox12.Margin = new Padding(2, 1, 2, 1);
-            textBox12.Name = "textBox12";
-            textBox12.Size = new Size(230, 29);
-            textBox12.TabIndex = 42;
-            // 
-            // textBox13
-            // 
-            textBox13.Font = new Font("Times New Roman", 14.25F);
-            textBox13.Location = new Point(218, 179);
-            textBox13.Margin = new Padding(2, 1, 2, 1);
-            textBox13.Name = "textBox13";
-            textBox13.Size = new Size(230, 29);
-            textBox13.TabIndex = 41;
-            // 
-            // textBox15
-            // 
-            textBox15.Font = new Font("Times New Roman", 14.25F);
-            textBox15.Location = new Point(217, 125);
-            textBox15.Margin = new Padding(2, 1, 2, 1);
-            textBox15.Name = "textBox15";
-            textBox15.Size = new Size(230, 29);
-            textBox15.TabIndex = 40;
-            // 
-            // textBox16
-            // 
-            textBox16.Font = new Font("Times New Roman", 14.25F);
-            textBox16.Location = new Point(218, 69);
-            textBox16.Margin = new Padding(2, 1, 2, 1);
-            textBox16.Name = "textBox16";
-            textBox16.Size = new Size(230, 29);
-            textBox16.TabIndex = 39;
-            // 
-            // label41
-            // 
-            label41.AutoSize = true;
-            label41.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
-            label41.ForeColor = Color.Black;
-            label41.Location = new Point(40, 295);
-            label41.Name = "label41";
-            label41.Size = new Size(132, 23);
-            label41.TabIndex = 38;
-            label41.Text = "Contact No.:";
-            // 
-            // textBox17
-            // 
-            textBox17.Font = new Font("Times New Roman", 14.25F);
-            textBox17.Location = new Point(742, 289);
-            textBox17.Margin = new Padding(2, 1, 2, 1);
-            textBox17.Name = "textBox17";
-            textBox17.Size = new Size(230, 29);
-            textBox17.TabIndex = 37;
-            // 
-            // label43
-            // 
-            label43.AutoSize = true;
-            label43.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
-            label43.ForeColor = Color.Black;
-            label43.Location = new Point(603, 295);
-            label43.Name = "label43";
-            label43.Size = new Size(98, 23);
-            label43.TabIndex = 36;
-            label43.Text = "Address:";
-            // 
-            // label44
-            // 
-            label44.AutoSize = true;
-            label44.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
-            label44.ForeColor = Color.Black;
-            label44.Location = new Point(624, 236);
-            label44.Name = "label44";
-            label44.Size = new Size(75, 23);
-            label44.TabIndex = 35;
-            label44.Text = "Email:";
-            // 
-            // label45
-            // 
-            label45.AutoSize = true;
-            label45.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
-            label45.ForeColor = Color.Black;
-            label45.Location = new Point(624, 169);
-            label45.Name = "label45";
-            label45.Size = new Size(77, 23);
-            label45.TabIndex = 34;
-            label45.Text = "Image:";
-            // 
-            // label46
-            // 
-            label46.AutoSize = true;
-            label46.Font = new Font("Times New Roman", 25.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label46.ForeColor = Color.FromArgb(91, 12, 12);
-            label46.Location = new Point(382, 11);
-            label46.Name = "label46";
-            label46.Size = new Size(274, 40);
-            label46.TabIndex = 33;
-            label46.Text = "Employee Details";
-            // 
-            // textBox18
-            // 
-            textBox18.Font = new Font("Times New Roman", 14.25F);
-            textBox18.Location = new Point(742, 230);
-            textBox18.Margin = new Padding(2, 1, 2, 1);
-            textBox18.Name = "textBox18";
-            textBox18.Size = new Size(230, 29);
-            textBox18.TabIndex = 17;
-            // 
-            // pictureBox4
-            // 
-            pictureBox4.BackColor = Color.White;
-            pictureBox4.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox4.BorderStyle = BorderStyle.FixedSingle;
-            pictureBox4.Location = new Point(794, 93);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(107, 93);
-            pictureBox4.TabIndex = 32;
-            pictureBox4.TabStop = false;
-            // 
-            // label47
-            // 
-            label47.AutoSize = true;
-            label47.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
-            label47.ForeColor = Color.Black;
-            label47.Location = new Point(41, 236);
-            label47.Name = "label47";
-            label47.Size = new Size(149, 23);
-            label47.TabIndex = 9;
-            label47.Text = "Middle Name:";
-            // 
-            // label48
-            // 
-            label48.AutoSize = true;
-            label48.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
-            label48.ForeColor = Color.Black;
-            label48.Location = new Point(39, 185);
-            label48.Name = "label48";
-            label48.Size = new Size(127, 23);
-            label48.TabIndex = 8;
-            label48.Text = "First Name:";
-            // 
-            // label49
-            // 
-            label49.AutoSize = true;
-            label49.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
-            label49.ForeColor = Color.Black;
-            label49.Location = new Point(40, 131);
-            label49.Name = "label49";
-            label49.Size = new Size(121, 23);
-            label49.TabIndex = 5;
-            label49.Text = "Last Name:";
-            // 
-            // label50
-            // 
-            label50.AutoSize = true;
-            label50.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
-            label50.ForeColor = Color.Black;
-            label50.Location = new Point(31, 75);
-            label50.Name = "label50";
-            label50.Size = new Size(144, 23);
-            label50.TabIndex = 4;
-            label50.Text = "Employee ID:";
-            // 
-            // button3
-            // 
-            button3.BackColor = Color.FromArgb(148, 59, 68);
-            button3.BackgroundImage = (Image)resources.GetObject("button3.BackgroundImage");
-            button3.BackgroundImageLayout = ImageLayout.Stretch;
-            button3.FlatAppearance.BorderSize = 0;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button3.ForeColor = Color.Snow;
-            button3.Location = new Point(41, 686);
-            button3.Margin = new Padding(3, 2, 3, 2);
-            button3.Name = "button3";
-            button3.Size = new Size(158, 51);
-            button3.TabIndex = 30;
-            button3.Text = "Edit";
-            button3.UseVisualStyleBackColor = false;
-            button3.Click += button3_Click;
-            // 
-            // promoteButton
-            // 
-            promoteButton.BackColor = Color.FromArgb(148, 59, 68);
-            promoteButton.BackgroundImage = (Image)resources.GetObject("promoteButton.BackgroundImage");
-            promoteButton.BackgroundImageLayout = ImageLayout.Stretch;
-            promoteButton.FlatAppearance.BorderSize = 0;
-            promoteButton.FlatStyle = FlatStyle.Flat;
-            promoteButton.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            promoteButton.ForeColor = Color.Snow;
-            promoteButton.Location = new Point(236, 686);
-            promoteButton.Margin = new Padding(3, 2, 3, 2);
-            promoteButton.Name = "promoteButton";
-            promoteButton.Size = new Size(158, 51);
-            promoteButton.TabIndex = 28;
-            promoteButton.Text = "Promote";
-            promoteButton.UseVisualStyleBackColor = false;
-            promoteButton.Click += button4_Click;
-            // 
-            // panel15
-            // 
-            panel15.BackgroundImage = Properties.Resources.TopPanelBg;
-            panel15.BackgroundImageLayout = ImageLayout.Stretch;
-            panel15.Location = new Point(0, 1);
-            panel15.Name = "panel15";
-            panel15.Size = new Size(1092, 67);
-            panel15.TabIndex = 25;
             // 
             // addEmployeesPanel
             // 
@@ -1307,13 +912,13 @@
             panel10.BorderStyle = BorderStyle.FixedSingle;
             panel10.Controls.Add(uploadButton);
             panel10.Controls.Add(label18);
-            panel10.Controls.Add(comboBox2);
-            panel10.Controls.Add(comboBox1);
-            panel10.Controls.Add(textBox9);
+            panel10.Controls.Add(positionCB);
+            panel10.Controls.Add(employeeTypeCB);
+            panel10.Controls.Add(departmentTB);
             panel10.Controls.Add(label32);
             panel10.Controls.Add(label31);
             panel10.Controls.Add(label39);
-            panel10.Controls.Add(textBox14);
+            panel10.Controls.Add(rateTB);
             panel10.ForeColor = Color.FromArgb(163, 47, 54);
             panel10.Location = new Point(41, 487);
             panel10.Name = "panel10";
@@ -1348,32 +953,32 @@
             label18.TabIndex = 46;
             label18.Text = "Employee Type:";
             // 
-            // comboBox2
+            // positionCB
             // 
-            comboBox2.Font = new Font("Segoe UI", 14.25F);
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(224, 17);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(230, 33);
-            comboBox2.TabIndex = 45;
+            positionCB.Font = new Font("Segoe UI", 14.25F);
+            positionCB.FormattingEnabled = true;
+            positionCB.Location = new Point(224, 17);
+            positionCB.Name = "positionCB";
+            positionCB.Size = new Size(230, 33);
+            positionCB.TabIndex = 45;
             // 
-            // comboBox1
+            // employeeTypeCB
             // 
-            comboBox1.Font = new Font("Segoe UI", 14.25F);
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(756, 23);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(230, 33);
-            comboBox1.TabIndex = 44;
+            employeeTypeCB.Font = new Font("Segoe UI", 14.25F);
+            employeeTypeCB.FormattingEnabled = true;
+            employeeTypeCB.Location = new Point(756, 23);
+            employeeTypeCB.Name = "employeeTypeCB";
+            employeeTypeCB.Size = new Size(230, 33);
+            employeeTypeCB.TabIndex = 44;
             // 
-            // textBox9
+            // departmentTB
             // 
-            textBox9.Font = new Font("Times New Roman", 14.25F);
-            textBox9.Location = new Point(224, 79);
-            textBox9.Margin = new Padding(2, 1, 2, 1);
-            textBox9.Name = "textBox9";
-            textBox9.Size = new Size(230, 29);
-            textBox9.TabIndex = 42;
+            departmentTB.Font = new Font("Times New Roman", 14.25F);
+            departmentTB.Location = new Point(224, 79);
+            departmentTB.Margin = new Padding(2, 1, 2, 1);
+            departmentTB.Name = "departmentTB";
+            departmentTB.Size = new Size(230, 29);
+            departmentTB.TabIndex = 42;
             // 
             // label32
             // 
@@ -1408,31 +1013,32 @@
             label39.TabIndex = 35;
             label39.Text = "Rate per day:";
             // 
-            // textBox14
+            // rateTB
             // 
-            textBox14.Font = new Font("Times New Roman", 14.25F);
-            textBox14.Location = new Point(756, 85);
-            textBox14.Margin = new Padding(2, 1, 2, 1);
-            textBox14.Name = "textBox14";
-            textBox14.Size = new Size(230, 29);
-            textBox14.TabIndex = 17;
+            rateTB.Font = new Font("Times New Roman", 14.25F);
+            rateTB.Location = new Point(756, 85);
+            rateTB.Margin = new Padding(2, 1, 2, 1);
+            rateTB.Name = "rateTB";
+            rateTB.Size = new Size(230, 29);
+            rateTB.TabIndex = 17;
+            rateTB.UseWaitCursor = true;
             // 
             // panel7
             // 
             panel7.BackColor = Color.White;
             panel7.BorderStyle = BorderStyle.FixedSingle;
-            panel7.Controls.Add(textBox7);
-            panel7.Controls.Add(textBox5);
-            panel7.Controls.Add(textBox6);
-            panel7.Controls.Add(textBox4);
-            panel7.Controls.Add(textBox3);
+            panel7.Controls.Add(contactNoTB);
+            panel7.Controls.Add(middleNameTB);
+            panel7.Controls.Add(firstNameTB);
+            panel7.Controls.Add(lastNameTB);
+            panel7.Controls.Add(empIDTB);
             panel7.Controls.Add(label17);
-            panel7.Controls.Add(textBox2);
+            panel7.Controls.Add(addressTB);
             panel7.Controls.Add(label38);
             panel7.Controls.Add(label37);
             panel7.Controls.Add(label36);
             panel7.Controls.Add(label16);
-            panel7.Controls.Add(textBox1);
+            panel7.Controls.Add(emailTB);
             panel7.Controls.Add(pictureBox2);
             panel7.Controls.Add(label25);
             panel7.Controls.Add(label30);
@@ -1444,50 +1050,50 @@
             panel7.Size = new Size(1011, 370);
             panel7.TabIndex = 34;
             // 
-            // textBox7
+            // contactNoTB
             // 
-            textBox7.Font = new Font("Times New Roman", 14.25F);
-            textBox7.Location = new Point(218, 290);
-            textBox7.Margin = new Padding(2, 1, 2, 1);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(230, 29);
-            textBox7.TabIndex = 43;
+            contactNoTB.Font = new Font("Times New Roman", 14.25F);
+            contactNoTB.Location = new Point(218, 290);
+            contactNoTB.Margin = new Padding(2, 1, 2, 1);
+            contactNoTB.Name = "contactNoTB";
+            contactNoTB.Size = new Size(230, 29);
+            contactNoTB.TabIndex = 43;
             // 
-            // textBox5
+            // middleNameTB
             // 
-            textBox5.Font = new Font("Times New Roman", 14.25F);
-            textBox5.Location = new Point(217, 236);
-            textBox5.Margin = new Padding(2, 1, 2, 1);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(230, 29);
-            textBox5.TabIndex = 42;
+            middleNameTB.Font = new Font("Times New Roman", 14.25F);
+            middleNameTB.Location = new Point(217, 236);
+            middleNameTB.Margin = new Padding(2, 1, 2, 1);
+            middleNameTB.Name = "middleNameTB";
+            middleNameTB.Size = new Size(230, 29);
+            middleNameTB.TabIndex = 42;
             // 
-            // textBox6
+            // firstNameTB
             // 
-            textBox6.Font = new Font("Times New Roman", 14.25F);
-            textBox6.Location = new Point(218, 179);
-            textBox6.Margin = new Padding(2, 1, 2, 1);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(230, 29);
-            textBox6.TabIndex = 41;
+            firstNameTB.Font = new Font("Times New Roman", 14.25F);
+            firstNameTB.Location = new Point(218, 179);
+            firstNameTB.Margin = new Padding(2, 1, 2, 1);
+            firstNameTB.Name = "firstNameTB";
+            firstNameTB.Size = new Size(230, 29);
+            firstNameTB.TabIndex = 41;
             // 
-            // textBox4
+            // lastNameTB
             // 
-            textBox4.Font = new Font("Times New Roman", 14.25F);
-            textBox4.Location = new Point(217, 125);
-            textBox4.Margin = new Padding(2, 1, 2, 1);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(230, 29);
-            textBox4.TabIndex = 40;
+            lastNameTB.Font = new Font("Times New Roman", 14.25F);
+            lastNameTB.Location = new Point(217, 125);
+            lastNameTB.Margin = new Padding(2, 1, 2, 1);
+            lastNameTB.Name = "lastNameTB";
+            lastNameTB.Size = new Size(230, 29);
+            lastNameTB.TabIndex = 40;
             // 
-            // textBox3
+            // empIDTB
             // 
-            textBox3.Font = new Font("Times New Roman", 14.25F);
-            textBox3.Location = new Point(218, 69);
-            textBox3.Margin = new Padding(2, 1, 2, 1);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(230, 29);
-            textBox3.TabIndex = 39;
+            empIDTB.Font = new Font("Times New Roman", 14.25F);
+            empIDTB.Location = new Point(218, 69);
+            empIDTB.Margin = new Padding(2, 1, 2, 1);
+            empIDTB.Name = "empIDTB";
+            empIDTB.Size = new Size(230, 29);
+            empIDTB.TabIndex = 39;
             // 
             // label17
             // 
@@ -1500,14 +1106,14 @@
             label17.TabIndex = 38;
             label17.Text = "Contact No.:";
             // 
-            // textBox2
+            // addressTB
             // 
-            textBox2.Font = new Font("Times New Roman", 14.25F);
-            textBox2.Location = new Point(742, 289);
-            textBox2.Margin = new Padding(2, 1, 2, 1);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(230, 29);
-            textBox2.TabIndex = 37;
+            addressTB.Font = new Font("Times New Roman", 14.25F);
+            addressTB.Location = new Point(742, 289);
+            addressTB.Margin = new Padding(2, 1, 2, 1);
+            addressTB.Name = "addressTB";
+            addressTB.Size = new Size(230, 29);
+            addressTB.TabIndex = 37;
             // 
             // label38
             // 
@@ -1553,14 +1159,14 @@
             label16.TabIndex = 33;
             label16.Text = "Employee Details";
             // 
-            // textBox1
+            // emailTB
             // 
-            textBox1.Font = new Font("Times New Roman", 14.25F);
-            textBox1.Location = new Point(742, 230);
-            textBox1.Margin = new Padding(2, 1, 2, 1);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(230, 29);
-            textBox1.TabIndex = 17;
+            emailTB.Font = new Font("Times New Roman", 14.25F);
+            emailTB.Location = new Point(742, 230);
+            emailTB.Margin = new Padding(2, 1, 2, 1);
+            emailTB.Name = "emailTB";
+            emailTB.Size = new Size(230, 29);
+            emailTB.TabIndex = 17;
             // 
             // pictureBox2
             // 
@@ -1572,6 +1178,7 @@
             pictureBox2.Size = new Size(107, 93);
             pictureBox2.TabIndex = 32;
             pictureBox2.TabStop = false;
+            pictureBox2.Click += pictureBox2_Click;
             // 
             // label25
             // 
@@ -2394,6 +2001,401 @@
             panel18.Size = new Size(1092, 67);
             panel18.TabIndex = 25;
             // 
+            // viewEmployeesPanel
+            // 
+            viewEmployeesPanel.BackColor = Color.FromArgb(224, 224, 224);
+            viewEmployeesPanel.Controls.Add(button1);
+            viewEmployeesPanel.Controls.Add(panel13);
+            viewEmployeesPanel.Controls.Add(panel14);
+            viewEmployeesPanel.Controls.Add(button3);
+            viewEmployeesPanel.Controls.Add(promoteButton);
+            viewEmployeesPanel.Controls.Add(panel15);
+            viewEmployeesPanel.Location = new Point(13, 23);
+            viewEmployeesPanel.Name = "viewEmployeesPanel";
+            viewEmployeesPanel.Size = new Size(1092, 759);
+            viewEmployeesPanel.TabIndex = 46;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.FromArgb(148, 59, 68);
+            button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
+            button1.BackgroundImageLayout = ImageLayout.Stretch;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button1.ForeColor = Color.Snow;
+            button1.Location = new Point(424, 686);
+            button1.Margin = new Padding(3, 2, 3, 2);
+            button1.Name = "button1";
+            button1.Size = new Size(158, 51);
+            button1.TabIndex = 45;
+            button1.Text = "Cancel";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
+            // panel13
+            // 
+            panel13.AutoScroll = true;
+            panel13.AutoScrollMinSize = new Size(0, 350);
+            panel13.BackColor = Color.White;
+            panel13.BorderStyle = BorderStyle.FixedSingle;
+            panel13.Controls.Add(button2);
+            panel13.Controls.Add(label20);
+            panel13.Controls.Add(comboBox3);
+            panel13.Controls.Add(comboBox4);
+            panel13.Controls.Add(textBox8);
+            panel13.Controls.Add(label23);
+            panel13.Controls.Add(label24);
+            panel13.Controls.Add(label40);
+            panel13.Controls.Add(textBox10);
+            panel13.ForeColor = Color.FromArgb(163, 47, 54);
+            panel13.Location = new Point(41, 487);
+            panel13.Name = "panel13";
+            panel13.Size = new Size(1011, 156);
+            panel13.TabIndex = 44;
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.FromArgb(148, 59, 68);
+            button2.BackgroundImage = (Image)resources.GetObject("button2.BackgroundImage");
+            button2.BackgroundImageLayout = ImageLayout.Stretch;
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button2.ForeColor = Color.Snow;
+            button2.Location = new Point(403, 157);
+            button2.Margin = new Padding(3, 2, 3, 2);
+            button2.Name = "button2";
+            button2.Size = new Size(237, 51);
+            button2.TabIndex = 46;
+            button2.Text = "Upload file/picture";
+            button2.UseVisualStyleBackColor = false;
+            // 
+            // label20
+            // 
+            label20.AutoSize = true;
+            label20.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
+            label20.ForeColor = Color.Black;
+            label20.Location = new Point(540, 27);
+            label20.Name = "label20";
+            label20.Size = new Size(168, 23);
+            label20.TabIndex = 46;
+            label20.Text = "Employee Type:";
+            // 
+            // comboBox3
+            // 
+            comboBox3.Font = new Font("Segoe UI", 14.25F);
+            comboBox3.FormattingEnabled = true;
+            comboBox3.Location = new Point(224, 17);
+            comboBox3.Name = "comboBox3";
+            comboBox3.Size = new Size(230, 33);
+            comboBox3.TabIndex = 45;
+            // 
+            // comboBox4
+            // 
+            comboBox4.Font = new Font("Segoe UI", 14.25F);
+            comboBox4.FormattingEnabled = true;
+            comboBox4.Location = new Point(756, 23);
+            comboBox4.Name = "comboBox4";
+            comboBox4.Size = new Size(230, 33);
+            comboBox4.TabIndex = 44;
+            // 
+            // textBox8
+            // 
+            textBox8.Font = new Font("Times New Roman", 14.25F);
+            textBox8.Location = new Point(224, 79);
+            textBox8.Margin = new Padding(2, 1, 2, 1);
+            textBox8.Name = "textBox8";
+            textBox8.Size = new Size(230, 29);
+            textBox8.TabIndex = 42;
+            // 
+            // label23
+            // 
+            label23.AutoSize = true;
+            label23.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
+            label23.ForeColor = Color.Black;
+            label23.Location = new Point(40, 27);
+            label23.Name = "label23";
+            label23.Size = new Size(99, 23);
+            label23.TabIndex = 6;
+            label23.Text = "Position:";
+            // 
+            // label24
+            // 
+            label24.AutoSize = true;
+            label24.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
+            label24.ForeColor = Color.Black;
+            label24.Location = new Point(37, 82);
+            label24.Name = "label24";
+            label24.Size = new Size(137, 23);
+            label24.TabIndex = 7;
+            label24.Text = "Department:";
+            // 
+            // label40
+            // 
+            label40.AutoSize = true;
+            label40.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
+            label40.ForeColor = Color.Black;
+            label40.Location = new Point(567, 85);
+            label40.Name = "label40";
+            label40.Size = new Size(141, 23);
+            label40.TabIndex = 35;
+            label40.Text = "Rate per day:";
+            // 
+            // textBox10
+            // 
+            textBox10.Font = new Font("Times New Roman", 14.25F);
+            textBox10.Location = new Point(756, 85);
+            textBox10.Margin = new Padding(2, 1, 2, 1);
+            textBox10.Name = "textBox10";
+            textBox10.Size = new Size(230, 29);
+            textBox10.TabIndex = 17;
+            // 
+            // panel14
+            // 
+            panel14.BackColor = Color.White;
+            panel14.BorderStyle = BorderStyle.FixedSingle;
+            panel14.Controls.Add(textBox11);
+            panel14.Controls.Add(textBox12);
+            panel14.Controls.Add(textBox13);
+            panel14.Controls.Add(textBox15);
+            panel14.Controls.Add(textBox16);
+            panel14.Controls.Add(label41);
+            panel14.Controls.Add(textBox17);
+            panel14.Controls.Add(label43);
+            panel14.Controls.Add(label44);
+            panel14.Controls.Add(label45);
+            panel14.Controls.Add(label46);
+            panel14.Controls.Add(textBox18);
+            panel14.Controls.Add(pictureBox4);
+            panel14.Controls.Add(label47);
+            panel14.Controls.Add(label48);
+            panel14.Controls.Add(label49);
+            panel14.Controls.Add(label50);
+            panel14.ForeColor = Color.FromArgb(163, 47, 54);
+            panel14.Location = new Point(41, 83);
+            panel14.Name = "panel14";
+            panel14.Size = new Size(1011, 370);
+            panel14.TabIndex = 34;
+            // 
+            // textBox11
+            // 
+            textBox11.Font = new Font("Times New Roman", 14.25F);
+            textBox11.Location = new Point(218, 290);
+            textBox11.Margin = new Padding(2, 1, 2, 1);
+            textBox11.Name = "textBox11";
+            textBox11.Size = new Size(230, 29);
+            textBox11.TabIndex = 43;
+            // 
+            // textBox12
+            // 
+            textBox12.Font = new Font("Times New Roman", 14.25F);
+            textBox12.Location = new Point(217, 236);
+            textBox12.Margin = new Padding(2, 1, 2, 1);
+            textBox12.Name = "textBox12";
+            textBox12.Size = new Size(230, 29);
+            textBox12.TabIndex = 42;
+            // 
+            // textBox13
+            // 
+            textBox13.Font = new Font("Times New Roman", 14.25F);
+            textBox13.Location = new Point(218, 179);
+            textBox13.Margin = new Padding(2, 1, 2, 1);
+            textBox13.Name = "textBox13";
+            textBox13.Size = new Size(230, 29);
+            textBox13.TabIndex = 41;
+            // 
+            // textBox15
+            // 
+            textBox15.Font = new Font("Times New Roman", 14.25F);
+            textBox15.Location = new Point(217, 125);
+            textBox15.Margin = new Padding(2, 1, 2, 1);
+            textBox15.Name = "textBox15";
+            textBox15.Size = new Size(230, 29);
+            textBox15.TabIndex = 40;
+            // 
+            // textBox16
+            // 
+            textBox16.Font = new Font("Times New Roman", 14.25F);
+            textBox16.Location = new Point(218, 69);
+            textBox16.Margin = new Padding(2, 1, 2, 1);
+            textBox16.Name = "textBox16";
+            textBox16.Size = new Size(230, 29);
+            textBox16.TabIndex = 39;
+            // 
+            // label41
+            // 
+            label41.AutoSize = true;
+            label41.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
+            label41.ForeColor = Color.Black;
+            label41.Location = new Point(40, 295);
+            label41.Name = "label41";
+            label41.Size = new Size(132, 23);
+            label41.TabIndex = 38;
+            label41.Text = "Contact No.:";
+            // 
+            // textBox17
+            // 
+            textBox17.Font = new Font("Times New Roman", 14.25F);
+            textBox17.Location = new Point(742, 289);
+            textBox17.Margin = new Padding(2, 1, 2, 1);
+            textBox17.Name = "textBox17";
+            textBox17.Size = new Size(230, 29);
+            textBox17.TabIndex = 37;
+            // 
+            // label43
+            // 
+            label43.AutoSize = true;
+            label43.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
+            label43.ForeColor = Color.Black;
+            label43.Location = new Point(603, 295);
+            label43.Name = "label43";
+            label43.Size = new Size(98, 23);
+            label43.TabIndex = 36;
+            label43.Text = "Address:";
+            // 
+            // label44
+            // 
+            label44.AutoSize = true;
+            label44.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
+            label44.ForeColor = Color.Black;
+            label44.Location = new Point(624, 236);
+            label44.Name = "label44";
+            label44.Size = new Size(75, 23);
+            label44.TabIndex = 35;
+            label44.Text = "Email:";
+            // 
+            // label45
+            // 
+            label45.AutoSize = true;
+            label45.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
+            label45.ForeColor = Color.Black;
+            label45.Location = new Point(624, 169);
+            label45.Name = "label45";
+            label45.Size = new Size(77, 23);
+            label45.TabIndex = 34;
+            label45.Text = "Image:";
+            // 
+            // label46
+            // 
+            label46.AutoSize = true;
+            label46.Font = new Font("Times New Roman", 25.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label46.ForeColor = Color.FromArgb(91, 12, 12);
+            label46.Location = new Point(382, 11);
+            label46.Name = "label46";
+            label46.Size = new Size(274, 40);
+            label46.TabIndex = 33;
+            label46.Text = "Employee Details";
+            // 
+            // textBox18
+            // 
+            textBox18.Font = new Font("Times New Roman", 14.25F);
+            textBox18.Location = new Point(742, 230);
+            textBox18.Margin = new Padding(2, 1, 2, 1);
+            textBox18.Name = "textBox18";
+            textBox18.Size = new Size(230, 29);
+            textBox18.TabIndex = 17;
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.BackColor = Color.White;
+            pictureBox4.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox4.BorderStyle = BorderStyle.FixedSingle;
+            pictureBox4.Location = new Point(794, 93);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(107, 93);
+            pictureBox4.TabIndex = 32;
+            pictureBox4.TabStop = false;
+            // 
+            // label47
+            // 
+            label47.AutoSize = true;
+            label47.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
+            label47.ForeColor = Color.Black;
+            label47.Location = new Point(41, 236);
+            label47.Name = "label47";
+            label47.Size = new Size(149, 23);
+            label47.TabIndex = 9;
+            label47.Text = "Middle Name:";
+            // 
+            // label48
+            // 
+            label48.AutoSize = true;
+            label48.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
+            label48.ForeColor = Color.Black;
+            label48.Location = new Point(39, 185);
+            label48.Name = "label48";
+            label48.Size = new Size(127, 23);
+            label48.TabIndex = 8;
+            label48.Text = "First Name:";
+            // 
+            // label49
+            // 
+            label49.AutoSize = true;
+            label49.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
+            label49.ForeColor = Color.Black;
+            label49.Location = new Point(40, 131);
+            label49.Name = "label49";
+            label49.Size = new Size(121, 23);
+            label49.TabIndex = 5;
+            label49.Text = "Last Name:";
+            // 
+            // label50
+            // 
+            label50.AutoSize = true;
+            label50.Font = new Font("Georgia", 14.25F, FontStyle.Bold);
+            label50.ForeColor = Color.Black;
+            label50.Location = new Point(31, 75);
+            label50.Name = "label50";
+            label50.Size = new Size(144, 23);
+            label50.TabIndex = 4;
+            label50.Text = "Employee ID:";
+            // 
+            // button3
+            // 
+            button3.BackColor = Color.FromArgb(148, 59, 68);
+            button3.BackgroundImage = (Image)resources.GetObject("button3.BackgroundImage");
+            button3.BackgroundImageLayout = ImageLayout.Stretch;
+            button3.FlatAppearance.BorderSize = 0;
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button3.ForeColor = Color.Snow;
+            button3.Location = new Point(41, 686);
+            button3.Margin = new Padding(3, 2, 3, 2);
+            button3.Name = "button3";
+            button3.Size = new Size(158, 51);
+            button3.TabIndex = 30;
+            button3.Text = "Edit";
+            button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
+            // 
+            // promoteButton
+            // 
+            promoteButton.BackColor = Color.FromArgb(148, 59, 68);
+            promoteButton.BackgroundImage = (Image)resources.GetObject("promoteButton.BackgroundImage");
+            promoteButton.BackgroundImageLayout = ImageLayout.Stretch;
+            promoteButton.FlatAppearance.BorderSize = 0;
+            promoteButton.FlatStyle = FlatStyle.Flat;
+            promoteButton.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            promoteButton.ForeColor = Color.Snow;
+            promoteButton.Location = new Point(236, 686);
+            promoteButton.Margin = new Padding(3, 2, 3, 2);
+            promoteButton.Name = "promoteButton";
+            promoteButton.Size = new Size(158, 51);
+            promoteButton.TabIndex = 28;
+            promoteButton.Text = "Promote";
+            promoteButton.UseVisualStyleBackColor = false;
+            promoteButton.Click += button4_Click;
+            // 
+            // panel15
+            // 
+            panel15.BackgroundImage = Properties.Resources.TopPanelBg;
+            panel15.BackgroundImageLayout = ImageLayout.Stretch;
+            panel15.Location = new Point(0, 1);
+            panel15.Name = "panel15";
+            panel15.Size = new Size(1092, 67);
+            panel15.TabIndex = 25;
+            // 
             // requestPanel
             // 
             requestPanel.Controls.Add(label4);
@@ -2607,37 +2609,37 @@
             dataGridView3.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView3.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dataGridView3.BackgroundColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle10.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle10.ForeColor = Color.White;
-            dataGridViewCellStyle10.SelectionBackColor = Color.FromArgb(179, 79, 84);
-            dataGridViewCellStyle10.SelectionForeColor = Color.FromArgb(255, 209, 211);
-            dataGridViewCellStyle10.WrapMode = DataGridViewTriState.True;
-            dataGridView3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = Color.FromArgb(146, 45, 51);
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle4.ForeColor = Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(179, 79, 84);
+            dataGridViewCellStyle4.SelectionForeColor = Color.FromArgb(255, 209, 211);
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            dataGridView3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             dataGridView3.ColumnHeadersHeight = 29;
             dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.BackColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle11.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle11.ForeColor = Color.White;
-            dataGridViewCellStyle11.SelectionBackColor = Color.FromArgb(179, 79, 84);
-            dataGridViewCellStyle11.SelectionForeColor = Color.FromArgb(255, 209, 211);
-            dataGridViewCellStyle11.WrapMode = DataGridViewTriState.True;
-            dataGridView3.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(146, 45, 51);
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle5.ForeColor = Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(179, 79, 84);
+            dataGridViewCellStyle5.SelectionForeColor = Color.FromArgb(255, 209, 211);
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            dataGridView3.DefaultCellStyle = dataGridViewCellStyle5;
             dataGridView3.EnableHeadersVisualStyles = false;
             dataGridView3.GridColor = Color.White;
             dataGridView3.Location = new Point(0, 190);
             dataGridView3.Name = "dataGridView3";
             dataGridView3.ReadOnly = true;
-            dataGridViewCellStyle12.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.BackColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle12.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle12.ForeColor = Color.White;
-            dataGridViewCellStyle12.SelectionBackColor = Color.FromArgb(179, 79, 84);
-            dataGridViewCellStyle12.SelectionForeColor = Color.FromArgb(255, 209, 211);
-            dataGridViewCellStyle12.WrapMode = DataGridViewTriState.True;
-            dataGridView3.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = Color.FromArgb(146, 45, 51);
+            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle6.ForeColor = Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(179, 79, 84);
+            dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(255, 209, 211);
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
+            dataGridView3.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             dataGridView3.RowHeadersVisible = false;
             dataGridView3.RowHeadersWidth = 51;
             dataGridView3.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
@@ -3135,13 +3137,13 @@
             BackColor = Color.FromArgb(224, 224, 224);
             ClientSize = new Size(1389, 791);
             Controls.Add(sidePanel);
+            Controls.Add(employeePanel);
+            Controls.Add(dashboardPanel);
             Controls.Add(attendancePanel);
             Controls.Add(profilePanel);
             Controls.Add(archivedPanel);
             Controls.Add(reportPanel);
             Controls.Add(requestPanel);
-            Controls.Add(employeePanel);
-            Controls.Add(dashboardPanel);
             Name = "HumanResourcesForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "HumanResourcesForm";
@@ -3171,12 +3173,6 @@
             ((System.ComponentModel.ISupportInitialize)userDataGridView).EndInit();
             employeePanel.ResumeLayout(false);
             employeePanel.PerformLayout();
-            viewEmployeesPanel.ResumeLayout(false);
-            panel13.ResumeLayout(false);
-            panel13.PerformLayout();
-            panel14.ResumeLayout(false);
-            panel14.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             addEmployeesPanel.ResumeLayout(false);
             panel10.ResumeLayout(false);
             panel10.PerformLayout();
@@ -3200,6 +3196,12 @@
             panel17.ResumeLayout(false);
             panel17.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
+            viewEmployeesPanel.ResumeLayout(false);
+            panel13.ResumeLayout(false);
+            panel13.PerformLayout();
+            panel14.ResumeLayout(false);
+            panel14.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             requestPanel.ResumeLayout(false);
             requestPanel.PerformLayout();
             panel2.ResumeLayout(false);
@@ -3321,7 +3323,7 @@
         private Label label38;
         private Label label37;
         private Label label36;
-        private TextBox textBox1;
+        private TextBox emailTB;
         public PictureBox pictureBox2;
         private Label label25;
         private Label label30;
@@ -3330,18 +3332,18 @@
         private Label label32;
         private Label label31;
         private Label label17;
-        private TextBox textBox2;
-        private TextBox textBox7;
-        private TextBox textBox5;
-        private TextBox textBox6;
-        private TextBox textBox4;
-        private TextBox textBox3;
+        private TextBox addressTB;
+        private TextBox contactNoTB;
+        private TextBox middleNameTB;
+        private TextBox firstNameTB;
+        private TextBox lastNameTB;
+        private TextBox empIDTB;
         private Panel panel10;
-        private ComboBox comboBox1;
-        private TextBox textBox9;
+        private ComboBox employeeTypeCB;
+        private TextBox departmentTB;
         private Label label39;
-        private TextBox textBox14;
-        private ComboBox comboBox2;
+        private TextBox rateTB;
+        private ComboBox positionCB;
         private Button cancelButton;
         private Label label18;
         private Button uploadButton;
