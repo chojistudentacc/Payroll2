@@ -182,52 +182,59 @@ namespace Payroll
         {
             // --- Read Salary and Overtime ---
             decimal basicSalary = decimal.TryParse(basicsalTB.Text, out var bSal) ? bSal : 0;
-            decimal otReg = decimal.TryParse(otTB.Text, out var oTR) ? oTR : 0;
-            decimal otNight = decimal.TryParse(otndTB.Text, out var oTN) ? oTN : 0;
-            decimal otRHoliday = decimal.TryParse(otrhTB.Text, out var oTRH) ? oTRH : 0;
-            decimal otSHoliday = decimal.TryParse(otshTB.Text, out var oTSH) ? oTSH : 0;
+            decimal otRegHours = decimal.TryParse(otTB.Text, out var oTR) ? oTR : 0;
+            decimal otNightHours = decimal.TryParse(otndTB.Text, out var oTN) ? oTN : 0;
+            decimal otRHolidayHours = decimal.TryParse(otrhTB.Text, out var oTRH) ? oTRH : 0;
+            decimal otSHolidayHours = decimal.TryParse(otshTB.Text, out var oTSH) ? oTSH : 0;
             decimal bonus = decimal.TryParse(bonusTB.Text, out var bns) ? bns : 0;
-
+            // Compute rates
+            decimal dailyRate = basicSalary / 26;
+            decimal hourlyRate = dailyRate / 8;
+            // Compute OT amounts
+            decimal otReg = otRegHours * hourlyRate * 1.25m;
+            decimal otNight = otNightHours * hourlyRate * 1.375m;
+            decimal otRHoliday = otRHolidayHours * hourlyRate * 1.69m;
+            decimal otSHoliday = otSHolidayHours * hourlyRate * 3.38m;
             decimal totalEarnings = basicSalary + otReg + otNight + otRHoliday + otSHoliday + bonus;
-
             // --- Compute Deductions ---
             decimal sss = ComputeSSSDeduction(basicSalary);
             decimal philHealth = ComputePhilHealth(basicSalary);
             decimal pagibig = ComputePagIBIG(basicSalary);
             decimal wTax = ComputeWithholdingTax(totalEarnings);
-
             decimal absences = decimal.TryParse(absTB.Text, out var ab) ? ab : 0;
             decimal cashAdvance = decimal.TryParse(caTB.Text, out var ca) ? ca : 0;
-
             decimal totalDeductions = sss + philHealth + pagibig + wTax + absences + cashAdvance;
-
             // --- Update Deduction TextBoxes ---
             sssTB.Text = sss.ToString("F2");
             phTB.Text = philHealth.ToString("F2");
             pagibigTB.Text = pagibig.ToString("F2");
             wTaxTB.Text = wTax.ToString("F2");
-
             totalDeductionsTB.Text = totalDeductions.ToString("F2");
-
             // --- Update Net Pay ---
             decimal netPay = totalEarnings - totalDeductions;
-            textBox27.Text = netPay.ToString("F2");
+
         }
 
         private void createPayslipComputeButt_Click(object sender, EventArgs e)
         {
             // --- EARNINGS ---
             decimal basicSalary = decimal.TryParse(basicsalTB.Text, out var bSal) ? bSal : 0;
-            decimal otReg = decimal.TryParse(otTB.Text, out var oTR) ? oTR : 0;
-            decimal otNight = decimal.TryParse(otndTB.Text, out var oTN) ? oTN : 0;
-            decimal otRHoliday = decimal.TryParse(otrhTB.Text, out var oTRH) ? oTRH : 0;
-            decimal otSHoliday = decimal.TryParse(otshTB.Text, out var oTSH) ? oTSH : 0;
+            decimal otRegHours = decimal.TryParse(otTB.Text, out var oTR) ? oTR : 0;
+            decimal otNightHours = decimal.TryParse(otndTB.Text, out var oTN) ? oTN : 0;
+            decimal otRHolidayHours = decimal.TryParse(otrhTB.Text, out var oTRH) ? oTRH : 0;
+            decimal otSHolidayHours = decimal.TryParse(otshTB.Text, out var oTSH) ? oTSH : 0;
             decimal bonus = decimal.TryParse(bonusTB.Text, out var bns) ? bns : 0;
-
+            // Compute rates
+            decimal dailyRate = basicSalary / 26;
+            decimal hourlyRate = dailyRate / 8;
+            // Compute OT amounts
+            decimal otReg = otRegHours * hourlyRate * 1.25m;
+            decimal otNight = otNightHours * hourlyRate * 1.375m;
+            decimal otRHoliday = otRHolidayHours * hourlyRate * 1.69m;
+            decimal otSHoliday = otSHolidayHours * hourlyRate * 3.38m;
             decimal totalOT = otReg + otNight + otRHoliday + otSHoliday;
             decimal totalEarnings = basicSalary + totalOT + bonus;
             textBox25.Text = totalEarnings.ToString("F2");
-
             // --- DEDUCTIONS ---
             decimal wTax = decimal.TryParse(wTaxTB.Text, out var wt) ? wt : 0;
             decimal sss = decimal.TryParse(sssTB.Text, out var s) ? s : 0;
@@ -235,10 +242,8 @@ namespace Payroll
             decimal philHealth = decimal.TryParse(phTB.Text, out var ph) ? ph : 0;
             decimal absences = decimal.TryParse(absTB.Text, out var ab) ? ab : 0;
             decimal cashAdvance = decimal.TryParse(caTB.Text, out var ca) ? ca : 0;
-
             decimal totalDeductions = wTax + sss + pagibig + philHealth + absences + cashAdvance;
             totalDeductionsTB.Text = totalDeductions.ToString("F2");
-
             // --- NET PAY ---
             decimal netPay = totalEarnings - totalDeductions;
             textBox27.Text = netPay.ToString("F2");
