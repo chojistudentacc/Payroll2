@@ -11,7 +11,8 @@ namespace Payroll
     {
 
         private string csvFilePath = @"C:\Users\User\Documents\EmployeeArchive.csv";
-        private readonly string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\Choji Kodachi\\Documents\\!! bruh !!\\Payroll2\\Payroll\\Payroll.mdf\";Integrated Security=True";
+        private readonly string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\User\\source\\repos\\Payroll3\\Payroll\\Payroll.mdf;Integrated Security=True";
+
 
         public int GetEmailDataRowCount()
         {
@@ -1678,6 +1679,59 @@ namespace Payroll
             return null;
         }
 
+        public DataRow GetHRProfileData(string userName)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    string sql = @"
+            SELECT 
+                employeeID,
+                firstName,
+                lastName,
+                middleName,
+                email,
+                contactNum,
+                address,
+                userName,
+                password,
+                status,
+                pictureID
+            FROM hrData 
+            WHERE userName = @userName;";
+
+                    using (SqlCommand cmd = new SqlCommand(sql, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@userName", userName);
+
+                        using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                        {
+                            DataTable table = new DataTable();
+                            adapter.Fill(table);
+
+                            if (table.Rows.Count > 0)
+                            {
+                                return table.Rows[0];
+                            }
+                            else
+                            {
+                                MessageBox.Show($"No HR record found for username: {userName}");
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error retrieving HR profile: " + ex.Message + "\n\nUsername: " + userName);
+            }
+
+            return null;
+        }
+
         public bool UpdatePasswordOnly(string employeeID, string newPassword)
         {
             try
@@ -1686,7 +1740,18 @@ namespace Payroll
                 {
                     connection.Open();
 
-                    string sql = "UPDATE employeeData SET password = @pass WHERE employeeID = @id";
+                    // Determine which table to update based on the ID prefix
+                    string tableName;
+                    if (employeeID.StartsWith("HR-"))
+                        tableName = "hrData";
+                    else if (employeeID.StartsWith("ACC-"))
+                        tableName = "accountantData";
+                    else if (employeeID.StartsWith("EMP-"))
+                        tableName = "employeeData";
+                    else
+                        return false;
+
+                    string sql = $"UPDATE {tableName} SET password = @pass WHERE employeeID = @id";
 
                     using (SqlCommand cmd = new SqlCommand(sql, connection))
                     {
@@ -1702,6 +1767,8 @@ namespace Payroll
                 return false;
             }
         }
+
+
         public DataTable GetEmployeeAttendance(string employeeID)
         {
             DataTable table = new DataTable();
@@ -2290,6 +2357,48 @@ namespace Payroll
             decimal netPay = totalEarnings - totalDeductions;
 
             return (totalEarnings, totalDeductions, netPay);
+        }
+
+
+        public class DepartmentInfo
+        {
+            public int DepartmentID { get; set; }
+            public string DepartmentName { get; set; }
+            public int MemberCount { get; set; }
+        }
+
+        public List<DepartmentInfo> GetDepartmentsWithMemberCount()
+        {
+            List<DepartmentInfo> departments = new List<DepartmentInfo>();
+
+            string query = @"
+        SELECT 
+            d.departmentID,
+            d.departmentName,
+            COUNT(e.employeeID) AS MemberCount
+        FROM departmentData d
+        LEFT JOIN employeeData e ON d.departmentID = e.departmentID
+        GROUP BY d.departmentID, d.departmentName
+        ORDER BY d.departmentName";
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                SqlCommand cmd = new SqlCommand(query, conn);
+                conn.Open();
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    departments.Add(new DepartmentInfo
+                    {
+                        DepartmentID = Convert.ToInt32(reader["departmentID"]),
+                        DepartmentName = reader["departmentName"].ToString(),
+                        MemberCount = Convert.ToInt32(reader["MemberCount"])
+                    });
+                }
+            }
+
+            return departments;
         }
 
     }

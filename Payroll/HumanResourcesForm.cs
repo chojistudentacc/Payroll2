@@ -27,19 +27,19 @@ namespace Payroll
         {
             InitializeComponent();
             this.userName = name;
-            repo = new Repository();
-            initializeItems();
+            this.currentUserName = name;  
             this.login = login;
-            this.currentUserName = name;
-            dashboardPanel.Visible = true;
-
+            repo = new Repository();
+            
             initializeItems();
+            dashboardPanel.Visible = true;
         }
 
         private void initializeItems()
         {
             ID = repo.getHRID(userName);
             welcomeLabelAdmin.Text = "HR ID: " + ID;
+                
             hideAllPanels();
             hideEmployeeSubMenu();
             LoadEmployeeProfile();
@@ -261,31 +261,31 @@ namespace Payroll
         {
             try
             {
-                DataRow employeeData = repo.GetEmployeeProfileData(currentUserName);
+                DataRow hrData = repo.GetHRProfileData(currentUserName);
 
-                if (employeeData != null)
+                if (hrData != null)
                 {
-                    currentEmployeeID = employeeData["employeeID"].ToString();
+                    currentEmployeeID = hrData["employeeID"].ToString();
 
-                    employeeProfileIDLabel.Text = employeeData["employeeID"].ToString();
-                    employeeProfileNameLabel.Text = $"{employeeData["firstName"]} {employeeData["middleName"]} {employeeData["lastName"]}";
-                    welcomeLabelAdmin.Text = $"{employeeData["employeeID"]}";
+                    employeeProfileIDLabel.Text = hrData["employeeID"].ToString();
+                    employeeProfileNameLabel.Text = $"{hrData["firstName"]} {hrData["middleName"]} {hrData["lastName"]}";
+                    welcomeLabelAdmin.Text = $"{hrData["employeeID"]}";
                     welcomeLabelAdmin.AutoSize = false;
                     welcomeLabelAdmin.TextAlign = ContentAlignment.MiddleCenter;
 
-                    employeeProfileUserIDLabel.Text = employeeData["username"].ToString();
+                    employeeProfileUserIDLabel.Text = hrData["userName"].ToString(); // ✅ Correct column name
 
-                    actualPassword = employeeData["password"].ToString();
+                    actualPassword = hrData["password"].ToString();
                     employeeProfilePasswordTB.Text = "Hidden";
                     employeeProfilePasswordTB.ReadOnly = true;
 
-                    employeeEmailLabel.Text = employeeData["email"].ToString();
-                    employeeContactLabel.Text = employeeData["contactNum"].ToString();
-                    employeeAddressLabel.Text = employeeData["address"].ToString();
+                    employeeEmailLabel.Text = hrData["email"].ToString();
+                    employeeContactLabel.Text = hrData["contactNum"].ToString();
+                    employeeAddressLabel.Text = hrData["address"].ToString();
 
-                    employeeProfilePositionLabel.Text = "Employee";
-                    employeeProfileDepartmentLabel.Text = "None";
-                    employeeTypeLabel.Text = "Employee";
+                    employeeProfilePositionLabel.Text = "Human Resources";
+                    employeeProfileDepartmentLabel.Text = "HR Department";
+                    employeeTypeLabel.Text = "Human Resources";
 
                     employeTinLabel.Text = "None";
                     employeeSSSLabel.Text = "None";
@@ -297,12 +297,12 @@ namespace Payroll
                 }
                 else
                 {
-                    MessageBox.Show("Employee profile not found.");
+                    MessageBox.Show("HR profile not found.");
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error loading employee profile: " + ex.Message);
+                MessageBox.Show("Error loading HR profile: " + ex.Message);
             }
         }
 
