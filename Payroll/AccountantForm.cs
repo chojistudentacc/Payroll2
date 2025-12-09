@@ -431,16 +431,12 @@ namespace Payroll
 
         private void payslipButt_MouseHover(object sender, EventArgs e)
         {
-            deductButt.Location = new Point(0, 437);
-            reportButt.Location = new Point(0, 511);
-            archivedButton.Location = new Point(0, 658);
+            
         }
 
         private void payslipButt_MouseLeave(object sender, EventArgs e)
         {
-            deductButt.Location = new Point(0, 321);
-            reportButt.Location = new Point(0, 395);
-            archivedButton.Location = new Point(0, 468);
+
         }
 
 

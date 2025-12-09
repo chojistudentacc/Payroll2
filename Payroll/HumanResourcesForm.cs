@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Payroll.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,8 +11,6 @@ using System.Windows.Forms;
 
 namespace Payroll
 {
-
-
     public partial class HumanResourcesForm : Form
     {
         private string userName;
@@ -21,16 +20,17 @@ namespace Payroll
         string currentUserName;
         string actualPassword;
         string currentEmployeeID;
+        private Image currentImage;
         bool isPasswordVisible = false;
 
         public HumanResourcesForm(LoginForm login, string name)
         {
             InitializeComponent();
             this.userName = name;
-            this.currentUserName = name;  
+            this.currentUserName = name;
             this.login = login;
             repo = new Repository();
-            
+
             initializeItems();
             dashboardPanel.Visible = true;
         }
@@ -39,17 +39,16 @@ namespace Payroll
         {
             ID = repo.getHRID(userName);
             welcomeLabelAdmin.Text = "HR ID: " + ID;
-                
+
             hideAllPanels();
             hideEmployeeSubMenu();
             LoadEmployeeProfile();
-
-            SetupFilterControls();
+            SetupAttendanceControls();
         }
 
-        private void SetupFilterControls()
+        private void SetupAttendanceControls()
         {
-            // Setup Combo Box
+            // Setup Status ComboBox
             cmbFilterStatus.Items.Clear();
             cmbFilterStatus.Items.Add("All");
             cmbFilterStatus.Items.Add("Present");
@@ -57,68 +56,101 @@ namespace Payroll
             cmbFilterStatus.Items.Add("Overtime");
             cmbFilterStatus.Items.Add("Undertime");
             cmbFilterStatus.Items.Add("Absent");
-            cmbFilterStatus.SelectedIndex = 0; // Default to All
+            cmbFilterStatus.SelectedIndex = 0;
 
-            // FIX 3: Set the TextBox to Today's date immediately
-            textBox29.Text = DateTime.Now.ToString("MM/dd/yyyy");
+            // Set placeholder text for search
+            attendanceSearchTB.Text = "Search by Employee ID, Name, or Date (MM/dd/yyyy)";
+            attendanceSearchTB.ForeColor = Color.Gray;
+
+            // Add focus events for placeholder
+            attendanceSearchTB.GotFocus += AttendanceSearchTB_GotFocus;
+            attendanceSearchTB.LostFocus += AttendanceSearchTB_LostFocus;
         }
 
-        private void FormatDataGridView()
+        private void AttendanceSearchTB_GotFocus(object sender, EventArgs e)
         {
-            // 1. Check if there is data to format
-            if (userDataGridView.DataSource == null) return;
-
-            // 2. STYLE: Match the red/brown theme from the screenshot
-            userDataGridView.EnableHeadersVisualStyles = false;
-            userDataGridView.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(120, 40, 40); // Dark Red/Brown
-            userDataGridView.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            userDataGridView.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
-            userDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
-            // 3. RENAME COLUMNS: Change database names to nice headers
-            // (Check your database column names and update the text in quotes if needed)
-
-            if (userDataGridView.Columns.Contains("employeeID"))
-                userDataGridView.Columns["employeeID"].HeaderText = "Emp ID";
-
-            // Assuming your query returns a combined name or just generic names
-            if (userDataGridView.Columns.Contains("firstName"))
-                userDataGridView.Columns["firstName"].HeaderText = "Name";
-            else if (userDataGridView.Columns.Contains("fullName"))
-                userDataGridView.Columns["fullName"].HeaderText = "Name";
-
-            if (userDataGridView.Columns.Contains("timeIn"))
-                userDataGridView.Columns["timeIn"].HeaderText = "Clock In";
-
-            if (userDataGridView.Columns.Contains("timeOut"))
-                userDataGridView.Columns["timeOut"].HeaderText = "Clock Out";
-
-            if (userDataGridView.Columns.Contains("date"))
-                userDataGridView.Columns["date"].HeaderText = "Date";
-
-            if (userDataGridView.Columns.Contains("status"))
-                userDataGridView.Columns["status"].HeaderText = "Status";
-        }
-
-        private void FilterData()
-        {
-            string dateInput = textBox29.Text.Trim();
-            string statusInput = cmbFilterStatus.SelectedItem != null ? cmbFilterStatus.Text : "All";
-            DateTime validDate;
-
-            if (DateTime.TryParse(dateInput, out validDate))
+            if (attendanceSearchTB.Text == "Search by Employee ID, Name, or Date (MM/dd/yyyy)")
             {
-                DataTable dt = repo.GetAttendanceByFilter(validDate, statusInput);
+                attendanceSearchTB.Text = "";
+                attendanceSearchTB.ForeColor = Color.Black;
+            }
+        }
 
-                if (dt != null)
-                {
-                    userDataGridView.DataSource = dt;
-                    FormatDataGridView();
-                }
-                else
+        private void AttendanceSearchTB_LostFocus(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(attendanceSearchTB.Text))
+            {
+                attendanceSearchTB.Text = "Search by Employee ID, Name, or Date (MM/dd/yyyy)";
+                attendanceSearchTB.ForeColor = Color.Gray;
+            }
+        }
+
+        private void SearchAttendance()
+        {
+            string searchInput = attendanceSearchTB.Text.Trim();
+
+            // Ignore placeholder text
+            if (searchInput == "Search by Employee ID, Name, or Date (MM/dd/yyyy)" || string.IsNullOrEmpty(searchInput))
+            {
+                LoadAllAttendance();
+                return;
+            }
+
+            DateTime parsedDate;
+            DataTable dt;
+
+            // Try multiple date formats
+            string[] dateFormats = { "MM/dd/yyyy", "dd/MM/yyyy", "yyyy-MM-dd" };
+
+            if (DateTime.TryParseExact(searchInput, dateFormats,
+                System.Globalization.CultureInfo.InvariantCulture,
+                System.Globalization.DateTimeStyles.None,
+                out parsedDate))
+            {
+                // Search by date with status filter
+                string statusFilter = cmbFilterStatus.SelectedItem?.ToString() ?? "All";
+                dt = repo.GetAttendanceByFilter(parsedDate, statusFilter);
+
+                if (dt == null || dt.Rows.Count == 0)
                 {
                     userDataGridView.DataSource = null;
+                    MessageBox.Show($"No attendance records found for: {parsedDate:MMMM dd, yyyy}\n\nStatus Filter: {statusFilter}",
+                        "No Records Found", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
                 }
+            }
+            else
+            {
+                // Search by employee ID or name
+                dt = repo.SearchAttendanceByEmployeeOrDate(searchInput);
+
+                if (dt == null || dt.Rows.Count == 0)
+                {
+                    userDataGridView.DataSource = null;
+                    MessageBox.Show($"No attendance records found for: {searchInput}\n\n" +
+                        "For date search, use one of these formats:\n" +
+                        "• MM/dd/yyyy (12/09/2025)\n" +
+                        "• dd/MM/yyyy (09/12/2025)\n" +
+                        "• yyyy-MM-dd (2025-12-09)",
+                        "No Records Found", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+            }
+
+            userDataGridView.DataSource = dt;
+            FormatAttendanceDataGridView();
+        }
+
+        private void LoadAllAttendance()
+        {
+            // Load today's attendance by default
+            string statusFilter = cmbFilterStatus.SelectedItem?.ToString() ?? "All";
+            DataTable dt = repo.GetAttendanceByFilter(DateTime.Now, statusFilter);
+
+            if (dt != null && dt.Rows.Count > 0)
+            {
+                userDataGridView.DataSource = dt;
+                FormatAttendanceDataGridView();
             }
             else
             {
@@ -126,6 +158,67 @@ namespace Payroll
             }
         }
 
+        private void FormatAttendanceDataGridView()
+        {
+            if (userDataGridView.DataSource == null) return;
+
+            // Apply styling
+            userDataGridView.EnableHeadersVisualStyles = false;
+            userDataGridView.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(120, 40, 40);
+            userDataGridView.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            userDataGridView.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            userDataGridView.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            userDataGridView.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            userDataGridView.ReadOnly = true;
+            userDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+            // Remove or change AutoSizeColumnsMode
+            userDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+
+            // Set column widths if they exist
+            if (userDataGridView.Columns.Contains("Emp ID"))
+            {
+                userDataGridView.Columns["Emp ID"].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+                userDataGridView.Columns["Emp ID"].Width = 100;
+            }
+
+            if (userDataGridView.Columns.Contains("Name"))
+            {
+                userDataGridView.Columns["Name"].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+                userDataGridView.Columns["Name"].Width = 150;
+            }
+
+            if (userDataGridView.Columns.Contains("Date"))
+            {
+                userDataGridView.Columns["Date"].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+                userDataGridView.Columns["Date"].Width = 120;
+            }
+
+            if (userDataGridView.Columns.Contains("Clock In"))
+            {
+                userDataGridView.Columns["Clock In"].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+                userDataGridView.Columns["Clock In"].Width = 100;
+            }
+
+            if (userDataGridView.Columns.Contains("Clock Out"))
+            {
+                userDataGridView.Columns["Clock Out"].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+                userDataGridView.Columns["Clock Out"].Width = 100;
+            }
+
+            if (userDataGridView.Columns.Contains("Hours Worked"))
+            {
+                userDataGridView.Columns["Hours Worked"].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+                userDataGridView.Columns["Hours Worked"].Width = 100;
+            }
+
+            if (userDataGridView.Columns.Contains("Status"))
+            {
+                userDataGridView.Columns["Status"].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+                userDataGridView.Columns["Status"].Width = 120;
+            }
+        }
         private void HumanResourcesForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             if (login != null && !login.IsDisposed)
@@ -165,6 +258,7 @@ namespace Payroll
         {
             hideAllPanels();
             attendancePanel.Visible = true;
+            LoadAllAttendance(); // Load attendance when panel opens
         }
 
         private void requestButt_Click(object sender, EventArgs e)
@@ -193,13 +287,12 @@ namespace Payroll
 
         private void hideEmployeeSubMenu()
         {
-
             addEmployeesPanel.Visible = false;
             viewEmployeesPanel.Visible = false;
             promotionEmployeePanel.Visible = false;
             editEmployeesPanel.Visible = false;
-
         }
+
         private void addEmpButt_Click(object sender, EventArgs e)
         {
             hideEmployeeSubMenu();
@@ -214,22 +307,18 @@ namespace Payroll
 
         private void saveChangesButton_Click(object sender, EventArgs e)
         {
-            showEmployeesPanel.Visible = false;
             hideEmployeeSubMenu();
             showEmployeesPanel.Visible = true;
-
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            showEmployeesPanel.Visible = false;
             hideEmployeeSubMenu();
             editEmployeesPanel.Visible = true;
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            showEmployeesPanel.Visible = false;
             hideEmployeeSubMenu();
             promotionEmployeePanel.Visible = true;
         }
@@ -238,12 +327,74 @@ namespace Payroll
         {
             hideEmployeeSubMenu();
         }
+        private void clearCre()
+        {
+            lastNameTB.Text = "";
+            firstNameTB.Text = "";
+            middleNameTB.Text = "";
+            addressTB.Text = "";
+            contactNoTB.Text = "";
+            emailTB.Text = "";
+
+        }
+
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            hideEmployeeSubMenu();
+            if (lastNameTB.Text != "" &&
+                firstNameTB.Text != "" &&
+                middleNameTB.Text != "" &&
+                addressTB.Text != "" &&
+                contactNoTB.Text != "" &&
+                emailTB.Text != "" &&
+                positionCB.Text != "" &&
+                pictureBox2.Image != null)
+            {
+                if (positionCB.Text.Equals("Employee"))
+                {
+                    Employee emp = new Employee();
+                    emp.LastName = lastNameTB.Text;
+                    emp.FirstName = firstNameTB.Text;
+                    emp.MiddleName = middleNameTB.Text;
+                    emp.Address = addressTB.Text;
+                    emp.ContactNum = long.Parse(contactNoTB.Text);
+                    emp.Email = emailTB.Text;
+                    repo.AddEmployee(emp);
+                    repo.SavePictureToProject(repo.getEmployeeID(emp.UserName), currentImage);
 
+                    string activity = "Add Employee";
+                    string logDetails = $"Added Employee: {emp.FirstName} {emp.LastName} \nUsername: {emp.UserName} \nStatus: {emp.Status}";
+                    repo.AddLog(repo.getAdminID(userName), activity, logDetails);
+
+                    clearCre();
+
+                }
+                else if (positionCB.Text.Equals("Accountant"))
+                {
+                    Accountant acc = new Accountant();
+                    acc.LastName = lastNameTB.Text;
+                    acc.FirstName = firstNameTB.Text;
+                    acc.MiddleName = middleNameTB.Text;
+                    acc.Address = addressTB.Text;
+                    acc.ContactNum = long.Parse(contactNoTB.Text);
+                    acc.Email = emailTB.Text;
+                    repo.AddAccountant(acc);
+                    repo.SavePictureToProject(repo.getAccountantID(acc.UserName), currentImage);
+
+                    string activity = "Add Accountant";
+                    string logDetails = $"Added Accountant: {acc.FirstName} {acc.LastName} \nUsername: {acc.UserName} \nStatus: {acc.Status}";
+                    repo.AddLog(repo.getAdminID(userName), activity, logDetails);
+
+                    clearCre();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please fill in all fields");
+            }
         }
+
+
 
         private void cancelButton_Click(object sender, EventArgs e)
         {
@@ -254,7 +405,6 @@ namespace Payroll
         {
             hideEmployeeSubMenu();
             showEmployeesPanel.Visible = true;
-
         }
 
         private void LoadEmployeeProfile()
@@ -273,7 +423,7 @@ namespace Payroll
                     welcomeLabelAdmin.AutoSize = false;
                     welcomeLabelAdmin.TextAlign = ContentAlignment.MiddleCenter;
 
-                    employeeProfileUserIDLabel.Text = hrData["userName"].ToString(); // ✅ Correct column name
+                    employeeProfileUserIDLabel.Text = hrData["userName"].ToString();
 
                     actualPassword = hrData["password"].ToString();
                     employeeProfilePasswordTB.Text = "Hidden";
@@ -325,14 +475,11 @@ namespace Payroll
         private void changePasswordButton_Click(object sender, EventArgs e)
         {
             using (ChangePassword passForm = new ChangePassword())
-
             {
                 passForm.StartPosition = FormStartPosition.CenterParent;
                 if (passForm.ShowDialog() == DialogResult.OK)
                 {
-
                     string newPass = passForm.NewPassword;
-
 
                     if (repo.UpdatePasswordOnly(currentEmployeeID, newPass))
                     {
@@ -347,48 +494,53 @@ namespace Payroll
             }
         }
 
-        private void userPanelDataGrid_Paint(object sender, PaintEventArgs e)
+        // Event handlers for attendance search
+        private void attendanceSearchTB_TextChanged(object sender, EventArgs e)
         {
-
+            // Only search when user stops typing (implement debounce if needed)
+            // For now, search on every change
+            if (attendanceSearchTB.Text != "Search by Employee ID, Name, or Date (MM/dd/yyyy)")
+            {
+                SearchAttendance();
+            }
         }
 
-        private void userDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void attendanceSearchTB_KeyPress(object sender, KeyPressEventArgs e)
         {
-
-        }
-
-        private void textBox29_TextChanged(object sender, EventArgs e)
-        {
-            FilterData();
-        }
-
-        private void HumanResourcesForm_Load(object sender, EventArgs e)
-        {
-            cmbFilterStatus.Items.Clear();
-            cmbFilterStatus.Items.Add("All");
-            cmbFilterStatus.Items.Add("Present");
-            cmbFilterStatus.Items.Add("Late");
-            cmbFilterStatus.Items.Add("Overtime");
-            cmbFilterStatus.Items.Add("Undertime");
-            cmbFilterStatus.Items.Add("Absent");
-            cmbFilterStatus.SelectedIndex = 0;
-
-
-            userDataGridView.Text = DateTime.Now.ToString("MM/dd/yyyy");
-
-
-            FilterData();
-
+            // Search when Enter is pressed
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                SearchAttendance();
+                e.Handled = true; // Prevent beep sound
+            }
         }
 
         private void cmbFilterStatus_SelectedIndexChanged(object sender, EventArgs e)
         {
-            FilterData();
+            SearchAttendance();
         }
 
-        private void comboBox10_SelectedIndexChanged(object sender, EventArgs e)
+        private void HumanResourcesForm_Load(object sender, EventArgs e)
         {
-            FilterData();
+            // Load initial attendance data
+            LoadAllAttendance();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog dlg = new OpenFileDialog())
+            {
+                dlg.Filter = "Image Files | *.jpg; *.png; *.jpeg";
+
+                if (dlg.ShowDialog() == DialogResult.OK)
+                {
+                    Image img = Image.FromFile(dlg.FileName);
+
+                    pictureBox2.Image = img;
+                    currentImage = img;
+
+                }
+            }
         }
     }
 }
