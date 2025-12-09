@@ -1590,16 +1590,24 @@ namespace Payroll
                 {
                     connection.Open();
 
-                    // SQL: Select Attendance + Employee Name
+                    // SQL: Select Attendance + Employee Name from ALL employee types
                     string sql = @"
                 SELECT 
                     a.employeeID AS [Emp ID],
-                    (e.firstName + ' ' + e.lastName) AS [Name],
+                    COALESCE(
+                        (e.firstName + ' ' + e.lastName),
+                        (h.firstName + ' ' + h.lastName),
+                        (acc.firstName + ' ' + acc.lastName)
+                    ) AS [Name],
+                    FORMAT(a.attendanceDate, 'MM/dd/yyyy') AS [Date],
                     FORMAT(a.clockIn, 'hh:mm tt') AS [Clock In],
                     FORMAT(a.clockOut, 'hh:mm tt') AS [Clock Out],
+                    CAST(a.hoursWorked AS VARCHAR(10)) AS [Hours Worked],
                     a.status AS [Status]
                 FROM attendanceData a
-                INNER JOIN employeeData e ON a.employeeID = e.employeeID
+                LEFT JOIN employeeData e ON a.employeeID = e.employeeID
+                LEFT JOIN hrData h ON a.employeeID = h.employeeID
+                LEFT JOIN accountantData acc ON a.employeeID = acc.employeeID
                 WHERE CAST(a.attendanceDate AS DATE) = CAST(@date AS DATE)";
 
                     // Apply Status Filter if it's not "All"
@@ -1612,7 +1620,7 @@ namespace Payroll
 
                     using (SqlCommand cmd = new SqlCommand(sql, connection))
                     {
-                        cmd.Parameters.AddWithValue("@date", date); // We pass the valid DateTime here
+                        cmd.Parameters.AddWithValue("@date", date);
 
                         if (status != "All" && !string.IsNullOrEmpty(status))
                         {
@@ -2403,6 +2411,85 @@ namespace Payroll
 
             return departments;
         }
+
+        public DataTable SearchAttendanceByEmployeeOrDate(string searchTerm, DateTime? date = null)
+        {
+            DataTable table = new DataTable();
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    string sql = @"
+                SELECT 
+                    a.employeeID AS [Emp ID],
+                    COALESCE(
+                        (e.firstName + ' ' + e.lastName),
+                        (h.firstName + ' ' + h.lastName),
+                        (acc.firstName + ' ' + acc.lastName)
+                    ) AS [Name],
+                    FORMAT(a.attendanceDate, 'MM/dd/yyyy') AS [Date],
+                    FORMAT(a.clockIn, 'hh:mm tt') AS [Clock In],
+                    FORMAT(a.clockOut, 'hh:mm tt') AS [Clock Out],
+                    CAST(a.hoursWorked AS VARCHAR(10)) AS [Hours Worked],
+                    a.status AS [Status]
+                FROM attendanceData a
+                LEFT JOIN employeeData e ON a.employeeID = e.employeeID
+                LEFT JOIN hrData h ON a.employeeID = h.employeeID
+                LEFT JOIN accountantData acc ON a.employeeID = acc.employeeID
+                WHERE 1=1";
+
+                    // Add date filter if provided
+                    if (date.HasValue)
+                    {
+                        sql += " AND CAST(a.attendanceDate AS DATE) = CAST(@date AS DATE)";
+                    }
+
+                    // Add search term filter if provided
+                    if (!string.IsNullOrEmpty(searchTerm))
+                    {
+                        sql += @" AND (
+                    a.employeeID LIKE @searchTerm OR 
+                    e.firstName LIKE @searchTerm OR 
+                    e.lastName LIKE @searchTerm OR
+                    h.firstName LIKE @searchTerm OR 
+                    h.lastName LIKE @searchTerm OR
+                    acc.firstName LIKE @searchTerm OR 
+                    acc.lastName LIKE @searchTerm
+                )";
+                    }
+
+                    sql += " ORDER BY a.attendanceDate DESC, a.clockIn ASC";
+
+                    using (SqlCommand cmd = new SqlCommand(sql, connection))
+                    {
+                        if (date.HasValue)
+                        {
+                            cmd.Parameters.AddWithValue("@date", date.Value);
+                        }
+
+                        if (!string.IsNullOrEmpty(searchTerm))
+                        {
+                            cmd.Parameters.AddWithValue("@searchTerm", "%" + searchTerm + "%");
+                        }
+
+                        using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                        {
+                            adapter.Fill(table);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Search Error: " + ex.Message);
+            }
+
+            return table;
+        }
+
 
     }
 }

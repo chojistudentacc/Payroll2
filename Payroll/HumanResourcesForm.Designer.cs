@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HumanResourcesForm));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
             sidePanel = new Panel();
             profileButt = new Button();
             welcomeLabelAdmin = new Label();
@@ -69,7 +69,7 @@
             userPanelDataGrid = new Panel();
             panel28 = new Panel();
             label80 = new Label();
-            textBox29 = new TextBox();
+            attendanceSearchTB = new TextBox();
             cmbFilterStatus = new ComboBox();
             userDataGridView = new DataGridView();
             userPanel1 = new Panel();
@@ -741,14 +741,13 @@
             userPanelDataGrid.Name = "userPanelDataGrid";
             userPanelDataGrid.Size = new Size(1092, 721);
             userPanelDataGrid.TabIndex = 3;
-            userPanelDataGrid.Paint += userPanelDataGrid_Paint;
             // 
             // panel28
             // 
             panel28.BackgroundImage = Properties.Resources.PanelBG;
             panel28.BackgroundImageLayout = ImageLayout.Center;
             panel28.Controls.Add(label80);
-            panel28.Controls.Add(textBox29);
+            panel28.Controls.Add(attendanceSearchTB);
             panel28.Controls.Add(cmbFilterStatus);
             panel28.Location = new Point(108, 93);
             panel28.Name = "panel28";
@@ -767,15 +766,14 @@
             label80.TabIndex = 15;
             label80.Text = "Select date:";
             // 
-            // textBox29
+            // attendanceSearchTB
             // 
-            textBox29.Font = new Font("Georgia", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            textBox29.Location = new Point(251, 24);
-            textBox29.Name = "textBox29";
-            textBox29.PlaceholderText = "Search by employeeID or last name";
-            textBox29.Size = new Size(343, 35);
-            textBox29.TabIndex = 1;
-            textBox29.TextChanged += textBox29_TextChanged;
+            attendanceSearchTB.Font = new Font("Georgia", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            attendanceSearchTB.Location = new Point(251, 24);
+            attendanceSearchTB.Name = "attendanceSearchTB";
+            attendanceSearchTB.PlaceholderText = "Search by employeeID or last name";
+            attendanceSearchTB.Size = new Size(343, 35);
+            attendanceSearchTB.TabIndex = 1;
             // 
             // cmbFilterStatus
             // 
@@ -797,43 +795,42 @@
             userDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             userDataGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             userDataGridView.BackgroundColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(179, 79, 84);
-            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(255, 209, 211);
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            userDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = Color.FromArgb(146, 45, 51);
+            dataGridViewCellStyle7.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle7.ForeColor = Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(179, 79, 84);
+            dataGridViewCellStyle7.SelectionForeColor = Color.FromArgb(255, 209, 211);
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
+            userDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             userDataGridView.ColumnHeadersHeight = 29;
             userDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(179, 79, 84);
-            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(255, 209, 211);
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            userDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = Color.FromArgb(146, 45, 51);
+            dataGridViewCellStyle8.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle8.ForeColor = Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = Color.FromArgb(179, 79, 84);
+            dataGridViewCellStyle8.SelectionForeColor = Color.FromArgb(255, 209, 211);
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
+            userDataGridView.DefaultCellStyle = dataGridViewCellStyle8;
             userDataGridView.EnableHeadersVisualStyles = false;
             userDataGridView.GridColor = Color.White;
             userDataGridView.Location = new Point(0, 190);
             userDataGridView.Name = "userDataGridView";
             userDataGridView.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle3.ForeColor = Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(179, 79, 84);
-            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(255, 209, 211);
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            userDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = Color.FromArgb(146, 45, 51);
+            dataGridViewCellStyle9.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle9.ForeColor = Color.White;
+            dataGridViewCellStyle9.SelectionBackColor = Color.FromArgb(179, 79, 84);
+            dataGridViewCellStyle9.SelectionForeColor = Color.FromArgb(255, 209, 211);
+            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.True;
+            userDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             userDataGridView.RowHeadersVisible = false;
             userDataGridView.RowHeadersWidth = 51;
             userDataGridView.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             userDataGridView.Size = new Size(1092, 469);
             userDataGridView.TabIndex = 0;
-            userDataGridView.CellContentClick += userDataGridView_CellContentClick;
             // 
             // userPanel1
             // 
@@ -2610,37 +2607,37 @@
             dataGridView3.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView3.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dataGridView3.BackgroundColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle4.ForeColor = Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(179, 79, 84);
-            dataGridViewCellStyle4.SelectionForeColor = Color.FromArgb(255, 209, 211);
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            dataGridView3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = Color.FromArgb(146, 45, 51);
+            dataGridViewCellStyle10.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle10.ForeColor = Color.White;
+            dataGridViewCellStyle10.SelectionBackColor = Color.FromArgb(179, 79, 84);
+            dataGridViewCellStyle10.SelectionForeColor = Color.FromArgb(255, 209, 211);
+            dataGridViewCellStyle10.WrapMode = DataGridViewTriState.True;
+            dataGridView3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             dataGridView3.ColumnHeadersHeight = 29;
             dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle5.ForeColor = Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(179, 79, 84);
-            dataGridViewCellStyle5.SelectionForeColor = Color.FromArgb(255, 209, 211);
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            dataGridView3.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = Color.FromArgb(146, 45, 51);
+            dataGridViewCellStyle11.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle11.ForeColor = Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = Color.FromArgb(179, 79, 84);
+            dataGridViewCellStyle11.SelectionForeColor = Color.FromArgb(255, 209, 211);
+            dataGridViewCellStyle11.WrapMode = DataGridViewTriState.True;
+            dataGridView3.DefaultCellStyle = dataGridViewCellStyle11;
             dataGridView3.EnableHeadersVisualStyles = false;
             dataGridView3.GridColor = Color.White;
             dataGridView3.Location = new Point(0, 190);
             dataGridView3.Name = "dataGridView3";
             dataGridView3.ReadOnly = true;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = Color.FromArgb(146, 45, 51);
-            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle6.ForeColor = Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(179, 79, 84);
-            dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(255, 209, 211);
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
-            dataGridView3.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle12.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = Color.FromArgb(146, 45, 51);
+            dataGridViewCellStyle12.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle12.ForeColor = Color.White;
+            dataGridViewCellStyle12.SelectionBackColor = Color.FromArgb(179, 79, 84);
+            dataGridViewCellStyle12.SelectionForeColor = Color.FromArgb(255, 209, 211);
+            dataGridViewCellStyle12.WrapMode = DataGridViewTriState.True;
+            dataGridView3.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
             dataGridView3.RowHeadersVisible = false;
             dataGridView3.RowHeadersWidth = 51;
             dataGridView3.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
@@ -3453,7 +3450,7 @@
         private Panel userPanelDataGrid;
         private Panel panel28;
         private Label label80;
-        private TextBox textBox29;
+        private TextBox attendanceSearchTB;
         private ComboBox cmbFilterStatus;
         private DataGridView userDataGridView;
         private Panel userPanel1;
